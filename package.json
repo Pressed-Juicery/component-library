@@ -1,0 +1,15 @@
+{
+	"name": "component-library",
+	"version": "0.0.0",
+	"description": "Pressed Juicery Component Library",
+	"private": true,
+	"scripts": {
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Pressed-Juicery/component-library.git"
+	},
+	"author": "Pressed Juicery, Inc.",
+	"license": "SEE LICENSE IN LICENSE",
+	"homepage": "https://github.com/Pressed-Juicery/component-library#readme"
+}
