@@ -13,6 +13,7 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"homepage": "https://github.com/Pressed-Juicery/component-library#readme",
 	"dependencies": {
-		"vue": "2.6.11"
+		"vue": "2.6.11",
+		"vue-loader": "15.9.1"
 	}
 }
