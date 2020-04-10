@@ -11,5 +11,8 @@
 	},
 	"author": "Pressed Juicery, Inc.",
 	"license": "SEE LICENSE IN LICENSE",
-	"homepage": "https://github.com/Pressed-Juicery/component-library#readme"
+	"homepage": "https://github.com/Pressed-Juicery/component-library#readme",
+	"dependencies": {
+		"vue": "2.6.11"
+	}
 }
