@@ -5,7 +5,8 @@
 	"private": true,
 	"scripts": {
 		"start": "start-storybook -p 6006",
-		"build": "build-storybook"
+		"build": "build-storybook",
+		"lint": "eslint . --ext .js,.vue"
 	},
 	"repository": {
 		"type": "git",
@@ -25,6 +26,10 @@
 		"@storybook/addons": "5.3.18",
 		"@storybook/vue": "5.3.18",
 		"babel-loader": "8.1.0",
-		"babel-preset-vue": "2.0.2"
+		"babel-preset-vue": "2.0.2",
+		"eslint": "6.8.0",
+		"eslint-config-pressed-juicery": "github:Pressed-Juicery/eslint-config-pressed-juicery#v1.0.0",
+		"eslint-plugin-import": "2.20.2",
+		"eslint-plugin-vue": "6.2.2"
 	}
 }
