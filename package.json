@@ -1,0 +1,30 @@
+{
+	"name": "component-library",
+	"version": "0.0.0",
+	"description": "Pressed Juicery Component Library",
+	"private": true,
+	"scripts": {
+		"start": "start-storybook -p 6006",
+		"build": "build-storybook"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Pressed-Juicery/component-library.git"
+	},
+	"author": "Pressed Juicery, Inc.",
+	"license": "SEE LICENSE IN LICENSE",
+	"homepage": "https://github.com/Pressed-Juicery/component-library#readme",
+	"dependencies": {
+		"vue": "2.6.11",
+		"vue-loader": "15.9.1"
+	},
+	"devDependencies": {
+		"@babel/core": "7.9.0",
+		"@storybook/addon-actions": "5.3.18",
+		"@storybook/addon-links": "5.3.18",
+		"@storybook/addons": "5.3.18",
+		"@storybook/vue": "5.3.18",
+		"babel-loader": "8.1.0",
+		"babel-preset-vue": "2.0.2"
+	}
+}
