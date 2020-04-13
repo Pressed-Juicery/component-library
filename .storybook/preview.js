@@ -5,6 +5,9 @@ import { withA11y } from '@storybook/addon-a11y';
 addDecorator(withA11y);
 
 addParameters({
+	docs: {
+		inlineStories: true,
+	},
 	viewport: {
 		viewports: INITIAL_VIEWPORTS,
 		defaultViewport: 'responsive',
