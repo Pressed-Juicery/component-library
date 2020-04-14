@@ -8,5 +8,6 @@ module.exports = {
 		'@storybook/addon-a11y',
 		'@storybook/addon-viewport/register',
 		'@storybook/addon-docs',
+		'@storybook/preset-scss',
 	],
 };
