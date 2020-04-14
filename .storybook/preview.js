@@ -1,3 +1,4 @@
+import '../styles/index.scss';
 import { addDecorator, addParameters } from '@storybook/vue';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withA11y } from '@storybook/addon-a11y';

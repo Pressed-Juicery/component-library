@@ -1,0 +1,137 @@
+// Colors
+// ------
+
+$white: #fff;
+$beige: #f6f4ec;
+
+$gray-10: #f4f4f4;
+$gray-20: #e0e0e0;
+$gray-30: #c6c6c6;
+$gray-40: #a8a8a8;
+$gray-50: #8d8d8d;
+$gray-60: #6f6f6f;
+$gray-70: #525252;
+$gray-80: #393939;
+$gray-90: #262626;
+$gray-100: #161616;
+
+$red-10: #fff1f1;
+$red-20: #ffd7d9;
+$red-30: #ffb3b8;
+$red-40: #ff8389;
+$red-50: #fa4d56;
+$red-60: #da1e28;
+$red-70: #a2191f;
+$red-80: #750e13;
+$red-90: #520408;
+$red-100: #2d0709;
+
+$green-10: #defbe6;
+$green-20: #a7f0ba;
+$green-30: #6fdc8c;
+$green-40: #42be65;
+$green-50: #24a148;
+$green-60: #198038;
+$green-70: #0e6027;
+$green-80: #044317;
+$green-90: #022d0d;
+$green-100: #071908;
+
+$blue-10: #edf5ff;
+$blue-20: #d0e2ff;
+$blue-30: #a6c8ff;
+$blue-40: #78a9ff;
+$blue-50: #4589ff;
+$blue-60: #0f62fe;
+$blue-70: #0043ce;
+$blue-80: #002d9c;
+$blue-90: #001d6c;
+$blue-100: #001141;
+
+
+// Semantic Colors
+// ---------------
+
+$color-primary: #282321;
+
+$color-text-gray: $gray-30;
+$color-text-placeholder: $gray-50;
+
+$color-danger: $red-60;
+$color-danger-background: $red-10;
+$color-danger-border: $red-20;
+
+$color-success: $green-60;
+$color-success-background: $green-10;
+$color-success-border: $green-20;
+
+$color-info: $blue-60;
+$color-info-background: $blue-10;
+$color_info-border: $blue-20;
+
+
+// Measurements
+// ============
+
+$rem: 16px;
+
+
+// Font Sizes
+// ----------
+
+$font-size-01: $rem * 0.75;  // 12
+$font-size-02: $rem * 0.875; // 14
+$font-size-03: $rem * 1;     // 16
+$font-size-04: $rem * 1.125; // 18
+$font-size-05: $rem * 1.25;  // 20
+$font-size-06: $rem * 1.5;   // 24
+$font-size-07: $rem * 1.75;  // 28
+$font-size-08: $rem * 2;     // 32
+$font-size-09: $rem * 2.25;  // 36
+$font-size-10: $rem * 2.625; // 42
+$font-size-11: $rem * 3;     // 48
+$font-size-12: $rem * 3.375; // 54
+$font-size-13: $rem * 3.75;  // 60
+$font-size-14: $rem * 4.25;  // 68
+$font-size-15: $rem * 4.75;  // 76
+$font-size-16: $rem * 5.25;  // 84
+$font-size-17: $rem * 5.75;  // 92
+
+
+// Semantic Font Sizes
+// -------------------
+
+$font-size-default: $font-size-03;
+
+
+// Font Weights
+// ------------
+
+$font-weight-bold: bold;
+$font-weight-light: 200;
+
+
+// Spacing
+// -------
+
+$spacing-01: $rem * 0.125; // 2
+$spacing-02: $rem * 0.25;  // 4
+$spacing-03: $rem * 0.5;   // 8
+$spacing-04: $rem * 0.75;  // 12
+$spacing-05: $rem * 1;     // 16
+$spacing-06: $rem * 1.5;   // 24
+$spacing-07: $rem * 2;     // 32
+$spacing-08: $rem * 2.5;   // 40
+$spacing-09: $rem * 3;     // 48
+$spacing-10: $rem * 4;     // 64
+$spacing-11: $rem * 6;     // 96
+$spacing-12: $rem * 10;    // 160
+
+
+// Borders
+// -----
+
+$border-width: 1px;
+$border-radius: 4px;
+$border-color: $gray-40;
+$border-color-light: $gray-20;
