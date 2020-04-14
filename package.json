@@ -16,9 +16,7 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"homepage": "https://github.com/Pressed-Juicery/component-library#readme",
 	"dependencies": {
-		"normalize.css": "8.0.1",
-		"vue": "2.6.11",
-		"vue-loader": "15.9.1"
+		"normalize.css": "8.0.1"
 	},
 	"devDependencies": {
 		"@babel/core": "7.9.0",
@@ -39,6 +37,8 @@
 		"eslint-plugin-import": "2.20.2",
 		"eslint-plugin-vue": "6.2.2",
 		"node-sass": "4.13.1",
-		"sass-loader": "8.0.2"
+		"sass-loader": "8.0.2",
+		"vue": "2.6.11",
+		"vue-loader": "15.9.1"
 	}
 }
