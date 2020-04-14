@@ -1,0 +1,12 @@
+/*
+ * The sidebar icons aren't themeable at the moment.
+ * Reference: https://github.com/storybookjs/storybook/issues/6436
+ */
+
+.sidebar-svg-icon {
+	color: #282321 !important;
+}
+
+.sidebar-item.selected .sidebar-svg-icon {
+	color: inherit !important;
+}

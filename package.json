@@ -4,7 +4,7 @@
 	"description": "Pressed Juicery Component Library",
 	"private": true,
 	"scripts": {
-		"start": "start-storybook -p 6006",
+		"start": "start-storybook -s ./assets -p 6006",
 		"build": "build-storybook",
 		"lint": "eslint . --ext .js,.vue"
 	},
