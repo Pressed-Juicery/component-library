@@ -15,7 +15,7 @@ const cardData = {
 const cardTemplate = `
 	<radio-button-card :id="card.id.toString()" v-model="card.selectedItem">
 		<template v-slot:title>
-			<p>{{ card.title }}</p>
+			<div>{{ card.title }}</div>
 		</template>
 
 		<template v-slot:content>
@@ -23,7 +23,7 @@ const cardTemplate = `
 		</template>
 
 		<template v-slot:details>
-			<p>{{ card.details }}</p>
+			<div>{{ card.details }}</div>
 		</template>
 	</radio-button-card>
 `;
