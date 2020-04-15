@@ -120,7 +120,7 @@
 		display: inline-block;
 	}
 
-	.radio-button-card__input:checked + label {
+	.radio-button-card__input:checked + .radio-button-card__label {
 		background-color: $gray-50;
 	}
 
