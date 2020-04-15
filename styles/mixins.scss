@@ -1,0 +1,15 @@
+@import './variables';
+
+@mixin card {
+	padding: $spacing-04;
+	border-radius: $border-radius;
+	background-color: $beige;
+}
+
+@mixin card-radio-button {
+	height: 18px;
+	width: 18px;
+	border: 1px solid $gray-50;
+	border-radius: 50%;
+	background-color: #fff;
+}
