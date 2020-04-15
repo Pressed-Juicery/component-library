@@ -65,44 +65,28 @@
 		padding: $card-padding;
 	}
 
-	/*.radio-button-card p {*/
-	/*	line-height: 1;*/
-	/*}*/
-
 	.radio-button-card__left-content {
 		flex: 6 2;
 		margin-right: $spacing-05;
 	}
 
 	.radio-button-card__title {
-		//@extend .text-body;
-
 		margin-bottom: $spacing-03;
 		font-size: $font-size-card;
 		font-weight: $font-weight-bold;
 	}
 
 	.radio-button-card__extraInformation > * {
-		//@extend .text-body;
-
 		font-size: $font-size-card;
 		font-weight: $font-weight-bold;
 	}
 
 	.radio-button-card__content {
-		//@extend .text-body;
-
-		//line-height: 1;
 		font-size: $font-size-card;
-		//font-weight: $font-weight-normal;
 	}
 
 	.radio-button-card__details > * {
-		//@extend .text-body;
-
-		//font-size: $font-size-body;
 		margin-top: $spacing-03;
-		//font-weight: $font-weight-normal;
 	}
 
 	.radio-button-card__input {
