@@ -55,10 +55,8 @@ const unknown = {
 };
 
 const cardTemplate = `
-	<payment-method-radio-button-card class="radio-button-card"
-	                                  :paymentMethod="cardData.paymentMethod"
-	                                  v-model="cardData.selectedPaymentMethod">
-	</payment-method-radio-button-card>
+	<payment-method-radio-button-card :paymentMethod="cardData.paymentMethod"
+	                                  v-model="cardData.selectedPaymentMethod" />
 `;
 
 export function withMastercard() {
