@@ -19,118 +19,118 @@
 </template>
 
 <script>
-	export default {
-		props: {
-			value: {
-				type: String,
-				required: true,
+export default {
+	props: {
+		value: {
+			type: String,
+			required: true,
+		},
+		id: {
+			type: String,
+			required: true,
+		},
+	},
+
+	computed: {
+		radioButtonValue: {
+			get: function () {
+				return this.value;
 			},
-			id: {
-				type: String,
-				required: true,
+
+			set: function () {
+				this.$emit('input', this.id);
 			},
 		},
-
-		computed: {
-			radioButtonValue: {
-				get: function() {
-					return this.value;
-				},
-
-				set: function() {
-					this.$emit("input", this.id);
-				}
-			},
-		},
-	}
+	},
+};
 </script>
 
 <style scoped lang="scss">
-	@import '../styles/mixins';
-	@import '../styles/variables';
+@import '../styles/mixins';
+@import '../styles/variables';
 
-	$card-padding: $spacing-05;
-	$card-padding-mobile: $spacing-03;
-	$font-size-card: $font-size-04;
-	$font-size-card-mobile: $font-size-default;
+$card-padding: $spacing-05;
+$card-padding-mobile: $spacing-03;
+$font-size-card: $font-size-04;
+$font-size-card-mobile: $font-size-default;
 
+.radio-button-card {
+	@include card;
+
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	max-width: 550px;
+	margin-bottom: $spacing-06;
+	padding: $card-padding;
+}
+
+.radio-button-card__left-content {
+	flex: 6 2;
+	margin-right: $spacing-05;
+}
+
+.radio-button-card__title {
+	margin-bottom: $spacing-03;
+	font-size: $font-size-card;
+	font-weight: $font-weight-bold;
+}
+
+.radio-button-card__extraInformation > * {
+	font-size: $font-size-card;
+	font-weight: $font-weight-bold;
+}
+
+.radio-button-card__content {
+	font-size: $font-size-card;
+}
+
+.radio-button-card__details > * {
+	margin-top: $spacing-03;
+}
+
+.radio-button-card__input {
+	display: none;
+	width: 0;
+}
+
+.radio-button-card__label {
+	@include card-radio-button;
+
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: $card-padding;
+	display: inline-block;
+}
+
+.radio-button-card__input:checked + .radio-button-card__label {
+	background-color: $gray-50;
+}
+
+@media (max-width: 400px) {
 	.radio-button-card {
-		@include card;
-
-		position: relative;
-		display: flex;
-		justify-content: space-between;
-		max-width: 550px;
-		margin-bottom: $spacing-06;
-		padding: $card-padding;
-	}
-
-	.radio-button-card__left-content {
-		flex: 6 2;
-		margin-right: $spacing-05;
+		padding: $card-padding-mobile;
 	}
 
 	.radio-button-card__title {
-		margin-bottom: $spacing-03;
-		font-size: $font-size-card;
-		font-weight: $font-weight-bold;
-	}
-
-	.radio-button-card__extraInformation > * {
-		font-size: $font-size-card;
-		font-weight: $font-weight-bold;
-	}
-
-	.radio-button-card__content {
-		font-size: $font-size-card;
-	}
-
-	.radio-button-card__details > * {
-		margin-top: $spacing-03;
-	}
-
-	.radio-button-card__input {
-		display: none;
-		width: 0;
+		font-size: $font-size-card-mobile;
 	}
 
 	.radio-button-card__label {
-		@include card-radio-button;
-
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: $card-padding;
-		display: inline-block;
+		right: $card-padding-mobile;
 	}
 
-	.radio-button-card__input:checked + .radio-button-card__label {
-		background-color: $gray-50;
+	.radio-button-card__extraInformation > * {
+		font-size: $font-size-card-mobile;
 	}
 
-	@media (max-width: 400px) {
-		.radio-button-card {
-			padding: $card-padding-mobile;
-		}
-
-		.radio-button-card__title {
-			font-size: $font-size-card-mobile;
-		}
-
-		.radio-button-card__label {
-			right: $card-padding-mobile;
-		}
-
-		.radio-button-card__extraInformation > * {
-			font-size: $font-size-card-mobile;
-		}
-
-		.radio-button-card__content {
-			font-size: $font-size-card-mobile;
-		}
-
-		.radio-button-card__details > * {
-			font-size: $font-size-02;
-		}
+	.radio-button-card__content {
+		font-size: $font-size-card-mobile;
 	}
+
+	.radio-button-card__details > * {
+		font-size: $font-size-02;
+	}
+}
 </style>

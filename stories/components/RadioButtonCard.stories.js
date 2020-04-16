@@ -48,10 +48,12 @@ export function Checked() {
 
 		props: {
 			card: {
-				default: () => ({
-					...cardData,
-					selectedItem: '123',
-				}),
+				default() {
+					return {
+						...cardData,
+						selectedItem: '123',
+					};
+				},
 			},
 		},
 	};
