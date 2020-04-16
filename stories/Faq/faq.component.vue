@@ -6,7 +6,7 @@
 				<slot></slot>
 			</div>
 		</div>
-		<div :class="['faq__answer-container', {'faq__answer-container--toggled': showAnswer}]">
+		<div :class="['faq__answer-container', {'faq__answer-container--toggle': showAnswer}]">
 			<p class="faq__answer" v-for="(answer, index) in faq.answers" :key="index">
 				<span v-if="answer.reference">{{ answer.reference }}</span>
 				<span class="faq__answer-content">{{ answer.content }}</span>
@@ -85,7 +85,7 @@ export default {
 		transition: .3s ease max-height, .3s ease opacity;
 	}
 
-	.faq__answer-container--toggled {
+	.faq__answer-container--toggle {
 		max-height: 1000px;
 		opacity: 1;
 	}
