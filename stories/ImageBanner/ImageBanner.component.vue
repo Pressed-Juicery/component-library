@@ -15,17 +15,13 @@
 </template>
 
 <script>
-	export default {
-		name:'HeroImage',
-		props: {
-			imageDesktop: {
-				type: String
-			},
-			imageMobile: {
-				type: String
-			},
-		},
-	}
+export default {
+	name: 'HeroImage',
+	props: {
+		imageDesktop: String,
+		imageMobile: String,
+	},
+};
 </script>
 
 <style lang="scss">
