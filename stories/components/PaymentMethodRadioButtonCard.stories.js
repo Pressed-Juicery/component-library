@@ -68,10 +68,12 @@ export function withMastercard() {
 
 		props: {
 			cardData: {
-				default: () => ({
-					paymentMethod: mastercard,
-					selectedPaymentMethod: visa,
-				}),
+				default() {
+					return {
+						paymentMethod: mastercard,
+						selectedPaymentMethod: visa,
+					};
+				},
 			},
 		},
 	};
@@ -84,10 +86,12 @@ export function withVisa() {
 
 		props: {
 			cardData: {
-				default: () => ({
-					paymentMethod: visa,
-					selectedPaymentMethod: discover,
-				}),
+				default() {
+					return {
+						paymentMethod: visa,
+						selectedPaymentMethod: discover,
+					};
+				},
 			},
 		},
 	};
@@ -100,10 +104,12 @@ export function withDiscover() {
 
 		props: {
 			cardData: {
-				default: () => ({
-					paymentMethod: discover,
-					selectedPaymentMethod: visa,
-				}),
+				default() {
+					return {
+						paymentMethod: discover,
+						selectedPaymentMethod: visa,
+					};
+				},
 			},
 		},
 	};
@@ -116,10 +122,12 @@ export function withAmericanExpress() {
 
 		props: {
 			cardData: {
-				default: () => ({
-					paymentMethod: americanExpress,
-					selectedPaymentMethod: visa,
-				}),
+				default() {
+					return {
+						paymentMethod: americanExpress,
+						selectedPaymentMethod: visa,
+					};
+				},
 			},
 		},
 	};
@@ -132,10 +140,12 @@ export function withUnknownPaymentMethod() {
 
 		props: {
 			cardData: {
-				default: () => ({
-					paymentMethod: unknown,
-					selectedPaymentMethod: visa,
-				}),
+				default() {
+					return {
+						paymentMethod: unknown,
+						selectedPaymentMethod: visa,
+					};
+				},
 			},
 		},
 	};
@@ -148,10 +158,12 @@ export function Unchecked() {
 
 		props: {
 			cardData: {
-				default: () => ({
-					paymentMethod: mastercard,
-					selectedPaymentMethod: visa,
-				}),
+				default() {
+					return {
+						paymentMethod: mastercard,
+						selectedPaymentMethod: visa,
+					};
+				},
 			},
 		},
 	};
@@ -164,10 +176,12 @@ export function Checked() {
 
 		props: {
 			cardData: {
-				default: () => ({
-					paymentMethod: mastercard,
-					selectedPaymentMethod: mastercard,
-				}),
+				default() {
+					return {
+						paymentMethod: mastercard,
+						selectedPaymentMethod: mastercard,
+					};
+				},
 			},
 		},
 	};
