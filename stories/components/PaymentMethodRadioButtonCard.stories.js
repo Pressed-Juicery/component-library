@@ -59,6 +59,42 @@ const cardTemplate = `
 	                                  v-model="cardData.selectedPaymentMethod" />
 `;
 
+export function Default() {
+	return {
+		components: { PaymentMethodRadioButtonCard },
+		template: cardTemplate,
+
+		props: {
+			cardData: {
+				default() {
+					return {
+						paymentMethod: mastercard,
+						selectedPaymentMethod: visa,
+					};
+				},
+			},
+		},
+	};
+}
+
+export function Checked() {
+	return {
+		components: { PaymentMethodRadioButtonCard },
+		template: cardTemplate,
+
+		props: {
+			cardData: {
+				default() {
+					return {
+						paymentMethod: mastercard,
+						selectedPaymentMethod: mastercard,
+					};
+				},
+			},
+		},
+	};
+}
+
 export function withMastercard() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
@@ -142,42 +178,6 @@ export function withUnknownPaymentMethod() {
 					return {
 						paymentMethod: unknown,
 						selectedPaymentMethod: visa,
-					};
-				},
-			},
-		},
-	};
-}
-
-export function Unchecked() {
-	return {
-		components: { PaymentMethodRadioButtonCard },
-		template: cardTemplate,
-
-		props: {
-			cardData: {
-				default() {
-					return {
-						paymentMethod: mastercard,
-						selectedPaymentMethod: visa,
-					};
-				},
-			},
-		},
-	};
-}
-
-export function Checked() {
-	return {
-		components: { PaymentMethodRadioButtonCard },
-		template: cardTemplate,
-
-		props: {
-			cardData: {
-				default() {
-					return {
-						paymentMethod: mastercard,
-						selectedPaymentMethod: mastercard,
 					};
 				},
 			},
