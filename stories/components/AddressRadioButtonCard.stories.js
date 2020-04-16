@@ -140,25 +140,6 @@ export function withNoTitle() {
 	};
 }
 
-export function Unchecked() {
-	return {
-		components: { AddressRadioButtonCard },
-		template: cardTemplate,
-
-		props: {
-			cardData: {
-				default() {
-					return {
-						address: defaultAddress,
-						title: 'Home',
-						selectedAddress: addressWithNoPhone,
-					};
-				},
-			},
-		},
-	};
-}
-
 export function Checked() {
 	return {
 		components: { AddressRadioButtonCard },
