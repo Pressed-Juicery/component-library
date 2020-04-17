@@ -1,73 +1,44 @@
 <template>
-	<div class="image-banner">
-		<a class="image-banner__link" :href="ctaLink">
-			<img class="image-banner__image" :src="imageDesktop" alt="page banner image" />
-			<img class="image-banner__image--mobile" :src="imageMobile" alt="page banner image" />
-			<div class="image-banner__text-container" >
-				<slot name="title"></slot>
-				<slot name="subtitle"></slot>
-				<div class="image-banner__button-container">
-					<slot name="button"></slot>
-				</div>
-			</div>
-		</a>
+	<div class="image-background" :style="cssVars">
+		<span role="img" :aria-label="alt"></span>
+		<slot></slot>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'HeroImage',
 	props: {
-		imageDesktop: String,
-		imageMobile: String,
+		srcDesktop: String,
+		srcMobile: String,
+		alt: String,
 	},
-};
+	computed: {
+		cssVars(){
+			return {
+				'--desktopImage': `url(${this.srcDesktop})`,
+				'--mobileImage': `url(${this.srcMobile})`
+			}
+		}
+	}
+}
 </script>
 
 <style lang="scss">
-	@import '../../styles/variables';
-
-	.image-banner {
-		position: relative;
-		margin: 0 auto;
-		display: block;
-	}
-
-	.image-banner__image {
-		display: block;
-	}
-
-	.image-banner__image--mobile {
-		display: none;
-	}
-
-	.image-banner__text-container {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	.image-background {
+		height: 100vh;
 		width: 100%;
-		text-align: center;
-		color: #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		background-image: var(--desktopImage);
 	}
 
-	.image-banner__button-container {
-		width: 264px;
-		margin: 0 auto;
-	}
-
-	@media screen and (max-width: $tablet--max) {
-		.image-banner__image {
-			display: none;
-		}
-
-		.image-banner__image--mobile {
-			display: block;
-		}
-
-		.image-banner__text-container {
-			top: initial;
-			bottom: 5%;
+	@media screen and (max-width: 768px ){
+		.image-background {
+			background-image: var(--mobileImage);
 		}
 	}
 </style>
