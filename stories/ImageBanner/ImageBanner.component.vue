@@ -13,14 +13,14 @@ export default {
 		alt: String,
 	},
 	computed: {
-		cssVars(){
+		cssVars() {
 			return {
 				'--desktopImage': `url(${this.srcDesktop})`,
-				'--mobileImage': `url(${this.srcMobile})`
-			}
-		}
-	}
-}
+				'--mobileImage': `url(${this.srcMobile})`,
+			};
+		},
+	},
+};
 </script>
 
 <style lang="scss">
