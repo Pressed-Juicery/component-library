@@ -26,10 +26,7 @@ export default {
 
 	computed: {
 		radioButtonValue: {
-			get: function () {
-				return this.value;
-			},
-
+			get: function () { return this.value },
 			set: function (value) { this.$emit('input', value) },
 		},
 	},
