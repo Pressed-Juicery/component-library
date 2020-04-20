@@ -1,6 +1,6 @@
 <template>
-	<radio-button-card :id="paymentMethod.uniqueNumberIdentifier" v-model="selectedPaymentMethod">
 		<template v-slot:title>
+	<radio-button-card :item="paymentMethod" v-model="selectedPaymentMethod">
 			<div class="payment-method-radio-button-card__title-row">
 				<img class="payment-method-radio-button-card__icon" :src="getPaymentMethodIcon()" alt="credit card" />
 				<span>{{ paymentMethod.maskedNumber }}</span>
@@ -36,7 +36,7 @@ export default {
 	computed: {
 		selectedPaymentMethod: {
 			get() {
-				return this.value.uniqueNumberIdentifier;
+				return this.value;
 			},
 
 			set() { this.$emit('input', this.paymentMethod) },
