@@ -4,57 +4,55 @@ export default {
 	title: 'RadioButtonCard',
 };
 
-const cardData = {
+const item1 = {
 	id: 123,
-	title: 'Title',
-	content: 'Hello World',
-	details: 'Hello World Details',
-	selectedItem: '456',
+	line1: 'Hello World',
+	line2: 'Bonjour Tout le Monde!',
 };
 
-const cardTemplate = `
-	<radio-button-card :id="card.id.toString()" v-model="card.selectedItem">
-		<template v-slot:title>
-			<div>{{ card.title }}</div>
-		</template>
+const item2 = {
+	id: 456,
+	line1: 'Hello World',
+	line2: 'Guten Tag Alles!',
+};
 
-		<template v-slot:content>
-			{{ card.content}}
-		</template>
-
-		<template v-slot:details>
-			<div>{{ card.details }}</div>
-		</template>
-	</radio-button-card>
-`;
+const item3 = {
+	id: 789,
+	line1: 'Hello World',
+	line2: '¡Hola Mundo!',
+};
 
 export function Unchecked() {
 	return {
 		components: { RadioButtonCard },
-		template: cardTemplate,
+		template: `
+			<radio-button-card :item="item1" v-model="item2">
+				<template v-slot:main-content>
+					<div>{{ item1.line1 }}</div>
+					<div>{{ item1.line2 }}</div>
+				</template>
+			</radio-button-card>
+		`,
 
-		props: {
-			card: {
-				default: () => cardData,
-			},
-		},
+		data() { return { item1, item2 }; },
 	};
 }
 
 export function Checked() {
 	return {
 		components: { RadioButtonCard },
-		template: cardTemplate,
+		template: `
+			<radio-button-card :item="item1" v-model="item1">
+				<template v-slot:main-content>
+					<div>{{ item1.line1 }}</div>
+					<div>{{ item1.line2 }}</div>
+				</template>
+			</radio-button-card>
+		`,
 
-		props: {
-			card: {
-				default() {
-					return {
-						...cardData,
-						selectedItem: '123',
-					};
-				},
-			},
+		data() { return { item1 }; },
+	};
+}
 		},
 	};
 }
