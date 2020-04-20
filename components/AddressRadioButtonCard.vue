@@ -1,8 +1,8 @@
 <template>
-	<radio-button-card :id="address.id.toString()" v-model="selectedAddress">
 		<template v-slot:title v-if="title">
 			<div>{{ title }}</div>
 		</template>
+	<radio-button-card :item="address" v-model="selectedAddress">
 
 		<template v-slot:content>
 			<div>{{ address.address1 }}</div>
@@ -39,7 +39,7 @@ export default {
 	computed: {
 		selectedAddress: {
 			get() {
-				return this.value.id.toString();
+				return this.value;
 			},
 
 			set() { this.$emit('input', this.address) },
