@@ -1,27 +1,25 @@
 <template>
-	<div class="radio-button-card">
+	<label class="radio-button-card">
 		<span class="radio-button-card__left-content"><slot name="main-content" /></span>
 		<span class="radio-button-card__top-right-content"><slot name="top-right-content" /></span>
 
 		<input class="radio-button-card__input"
 		       type="radio"
-		       :value="id"
-		       v-model="radioButtonValue"
-		       :checked="id === value"
-		       :id="id" />
-		<label class="radio-button-card__label" :for="id" />
-	</div>
+		       :value="item"
+		       v-model="radioButtonValue" />
+		<span class="radio-button-card__radio-button" />
+	</label>
 </template>
 
 <script>
 export default {
 	props: {
 		value: {
-			type: String,
+			type: Object,
 			required: true,
 		},
-		id: {
-			type: String,
+		item: {
+			type: Object,
 			required: true,
 		},
 	},
@@ -33,7 +31,7 @@ export default {
 			},
 
 			set: function () {
-				this.$emit('input', this.id);
+				this.$emit('input', this.item);
 			},
 		},
 	},
@@ -70,7 +68,7 @@ $card-padding-mobile: $spacing-03;
 	width: 0;
 }
 
-.radio-button-card__label {
+.radio-button-card__radio-button {
 	@include card-radio-button;
 
 	position: absolute;
@@ -80,7 +78,7 @@ $card-padding-mobile: $spacing-03;
 	display: inline-block;
 }
 
-.radio-button-card__input:checked + .radio-button-card__label {
+.radio-button-card__input:checked + .radio-button-card__radio-button {
 	background-color: $gray-50;
 }
 
@@ -89,7 +87,7 @@ $card-padding-mobile: $spacing-03;
 		padding: $card-padding-mobile;
 	}
 
-	.radio-button-card__label {
+	.radio-button-card__radio-button {
 		right: $card-padding-mobile;
 	}
 }
