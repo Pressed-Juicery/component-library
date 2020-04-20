@@ -1,11 +1,5 @@
 <template>
 	<div class="radio-button-card">
-		<div class="radio-button-card__left-content">
-			<div class="radio-button-card__title"><slot name="title" /></div>
-			<div class="radio-button-card__content"><slot name="content" /></div>
-			<div class="radio-button-card__details"><slot name="details" /></div>
-		</div>
-
 		<div class="radio-button-card__extraInformation"><slot name="extraInformation" /></div>
 
 		<input class="radio-button-card__input"
@@ -51,8 +45,6 @@ export default {
 
 $card-padding: $spacing-05;
 $card-padding-mobile: $spacing-03;
-$font-size-card: $font-size-04;
-$font-size-card-mobile: $font-size-default;
 
 .radio-button-card {
 	@include card;
@@ -70,23 +62,6 @@ $font-size-card-mobile: $font-size-default;
 	margin-right: $spacing-05;
 }
 
-.radio-button-card__title {
-	margin-bottom: $spacing-03;
-	font-size: $font-size-card;
-	font-weight: $font-weight-bold;
-}
-
-.radio-button-card__extraInformation > * {
-	font-size: $font-size-card;
-	font-weight: $font-weight-bold;
-}
-
-.radio-button-card__content {
-	font-size: $font-size-card;
-}
-
-.radio-button-card__details > * {
-	margin-top: $spacing-03;
 }
 
 .radio-button-card__input {
@@ -113,24 +88,8 @@ $font-size-card-mobile: $font-size-default;
 		padding: $card-padding-mobile;
 	}
 
-	.radio-button-card__title {
-		font-size: $font-size-card-mobile;
-	}
-
 	.radio-button-card__label {
 		right: $card-padding-mobile;
-	}
-
-	.radio-button-card__extraInformation > * {
-		font-size: $font-size-card-mobile;
-	}
-
-	.radio-button-card__content {
-		font-size: $font-size-card-mobile;
-	}
-
-	.radio-button-card__details > * {
-		font-size: $font-size-02;
 	}
 }
 </style>
