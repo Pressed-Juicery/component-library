@@ -1,4 +1,4 @@
-import RadioButtonCard from '../../components/RadioButtonCard';
+import RadioButtonCard from '../components/RadioButtonCard';
 
 export default {
 	title: 'RadioButtonCard',
