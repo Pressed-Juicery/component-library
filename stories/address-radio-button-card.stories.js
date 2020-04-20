@@ -41,121 +41,60 @@ const addressWithDashedPhone = {
 	phone: '205-234-3456',
 };
 
-const cardTemplate = `
-	<address-radio-button-card :title="cardData.title"
-	                           :address="cardData.address"
-	                           v-model="cardData.selectedAddress" />
-`;
-
 export function Default() {
 	return {
 		components: { AddressRadioButtonCard },
-		template: cardTemplate,
+		template: `<address-radio-button-card title="Title" :address="defaultAddress" v-model="selectedAddress" />`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						address: defaultAddress,
-						title: 'Home',
-						selectedAddress: addressWithNoPhone,
-					};
-				},
-			},
-		},
+		data() { return { defaultAddress, selectedAddress: addressWithNoPhone } },
 	};
 }
 
 export function withSecondaryAddress() {
 	return {
 		components: { AddressRadioButtonCard },
-		template: cardTemplate,
+		template: `<address-radio-button-card title="Title" :address="addressWithSecondaryAddress" v-model="selectedAddress" />`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						address: addressWithSecondaryAddress,
-						title: 'Home',
-						selectedAddress: defaultAddress,
-					};
-				},
-			},
-		},
+		data() { return { addressWithSecondaryAddress, selectedAddress: defaultAddress } },
 	};
 }
 
 export function withNoPhone() {
 	return {
 		components: { AddressRadioButtonCard },
-		template: cardTemplate,
+		template: `<address-radio-button-card title="Title" :address="addressWithNoPhone" v-model="selectedAddress" />`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						address: addressWithNoPhone,
-						title: 'Home',
-						selectedAddress: defaultAddress,
-					};
-				},
-			},
-		},
+		data() { return { addressWithNoPhone, selectedAddress: defaultAddress } },
 	};
 }
 
 export function withDashedPhone() {
 	return {
 		components: { AddressRadioButtonCard },
-		template: cardTemplate,
+		template: `<address-radio-button-card title="Title" :address="addressWithDashedPhone" v-model="selectedAddress" />`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						address: addressWithDashedPhone,
-						title: 'Home',
-						selectedAddress: defaultAddress,
-					};
-				},
-			},
-		},
+		data() { return { addressWithDashedPhone, selectedAddress: defaultAddress } },
 	};
 }
 
 export function withNoTitle() {
 	return {
 		components: { AddressRadioButtonCard },
-		template: cardTemplate,
+		template: `<address-radio-button-card :address="defaultAddress" v-model="selectedAddress" />`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						address: defaultAddress,
-						selectedAddress: addressWithNoPhone,
-					};
-				},
-			},
-		},
+		data() { return { defaultAddress, selectedAddress: addressWithNoPhone } },
 	};
 }
 
 export function Checked() {
 	return {
 		components: { AddressRadioButtonCard },
-		template: cardTemplate,
+		template: `<address-radio-button-card title="Title" :address="defaultAddress" v-model="selectedAddress" />`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						address: defaultAddress,
-						title: 'Home',
-						selectedAddress: defaultAddress,
-					};
-				},
-			},
+		data() { return { defaultAddress, selectedAddress: defaultAddress } },
+	};
+}
+
 export function withMultipleSelections() {
 	return {
 		components: { AddressRadioButtonCard },
