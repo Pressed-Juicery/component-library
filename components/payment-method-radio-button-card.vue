@@ -1,15 +1,13 @@
 <template>
-		<template v-slot:title>
 	<radio-button-card :item="paymentMethod" v-model="selectedPaymentMethod">
+		<template v-slot:main-content>
 			<div class="payment-method-radio-button-card__title-row">
 				<img class="payment-method-radio-button-card__icon" :src="getPaymentMethodIcon()" alt="credit card" />
 				<span>{{ paymentMethod.maskedNumber }}</span>
 			</div>
-		</template>
 
-		<template v-slot:content>
-			<p>{{ paymentMethod.expirationDate }}</p>
-			<p>{{ paymentMethod.billingAddress.postalCode }}</p>
+			<div>{{ paymentMethod.expirationDate }}</div>
+			<div>{{ paymentMethod.billingAddress.postalCode }}</div>
 		</template>
 	</radio-button-card>
 </template>
