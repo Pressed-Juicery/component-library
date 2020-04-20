@@ -2,6 +2,7 @@ import AddressRadioButtonCard from '../components/address-radio-button-card';
 
 export default {
 	title: 'AddressRadioButtonCard',
+	component: AddressRadioButtonCard,
 };
 
 const defaultAddress = {
