@@ -53,6 +53,26 @@ export function Checked() {
 		data() { return { item1 }; },
 	};
 }
+
+export function MultipleSelections() {
+	return {
+		components: { RadioButtonCard },
+		template: `
+			<div>
+				<radio-button-card v-for="item in items" :key="item.id" :item="item" v-model="selectedItem">
+					<template v-slot:main-content>
+						<div>{{ item.line1 }}</div>
+						<div>{{ item.line2 }}</div>
+					</template>
+				</radio-button-card>
+			</div>
+		`,
+
+		data() {
+			return {
+				items: [ item1, item2, item3 ],
+				selectedItem: item1,
+			};
 		},
 	};
 }
