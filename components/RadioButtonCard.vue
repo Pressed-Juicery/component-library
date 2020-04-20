@@ -1,5 +1,6 @@
 <template>
 	<div class="radio-button-card">
+		<span class="radio-button-card__left-content"><slot name="main-content" /></span>
 		<span class="radio-button-card__top-right-content"><slot name="top-right-content" /></span>
 
 		<input class="radio-button-card__input"
