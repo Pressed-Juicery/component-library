@@ -1,23 +1,21 @@
 <template>
-		<template v-slot:title v-if="title">
-			<div>{{ title }}</div>
-		</template>
 	<radio-button-card :item="address" v-model="selectedAddress">
+		<template v-slot:main-content>
+			<div class="radio-button-card__title" v-if="title">{{ title }}</div>
 
-		<template v-slot:content>
-			<div>{{ address.address1 }}</div>
-			<div v-if="address.address2">{{ address.address2 }}</div>
-			<div>{{ address.city }}, {{ address.province }} {{ address.zip }}</div>
-		</template>
+			<div class="radio-button-card__content">
+				<div>{{ address.address1 }}</div>
+				<div v-if="address.address2">{{ address.address2 }}</div>
+				<div>{{ address.city }}, {{ address.province }} {{ address.zip }}</div>
+			</div>
 
-		<template v-slot:details v-if="address.phone">
-			<div>{{ phone }}</div>
+			<div class="radio-button-card__details" v-if="address.phone">{{ phone }}</div>
 		</template>
 	</radio-button-card>
 </template>
 
 <script>
-import RadioButtonCard from './RadioButtonCard';
+import RadioButtonCard from './radio-button-card';
 
 import { formatPhoneNumber } from '../utilities/formatters';
 
@@ -51,3 +49,39 @@ export default {
 	},
 };
 </script>
+
+<style scoped lang="scss">
+	@import '../styles/mixins';
+	@import '../styles/variables';
+
+	$font-size-card: $font-size-04;
+	$font-size-card-mobile: $font-size-default;
+
+	.radio-button-card__title {
+		margin-bottom: $spacing-03;
+		font-size: $font-size-card;
+		font-weight: $font-weight-bold;
+	}
+
+	.radio-button-card__content {
+		font-size: $font-size-card;
+	}
+
+	.radio-button-card__details {
+		margin-top: $spacing-03;
+	}
+
+	@media (max-width: 400px) {
+		.radio-button-card__title {
+			font-size: $font-size-card-mobile;
+		}
+
+		.radio-button-card__content {
+			font-size: $font-size-card-mobile;
+		}
+
+		.radio-button-card__details {
+			font-size: $font-size-02;
+		}
+	}
+</style>
