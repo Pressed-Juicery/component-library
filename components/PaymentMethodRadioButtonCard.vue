@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import RadioButtonCard from './RadioButtonCard';
+import RadioButtonCard from './radio-button-card';
 
 import { formatAssetName } from '../utilities/formatters';
 
