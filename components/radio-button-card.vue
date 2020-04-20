@@ -30,9 +30,7 @@ export default {
 				return this.value;
 			},
 
-			set: function () {
-				this.$emit('input', this.item);
-			},
+			set: function (value) { this.$emit('input', value) },
 		},
 	},
 };
