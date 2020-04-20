@@ -61,6 +61,8 @@ $card-padding-mobile: $spacing-03;
 	margin-right: $spacing-05;
 }
 
+.radio-button-card__top-right-content {
+	margin-bottom: $spacing-08;
 }
 
 .radio-button-card__input {
