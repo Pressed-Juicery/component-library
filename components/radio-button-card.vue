@@ -75,7 +75,6 @@ $card-padding-mobile: $spacing-03;
 	top: 50%;
 	transform: translateY(-50%);
 	right: $card-padding;
-	display: inline-block;
 }
 
 .radio-button-card__input:checked + .radio-button-card__radio-button {
