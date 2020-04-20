@@ -2,6 +2,7 @@ import RadioButtonCard from '../components/radio-button-card';
 
 export default {
 	title: 'RadioButtonCard',
+	component: RadioButtonCard,
 };
 
 const item1 = {
