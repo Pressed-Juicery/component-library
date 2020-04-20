@@ -34,7 +34,7 @@ export function Unchecked() {
 			</radio-button-card>
 		`,
 
-		data() { return { item1, item2 }; },
+		data() { return { item1, item2 } },
 	};
 }
 
@@ -50,7 +50,7 @@ export function Checked() {
 			</radio-button-card>
 		`,
 
-		data() { return { item1 }; },
+		data() { return { item1 } },
 	};
 }
 
@@ -70,7 +70,7 @@ export function MultipleSelections() {
 
 		data() {
 			return {
-				items: [ item1, item2, item3 ],
+				items: [item1, item2, item3],
 				selectedItem: item1,
 			};
 		},
@@ -92,6 +92,6 @@ export function withTopRightContent() {
 			</radio-button-card>
 		`,
 
-		data() { return { item1, item2 }; },
+		data() { return { item1, item2 } },
 	};
 }
