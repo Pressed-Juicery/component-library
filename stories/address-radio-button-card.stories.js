@@ -156,6 +156,24 @@ export function Checked() {
 					};
 				},
 			},
+export function withMultipleSelections() {
+	return {
+		components: { AddressRadioButtonCard },
+		template: `
+			<div>
+				<address-radio-button-card v-for="address in addresses"
+				                           :key="address.id"
+				                           title="Title"
+				                           :address="address"
+				                           v-model="selectedAddress" />
+			</div>
+		`,
+
+		data() {
+			return {
+				addresses: [defaultAddress, addressWithSecondaryAddress, addressWithNoPhone, addressWithDashedPhone],
+				selectedAddress: defaultAddress,
+			};
 		},
 	};
 }
