@@ -51,7 +51,6 @@ $card-padding-mobile: $spacing-03;
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-	max-width: 550px;
 	margin-bottom: $spacing-06;
 	padding: $card-padding;
 }
@@ -67,7 +66,6 @@ $card-padding-mobile: $spacing-03;
 
 .radio-button-card__input {
 	display: none;
-	width: 0;
 }
 
 .radio-button-card__radio-button {
