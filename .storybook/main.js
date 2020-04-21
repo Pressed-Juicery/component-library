@@ -2,9 +2,19 @@ const path = require('path');
 
 module.exports = {
 	webpackFinal: config => {
-		config.resolve.alias = { // eslint-disable-line
-			...config.resolve.alias,
-			'~': path.resolve(__dirname, '../'),
+		config.resolve = { // eslint-disable-line
+			alias: {
+				...config.resolve.alias,
+				'~': path.resolve(__dirname, '../'),
+			},
+			extensions: [
+				...config.resolve.extensions,
+				'.js',
+				'.json',
+				'.vue',
+				'.scss',
+				'.sass',
+			],
 		};
 
 		config.module.rules
@@ -21,7 +31,7 @@ module.exports = {
 
 		return config;
 	},
-	stories: ['../stories/**/*.stories.js'],
+	stories: ['../stories/**/*.js'],
 	addons: [
 		'@storybook/addon-actions',
 		'@storybook/addon-links',
