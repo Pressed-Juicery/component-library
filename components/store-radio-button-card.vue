@@ -68,17 +68,14 @@ export default {
 <style scoped lang="scss">
 @import '../styles/variables';
 
-$font-size-card: $font-size-04;
-$font-size-card-mobile: $font-size-default;
-
 .store-radio-button-card__title {
 	margin-bottom: $spacing-03;
-	font-size: $font-size-card;
+	font-size: $font-size-04;
 	font-weight: $font-weight-bold;
 }
 
 .store-radio-button-card__content {
-	font-size: $font-size-card;
+	font-size: $font-size-04;
 }
 
 .store-radio-button-card__details {
@@ -87,11 +84,11 @@ $font-size-card-mobile: $font-size-default;
 
 @media (max-width: 400px) {
 	.store-radio-button-card__title {
-		font-size: $font-size-card-mobile;
+		font-size: $font-size-default;
 	}
 
 	.store-radio-button-card__content {
-		font-size: $font-size-card-mobile;
+		font-size: $font-size-default;
 	}
 
 	.store-radio-button-card__details {
