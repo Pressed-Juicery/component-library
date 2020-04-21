@@ -51,7 +51,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-	@import '../styles/mixins';
 	@import '../styles/variables';
 
 	$font-size-card: $font-size-04;
