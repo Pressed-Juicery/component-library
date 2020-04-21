@@ -55,17 +55,12 @@ const unknown = {
 	},
 };
 
-const cardTemplate = `
-	<payment-method-radio-button-card :paymentMethod="cardData.paymentMethod"
-	                                  v-model="cardData.selectedPaymentMethod" />
-`;
-
 export function Default() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="mastercard" v-model="selectedPaymentMethod" />',
 
-		data() { return { mastercard, selectedPaymentMethod: visa }},
+		data() { return { mastercard, selectedPaymentMethod: visa } },
 	};
 }
 
@@ -74,7 +69,7 @@ export function Checked() {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="mastercard" v-model="selectedPaymentMethod" />',
 
-		data() { return { mastercard, selectedPaymentMethod: mastercard }},
+		data() { return { mastercard, selectedPaymentMethod: mastercard } },
 	};
 }
 
@@ -83,7 +78,7 @@ export function withMastercard() {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="mastercard" v-model="selectedPaymentMethod" />',
 
-		data() { return { mastercard, selectedPaymentMethod: visa }},
+		data() { return { mastercard, selectedPaymentMethod: visa } },
 	};
 }
 
@@ -92,7 +87,7 @@ export function withVisa() {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="visa" v-model="selectedPaymentMethod" />',
 
-		data() { return { visa, selectedPaymentMethod: discover }},
+		data() { return { visa, selectedPaymentMethod: discover } },
 	};
 }
 
@@ -101,7 +96,7 @@ export function withDiscover() {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="discover" v-model="selectedPaymentMethod" />',
 
-		data() { return { discover, selectedPaymentMethod: visa }},
+		data() { return { discover, selectedPaymentMethod: visa } },
 	};
 }
 
@@ -112,7 +107,7 @@ export function withAmericanExpress() {
 			<payment-method-radio-button-card :paymentMethod="americanExpress" v-model="selectedPaymentMethod" />
 		`,
 
-		data() { return { americanExpress, selectedPaymentMethod: visa }},
+		data() { return { americanExpress, selectedPaymentMethod: visa } },
 	};
 }
 
@@ -121,7 +116,7 @@ export function withUnknownPaymentMethod() {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="unknown" v-model="selectedPaymentMethod" />',
 
-		data() { return { unknown, selectedPaymentMethod: visa }},
+		data() { return { unknown, selectedPaymentMethod: visa } },
 	};
 }
 
