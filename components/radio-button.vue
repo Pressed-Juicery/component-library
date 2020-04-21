@@ -36,10 +36,6 @@ export default {
 
 .radio-button__button {
 	display: block;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	right: 0;
 	height: $spacing-05;
 	width: $spacing-05;
 	border: $border-width solid $border-color;

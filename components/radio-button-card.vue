@@ -4,7 +4,7 @@
 			<span class="radio-button-card__content">
 				<span class="radio-button-card__left-content"><slot name="main-content" /></span>
 				<span class="radio-button-card__top-right-content"><slot name="top-right-content" /></span>
-				<radio-button class="radio-button" :item="item" v-model="selectedItem" />
+				<radio-button class="radio-button-card__radio-button" :item="item" v-model="selectedItem" />
 			</span>
 		</card>
 	</label>
@@ -60,5 +60,12 @@ export default {
 
 .radio-button-card__top-right-content {
 	margin-bottom: $spacing-08;
+}
+
+.radio-button-card__radio-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
 }
 </style>
