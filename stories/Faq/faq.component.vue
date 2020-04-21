@@ -79,7 +79,7 @@ export default {
 	}
 
 	.faq__button-icon svg{
-		width: 20px;
+		width: $spacing-05;
 	}
 
 	.faq__button-icon--toggle {
