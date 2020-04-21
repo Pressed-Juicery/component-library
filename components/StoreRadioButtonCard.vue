@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import RadioButtonCard from './RadioButtonCard';
+import RadioButtonCard from './radio-button-card';
 
 import { formatTimes } from '../utilities/storeHours';
 import { getDistanceToNearestStore } from '../utilities/storeLocations';
