@@ -193,6 +193,24 @@ export function withoutDistance() {
 					};
 				},
 			},
+
+export function withMultipleSelections() {
+	return {
+		components: { StoreRadioButtonCard },
+		template: `
+			<div>
+				<store-radio-button-card v-for="store in stores"
+				                         :key="store.id"
+				                         :store="store"
+				                         v-model="selectedStore" />
+			</div>
+		`,
+
+		data() {
+			return {
+				stores: [defaultStore, storeWithExtendedAddress, storeWithoutHours, storeWithVariedHours],
+				selectedStore: defaultStore,
+			};
 		},
 	};
 }
