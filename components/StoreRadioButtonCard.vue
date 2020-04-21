@@ -1,5 +1,5 @@
 <template>
-	<radio-button-card :id="store" v-model="selectedStore">
+	<radio-button-card :item="store" v-model="selectedStore">
 		<template v-slot:main-content>
 			<div class="store-radio-button-card__title">{{ store.name }}</div>
 
