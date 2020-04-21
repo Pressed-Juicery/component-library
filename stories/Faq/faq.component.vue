@@ -7,10 +7,7 @@
 			</div>
 		</div>
 		<div :class="['faq__answer-container', {'faq__answer-container--toggle': showAnswer}]">
-			<p class="faq__answer" v-for="(answer, index) in faq.answers" :key="index">
-				<span v-if="answer.reference">{{ answer.reference }}</span>
-				<span class="faq__answer-content">{{ answer.content }}</span>
-			</p>
+			<div class="faq__answer" v-for="(content, index) in faq.content" :key="index" v-html="content"></div>
 		</div>
 	</div>
 </template>
@@ -98,11 +95,13 @@ export default {
 	}
 
 	.faq__answer {
+		margin-top: 0;
+		margin-bottom: $spacing-05;
 		letter-spacing: normal;
 		max-width: 1000px;
 	}
 
-	.faq__answer:first-of-type {
+	.faq__answer p:first-of-type {
 		margin-top: 0;
 	}
 </style>
