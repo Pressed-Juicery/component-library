@@ -6,8 +6,10 @@
 				<span>{{ paymentMethod.maskedNumber }}</span>
 			</div>
 
-			<div>{{ paymentMethod.expirationDate }}</div>
-			<div>{{ paymentMethod.billingAddress.postalCode }}</div>
+			<div class="payment-method-radio-button-card__content">
+				<div>{{ paymentMethod.expirationDate }}</div>
+				<div>{{ paymentMethod.billingAddress.postalCode }}</div>
+			</div>
 		</template>
 	</radio-button-card>
 </template>
@@ -64,11 +66,17 @@ export default {
 		display: flex;
 		align-items: center;
 		margin-bottom: $spacing-03;
+		font-size: $font-size-04;
+		font-weight: $font-weight-bold;
 	}
 
 	.payment-method-radio-button-card__icon {
 		height: auto;
 		width: 50px;
 		margin-right: $spacing-03;
+	}
+
+	.payment-radio-button-card__content {
+		font-size: $font-size-04;
 	}
 </style>
