@@ -8,7 +8,7 @@ export default {
 export function SingleFAQ() {
 	return {
 		components: { FAQ },
-		template: '<FAQ :faq="faq"><img style="width:20px" src="https://d3e4ixgvd0ibii.cloudfront.net/icons/down-arrow-wide-grey.svg" alt="faq arrow"></FAQ>',
+		template: '<FAQ :faq="faq"></FAQ>',
 		data: () => {
 			return {
 				faq: {
@@ -29,9 +29,7 @@ export function GroupOfFAQs() {
 		components: { FAQ },
 		template: `
 			<div>
-				<FAQ v-for="faq in faqList" :faq="faq">
-					<img style="width:20px" src="https://d3e4ixgvd0ibii.cloudfront.net/icons/plus.svg" alt="faq arrow">
-				</FAQ>
+				<FAQ v-for="faq in faqList" :faq="faq"></FAQ>
 			</div>
 		`,
 		data: () => {
