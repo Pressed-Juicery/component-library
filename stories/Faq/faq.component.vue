@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import svgIcon from "../svg-icon/svg-icon.component";
+import svgIcon from '~/stories/svg-icon/svg-icon.component';
 export default {
 	name: 'Faq',
 	components: { svgIcon },

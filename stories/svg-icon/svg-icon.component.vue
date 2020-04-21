@@ -1,27 +1,27 @@
 <template>
-  <div class="svg-icon" v-html="svg"></div>
+	<div class="svg-icon" v-html="svg"></div>
 </template>
 
 <script>
 export default {
-  props: {
-    name: {
-      type: String,
-      default: () => '',
-    }
-  },
-  computed: {
-    svg() {
-      return require(`~/assets/${this.name}.svg`);
-    }
-  }
-}
+	props: {
+		name: {
+			type: String,
+			default: '',
+		},
+	},
+	computed: {
+		svg() {
+			return require(`~/assets/${this.name}.svg`); // eslint-disable-line
+		},
+	},
+};
 </script>
 
 <style lang="scss">
-  .svg-icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	.svg-icon{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 </style>
