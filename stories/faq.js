@@ -1,4 +1,4 @@
-import FAQ from './faq.component';
+import FAQ from '~/components/faq';
 
 export default {
 	component: FAQ,
@@ -45,23 +45,8 @@ export function GroupOfFAQs() {
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 							</p>
 							`,
-						],
-					},
-					{
-						question: 'What is Pressed Juice?',
-						content: [
-							`
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-							</p>
-							`,
 							`
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-							`,
-							`
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-							</p>
 							`,
 						],
 					},

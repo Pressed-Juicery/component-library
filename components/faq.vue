@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import svgIcon from '~/stories/svg-icon/svg-icon.component';
+import svgIcon from '~/components/svg-icon';
 export default {
 	name: 'Faq',
 	components: { svgIcon },
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss">
-	@import '../../styles/variables';
+	@import '~/styles/variables';
 
 	.faq {
 		padding: 0 $spacing-06;
