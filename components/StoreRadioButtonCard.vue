@@ -1,21 +1,17 @@
 <template>
-		<template v-slot:title>
-			<div>{{ store.name }}</div>
-		</template>
-
-		<template v-slot:extraInformation v-if="distance">
-			<div>{{ distance }}</div>
-		</template>
 	<radio-button-card :id="store" v-model="selectedStore">
+		<template v-slot:main-content>
+			<div class="store-radio-button-card__title">{{ store.name }}</div>
 
-		<template v-slot:content>
 			<div>{{ store.streetAddress }}</div>
 			<div v-if="store.extendedAddress">{{ store.extendedAddress }}</div>
 			<div>{{ store.locality }}, {{ store.region }} {{ store.postal }}</div>
+
+			<div v-if="store.storeHours" class="store-radio-button-card__details">{{ storeHours }}</div>
 		</template>
 
-		<template v-slot:details v-if="store.storeHours">
-			<div>{{ storeHours }}</div>
+		<template v-slot:top-right-content v-if="distance">
+			<div>{{ distance }}</div>
 		</template>
 	</radio-button-card>
 </template>
@@ -68,3 +64,38 @@ export default {
 	},
 };
 </script>
+
+<style scoped lang="scss">
+@import '../styles/variables';
+
+$font-size-card: $font-size-04;
+$font-size-card-mobile: $font-size-default;
+
+.store-radio-button-card__title {
+	margin-bottom: $spacing-03;
+	font-size: $font-size-card;
+	font-weight: $font-weight-bold;
+}
+
+.store-radio-button-card__content {
+	font-size: $font-size-card;
+}
+
+.store-radio-button-card__details {
+	margin-top: $spacing-03;
+}
+
+@media (max-width: 400px) {
+	.store-radio-button-card__title {
+		font-size: $font-size-card-mobile;
+	}
+
+	.store-radio-button-card__content {
+		font-size: $font-size-card-mobile;
+	}
+
+	.store-radio-button-card__details {
+		font-size: $font-size-02;
+	}
+}
+</style>
