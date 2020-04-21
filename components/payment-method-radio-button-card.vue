@@ -63,6 +63,7 @@ export default {
 	.payment-method-radio-button-card__title-row {
 		display: flex;
 		align-items: center;
+		margin-bottom: $spacing-03;
 	}
 
 	.payment-method-radio-button-card__icon {
