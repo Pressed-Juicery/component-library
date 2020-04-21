@@ -30,12 +30,17 @@ export default {
 <style scoped lang="scss">
 @import '../styles/variables';
 
+.radio-button {
+	display: inline;
+	font-size: 0;
+}
+
 .radio-button__input {
 	display: none;
 }
 
 .radio-button__button {
-	display: block;
+	display: inline-block;
 	height: $spacing-05;
 	width: $spacing-05;
 	border: $border-width solid $border-color;
