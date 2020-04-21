@@ -42,10 +42,7 @@ export default {
 
 	computed: {
 		selectedStore: {
-			get() {
-				return this.value;
-			},
-
+			get() { return this.value },
 			set() { this.$emit('input', this.store) },
 		},
 
