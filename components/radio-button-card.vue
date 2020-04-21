@@ -48,6 +48,7 @@ $card-padding-mobile: $spacing-03;
 	justify-content: space-between;
 	margin-bottom: $spacing-06;
 	padding: $card-padding;
+	cursor: pointer;
 }
 
 .radio-button-card__left-content {
