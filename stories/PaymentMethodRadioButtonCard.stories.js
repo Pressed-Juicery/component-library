@@ -181,6 +181,24 @@ export function withUnknownPaymentMethod() {
 					};
 				},
 			},
+
+export function withMultipleSelections() {
+	return {
+		components: { PaymentMethodRadioButtonCard },
+		template: `
+			<div>
+				<payment-method-radio-button-card v-for="paymentMethod in paymentMethods"
+				                                  :key="paymentMethod.id"
+				                                  :paymentMethod="paymentMethod"
+				                                  v-model="selectedPaymentMethod" />
+			</div>
+		`,
+
+		data() {
+			return {
+				paymentMethods: [mastercard, visa, discover, americanExpress, unknown],
+				selectedPaymentMethod: mastercard,
+			};
 		},
 	};
 }
