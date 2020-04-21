@@ -8,6 +8,11 @@
 		"build": "build-storybook",
 		"lint": "eslint . --ext .js,.vue"
 	},
+	"files": [
+		"assets/**/*",
+		"components/**/*",
+		"styles/**/*"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Pressed-Juicery/component-library.git"
