@@ -83,116 +83,83 @@ const storeWithoutDistance = {
 	geometry,
 };
 
-const cardTemplate = `
-	<store-radio-button-card :store="cardData.store"
-	                         :userLocation="{ longitude: 13, latitude: 52 }"
-	                         v-model="cardData.selectedStore" />
-`;
-
 export function Default() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: cardTemplate,
+		template: `
+			<store-radio-button-card :store="defaultStore"
+	                                 :userLocation="{ longitude: 13, latitude: 52 }"
+	                                 v-model="selectedStore" />
+		`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						store: defaultStore,
-						selectedStore: storeWithExtendedAddress,
-					};
-				},
-			},
-		},
+		data() { return { defaultStore, selectedStore: storeWithExtendedAddress } },
 	};
 }
 
 export function Checked() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: cardTemplate,
+		template: `
+			<store-radio-button-card :store="defaultStore"
+	                                 :userLocation="{ longitude: 13, latitude: 52 }"
+	                                 v-model="selectedStore" />
+		`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						store: defaultStore,
-						selectedStore: defaultStore,
-					};
-				},
-			},
-		},
+		data() { return { defaultStore, selectedStore: defaultStore } },
 	};
 }
 
 export function WithExtendedAddress() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: cardTemplate,
+		template: `
+			<store-radio-button-card :store="storeWithExtendedAddress"
+	                                 :userLocation="{ longitude: 13, latitude: 52 }"
+	                                 v-model="selectedStore" />
+		`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						store: storeWithExtendedAddress,
-						selectedStore: defaultStore,
-					};
-				},
-			},
-		},
+		data() { return { storeWithExtendedAddress, selectedStore: defaultStore } },
 	};
 }
 
 export function WithoutHours() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: cardTemplate,
+		template: `
+			<store-radio-button-card :store="storeWithoutHours"
+	                                 :userLocation="{ longitude: 13, latitude: 52 }"
+	                                 v-model="selectedStore" />
+		`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						store: storeWithoutHours,
-						selectedStore: storeWithExtendedAddress,
-					};
-				},
-			},
-		},
+		data() { return { storeWithoutHours, selectedStore: storeWithExtendedAddress } },
 	};
 }
 
 export function withVariedHours() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: cardTemplate,
+		template: `
+			<store-radio-button-card :store="storeWithVariedHours"
+	                                 :userLocation="{ longitude: 13, latitude: 52 }"
+	                                 v-model="selectedStore" />
+		`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						store: storeWithVariedHours,
-						selectedStore: storeWithExtendedAddress,
-					};
-				},
-			},
-		},
+		data() { return { storeWithVariedHours, selectedStore: storeWithExtendedAddress } },
 	};
 }
 
 export function withoutDistance() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: cardTemplate,
+		template: `
+			<store-radio-button-card :store="storeWithoutDistance"
+	                                 :userLocation="{ longitude: 13, latitude: 52 }"
+	                                 v-model="selectedStore" />
+		`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						store: storeWithoutDistance,
-						selectedStore: storeWithExtendedAddress,
-					};
-				},
-			},
+		data() { return { storeWithoutDistance, selectedStore: storeWithExtendedAddress } },
+	};
+}
 
 export function withMultipleSelections() {
 	return {
