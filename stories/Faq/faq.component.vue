@@ -75,7 +75,7 @@ export default {
 	}
 
 	.faq__button-icon {
-		width: 20px;
+		width: $spacing-05;
 		fill: $gray-30;
 	}
 
