@@ -1,5 +1,4 @@
 <template>
-	<radio-button-card :id="store.id.toString()" v-model="selectedStore">
 		<template v-slot:title>
 			<div>{{ store.name }}</div>
 		</template>
@@ -7,6 +6,7 @@
 		<template v-slot:extraInformation v-if="distance">
 			<div>{{ distance }}</div>
 		</template>
+	<radio-button-card :id="store" v-model="selectedStore">
 
 		<template v-slot:content>
 			<div>{{ store.streetAddress }}</div>
@@ -47,7 +47,7 @@ export default {
 	computed: {
 		selectedStore: {
 			get() {
-				return this.value.id.toString();
+				return this.value;
 			},
 
 			set() { this.$emit('input', this.store) },
