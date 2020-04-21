@@ -13,10 +13,12 @@ export function SingleFAQ() {
 			return {
 				faq: {
 					question: 'What is Pressed Juice?',
-					answers: [
-						{
-							content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
-						},
+					content: [
+						`
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						</p>
+						`,
 					],
 				},
 			};
@@ -37,14 +39,30 @@ export function GroupOfFAQs() {
 				faqList: [
 					{
 						question: 'What is Pressed Juice?',
-						answers: [
-							{ content: 'Pressed Juice is Juice that is of the Pressed variety.' },
+						content: [
+							`
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							</p>
+							`,
 						],
 					},
 					{
 						question: 'What is Pressed Juice?',
-						answers: [
-							{ content: 'Pressed Juice is Juice that is of the Pressed variety.' },
+						content: [
+							`
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							</p>
+							`,
+							`
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							`,
+							`
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							</p>
+							`,
 						],
 					},
 				],
