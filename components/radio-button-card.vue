@@ -45,6 +45,7 @@ export default {
 .radio-button-card {
 	display: block;
 	margin-bottom: $spacing-06;
+	cursor: pointer;
 }
 
 .radio-button-card__content {
