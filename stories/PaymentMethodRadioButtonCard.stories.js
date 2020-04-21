@@ -63,125 +63,67 @@ const cardTemplate = `
 export function Default() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
-		template: cardTemplate,
+		template: '<payment-method-radio-button-card :paymentMethod="mastercard" v-model="selectedPaymentMethod" />',
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						paymentMethod: mastercard,
-						selectedPaymentMethod: visa,
-					};
-				},
-			},
-		},
+		data() { return { mastercard, selectedPaymentMethod: visa }},
 	};
 }
 
 export function Checked() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
-		template: cardTemplate,
+		template: '<payment-method-radio-button-card :paymentMethod="mastercard" v-model="selectedPaymentMethod" />',
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						paymentMethod: mastercard,
-						selectedPaymentMethod: mastercard,
-					};
-				},
-			},
-		},
+		data() { return { mastercard, selectedPaymentMethod: mastercard }},
 	};
 }
 
 export function withMastercard() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
-		template: cardTemplate,
+		template: '<payment-method-radio-button-card :paymentMethod="mastercard" v-model="selectedPaymentMethod" />',
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						paymentMethod: mastercard,
-						selectedPaymentMethod: visa,
-					};
-				},
-			},
-		},
+		data() { return { mastercard, selectedPaymentMethod: visa }},
 	};
 }
 
 export function withVisa() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
-		template: cardTemplate,
+		template: '<payment-method-radio-button-card :paymentMethod="visa" v-model="selectedPaymentMethod" />',
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						paymentMethod: visa,
-						selectedPaymentMethod: discover,
-					};
-				},
-			},
-		},
+		data() { return { visa, selectedPaymentMethod: discover }},
 	};
 }
 
 export function withDiscover() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
-		template: cardTemplate,
+		template: '<payment-method-radio-button-card :paymentMethod="discover" v-model="selectedPaymentMethod" />',
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						paymentMethod: discover,
-						selectedPaymentMethod: visa,
-					};
-				},
-			},
-		},
+		data() { return { discover, selectedPaymentMethod: visa }},
 	};
 }
 
 export function withAmericanExpress() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
-		template: cardTemplate,
+		template: `
+			<payment-method-radio-button-card :paymentMethod="americanExpress" v-model="selectedPaymentMethod" />
+		`,
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						paymentMethod: americanExpress,
-						selectedPaymentMethod: visa,
-					};
-				},
-			},
-		},
+		data() { return { americanExpress, selectedPaymentMethod: visa }},
 	};
 }
 
 export function withUnknownPaymentMethod() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
-		template: cardTemplate,
+		template: '<payment-method-radio-button-card :paymentMethod="unknown" v-model="selectedPaymentMethod" />',
 
-		props: {
-			cardData: {
-				default() {
-					return {
-						paymentMethod: unknown,
-						selectedPaymentMethod: visa,
-					};
-				},
-			},
+		data() { return { unknown, selectedPaymentMethod: visa }},
+	};
+}
 
 export function withMultipleSelections() {
 	return {
