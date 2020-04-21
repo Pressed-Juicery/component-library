@@ -55,6 +55,25 @@ export function Checked() {
 	};
 }
 
+export function withTopRightContent() {
+	return {
+		components: { RadioButtonCard },
+		template: `
+			<radio-button-card :item="item1" v-model="item2">
+				<template v-slot:main-content>
+					<div>{{ item1.line1 }}</div>
+				</template>
+
+				<template v-slot:top-right-content>
+					<div>Top Right Content</div>
+				</template>
+			</radio-button-card>
+		`,
+
+		data() { return { item1, item2 } },
+	};
+}
+
 export function MultipleSelections() {
 	return {
 		components: { RadioButtonCard },
@@ -75,24 +94,5 @@ export function MultipleSelections() {
 				selectedItem: item1,
 			};
 		},
-	};
-}
-
-export function withTopRightContent() {
-	return {
-		components: { RadioButtonCard },
-		template: `
-			<radio-button-card :item="item1" v-model="item2">
-				<template v-slot:main-content>
-					<div>{{ item1.line1 }}</div>
-				</template>
-
-				<template v-slot:top-right-content>
-					<div>Top Right Content</div>
-				</template>
-			</radio-button-card>
-		`,
-
-		data() { return { item1, item2 } },
 	};
 }
