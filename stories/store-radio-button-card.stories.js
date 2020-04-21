@@ -1,4 +1,4 @@
-import StoreRadioButtonCard from '../components/StoreRadioButtonCard';
+import StoreRadioButtonCard from '../components/store-radio-button-card';
 
 export default {
 	title: 'StoreRadioButtonCard',
