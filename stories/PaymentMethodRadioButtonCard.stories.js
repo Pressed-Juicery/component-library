@@ -2,6 +2,7 @@ import PaymentMethodRadioButtonCard from '../components/payment-method-radio-but
 
 export default {
 	title: 'PaymentMethodRadioButtonCard',
+	component: PaymentMethodRadioButtonCard,
 };
 
 const mastercard = {
