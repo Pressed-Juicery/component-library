@@ -49,6 +49,6 @@ export default {
 }
 
 .radio-button__input:checked + .radio-button__button {
-	background-color: $gray-50;
+	background-color: $border-color;
 }
 </style>
