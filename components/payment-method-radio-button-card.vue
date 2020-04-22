@@ -34,7 +34,7 @@ export default {
 
 	computed: {
 		selectedPaymentMethod: {
-			get() { return this.value; },
+			get() { return this.value },
 			set() { this.$emit('input', this.paymentMethod) },
 		},
 	},
