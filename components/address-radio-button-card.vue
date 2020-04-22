@@ -51,7 +51,6 @@ export default {
 	@import '../styles/variables';
 
 	$font-size-card: $font-size-04;
-	$font-size-card-mobile: $font-size-default;
 
 	.address-radio-button-card__title {
 		margin-bottom: $spacing-03;
@@ -64,20 +63,6 @@ export default {
 	}
 
 	.address-radio-button-card__details {
-	}
-
-	@media (max-width: 400px) {
-		.address-radio-button-card__title {
-			font-size: $font-size-card-mobile;
-		}
-
-		.address-radio-button-card__content {
-			font-size: $font-size-card-mobile;
-		}
-
-		.address-radio-button-card__details {
-			font-size: $font-size-02;
-		}
 		margin-top: $spacing-04;
 		font-size: $font-size-02;
 	}
