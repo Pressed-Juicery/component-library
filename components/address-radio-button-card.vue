@@ -64,7 +64,6 @@ export default {
 	}
 
 	.address-radio-button-card__details {
-		margin-top: $spacing-03;
 	}
 
 	@media (max-width: 400px) {
@@ -79,5 +78,7 @@ export default {
 		.address-radio-button-card__details {
 			font-size: $font-size-02;
 		}
+		margin-top: $spacing-04;
+		font-size: $font-size-02;
 	}
 </style>
