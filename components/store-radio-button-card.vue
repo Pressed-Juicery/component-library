@@ -78,18 +78,4 @@ export default {
 .store-radio-button-card__details {
 	margin-top: $spacing-03;
 }
-
-@media (max-width: 400px) {
-	.store-radio-button-card__title {
-		font-size: $font-size-default;
-	}
-
-	.store-radio-button-card__content {
-		font-size: $font-size-default;
-	}
-
-	.store-radio-button-card__details {
-		font-size: $font-size-02;
-	}
-}
 </style>
