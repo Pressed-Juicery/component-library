@@ -51,7 +51,7 @@ export default {
 	@import '../styles/variables';
 
 	.address-radio-button-card__title {
-		margin-bottom: $spacing-03;
+		margin-bottom: $spacing-04;
 		font-size: $font-size-04;
 		font-weight: $font-weight-bold;
 	}
