@@ -56,6 +56,7 @@ export default {
 	height: auto;
 	width: 50px;
 	margin-right: $spacing-03;
+	line-height: .7;
 }
 
 .payment-radio-button-card__content {

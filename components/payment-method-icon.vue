@@ -1,11 +1,11 @@
 <template>
-	<div>
+	<span>
 		<american-express-icon v-if="type.toLowerCase() === 'american express'" />
 		<discover-icon v-else-if="type.toLowerCase() === 'discover'" />
 		<master-card-icon v-else-if="type.toLowerCase() === 'mastercard'" />
 		<visa-icon v-else-if="type.toLowerCase() === 'visa'" />
 		<unknown-payment-method-icon v-else />
-	</div>
+	</span>
 </template>
 
 <script>
