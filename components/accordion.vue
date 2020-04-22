@@ -1,6 +1,6 @@
 <template>
 	<div class="accordion">
-		<div class="accordion__question-container" @click="toggleAnswer">
+		<div class="accordion__question-container" @click="toggle">
 			<h3 class="accordion__question">{{ accordionContent.question }}</h3>
 			<div :class="['accordion__button', {'accordion__button--toggle': showAnswer}]">
 				<arrow-down-icon class="accordion__icon" />
@@ -29,7 +29,7 @@ export default {
 		};
 	},
 	methods: {
-		toggleAnswer() {
+		toggle() {
 			this.showAnswer = !this.showAnswer;
 		},
 	},
