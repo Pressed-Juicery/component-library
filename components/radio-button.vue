@@ -1,6 +1,6 @@
 <template>
 	<div class="radio-button">
-		<input class="radio-button__input" type="radio" :value="value" v-model="radioButtonValue" />
+		<input class="radio-button__input" type="radio" :value="value" v-model="model" />
 		<span class="radio-button__button" />
 	</div>
 </template>
@@ -21,9 +21,9 @@ export default {
 	},
 
 	computed: {
-		radioButtonValue: {
-			get: function () { return this.selectedValue },
-			set: function (value) { this.$emit('input', value) },
+		model: {
+			get() { return this.selectedValue },
+			set(value) { this.$emit('input', value) },
 		},
 	},
 };

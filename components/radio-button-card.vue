@@ -4,7 +4,7 @@
 			<span class="radio-button-card__content">
 				<span class="radio-button-card__left-content"><slot name="main-content" /></span>
 				<span class="radio-button-card__top-right-content"><slot name="top-right-content" /></span>
-				<radio-button class="radio-button-card__radio-button" :value="value" v-model="selectedItem" />
+				<radio-button class="radio-button-card__radio-button" :value="value" v-model="model" />
 			</span>
 		</card>
 	</label>
@@ -31,11 +31,9 @@ export default {
 	},
 
 	computed: {
-		selectedItem: {
-			get() {
-				return this.selectedValue;
-			},
-			set() { this.$emit('input', this.value) },
+		model: {
+			get() { return this.selectedValue },
+			set(value) { this.$emit('input', value) },
 		},
 	},
 };
