@@ -2,8 +2,8 @@
 	<radio-button-card :item="paymentMethod" v-model="selectedPaymentMethod">
 		<template v-slot:main-content>
 			<div class="payment-method-radio-button-card__title-row">
-				<payment-method-icon :type="paymentMethod.cardType" />
-				<span>{{ paymentMethod.maskedNumber }}</span>
+				<payment-method-icon class="payment-method-radio-button-card__icon" :type="paymentMethod.cardType" />
+				<span class="payment-method-radio-button-card__title">{{ paymentMethod.maskedNumber }}</span>
 			</div>
 
 			<div class="payment-method-radio-button-card__content">
@@ -53,10 +53,11 @@ export default {
 }
 
 .payment-method-radio-button-card__icon {
-	height: auto;
-	width: 50px;
-	margin-right: $spacing-03;
 	line-height: .7;
+}
+
+.payment-method-radio-button-card__title {
+	margin-left: $spacing-03;
 }
 
 .payment-radio-button-card__content {
