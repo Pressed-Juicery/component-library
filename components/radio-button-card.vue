@@ -3,7 +3,7 @@
 		<card>
 			<span class="radio-button-card__content">
 				<span class="radio-button-card__primary-content"><slot /></span>
-				<span class="radio-button-card__secondary-content"><slot name="secondary" /></span>
+				<span v-if="$slots.secondary" class="radio-button-card__secondary-content"><slot name="secondary" /></span>
 				<radio-button class="radio-button-card__radio-button" :value="value" v-model="model" />
 			</span>
 		</card>
