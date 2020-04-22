@@ -19,6 +19,7 @@ export default {
 
 	model: {
 		prop: 'selectedValue',
+		event: 'change',
 	},
 
 	props: {
@@ -33,7 +34,7 @@ export default {
 	computed: {
 		model: {
 			get() { return this.selectedValue },
-			set(value) { this.$emit('input', value) },
+			set(value) { this.$emit('change', value) },
 		},
 	},
 };
