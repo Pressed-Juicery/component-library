@@ -41,7 +41,7 @@ export default {
 		},
 
 		phone() {
-			return formatPhoneNumber(this.address.phone);
+			return formatPhoneNumber(this.address.phone).split('-').join(' - ');
 		},
 	},
 };
