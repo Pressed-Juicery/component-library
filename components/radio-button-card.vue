@@ -2,7 +2,7 @@
 	<label class="radio-button-card">
 		<card>
 			<span class="radio-button-card__content">
-				<span class="radio-button-card__left-content"><slot name="main-content" /></span>
+				<span class="radio-button-card__left-content"><slot /></span>
 				<span class="radio-button-card__top-right-content"><slot name="top-right-content" /></span>
 				<radio-button class="radio-button-card__radio-button" :value="value" v-model="model" />
 			</span>
