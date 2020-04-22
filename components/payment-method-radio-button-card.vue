@@ -2,7 +2,7 @@
 	<radio-button-card :item="paymentMethod" v-model="selectedPaymentMethod">
 		<template v-slot:main-content>
 			<div class="payment-method-radio-button-card__title-row">
-				<img class="payment-method-radio-button-card__icon" :src="getPaymentMethodIcon()" alt="credit card" />
+				<payment-method-icon :type="paymentMethod.cardType" />
 				<span>{{ paymentMethod.maskedNumber }}</span>
 			</div>
 
@@ -15,9 +15,8 @@
 </template>
 
 <script>
+import PaymentMethodIcon from './payment-method-icon';
 import RadioButtonCard from './radio-button-card';
-
-import { formatAssetName } from '../utilities/formatters';
 
 export default {
 	props: {
@@ -31,26 +30,12 @@ export default {
 		},
 	},
 
-	components: { RadioButtonCard },
+	components: { PaymentMethodIcon, RadioButtonCard },
 
 	computed: {
 		selectedPaymentMethod: {
 			get() { return this.value; },
 			set() { this.$emit('input', this.paymentMethod) },
-		},
-	},
-
-	methods: {
-		getPaymentMethodIcon() {
-			const paymentMethodTypes = ['mastercard', 'visa', 'discover', 'american express'];
-			const isKnownPaymentMethodType = this.paymentMethod.cardType
-				&& paymentMethodTypes.includes(this.paymentMethod.cardType.toLowerCase());
-
-			const paymentMethodType = isKnownPaymentMethodType
-				? formatAssetName(this.paymentMethod.cardType.toLowerCase())
-				: 'unknown';
-
-			return `https://pressed-product-images.s3-us-west-1.amazonaws.com/icons/credit-card_icons/${paymentMethodType}.png`;
 		},
 	},
 };
