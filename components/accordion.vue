@@ -3,7 +3,7 @@
 		<div class="accordion__question-container" @click="toggleAnswer">
 			<h3 class="accordion__question">{{ accordionContent.question }}</h3>
 			<div :class="['accordion__button', {'accordion__button--toggle': showAnswer}]">
-				<arrow-down-icon class="accordion__button-icon" />
+				<arrow-down-icon class="accordion__icon" />
 			</div>
 		</div>
 		<div :class="['accordion__answer-container', {'accordion__answer-container--toggle': showAnswer}]">
@@ -74,7 +74,7 @@ export default {
 		transform: rotate(0deg);
 	}
 
-	.accordion__button-icon {
+	.accordion__icon {
 		width: $spacing-05;
 		fill: $gray-30;
 	}
