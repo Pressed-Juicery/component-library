@@ -27,7 +27,7 @@ export function Unchecked() {
 	return {
 		components: { RadioButtonCard },
 		template: `
-			<radio-button-card :item="item1" v-model="item2">
+			<radio-button-card :value="item1" v-model="item2">
 				<template v-slot:main-content>
 					<div>{{ item1.line1 }}</div>
 					<div>{{ item1.line2 }}</div>
@@ -43,7 +43,7 @@ export function Checked() {
 	return {
 		components: { RadioButtonCard },
 		template: `
-			<radio-button-card :item="item1" v-model="item1">
+			<radio-button-card :value="item1" v-model="item1">
 				<template v-slot:main-content>
 					<div>{{ item1.line1 }}</div>
 					<div>{{ item1.line2 }}</div>
@@ -59,7 +59,7 @@ export function withTopRightContent() {
 	return {
 		components: { RadioButtonCard },
 		template: `
-			<radio-button-card :item="item1" v-model="item2">
+			<radio-button-card :value="item1" v-model="item2">
 				<template v-slot:main-content>
 					<div>{{ item1.line1 }}</div>
 				</template>
@@ -79,7 +79,7 @@ export function MultipleSelections() {
 		components: { RadioButtonCard },
 		template: `
 			<div>
-				<radio-button-card v-for="item in items" :key="item.id" :item="item" v-model="selectedItem">
+				<radio-button-card v-for="item in items" :key="item.id" :value="item" v-model="selectedItem">
 					<template v-slot:main-content>
 						<div>{{ item.line1 }}</div>
 						<div>{{ item.line2 }}</div>

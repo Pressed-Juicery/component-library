@@ -1,6 +1,6 @@
 <template>
 	<div class="radio-button">
-		<input class="radio-button__input" type="radio" :value="item" v-model="radioButtonValue" />
+		<input class="radio-button__input" type="radio" :value="value" v-model="radioButtonValue" />
 		<span class="radio-button__button" />
 	</div>
 </template>
@@ -15,7 +15,7 @@ export default {
 		selectedValue: {
 			required: true,
 		},
-		item: {
+		value: {
 			required: true,
 		},
 	},
