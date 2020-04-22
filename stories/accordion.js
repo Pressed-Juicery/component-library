@@ -28,7 +28,8 @@ export function AccordionGroup() {
 		components: { accordion },
 		template: `
 			<div>
-				<accordion v-for="(content, i) in accordionContentList" :accordionContent="content" :key="i"></accordion>
+				<accordion v-for="(content, i) in accordionContentList" :accordionContent="content" :key="i">
+				</accordion>
 			</div>
 		`,
 		data: () => {
