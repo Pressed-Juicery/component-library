@@ -43,15 +43,14 @@ export function Checked() {
 	return {
 		components: { RadioButtonCard },
 		template: `
-			<radio-button-card :value="item1" v-model="item1">
+			<radio-button-card :value="'thisCard'" v-model="selectedItem">
 				<template>
-					<div>{{ item1.line1 }}</div>
-					<div>{{ item1.line2 }}</div>
+					<div>This radio card is checked.</div>
 				</template>
 			</radio-button-card>
 		`,
 
-		data() { return { item1 } },
+		data() { return { selectedItem: 'thisCard' } },
 	};
 }
 
