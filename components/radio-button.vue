@@ -1,8 +1,8 @@
 <template>
-	<div class="radio-button">
+	<span class="radio-button">
 		<input class="radio-button__input" type="radio" :value="value" v-model="model" />
 		<span class="radio-button__button" />
-	</div>
+	</span>
 </template>
 
 <script>
@@ -34,7 +34,6 @@ export default {
 @import '../styles/variables';
 
 .radio-button {
-	display: inline;
 	font-size: 0;
 	vertical-align: middle;
 }
