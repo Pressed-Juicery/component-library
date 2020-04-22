@@ -27,15 +27,15 @@ export function Overview() {
 	return {
 		components: { RadioButtonCard },
 		template: `
-			<radio-button-card :value="item1" v-model="item2">
+			<radio-button-card :value="'overview'" v-model="selectedItem">
 				<template>
-					<div>{{ item1.line1 }}</div>
-					<div>{{ item1.line2 }}</div>
+					<div>This is a RadioButtonCard</div>
+					<div>Its contents are completely customizable.</div>
 				</template>
 			</radio-button-card>
 		`,
 
-		data() { return { item1, item2 } },
+		data() { return { selectedItem: null } },
 	};
 }
 
