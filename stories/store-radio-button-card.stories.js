@@ -24,10 +24,6 @@ const variedStoreHours = {
 	saturday: { start: 700, end: 1900 },
 };
 
-const storeLongitude = 14;
-const storeLatitude = 50;
-const geometry = { coordinates: [storeLongitude, storeLatitude] };
-
 const defaultStore = {
 	id: 123,
 	name: 'Beaverton Town Center',
@@ -36,7 +32,6 @@ const defaultStore = {
 	region: 'OR',
 	postal: '27705',
 	storeHours,
-	geometry,
 };
 
 const storeWithExtendedAddress = {
@@ -48,7 +43,6 @@ const storeWithExtendedAddress = {
 	region: 'OR',
 	postal: '27705',
 	storeHours,
-	geometry,
 };
 
 const storeWithoutHours = {
@@ -58,7 +52,6 @@ const storeWithoutHours = {
 	locality: 'Portland',
 	region: 'OR',
 	postal: '27705',
-	geometry,
 };
 
 const storeWithVariedHours = {
@@ -69,7 +62,6 @@ const storeWithVariedHours = {
 	region: 'OR',
 	postal: '27705',
 	storeHours: variedStoreHours,
-	geometry,
 };
 
 const storeWithoutDistance = {
@@ -80,16 +72,13 @@ const storeWithoutDistance = {
 	region: 'OR',
 	postal: '27705',
 	storeHours,
-	geometry,
 };
 
 export function Default() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
-			<store-radio-button-card :store="defaultStore"
-	                                 :userLocation="{ longitude: 13, latitude: 52 }"
-	                                 v-model="selectedStore" />
+			<store-radio-button-card :store="defaultStore" v-model="selectedStore" />
 		`,
 
 		data() { return { defaultStore, selectedStore: storeWithExtendedAddress } },
@@ -100,9 +89,7 @@ export function Checked() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
-			<store-radio-button-card :store="defaultStore"
-	                                 :userLocation="{ longitude: 13, latitude: 52 }"
-	                                 v-model="selectedStore" />
+			<store-radio-button-card :store="defaultStore" v-model="selectedStore" />
 		`,
 
 		data() { return { defaultStore, selectedStore: defaultStore } },
@@ -113,9 +100,7 @@ export function WithExtendedAddress() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
-			<store-radio-button-card :store="storeWithExtendedAddress"
-	                                 :userLocation="{ longitude: 13, latitude: 52 }"
-	                                 v-model="selectedStore" />
+			<store-radio-button-card :store="storeWithExtendedAddress" v-model="selectedStore" />
 		`,
 
 		data() { return { storeWithExtendedAddress, selectedStore: defaultStore } },
@@ -126,9 +111,7 @@ export function WithoutHours() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
-			<store-radio-button-card :store="storeWithoutHours"
-	                                 :userLocation="{ longitude: 13, latitude: 52 }"
-	                                 v-model="selectedStore" />
+			<store-radio-button-card :store="storeWithoutHours" v-model="selectedStore" />
 		`,
 
 		data() { return { storeWithoutHours, selectedStore: storeWithExtendedAddress } },
@@ -139,9 +122,7 @@ export function withVariedHours() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
-			<store-radio-button-card :store="storeWithVariedHours"
-	                                 :userLocation="{ longitude: 13, latitude: 52 }"
-	                                 v-model="selectedStore" />
+			<store-radio-button-card :store="storeWithVariedHours" v-model="selectedStore" />
 		`,
 
 		data() { return { storeWithVariedHours, selectedStore: storeWithExtendedAddress } },
@@ -152,9 +133,7 @@ export function withoutDistance() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
-			<store-radio-button-card :store="storeWithoutDistance"
-	                                 :userLocation="{ longitude: 13, latitude: 52 }"
-	                                 v-model="selectedStore" />
+			<store-radio-button-card :store="storeWithoutDistance" v-model="selectedStore" />
 		`,
 
 		data() { return { storeWithoutDistance, selectedStore: storeWithExtendedAddress } },

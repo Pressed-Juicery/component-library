@@ -20,7 +20,6 @@
 import RadioButtonCard from './radio-button-card';
 
 import { formatTimes } from '../utilities/storeHours';
-import { getDistanceToNearestStore } from '../utilities/storeLocations';
 
 export default {
 	props: {
@@ -31,10 +30,6 @@ export default {
 		store: {
 			type: Object,
 			required: true,
-		},
-		userLocation: {
-			longitude: String,
-			latitude: String,
 		},
 	},
 
@@ -47,12 +42,7 @@ export default {
 		},
 
 		distance() {
-			const storeLocation = {
-				longitude: this.store.geometry.coordinates[0],
-				latitude: this.store.geometry.coordinates[1],
-			};
-
-			return getDistanceToNearestStore(this.userLocation, storeLocation);
+			return null;
 		},
 
 		storeHours() {
