@@ -76,6 +76,7 @@ export default {
 }
 
 .store-radio-button-card__details {
-	margin-top: $spacing-03;
+	margin-top: $spacing-04;
+	font-size: $font-size-02;
 }
 </style>
