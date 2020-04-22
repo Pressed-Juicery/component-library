@@ -2,11 +2,11 @@
 	<div class="accordion">
 		<div class="accordion__question-container" @click="toggle">
 			<h3 class="accordion__question">{{ accordionContent.question }}</h3>
-			<div :class="['accordion__button', {'accordion__button--toggle': showAnswer}]">
+			<div :class="['accordion__button', {'accordion__button--toggle': showContent}]">
 				<arrow-down-icon class="accordion__icon" />
 			</div>
 		</div>
-		<div :class="['accordion__answer-container', {'accordion__answer-container--toggle': showAnswer}]">
+		<div :class="['accordion__answer-container', {'accordion__answer-container--toggle': showContent}]">
 			<div class="accordion__answer" v-for="(content, index) in accordionContent.content"
 			:key="index" v-html="content">
 			</div>
@@ -25,12 +25,12 @@ export default {
 	},
 	data() {
 		return {
-			showAnswer: false,
+			showContent: false,
 		};
 	},
 	methods: {
 		toggle() {
-			this.showAnswer = !this.showAnswer;
+			this.showContent = !this.showContent;
 		},
 	},
 };
