@@ -23,7 +23,7 @@ const item3 = {
 	line2: '¡Hola Mundo!',
 };
 
-export function Unchecked() {
+export function Overview() {
 	return {
 		components: { RadioButtonCard },
 		template: `
@@ -55,7 +55,7 @@ export function Checked() {
 	};
 }
 
-export function WithSecondaryContent() {
+export function SecondaryContent() {
 	return {
 		components: { RadioButtonCard },
 		template: `
@@ -74,7 +74,7 @@ export function WithSecondaryContent() {
 	};
 }
 
-export function MultipleSelections() {
+export function RadioGroup() {
 	return {
 		components: { RadioButtonCard },
 		template: `
