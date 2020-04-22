@@ -50,16 +50,14 @@ export default {
 <style scoped lang="scss">
 	@import '../styles/variables';
 
-	$font-size-card: $font-size-04;
-
 	.address-radio-button-card__title {
 		margin-bottom: $spacing-03;
-		font-size: $font-size-card;
+		font-size: $font-size-04;
 		font-weight: $font-weight-bold;
 	}
 
 	.address-radio-button-card__content {
-		font-size: $font-size-card;
+		font-size: $font-size-04;
 	}
 
 	.address-radio-button-card__details {
