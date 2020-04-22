@@ -59,9 +59,9 @@ export function SecondaryContent() {
 	return {
 		components: { RadioButtonCard },
 		template: `
-			<radio-button-card :value="item1" v-model="item2">
+			<radio-button-card :value="1" v-model="selectedItem">
 				<template>
-					<div>{{ item1.line1 }}</div>
+					<div>Primary Content</div>
 				</template>
 
 				<template v-slot:secondary>
@@ -70,7 +70,7 @@ export function SecondaryContent() {
 			</radio-button-card>
 		`,
 
-		data() { return { item1, item2 } },
+		data() { return { selectedItem: null } },
 	};
 }
 
