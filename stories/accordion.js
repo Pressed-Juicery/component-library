@@ -1,13 +1,13 @@
-import accordion from '../components/accordion';
+import Accordion from '../components/accordion';
 
 export default {
-	component: accordion,
+	component: Accordion,
 	title: 'Accordion',
 };
 
-export function Accordion() {
+export function Overview() {
 	return {
-		components: { accordion },
+		components: { Accordion },
 		template: '<accordion :accordionContent="accordionContent"></accordion>',
 		data: () => {
 			return {
@@ -25,7 +25,7 @@ export function Accordion() {
 
 export function AccordionGroup() {
 	return {
-		components: { accordion },
+		components: { Accordion },
 		template: `
 			<div>
 				<accordion v-for="(content, i) in accordionContentList" :accordionContent="content" :key="i">
