@@ -2,7 +2,7 @@
 	<label class="radio-button-card">
 		<card>
 			<span class="radio-button-card__content">
-				<span class="radio-button-card__left-content"><slot /></span>
+				<span class="radio-button-card__primary-content"><slot /></span>
 				<span class="radio-button-card__secondary-content"><slot name="secondary" /></span>
 				<radio-button class="radio-button-card__radio-button" :value="value" v-model="model" />
 			</span>
@@ -54,7 +54,7 @@ export default {
 	position: relative;
 }
 
-.radio-button-card__left-content {
+.radio-button-card__primary-content {
 	flex: 1;
 	margin-right: $spacing-06;
 }
