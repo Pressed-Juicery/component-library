@@ -3,7 +3,7 @@
 		<card>
 			<span class="radio-button-card__content">
 				<span class="radio-button-card__left-content"><slot /></span>
-				<span class="radio-button-card__top-right-content"><slot name="top-right-content" /></span>
+				<span class="radio-button-card__secondary-content"><slot name="secondary" /></span>
 				<radio-button class="radio-button-card__radio-button" :value="value" v-model="model" />
 			</span>
 		</card>
@@ -59,7 +59,7 @@ export default {
 	margin-right: $spacing-06;
 }
 
-.radio-button-card__top-right-content {
+.radio-button-card__secondary-content {
 	margin-bottom: $spacing-08;
 }
 

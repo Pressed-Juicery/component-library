@@ -55,7 +55,7 @@ export function Checked() {
 	};
 }
 
-export function withTopRightContent() {
+export function WithSecondaryContent() {
 	return {
 		components: { RadioButtonCard },
 		template: `
@@ -64,8 +64,8 @@ export function withTopRightContent() {
 					<div>{{ item1.line1 }}</div>
 				</template>
 
-				<template v-slot:top-right-content>
-					<div>Top Right Content</div>
+				<template v-slot:secondary>
+					<div>Secondary Content</div>
 				</template>
 			</radio-button-card>
 		`,
