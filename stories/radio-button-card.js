@@ -60,10 +60,9 @@ export function RadioGroup() {
 		components: { RadioButtonCard },
 		template: `
 			<div>
-				<radio-button-card v-for="item in items" :key="item.id" :value="item" v-model="selectedItem">
+				<radio-button-card v-for="(item, index) in items" :key="index" :value="item" v-model="selectedItem">
 					<template>
-						<div>{{ item.line1 }}</div>
-						<div>{{ item.line2 }}</div>
+						<div>{{ item }}</div>
 					</template>
 				</radio-button-card>
 			</div>
@@ -71,19 +70,11 @@ export function RadioGroup() {
 
 		data() {
 			return {
-				items: [{
-					id: 123,
-					line1: 'Hello World',
-					line2: 'Bonjour Tout le Monde!',
-				}, {
-					id: 456,
-					line1: 'Hello World',
-					line2: 'Guten Tag Alles!',
-				}, {
-					id: 789,
-					line1: 'Hello World',
-					line2: '¡Hola Mundo!',
-				}],
+				items: [
+					'Bonjour Tout le Monde!',
+					'Guten Tag Alles!',
+					'¡Hola Mundo!',
+				],
 				selectedItem: null,
 			};
 		},
