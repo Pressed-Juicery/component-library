@@ -41,6 +41,15 @@ const addressWithDashedPhone = {
 	phone: '205-234-3456',
 };
 
+const longAddress = {
+	id: 150,
+	address1: '1 Meadow Lane!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',
+	city: 'Portland',
+	province: 'OR',
+	zip: '27705',
+	phone: '5593454567',
+};
+
 export function Default() {
 	return {
 		components: { AddressRadioButtonCard },
@@ -100,6 +109,15 @@ export function Checked() {
 		template: '<address-radio-button-card title="Title" :address="defaultAddress" v-model="selectedAddress" />',
 
 		data() { return { defaultAddress, selectedAddress: defaultAddress } },
+	};
+}
+
+export function withLongAddress() {
+	return {
+		components: { AddressRadioButtonCard },
+		template: '<address-radio-button-card title="Title" :address="longAddress" v-model="selectedAddress" />',
+
+		data() { return { longAddress, selectedAddress: addressWithNoPhone } },
 	};
 }
 
