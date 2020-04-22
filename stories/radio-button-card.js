@@ -5,24 +5,6 @@ export default {
 	component: RadioButtonCard,
 };
 
-const item1 = {
-	id: 123,
-	line1: 'Hello World',
-	line2: 'Bonjour Tout le Monde!',
-};
-
-const item2 = {
-	id: 456,
-	line1: 'Hello World',
-	line2: 'Guten Tag Alles!',
-};
-
-const item3 = {
-	id: 789,
-	line1: 'Hello World',
-	line2: '¡Hola Mundo!',
-};
-
 export function Overview() {
 	return {
 		components: { RadioButtonCard },
@@ -89,8 +71,20 @@ export function RadioGroup() {
 
 		data() {
 			return {
-				items: [item1, item2, item3],
-				selectedItem: item1,
+				items: [{
+					id: 123,
+					line1: 'Hello World',
+					line2: 'Bonjour Tout le Monde!',
+				}, {
+					id: 456,
+					line1: 'Hello World',
+					line2: 'Guten Tag Alles!',
+				}, {
+					id: 789,
+					line1: 'Hello World',
+					line2: '¡Hola Mundo!',
+				}],
+				selectedItem: null,
 			};
 		},
 	};
