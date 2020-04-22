@@ -7,8 +7,12 @@
 
 <script>
 export default {
+	model: {
+		prop: 'selectedValue',
+	},
+
 	props: {
-		value: {
+		selectedValue: {
 			required: true,
 		},
 		item: {
@@ -18,7 +22,7 @@ export default {
 
 	computed: {
 		radioButtonValue: {
-			get: function () { return this.value },
+			get: function () { return this.selectedValue },
 			set: function (value) { this.$emit('input', value) },
 		},
 	},

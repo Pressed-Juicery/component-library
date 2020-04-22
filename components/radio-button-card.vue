@@ -17,8 +17,12 @@ import RadioButton from './radio-button';
 export default {
 	components: { Card, RadioButton },
 
+	model: {
+		prop: 'selectedValue',
+	},
+
 	props: {
-		value: {
+		selectedValue: {
 			required: true,
 		},
 		item: {
@@ -29,7 +33,7 @@ export default {
 	computed: {
 		selectedItem: {
 			get() {
-				return this.value;
+				return this.selectedValue;
 			},
 			set() { this.$emit('input', this.item) },
 		},
