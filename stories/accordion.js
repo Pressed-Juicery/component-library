@@ -1,17 +1,17 @@
-import faq from '../components/faq';
+import accordion from '../components/accordion';
 
 export default {
-	component: faq,
-	title: 'faq',
+	component: accordion,
+	title: 'Accordion',
 };
 
-export function singleFaq() {
+export function Accordion() {
 	return {
-		components: { faq },
-		template: '<faq :faq="faq"></faq>',
+		components: { accordion },
+		template: '<accordion :accordionContent="accordionContent"></accordion>',
 		data: () => {
 			return {
-				faq: {
+				accordionContent: {
 					question: 'What is Pressed Juice?',
 					content: [
 						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
@@ -23,17 +23,17 @@ export function singleFaq() {
 	};
 }
 
-export function groupOfFaqs() {
+export function AccordionGroup() {
 	return {
-		components: { faq },
+		components: { accordion },
 		template: `
 			<div>
-				<faq v-for="(faq, i) in faqList" :faq="faq" :key="i"></faq>
+				<accordion v-for="(content, i) in accordionContentList" :accordionContent="content" :key="i"></accordion>
 			</div>
 		`,
 		data: () => {
 			return {
-				faqList: [
+				accordionContentList: [
 					{
 						question: 'What is Pressed Juice?',
 						content: [
