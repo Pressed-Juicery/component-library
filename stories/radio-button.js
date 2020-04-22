@@ -9,7 +9,7 @@ export function Overview() {
 	return {
 		components: { RadioButton },
 		data() { return { selectedItem: null } },
-		template: `<radio-button :value="0" v-model="selectedItem"/>`,
+		template: '<radio-button :value="0" v-model="selectedItem"/>',
 	};
 }
 
