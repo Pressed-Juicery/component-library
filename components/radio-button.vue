@@ -33,6 +33,7 @@ export default {
 .radio-button {
 	display: inline;
 	font-size: 0;
+	vertical-align: middle;
 }
 
 .radio-button__input {
