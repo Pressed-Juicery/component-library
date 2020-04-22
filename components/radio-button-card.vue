@@ -19,11 +19,9 @@ export default {
 
 	props: {
 		value: {
-			type: Object,
 			required: true,
 		},
 		item: {
-			type: Object,
 			required: true,
 		},
 	},
