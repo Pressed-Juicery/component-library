@@ -55,6 +55,7 @@ export default {
 .radio-button-card__left-content {
 	flex: 1;
 	margin-right: $spacing-06;
+	word-break: break-word;
 }
 
 .radio-button-card__top-right-content {
