@@ -1,8 +1,8 @@
 <template>
-	<div class="accordion">
+	<div :class="['accordion', { 'accordion--open': showContent }]">
 		<div class="accordion__title-wrapper" @click="toggle">
 			<div class="accordion__title">{{ title }}</div>
-			<div :class="['accordion__button', {'accordion__button--toggle': showContent}]">
+			<div class="accordion__button">
 				<arrow-down-icon class="accordion__icon" />
 			</div>
 		</div>
@@ -75,7 +75,9 @@ export default {
 		fill: $border-color;
 	}
 
-	.accordion__button--toggle {
-		transform: rotate(180deg);
+	.accordion--open {
+		.accordion__button {
+			transform: rotate(180deg);
+		}
 	}
 </style>
