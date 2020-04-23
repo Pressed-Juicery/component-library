@@ -84,6 +84,7 @@ export default {
 	.accordion__content {
 		max-height: 0;
 		opacity: 0;
+		overflow: hidden;
 		transition: .3s ease max-height, .3s ease opacity;
 	}
 
