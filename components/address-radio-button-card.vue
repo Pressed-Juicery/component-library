@@ -40,7 +40,7 @@ export default {
 	computed: {
 		model: {
 			get() { return this.selectedAddress },
-			set() { this.$emit('change', this.address) },
+			set(value) { this.$emit('change', value) },
 		},
 
 		phone() {
