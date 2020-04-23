@@ -129,7 +129,7 @@ export function LongStoreName() {
 
 		data() {
 			return {
-				storeWithLongName: { ...firstStore, name: 'Beaverton Town Center!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' },
+				storeWithLongName: { ...firstStore, name: 'Beaverton Town Center!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' },
 				selectedStore: null,
 			};
 		},
