@@ -58,7 +58,7 @@ export default {
 		flex-shrink: 0;
 		width: $spacing-05;
 		fill: $border-color;
-		margin-left: $spacing-04;
+		margin-left: $spacing-06;
 	}
 
 	.accordion__slot {
