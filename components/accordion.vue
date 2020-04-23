@@ -1,12 +1,12 @@
 <template>
 	<div class="accordion">
-		<div class="accordion__question-container" @click="toggle">
-			<div class="accordion__question">{{ title }}</div>
+		<div class="accordion__title-wrapper" @click="toggle">
+			<div class="accordion__title">{{ title }}</div>
 			<div :class="['accordion__button', {'accordion__button--toggle': showContent}]">
 				<arrow-down-icon class="accordion__icon" />
 			</div>
 		</div>
-		<div :class="['accordion__answer-container', {'accordion__answer-container--toggle': showContent}]">
+		<div :class="['accordion__content', {'accordion__content--toggle': showContent}]">
 			<slot />
 		</div>
 	</div>
@@ -48,14 +48,14 @@ export default {
 		margin-bottom: 0;
 	}
 
-	.accordion__question-container {
+	.accordion__title-wrapper {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		cursor: pointer;
 	}
 
-	.accordion__question {
+	.accordion__title {
 		width: 90%;
 		letter-spacing: .8px;
 	}
@@ -81,13 +81,13 @@ export default {
 		transform: rotate(180deg);
 	}
 
-	.accordion__answer-container {
+	.accordion__content {
 		max-height: 0;
 		opacity: 0;
 		transition: .3s ease max-height, .3s ease opacity;
 	}
 
-	.accordion__answer-container--toggle {
+	.accordion__content--toggle {
 		max-height: 1000px;
 		opacity: 1;
 	}
