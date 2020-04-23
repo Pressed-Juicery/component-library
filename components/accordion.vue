@@ -2,9 +2,7 @@
 	<div :class="['accordion', { 'accordion--open': showContent }]">
 		<div class="accordion__title-wrapper" @click="toggle">
 			<div class="accordion__title">{{ title }}</div>
-			<div class="accordion__button">
-				<arrow-down-icon class="accordion__icon" />
-			</div>
+			<arrow-down-icon class="accordion__icon" />
 		</div>
 		<slot v-if="showContent" />
 	</div>
@@ -57,21 +55,10 @@ export default {
 		letter-spacing: .8px;
 	}
 
-	.accordion__button {
-		width: $spacing-08;
-		height: $spacing-08;
-		margin-left: $spacing-04;
-		font-size: $font-size-09;
-		outline: none;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transform: rotate(0deg);
-	}
-
 	.accordion__icon {
 		width: $spacing-05;
 		fill: $border-color;
+		margin-left: $spacing-04;
 	}
 
 	.accordion--open {
