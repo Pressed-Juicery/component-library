@@ -28,7 +28,7 @@ const thirdStore = {
 	postal: '27705',
 };
 
-export function Default() {
+export function Overview() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
