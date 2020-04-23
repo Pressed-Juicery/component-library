@@ -22,7 +22,7 @@ export function AccordionGroup() {
 		components: { Accordion },
 		template: `
 			<div>
-				<accordion v-for="(item, i) in accordionContentList" :key="i" :title="item.title">
+				<accordion v-for="(item, index) in accordionContentList" :key="index" :title="item.title">
 					<div v-html="item.content"></div>
 				</accordion>
 			</div>
