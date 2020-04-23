@@ -40,7 +40,7 @@ export default {
 
 	.accordion {
 		padding: $spacing-06;
-		border: 1px solid $gray-30;
+		border: 1px solid $border-color;
 		border-radius: $border-radius;
 		margin-bottom: $spacing-06;
 	}
@@ -75,7 +75,7 @@ export default {
 
 	.accordion__icon {
 		width: $spacing-05;
-		fill: $gray-30;
+		fill: $border-color;
 	}
 
 	.accordion__button--toggle {
