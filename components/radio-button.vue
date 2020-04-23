@@ -1,27 +1,31 @@
 <template>
-	<div class="radio-button">
-		<input class="radio-button__input" type="radio" :value="item" v-model="radioButtonValue" />
+	<span class="radio-button" @click="model = value">
+		<input :id="id" class="radio-button__input" type="radio" :value="value" v-model="model" />
 		<span class="radio-button__button" />
-	</div>
+	</span>
 </template>
 
 <script>
 export default {
+	model: {
+		prop: 'selectedValue',
+		event: 'change',
+	},
+
 	props: {
-		value: {
-			type: Object,
+		id: String,
+		selectedValue: {
 			required: true,
 		},
-		item: {
-			type: Object,
+		value: {
 			required: true,
 		},
 	},
 
 	computed: {
-		radioButtonValue: {
-			get: function () { return this.value },
-			set: function (value) { this.$emit('input', value) },
+		model: {
+			get() { return this.selectedValue },
+			set(value) { this.$emit('change', value) },
 		},
 	},
 };
@@ -30,16 +34,17 @@ export default {
 <style scoped lang="scss">
 @import '../styles/variables';
 
+.radio-button {
+	font-size: 0;
+	vertical-align: middle;
+}
+
 .radio-button__input {
 	display: none;
 }
 
 .radio-button__button {
-	display: block;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	right: 0;
+	display: inline-block;
 	height: $spacing-05;
 	width: $spacing-05;
 	border: $border-width solid $border-color;
@@ -49,6 +54,6 @@ export default {
 }
 
 .radio-button__input:checked + .radio-button__button {
-	background-color: $gray-50;
+	background-color: $border-color;
 }
 </style>
