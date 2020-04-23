@@ -1,9 +1,9 @@
 <template>
 	<span>
-		<american-express-icon v-if="type.toLowerCase() === 'american express'" />
-		<discover-icon v-else-if="type.toLowerCase() === 'discover'" />
-		<master-card-icon v-else-if="type.toLowerCase() === 'mastercard'" />
-		<visa-icon v-else-if="type.toLowerCase() === 'visa'" />
+		<american-express-icon v-if="vendor === 'american express'" />
+		<discover-icon v-else-if="vendor === 'discover'" />
+		<master-card-icon v-else-if="vendor === 'mastercard'" />
+		<visa-icon v-else-if="vendor === 'visa'" />
 		<unknown-payment-method-icon v-else />
 	</span>
 </template>
@@ -20,6 +20,12 @@ export default {
 
 	props: {
 		type: String,
+	},
+
+	computed: {
+		vendor() {
+			return this.type.toLowerCase();
+		},
 	},
 };
 </script>
