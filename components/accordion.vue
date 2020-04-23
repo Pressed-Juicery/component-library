@@ -4,7 +4,9 @@
 			<div>{{ title }}</div>
 			<arrow-down-icon class="accordion__icon" />
 		</div>
-		<slot v-if="isOpen" />
+		<div v-if="isOpen" class="accordion__slot">
+			<slot />
+		</div>
 	</div>
 </template>
 
@@ -36,14 +38,16 @@ export default {
 <style scoped lang="scss">
 	@import '../styles/variables';
 
+	$accordion-padding: $spacing-06;
+
 	.accordion {
-		padding: $spacing-06;
 		border: 1px solid $border-color;
 		border-radius: $border-radius;
 		margin-bottom: $spacing-06;
 	}
 
 	.accordion__title-wrapper {
+		padding: $accordion-padding;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -54,6 +58,10 @@ export default {
 		width: $spacing-05;
 		fill: $border-color;
 		margin-left: $spacing-04;
+	}
+
+	.accordion__slot {
+		padding: 0 $accordion-padding $accordion-padding;
 	}
 
 	.accordion--open {
