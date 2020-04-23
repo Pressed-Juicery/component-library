@@ -17,7 +17,10 @@ export default {
 	name: 'accordion',
 	components: { ArrowDownIcon },
 	props: {
-		title: String,
+		title: {
+			type: String,
+			required: true,
+		},
 	},
 	data() {
 		return {
