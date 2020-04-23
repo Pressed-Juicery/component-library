@@ -31,9 +31,7 @@ const thirdStore = {
 export function Overview() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: `
-			<store-radio-button-card :store="firstStore" v-model="selectedStore" />
-		`,
+		template: '<store-radio-button-card :store="firstStore" v-model="selectedStore" />',
 
 		data() { return { firstStore, selectedStore: null } },
 	};
@@ -42,9 +40,7 @@ export function Overview() {
 export function Checked() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: `
-			<store-radio-button-card :store="firstStore" v-model="selectedStore" />
-		`,
+		template: '<store-radio-button-card :store="firstStore" v-model="selectedStore" />',
 
 		data() { return { firstStore, selectedStore: firstStore } },
 	};
@@ -53,9 +49,7 @@ export function Checked() {
 export function ExtendedAddress() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: `
-			<store-radio-button-card :store="storeWithExtendedAddress" v-model="selectedStore" />
-		`,
+		template: '<store-radio-button-card :store="storeWithExtendedAddress" v-model="selectedStore" />',
 
 		data() {
 			return {
@@ -69,9 +63,7 @@ export function ExtendedAddress() {
 export function Hours() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: `
-			<store-radio-button-card :store="storeWithHours" v-model="selectedStore" />
-		`,
+		template: '<store-radio-button-card :store="storeWithHours" v-model="selectedStore" />',
 
 		data() {
 			return {
@@ -96,9 +88,7 @@ export function Hours() {
 export function VariedHours() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: `
-			<store-radio-button-card :store="storeWithVariedHours" v-model="selectedStore" />
-		`,
+		template: '<store-radio-button-card :store="storeWithVariedHours" v-model="selectedStore" />',
 
 		data() {
 			return {
@@ -123,9 +113,7 @@ export function VariedHours() {
 export function LongStoreName() {
 	return {
 		components: { StoreRadioButtonCard },
-		template: `
-			<store-radio-button-card :store="storeWithLongName" v-model="selectedStore" />
-		`,
+		template: '<store-radio-button-card :store="storeWithLongName" v-model="selectedStore" />',
 
 		data() {
 			return {
