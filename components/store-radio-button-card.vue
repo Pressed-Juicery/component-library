@@ -1,6 +1,6 @@
 <template>
-	<radio-button-card :item="store" v-model="selectedStore">
-		<template v-slot:main-content>
+	<radio-button-card :value="store" v-model="model">
+		<template>
 			<div class="store-radio-button-card__title">{{ store.name }}</div>
 
 			<div>{{ store.streetAddress }}</div>
@@ -10,7 +10,7 @@
 			<div v-if="store.storeHours" class="store-radio-button-card__details">{{ storeHours }}</div>
 		</template>
 
-		<template v-slot:top-right-content v-if="distance">
+		<template v-slot:secondary v-if="distance">
 			<div>{{ distance }}</div>
 		</template>
 	</radio-button-card>
@@ -22,23 +22,26 @@ import RadioButtonCard from './radio-button-card';
 import { formatTimes } from '../utilities/storeHours';
 
 export default {
+	components: { RadioButtonCard },
+
+	model: {
+		prop: 'selectedStore',
+		event: 'change',
+	},
+
 	props: {
-		value: {
-			type: Object,
+		selectedStore: {
 			required: true,
 		},
 		store: {
-			type: Object,
 			required: true,
 		},
 	},
 
-	components: { RadioButtonCard },
-
 	computed: {
-		selectedStore: {
-			get() { return this.value },
-			set() { this.$emit('input', this.store) },
+		model: {
+			get() { return this.selectedStore },
+			set(value) { this.$emit('change', value) },
 		},
 
 		distance() {
