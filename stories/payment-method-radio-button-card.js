@@ -33,14 +33,12 @@ const visa2 = {
 const discover = {
 	maskedNumber: '11111111111',
 	cardType: 'discover',
-	expirationDate: '02/22',
 	...paymentMethod,
 };
 
 const americanExpress = {
 	maskedNumber: '2222222222',
 	cardType: 'american express',
-	expirationDate: '05/22',
 	...paymentMethod,
 };
 
