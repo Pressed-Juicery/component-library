@@ -1,7 +1,7 @@
 <template>
 	<div :class="['accordion', { 'accordion--open': showContent }]">
 		<div class="accordion__title-wrapper" @click="toggle">
-			<div class="accordion__title">{{ title }}</div>
+			<div>{{ title }}</div>
 			<arrow-down-icon class="accordion__icon" />
 		</div>
 		<slot v-if="showContent" />
@@ -48,11 +48,6 @@ export default {
 		align-items: center;
 		justify-content: space-between;
 		cursor: pointer;
-	}
-
-	.accordion__title {
-		width: 90%;
-		letter-spacing: .8px;
 	}
 
 	.accordion__icon {
