@@ -1,10 +1,10 @@
 <template>
-	<div :class="['accordion', { 'accordion--open': showContent }]">
+	<div :class="['accordion', { 'accordion--open': isOpen }]">
 		<div class="accordion__title-wrapper" @click="toggle">
 			<div>{{ title }}</div>
 			<arrow-down-icon class="accordion__icon" />
 		</div>
-		<slot v-if="showContent" />
+		<slot v-if="isOpen" />
 	</div>
 </template>
 
@@ -22,12 +22,12 @@ export default {
 	},
 	data() {
 		return {
-			showContent: false,
+			isOpen: false,
 		};
 	},
 	methods: {
 		toggle() {
-			this.showContent = !this.showContent;
+			this.isOpen = !this.isOpen;
 		},
 	},
 };
