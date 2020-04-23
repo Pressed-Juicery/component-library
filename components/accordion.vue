@@ -6,9 +6,7 @@
 				<arrow-down-icon class="accordion__icon" />
 			</div>
 		</div>
-		<div :class="['accordion__content', {'accordion__content--toggle': showContent}]">
-			<slot />
-		</div>
+		<slot v-if="showContent" />
 	</div>
 </template>
 
@@ -79,17 +77,5 @@ export default {
 
 	.accordion__button--toggle {
 		transform: rotate(180deg);
-	}
-
-	.accordion__content {
-		max-height: 0;
-		opacity: 0;
-		overflow: hidden;
-		transition: .3s ease max-height, .3s ease opacity;
-	}
-
-	.accordion__content--toggle {
-		max-height: 1000px;
-		opacity: 1;
 	}
 </style>
