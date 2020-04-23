@@ -55,6 +55,7 @@ export default {
 	}
 
 	.accordion__icon {
+		flex-shrink: 0;
 		width: $spacing-05;
 		fill: $border-color;
 		margin-left: $spacing-04;
