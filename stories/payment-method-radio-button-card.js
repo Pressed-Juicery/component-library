@@ -5,54 +5,49 @@ export default {
 	component: PaymentMethodRadioButtonCard,
 };
 
-const mastercard = {
-	uniqueNumberIdentifier: 'qwerty12345',
-	maskedNumber: '123456789',
-	cardType: 'mastercard',
+const paymentMethod = {
 	expirationDate: '11/22',
 	billingAddress: {
 		postalCode: '93711',
 	},
 };
 
+const mastercard = {
+	maskedNumber: '123456789',
+	cardType: 'mastercard',
+	...paymentMethod,
+};
+
 const visa = {
-	uniqueNumberIdentifier: 'asdfg7890',
 	maskedNumber: '987654321',
 	cardType: 'visa',
-	expirationDate: '10/22',
-	billingAddress: {
-		postalCode: '93799',
-	},
+	...paymentMethod,
+};
+
+const visa2 = {
+	maskedNumber: '148259360',
+	cardType: 'visa',
+	...paymentMethod,
 };
 
 const discover = {
-	uniqueNumberIdentifier: 'zxcv9876',
 	maskedNumber: '11111111111',
 	cardType: 'discover',
 	expirationDate: '02/22',
-	billingAddress: {
-		postalCode: '93709',
-	},
+	...paymentMethod,
 };
 
 const americanExpress = {
-	uniqueNumberIdentifier: 'poiu12345',
 	maskedNumber: '2222222222',
 	cardType: 'american express',
 	expirationDate: '05/22',
-	billingAddress: {
-		postalCode: '93776',
-	},
+	...paymentMethod,
 };
 
 const unknown = {
-	uniqueNumberIdentifier: 'lkjhg12345',
 	maskedNumber: '45654343563',
 	cardType: 'Excelsior',
-	expirationDate: '09/22',
-	billingAddress: {
-		postalCode: '93678',
-	},
+	...paymentMethod,
 };
 
 export function Overview() {
