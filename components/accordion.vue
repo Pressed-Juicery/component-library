@@ -7,8 +7,7 @@
 			</div>
 		</div>
 		<div :class="['accordion__answer-container', {'accordion__answer-container--toggle': showContent}]">
-			<div class="accordion__answer" v-for="(content, index) in accordionContent.content"
-			:key="index" v-html="content">
+			<div v-for="(content, index) in accordionContent.content" :key="index" v-html="content">
 			</div>
 		</div>
 	</div>
@@ -40,7 +39,7 @@ export default {
 	@import '../styles/variables';
 
 	.accordion {
-		padding: 0 $spacing-06;
+		padding: $spacing-06;
 		border: 1px solid $gray-30;
 		border-radius: $border-radius;
 		margin-bottom: $spacing-06;
@@ -92,16 +91,5 @@ export default {
 	.accordion__answer-container--toggle {
 		max-height: 1000px;
 		opacity: 1;
-	}
-
-	.accordion__answer {
-		margin-top: 0;
-		margin-bottom: $spacing-05;
-		letter-spacing: normal;
-		max-width: 1000px;
-	}
-
-	.accordion__answer p:first-of-type {
-		margin-top: 0;
 	}
 </style>
