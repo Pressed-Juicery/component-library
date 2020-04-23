@@ -55,7 +55,7 @@ const unknown = {
 	},
 };
 
-export function Default() {
+export function Overview() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="mastercard" v-model="selectedPaymentMethod" />',
@@ -73,7 +73,7 @@ export function Checked() {
 	};
 }
 
-export function withMastercard() {
+export function Mastercard() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="mastercard" v-model="selectedPaymentMethod" />',
@@ -82,7 +82,7 @@ export function withMastercard() {
 	};
 }
 
-export function withVisa() {
+export function Visa() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="visa" v-model="selectedPaymentMethod" />',
@@ -91,7 +91,7 @@ export function withVisa() {
 	};
 }
 
-export function withDiscover() {
+export function Discover() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="discover" v-model="selectedPaymentMethod" />',
@@ -100,7 +100,7 @@ export function withDiscover() {
 	};
 }
 
-export function withAmericanExpress() {
+export function AmericanExpress() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
 		template: `
@@ -111,7 +111,7 @@ export function withAmericanExpress() {
 	};
 }
 
-export function withUnknownPaymentMethod() {
+export function Unknown() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="unknown" v-model="selectedPaymentMethod" />',
@@ -120,7 +120,7 @@ export function withUnknownPaymentMethod() {
 	};
 }
 
-export function withMultipleSelections() {
+export function RadioGroup() {
 	return {
 		components: { PaymentMethodRadioButtonCard },
 		template: `
