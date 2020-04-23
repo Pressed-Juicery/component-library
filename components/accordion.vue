@@ -1,7 +1,7 @@
 <template>
 	<div class="accordion">
 		<div class="accordion__question-container" @click="toggle">
-			<h3 class="accordion__question">{{ accordionContent.question }}</h3>
+			<div class="accordion__question">{{ accordionContent.question }}</div>
 			<div :class="['accordion__button', {'accordion__button--toggle': showContent}]">
 				<arrow-down-icon class="accordion__icon" />
 			</div>
