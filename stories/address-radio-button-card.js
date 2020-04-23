@@ -6,7 +6,6 @@ export default {
 };
 
 const defaultAddress = {
-	id: 135,
 	address1: '1 Meadow Lane',
 	city: 'Portland',
 	province: 'OR',
@@ -15,7 +14,6 @@ const defaultAddress = {
 };
 
 const addressWithSecondaryAddress = {
-	id: 345,
 	address1: '42 Lombard',
 	address2: 'Apt. 42',
 	city: 'San Francisco',
@@ -25,7 +23,6 @@ const addressWithSecondaryAddress = {
 };
 
 const addressWithNoPhone = {
-	id: 789,
 	address1: '1 Duke University Drive',
 	city: 'Durham',
 	province: 'NC',
@@ -33,7 +30,6 @@ const addressWithNoPhone = {
 };
 
 const addressWithDashedPhone = {
-	id: 123,
 	address1: '1 Amsterdam',
 	city: 'New York',
 	province: 'NY',
@@ -42,7 +38,6 @@ const addressWithDashedPhone = {
 };
 
 const longAddress = {
-	id: 150,
 	address1: '1 Meadow Lane!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',
 	city: 'Portland',
 	province: 'OR',
@@ -127,7 +122,7 @@ export function RadioGroup() {
 		template: `
 			<div>
 				<address-radio-button-card v-for="address in addresses"
-				                           :key="address.id"
+				                           :key="address.address1"
 				                           title="Title"
 				                           :address="address"
 				                           v-model="selectedAddress" />
