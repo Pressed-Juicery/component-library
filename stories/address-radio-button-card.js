@@ -59,7 +59,7 @@ export function Default() {
 	};
 }
 
-export function withSecondaryAddress() {
+export function SecondaryAddress() {
 	return {
 		components: { AddressRadioButtonCard },
 		template: `
@@ -72,7 +72,7 @@ export function withSecondaryAddress() {
 	};
 }
 
-export function withNoPhone() {
+export function NoPhone() {
 	return {
 		components: { AddressRadioButtonCard },
 		template: '<address-radio-button-card title="Title" :address="addressWithNoPhone" v-model="selectedAddress" />',
@@ -81,7 +81,7 @@ export function withNoPhone() {
 	};
 }
 
-export function withDashedPhone() {
+export function DashedPhone() {
 	return {
 		components: { AddressRadioButtonCard },
 		template: `
@@ -94,7 +94,7 @@ export function withDashedPhone() {
 	};
 }
 
-export function withNoTitle() {
+export function NoTitle() {
 	return {
 		components: { AddressRadioButtonCard },
 		template: '<address-radio-button-card :address="defaultAddress" v-model="selectedAddress" />',
@@ -112,7 +112,7 @@ export function Checked() {
 	};
 }
 
-export function withLongAddress() {
+export function LongAddress() {
 	return {
 		components: { AddressRadioButtonCard },
 		template: '<address-radio-button-card title="Title" :address="longAddress" v-model="selectedAddress" />',
@@ -121,7 +121,7 @@ export function withLongAddress() {
 	};
 }
 
-export function withMultipleSelections() {
+export function RadioGroup() {
 	return {
 		components: { AddressRadioButtonCard },
 		template: `
