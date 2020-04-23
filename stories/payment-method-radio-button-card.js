@@ -129,7 +129,7 @@ export function RadioGroup() {
 
 		data() {
 			return {
-				paymentMethods: [mastercard, visa, discover, americanExpress, unknown],
+				paymentMethods: [mastercard, visa, visa2, unknown],
 				selectedPaymentMethod: mastercard,
 			};
 		},
