@@ -129,14 +129,19 @@ export function VariedHours() {
 	};
 }
 
-export function withoutDistance() {
+export function LongStoreName() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
-			<store-radio-button-card :store="storeWithoutDistance" v-model="selectedStore" />
+			<store-radio-button-card :store="storeWithLongName" v-model="selectedStore" />
 		`,
 
-		data() { return { storeWithoutDistance, selectedStore: storeWithExtendedAddress } },
+		data() {
+			return {
+				storeWithLongName: { ...firstStore, name: 'Beaverton Town Center!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' },
+				selectedStore: null,
+			};
+		},
 	};
 }
 
