@@ -55,7 +55,7 @@ export function Overview() {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="mastercard" v-model="selectedPaymentMethod" />',
 
-		data() { return { mastercard, selectedPaymentMethod: visa } },
+		data() { return { mastercard, selectedPaymentMethod: null } },
 	};
 }
 
@@ -73,7 +73,7 @@ export function Mastercard() {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="mastercard" v-model="selectedPaymentMethod" />',
 
-		data() { return { mastercard, selectedPaymentMethod: visa } },
+		data() { return { mastercard, selectedPaymentMethod: null } },
 	};
 }
 
@@ -82,7 +82,7 @@ export function Visa() {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="visa" v-model="selectedPaymentMethod" />',
 
-		data() { return { visa, selectedPaymentMethod: discover } },
+		data() { return { visa, selectedPaymentMethod: null } },
 	};
 }
 
@@ -91,7 +91,7 @@ export function Discover() {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="discover" v-model="selectedPaymentMethod" />',
 
-		data() { return { discover, selectedPaymentMethod: visa } },
+		data() { return { discover, selectedPaymentMethod: null } },
 	};
 }
 
@@ -102,7 +102,7 @@ export function AmericanExpress() {
 			<payment-method-radio-button-card :paymentMethod="americanExpress" v-model="selectedPaymentMethod" />
 		`,
 
-		data() { return { americanExpress, selectedPaymentMethod: visa } },
+		data() { return { americanExpress, selectedPaymentMethod: null } },
 	};
 }
 
@@ -111,7 +111,7 @@ export function Unknown() {
 		components: { PaymentMethodRadioButtonCard },
 		template: '<payment-method-radio-button-card :paymentMethod="unknown" v-model="selectedPaymentMethod" />',
 
-		data() { return { unknown, selectedPaymentMethod: visa } },
+		data() { return { unknown, selectedPaymentMethod: null } },
 	};
 }
 
