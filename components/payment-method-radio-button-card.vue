@@ -1,6 +1,6 @@
 <template>
-	<radio-button-card :item="paymentMethod" v-model="selectedPaymentMethod">
-		<template v-slot:main-content>
+	<radio-button-card :value="paymentMethod" v-model="model">
+		<template>
 			<div class="payment-method-radio-button-card__title-row">
 				<payment-method-icon class="payment-method-radio-button-card__icon" :type="paymentMethod.cardType" />
 				<span class="payment-method-radio-button-card__title">{{ paymentMethod.maskedNumber }}</span>
@@ -19,23 +19,27 @@ import PaymentMethodIcon from './payment-method-icon';
 import RadioButtonCard from './radio-button-card';
 
 export default {
+	components: { PaymentMethodIcon, RadioButtonCard },
+
+	model: {
+		prop: 'selectedPaymentMethod',
+		event: 'change',
+	},
+
 	props: {
-		value: {
-			type: Object,
+		selectedPaymentMethod: {
 			required: true,
 		},
+
 		paymentMethod: {
-			type: Object,
 			required: true,
 		},
 	},
 
-	components: { PaymentMethodIcon, RadioButtonCard },
-
 	computed: {
-		selectedPaymentMethod: {
-			get() { return this.value },
-			set() { this.$emit('input', this.paymentMethod) },
+		model: {
+			get() { return this.selectedPaymentMethod },
+			set(value) { this.$emit('change', value) },
 		},
 	},
 };
