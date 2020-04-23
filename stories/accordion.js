@@ -8,18 +8,12 @@ export default {
 export function Overview() {
 	return {
 		components: { Accordion },
-		template: '<accordion :accordionContent="accordionContent"></accordion>',
-		data: () => {
-			return {
-				accordionContent: {
-					question: 'What is Pressed Juice?',
-					content: [
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
-					],
-				},
-			};
-		},
+		template: `
+			<accordion title="What is Pressed Juice?">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+			</accordion>
+		`,
 	};
 }
 
@@ -28,27 +22,23 @@ export function AccordionGroup() {
 		components: { Accordion },
 		template: `
 			<div>
-				<accordion v-for="(content, i) in accordionContentList" :accordionContent="content" :key="i">
+				<accordion v-for="(item, i) in accordionContentList" :key="i" :title="item.title">
+					<div v-html="item.content"></div>
 				</accordion>
 			</div>
 		`,
 		data: () => {
 			return {
-				accordionContentList: [
-					{
-						question: 'What is Pressed Juice?',
-						content: [
-							'Pressed Juice is Juice that is of the Pressed variety.',
-						],
-					},
-					{
-						question: 'What is Pressed Juice?',
-						content: [
-							'<p>Pressed Juice is Juice that is of the Pressed variety.</p>',
-							'<p>Pressed Juice is Juice that is of the Pressed variety.</p>',
-						],
-					},
-				],
+				accordionContentList: [{
+					title: 'What is Pressed Juice?',
+					content: 'Pressed Juice is Juice that is of the Pressed variety.',
+				}, {
+					title: 'What is Pressed Juice?',
+					content: `
+						<p>Pressed Juice is Juice that is of the Pressed variety.</p>
+						<p>Pressed Juice is Juice that is of the Pressed variety.</p>
+					`,
+				}],
 			};
 		},
 	};

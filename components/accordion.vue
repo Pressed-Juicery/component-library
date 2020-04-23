@@ -1,14 +1,13 @@
 <template>
 	<div class="accordion">
 		<div class="accordion__question-container" @click="toggle">
-			<div class="accordion__question">{{ accordionContent.question }}</div>
+			<div class="accordion__question">{{ title }}</div>
 			<div :class="['accordion__button', {'accordion__button--toggle': showContent}]">
 				<arrow-down-icon class="accordion__icon" />
 			</div>
 		</div>
 		<div :class="['accordion__answer-container', {'accordion__answer-container--toggle': showContent}]">
-			<div v-for="(content, index) in accordionContent.content" :key="index" v-html="content">
-			</div>
+			<slot />
 		</div>
 	</div>
 </template>
@@ -20,7 +19,7 @@ export default {
 	name: 'accordion',
 	components: { ArrowDownIcon },
 	props: {
-		accordionContent: Object,
+		title: String,
 	},
 	data() {
 		return {
