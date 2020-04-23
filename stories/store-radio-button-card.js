@@ -60,7 +60,7 @@ export function ExtendedAddress() {
 		data() {
 			return {
 				storeWithExtendedAddress: { ...secondStore, extendedAddress: 'Suite 42' },
-				selectedStore: null
+				selectedStore: null,
 			};
 		},
 	};
