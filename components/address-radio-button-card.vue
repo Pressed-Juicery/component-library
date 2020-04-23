@@ -1,6 +1,6 @@
 <template>
-	<radio-button-card :item="address" v-model="selectedAddress">
-		<template v-slot:main-content>
+	<radio-button-card :value="address" v-model="model">
+		<template>
 			<div class="address-radio-button-card__title" v-if="title">{{ title }}</div>
 
 			<div class="address-radio-button-card__content">
@@ -20,24 +20,27 @@ import RadioButtonCard from './radio-button-card';
 import { formatPhoneNumber } from '../utilities/formatters';
 
 export default {
+	components: { RadioButtonCard },
+
+	model: {
+		prop: 'selectedAddress',
+		event: 'change',
+	},
+
 	props: {
-		value: {
-			type: Object,
+		selectedAddress: {
 			required: true,
 		},
 		address: {
-			type: Object,
 			required: true,
 		},
 		title: String,
 	},
 
-	components: { RadioButtonCard },
-
 	computed: {
-		selectedAddress: {
-			get() { return this.value },
-			set() { this.$emit('input', this.address) },
+		model: {
+			get() { return this.selectedAddress },
+			set() { this.$emit('change', this.address) },
 		},
 
 		phone() {
