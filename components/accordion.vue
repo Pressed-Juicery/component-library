@@ -66,7 +66,7 @@ export default {
 	}
 
 	.accordion--open {
-		.accordion__button {
+		.accordion__icon {
 			transform: rotate(180deg);
 		}
 	}
