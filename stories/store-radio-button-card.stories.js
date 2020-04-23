@@ -96,7 +96,7 @@ export function Checked() {
 	};
 }
 
-export function WithExtendedAddress() {
+export function ExtendedAddress() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
@@ -107,7 +107,7 @@ export function WithExtendedAddress() {
 	};
 }
 
-export function WithoutHours() {
+export function Hours() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
@@ -118,7 +118,7 @@ export function WithoutHours() {
 	};
 }
 
-export function withVariedHours() {
+export function VariedHours() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
@@ -140,7 +140,7 @@ export function withoutDistance() {
 	};
 }
 
-export function withMultipleSelections() {
+export function RadioGroup() {
 	return {
 		components: { StoreRadioButtonCard },
 		template: `
