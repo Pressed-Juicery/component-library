@@ -121,7 +121,7 @@ export function RadioGroup() {
 		template: `
 			<div>
 				<payment-method-radio-button-card v-for="paymentMethod in paymentMethods"
-				                                  :key="paymentMethod.id"
+				                                  :key="paymentMethod.maskedNumber"
 				                                  :paymentMethod="paymentMethod"
 				                                  v-model="selectedPaymentMethod" />
 			</div>
