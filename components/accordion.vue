@@ -42,10 +42,6 @@ export default {
 		margin-bottom: $spacing-06;
 	}
 
-	.accordion:last-of-type {
-		margin-bottom: 0;
-	}
-
 	.accordion__title-wrapper {
 		display: flex;
 		align-items: center;
