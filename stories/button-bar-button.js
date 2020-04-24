@@ -73,13 +73,6 @@ export function VariedButtonBar() {
 					<div>Basic Content</div>
 				</button-bar-button>
 				<button-bar-button style="padding:20px"
-				                   value="B"
-				                   :selectedButton="selectedButton"
-				                   @select-button="value => selectedButton = value">
-					<div>This Button</div>
-					<div>Has Two Lines</div>
-				</button-bar-button>
-				<button-bar-button style="padding:20px"
 				                   value="C"
 				                   :selectedButton="selectedButton"
 				                   @select-button="value => selectedButton = value">
