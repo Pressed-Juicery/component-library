@@ -70,7 +70,7 @@ export default {
 		width: $spacing-08;
 		height: $spacing-08;
 		margin-left: $spacing-04;
-		font-size: $font-size-09;
+		font-size: $spacing-07;
 		outline: none;
 		display: flex;
 		justify-content: center;
