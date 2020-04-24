@@ -16,8 +16,8 @@ export function Overview() {
 			<div>
 				<button-bar style="margin:40px"
 				            :contents="contents"
-				            :selected="selectedButton"
-				            @select="value => selectedButton = value">
+				            :selected-item="selectedItem"
+				            @select-item="value => selectedItem = value">
 					<template slot-scope="{ content }">
 						<div style="padding:20px">
 							<div>{{ content.title }}</div>
@@ -25,7 +25,7 @@ export function Overview() {
 						</div>
 					</template>
 				</button-bar>
-				<p>Selected Button: {{ selectedButton }}</p>
+				<p>Selected Item: {{ selectedItem }}</p>
 			</div>
 		`,
 
@@ -36,7 +36,7 @@ export function Overview() {
 					{ title: 'Fully', detail: 'Customizable' },
 					{ title: 'Its Contents', detail: 'Are Dynamic' },
 				],
-				selectedButton: null,
+				selectedItem: null,
 			};
 		},
 	};
@@ -49,8 +49,8 @@ export function VariedContent() {
 			<div>
 				<button-bar style="margin:40px"
 				            :contents="contents"
-				            :selected="selectedButton"
-				            @select="value => selectedButton = value">
+				            :selected-item="selectedItem"
+				            @select-item="value => selectedItem = value">
 					<template slot-scope="{ content }">
 						<div style="padding:20px">
 							<div v-if="content.primary" style="font-weight:bold">{{ content.primary }}</div>
@@ -59,6 +59,7 @@ export function VariedContent() {
 						</div>
 					</template>
 				</button-bar>
+				<p>Selected Item: {{ selectedItem }}</p>
 			</div>
 		`,
 
@@ -71,7 +72,7 @@ export function VariedContent() {
 					{ primary: 'Primary', tertiary: 'Tertiary' },
 					{ secondary: 'Secondary', tertiary: 'Tertiary' },
 				],
-				selectedButton: null,
+				selectedItem: null,
 			};
 		},
 	};
@@ -84,8 +85,8 @@ export function LongerContent() {
 			<div>
 				<button-bar style="margin:40px"
 				            :contents="contents"
-				            :selected="selectedButton"
-				            @select="value => selectedButton = value">
+				            :selected-item="selectedItem"
+				            @select-item="value => selectedItem = value">
 					<template slot-scope="{ content }">
 						<div style="padding:20px">
 							<div v-if="content.primary" style="font-weight:bold">{{ content.primary }}</div>
@@ -105,7 +106,7 @@ export function LongerContent() {
 					{ primary: 'Primary', secondary: 'Secondary' },
 					{ secondary: 'This is excessively longer button content.' },
 				],
-				selectedButton: null,
+				selectedItem: null,
 			};
 		},
 	};
@@ -117,9 +118,9 @@ export function PreSelected() {
 		template: `
 			<div>
 				<button-bar style="margin:40px"
-				            :selected="selectedButton"
+				            :selected-item="selectedItem"
 				            :contents="contents"
-				            @select="value => selectedButton = value">
+				            @select-item="value => selectedItem = value">
 					<template slot-scope="{ content }">
 						<div style="padding:20px">
 							<div>{{ content.title }}</div>
@@ -133,7 +134,7 @@ export function PreSelected() {
 		data() {
 			return {
 				contents: [firstTitle, secondTitle, thirdTitle],
-				selectedButton: firstTitle,
+				selectedItem: firstTitle,
 			};
 		},
 	};

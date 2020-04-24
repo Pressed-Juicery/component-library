@@ -20,15 +20,15 @@ export default {
 			type: Array,
 			required: true,
 		},
-		selected: {
+		selectedItem: {
 			default: null,
 		},
 	},
 
 	computed: {
 		selectedButton: {
-			get() { return this.selected },
-			set(value) { this.$emit('select', value) },
+			get() { return this.selectedItem },
+			set(value) { this.$emit('select-item', value) },
 		},
 	},
 };
