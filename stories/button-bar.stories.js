@@ -1,32 +1,61 @@
 import ButtonBar from '../components/button-bar';
+import ButtonBarButton from '../components/button-bar-button';
 
 export default {
 	title: 'ButtonBar',
 	component: ButtonBar,
 };
 
-const firstTitle = { title: 'First Title', detail: 'Detail' };
-const secondTitle = { title: 'Second Title', detail: 'Detail' };
-const thirdTitle = { title: 'Third Title', detail: 'Detail' };
-
 export function Overview() {
 	return {
-		components: { ButtonBar },
+		components: { ButtonBar, ButtonBarButton },
 		template: `
-			<div>
-				<button-bar style="margin:40px"
-				            :contents="contents"
-				            :selected-item="selectedItem"
-				            @select-item="value => selectedItem = value">
-					<template slot-scope="{ content }">
-						<div style="padding:20px">
-							<div>{{ content.title }}</div>
-							<div>{{ content.detail }}</div>
-						</div>
-					</template>
-				</button-bar>
-				<p>Selected Item: {{ selectedItem }}</p>
-			</div>
+			<button-bar style="margin:20px">
+				<button-bar-button style="padding:20px"
+				                   value="Hello World"
+				                   :selectedButton="selectedItem"
+				                   @select-button="value => selectedItem = value">
+					<div>Hello</div>
+					<div>World</div>
+				</button-bar-button>
+
+				<button-bar-button style="padding:20px"
+				                   value="Guten Tag"
+				                   :selectedButton="selectedItem"
+				                   @select-button="value => selectedItem = value">
+					<div>Guten</div>
+					<div>Tag</div>
+				</button-bar-button>
+
+				<button-bar-button style="padding:20px"
+				                   value="Bonjour Tout le Monde"
+				                   :selectedButton="selectedItem"
+				                   @select-button="value => selectedItem = value">
+					<div>Bonjour</div>
+					<div>Tout le Monde</div>
+				</button-bar-button>
+			</button-bar>
+		`,
+
+		data() { return { selectedItem: null } },
+	};
+}
+
+export function LoopedContent() {
+	return {
+		components: { ButtonBar, ButtonBarButton },
+		template: `
+			<button-bar style="margin:20px">
+				<button-bar-button style="padding:20px"
+				                   v-for="(content, index) in contents"
+				                   :key="index"
+				                   :value="content"
+				                   :selectedButton="selectedItem"
+				                   @select-button="value => selectedItem = value">
+					<div>{{ content.title }}</div>
+					<div>{{ content.detail }}</div>
+				</button-bar-button>
+			</button-bar>
 		`,
 
 		data() {
@@ -44,23 +73,20 @@ export function Overview() {
 
 export function VariedContent() {
 	return {
-		components: { ButtonBar },
+		components: { ButtonBar, ButtonBarButton },
 		template: `
-			<div>
-				<button-bar style="margin:40px"
-				            :contents="contents"
-				            :selected-item="selectedItem"
-				            @select-item="value => selectedItem = value">
-					<template slot-scope="{ content }">
-						<div style="padding:20px">
-							<div v-if="content.primary" style="font-weight:bold">{{ content.primary }}</div>
-							<div v-if="content.secondary">{{ content.secondary }}</div>
-							<div v-if="content.tertiary">{{ content.tertiary }}</div>
-						</div>
-					</template>
-				</button-bar>
-				<p>Selected Item: {{ selectedItem }}</p>
-			</div>
+			<button-bar style="margin:20px">
+				<button-bar-button style="padding:20px"
+				                   v-for="(content, index) in contents"
+				                   :key="index"
+				                   :value="content"
+				                   :selectedButton="selectedItem"
+				                   @select-button="value => selectedItem = value">
+					<div v-if="content.primary" style="font-weight:bold">{{ content.primary }}</div>
+					<div v-if="content.secondary">{{ content.secondary }}</div>
+					<div v-if="content.tertiary">{{ content.tertiary }}</div>
+				</button-bar-button>
+			</button-bar>
 		`,
 
 		data() {
@@ -80,22 +106,21 @@ export function VariedContent() {
 
 export function LongerContent() {
 	return {
-		components: { ButtonBar },
+		components: { ButtonBar, ButtonBarButton },
 		template: `
-			<div>
-				<button-bar style="margin:40px"
-				            :contents="contents"
-				            :selected-item="selectedItem"
-				            @select-item="value => selectedItem = value">
-					<template slot-scope="{ content }">
-						<div style="padding:20px">
-							<div v-if="content.primary" style="font-weight:bold">{{ content.primary }}</div>
-							<div v-if="content.secondary">{{ content.secondary }}</div>
-							<div v-if="content.tertiary">{{ content.tertiary }}</div>
-						</div>
-					</template>
-				</button-bar>
-			</div>
+			<button-bar style="margin:20px">
+				<button-bar-button v-for="(content, index) in contents"
+				                   :key="index"
+				                   :value="content"
+				                   :selectedButton="selectedItem"
+				                   @select-button="value => selectedItem = value">
+					<div style="padding:20px">
+						<div v-if="content.primary" style="font-weight:bold">{{ content.primary }}</div>
+						<div v-if="content.secondary">{{ content.secondary }}</div>
+						<div v-if="content.tertiary">{{ content.tertiary }}</div>
+					</div>
+				</button-bar-button>
+			</button-bar>
 		`,
 
 		data() {
@@ -114,28 +139,35 @@ export function LongerContent() {
 
 export function PreSelected() {
 	return {
-		components: { ButtonBar },
+		components: { ButtonBar, ButtonBarButton },
 		template: `
-			<div>
-				<button-bar style="margin:40px"
-				            :selected-item="selectedItem"
-				            :contents="contents"
-				            @select-item="value => selectedItem = value">
-					<template slot-scope="{ content }">
-						<div style="padding:20px">
-							<div>{{ content.title }}</div>
-							<div>{{ content.detail }}</div>
-						</div>
-					</template>
-				</button-bar>
-			</div>
+			<button-bar style="margin:20px">
+				<button-bar-button style="padding:20px"
+				                   value="Hello World"
+				                   :selectedButton="selectedItem"
+				                   @select-button="value => selectedItem = value">
+					<div>Hello</div>
+					<div>World</div>
+				</button-bar-button>
+
+				<button-bar-button style="padding:20px"
+				                   value="Guten Tag"
+				                   :selectedButton="selectedItem"
+				                   @select-button="value => selectedItem = value">
+					<div>Guten</div>
+					<div>Tag</div>
+				</button-bar-button>
+
+				<button-bar-button style="padding:20px"
+				                   value="Bonjour Tout le Monde"
+				                   :selectedButton="selectedItem"
+				                   @select-button="value => selectedItem = value">
+					<div>Bonjour</div>
+					<div>Tout le Monde</div>
+				</button-bar-button>
+			</button-bar>
 		`,
 
-		data() {
-			return {
-				contents: [firstTitle, secondTitle, thirdTitle],
-				selectedItem: firstTitle,
-			};
-		},
+		data() { return { selectedItem: 'Hello World' } },
 	};
 }
