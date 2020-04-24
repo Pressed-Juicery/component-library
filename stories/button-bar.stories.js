@@ -14,7 +14,10 @@ export function Overview() {
 		components: { ButtonBar },
 		template: `
 			<div>
-				<button-bar style="margin:40px" :contents="contents" @select="value => selectedButton = value">
+				<button-bar style="margin:40px"
+				            :contents="contents"
+				            :selected="selectedButton"
+				            @select="value => selectedButton = value">
 					<template slot-scope="{ content }">
 						<div style="padding:20px">
 							<div>{{ content.title }}</div>
