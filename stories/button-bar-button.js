@@ -9,9 +9,9 @@ export function Overview() {
 	return {
 		components: { ButtonBarButton },
 		template: `
-			<button-bar-button>
-				<p>Button Bar Button</p>
-				<p>Customizable Content</p>
+			<button-bar-button style="margin:20px; padding:20px" value="Button Bar Button">
+				<div>Button Bar Button</div>
+				<div>Customizable Content</div>
 			</button-bar-button>
 		`,
 	};
