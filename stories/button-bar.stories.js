@@ -132,7 +132,7 @@ export function PreSelected() {
 
 		data() {
 			return {
-				contents: [ firstTitle, secondTitle, thirdTitle ],
+				contents: [firstTitle, secondTitle, thirdTitle],
 				selectedButton: firstTitle,
 			};
 		},

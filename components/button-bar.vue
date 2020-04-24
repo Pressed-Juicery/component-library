@@ -31,7 +31,7 @@ export default {
 			set(value) { this.$emit('select', value) },
 		},
 	},
-}
+};
 </script>
 
 <style scoped lang="scss">
