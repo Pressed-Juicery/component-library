@@ -25,6 +25,7 @@ export default {
 	@import '../styles/variables';
 
 	.button-bar-button {
+		flex-basis: 100%;
 		border: $border-width solid $border-color;
 		border-right: none;
 		border-radius: 0;
