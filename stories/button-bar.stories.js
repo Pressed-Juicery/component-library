@@ -127,7 +127,6 @@ export function PreSelected() {
 						</div>
 					</template>
 				</button-bar>
-				<p>Selected Button: {{ selectedButton }}</p>
 			</div>
 		`,
 
