@@ -22,8 +22,8 @@ export function Selected() {
 		components: { ButtonBarButton },
 		template: `
 			<button-bar-button :isSelected="true">
-				<p>Button Bar Button</p>
-				<p>Customizable Content</p>
+				<div>Button Bar Button</div>
+				<div>Customizable Content</div>
 			</button-bar-button>
 		`,
 	};
