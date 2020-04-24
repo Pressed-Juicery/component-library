@@ -1,7 +1,7 @@
 <template>
 	<button class="button-bar-button"
-	        :class="{ 'button-bar-button--active': isSelected }"
-	        @click="$emit('select-button')" >
+	        :class="{ 'button-bar-button--active': value === selectedButton }"
+	        @click="$emit('select-button', value)" >
 		<slot />
 	</button>
 </template>
@@ -10,8 +10,10 @@
 
 export default {
 	props: {
-		isSelected: {
-			type: Boolean,
+		value: {
+			required: true,
+		},
+		selectedButton: {
 			default: null,
 		},
 	},
