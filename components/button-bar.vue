@@ -3,7 +3,7 @@
 		<button-bar-button v-for="(content, index) in contents"
 		                   :key="index"
 		                   :isSelected="selectedButton === content"
-		                   @select="selectedButton = content">
+		                   @select-button="selectedButton = content">
 			<slot :content="content"/>
 		</button-bar-button>
 	</div>

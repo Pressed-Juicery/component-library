@@ -37,7 +37,7 @@ export function ButtonBar() {
 				<button-bar-button v-for="content in contents"
 				                   style="padding:20px"
 				                   :isSelected="selectedButton === content"
-				                   @select="selectedButton = content">
+				                   @select-button="selectedButton = content">
 					{{ content }}
 				</button-bar-button>
 			</div>

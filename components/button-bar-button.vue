@@ -1,7 +1,7 @@
 <template>
 	<button class="button-bar-button"
 	        :class="{ 'button-bar-button--active': isSelected }"
-	        @click="$emit('select')" >
+	        @click="$emit('select-button')" >
 		<slot />
 	</button>
 </template>
