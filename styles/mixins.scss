@@ -1,0 +1,104 @@
+@import './variables';
+
+// TYPOGRAPHY
+// ==========
+
+// Font Weights
+// ------------
+
+@mixin text-light() {
+	font-family: TTCommons-Light, sans-serif;
+}
+
+@mixin text-normal() {
+	font-family: TTCommons-Regular, sans-serif;
+}
+
+@mixin text-bold() {
+	font-family: TTCommons-Medium, sans-serif;
+}
+
+@mixin text-bolder() {
+	font-family: TTCommons-DemiBold, sans-serif;
+}
+
+// Headings
+// --------
+
+@mixin text-heading-1() {
+	font-size: 7.2rem;
+	line-height: 7.6rem;
+	@include text-light();
+}
+
+@mixin text-heading-2() {
+	font-size: 5.6rem;
+	line-height: 6.0rem;
+	@include text-light();
+}
+
+@mixin text-heading-3() {
+	font-size: 3.6rem;
+	line-height: 4.0rem;
+	@include text-light();
+}
+
+@mixin text-heading-4() {
+	font-size: 3.0rem;
+	line-height: 3.4rem;
+	@include text-bold();
+}
+
+@mixin text-heading-5() {
+	font-size: 2.4rem;
+	line-height: 2.8rem;
+	@include text-bold();
+}
+
+@mixin text-heading-6() {
+	font-size: 2.0rem;
+	line-height: 2.4rem;
+	@include text-bold();
+}
+
+// Body Text
+// ---------
+
+@mixin text-body() {
+	font-size: 1.8rem;
+	line-height: 2.6rem;
+	@include text-normal();
+}
+
+@mixin text-body-small() {
+	font-size: 1.4rem;
+	line-height: 1.8rem;
+	@include text-normal();
+}
+
+// CTA Text
+// --------
+
+@mixin text-cta() {
+	font-size: 1.6rem;
+	line-height: 1;
+	@include text-uppercase();
+	@include text-bolder();
+}
+
+@mixin text-cta-small() {
+	@include text-cta();
+	font-size: 1.4rem;
+}
+
+// Modifiers
+// ---------
+
+@mixin text-subtle() {
+	color: $color-text-gray;
+}
+
+@mixin text-uppercase() {
+	text-transform: uppercase;
+	letter-spacing: 0.14rem;
+}
