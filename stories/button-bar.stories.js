@@ -31,7 +31,16 @@ export function Overview() {
 
 		data() {
 			return {
-				contents: [ firstTitle, secondTitle, thirdTitle ],
+				contents: [
+					{ title: 'This Button', detail: 'Bar Is' },
+					{ title: 'Fully', detail: 'Customizable' },
+					{ title: 'Its Contents', detail: 'Are Dynamic' },
+				],
+				selectedButton: null,
+			};
+		},
+	};
+}
 				selectedButton: null,
 			};
 		},
