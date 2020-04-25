@@ -40,14 +40,3 @@ input[type="submit"]:disabled {
 	border-radius: 100px;
 	padding: $spacing-04 $spacing-06;
 }
-
-.button-secondary {
-	font-weight: $font-weight-demibold;
-	font-size: $font-size-button-secondary;
-	color: $color-primary;
-	letter-spacing: 1px;
-	background-color: transparent;
-	text-transform: uppercase;
-	text-decoration: underline;
-	outline: none;
-}
