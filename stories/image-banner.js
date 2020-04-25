@@ -10,7 +10,7 @@ export function Banner1() {
 	return {
 		components: { ImageBanner },
 		template: `
-			<ImageBanner :srcDesktop="srcDesktop" :srcMobile="srcMobile" alt="hello">
+			<ImageBanner :src-desktop="srcDesktop" :src-mobile="srcMobile" alt="hello">
 				<div>
 					<h1>Hello World</h1>
 					<h2>This is some text</h2>
