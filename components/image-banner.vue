@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 	.image-background {
 		height: 100vh;
 		width: 100%;
