@@ -70,27 +70,21 @@ $color-info-background: $blue-10;
 $color_info-border: $blue-20;
 
 
-// Measurements
-// ============
-
-$rem: 16px;
-
-
 // Spacing
 // -------
 
-$spacing-01: $rem * 0.125; // 2
-$spacing-02: $rem * 0.25;  // 4
-$spacing-03: $rem * 0.5;   // 8
-$spacing-04: $rem * 0.75;  // 12
-$spacing-05: $rem * 1;     // 16
-$spacing-06: $rem * 1.5;   // 24
-$spacing-07: $rem * 2;     // 32
-$spacing-08: $rem * 2.5;   // 40
-$spacing-09: $rem * 3;     // 48
-$spacing-10: $rem * 4;     // 64
-$spacing-11: $rem * 6;     // 96
-$spacing-12: $rem * 10;    // 160
+$spacing-01: 0.2rem;
+$spacing-02: 0.4rem;
+$spacing-03: 0.8rem;
+$spacing-04: 1.2rem;
+$spacing-05: 1.6rem;
+$spacing-06: 2.4rem;
+$spacing-07: 3.2rem;
+$spacing-08: 4.0rem;
+$spacing-09: 4.8rem;
+$spacing-10: 6.4rem;
+$spacing-11: 9.6rem;
+$spacing-12: 16.0rem;
 
 
 // Screen sizes
