@@ -1,20 +1,14 @@
 <template>
 	<radio-button-card :value="store" v-model="model">
-		<template>
-			<div class="store-radio-button-card__title">{{ store.name }}</div>
+		<div class="store-radio-button-card__title">{{ store.name }}</div>
 
-			<div>{{ store.streetAddress }}</div>
-			<div v-if="store.extendedAddress">{{ store.extendedAddress }}</div>
-			<div>{{ store.locality }}, {{ store.region }} {{ store.postal }}</div>
+		<div>{{ store.streetAddress }}</div>
+		<div v-if="store.extendedAddress">{{ store.extendedAddress }}</div>
+		<div>{{ store.locality }}, {{ store.region }} {{ store.postal }}</div>
 
-			<div v-if="store.storeHours" class="store-radio-button-card__details">
-				<div v-for="hours in store.storeHours">{{ hours }}</div>
-			</div>
-		</template>
-
-		<template v-slot:secondary v-if="distance">
-			<div>{{ distance }}</div>
-		</template>
+		<div v-if="store.storeHours" class="store-radio-button-card__details">
+			<div v-for="hours in store.storeHours">{{ hours }}</div>
+		</div>
 	</radio-button-card>
 </template>
 
@@ -42,10 +36,6 @@ export default {
 		model: {
 			get() { return this.selectedStore },
 			set(value) { this.$emit('change', value) },
-		},
-
-		distance() {
-			return null;
 		},
 	},
 };
