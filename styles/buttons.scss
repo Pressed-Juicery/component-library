@@ -18,6 +18,7 @@ input[type="submit"] {
   width: 100%;
   cursor: pointer;
   border-radius: $border-radius;
+  user-select: none;
 }
 
 button:disabled,
@@ -36,14 +37,7 @@ input[type="submit"]:disabled {
 }
 
 .button--pill {
-  display: block;
-  min-width: 100px;
-  text-align: center;
-  background: transparent;
-  user-select: none;
-  cursor: pointer;
   border-radius: 100px;
-  border: 1px solid $gray-30;
   padding: $spacing-04 $spacing-06;
 }
 
