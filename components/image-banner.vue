@@ -1,7 +1,7 @@
 <template>
 	<div class="image-background" :style="cssVars">
 		<span role="img" :aria-label="alt"></span>
-		<slot></slot>
+		<div><slot /></div>
 	</div>
 </template>
 

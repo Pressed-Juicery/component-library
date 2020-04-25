@@ -11,11 +11,9 @@ export function Overview() {
 		components: { ImageBanner },
 		template: `
 			<ImageBanner :src-desktop="srcDesktop" :src-mobile="srcMobile" alt="alternative text">
-				<div>
-					<h1>Hello World</h1>
-					<h2>This is some text</h2>
-					<button>learn more</button>
-				</div>
+				<h1>Hello World</h1>
+				<h2>This is some text</h2>
+				<button>learn more</button>
 			</ImageBanner>
 		`,
 		data() {
