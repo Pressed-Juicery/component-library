@@ -122,8 +122,8 @@ export function RadioGroup() {
 		components: { AddressRadioButtonCard },
 		template: `
 			<div>
-				<address-radio-button-card v-for="address in addresses"
-				                           :key="address.streetAddress"
+				<address-radio-button-card v-for="(address, index) in addresses"
+				                           :key="index"
 				                           title="Title"
 				                           :address="address"
 				                           v-model="selectedAddress" />
