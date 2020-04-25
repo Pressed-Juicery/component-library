@@ -1,5 +1,5 @@
 <template>
-	<div class="image-background" :style="cssVars">
+	<div class="image-background" :style="cssVariables">
 		<span role="img" :aria-label="alt"></span>
 		<div><slot /></div>
 	</div>
@@ -13,7 +13,7 @@ export default {
 		alt: String,
 	},
 	computed: {
-		cssVars() {
+		cssVariables() {
 			return {
 				'--desktopImage': `url(${this.srcDesktop})`,
 				'--mobileImage': `url(${this.srcMobile})`,
