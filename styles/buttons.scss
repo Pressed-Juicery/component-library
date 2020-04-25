@@ -47,16 +47,6 @@ input[type="submit"]:disabled {
   padding: $spacing-04 $spacing-06;
 }
 
-.button-primary {
-	height: 60px;
-	text-transform: uppercase;
-	font-weight: $font-weight-demibold;
-	font-size: $font-size-button-primary;
-	letter-spacing: 1.3px;
-	border-radius: $border-radius;
-	outline: none;
-}
-
 .button-secondary {
   font-weight: $font-weight-demibold;
 	font-size: $font-size-button-secondary;
