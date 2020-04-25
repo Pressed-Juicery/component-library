@@ -25,8 +25,8 @@ button:disabled,
 .button:disabled,
 input[type="button"]:disabled,
 input[type="submit"]:disabled {
-  background: rgba(0,0,0,0.2);
-  color: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.1);
+  color: rgba(0,0,0,0.4);
   cursor: not-allowed;
 }
 
