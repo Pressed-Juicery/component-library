@@ -13,38 +13,38 @@ const paymentMethod = {
 };
 
 const mastercard = {
-	maskedNumber: '123456789',
+	maskedNumber: '····6789',
 	cardType: 'mastercard',
 	...paymentMethod,
 };
 
 const visa = {
-	maskedNumber: '987654321',
+	maskedNumber: '····4321',
 	cardType: 'visa',
 	...paymentMethod,
 };
 
 const visa2 = {
-	maskedNumber: '148259360',
+	maskedNumber: '····9360',
 	cardType: 'visa',
 	...paymentMethod,
 };
 
 const discover = {
-	maskedNumber: '11111111111',
+	maskedNumber: '····1111',
 	cardType: 'discover',
 	...paymentMethod,
 };
 
 const americanExpress = {
-	maskedNumber: '2222222222',
+	maskedNumber: '····2222',
 	cardType: 'american express',
 	...paymentMethod,
 };
 
 const unknown = {
-	maskedNumber: '45654343563',
-	cardType: 'Excelsior',
+	maskedNumber: '····3563',
+	cardType: 'unknown',
 	...paymentMethod,
 };
 

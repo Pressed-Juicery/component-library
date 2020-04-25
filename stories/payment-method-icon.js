@@ -36,6 +36,6 @@ export function Visa() {
 export function Unknown() {
 	return {
 		components: { PaymentMethodIcon },
-		template: '<payment-method-icon type="excelsior" />',
+		template: '<payment-method-icon type="unknown" />',
 	};
 }
