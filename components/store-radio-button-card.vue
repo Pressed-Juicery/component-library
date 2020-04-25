@@ -7,7 +7,7 @@
 		<div>{{ store.locality }}, {{ store.region }} {{ store.postal }}</div>
 
 		<div v-if="store.storeHours" class="store-radio-button-card__details">
-			<div v-for="hours in store.storeHours">{{ hours }}</div>
+			<div v-for="(hours, index) in store.storeHours" :key="index">{{ hours }}</div>
 		</div>
 	</radio-button-card>
 </template>
