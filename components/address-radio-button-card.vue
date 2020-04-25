@@ -4,9 +4,9 @@
 			<div v-if="title" class="address-radio-button-card__title">{{ title }}</div>
 
 			<div class="address-radio-button-card__content">
-				<div>{{ address.address1 }}</div>
-				<div v-if="address.address2">{{ address.address2 }}</div>
-				<div>{{ address.city }}, {{ address.province }} {{ address.zip }}</div>
+				<div>{{ address.streetAddress }}</div>
+				<div v-if="address.extendedAddress">{{ address.extendedAddress }}</div>
+				<div>{{ address.locality }}, {{ address.region }} {{ address.postal }}</div>
 			</div>
 
 			<div v-if="address.phone" class="address-radio-button-card__details">{{ phone }}</div>

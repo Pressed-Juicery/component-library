@@ -6,24 +6,24 @@ export default {
 };
 
 const firstAddress = {
-	address1: '1 Meadow Lane',
-	city: 'Portland',
-	province: 'OR',
-	zip: '27705',
+	streetAddress: '1 Meadow Lane',
+	locality: 'Portland',
+	region: 'OR',
+	postal: '27705',
 };
 
 const secondAddress = {
-	address1: '1 Duke University Drive',
-	city: 'Durham',
-	province: 'NC',
-	zip: '27709',
+	streetAddress: '1 Duke University Drive',
+	locality: 'Durham',
+	region: 'NC',
+	postal: '27709',
 };
 
 const thirdAddress = {
-	address1: '1 Amsterdam',
-	city: 'New York',
-	province: 'NY',
-	zip: '27705',
+	streetAddress: '1 Amsterdam',
+	locality: 'New York',
+	region: 'NY',
+	postal: '27705',
 };
 
 export function Overview() {
@@ -35,18 +35,18 @@ export function Overview() {
 	};
 }
 
-export function SecondaryAddress() {
+export function ExtendedAddress() {
 	return {
 		components: { AddressRadioButtonCard },
 		template: `
 			<address-radio-button-card title="Title"
-			                           :address="addressWithSecondaryAddress"
+			                           :address="addressWithExtendedAddress"
 			                           v-model="selectedAddress" />
         `,
 
 		data() {
 			return {
-				addressWithSecondaryAddress: { ...firstAddress, address2: 'Apt. 42' },
+				addressWithExtendedAddress: { ...firstAddress, extendedAddress: 'Apt. 42' },
 				selectedAddress: null,
 			};
 		},
@@ -110,7 +110,7 @@ export function LongAddress() {
 
 		data() {
 			return {
-				longAddress: { ...firstAddress, address1: '1 Meadow Lane!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' },
+				longAddress: { ...firstAddress, streetAddress: '1 Meadow Lane!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' },
 				selectedAddress: null,
 			};
 		},
@@ -123,7 +123,7 @@ export function RadioGroup() {
 		template: `
 			<div>
 				<address-radio-button-card v-for="address in addresses"
-				                           :key="address.address1"
+				                           :key="address.streetAddress"
 				                           title="Title"
 				                           :address="address"
 				                           v-model="selectedAddress" />
