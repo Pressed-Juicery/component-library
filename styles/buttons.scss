@@ -10,7 +10,7 @@ input[type="submit"] {
   text-transform: uppercase;
   text-align: center;
   font-family: "TTCommons-DemiBold", sans-serif;
-  background: $black;
+  background: $color-primary;
   color: $white;
   border: none;
   padding: $spacing-06;
@@ -31,8 +31,8 @@ input[type="submit"]:disabled {
 
 .button--secondary {
   background: transparent;
-  border: 1px solid $black;
-  color: $black;
+  border: 1px solid $color-primary;
+  color: $color-primary;
 }
 
 .button--pill {
@@ -66,7 +66,7 @@ input[type="submit"]:disabled {
 .button-secondary {
   font-weight: $font-weight-demibold;
 	font-size: $font-size-button-secondary;
-	color: $black;
+	color: $color-primary;
 	letter-spacing: 1px;
 	background-color: transparent;
 	text-transform: uppercase;
