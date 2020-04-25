@@ -1,15 +1,12 @@
 @import './variables';
-
-$font-size-button-primary: 16px;
-$font-size-button-secondary: 14px;
+@import './mixins';
 
 button,
 .button,
 input[type="button"],
 input[type="submit"] {
-	text-transform: uppercase;
+	@include text-cta();
 	text-align: center;
-	font-family: "TTCommons-DemiBold", sans-serif;
 	background: $color-primary;
 	color: $white;
 	border: none;
