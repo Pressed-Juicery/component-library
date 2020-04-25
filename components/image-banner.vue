@@ -24,6 +24,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+	@import '../styles/variables';
+
 	.image-background {
 		height: 100vh;
 		width: 100%;
@@ -36,7 +38,7 @@ export default {
 		background-image: var(--desktopImage);
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $tablet--max) {
 		.image-background {
 			background-image: var(--mobileImage);
 		}
