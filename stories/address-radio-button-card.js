@@ -112,7 +112,7 @@ export function LongAddress() {
 			return {
 				longAddress: {
 					...firstAddress,
-					streetAddress: '1 Meadow Lane!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',
+					streetAddress: '1 Meadow Lane!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',
 				},
 				selectedAddress: null,
 			};
