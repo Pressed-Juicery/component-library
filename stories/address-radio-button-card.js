@@ -67,24 +67,6 @@ export function Phone() {
 	};
 }
 
-export function DashedPhone() {
-	return {
-		components: { AddressRadioButtonCard },
-		template: `
-			<address-radio-button-card title="Title"
-			                           :address="addressWithDashedPhone"
-			                           v-model="selectedAddress" />
-		`,
-
-		data() {
-			return {
-				addressWithDashedPhone: { ...thirdAddress, phone: '205-234-3456' },
-				selectedAddress: null,
-			};
-		},
-	};
-}
-
 export function NoTitle() {
 	return {
 		components: { AddressRadioButtonCard },
