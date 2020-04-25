@@ -1,0 +1,47 @@
+@import './variables';
+
+$font-size-button-primary: 16px;
+$font-size-button-secondary: 14px;
+
+button,
+.button,
+input[type="button"],
+input[type="submit"] {
+	text-transform: uppercase;
+	text-align: center;
+	font-family: "TTCommons-DemiBold", sans-serif;
+	background: $color-primary;
+	color: $white;
+	border: none;
+	padding: $spacing-06;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+	border-radius: $border-radius;
+	user-select: none;
+}
+
+button:disabled,
+.button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled {
+	background: rgba(0,0,0,0.1);
+	color: rgba(0,0,0,0.4);
+	cursor: not-allowed;
+}
+
+.button--secondary {
+	background: transparent;
+	border: 1px solid $color-primary;
+	color: $color-primary;
+}
+
+.button--secondary:disabled {
+	background: transparent;
+	border-color: rgba(0,0,0,0.1);
+}
+
+.button--pill {
+	border-radius: 100px;
+	padding: $spacing-04 $spacing-06;
+}
