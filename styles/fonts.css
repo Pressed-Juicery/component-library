@@ -1,0 +1,131 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3772240, 2019-06-11T21:04:53-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: TTCommons-Regular by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-commons/regular/
+ *
+ * Webfont: TTCommons-Light by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-commons/light/
+ *
+ * Webfont: TTCommons-Medium by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-commons/medium/
+ *
+ * Webfont: TTCommons-Italic by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-commons/italic/
+ *
+ * Webfont: TTCommons-DemiBold by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-commons/demi-bold/
+ *
+ *
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3772240
+ * Licensed pageviews: 2,020,000
+ * Webfonts copyright: Copyright (c) 2018 by TypeType. Designers Ivan Gladkikh, Pavel Emelyanov. Technical designers Marina Khodak, Vika Usmanova, Nadyr Rakhimov. All rights reserved.
+ *
+ * © 2019 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url ("//hello.myfonts.net/count/398f50");
+
+@font-face {
+	font-family: 'TTCommons-Regular';
+	src: url ('398F50_0_0.eot');
+	src: url ('398F50_0_0.eot?#iefix') format('embedded-opentype'),
+	     url ('398F50_0_0.woff2') format('woff2'),
+	     url ('398F50_0_0.woff') format('woff'),
+	     url ('398F50_0_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'TTCommons-Light';
+	src: url ('398F50_1_0.eot');
+	src: url ('398F50_1_0.eot?#iefix') format('embedded-opentype'),
+	     url ('398F50_1_0.woff2') format('woff2'),
+	     url ('398F50_1_0.woff') format('woff'),
+	     url ('398F50_1_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'TTCommons-Medium';
+	src: url ('398F50_2_0.eot');
+	src: url ('398F50_2_0.eot?#iefix') format('embedded-opentype'),
+	     url ('398F50_2_0.woff2') format('woff2'),
+	     url ('398F50_2_0.woff') format('woff'),
+	     url ('398F50_2_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'TTCommons-Italic';
+	src: url ('398F50_3_0.eot');
+	src: url ('398F50_3_0.eot?#iefix') format('embedded-opentype'),
+	     url ('398F50_3_0.woff2') format('woff2'),
+	     url ('398F50_3_0.woff') format('woff'),
+	     url ('398F50_3_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'TTCommons-DemiBold';
+	src: url ('398F50_4_0.eot');
+	src: url ('398F50_4_0.eot?#iefix') format('embedded-opentype'),
+	     url ('398F50_4_0.woff2') format('woff2'),
+	     url ('398F50_4_0.woff') format('woff'),
+	     url ('398F50_4_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'TTCommons';
+	src: url ('398F50_1_0.eot');
+	src: url ('398F50_1_0.eot?#iefix') format('embedded-opentype'),
+	     url ('398F50_1_0.woff2') format('woff2'),
+	     url ('398F50_1_0.woff') format('woff'),
+	     url ('398F50_1_0.ttf') format('truetype');
+	font-weight: 100 300;
+}
+
+@font-face {
+	font-family: 'TTCommons';
+	src: url ('398F50_0_0.eot');
+	src: url ('398F50_0_0.eot?#iefix') format('embedded-opentype'),
+	     url ('398F50_0_0.woff2') format('woff2'),
+	     url ('398F50_0_0.woff') format('woff'),
+	     url ('398F50_0_0.ttf') format('truetype');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'TTCommons';
+	src: url ('398F50_2_0.eot');
+	src: url ('398F50_2_0.eot?#iefix') format('embedded-opentype'),
+	     url ('398F50_2_0.woff2') format('woff2'),
+	     url ('398F50_2_0.woff') format('woff'),
+	     url ('398F50_2_0.ttf') format('truetype');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'TTCommons';
+	src: url ('398F50_4_0.eot');
+	src: url ('398F50_4_0.eot?#iefix') format('embedded-opentype'),
+	     url ('398F50_4_0.woff2') format('woff2'),
+	     url ('398F50_4_0.woff') format('woff'),
+	     url ('398F50_4_0.ttf') format('truetype');
+	font-weight: 600 800;
+}
+
+@font-face {
+	font-family: 'TTCommons';
+	src: url ('398F50_3_0.eot');
+	src: url ('398F50_3_0.eot?#iefix') format('embedded-opentype'),
+	     url ('398F50_3_0.woff2') format('woff2'),
+	     url ('398F50_3_0.woff') format('woff'),
+	     url ('398F50_3_0.ttf') format('truetype');
+	font-style: italic;
+}
