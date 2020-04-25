@@ -7,42 +7,42 @@ button,
 .button,
 input[type="button"],
 input[type="submit"] {
-  text-transform: uppercase;
-  text-align: center;
-  font-family: "TTCommons-DemiBold", sans-serif;
-  background: $color-primary;
-  color: $white;
-  border: none;
-  padding: $spacing-06;
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  border-radius: $border-radius;
-  user-select: none;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: "TTCommons-DemiBold", sans-serif;
+	background: $color-primary;
+	color: $white;
+	border: none;
+	padding: $spacing-06;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+	border-radius: $border-radius;
+	user-select: none;
 }
 
 button:disabled,
 .button:disabled,
 input[type="button"]:disabled,
 input[type="submit"]:disabled {
-  background: rgba(0,0,0,0.1);
-  color: rgba(0,0,0,0.4);
-  cursor: not-allowed;
+	background: rgba(0,0,0,0.1);
+	color: rgba(0,0,0,0.4);
+	cursor: not-allowed;
 }
 
 .button--secondary {
-  background: transparent;
-  border: 1px solid $color-primary;
-  color: $color-primary;
+	background: transparent;
+	border: 1px solid $color-primary;
+	color: $color-primary;
 }
 
 .button--pill {
-  border-radius: 100px;
-  padding: $spacing-04 $spacing-06;
+	border-radius: 100px;
+	padding: $spacing-04 $spacing-06;
 }
 
 .button-secondary {
-  font-weight: $font-weight-demibold;
+	font-weight: $font-weight-demibold;
 	font-size: $font-size-button-secondary;
 	color: $color-primary;
 	letter-spacing: 1px;
