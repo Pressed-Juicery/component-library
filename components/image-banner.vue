@@ -36,7 +36,7 @@ export default {
 		background-image: var(--desktopImage);
 	}
 
-	@media screen and (max-width: 768px ){
+	@media screen and (max-width: 768px) {
 		.image-background {
 			background-image: var(--mobileImage);
 		}
