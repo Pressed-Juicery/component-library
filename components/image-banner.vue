@@ -38,7 +38,7 @@ export default {
 		background-image: var(--desktopImage);
 	}
 
-	@media (max-width: $tablet--max) {
+	@media (max-width: $max-width-tablet) {
 		.image-background {
 			background-image: var(--mobileImage);
 		}
