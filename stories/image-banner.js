@@ -6,7 +6,7 @@ export default {
 	title: 'ImageBanner',
 };
 
-export function Banner1() {
+export function Overview() {
 	return {
 		components: { ImageBanner },
 		template: `
