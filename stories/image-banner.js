@@ -1,5 +1,5 @@
-import '../../styles/buttons.scss';
-import ImageBanner from '../../components/image-banner';
+import '../styles/buttons.scss';
+import ImageBanner from '../components/image-banner';
 
 export default {
 	component: ImageBanner,
