@@ -1,6 +1,8 @@
 @import './variables';
 @import './mixins';
 
+$button-height: $spacing-08;
+
 button,
 .button,
 input[type="button"],
@@ -9,13 +11,15 @@ input[type="submit"] {
 	text-align: center;
 	background: $color-primary;
 	color: $white;
-	border: none;
-	padding: $spacing-06;
-	display: block;
-	width: 100%;
+	padding: 0 $spacing-07;
 	cursor: pointer;
 	border-radius: $border-radius;
 	user-select: none;
+	height: $button-height;
+
+	// NOTE: The 1px border and 2px offset is required to correctly center the text vertically.
+	border: 1px solid transparent;
+	line-height: calc(#{$button-height} + 2px);
 }
 
 button:disabled,
@@ -39,6 +43,5 @@ input[type="submit"]:disabled {
 }
 
 .button--pill {
-	border-radius: 100px;
-	padding: $spacing-04 $spacing-06;
+	border-radius: 999em;
 }
