@@ -47,12 +47,6 @@ input[type="submit"]:disabled {
   padding: $spacing-04 $spacing-06;
 }
 
-.button--pill.button--active {
-  color: $white;
-  background: black;
-  border-color: transparent;
-}
-
 .button-primary {
 	height: 60px;
 	text-transform: uppercase;
