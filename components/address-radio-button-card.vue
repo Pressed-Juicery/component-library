@@ -1,7 +1,7 @@
 <template>
 	<radio-button-card :value="address" v-model="model">
 		<template>
-			<div class="address-radio-button-card__title" v-if="title">{{ title }}</div>
+			<div v-if="title" class="address-radio-button-card__title">{{ title }}</div>
 
 			<div class="address-radio-button-card__content">
 				<div>{{ address.address1 }}</div>
@@ -9,7 +9,7 @@
 				<div>{{ address.city }}, {{ address.province }} {{ address.zip }}</div>
 			</div>
 
-			<div class="address-radio-button-card__details" v-if="address.phone">{{ phone }}</div>
+			<div v-if="address.phone" class="address-radio-button-card__details">{{ phone }}</div>
 		</template>
 	</radio-button-card>
 </template>
