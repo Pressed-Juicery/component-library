@@ -69,15 +69,10 @@ export function Hours() {
 			return {
 				storeWithHours: {
 					...thirdStore,
-					storeHours: {
-						sunday: { start: 1100, end: 2000 },
-						monday: { start: 800, end: 2100 },
-						tuesday: { start: 800, end: 2100 },
-						wednesday: { start: 800, end: 2100 },
-						thursday: { start: 800, end: 2100 },
-						friday: { start: 800, end: 2100 },
-						saturday: { start: 1100, end: 2000 },
-					},
+					storeHours: [
+						'Mon-Fri 8am-9pm',
+						'Sat-Sun 11am-8pm',
+					],
 				},
 				selectedStore: null,
 			};
@@ -94,15 +89,14 @@ export function VariedHours() {
 			return {
 				storeWithVariedHours: {
 					...firstStore,
-					storeHours: {
-						sunday: { start: 1100, end: 2000 },
-						monday: { start: 700, end: 2100 },
-						tuesday: { start: 800, end: 2100 },
-						wednesday: { start: 800, end: 2200 },
-						thursday: { start: 800, end: 2100 },
-						friday: { start: 800, end: 2000 },
-						saturday: { start: 700, end: 1900 },
-					},
+					storeHours: [
+						'Mon 7am-9pm',
+						'Tues 8am-9pm',
+						'Wed 8am-10pm',
+						'Thu 8am-9pm',
+						'Fri 8am-8pm',
+						'Sat 7am-7pm',
+					],
 				},
 				selectedStore: null,
 			};
