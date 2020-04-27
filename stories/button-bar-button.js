@@ -9,7 +9,7 @@ export function Overview() {
 	return {
 		components: { ButtonBarButton },
 		template: `
-			<button-bar-button style="margin:20px; padding:20px" value="Button Bar Button">
+			<button-bar-button style="padding:20px" value="Button Bar Button">
 				<div>Button Bar Button</div>
 				<div>Customizable Content</div>
 			</button-bar-button>
@@ -21,7 +21,7 @@ export function Selected() {
 	return {
 		components: { ButtonBarButton },
 		template: `
-			<button-bar-button style="margin:20px; padding:20px"
+			<button-bar-button style="padding:20px"
 			                   value="Button Bar Button"
 			                   selectedButton="Button Bar Button">
 				<div>Button Bar Button</div>
@@ -35,7 +35,7 @@ export function ButtonBar() {
 	return {
 		components: { ButtonBarButton },
 		template: `
-			<div style="margin:20px; padding:20px; display:flex">
+			<div style="margin:20px; display:flex">
 				<button-bar-button style="padding:20px"
 				                   v-for="(content, index) in contents"
 				                   :key="index"
@@ -65,7 +65,7 @@ export function VariedButtonBar() {
 	return {
 		components: { ButtonBarButton },
 		template: `
-			<div style="margin:20px; padding:20px; display:flex">
+			<div style="margin:20px; display:flex">
 				<button-bar-button style="padding:20px"
 				                   value="A"
 				                   :selectedButton="selectedButton"
