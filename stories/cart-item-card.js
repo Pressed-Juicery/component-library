@@ -41,3 +41,22 @@ export function AdditionalInformation() {
 		},
 	};
 }
+
+export function LotsOfExtraInformation() {
+	return {
+		components: { CartItemCard },
+		template: '<cart-item-card style="margin: 20px" :item="item" />',
+
+		data() {
+			return {
+				item: {
+					name: 'Strawberry Basil Lemonade',
+					imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+					additionalInformation: 'Chocolate chip cookies, granola, chocolate chips, coconut, blueberries, pistachios, almonds, chocolate sauce, caramel',
+					quantity: '3',
+					discountedTotalPrice: '6.50',
+				},
+			};
+		},
+	};
+}
