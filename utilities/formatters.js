@@ -1,5 +1,5 @@
 export function currency(amount) {
-	if (window.isNaN(amount)) return '';
+	if (Number.isNaN(Number(amount))) return '';
 
 	const prefix = amount < 0 ? '-$' : '$';
 	const fixedPointAmount = Math.abs(amount).toFixed(2);
