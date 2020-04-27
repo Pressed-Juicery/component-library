@@ -42,7 +42,7 @@ export function AdditionalInformation() {
 	};
 }
 
-export function LotsOfExtraInformation() {
+export function LongAdditionalInformation() {
 	return {
 		components: { CartItemCard },
 		template: '<cart-item-card style="margin: 20px" :item="item" />',
