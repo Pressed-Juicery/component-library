@@ -31,6 +31,7 @@ export default {
 		border-radius: 0;
 		background-color: transparent;
 		color: $gray-100;
+		text-transform: lowercase;
 	}
 
 	.button-bar-button:focus {
