@@ -20,7 +20,7 @@ export default {
 
 	methods: {
 		getBreadcrumbClass(index, breadcrumbs) {
-			return index < breadcrumbs.length-1
+			return index < breadcrumbs.length - 1
 				? 'breadcrumbs__breadcrumb--gray'
 				: 'breadcrumbs__breadcrumb--bold';
 		},
