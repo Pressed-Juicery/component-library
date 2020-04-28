@@ -7,19 +7,19 @@
 // ------------
 
 @mixin text-light() {
-	font-family: TTCommons-Light, sans-serif;
+	font-family: 'tt-commons-light', sans-serif;
 }
 
 @mixin text-normal() {
-	font-family: TTCommons-Regular, sans-serif;
+	font-family: 'tt-commons-regular', sans-serif;
 }
 
 @mixin text-bold() {
-	font-family: TTCommons-Medium, sans-serif;
+	font-family: 'tt-commons-medium', sans-serif;
 }
 
 @mixin text-bolder() {
-	font-family: TTCommons-DemiBold, sans-serif;
+	font-family: 'tt-commons-demibold', sans-serif;
 }
 
 // Headings
