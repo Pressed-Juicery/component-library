@@ -21,7 +21,10 @@
 
 			<div class="cart-summary__row">
 				<p class="cart-summary__shipping-label">Shipping/Delivery</p>
-				<p class="cart-summary__shipping">calculated at next step</p>
+				<p v-if="cart.shippingPrice" class="cart-summary__shipping-price">
+					{{ formatPrice(cart.shippingPrice) }}
+				</p>
+				<p v-else class="cart-summary__shipping-info">calculated at next step</p>
 			</div>
 		</div>
 
@@ -104,7 +107,7 @@ export default {
 		margin-bottom: $spacing-03;
 	}
 
-	.cart-summary__shipping {
+	.cart-summary__shipping-info {
 		color: $gray-40;
 	}
 </style>
