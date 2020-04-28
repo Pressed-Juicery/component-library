@@ -21,6 +21,7 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"homepage": "https://github.com/Pressed-Juicery/component-library#readme",
 	"dependencies": {
+		"braintree-web": "^3.61.0",
 		"normalize.css": "8.0.1"
 	},
 	"devDependencies": {
