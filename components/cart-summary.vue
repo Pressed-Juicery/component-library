@@ -26,6 +26,15 @@
 				</p>
 				<p v-else class="cart-summary__shipping-info">calculated at next step</p>
 			</div>
+
+			<div v-if="cart.discounts && cart.discounts.length">
+				<div class="cart-summary__row"
+				     v-for="discount in cart.discounts"
+				     :key="discount.name">
+					<p class="cart-summary__discount-label">{{ discount.name }}</p>
+					<p class="cart-summary__discount-amount">{{ formatPrice(-Math.abs(discount.amount)) }}</p>
+				</div>
+			</div>
 		</div>
 
 		<div class="cart-summary__row">
