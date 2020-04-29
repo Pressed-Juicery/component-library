@@ -16,7 +16,8 @@ export function Overview() {
 			return {
 				cart: {
 					itemCount: 101,
-					subtotal: 150.5,
+					subtotal: 100,
+					total: 150.5,
 					items: [
 						{
 							name: 'Strawberry Basil Lemonade',

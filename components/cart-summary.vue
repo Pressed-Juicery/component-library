@@ -39,7 +39,7 @@
 
 		<div class="cart-summary__row">
 			<p class="cart-summary__total-label">Estimated Total</p>
-			<p class="cart-summary__total">{{ formatPrice(cart.subtotal) }}</p>
+			<p class="cart-summary__total">{{ formatPrice(cart.total) }}</p>
 		</div>
 	</div>
 </template>
