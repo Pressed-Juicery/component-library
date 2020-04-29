@@ -54,7 +54,7 @@ import { hostedFieldsService } from '../services/hosted-fields.service';
 
 export default {
 	props: {
-		authorization: {
+		braintreeTokenizationKey: {
 			type: String,
 			required: true,
 		},
@@ -103,7 +103,7 @@ export default {
 				},
 			};
 
-			hostedFieldsService.create(this.authorization, this.fields, styles)
+			hostedFieldsService.create(this.braintreeTokenizationKey, this.fields, styles)
 				.then(hostedFields => {
 					this.hostedFields = hostedFields;
 

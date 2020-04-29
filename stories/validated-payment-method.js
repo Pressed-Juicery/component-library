@@ -11,7 +11,8 @@ export function Overview() {
 		components: { ValidatedForm, ValidatedPaymentMethod },
 		template: `
 			<validated-form style="margin:20px">
-				<validated-payment-method :authorization="authorizationToken" @change="nonce => test = nonce" />
+				<validated-payment-method :braintree-tokenization-key="braintreeTokenizationKey"
+				                          @change="nonce => test = nonce" />
 				
 				<button style="margin-top:20px; width:120px" type="submit">SUBMIT</button>
 				
@@ -19,6 +20,6 @@ export function Overview() {
 			</validated-form>
 		`,
 
-		data() { return { authorizationToken: 'sandbox_x6kjt36z_3cr8bsrh82p5jrcp', test: null } },
+		data() { return { braintreeTokenizationKey: 'sandbox_x6kjt36z_3cr8bsrh82p5jrcp', test: null } },
 	};
 }
