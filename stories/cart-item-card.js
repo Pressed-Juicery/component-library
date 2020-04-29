@@ -8,7 +8,7 @@ export default {
 export function Overview() {
 	return {
 		components: { CartItemCard },
-		template: '<cart-item-card style="margin: 20px" :item="item" />',
+		template: '<cart-item-card style="margin:20px" :item="item" />',
 
 		data() {
 			return {
