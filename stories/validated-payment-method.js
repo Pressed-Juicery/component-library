@@ -12,14 +12,14 @@ export function Overview() {
 		template: `
 			<validated-form style="margin:20px">
 				<validated-payment-method :braintree-tokenization-key="braintreeTokenizationKey"
-				                          @change="nonce => test = nonce" />
+				                          @change="nonce => result = nonce" />
 				
 				<button style="margin-top:20px; width:120px" type="submit">SUBMIT</button>
 				
-				<p>Test: {{ test }}</p>
+				<p>Result: {{ result }}</p>
 			</validated-form>
 		`,
 
-		data() { return { braintreeTokenizationKey: 'sandbox_x6kjt36z_3cr8bsrh82p5jrcp', test: null } },
+		data() { return { braintreeTokenizationKey: 'sandbox_x6kjt36z_3cr8bsrh82p5jrcp', result: null } },
 	};
 }
