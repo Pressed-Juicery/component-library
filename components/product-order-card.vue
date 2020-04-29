@@ -6,15 +6,15 @@
 			<div class="product-order-card__title">{{ product.title }}</div>
 
 			<div v-if="displaySamePrice" class="product-order-card__price">
-				<span>${{ displaySamePrice }}</span>
+				<span>{{ displaySamePrice }}</span>
 			</div>
 
 			<div v-else class="product-order-card__price">
-				<span :class="['product-order-card__price', {'product-order-card__price--strike' : product.nonMemberDiscountPrice }]">${{ formatPrice(product.nonMemberPrice) }}</span> <!-- eslint-disable-line -->
-				<span>${{ formatPrice(product.nonMemberDiscountPrice) }}</span>
+				<span :class="['product-order-card__price', {'product-order-card__price--strike' : product.nonMemberDiscountPrice }]">{{ formatPrice(product.nonMemberPrice) }}</span> <!-- eslint-disable-line -->
+				<span>{{ formatPrice(product.nonMemberDiscountPrice) }}</span>
 				<span> | </span>
-				<span :class="['product-order-card__price', {'product-order-card__price--strike' : product.memberDiscountPrice }]">${{ formatPrice(product.memberPrice) }}</span> <!-- eslint-disable-line -->
-				<span>${{ formatPrice(product.memberDiscountPrice) }}</span>
+				<span :class="['product-order-card__price', {'product-order-card__price--strike' : product.memberDiscountPrice }]">{{ formatPrice(product.memberPrice) }}</span> <!-- eslint-disable-line -->
+				<span>{{ formatPrice(product.memberDiscountPrice) }}</span>
 			</div>
 
 			<quantity-selector :quantity="quantity" @updateQuantity="updateQuantity"/>
@@ -55,7 +55,7 @@ export default {
 			return Object.prototype.hasOwnProperty.call(this.product, key) && this.product[key];
 		},
 		formatPrice(price) {
-			return price ? price.toFixed(2) : null;
+			return price ? `$${price.toFixed(2)}` : null;
 		},
 		updateQuantity(mutation) {
 			this.$emit('updateQuantity', mutation);
