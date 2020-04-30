@@ -9,7 +9,7 @@ export function Overview() {
 	return {
 		components: { Breadcrumbs },
 		template: `
-			<div style="margin:20px">
+			<div>
 				<breadcrumbs :breadcrumbs="breadcrumbs" @select="breadcrumb => selectedBreadcrumb = breadcrumb" />
 				<p v-if="selectedBreadcrumb">Selected Breadcrumb: {{ selectedBreadcrumb.name }}</p>
 			</div>
