@@ -18,6 +18,9 @@ export function Overview() {
 		data() {
 			return {
 				breadcrumbs: [{
+					name: 'Back To Shop',
+				},
+				{
 					name: 'Fulfillment Method',
 				},
 				{
