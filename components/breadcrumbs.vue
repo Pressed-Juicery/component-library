@@ -21,19 +21,22 @@ export default {
 	methods: {
 		getBreadcrumbClass(index, breadcrumbs) {
 			return index < breadcrumbs.length - 1
-				? 'breadcrumbs__breadcrumb--gray'
-				: 'breadcrumbs__breadcrumb--bold';
+				? 'breadcrumbs__breadcrumb--inactive'
+				: 'breadcrumbs__breadcrumb--active';
 		},
 	},
 };
 </script>
 
 <style scoped lang="scss">
-	.breadcrumbs__breadcrumb--gray {
+	@import '../styles/mixins';
 
+	.breadcrumbs__breadcrumb--inactive {
+		color: $color-text-gray;
 	}
 
-	.breadcrumbs__breadcrumb--bold {
+	.breadcrumbs__breadcrumb--active {
+		@include text-bold();
 	}
 
 	.breadcrumbs__breadcrumb-divider {
