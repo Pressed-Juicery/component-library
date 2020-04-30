@@ -34,3 +34,24 @@ export function Overview() {
 		},
 	};
 }
+
+export function OneBreadcrumb() {
+	return {
+		components: { Breadcrumbs },
+		template: `
+			<div>
+				<breadcrumbs :breadcrumbs="breadcrumbs" @select="breadcrumb => selectedBreadcrumb = breadcrumb" />
+				<p v-if="selectedBreadcrumb">Selected Breadcrumb: {{ selectedBreadcrumb.name }}</p>
+			</div>
+		`,
+
+		data() {
+			return {
+				breadcrumbs: [{
+					name: 'Back To Shop',
+				}],
+				selectedBreadcrumb: null,
+			};
+		},
+	};
+}
