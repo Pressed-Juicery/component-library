@@ -43,19 +43,15 @@ export default {
 
 <style scoped lang="scss">
 @import '../styles/variables';
+@import '../styles/mixins';
 
 .store-radio-button-card__title {
 	margin-bottom: $spacing-04;
-	font-size: $font-size-04;
-	font-weight: $font-weight-bold;
-}
-
-.store-radio-button-card__content {
-	font-size: $font-size-04;
+	@include text-bold();
 }
 
 .store-radio-button-card__details {
 	margin-top: $spacing-04;
-	font-size: $font-size-02;
+	@include text-body-small();
 }
 </style>
