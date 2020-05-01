@@ -31,7 +31,7 @@ export function AdditionalInformation() {
 		data() {
 			return {
 				item: {
-					name: 'Strawberry Basil Lemonade',
+					name: 'Strawberry Almond',
 					imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 					additionalInformation: 'Chocolate chip cookies, granola, chocolate chips',
 					quantity: '3',
