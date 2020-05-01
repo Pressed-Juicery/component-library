@@ -54,7 +54,7 @@ $blue-100: #001141;
 
 $color-primary: #282321;
 
-$color-text-gray: $gray-30;
+$color-text-gray: #9c9c9c;
 $color-text-placeholder: $gray-50;
 
 $color-danger: $red-60;
@@ -70,10 +70,21 @@ $color-info-background: $blue-10;
 $color_info-border: $blue-20;
 
 
-// Measurements
-// ============
+// Spacing
+// -------
 
-$rem: 16px;
+$spacing-01: 0.2rem;
+$spacing-02: 0.4rem;
+$spacing-03: 0.8rem;
+$spacing-04: 1.2rem;
+$spacing-05: 1.6rem;
+$spacing-06: 2.4rem;
+$spacing-07: 3.2rem;
+$spacing-08: 4.0rem;
+$spacing-09: 4.8rem;
+$spacing-10: 6.4rem;
+$spacing-11: 9.6rem;
+$spacing-12: 16.0rem;
 
 
 // Screen sizes
@@ -85,58 +96,6 @@ $max-width-tablet-large: 1024px;
 $max-width-tablet: 768px;
 $max-width-phone-large: 480px;
 $max-width-phone: 370px;
-
-
-// Font Sizes
-// ----------
-
-$font-size-01: $rem * 0.75;  // 12
-$font-size-02: $rem * 0.875; // 14
-$font-size-03: $rem * 1;     // 16
-$font-size-04: $rem * 1.125; // 18
-$font-size-05: $rem * 1.25;  // 20
-$font-size-06: $rem * 1.5;   // 24
-$font-size-07: $rem * 1.75;  // 28
-$font-size-08: $rem * 2;     // 32
-$font-size-09: $rem * 2.25;  // 36
-$font-size-10: $rem * 2.625; // 42
-$font-size-11: $rem * 3;     // 48
-$font-size-12: $rem * 3.375; // 54
-$font-size-13: $rem * 3.75;  // 60
-$font-size-14: $rem * 4.25;  // 68
-$font-size-15: $rem * 4.75;  // 76
-$font-size-16: $rem * 5.25;  // 84
-$font-size-17: $rem * 5.75;  // 92
-
-
-// Semantic Font Sizes
-// -------------------
-
-$font-size-default: $font-size-03;
-
-
-// Font Weights
-// ------------
-
-$font-weight-bold: bold;
-$font-weight-light: 200;
-
-
-// Spacing
-// -------
-
-$spacing-01: $rem * 0.125; // 2
-$spacing-02: $rem * 0.25;  // 4
-$spacing-03: $rem * 0.5;   // 8
-$spacing-04: $rem * 0.75;  // 12
-$spacing-05: $rem * 1;     // 16
-$spacing-06: $rem * 1.5;   // 24
-$spacing-07: $rem * 2;     // 32
-$spacing-08: $rem * 2.5;   // 40
-$spacing-09: $rem * 3;     // 48
-$spacing-10: $rem * 4;     // 64
-$spacing-11: $rem * 6;     // 96
-$spacing-12: $rem * 10;    // 160
 
 
 // Borders

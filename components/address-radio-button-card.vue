@@ -3,11 +3,9 @@
 		<template>
 			<div v-if="title" class="address-radio-button-card__title">{{ title }}</div>
 
-			<div class="address-radio-button-card__content">
-				<div>{{ address.streetAddress }}</div>
-				<div v-if="address.extendedAddress">{{ address.extendedAddress }}</div>
-				<div>{{ address.locality }}, {{ address.region }} {{ address.postal }}</div>
-			</div>
+			<div>{{ address.streetAddress }}</div>
+			<div v-if="address.extendedAddress">{{ address.extendedAddress }}</div>
+			<div>{{ address.locality }}, {{ address.region }} {{ address.postal }}</div>
 
 			<div v-if="address.phone" class="address-radio-button-card__details">{{ phone }}</div>
 		</template>
@@ -52,19 +50,15 @@ export default {
 
 <style scoped lang="scss">
 	@import '../styles/variables';
+	@import '../styles/mixins';
 
 	.address-radio-button-card__title {
 		margin-bottom: $spacing-04;
-		font-size: $font-size-04;
-		font-weight: $font-weight-bold;
-	}
-
-	.address-radio-button-card__content {
-		font-size: $font-size-04;
+		@include text-bold();
 	}
 
 	.address-radio-button-card__details {
 		margin-top: $spacing-04;
-		font-size: $font-size-02;
+		@include text-body-small();
 	}
 </style>
