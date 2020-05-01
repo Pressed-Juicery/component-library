@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="breadcrumbs">
 		<span v-for="(breadcrumb, index) in breadcrumbs" :key="index">
 			<span :class="getBreadcrumbClass(index, breadcrumbs)" @click="$emit('select', breadcrumb)">
 				{{ breadcrumb.name }}
@@ -20,9 +20,7 @@ export default {
 
 	methods: {
 		getBreadcrumbClass(index, breadcrumbs) {
-			return index < breadcrumbs.length - 1
-				? 'breadcrumbs__breadcrumb--inactive'
-				: 'breadcrumbs__breadcrumb--active';
+			return index < breadcrumbs.length - 1 ? 'breadcrumbs--inactive' : 'breadcrumbs--active';
 		},
 	},
 };
@@ -31,11 +29,11 @@ export default {
 <style scoped lang="scss">
 	@import '../styles/mixins';
 
-	.breadcrumbs__breadcrumb--inactive {
+	.breadcrumbs--inactive {
 		color: $color-text-gray;
 	}
 
-	.breadcrumbs__breadcrumb--active {
+	.breadcrumbs--active {
 		@include text-bold();
 	}
 
