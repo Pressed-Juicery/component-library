@@ -4,21 +4,23 @@
 			<img class="cart-item-card__image" :src="item.imageUrl" :alt="item.name" />
 		</span>
 
-		<div class="cart-item-card__main-content">
-			<div class="cart-item-card__title">{{ item.name }}</div>
-			<div v-if="item.additionalInformation" class="cart-item-card__additional-info">
-				{{ item.additionalInformation }}
+		<div class="cart-item-card__description"
+		     :class="{ 'cart-item-card__description--reduced-height': !item.additionalInformation }">
+			<div class="cart-item-card__main-content">
+				<div class="cart-item-card__title">{{ item.name }}</div>
+				<div v-if="item.additionalInformation" class="cart-item-card__additional-info">
+					{{ item.additionalInformation }}
+				</div>
+				<div class="cart-item-card__quantity">Qty {{ item.quantity }}</div>
 			</div>
-			<div class="cart-item-card__quantity">Qty {{ item.quantity }}</div>
-		</div>
 
-		<span class="cart-item-card__price">{{ formatPrice(item.discountedTotalPrice) }}</span>
+			<span class="cart-item-card__price">{{ displayPrice }}</span>
+		</div>
 	</card>
 </template>
 
 <script>
 import Card from './card.vue';
-
 import { currency } from '../utilities/formatters';
 
 export default {
