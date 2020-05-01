@@ -50,7 +50,7 @@ export default {
 	}
 
 	.cart-item-card__image-container {
-		width: 11rem;
+		width: 9rem;
 	}
 
 	.cart-item-card__image {
