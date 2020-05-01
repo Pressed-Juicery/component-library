@@ -8,7 +8,7 @@ export default {
 export function Overview() {
 	return {
 		components: { CartItemCard },
-		template: '<cart-item-card style="margin:20px" :item="item" />',
+		template: '<cart-item-card :item="item" />',
 
 		data() {
 			return {
@@ -26,7 +26,7 @@ export function Overview() {
 export function AdditionalInformation() {
 	return {
 		components: { CartItemCard },
-		template: '<cart-item-card style="margin: 20px" :item="item" />',
+		template: '<cart-item-card :item="item" />',
 
 		data() {
 			return {
@@ -45,7 +45,7 @@ export function AdditionalInformation() {
 export function LongAdditionalInformation() {
 	return {
 		components: { CartItemCard },
-		template: '<cart-item-card style="margin: 20px" :item="item" />',
+		template: '<cart-item-card :item="item" />',
 
 		data() {
 			return {
