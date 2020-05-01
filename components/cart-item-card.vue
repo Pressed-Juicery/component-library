@@ -72,17 +72,34 @@ export default {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		margin-left: $spacing-04;
-		margin-right: $spacing-06;
+		margin: 0 $spacing-06 0 (-$spacing-06);
 		word-break: break-word;
 	}
 
 	.cart-item-card__title {
+		@include text-bold();
+
 		margin-bottom: $spacing-02;
+		line-height: 1;
 	}
 
 	.cart-item-card__additional-info {
+		@include text-body-small();
+
 		margin-bottom: $spacing-02;
-		color: $gray-70;
+		line-height: 1;
+		color: $gray-60;
+	}
+
+	.cart-item-card__price {
+		@include text-bold();
+
+		line-height: 1;
+	}
+
+	.cart-item-card__quantity {
+		@include text-body-small();
+
+		line-height: 1;
 	}
 </style>
