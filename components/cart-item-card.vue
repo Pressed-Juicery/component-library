@@ -64,7 +64,7 @@ export default {
 	}
 
 	.cart-item-card__description--reduced-height {
-		margin: $spacing-03 0;
+		margin: $spacing-04 0;
 	}
 
 	.cart-item-card__main-content {
