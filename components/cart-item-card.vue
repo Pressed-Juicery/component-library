@@ -30,28 +30,41 @@ export default {
 		item: Object,
 	},
 
-	methods: {
-		formatPrice(amount) {
-			return currency(amount);
+	computed: {
+		displayPrice() {
+			return currency(this.item.discountedTotalPrice);
 		},
 	},
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
+	@import '../styles/mixins';
 	@import '../styles/variables';
+
+	$image-vertical-offset: -1.8rem;
+	$image-horizontal-offset: -1.8rem;
 
 	.cart-item-card {
 		display: flex;
 	}
 
 	.cart-item-card__image-container {
-		width: 80px;
-		margin: 0 auto -12px;
+		width: 11rem;
 	}
 
 	.cart-item-card__image {
 		width: 100%;
+		margin: 0 auto $image-vertical-offset $image-horizontal-offset;
+	}
+
+	.cart-item-card__description {
+		display: flex;
+		flex: 1;
+	}
+
+	.cart-item-card__description--reduced-height {
+		margin: $spacing-03 0;
 	}
 
 	.cart-item-card__main-content {
