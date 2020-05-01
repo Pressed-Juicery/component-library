@@ -83,6 +83,7 @@ export default {
 </script>
 
 <style lang="scss">
+	@import '../styles/mixins';
 	@import '../styles/variables';
 
 	.cart-summary {
@@ -118,5 +119,9 @@ export default {
 
 	.cart-summary__shipping-info {
 		color: $gray-40;
+	}
+
+	.cart-summary__total-label {
+		@include text-bold();
 	}
 </style>
