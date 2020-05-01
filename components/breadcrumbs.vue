@@ -30,7 +30,7 @@ export default {
 	@import '../styles/mixins';
 
 	.breadcrumbs--inactive {
-		color: $color-text-gray;
+		@include text-subtle();
 	}
 
 	.breadcrumbs--active {
@@ -38,6 +38,6 @@ export default {
 	}
 
 	.breadcrumbs__breadcrumb-divider {
-		color: $color-text-gray;
+		@include text-subtle();
 	}
 </style>
