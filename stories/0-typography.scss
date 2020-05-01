@@ -1,0 +1,42 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.typography-card {
+	margin: $spacing-03 0 $spacing-09;
+}
+
+// Font Weights
+// ------------
+
+.mixin-text-light { @include text-light(); }
+.mixin-text-normal { @include text-normal(); }
+.mixin-text-bold { @include text-bold(); }
+.mixin-text-bolder { @include text-bolder(); }
+
+// Headings
+// --------
+
+.mixin-text-heading-1 { @include text-heading-1(); }
+.mixin-text-heading-2 { @include text-heading-2(); }
+.mixin-text-heading-3 { @include text-heading-3(); }
+.mixin-text-heading-4 { @include text-heading-4(); }
+.mixin-text-heading-5 { @include text-heading-5(); }
+.mixin-text-heading-6 { @include text-heading-6(); }
+
+// Body Text
+// ---------
+
+.mixin-text-body { @include text-body(); }
+.mixin-text-body-small { @include text-body-small(); }
+
+// CTA Text
+// --------
+
+.mixin-text-cta { @include text-cta(); }
+.mixin-text-cta-small { @include text-cta-small(); }
+
+// Modifiers
+// ---------
+
+.mixin-text-subtle { @include text-subtle(); }
+.mixin-text-uppercase { @include text-uppercase(); }

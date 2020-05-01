@@ -36,6 +36,7 @@ export default {
 
 .radio-button {
 	font-size: 0;
+	line-height: 0;
 	vertical-align: middle;
 }
 
