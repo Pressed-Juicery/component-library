@@ -1,8 +1,8 @@
 <template>
 	<div class="cart-summary">
 		<div class="cart-summary__row">
-			<h1 class="cart-summary__title">Your Cart</h1>
-			<p class="cart-summary__item-count">{{ cart.itemCount }} items</p>
+			<p class="cart-summary__title heading-4">Your Cart</p>
+			<p class="cart-summary__item-count heading-4">{{ cart.itemCount }} items</p>
 		</div>
 
 		<div class="cart-summary__cart-items">
@@ -39,7 +39,7 @@
 
 		<div class="cart-summary__row">
 			<p class="cart-summary__total-label">Estimated Total</p>
-			<p class="cart-summary__total">{{ formatPrice(cart.total) }}</p>
+			<p class="cart-summary__total heading-4">{{ formatPrice(cart.total) }}</p>
 		</div>
 	</div>
 </template>
