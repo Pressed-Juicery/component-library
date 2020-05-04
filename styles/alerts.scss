@@ -1,0 +1,20 @@
+@import './variables';
+
+.alert {
+	margin: $spacing-07 0;
+	padding: $spacing-05 $spacing-03;
+	border-radius: $border-radius;
+	border: $border-width solid transparent;
+}
+
+.alert--danger {
+	color: $color-danger;
+	background: $color-danger-background;
+	border-color: $color-danger-border;
+}
+
+.alert--success {
+	color: $color-success;
+	background: $color-success-background;
+	border-color: $color-success-border;
+}
