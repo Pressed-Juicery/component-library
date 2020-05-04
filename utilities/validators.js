@@ -6,12 +6,12 @@ export function isEmail(value) {
 	return isEmpty(value) || /^\S+@\S+\.\S+$/.test(value);
 }
 
-export function isNotEmpty(value) {
-	return !isEmpty(value);
-}
-
 export function isEmpty(value) {
 	return !value && value !== 0;
+}
+
+export function isNotEmpty(value) {
+	return !isEmpty(value);
 }
 
 export function isValidPhoneNumber(value) {
