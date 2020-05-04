@@ -88,13 +88,10 @@ export default {
 
 		display: block;
 		margin-bottom: $spacing-01;
-		line-height: 1.2em;
 	}
 
 	.validated-input__error {
 		@include text-body-small();
 		@include text-error();
-
-		margin-bottom: $spacing-03;
 	}
 </style>
