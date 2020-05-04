@@ -1,8 +1,8 @@
 <template>
 	<div class="cart-summary">
 		<div class="cart-summary__row">
-			<div class="cart-summary__title heading-4">Your Cart</div>
-			<div class="cart-summary__item-count heading-4">{{ cart.itemCount }} items</div>
+			<div class="cart-summary__title">Your Cart</div>
+			<div class="cart-summary__item-count">{{ cart.itemCount }} items</div>
 		</div>
 
 		<div class="cart-summary__cart-items">
@@ -38,8 +38,8 @@
 		</div>
 
 		<div class="cart-summary__row">
-			<div class="cart-summary__total-label">Estimated Total</div>
-			<div class="cart-summary__total heading-5">{{ formatPrice(cart.total) }}</div>
+			<div class="cart-summary__total-label">Total</div>
+			<div class="cart-summary__total">{{ formatPrice(cart.total) }}</div>
 		</div>
 	</div>
 </template>
@@ -97,9 +97,14 @@ export default {
 	}
 
 	.cart-summary__title {
+		@include text-heading-4();
 		@include text-bolder();
 
 		margin-bottom: $spacing-06;
+	}
+
+	.cart-summary__item-count {
+		@include text-heading-4();
 	}
 
 	.cart-summary__cart-items {
@@ -136,5 +141,9 @@ export default {
 
 	.cart-summary__total-label {
 		@include text-bolder();
+	}
+
+	.cart-summary__total {
+		@include text-heading-5();
 	}
 </style>
