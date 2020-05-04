@@ -42,7 +42,7 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	$image-vertical-offset: -1.8rem;
+	$image-vertical-offset: -1.6rem;
 	$image-horizontal-offset: -1.8rem;
 
 	.cart-item-card {
