@@ -55,7 +55,6 @@ export function Email() {
 		template: `
 			<validated-input type="email"
 			                 label="Email"
-			                 labelHelper="This is label helper text."
 			                 v-model="email"
 			                 :rules="emailRules" />
 		`,
@@ -80,7 +79,6 @@ export function Password() {
 		template: `
 			<validated-input type="password"
 			                 label="Password"
-			                 labelHelper="This is label helper text."
 			                 v-model="password"
 			                 :rules="passwordRules" />
 		`,
@@ -106,7 +104,6 @@ export function Phone() {
 		template: `
 			<validated-input type="phone"
 			                 label="Phone Number"
-			                 labelHelper="This is label helper text."
 			                 v-model="phone"
 			                 :rules="phoneRules" />
 		`,
