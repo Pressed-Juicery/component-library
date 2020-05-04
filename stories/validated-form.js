@@ -29,8 +29,23 @@ export function ErrorMessage() {
 	return {
 		components: { ValidatedForm },
 		template: `
-			<validated-form :showError="true"
-			                errorMessage="There was a problem submitting this form.">
+			<validated-form :showError="true">
+				<label>
+					First Name
+					<input v-model="firstName"/>
+				</label>
+			</validated-form>
+		`,
+
+		data() { return { firstName: null } },
+	};
+}
+
+export function CustomErrorMessage() {
+	return {
+		components: { ValidatedForm },
+		template: `
+			<validated-form :showError="true" errorMessage="Form submission failed due to a server error.">
 				<label>
 					First Name
 					<input v-model="firstName"/>
@@ -71,8 +86,7 @@ export function DynamicErrorMessage() {
 			},
 		},
 		template: `
-			<validated-form :showError="showError"
-			                errorMessage="There was a problem submitting this form.">
+			<validated-form :showError="showError">
 				<first-name-input />
 				<second-name-input />
 				<button style="display:block; margin-top:20px; width:120px" type="submit">Submit</button>
