@@ -117,6 +117,8 @@ export default {
 	}
 
 	.cart-summary__shipping-info {
+		margin-left: $spacing-03;
+		text-align: right;
 		color: $gray-40;
 	}
 
