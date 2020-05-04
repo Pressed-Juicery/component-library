@@ -14,6 +14,7 @@ export function validate(value, rules = []) {
 
 		if (result instanceof Promise) {
 			const promise = result.then(isValid => !isValid && message);
+
 			promises.push(promise);
 		}
 	}

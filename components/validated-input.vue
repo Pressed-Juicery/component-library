@@ -31,10 +31,12 @@ export default {
 		value: null,
 	},
 
-	data: () => ({
-		isLazy: true,
-		error: null,
-	}),
+	data() {
+		return {
+			isLazy: true,
+			error: null,
+		};
+	},
 
 	computed: {
 		model: {

@@ -1,11 +1,10 @@
+import { hasMinimumLength, isEmail, isNotEmpty, isValidPhoneNumber } from '../utilities/validators';
 import ValidatedInput from '../components/validated-input';
 
 export default {
 	title: 'ValidatedInput',
 	component: ValidatedInput,
 };
-
-import { hasMinimumLength, isEmail, isNotEmpty, isValidPhoneNumber } from '../utilities/validators';
 
 export function Overview() {
 	return {
@@ -23,7 +22,7 @@ export function Overview() {
 					validator: isNotEmpty,
 					message: 'Please enter your first name.',
 				}],
-			}
+			};
 		},
 	};
 }
@@ -45,7 +44,7 @@ export function LabelHelper() {
 					validator: isNotEmpty,
 					message: 'Please enter your first name.',
 				}],
-			}
+			};
 		},
 	};
 }
@@ -70,7 +69,7 @@ export function Email() {
 					validator: isEmail,
 					message: 'Please enter a valid email address.',
 				}],
-			}
+			};
 		},
 	};
 }
@@ -96,7 +95,7 @@ export function Password() {
 					message: 'Passwords must be at least 6 characters long.',
 					options: { length: 6 },
 				}],
-			}
+			};
 		},
 	};
 }
@@ -121,7 +120,7 @@ export function Phone() {
 					validator: isValidPhoneNumber,
 					message: 'Please enter a valid ten-digit phone number.',
 				}],
-			}
+			};
 		},
 	};
 }
