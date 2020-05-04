@@ -1,8 +1,8 @@
 <template>
 	<div class="cart-summary">
 		<div class="cart-summary__row">
-			<p class="cart-summary__title heading-4">Your Cart</p>
-			<p class="cart-summary__item-count heading-4">{{ cart.itemCount }} items</p>
+			<div class="cart-summary__title heading-4">Your Cart</div>
+			<div class="cart-summary__item-count heading-4">{{ cart.itemCount }} items</div>
 		</div>
 
 		<div class="cart-summary__cart-items">
@@ -15,31 +15,31 @@
 
 		<div class="cart-summary__prices-summary">
 			<div class="cart-summary__row">
-				<p class="cart-summary__subtotal-label">Subtotal</p>
-				<p class="cart-summary__subtotal">{{ formatPrice(cart.subtotal) }}</p>
+				<div class="cart-summary__subtotal-label">Subtotal</div>
+				<div class="cart-summary__subtotal">{{ formatPrice(cart.subtotal) }}</div>
 			</div>
 
 			<div class="cart-summary__row">
-				<p class="cart-summary__shipping-label">Shipping/Delivery</p>
-				<p v-if="cart.shippingPrice" class="cart-summary__shipping-price">
+				<div class="cart-summary__shipping-label">Shipping/Delivery</div>
+				<div v-if="cart.shippingPrice" class="cart-summary__shipping-price">
 					{{ formatPrice(cart.shippingPrice) }}
-				</p>
-				<p v-else class="cart-summary__shipping-info">calculated at next step</p>
+				</div>
+				<div v-else class="cart-summary__shipping-info">calculated at next step</div>
 			</div>
 
 			<div v-if="cart.discounts && cart.discounts.length">
 				<div class="cart-summary__row"
 				     v-for="discount in cart.discounts"
 				     :key="discount.name">
-					<p class="cart-summary__discount-label">{{ discount.name }}</p>
-					<p class="cart-summary__discount-amount">{{ formatPrice(-Math.abs(discount.amount)) }}</p>
+					<div class="cart-summary__discount-label">{{ discount.name }}</div>
+					<div class="cart-summary__discount-amount">{{ formatPrice(-Math.abs(discount.amount)) }}</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="cart-summary__row">
-			<p class="cart-summary__total-label">Estimated Total</p>
-			<p class="cart-summary__total heading-4">{{ formatPrice(cart.total) }}</p>
+			<div class="cart-summary__total-label">Estimated Total</div>
+			<div class="cart-summary__total heading-5">{{ formatPrice(cart.total) }}</div>
 		</div>
 	</div>
 </template>
@@ -93,10 +93,13 @@ export default {
 	.cart-summary__row {
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: $spacing-03;
 	}
 
 	.cart-summary__title {
-		margin-bottom: $spacing-07;
+		@include text-bolder();
+
+		margin-bottom: $spacing-06;
 	}
 
 	.cart-summary__cart-items {
@@ -108,20 +111,28 @@ export default {
 	}
 
 	.cart-summary__prices-summary {
-		padding-bottom: $spacing-06;
-		margin-bottom: $spacing-06;
+		padding-bottom: $spacing-03;
+		margin-bottom: $spacing-05;
 		border-bottom: $border-width solid $border-color;
-	}
-
-	.cart-summary__subtotal-label, .cart-summary__subtotal {
-		margin-bottom: $spacing-03;
 	}
 
 	.cart-summary__shipping-info {
 		color: $gray-40;
 	}
 
+	.cart-summary__discounts {
+		padding-bottom: $spacing-03;
+	}
+
+	.cart-summary__discount-label {
+		@include text-bolder();
+	}
+
+	.cart-summary__discount-amount {
+		@include text-bolder();
+	}
+
 	.cart-summary__total-label {
-		@include text-bold();
+		@include text-bolder();
 	}
 </style>
