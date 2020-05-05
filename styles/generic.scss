@@ -24,4 +24,7 @@ p {
 
 input {
 	display: block;
+	padding: $spacing-03;
+	border: 1px solid $border-color-light;
+	border-radius: $border-radius;
 }
