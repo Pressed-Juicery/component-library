@@ -14,62 +14,65 @@
 </template>
 
 <script>
-	import { validate } from '../utilities/validations';
+import { validate } from '../utilities/validations';
 
-	export default {
-		props: {
-			label: String,
-			placeholder: String,
-			options: Array,
-			selectedItem: String,
-			rules: Array,
+export default {
+	props: {
+		label: String,
+		placeholder: String,
+		selectedItem: String,
+		rules: Array,
+		options: {
+			type: Array,
+			required: true,
 		},
+	},
 
+	model: {
+		prop: 'selectedItem',
+		event: 'input',
+	},
+
+	data() {
+		return {
+			isLazy: true,
+			error: null,
+		};
+	},
+
+	computed: {
 		model: {
-			prop: 'selectedItem',
-			event: 'input',
+			get() { return this.selectedItem },
+			set(value) { this.$emit('input', value) },
+		},
+	},
+
+	watch: {
+		model() { this.lazilyValidate() },
+		rules() { this.lazilyValidate() },
+		errorMessage(value) { this.error = value },
+	},
+	methods: {
+		lazilyValidate() {
+			if (!this.isLazy) this.validate();
 		},
 
-		data() {
-			return {
-				isLazy: true,
-				error: null,
-			};
+		validate() {
+			this.isLazy = false;
+
+			return validate(this.selectedItem, this.rules)
+				.then(error => {
+					this.error = error;
+
+					return error;
+				});
 		},
 
-		computed: {
-			model: {
-				get() { return this.selectedItem },
-				set(value) { this.$emit('input', value) },
-			},
+		isValid() {
+			return this.validate().then(hasError => !hasError);
 		},
-
-		watch: {
-			model() { this.lazilyValidate() },
-			rules() { this.lazilyValidate() },
-			errorMessage(value) { this.error = value },
-		},
-		methods: {
-			lazilyValidate() {
-				if (!this.isLazy) this.validate();
-			},
-
-			validate() {
-				this.isLazy = false;
-
-				return validate(this.value, this.rules)
-					.then(error => {
-						this.error = error;
-
-						return error;
-					});
-			},
-
-			isValid() {
-				return this.validate().then(hasError => !hasError);
-			},
-		},
-	}
+	},
+};
 </script>
 
 <style scoped lang="scss">
