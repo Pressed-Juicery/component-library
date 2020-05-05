@@ -140,6 +140,10 @@ export default {
 					this.$emit('change', nonce);
 				})
 				.catch(error => {
+					Object.keys(this.fields).forEach(field => {
+						this.fields[field].isTouched = true;
+					});
+
 					this.$emit('change', null);
 
 					return Promise.reject(error);
