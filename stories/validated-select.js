@@ -25,6 +25,10 @@ export function Overview() {
 					{ name: 'Oregon', value: 'OR'},
 					{ name: 'Nevada', value: 'NV'}
 				],
+				stateRules: [{
+					validator: isNotEmpty,
+					message: 'Please select a state.',
+				}],
 			};
 		},
 	};
