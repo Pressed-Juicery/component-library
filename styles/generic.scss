@@ -33,3 +33,7 @@ input {
 	border: $border-width solid $border-color-light;
 	border-radius: $border-radius;
 }
+
+select {
+	display: block;
+}
