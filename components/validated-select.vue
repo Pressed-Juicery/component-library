@@ -40,5 +40,16 @@
 </script>
 
 <style scoped lang="scss">
+	@import '../styles/mixins';
+	@import '../styles/variables';
 
+	.validated-select__main-label {
+		@include text-body-medium();
+		@include text-bolder();
+	}
+
+	.validated-select__error {
+		@include text-body-small();
+		@include text-error();
+	}
 </style>
