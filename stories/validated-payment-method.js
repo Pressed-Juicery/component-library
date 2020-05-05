@@ -10,11 +10,11 @@ export function Overview() {
 	return {
 		components: { ValidatedForm, ValidatedPaymentMethod },
 		template: `
-			<validated-form style="margin:20px">
+			<validated-form>
 				<validated-payment-method :braintree-tokenization-key="braintreeTokenizationKey"
 				                          @change="nonce => result = nonce" />
 				
-				<button style="margin-top:20px; width:120px" type="submit">SUBMIT</button>
+				<button style="margin-top:20px" type="submit">SUBMIT</button>
 				
 				<p>Result: {{ result }}</p>
 			</validated-form>
