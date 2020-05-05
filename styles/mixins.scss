@@ -70,6 +70,12 @@
 	@include text-normal();
 }
 
+@mixin text-body-medium() {
+	font-size: 1.6rem;
+	line-height: 2rem;
+	@include text-normal();
+}
+
 @mixin text-body-small() {
 	font-size: 1.4rem;
 	line-height: 1.8rem;
@@ -96,6 +102,10 @@
 
 @mixin text-subtle() {
 	color: $color-text-gray;
+}
+
+@mixin text-error() {
+	color: $color-danger;
 }
 
 @mixin text-uppercase() {
