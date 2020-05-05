@@ -1,4 +1,7 @@
+import ValidatedForm from '../components/validated-form';
 import ValidatedSelect from '../components/validated-select';
+
+import { isNotEmpty } from '../utilities/validators';
 
 export default {
 	title: 'ValidatedSelect',
@@ -20,6 +23,33 @@ export function Overview() {
 		data() {
 			return {
 				selectedItem: null,
+				options: [
+					{ name: 'California', value: 'CA'},
+					{ name: 'Oregon', value: 'OR'},
+					{ name: 'Nevada', value: 'NV'},
+				],
+			}
+		},
+	};
+}
+
+export function Validation() {
+	return {
+		components: { ValidatedForm, ValidatedSelect },
+		template: `
+			<validated-form>
+				<validated-select label="Label"
+				                  v-model="selectedItem"
+				                  :rules="stateRules"
+				                  :options="options" />
+				<button style="margin-top:20px" type="submit">SUBMIT</button>
+			</validated-form>
+		`,
+
+		data() {
+			return {
+				selectedItem: null,
+				showError: false,
 				options: [
 					{ name: 'California', value: 'CA'},
 					{ name: 'Oregon', value: 'OR'},
