@@ -24,11 +24,11 @@ export function Overview() {
 			return {
 				selectedItem: null,
 				options: [
-					{ name: 'California', value: 'CA'},
-					{ name: 'Oregon', value: 'OR'},
-					{ name: 'Nevada', value: 'NV'},
+					{ name: 'California', value: 'CA' },
+					{ name: 'Oregon', value: 'OR' },
+					{ name: 'Nevada', value: 'NV' },
 				],
-			}
+			};
 		},
 	};
 }
@@ -49,11 +49,10 @@ export function Validation() {
 		data() {
 			return {
 				selectedItem: null,
-				showError: false,
 				options: [
-					{ name: 'California', value: 'CA'},
-					{ name: 'Oregon', value: 'OR'},
-					{ name: 'Nevada', value: 'NV'}
+					{ name: 'California', value: 'CA' },
+					{ name: 'Oregon', value: 'OR' },
+					{ name: 'Nevada', value: 'NV' },
 				],
 				stateRules: [{
 					validator: isNotEmpty,
