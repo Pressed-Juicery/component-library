@@ -1,12 +1,24 @@
+@import './mixins';
 @import './variables';
+
 html {
 	box-sizing: border-box;
+	font-size: 10px;
 }
 
 *, *:before, *:after {
 	box-sizing: inherit;
 }
 
-.error {
-	color: $color-danger;
+body {
+	@include text-body();
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin: 0;
+}
+
+p {
+	margin: 0 0 1.33em;
 }

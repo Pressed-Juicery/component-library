@@ -1,0 +1,18 @@
+@import './mixins';
+
+// Headings
+// --------
+
+h1, .heading-1 { @include text-heading-1(); }
+h2, .heading-2 { @include text-heading-2(); }
+h3, .heading-3 { @include text-heading-3(); }
+h4, .heading-4 { @include text-heading-4(); }
+h5, .heading-5 { @include text-heading-5(); }
+h6, .heading-6 { @include text-heading-6(); }
+
+
+// Body Text
+// ---------
+
+.body { @include text-body(); }
+.body-small { @include text-body-small(); }
