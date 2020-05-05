@@ -1,40 +1,46 @@
 <template>
 	<div class="validated-payment-method">
 		<div>
-			<label for="card-number">Credit Card</label>
+			<label class="validated-payment-method__label" for="card-number">Credit Card</label>
 			<div id="card-number" class="validated-payment-method__input"></div>
 
-			<label for="card-number" v-if="fields.number.isTouched && !fields.number.isValid" class="error">
+			<label v-if="fields.number.isTouched && !fields.number.isValid"
+			       class="validated-payment-method__error"
+			       for="card-number">
 				Please enter a valid credit card number.
 			</label>
 		</div>
 
 		<div class="validated-payment-method__grid">
 			<div>
-				<label for="expiration-date">Expiration Date</label>
+				<label class="validated-payment-method__label" for="expiration-date">Expiration Date</label>
 				<div id="expiration-date" class="validated-payment-method__input"></div>
 
 				<label for="expiration-date"
 				       v-if="fields.expirationDate.isTouched && !fields.expirationDate.isValid"
-				       class="error">
+				       class="validated-payment-method__error">
 					Please enter a valid expiration date (MM/YY).
 				</label>
 			</div>
 
 			<div>
-				<label for="cvv">Security Code</label>
+				<label class="validated-payment-method__label" for="cvv">Security Code</label>
 				<div id="cvv" class="validated-payment-method__input"></div>
 
-				<label for="cvv" v-if="fields.cvv.isTouched && !fields.cvv.isValid" class="error">
+				<label v-if="fields.cvv.isTouched && !fields.cvv.isValid"
+				       class="validated-payment-method__error"
+				       for="cvv">
 					Please enter a valid CVV.
 				</label>
 			</div>
 
 			<div>
-				<label for="postal-code">ZIP Code</label>
+				<label class="validated-payment-method__label"  for="postal-code">ZIP Code</label>
 				<div id="postal-code" class="validated-payment-method__input"></div>
 
-				<label for="postal-code" v-if="fields.postalCode.isTouched && !fields.postalCode.isValid" class="error">
+				<label v-if="fields.postalCode.isTouched && !fields.postalCode.isValid"
+				       class="validated-payment-method__error"
+				       for="postal-code" >
 					Please enter a valid 5-digit ZIP code.
 				</label>
 			</div>
@@ -144,6 +150,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+	@import '../styles/mixins';
 	@import '../styles/variables';
 
 	.validated-payment-method__input {
@@ -160,5 +167,15 @@ export default {
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: $spacing-05;
 		margin-top: $spacing-05;
+	}
+
+	.validated-payment-method__label {
+		@include text-body-medium();
+		@include text-bolder();
+	}
+
+	.validated-payment-method__error {
+		@include text-body-small();
+		@include text-error();
 	}
 </style>
