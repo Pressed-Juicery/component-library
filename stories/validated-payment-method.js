@@ -8,6 +8,15 @@ export default {
 
 export function Overview() {
 	return {
+		components: { ValidatedPaymentMethod },
+		template: '<validated-payment-method :braintree-tokenization-key="braintreeTokenizationKey">',
+
+		data() { return { braintreeTokenizationKey: 'sandbox_x6kjt36z_3cr8bsrh82p5jrcp' } },
+	};
+}
+
+export function InValidatedForm() {
+	return {
 		components: { ValidatedForm, ValidatedPaymentMethod },
 		template: `
 			<validated-form>
