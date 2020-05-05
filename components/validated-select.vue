@@ -30,10 +30,43 @@
 			event: 'input',
 		},
 
+		data() {
+			return {
+				isLazy: true,
+				error: null,
+			};
+		},
+
 		computed: {
 			model: {
 				get() { return this.selectedItem },
 				set(value) { this.$emit('input', value) },
+			},
+		},
+
+		watch: {
+			model() { this.lazilyValidate() },
+			rules() { this.lazilyValidate() },
+			errorMessage(value) { this.error = value },
+		},
+		methods: {
+			lazilyValidate() {
+				if (!this.isLazy) this.validate();
+			},
+
+			validate() {
+				this.isLazy = false;
+
+				return validate(this.value, this.rules)
+					.then(error => {
+						this.error = error;
+
+						return error;
+					});
+			},
+
+			isValid() {
+				return this.validate().then(hasError => !hasError);
 			},
 		},
 	}
