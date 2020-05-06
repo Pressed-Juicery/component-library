@@ -1,9 +1,7 @@
 <template>
 	<div class="breadcrumbs">
 		<span v-for="(breadcrumb, index) in breadcrumbs" :key="index">
-			<span class="breadcrumbs__breadcrumb" @click="$emit('select', breadcrumb)">
-				{{ breadcrumb.name }}
-			</span>
+			<span class="breadcrumbs__breadcrumb" @click="$emit('select', breadcrumb)">{{ breadcrumb.name }}</span>
 			<span v-if="index < breadcrumbs.length - 1" class="breadcrumbs__divider"> / </span>
 		</span>
 	</div>
