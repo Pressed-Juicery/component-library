@@ -4,7 +4,7 @@
 			<span :class="getBreadcrumbClass(index, breadcrumbs)" @click="$emit('select', breadcrumb)">
 				{{ breadcrumb.name }}
 			</span>
-			<span v-if="index < breadcrumbs.length-1" class="breadcrumbs__breadcrumb-divider"> / </span>
+			<span v-if="index < breadcrumbs.length - 1" class="breadcrumbs__breadcrumb-divider"> / </span>
 		</span>
 	</div>
 </template>
