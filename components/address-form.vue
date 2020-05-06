@@ -204,6 +204,10 @@ export default {
 		margin-bottom: $spacing-05;
 	}
 
+	.validated-input__phone {
+		margin-bottom: $spacing-06;
+	}
+
 	.address-form__button-bar {
 		width: 100%;
 		margin-bottom: $spacing-06;
