@@ -11,8 +11,8 @@ export function Overview() {
 
 		template: `
 			<div>
-				<address-form :address="address" v-model="address" />
 				<p v-if="address.name">Name: {{ address.name }}</p>
+				<address-form v-model="address" />
 			</div>
 		`,
 
