@@ -15,18 +15,9 @@ import { validate } from '../utilities/validations';
 
 export default {
 	props: {
-		label: {
-			type: String,
-		},
-
-		labelHelper: {
-			type: String,
-		},
-
-		errorMessage: {
-			type: String,
-		},
-
+		label: String,
+		labelHelper: String,
+		errorMessage: String,
 		rules: Array,
 		value: null,
 	},
