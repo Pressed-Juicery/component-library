@@ -44,6 +44,11 @@
 				<div>Other</div>
 			</button-bar-button>
 		</button-bar>
+
+		<Label v-if="showDeliveryInstructions">
+			<span class="address-form__delivery-instructions-label">Delivery Instructions</span>
+			<textarea v-model="model.deliveryInstructions" />
+		</Label>
 	</div>
 </template>
 
@@ -65,6 +70,7 @@ export default {
 
 	props: {
 		address: { required: true },
+		showDeliveryInstructions: Boolean,
 	},
 
 	data() {
@@ -191,6 +197,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+	@import '../styles/mixins';
 	@import '../styles/variables';
 
 	.address-form__grid {
@@ -216,5 +223,10 @@ export default {
 	.address-form__button-bar-button {
 		height: auto;
 		padding: $spacing-03;
+	}
+
+	.address-form__delivery-instructions-label {
+		@include text-body-medium();
+		@include text-bolder();
 	}
 </style>
