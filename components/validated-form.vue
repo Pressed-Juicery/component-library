@@ -13,15 +13,11 @@ export default {
 			default: 'There was a problem submitting this form. Please fix any errors and try again.',
 		},
 
-		showError: {
-			type: Boolean,
-		},
+		showError: Boolean,
 	},
 
 	data() {
-		return {
-			hasError: false,
-		};
+		return { hasError: false };
 	},
 
 	methods: {
