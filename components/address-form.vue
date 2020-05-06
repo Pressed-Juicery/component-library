@@ -45,6 +45,12 @@
 			</button-bar-button>
 		</button-bar>
 
+		<validated-input v-if="addCustomTitle"
+		                 class="validated-input__input"
+		                 label="Title"
+		                 v-model="model.title"
+		                 :rules="customTitleRules"/>
+
 		<Label v-if="showDeliveryInstructions">
 			<span class="address-form__delivery-instructions-label">Delivery Instructions</span>
 			<textarea v-model="model.deliveryInstructions"
@@ -77,6 +83,7 @@ export default {
 
 	data() {
 		return {
+			addCustomTitle: false,
 			firstNameRules: [{
 				validator: isNotEmpty,
 				message: 'Please enter your first name.',
@@ -116,6 +123,10 @@ export default {
 			}, {
 				validator: isValidPhoneNumber,
 				message: 'Please enter a valid ten-digit phone number.',
+			}],
+			customTitleRules: [{
+				validator: isNotEmpty,
+				message: 'Please enter a title.',
 			}],
 			regions: [
 				{ name:'Alabama', value: 'AL' },
@@ -187,12 +198,20 @@ export default {
 			set(value) { this.$emit('change', value) },
 		},
 
-		selectedButton() { return this.address.title || 'Home' },
+		selectedButton() {
+			if (!this.address.title && !this.addCustomTitle) return 'Home';
+
+			if (this.address.title !== 'Home' && this.address.title !== 'Work') return 'Other';
+
+			return this.address.title;
+		},
 	},
 
 	methods: {
 		selectButton(value) {
-			this.model = { ...this.model, title: value };
+			this.model = { ...this.model, title: value === 'Other' ? '' : value };
+
+			this.addCustomTitle = value === 'Other';
 		},
 	},
 };
