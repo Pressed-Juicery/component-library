@@ -209,6 +209,8 @@ export default {
 
 	methods: {
 		selectButton(value) {
+			if (this.selectedButton === value) return;
+
 			this.model = { ...this.model, title: value === 'Other' ? '' : value };
 
 			this.addCustomTitle = value === 'Other';
