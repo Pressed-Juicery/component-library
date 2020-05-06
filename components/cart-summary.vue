@@ -54,9 +54,7 @@ export default {
 		cart: Object,
 	},
 
-	components: {
-		CartItemCard,
-	},
+	components: { CartItemCard },
 
 	computed: {
 		cartItems() {
