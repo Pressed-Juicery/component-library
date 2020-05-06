@@ -47,7 +47,9 @@
 
 		<Label v-if="showDeliveryInstructions">
 			<span class="address-form__delivery-instructions-label">Delivery Instructions</span>
-			<textarea v-model="model.deliveryInstructions" />
+			<textarea v-model="model.deliveryInstructions"
+			          rows="4"
+			          placeholder="i.e. gate code or if it should be left at your door, etc." />
 		</Label>
 	</div>
 </template>
