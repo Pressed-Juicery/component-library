@@ -8,10 +8,10 @@ export default {
 export function Overview() {
 	return {
 		components: { ContentGutter },
-		data(){
+		data() {
 			return {
 				backgroundColor: '',
-			}
+			};
 		},
 		template: `
 			<content-gutter :backgroundColor="backgroundColor">
@@ -27,10 +27,10 @@ export function Overview() {
 export function GutterWithBackgroundColor() {
 	return {
 		components: { ContentGutter },
-		data(){
+		data() {
 			return {
 				backgroundColor: 'blue',
-			}
+			};
 		},
 		template: `
 			<content-gutter :backgroundColor="backgroundColor">

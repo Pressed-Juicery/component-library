@@ -10,8 +10,8 @@
 export default {
 	props: {
 		backgroundColor: String,
-	}
-}
+	},
+};
 </script>
 
 <style lang="scss">
