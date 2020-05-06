@@ -17,18 +17,12 @@ export function Overview() {
 
 		data() {
 			return {
-				breadcrumbs: [{
-					name: 'Back To Shop',
-				},
-				{
-					name: 'Fulfillment Method',
-				},
-				{
-					name: 'Payment Method',
-				},
-				{
-					name: 'Review',
-				}],
+				breadcrumbs: [
+					{ name: 'Back To Shop' },
+					{ name: 'Fulfillment Method' },
+					{ name: 'Payment Method' },
+					{ name: 'Review' },
+				],
 				selectedBreadcrumb: null,
 			};
 		},
@@ -47,9 +41,7 @@ export function OneBreadcrumb() {
 
 		data() {
 			return {
-				breadcrumbs: [{
-					name: 'Back To Shop',
-				}],
+				breadcrumbs: [{ name: 'Back To Shop' }],
 				selectedBreadcrumb: null,
 			};
 		},
