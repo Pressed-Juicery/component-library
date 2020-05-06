@@ -20,6 +20,7 @@ export function Overview() {
 				<div v-if="address.region">Region: {{ address.region }}</div>
 				<div v-if="address.postal">Postal: {{ address.postal }}</div>
 				<div v-if="address.phone">Phone: {{ address.phone }}</div>
+				<div v-if="address.title">Title: {{ address.title }}</div>
 			</div>
 		`,
 
@@ -42,6 +43,7 @@ export function EditAddress() {
 				<div v-if="address.region">Region: {{ address.region }}</div>
 				<div v-if="address.postal">Postal: {{ address.postal }}</div>
 				<div v-if="address.phone">Phone: {{ address.phone }}</div>
+				<div v-if="address.title">Title: {{ address.title }}</div>
 			</div>
 		`,
 
@@ -55,6 +57,51 @@ export function EditAddress() {
 					region: 'MA',
 					postal: '93742',
 					phone: '559-242-4242',
+					title: 'Work',
+				},
+			};
+		},
+	};
+}
+
+export function DeliveryInstructions() {
+	return {
+		components: { AddressForm },
+
+		template: `
+			<div>
+				<address-form v-model="address" :showDeliveryInstructions="true" />
+				<div v-if="address.deliveryInstructions">Delivery Instructions: {{ address.deliveryInstructions }}</div>
+			</div>
+		`,
+
+		data() { return { address: {} } },
+	};
+}
+
+export function EditDeliveryInstructions() {
+	return {
+		components: { AddressForm },
+
+		template: `
+			<div>
+				<address-form v-model="address" :showDeliveryInstructions="true" />
+				<div v-if="address.deliveryInstructions">Delivery Instructions: {{ address.deliveryInstructions }}</div>
+			</div>
+		`,
+
+		data() {
+			return {
+				address: {
+					firstName: 'Arthur',
+					lastName: 'Dent',
+					streetAddress: '42 High Street',
+					locality: 'Cambridge',
+					region: 'MA',
+					postal: '93742',
+					phone: '559-242-4242',
+					title: 'Work',
+					deliveryInstructions: 'Grab Your Towel. Eat some peanuts. Lay down in front of the bulldozer.',
 				},
 			};
 		},
