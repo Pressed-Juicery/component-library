@@ -10,13 +10,21 @@ import ValidatedInput from './validated-input';
 export default {
 	components: { ValidatedInput },
 
-	props: {
-		address: Object,
+	model: {
+		prop: 'address',
+		event: 'change',
 	},
 
-	methods: {
-		onChange() {
-			this.$emit('input', this.address);
+	props: {
+		address: { required: true },
+	},
+
+	},
+
+	computed: {
+		model: {
+			get() { return this.address },
+			set(value) { this.$emit('change', value) },
 		},
 	},
 };
