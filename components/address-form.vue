@@ -9,7 +9,7 @@
 		                 label="Street Address"
 		                 v-model="model.streetAddress"
 		                 :rules="addressRules" />
-		<validated-input class="validated-input__input" label="Suite / Apt #" v-model="model.extendedAddress" />
+		<validated-input class="validated-input__input" label="Suite/Apt" v-model="model.extendedAddress" />
 
 		<validated-input class="validated-input__input" label="City" v-model="model.locality" :rules="localityRules"/>
 
