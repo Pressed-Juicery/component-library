@@ -25,6 +25,7 @@ export default {
 
 	.breadcrumbs__breadcrumb {
 		@include text-subtle();
+		cursor: pointer;
 
 		&:last-of-type {
 			@include text-bold();
