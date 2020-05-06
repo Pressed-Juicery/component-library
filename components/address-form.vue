@@ -18,22 +18,45 @@
 			<validated-input label="Zip Code" v-model="model.postal" :rules="postalRules" />
 		</div>
 
-		<validated-input class="validated-input__input"
+		<validated-input class="validated-input__phone"
 		                 type="phone"
 		                 label="Phone Number"
 		                 v-model="model.phone"
 		                 :rules="phoneRules" />
+
+		<button-bar class="address-form__button-bar">
+			<button-bar-button class="address-form__button-bar-button"
+			                   value="Home"
+			                   :selectedButton="selectedButton"
+			                   @select-button="selectButton">
+				<div>Home</div>
+			</button-bar-button>
+			<button-bar-button class="address-form__button-bar-button"
+			                   value="Work"
+			                   :selectedButton="selectedButton"
+			                   @select-button="selectButton">
+				<div>Work</div>
+			</button-bar-button>
+			<button-bar-button class="address-form__button-bar-button"
+			                   value="Other"
+			                   :selectedButton="selectedButton"
+			                   @select-button="selectButton">
+				<div>Other</div>
+			</button-bar-button>
+		</button-bar>
 	</div>
 </template>
 
 <script>
 import { isNotEmpty, isNumber, hasExactLength, isValidPhoneNumber } from '../utilities/validators';
 
+import ButtonBar from './button-bar';
+import ButtonBarButton from './button-bar-button';
 import ValidatedInput from './validated-input';
 import ValidatedSelect from './validated-select';
 
 export default {
-	components: { ValidatedInput, ValidatedSelect },
+	components: { ButtonBar, ButtonBarButton, ValidatedInput, ValidatedSelect },
 
 	model: {
 		prop: 'address',
@@ -155,6 +178,14 @@ export default {
 			get() { return this.address },
 			set(value) { this.$emit('change', value) },
 		},
+
+		selectedButton() { return this.address.title || 'Home' },
+	},
+
+	methods: {
+		selectButton(value) {
+			this.model = { ...this.model, title: value };
+		},
 	},
 };
 </script>
@@ -171,5 +202,15 @@ export default {
 
 	.validated-input__input {
 		margin-bottom: $spacing-05;
+	}
+
+	.address-form__button-bar {
+		width: 100%;
+		margin-bottom: $spacing-06;
+	}
+
+	.address-form__button-bar-button {
+		height: auto;
+		padding: $spacing-03;
 	}
 </style>
