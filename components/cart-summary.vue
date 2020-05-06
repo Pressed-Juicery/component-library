@@ -105,6 +105,7 @@ export default {
 
 	.cart-summary__item-count {
 		@include text-heading-4();
+		@include text-normal();
 	}
 
 	.cart-summary__cart-items {
@@ -144,6 +145,7 @@ export default {
 	}
 
 	.cart-summary__total {
-		@include text-heading-5();
+		@include text-heading-4();
+		@include text-normal();
 	}
 </style>
