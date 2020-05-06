@@ -11,7 +11,7 @@ export function Overview() {
 		template: `
 			<div>
 				<breadcrumbs :breadcrumbs="breadcrumbs" @select="breadcrumb => selectedBreadcrumb = breadcrumb" />
-				<p v-if="selectedBreadcrumb">Selected Breadcrumb: {{ selectedBreadcrumb.name }}</p>
+				<p v-if="selectedBreadcrumb">Selected breadcrumb: {{ selectedBreadcrumb.name }}</p>
 			</div>
 		`,
 
@@ -41,7 +41,7 @@ export function OneBreadcrumb() {
 		template: `
 			<div>
 				<breadcrumbs :breadcrumbs="breadcrumbs" @select="breadcrumb => selectedBreadcrumb = breadcrumb" />
-				<p v-if="selectedBreadcrumb">Selected Breadcrumb: {{ selectedBreadcrumb.name }}</p>
+				<p v-if="selectedBreadcrumb">Selected breadcrumb: {{ selectedBreadcrumb.name }}</p>
 			</div>
 		`,
 
