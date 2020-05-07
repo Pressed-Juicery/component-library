@@ -17,8 +17,15 @@
 
 <script>
 export default {
-
-}
+	props: {
+		title: String,
+		backgroundColor: String,
+		color: String,
+		icon: String,
+		img: String,
+		alt: String,
+	},
+};
 </script>
 
 <style lang="scss">
