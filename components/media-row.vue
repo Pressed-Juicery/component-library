@@ -29,5 +29,48 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../styles/variables';
+@import '../styles/mixins';
 
+.media-row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: $spacing-06;
+}
+
+.media-row__content {
+	flex: 1 1 350px;
+}
+
+.media-row__content-wrapper {
+	margin-right: $spacing-09;
+	margin-top: $spacing-06;
+}
+.media-row__icon {
+	margin-bottom: $spacing-04;
+}
+
+.media-row__title {
+	@include text-heading-4;
+	margin-bottom: $spacing-02;
+}
+
+.media-row__image {
+	height: 400px;
+	flex: 1 1 350px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+@media (max-width: $max-width-tablet) {
+	.media-row__content-wrapper {
+		margin-top: 0;
+		margin-right: 0;
+	}
+
+	.media-row__image {
+		height: 350px;
+	}
+}
 </style>
