@@ -5,20 +5,20 @@
 			<validated-input label="Last Name" v-model="model.lastName" :rules="lastNameRules"/>
 		</div>
 
-		<validated-input class="validated-input__input"
+		<validated-input class="address-form__input"
 		                 label="Street Address"
 		                 v-model="model.streetAddress"
 		                 :rules="addressRules" />
-		<validated-input class="validated-input__input" label="Suite/Apt" v-model="model.extendedAddress" />
+		<validated-input class="address-form__input" label="Suite/Apt" v-model="model.extendedAddress" />
 
-		<validated-input class="validated-input__input" label="City" v-model="model.locality" :rules="localityRules"/>
+		<validated-input class="address-form__input" label="City" v-model="model.locality" :rules="localityRules"/>
 
 		<div class="address-form__grid">
 			<validated-select label="State" v-model="model.region" :options="regions" :rules="regionRules" />
 			<validated-input label="Zip Code" v-model="model.postal" :rules="postalRules" />
 		</div>
 
-		<validated-input class="validated-input__phone"
+		<validated-input class="address-form__phone"
 		                 type="phone"
 		                 label="Phone Number"
 		                 v-model="model.phone"
@@ -46,7 +46,7 @@
 		</button-bar>
 
 		<validated-input v-if="hasCustomTitle"
-		                 class="validated-input__input"
+		                 class="address-form__input"
 		                 label="Title"
 		                 v-model="model.title"
 		                 :rules="customTitleRules"/>
@@ -229,11 +229,11 @@ export default {
 		margin-bottom: $spacing-05;
 	}
 
-	.validated-input__input {
+	.address-form__input {
 		margin-bottom: $spacing-05;
 	}
 
-	.validated-input__phone {
+	.address-form__phone {
 		margin-bottom: $spacing-06;
 	}
 
