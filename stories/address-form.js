@@ -24,10 +24,11 @@ export function Overview() {
 			</div>
 		`,
 
-		data() { return { address: {} } },
+		data() { return { address: {}} },
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function EditAddress() {
 	return {
 		components: { AddressForm },
@@ -75,7 +76,7 @@ export function DeliveryInstructions() {
 			</div>
 		`,
 
-		data() { return { address: {} } },
+		data() { return { address: {}} },
 	};
 }
 
