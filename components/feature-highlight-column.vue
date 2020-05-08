@@ -34,6 +34,7 @@ export default {
 
 .feature-highlight-column--centered {
 	align-items: center;
+	text-align: center;
 }
 
 .feature-highlight-column img,
