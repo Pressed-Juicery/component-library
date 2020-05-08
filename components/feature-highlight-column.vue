@@ -37,7 +37,12 @@ export default {
 	margin-bottom: $spacing-03;
 }
 
+.feature-highlight-column__title {
+	@include text-heading-6;
+}
+
 .feature-highlight-column__description {
+	@include text-body-small;
 	margin-bottom: 0;
 }
 </style>
