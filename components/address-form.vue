@@ -81,6 +81,7 @@ export default {
 		showDeliveryInstructions: Boolean,
 	},
 
+	// eslint-disable-next-line max-lines-per-function
 	data() {
 		return {
 			hasCustomTitle: false,
