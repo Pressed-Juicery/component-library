@@ -1,5 +1,6 @@
 <template>
-	<div :class="['feature-highlight-column', { 'feature-highlight-column--centered': centerContent }]" :style="{ color }">
+	<div :class="['feature-highlight-column', { 'feature-highlight-column--centered': centerContent }]"
+		:style="{ color }">
 		<img :src="icon" :style="{ 'fill': color }"/>
 		<p class="feature-highlight-column__title">{{ title }}</p>
 		<p class="feature-highlight-column__description" v-html="description"></p>
