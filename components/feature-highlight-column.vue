@@ -14,7 +14,10 @@ export default {
 		title: String,
 		description: String,
 		color: String,
-		centerContent: Boolean,
+		centerContent: {
+			type: Boolean,
+			default: false,
+		},
 	},
 };
 </script>
