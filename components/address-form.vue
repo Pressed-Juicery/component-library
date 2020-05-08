@@ -45,7 +45,7 @@
 			</button-bar-button>
 		</button-bar>
 
-		<validated-input v-if="addCustomTitle"
+		<validated-input v-if="hasCustomTitle"
 		                 class="validated-input__input"
 		                 label="Title"
 		                 v-model="model.title"
@@ -83,7 +83,7 @@ export default {
 
 	data() {
 		return {
-			addCustomTitle: false,
+			hasCustomTitle: false,
 			firstNameRules: [{
 				validator: isNotEmpty,
 				message: 'Please enter your first name.',
@@ -199,7 +199,7 @@ export default {
 		},
 
 		selectedButton() {
-			if (!this.address.title && !this.addCustomTitle) return 'Home';
+			if (!this.address.title && !this.hasCustomTitle) return 'Home';
 			if (this.address.title !== 'Home' && this.address.title !== 'Work') return 'Other';
 
 			return this.address.title;
@@ -212,7 +212,7 @@ export default {
 
 			this.model = { ...this.model, title: value === 'Other' ? '' : value };
 
-			this.addCustomTitle = value === 'Other';
+			this.hasCustomTitle = value === 'Other';
 		},
 	},
 };
