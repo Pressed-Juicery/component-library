@@ -200,7 +200,6 @@ export default {
 
 		selectedButton() {
 			if (!this.address.title && !this.addCustomTitle) return 'Home';
-
 			if (this.address.title !== 'Home' && this.address.title !== 'Work') return 'Other';
 
 			return this.address.title;
