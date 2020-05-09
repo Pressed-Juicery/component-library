@@ -67,6 +67,7 @@ export default {
 
 <style scoped lang="scss">
 	@import '../styles/mixins';
+	@import '../styles/variables';
 
 	.validated-input {
 		margin-bottom: $spacing-06;
