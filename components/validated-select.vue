@@ -15,7 +15,7 @@
 
 <script>
 import { getRandom } from '../utilities/get-random';
-import { validate } from '../utilities/validations';
+import { validate } from '../utilities/validate';
 
 export default {
 	props: {
