@@ -32,17 +32,17 @@ export function LabelHelper() {
 		components: { ValidatedInput },
 		template: `
 			<validated-input type="text"
-			                 label="First Name"
+			                 label="Last Name"
 			                 labelHelper="This is label helper text."
-			                 v-model="firstName"
-			                 :rules="firstNameRules" />
+			                 v-model="lastName"
+			                 :rules="lastNameRules" />
 		`,
 		data() {
 			return {
-				firstName: null,
-				firstNameRules: [{
+				lastName: null,
+				lastNameRules: [{
 					validator: isNotEmpty,
-					message: 'Please enter your first name.',
+					message: 'Please enter your last name.',
 				}],
 			};
 		},
