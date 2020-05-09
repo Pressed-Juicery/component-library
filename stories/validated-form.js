@@ -66,7 +66,7 @@ export function SingleValidatedInput() {
 				model: null,
 				rules: [{
 					validator: isNotEmpty,
-					message: 'Please enter something.',
+					message: 'This field is required.',
 				}, {
 					validator: hasMinimumLength,
 					message: 'Must be at least 6 characters long.',
@@ -142,11 +142,11 @@ export function CustomValidatedInputErrorMessage() {
 				password: null,
 				firstNameRules: [{
 					validator: isNotEmpty,
-					message: 'Please enter something.',
+					message: 'This field is required.',
 				}],
 				passwordRules: [{
 					validator: isNotEmpty,
-					message: 'Please enter something.',
+					message: 'This field is required.',
 				}, {
 					validator: hasMinimumLength,
 					message: 'Must be at least 6 characters long.',
