@@ -1,7 +1,7 @@
 <template>
 	<div class="validated-input">
 		<label v-if="label" :for="label" class="validated-input__label">{{ label }}</label>
-		<label v-if="labelHelper" :for="label" class="validated-input__label-helper">{{ labelHelper }}</label>
+		<label v-if="labelHelper" :for="label">{{ labelHelper }}</label>
 		<input :id="label" v-bind="$attrs" v-model="model" @blur="validate()">
 
 		<label v-if="error" class="validated-input__error" :for="label">{{ error }}</label>
@@ -68,10 +68,6 @@ export default {
 
 	.validated-input__label {
 		@include text-bolder();
-	}
-
-	.validated-input__label-helper {
-		display: block;
 	}
 
 	.validated-input__error {
