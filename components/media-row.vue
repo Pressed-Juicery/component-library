@@ -1,7 +1,7 @@
 <template>
 	<div class="media-row">
-		<div class="media-row__content">
-			<div class="media-row__content-wrapper">
+		<div class="media-row__content-wrapper">
+			<div class="media-row__content">
 				<img v-if="icon" class="media-row__icon" :src="icon" />
 				<p class="media-row__title" v-html="title"></p>
 				<p class="media-row__text">
@@ -45,13 +45,13 @@ export default {
 	padding: $spacing-06;
 }
 
-.media-row__content {
+.media-row__content-wrapper {
 	flex: 1 1 350px;
 	display: flex;
 	align-items: center;
 }
 
-.media-row__content-wrapper {
+.media-row__content {
 	margin-right: $spacing-09;
 }
 
@@ -73,7 +73,7 @@ export default {
 }
 
 @media (max-width: $max-width-tablet) {
-	.media-row__content-wrapper {
+	.media-row__content {
 		margin-top: 0;
 		margin-right: 0;
 	}
