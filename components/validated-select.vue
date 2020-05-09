@@ -77,7 +77,6 @@ export default {
 
 <style scoped lang="scss">
 	@import '../styles/mixins';
-	@import '../styles/variables';
 
 	.validated-select__label {
 		@include text-bolder();
