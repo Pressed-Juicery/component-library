@@ -19,7 +19,7 @@ export function Overview() {
 				<span>
 					Inspired by a common goal of serving up daily nutrition with major convenience,
 					we've partnered with BlendJet - makers of the original compact portable blender -
-					to remix the way you make and take sing-serve smoothies
+					to remix the way you make and take single-serve smoothies
 				</span>
 			</MediaRow>
 		`,
