@@ -1,6 +1,6 @@
 <template>
 	<div class="media-row">
-		<div :class="['media-row__content', { 'media-row__content--center': verticallyCenterContent }]">
+		<div class="media-row__content">
 			<div class="media-row__content-wrapper">
 				<img class="media-row__icon" :src="icon" />
 				<p class="media-row__title" v-html="title"></p>
@@ -31,10 +31,6 @@ export default {
 			type: String,
 			required: true,
 		},
-		verticallyCenterContent: {
-			type: Boolean,
-			default: false,
-		},
 	},
 };
 </script>
@@ -51,20 +47,12 @@ export default {
 
 .media-row__content {
 	flex: 1 1 350px;
-}
-
-.media-row__content--center {
 	display: flex;
 	align-items: center;
 }
 
-.media-row__content--center .media-row__content-wrapper {
-	margin-top: 0;
-}
-
 .media-row__content-wrapper {
 	margin-right: $spacing-09;
-	margin-top: $spacing-06;
 }
 
 .media-row__icon {
