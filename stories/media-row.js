@@ -27,7 +27,7 @@ export function Overview() {
 			return {
 				title: 'BlendJet x Pressed Juicery',
 				img: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/blendjet-demo.png',
-				alt: 'Berries, Smoothie, and BlendJet blender',
+				alt: 'Berries, Smoothie, a bottle of Pressed Juicery Almond Milk, and a BlendJet blender',
 				icon: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/icons/new-icon.svg',
 			};
 		},
