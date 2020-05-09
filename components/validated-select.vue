@@ -1,25 +1,35 @@
 <template>
-	<div :class="$style.root">
-		<label v-if="label" :class="$style.label" :for="id">{{ label }}</label>
-		<select :id="id" v-model="model">
+	<validated-component
+		class="validated-input"
+		:id="id"
+		:label="label"
+		:label-helper="labelHelper"
+		:error-message="errorMessage"
+		:value="model"
+		:rules="rules"
+		:isEager="isEager"
+		ref="validatedComponent"
+	>
+		<select :id="id" v-model="model" @change="isEager = true">
 			<option v-for="(option, index) in options" :key="index" :value="option.value">
 				{{ option.name }}
 			</option>
 		</select>
-
-		<label v-if="error" :class="$style.error" :for="id">{{ error }}</label>
-	</div>
+	</validated-component>
 </template>
 
 <script>
+import ValidatedComponent from './validated-component';
 import { getRandom } from '../utilities/get-random';
-import { validate } from '../utilities/validate';
 
 export default {
+	components: { ValidatedComponent },
 	props: {
 		label: String,
-		value: String,
+		labelHelper: String,
+		errorMessage: String,
 		rules: Array,
+		value: null,
 		options: {
 			type: Array,
 			required: true,
@@ -28,9 +38,8 @@ export default {
 
 	data() {
 		return {
-			isLazy: true,
-			error: null,
 			id: getRandom(),
+			isEager: false,
 		};
 	},
 
@@ -41,47 +50,10 @@ export default {
 		},
 	},
 
-	watch: {
-		model() { this.lazilyValidate() },
-		rules() { this.lazilyValidate() },
-		errorMessage(value) { this.error = value },
-	},
 	methods: {
-		lazilyValidate() {
-			if (!this.isLazy) this.validate();
-		},
-
-		validate() {
-			this.isLazy = false;
-
-			return validate(this.value, this.rules)
-				.then(error => {
-					this.error = error;
-
-					return error;
-				});
-		},
-
 		isValid() {
-			return this.validate().then(hasError => !hasError);
+			return this.$refs.validatedComponent.isValid();
 		},
 	},
 };
 </script>
-
-<style module lang="scss">
-	@import '../styles/mixins';
-	@import '../styles/variables';
-
-	.root {
-		margin-bottom: $spacing-06;
-	}
-
-	.label {
-		@include text-bolder();
-	}
-
-	.error {
-		@include text-error();
-	}
-</style>
