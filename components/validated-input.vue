@@ -1,6 +1,6 @@
 <template>
 	<div class="validated-input">
-		<label v-if="label" :for="label" class="validated-input__label">{{ label }}</label>
+		<label v-if="label" class="validated-input__label" :for="label" >{{ label }}</label>
 		<label v-if="labelHelper" :for="label">{{ labelHelper }}</label>
 		<input :id="label" v-bind="$attrs" v-model="model" @blur="validate()">
 
