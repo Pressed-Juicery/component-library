@@ -1,8 +1,8 @@
 <template>
 	<div class="feature-highlight-column">
 		<img :src="icon" />
-		<p class="feature-highlight-column__title">{{ title }}</p>
-		<p class="feature-highlight-column__description" v-html="description"></p>
+		<div class="feature-highlight-column__title">{{ title }}</div>
+		<div v-html="description" />
 	</div>
 </template>
 
@@ -20,23 +20,8 @@ export default {
 @import '../styles/variables';
 @import '../styles/mixins';
 
-.feature-highlight-column {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-}
-
-.feature-highlight-column img,
 .feature-highlight-column__title {
-	margin-bottom: $spacing-03;
-}
-
-.feature-highlight-column__title {
-	@include text-heading-6;
-}
-
-.feature-highlight-column__description {
-	@include text-body-small;
-	margin-bottom: 0;
+	@include text-heading-5;
+	margin: $spacing-05 0 $spacing-02;
 }
 </style>
