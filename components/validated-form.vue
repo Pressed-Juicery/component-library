@@ -24,7 +24,9 @@ export default {
 		validate() {
 			this.hasError = false;
 
-			const promises = this.$children.map(child => child.isValid());
+			const promises = this.$children
+				.filter(child => typeof child.isValid === 'function')
+				.map(child => child.isValid());
 
 			Promise.all(promises)
 				.then(results => {

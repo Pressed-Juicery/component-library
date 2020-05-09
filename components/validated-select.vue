@@ -1,10 +1,13 @@
 <template>
-	<div class="validated-input">
-		<label v-if="label" class="validated-input__label" :for="id" >{{ label }}</label>
-		<label v-if="labelHelper" :for="id">{{ labelHelper }}</label>
-		<input :id="id" v-bind="$attrs" v-model="model" @blur="validate()">
+	<div class="validated-select">
+		<label v-if="label" class="validated-select__label" :for="id">{{ label }}</label>
+		<select :id="id" v-model="model">
+			<option v-for="(option, index) in options" :key="index" :value="option.value">
+				{{ option.name }}
+			</option>
+		</select>
 
-		<label v-if="error" class="validated-input__error" :for="id">{{ error }}</label>
+		<label v-if="error" class="validated-select__error" :for="id">{{ error }}</label>
 	</div>
 </template>
 
@@ -15,10 +18,12 @@ import { validate } from '../utilities/validate';
 export default {
 	props: {
 		label: String,
-		labelHelper: String,
-		errorMessage: String,
+		value: String,
 		rules: Array,
-		value: null,
+		options: {
+			type: Array,
+			required: true,
+		},
 	},
 
 	data() {
@@ -41,7 +46,6 @@ export default {
 		rules() { this.lazilyValidate() },
 		errorMessage(value) { this.error = value },
 	},
-
 	methods: {
 		lazilyValidate() {
 			if (!this.isLazy) this.validate();
@@ -69,15 +73,15 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.validated-input {
+	.validated-select {
 		margin-bottom: $spacing-06;
 	}
 
-	.validated-input__label {
+	.validated-select__label {
 		@include text-bolder();
 	}
 
-	.validated-input__error {
+	.validated-select__error {
 		@include text-error();
 	}
 </style>
