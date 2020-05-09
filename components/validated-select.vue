@@ -18,17 +18,12 @@ import { validate } from '../utilities/validate';
 export default {
 	props: {
 		label: String,
-		selectedItem: String,
+		value: String,
 		rules: Array,
 		options: {
 			type: Array,
 			required: true,
 		},
-	},
-
-	model: {
-		prop: 'selectedItem',
-		event: 'input',
 	},
 
 	data() {
@@ -41,7 +36,7 @@ export default {
 
 	computed: {
 		model: {
-			get() { return this.selectedItem },
+			get() { return this.value },
 			set(value) { this.$emit('input', value) },
 		},
 	},
@@ -59,7 +54,7 @@ export default {
 		validate() {
 			this.isLazy = false;
 
-			return validate(this.selectedItem, this.rules)
+			return validate(this.value, this.rules)
 				.then(error => {
 					this.error = error;
 
