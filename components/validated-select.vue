@@ -1,7 +1,7 @@
 <template>
 	<div class="validated-select">
 		<div>
-			<label v-if="label" class=" validated-select__main-label" :for="label">{{ label }}</label>
+			<label v-if="label" class=" validated-select__label" :for="label">{{ label }}</label>
 			<select :id="label" v-model="model">
 				<option v-for="(option, index) in options" :key="index" :value="option.value">
 					{{ option.name }}
@@ -79,7 +79,7 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.validated-select__main-label {
+	.validated-select__label {
 		@include text-bolder();
 	}
 
