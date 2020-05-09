@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { validate } from '../utilities/validations';
+import { validate } from '../utilities/validate';
 
 export default {
 	props: {
