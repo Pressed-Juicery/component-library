@@ -3,7 +3,7 @@
 		<div class="media-row__content-wrapper">
 			<div class="media-row__content">
 				<img v-if="icon" class="media-row__icon" :src="icon" />
-				<p class="media-row__title" v-html="title"></p>
+				<p class="media-row__title">{{ title }}</p>
 				<p class="media-row__text">
 					<slot />
 				</p>
