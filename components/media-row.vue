@@ -1,15 +1,13 @@
 <template>
 	<div class="media-row">
 		<div class="media-row__content-wrapper">
-			<div class="media-row__content">
+			<div>
 				<img v-if="icon" class="media-row__icon" :src="icon" />
-				<p class="media-row__title">{{ title }}</p>
+				<div class="media-row__title">{{ title }}</div>
 				<div class="media-row__text" v-html="description" />
 			</div>
 		</div>
-		<div class="media-row__image" :style="{'background-image': 'url(' + img + ')'}">
-			<span role="img" :aria-label="alt"></span>
-		</div>
+		<img class="media-row__image" :src="img" :alt="alt" />
 	</div>
 </template>
 
@@ -42,46 +40,34 @@ export default {
 @import '../styles/mixins';
 
 .media-row {
-	display: flex;
-	flex-wrap: wrap;
-	padding: $spacing-06;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: $spacing-10;
+	padding: $spacing-09;
 }
 
 .media-row__content-wrapper {
-	flex: 1 1 350px;
 	display: flex;
 	align-items: center;
 }
 
-.media-row__content {
-	margin-right: $spacing-09;
-}
-
 .media-row__icon {
-	margin-bottom: $spacing-04;
+	margin-bottom: $spacing-07;
 }
 
 .media-row__title {
 	@include text-heading-4;
-	margin-bottom: $spacing-02;
+	margin-bottom: $spacing-03;
 }
 
 .media-row__image {
-	height: 400px;
-	flex: 1 1 350px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	width: 100%;
 }
 
 @media (max-width: $max-width-tablet) {
-	.media-row__content {
-		margin-top: 0;
-		margin-right: 0;
-	}
-
-	.media-row__image {
-		height: 350px;
+	.media-row {
+		grid-template-columns: 1fr;
+		grid-gap: $spacing-07;
 	}
 }
 </style>
