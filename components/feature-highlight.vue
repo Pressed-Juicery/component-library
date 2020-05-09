@@ -1,7 +1,7 @@
 <template>
-	<div class="feature-highlight-column">
+	<div class="feature-highlight">
 		<img :src="icon" />
-		<div class="feature-highlight-column__title">{{ title }}</div>
+		<div class="feature-highlight__title">{{ title }}</div>
 		<div v-html="description" />
 	</div>
 </template>
@@ -20,7 +20,7 @@ export default {
 @import '../styles/variables';
 @import '../styles/mixins';
 
-.feature-highlight-column__title {
+.feature-highlight__title {
 	@include text-heading-5;
 	margin: $spacing-05 0 $spacing-02;
 }

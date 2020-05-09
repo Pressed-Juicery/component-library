@@ -1,6 +1,6 @@
 <template>
 	<div class="feature-highlight-row">
-		<feature-highlight-column
+		<feature-highlight
 			v-for="(feature, index) in features"
 			:key="index"
 			:icon="feature.icon"
@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import FeatureHighlightColumn from './feature-highlight-column';
+import FeatureHighlight from './feature-highlight';
 
 export default {
-	components: { FeatureHighlightColumn },
+	components: { FeatureHighlight },
 	props: {
 		features: Array,
 	},

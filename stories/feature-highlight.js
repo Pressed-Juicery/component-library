@@ -1,15 +1,15 @@
-import FeatureHighlightColumn from '../components/feature-highlight-column';
+import FeatureHighlight from '../components/feature-highlight';
 
 export default {
-	title: 'FeatureHighlightColumn',
-	component: FeatureHighlightColumn,
+	title: 'FeatureHighlight',
+	component: FeatureHighlight,
 };
 
 export function Overview() {
 	return {
-		components: { FeatureHighlightColumn },
+		components: { FeatureHighlight },
 		template: `
-			<feature-highlight-column :icon="icon" :title="title" :description="description" />
+			<feature-highlight :icon="icon" :title="title" :description="description" />
 		`,
 		data() {
 			return {
