@@ -10,18 +10,11 @@ export default {
 
 export function Overview() {
 	return {
-		components: { ValidatedForm },
+		components: { ValidatedForm, ValidatedInput },
 		template: `
 			<validated-form>
-				<label>
-					First Name
-					<input v-model="firstName"/>
-				</label>
-
-				<label>
-					Second Name
-					<input v-model="secondName"/>
-				</label>
+				<validated-input label="First Name" v-model="firstName" />
+				<validated-input label="Second Name" v-model="secondName" />
 			</validated-form>
 		`,
 
@@ -31,13 +24,10 @@ export function Overview() {
 
 export function ErrorMessage() {
 	return {
-		components: { ValidatedForm },
+		components: { ValidatedForm, ValidatedInput },
 		template: `
 			<validated-form :show-error="true">
-				<label>
-					First Name
-					<input v-model="firstName"/>
-				</label>
+				<validated-input label="First Name" v-model="firstName"/>
 			</validated-form>
 		`,
 
@@ -47,13 +37,10 @@ export function ErrorMessage() {
 
 export function CustomErrorMessage() {
 	return {
-		components: { ValidatedForm },
+		components: { ValidatedForm, ValidatedInput },
 		template: `
 			<validated-form :show-error="true" error-message="Form submission failed due to a server error.">
-				<label>
-					First Name
-					<input v-model="firstName"/>
-				</label>
+				<validated-input label="First Name" v-model="firstName"/>
 			</validated-form>
 		`,
 
