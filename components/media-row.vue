@@ -18,10 +18,19 @@
 <script>
 export default {
 	props: {
-		title: String,
+		title: {
+			type: String,
+			required: true,
+		},
 		icon: String,
-		img: String,
-		alt: String,
+		img: {
+			type: String,
+			required: true,
+		},
+		alt: {
+			type: String,
+			required: true,
+		},
 		verticallyCenterContent: {
 			type: Boolean,
 			default: false,
