@@ -135,7 +135,7 @@ export function CustomValidatedInputErrorMessage() {
 	return {
 		components: { ValidatedForm, ValidatedInput },
 		template: `
-			<validated-form :show-error="showError" error-message="Form submission failed due to a server error.">
+			<validated-form error-message="Form submission failed due to a server error.">
 				<validated-input type="text"
 				                 label="First Name"
 				                 :rules="firstNameRules"
@@ -153,7 +153,6 @@ export function CustomValidatedInputErrorMessage() {
 			return {
 				firstName: null,
 				password: null,
-				showError: false,
 				firstNameRules: [{
 					validator: isNotEmpty,
 					message: 'Please enter something.',
