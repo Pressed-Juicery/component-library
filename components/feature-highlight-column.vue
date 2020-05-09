@@ -1,7 +1,6 @@
 <template>
-	<div :class="['feature-highlight-column', { 'feature-highlight-column--centered': centerContent }]"
-		:style="{ color }">
-		<img :src="icon" :style="{ 'fill': color }"/>
+	<div :class="['feature-highlight-column', { 'feature-highlight-column--centered': centerContent }]">
+		<img :src="icon" />
 		<p class="feature-highlight-column__title">{{ title }}</p>
 		<p class="feature-highlight-column__description" v-html="description"></p>
 	</div>
@@ -13,7 +12,6 @@ export default {
 		icon: String,
 		title: String,
 		description: String,
-		color: String,
 		centerContent: {
 			type: Boolean,
 			default: false,
