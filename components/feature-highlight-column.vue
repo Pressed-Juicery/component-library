@@ -1,5 +1,5 @@
 <template>
-	<div :class="['feature-highlight-column', { 'feature-highlight-column--centered': centerContent }]">
+	<div class="feature-highlight-column">
 		<img :src="icon" />
 		<p class="feature-highlight-column__title">{{ title }}</p>
 		<p class="feature-highlight-column__description" v-html="description"></p>
@@ -12,10 +12,6 @@ export default {
 		icon: String,
 		title: String,
 		description: String,
-		centerContent: {
-			type: Boolean,
-			default: false,
-		},
 	},
 };
 </script>
@@ -28,11 +24,6 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-}
-
-.feature-highlight-column--centered {
-	align-items: center;
-	text-align: center;
 }
 
 .feature-highlight-column img,
