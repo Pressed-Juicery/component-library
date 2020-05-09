@@ -1,19 +1,20 @@
 <template>
 	<div class="validated-select">
 		<div>
-			<label v-if="label" class=" validated-select__label" :for="label">{{ label }}</label>
-			<select :id="label" v-model="model">
+			<label v-if="label" class=" validated-select__label" :for="id">{{ label }}</label>
+			<select :id="id" v-model="model">
 				<option v-for="(option, index) in options" :key="index" :value="option.value">
 					{{ option.name }}
 				</option>
 			</select>
 		</div>
 
-		<label v-if="error" class="validated-select__error" :for="label">{{ error }}</label>
+		<label v-if="error" class="validated-select__error" :for="id">{{ error }}</label>
 	</div>
 </template>
 
 <script>
+import { getRandom } from '../utilities/get-random';
 import { validate } from '../utilities/validations';
 
 export default {
@@ -37,6 +38,7 @@ export default {
 		return {
 			isLazy: true,
 			error: null,
+			id: getRandom(),
 		};
 	},
 
