@@ -2,7 +2,7 @@
 	<div class="media-row">
 		<div class="media-row__content">
 			<div class="media-row__content-wrapper">
-				<img class="media-row__icon" :src="icon" />
+				<img v-if="icon" class="media-row__icon" :src="icon" />
 				<p class="media-row__title" v-html="title"></p>
 				<p class="media-row__text">
 					<slot />
