@@ -1,7 +1,7 @@
 <template>
 	<div class="validated-select">
 		<div>
-			<label v-if="label" class=" validated-select__label" :for="id">{{ label }}</label>
+			<label v-if="label" class="validated-select__label" :for="id">{{ label }}</label>
 			<select :id="id" v-model="model">
 				<option v-for="(option, index) in options" :key="index" :value="option.value">
 					{{ option.name }}
