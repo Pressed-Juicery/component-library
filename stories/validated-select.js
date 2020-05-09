@@ -42,7 +42,7 @@ export function Validation() {
 				                  v-model="selectedItem"
 				                  :rules="stateRules"
 				                  :options="options" />
-				<button style="margin-top:20px" type="submit">SUBMIT</button>
+				<button style="margin-top:20px" type="submit">Submit</button>
 			</validated-form>
 		`,
 
