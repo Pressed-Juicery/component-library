@@ -76,6 +76,11 @@ export default {
 
 <style scoped lang="scss">
 	@import '../styles/mixins';
+	@import '../styles/variables';
+
+	.validated-select {
+		margin-bottom: $spacing-06;
+	}
 
 	.validated-select__label {
 		@include text-bolder();
