@@ -4,9 +4,7 @@
 			<div class="media-row__content">
 				<img v-if="icon" class="media-row__icon" :src="icon" />
 				<p class="media-row__title">{{ title }}</p>
-				<p class="media-row__text">
-					<slot />
-				</p>
+				<div class="media-row__text" v-html="description" />
 			</div>
 		</div>
 		<div class="media-row__image" :style="{'background-image': 'url(' + img + ')'}">
@@ -27,6 +25,10 @@ export default {
 			required: true,
 		},
 		alt: {
+			type: String,
+			required: true,
+		},
+		description: {
 			type: String,
 			required: true,
 		},
