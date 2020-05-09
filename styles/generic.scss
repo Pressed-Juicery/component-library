@@ -26,6 +26,6 @@ input {
 	display: block;
 	width: 100%;
 	padding: $spacing-03;
-	border: 1px solid $border-color-light;
+	border: $border-width solid $border-color-light;
 	border-radius: $border-radius;
 }
