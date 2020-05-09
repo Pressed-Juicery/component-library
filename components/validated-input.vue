@@ -68,6 +68,10 @@ export default {
 <style scoped lang="scss">
 	@import '../styles/mixins';
 
+	.validated-input {
+		margin-bottom: $spacing-06;
+	}
+
 	.validated-input__label {
 		@include text-bolder();
 	}
