@@ -15,7 +15,8 @@ export function Overview() {
 				:img="img"
 				:alt="alt"
 				:title="title"
-				:icon="icon">
+				:icon="icon"
+			>
 				<span>
 					Inspired by a common goal of serving up daily nutrition with major convenience,
 					we've partnered with BlendJet - makers of the original compact portable blender -
