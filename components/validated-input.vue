@@ -70,13 +70,10 @@ export default {
 	@import '../styles/variables';
 
 	.validated-input__main-label {
-		@include text-body-medium();
 		@include text-bolder();
 	}
 
 	.validated-input__label-helper {
-		@include text-body-medium();
-
 		display: block;
 		margin-bottom: $spacing-01;
 	}
