@@ -77,7 +77,6 @@ export default {
 	}
 
 	.validated-input__error {
-		@include text-body-small();
 		@include text-error();
 	}
 </style>
