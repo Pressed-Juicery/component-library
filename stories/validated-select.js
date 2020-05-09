@@ -13,9 +13,7 @@ export function Overview() {
 		components: { ValidatedSelect },
 		template: `
 			<div>
-				<validated-select label="Label"
-				                  v-model="selectedItem"
-				                  :options="options" />
+				<validated-select label="Label" v-model="selectedItem" :options="options" />
 				<p>Selected Item: {{ selectedItem }}</p>
 			</div>
 		`,
@@ -38,10 +36,7 @@ export function Validation() {
 		components: { ValidatedForm, ValidatedSelect },
 		template: `
 			<validated-form>
-				<validated-select label="Label"
-				                  v-model="selectedItem"
-				                  :rules="stateRules"
-				                  :options="options" />
+				<validated-select label="Label" v-model="selectedItem" :rules="stateRules" :options="options" />
 				<button type="submit">Submit</button>
 			</validated-form>
 		`,
