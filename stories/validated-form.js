@@ -12,7 +12,7 @@ export function Overview() {
 	return {
 		components: { ValidatedForm },
 		template: `
-			<validated-form :showError="false">
+			<validated-form>
 				<label>
 					First Name
 					<input v-model="firstName"/>
