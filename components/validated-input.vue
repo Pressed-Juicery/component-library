@@ -1,14 +1,15 @@
 <template>
 	<div class="validated-input">
-		<label v-if="label" class="validated-input__label" :for="label" >{{ label }}</label>
-		<label v-if="labelHelper" :for="label">{{ labelHelper }}</label>
-		<input :id="label" v-bind="$attrs" v-model="model" @blur="validate()">
+		<label v-if="label" class="validated-input__label" :for="id" >{{ label }}</label>
+		<label v-if="labelHelper" :for="id">{{ labelHelper }}</label>
+		<input :id="id" v-bind="$attrs" v-model="model" @blur="validate()">
 
-		<label v-if="error" class="validated-input__error" :for="label">{{ error }}</label>
+		<label v-if="error" class="validated-input__error" :for="id">{{ error }}</label>
 	</div>
 </template>
 
 <script>
+import { getRandom } from '../utilities/get-random';
 import { validate } from '../utilities/validate';
 
 export default {
@@ -24,6 +25,7 @@ export default {
 		return {
 			isLazy: true,
 			error: null,
+			id: getRandom(),
 		};
 	},
 
