@@ -22,7 +22,6 @@ export default {
 			type: String,
 			required: true,
 		},
-		icon: String,
 		img: {
 			type: String,
 			required: true,
@@ -31,6 +30,7 @@ export default {
 			type: String,
 			required: true,
 		},
+		icon: String,
 	},
 };
 </script>
