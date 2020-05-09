@@ -1,5 +1,5 @@
 <template>
-	<div class="media-row" :style="{ backgroundColor, color }">
+	<div class="media-row">
 		<div :class="['media-row__content', { 'media-row__content--center': verticallyCenterContent }]">
 			<div class="media-row__content-wrapper">
 				<img class="media-row__icon" :src="icon" />
@@ -19,8 +19,6 @@
 export default {
 	props: {
 		title: String,
-		backgroundColor: String,
-		color: String,
 		icon: String,
 		img: String,
 		alt: String,

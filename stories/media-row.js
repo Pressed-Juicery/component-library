@@ -1,3 +1,4 @@
+import './media-row.scss';
 import MediaRow from '../components/media-row';
 
 export default {
@@ -10,11 +11,10 @@ export function Overview() {
 		components: { MediaRow },
 		template: `
 			<MediaRow
+				class="media-row-overview"
 				:img="img"
 				:alt="alt"
 				:title="title"
-				:backgroundColor="backgroundColor"
-				:color="color"
 				:icon="icon">
 				<span>
 					Inspired by a common goal of serving up daily nutrition with major convenience,
@@ -28,8 +28,6 @@ export function Overview() {
 				title: 'BlendJet x Pressed Juicery',
 				img: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/blendjet-demo.png',
 				alt: 'Berries, Smoothie, and BlendJet blender',
-				backgroundColor: '#7f9a94',
-				color: '#fff',
 				icon: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/icons/new-icon.svg',
 			};
 		},
