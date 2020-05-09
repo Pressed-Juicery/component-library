@@ -85,7 +85,6 @@ export default {
 	}
 
 	.validated-select__error {
-		@include text-body-small();
 		@include text-error();
 	}
 </style>
