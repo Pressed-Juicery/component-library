@@ -135,19 +135,19 @@ export function CustomValidatedInputErrorMessage() {
 	return {
 		components: { ValidatedForm, ValidatedInput },
 		template: `
-		<validated-form :show-error="showError" error-message="Form submission failed due to a server error.">
-			<validated-input type="text"
-			                 label="First Name"
-			                 :rules="firstNameRules"
-			                 v-model="firstName" />
+			<validated-form :show-error="showError" error-message="Form submission failed due to a server error.">
+				<validated-input type="text"
+				                 label="First Name"
+				                 :rules="firstNameRules"
+				                 v-model="firstName" />
 
-			<validated-input type="text"
-			                 label="Password"
-			                 :rules="passwordRules"
-			                 v-model="password" />
-			<button style="margin-top:20px" type="submit">SUBMIT</button>
-		</validated-form>
-	`,
+				<validated-input type="text"
+				                 label="Password"
+				                 :rules="passwordRules"
+				                 v-model="password" />
+				<button style="margin-top:20px" type="submit">SUBMIT</button>
+			</validated-form>
+		`,
 
 		data() {
 			return {
