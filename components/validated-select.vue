@@ -80,7 +80,6 @@ export default {
 	@import '../styles/variables';
 
 	.validated-select__main-label {
-		@include text-body-medium();
 		@include text-bolder();
 	}
 
