@@ -1,13 +1,11 @@
 <template>
 	<div class="validated-select">
-		<div>
-			<label v-if="label" class="validated-select__label" :for="id">{{ label }}</label>
-			<select :id="id" v-model="model">
-				<option v-for="(option, index) in options" :key="index" :value="option.value">
-					{{ option.name }}
-				</option>
-			</select>
-		</div>
+		<label v-if="label" class="validated-select__label" :for="id">{{ label }}</label>
+		<select :id="id" v-model="model">
+			<option v-for="(option, index) in options" :key="index" :value="option.value">
+				{{ option.name }}
+			</option>
+		</select>
 
 		<label v-if="error" class="validated-select__error" :for="id">{{ error }}</label>
 	</div>
