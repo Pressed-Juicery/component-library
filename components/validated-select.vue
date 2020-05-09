@@ -18,7 +18,6 @@ import { validate } from '../utilities/validate';
 export default {
 	props: {
 		label: String,
-		placeholder: String,
 		selectedItem: String,
 		rules: Array,
 		options: {
