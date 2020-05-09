@@ -33,7 +33,7 @@ export function ErrorMessage() {
 	return {
 		components: { ValidatedForm },
 		template: `
-			<validated-form :showError="true">
+			<validated-form :show-error="true">
 				<label>
 					First Name
 					<input v-model="firstName"/>
@@ -49,7 +49,7 @@ export function CustomErrorMessage() {
 	return {
 		components: { ValidatedForm },
 		template: `
-			<validated-form :showError="true" errorMessage="Form submission failed due to a server error.">
+			<validated-form :show-error="true" error-message="Form submission failed due to a server error.">
 				<label>
 					First Name
 					<input v-model="firstName"/>
