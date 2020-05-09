@@ -1,7 +1,7 @@
 <template>
 	<div class="validated-input">
 		<div>
-			<label v-if="label" :for="label" class="validated-input__main-label">{{ label }}</label>
+			<label v-if="label" :for="label" class="validated-input__label">{{ label }}</label>
 			<label v-if="labelHelper" :for="label" class="validated-input__label-helper">{{ labelHelper }}</label>
 			<input :id="label" v-bind="$attrs" v-model="model" @blur="validate()">
 		</div>
@@ -68,7 +68,7 @@ export default {
 <style scoped lang="scss">
 	@import '../styles/mixins';
 
-	.validated-input__main-label {
+	.validated-input__label {
 		@include text-bolder();
 	}
 
