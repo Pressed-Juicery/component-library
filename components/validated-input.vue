@@ -67,7 +67,6 @@ export default {
 
 <style scoped lang="scss">
 	@import '../styles/mixins';
-	@import '../styles/variables';
 
 	.validated-input__main-label {
 		@include text-bolder();
@@ -75,7 +74,6 @@ export default {
 
 	.validated-input__label-helper {
 		display: block;
-		margin-bottom: $spacing-01;
 	}
 
 	.validated-input__error {
