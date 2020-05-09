@@ -57,7 +57,7 @@ export function SingleValidatedInput() {
 				                 label="Label"
 				                 :rules="rules"
 				                 v-model="model" />
-				<button type="submit">SUBMIT</button>
+				<button type="submit">Submit</button>
 			</validated-form>
 		`,
 
@@ -92,7 +92,7 @@ export function MultipleValidatedInputs() {
 				                 label="Password"
 				                 :rules="passwordRules"
 				                 v-model="password" />
-				<button type="submit">SUBMIT</button>
+				<button type="submit">Submit</button>
 			</validated-form>
 		`,
 
@@ -132,7 +132,7 @@ export function CustomValidatedInputErrorMessage() {
 				                 label="Password"
 				                 :rules="passwordRules"
 				                 v-model="password" />
-				<button type="submit">SUBMIT</button>
+				<button type="submit">Submit</button>
 			</validated-form>
 		`,
 
