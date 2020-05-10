@@ -21,7 +21,7 @@
 
 <script>
 import Card from './card.vue';
-import { currency } from '../utilities/formatters';
+import { formatCurrency } from '../utilities/formatters';
 
 export default {
 	components: { Card },
@@ -32,7 +32,7 @@ export default {
 
 	computed: {
 		displayPrice() {
-			return currency(this.item.discountedTotalPrice);
+			return formatCurrency(this.item.discountedTotalPrice);
 		},
 	},
 };
