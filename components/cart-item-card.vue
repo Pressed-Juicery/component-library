@@ -30,7 +30,7 @@ export default {
 	computed: {
 		additionalInformation() {
 			return this.item.additionalInformation
-				|| (this.item.modifiers && this.item.modifiers.bundleItems)
+				|| this.item.bundleItems
 				|| (this.item.modifiers && this.item.modifiers.toppings)
 				|| '';
 		},

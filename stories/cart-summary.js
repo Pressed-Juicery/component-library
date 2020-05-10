@@ -36,9 +36,7 @@ export function Overview() {
 							quantity: 1,
 							imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 							price: 26.57,
-							modifiers: {
-								bundleItems: 'Vanilla Almond, Chocolate Almond',
-							},
+							bundleItems: 'Vanilla Almond, Chocolate Almond',
 						},
 						{
 							name: 'Strawberry Freeze',
