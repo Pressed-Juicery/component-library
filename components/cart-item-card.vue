@@ -4,8 +4,8 @@
 			<img class="cart-item-card__image" :src="item.imageUrl" :alt="item.name" />
 		</div>
 
-		<div class="cart-item-card__description">
-			<div class="cart-item-card__main-content">
+		<div class="cart-item-card__description-wrapper">
+			<div class="cart-item-card__description">
 				<div class="cart-item-card__title">{{ item.name }}</div>
 				<div class="cart-item-card__additional-info">{{ item.additionalInformation }}</div>
 				<div class="cart-item-card__quantity">Qty {{ item.quantity }}</div>
@@ -53,12 +53,12 @@ export default {
 		width: 100%;
 	}
 
-	.cart-item-card__description {
+	.cart-item-card__description-wrapper {
 		display: flex;
 		flex: 1;
 	}
 
-	.cart-item-card__main-content {
+	.cart-item-card__description {
 		flex: 1;
 	}
 
