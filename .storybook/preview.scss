@@ -2,6 +2,10 @@
 
 body {
 	padding: 64px;
+
+	@media (max-width: $max-width-tablet) {
+		padding: 10px;
+	}
 }
 
 code {
