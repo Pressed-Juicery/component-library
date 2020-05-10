@@ -1,16 +1,13 @@
 <template>
 	<card class="cart-item-card">
-		<span class="cart-item-card__image-container">
+		<div class="cart-item-card__image-container">
 			<img class="cart-item-card__image" :src="item.imageUrl" :alt="item.name" />
-		</span>
+		</div>
 
-		<div class="cart-item-card__description"
-		     :class="{ 'cart-item-card__description--reduced-height': !item.additionalInformation }">
+		<div class="cart-item-card__description">
 			<div class="cart-item-card__main-content">
 				<div class="cart-item-card__title">{{ item.name }}</div>
-				<div v-if="item.additionalInformation" class="cart-item-card__additional-info">
-					{{ item.additionalInformation }}
-				</div>
+				<div class="cart-item-card__additional-info">{{ item.additionalInformation }}</div>
 				<div class="cart-item-card__quantity">Qty {{ item.quantity }}</div>
 			</div>
 
@@ -42,20 +39,18 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	$image-vertical-offset: -1.6rem;
-	$image-horizontal-offset: -1.8rem;
-
 	.cart-item-card {
 		display: flex;
+		padding: $spacing-04;
 	}
 
 	.cart-item-card__image-container {
-		width: 9rem;
+		width: $spacing-10;
+		margin-right: $spacing-04;
 	}
 
 	.cart-item-card__image {
 		width: 100%;
-		margin: 0 auto $image-vertical-offset $image-horizontal-offset;
 	}
 
 	.cart-item-card__description {
@@ -63,37 +58,22 @@ export default {
 		flex: 1;
 	}
 
-	.cart-item-card__description--reduced-height {
-		margin: $spacing-04 0;
-	}
-
 	.cart-item-card__main-content {
 		flex: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		margin: 0 $spacing-06 0 (-$spacing-06);
-		word-break: break-word;
 	}
 
-	.cart-item-card__title {
-		@include text-bold();
-
-		margin-bottom: $spacing-02;
-	}
-
-	.cart-item-card__additional-info {
-		@include text-body-small();
-
-		margin-bottom: $spacing-02;
-		color: $gray-60;
-	}
-
+	.cart-item-card__title,
 	.cart-item-card__price {
 		@include text-bold();
 	}
 
+	.cart-item-card__additional-info,
 	.cart-item-card__quantity {
 		@include text-body-small();
+	}
+
+	.cart-item-card__additional-info {
+		color: $color-text-gray;
+		margin-bottom: $spacing-03;
 	}
 </style>
