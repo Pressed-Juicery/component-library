@@ -112,14 +112,8 @@ export default {
 		@include text-body-small();
 	}
 
-	.cart-summary__discount-label {
-		@include text-bolder();
-	}
-
-	.cart-summary__discount-amount {
-		@include text-bolder();
-	}
-
+	.cart-summary__discount-label,
+	.cart-summary__discount-amount,
 	.cart-summary__total-label {
 		@include text-bolder();
 	}
