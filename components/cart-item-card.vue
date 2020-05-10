@@ -42,6 +42,7 @@ export default {
 	.cart-item-card {
 		display: flex;
 		padding: $spacing-04;
+		margin-bottom: $spacing-03;
 	}
 
 	.cart-item-card__image-wrapper {
