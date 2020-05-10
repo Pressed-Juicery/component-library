@@ -47,7 +47,7 @@
 <script>
 import CartItemCard from './cart-item-card';
 
-import { currency } from '../utilities/formatters';
+import { formatCurrency } from '../utilities/formatters';
 
 export default {
 	props: {
@@ -74,7 +74,7 @@ export default {
 
 	methods: {
 		formatPrice(amount) {
-			return currency(amount);
+			return formatCurrency(amount);
 		},
 	},
 };
