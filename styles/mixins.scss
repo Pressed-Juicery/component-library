@@ -98,6 +98,10 @@
 	color: $color-text-gray;
 }
 
+@mixin text-error() {
+	color: $color-danger;
+}
+
 @mixin text-uppercase() {
 	text-transform: uppercase;
 	letter-spacing: 0.14rem;
