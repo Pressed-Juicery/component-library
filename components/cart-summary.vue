@@ -5,7 +5,7 @@
 			<div class="cart-summary__item-count">{{ cart.itemCount }} Items</div>
 		</div>
 
-		<cart-item-card v-for="(item, index) in cartItems" :key="index" :item="item" />
+		<cart-item-card v-for="(item, index) in cart.items" :key="index" :item="item" />
 
 		<div class="cart-summary__prices-summary">
 			<div class="cart-summary__prices-summary-row cart-summary__row">
@@ -47,22 +47,6 @@ export default {
 	},
 
 	components: { CartItemCard },
-
-	computed: {
-		cartItems() {
-			return this.cart.items.map(item => {
-				let additionalInformation = '';
-
-				if (item.modifiers && item.modifiers.bundleItems) {
-					additionalInformation = item.modifiers.bundleItems;
-				} else if (item.modifiers && item.modifiers.toppings) {
-					additionalInformation = item.modifiers.toppings;
-				}
-
-				return { ...item, additionalInformation };
-			});
-		},
-	},
 
 	methods: {
 		formatPrice(amount) {
