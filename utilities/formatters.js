@@ -1,7 +1,7 @@
 export function formatCurrency(amount) {
 	const value = Number(amount);
 
-	if (Number.isNaN(value)) return '';
+	if (Number.isNaN(value)) throw Error('amount is not a number');
 
 	const prefix = value < 0 ? '-$' : '$';
 	const fixedPointAmount = Math.abs(value).toFixed(2);
