@@ -1,25 +1,19 @@
 <template>
 	<div class="cart-summary">
-		<div class="cart-summary__row">
+		<div class="cart-summary__header cart-summary__row">
 			<div class="cart-summary__title">Your Cart</div>
-			<div class="cart-summary__item-count">{{ cart.itemCount }} items</div>
+			<div class="cart-summary__item-count">{{ cart.itemCount }} Items</div>
 		</div>
 
-		<div class="cart-summary__cart-items">
-			<cart-item-card class="cart-summary__cart-item"
-			                v-for="item in cartItems"
-			                :key="item.name"
-			                :item="item">
-			</cart-item-card>
-		</div>
+		<cart-item-card v-for="item in cartItems" :key="item.name" :item="item" />
 
 		<div class="cart-summary__prices-summary">
-			<div class="cart-summary__row">
+			<div class="cart-summary__prices-summary-row cart-summary__row">
 				<div class="cart-summary__subtotal-label">Subtotal</div>
 				<div class="cart-summary__subtotal">{{ formatPrice(cart.subtotal) }}</div>
 			</div>
 
-			<div class="cart-summary__row">
+			<div class="cart-summary__prices-summary-row cart-summary__row">
 				<div class="cart-summary__shipping-label">Shipping/Delivery</div>
 				<div v-if="cart.shippingPrice" class="cart-summary__shipping-price">
 					{{ formatPrice(cart.shippingPrice) }}
@@ -28,7 +22,7 @@
 			</div>
 
 			<div v-if="cart.discounts && cart.discounts.length">
-				<div class="cart-summary__row"
+				<div class="cart-summary__prices-summary-row cart-summary__row"
 				     v-for="discount in cart.discounts"
 				     :key="discount.name">
 					<div class="cart-summary__discount-label">{{ discount.name }}</div>
@@ -38,7 +32,7 @@
 		</div>
 
 		<div class="cart-summary__row">
-			<div class="cart-summary__total-label">Total</div>
+			<div class="cart-summary__total-label">Estimated Total</div>
 			<div class="cart-summary__total">{{ formatPrice(cart.total) }}</div>
 		</div>
 	</div>
@@ -84,50 +78,38 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.cart-summary {
-		padding: $spacing-07 $spacing-03;
-	}
-
 	.cart-summary__row {
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: $spacing-03;
+		align-items: center;
+	}
+
+	.cart-summary__header {
+		margin-bottom: $spacing-07;
 	}
 
 	.cart-summary__title {
 		@include text-heading-4();
-		@include text-bolder();
-
-		margin-bottom: $spacing-06;
 	}
 
 	.cart-summary__item-count {
-		@include text-heading-4();
-		@include text-normal();
-	}
-
-	.cart-summary__cart-items {
-		margin-bottom: $spacing-05;
-	}
-
-	.cart-summary__cart-item {
-		margin-bottom: $spacing-03;
+		@include text-bold();
 	}
 
 	.cart-summary__prices-summary {
-		padding-bottom: $spacing-03;
-		margin-bottom: $spacing-05;
-		border-bottom: $border-width solid $border-color;
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: $border-color-light;
+		padding: $spacing-05 0;
+		margin: $spacing-06 0;
+	}
+
+	.cart-summary__prices-summary-row {
+		line-height: $spacing-06;
 	}
 
 	.cart-summary__shipping-info {
-		margin-left: $spacing-03;
-		text-align: right;
-		color: $gray-40;
-	}
-
-	.cart-summary__discounts {
-		padding-bottom: $spacing-03;
+		@include text-body-small();
 	}
 
 	.cart-summary__discount-label {
@@ -143,7 +125,6 @@ export default {
 	}
 
 	.cart-summary__total {
-		@include text-heading-4();
-		@include text-normal();
+		@include text-heading-5();
 	}
 </style>
