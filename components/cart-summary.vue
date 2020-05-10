@@ -10,12 +10,12 @@
 		<div class="cart-summary__prices-summary">
 			<div class="cart-summary__prices-summary-row cart-summary__row">
 				<div>Subtotal</div>
-				<div>{{ formatPrice(cart.subtotal) }}</div>
+				<div>{{ formatCurrency(cart.subtotal) }}</div>
 			</div>
 
 			<div class="cart-summary__prices-summary-row cart-summary__row">
 				<div>Shipping/Delivery</div>
-				<div v-if="cart.shippingPrice">{{ formatPrice(cart.shippingPrice) }}</div>
+				<div v-if="cart.shippingPrice">{{ formatCurrency(cart.shippingPrice) }}</div>
 				<div v-else class="cart-summary__shipping-info">calculated at next step</div>
 			</div>
 
@@ -24,14 +24,14 @@
 				     v-for="discount in cart.discounts"
 				     :key="discount.name">
 					<div class="cart-summary__discount-label">{{ discount.name }}</div>
-					<div class="cart-summary__discount-amount">{{ formatPrice(-Math.abs(discount.amount)) }}</div>
+					<div class="cart-summary__discount-amount">{{ formatCurrency(-Math.abs(discount.amount)) }}</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="cart-summary__row">
 			<div class="cart-summary__total-label">Estimated Total</div>
-			<div class="cart-summary__total">{{ formatPrice(cart.total) }}</div>
+			<div class="cart-summary__total">{{ formatCurrency(cart.total) }}</div>
 		</div>
 	</div>
 </template>
@@ -49,7 +49,7 @@ export default {
 	components: { CartItemCard },
 
 	methods: {
-		formatPrice(amount) {
+		formatCurrency(amount) {
 			return formatCurrency(amount);
 		},
 	},
