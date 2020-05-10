@@ -1,7 +1,7 @@
 <template>
 	<card class="cart-item-card">
 		<div class="cart-item-card__image-wrapper">
-			<img class="cart-item-card__image" :src="item.imageUrl" :alt="item.name" />
+			<img class="cart-item-card__image" :src="item.imageSrc" :alt="item.name" />
 		</div>
 
 		<div class="cart-item-card__description-wrapper">
