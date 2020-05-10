@@ -80,26 +80,20 @@ export default {
 		@include text-bold();
 
 		margin-bottom: $spacing-02;
-		line-height: 1;
 	}
 
 	.cart-item-card__additional-info {
 		@include text-body-small();
 
 		margin-bottom: $spacing-02;
-		line-height: 1;
 		color: $gray-60;
 	}
 
 	.cart-item-card__price {
 		@include text-bold();
-
-		line-height: 1;
 	}
 
 	.cart-item-card__quantity {
 		@include text-body-small();
-
-		line-height: 1;
 	}
 </style>
