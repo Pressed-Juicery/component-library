@@ -29,7 +29,7 @@ export default {
 
 	computed: {
 		displayPrice() {
-			return formatCurrency(this.item.discountedTotalPrice);
+			return formatCurrency(this.item.price);
 		},
 	},
 };
