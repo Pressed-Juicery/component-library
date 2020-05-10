@@ -23,22 +23,22 @@ export function Overview() {
 							name: 'Strawberry Basil Lemonade',
 							quantity: 10,
 							// eslint-disable-next-line max-len
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-							discountedTotalPrice: 10,
+							imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+							price: 10,
 						},
 						{
 							name: 'Turmeric Almond',
 							quantity: 5,
 							// eslint-disable-next-line max-len
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-							discountedTotalPrice: 25,
+							imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+							price: 25,
 						},
 						{
 							name: 'Daily Fuel',
 							quantity: 1,
 							// eslint-disable-next-line max-len
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-							discountedTotalPrice: 26.57,
+							imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+							price: 26.57,
 							modifiers: {
 								bundleItems: 'Vanilla Almond, Chocolate Almond',
 							},
@@ -47,8 +47,8 @@ export function Overview() {
 							name: 'Strawberry Freeze',
 							quantity: 101,
 							// eslint-disable-next-line max-len
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-							discountedTotalPrice: 122.5,
+							imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+							price: 122.5,
 							modifiers: {
 								toppings: 'Chocolate Chips, Granola, Coconut',
 							},
@@ -79,15 +79,15 @@ export function ShippingDeliveryPrice() {
 							name: 'Strawberry Basil Lemonade',
 							quantity: 10,
 							// eslint-disable-next-line max-len
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-							discountedTotalPrice: 10,
+							imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+							price: 10,
 						},
 						{
 							name: 'Strawberry Freeze',
 							quantity: 101,
 							// eslint-disable-next-line max-len
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-							discountedTotalPrice: 122.5,
+							imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+							price: 122.5,
 							modifiers: {
 								toppings: 'Chocolate Chips, Granola, Coconut',
 							},
@@ -121,15 +121,15 @@ export function Discounts() {
 							name: 'Strawberry Basil Lemonade',
 							quantity: 10,
 							// eslint-disable-next-line max-len
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-							discountedTotalPrice: 10,
+							imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+							price: 10,
 						},
 						{
 							name: 'Strawberry Freeze',
 							quantity: 101,
 							// eslint-disable-next-line max-len
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-							discountedTotalPrice: 122.5,
+							imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+							price: 122.5,
 							modifiers: {
 								toppings: 'Chocolate Chips, Granola, Coconut',
 							},
