@@ -5,7 +5,7 @@
 			<div class="cart-summary__item-count">{{ cart.itemCount }} Items</div>
 		</div>
 
-		<cart-item-card v-for="item in cartItems" :key="item.name" :item="item" />
+		<cart-item-card v-for="(item, index) in cartItems" :key="index" :item="item" />
 
 		<div class="cart-summary__prices-summary">
 			<div class="cart-summary__prices-summary-row cart-summary__row">
