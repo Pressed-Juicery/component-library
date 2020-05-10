@@ -1,7 +1,15 @@
 @import '../styles/variables';
 
+body {
+	padding: 64px;
+
+	@media (max-width: $max-width-tablet) {
+		padding: 10px;
+	}
+}
+
 code {
 	background: $gray-10;
 	padding: $spacing-02;
-	font-size: $font-size-02;
+	font-size: 0.9em;
 }
