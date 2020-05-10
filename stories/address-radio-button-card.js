@@ -29,9 +29,14 @@ const thirdAddress = {
 export function Overview() {
 	return {
 		components: { AddressRadioButtonCard },
-		template: '<address-radio-button-card title="Title" :address="firstAddress" v-model="selectedAddress" />',
+		template: '<address-radio-button-card title="Title" :address="address" v-model="selectedAddress" />',
 
-		data() { return { firstAddress, selectedAddress: null } },
+		data() { return { address:{
+				streetAddress: '1 Meadow Lane',
+				locality: 'Portland',
+				region: 'OR',
+				postal: '27705',
+			}, selectedAddress: null } },
 	};
 }
 
