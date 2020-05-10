@@ -7,7 +7,7 @@
 		<div class="cart-item-card__description-wrapper">
 			<div class="cart-item-card__description">
 				<div class="cart-item-card__title">{{ item.name }}</div>
-				<div class="cart-item-card__additional-info">{{ item.additionalInformation }}</div>
+				<div class="cart-item-card__additional-info">{{ additionalInformation }}</div>
 				<div class="cart-item-card__quantity">Qty {{ item.quantity }}</div>
 			</div>
 
@@ -28,6 +28,12 @@ export default {
 	},
 
 	computed: {
+		additionalInformation() {
+			return this.item.additionalInformation
+				|| this.item.bundleItems
+				|| (this.item.modifiers && this.item.modifiers.toppings)
+				|| '';
+		},
 		displayPrice() {
 			return formatCurrency(this.item.price);
 		},
@@ -42,6 +48,7 @@ export default {
 	.cart-item-card {
 		display: flex;
 		padding: $spacing-04;
+		margin-bottom: $spacing-03;
 	}
 
 	.cart-item-card__image-wrapper {
