@@ -1,6 +1,6 @@
 <template>
 	<card class="cart-item-card">
-		<div class="cart-item-card__image-container">
+		<div class="cart-item-card__image-wrapper">
 			<img class="cart-item-card__image" :src="item.imageUrl" :alt="item.name" />
 		</div>
 
@@ -44,7 +44,7 @@ export default {
 		padding: $spacing-04;
 	}
 
-	.cart-item-card__image-container {
+	.cart-item-card__image-wrapper {
 		width: $spacing-10;
 		margin-right: $spacing-04;
 	}
