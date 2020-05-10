@@ -9,15 +9,13 @@
 
 		<div class="cart-summary__prices-summary">
 			<div class="cart-summary__prices-summary-row cart-summary__row">
-				<div class="cart-summary__subtotal-label">Subtotal</div>
-				<div class="cart-summary__subtotal">{{ formatPrice(cart.subtotal) }}</div>
+				<div>Subtotal</div>
+				<div>{{ formatPrice(cart.subtotal) }}</div>
 			</div>
 
 			<div class="cart-summary__prices-summary-row cart-summary__row">
-				<div class="cart-summary__shipping-label">Shipping/Delivery</div>
-				<div v-if="cart.shippingPrice" class="cart-summary__shipping-price">
-					{{ formatPrice(cart.shippingPrice) }}
-				</div>
+				<div>Shipping/Delivery</div>
+				<div v-if="cart.shippingPrice">{{ formatPrice(cart.shippingPrice) }}</div>
 				<div v-else class="cart-summary__shipping-info">calculated at next step</div>
 			</div>
 
