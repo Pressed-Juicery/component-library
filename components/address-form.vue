@@ -249,7 +249,6 @@ export default {
 	}
 
 	.address-form__delivery-instructions-label {
-		@include text-body-medium();
 		@include text-bolder();
 	}
 </style>
