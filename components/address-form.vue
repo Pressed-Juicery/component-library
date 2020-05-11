@@ -47,7 +47,6 @@
 		</button-bar>
 
 		<validated-input v-if="hasCustomTitle"
-		                 class="address-form__input"
 		                 label="Title"
 		                 v-model="model.title"
 		                 :rules="customTitleRules"/>
