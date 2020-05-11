@@ -26,7 +26,7 @@ export default {
 
 	.button-bar-button {
 		flex-basis: 100%;
-		border: $border-width solid $border-color;
+		border: $border-width solid $border-color-light;
 		border-right: none;
 		border-radius: 0;
 		background-color: transparent;
@@ -42,7 +42,7 @@ export default {
 	}
 
 	.button-bar-button:last-child {
-		border-right: $border-width solid $border-color;
+		border-right: $border-width solid $border-color-light;
 		border-top-right-radius: $border-radius;
 		border-bottom-right-radius: $border-radius;
 	}
