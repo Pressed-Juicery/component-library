@@ -2,7 +2,7 @@
 	<div class="address-form">
 		<div class="address-form__grid">
 			<validated-input label="First Name" v-model="model.firstName" :rules="firstNameRules" />
-			<validated-input label="Last Name" v-model="model.lastName" :rules="lastNameRules"/>
+			<validated-input label="Last Name" v-model="model.lastName" :rules="lastNameRules" />
 		</div>
 
 		<validated-input label="Street Address" v-model="model.streetAddress" :rules="addressRules" />
@@ -47,7 +47,7 @@
 		<validated-input v-if="hasCustomTitle"
 		                 label="Title"
 		                 v-model="model.title"
-		                 :rules="customTitleRules"/>
+		                 :rules="customTitleRules" />
 
 		<Label v-if="showDeliveryInstructions">
 			<span class="address-form__delivery-instructions-label">Delivery Instructions</span>
