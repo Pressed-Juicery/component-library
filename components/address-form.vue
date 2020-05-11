@@ -175,7 +175,6 @@ export default {
 	}
 
 	.address-form__button-bar {
-		width: 100%;
 		margin-bottom: $spacing-06;
 	}
 
