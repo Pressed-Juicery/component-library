@@ -66,6 +66,7 @@ export default {
 		},
 	},
 
+	// eslint-disable-next-line max-lines-per-function
 	data() {
 		return {
 			cannotLoadForm: false,
