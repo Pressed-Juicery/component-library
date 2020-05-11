@@ -30,7 +30,6 @@ export default {
 		border-right: none;
 		border-radius: 0;
 		background-color: transparent;
-		color: $gray-100;
 	}
 
 	.button-bar-button:focus {
