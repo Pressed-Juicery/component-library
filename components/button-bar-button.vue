@@ -1,9 +1,9 @@
 <template>
-	<button class="button-bar-button"
+	<div class="button-bar-button"
 	        :class="{ 'button-bar-button--active': value === selectedButton }"
 	        @click="$emit('select-button', value)" >
 		<slot />
-	</button>
+	</div>
 </template>
 
 <script>
@@ -31,7 +31,6 @@ export default {
 		border-radius: 0;
 		background-color: transparent;
 		color: $gray-100;
-		text-transform: none;
 	}
 
 	.button-bar-button:focus {
