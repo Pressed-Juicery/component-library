@@ -22,10 +22,28 @@ p {
 	margin: 0 0 1.33em;
 }
 
+label {
+	display: block;
+}
+
 input, textarea {
 	display: block;
 	width: 100%;
 	padding: $spacing-03;
-	border: 1px solid $border-color-light;
+	border: $border-width solid $border-color-light;
 	border-radius: $border-radius;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	display: block;
+	width: 100%;
+	padding: $spacing-03;
+	border: $border-width solid $border-color-light;
+	border-radius: $border-radius;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI4cHgiIGhlaWdodD0iMTNweCIgdmlld0JveD0iMCAwIDggMTMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDggMTMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxnPjxwb2x5Z29uIGZpbGw9IiMzMzMiIHBvaW50cz0iMCw4IDQsMTMgOCw4IiAvPjwvZz48L2c+PGc+PGc+PHBvbHlnb24gZmlsbD0iIzMzMyIgcG9pbnRzPSI0LDAgMCw1IDgsNSIgLz48L2c+PC9nPjwvc3ZnPg==);
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	background-color: #fff;
 }
