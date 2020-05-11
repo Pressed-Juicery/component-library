@@ -23,7 +23,7 @@ export function InValidatedForm() {
 				<validated-payment-method :braintree-tokenization-key="braintreeTokenizationKey"
 				                          @change="nonce => result = nonce" />
 				
-				<button style="margin-top:20px" type="submit">SUBMIT</button>
+				<button type="submit">Submit</button>
 				
 				<p>Result: {{ result }}</p>
 			</validated-form>
