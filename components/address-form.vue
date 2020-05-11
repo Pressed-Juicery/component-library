@@ -5,9 +5,7 @@
 			<validated-input label="Last Name" v-model="model.lastName" :rules="lastNameRules"/>
 		</div>
 
-		<validated-input label="Street Address"
-		                 v-model="model.streetAddress"
-		                 :rules="addressRules" />
+		<validated-input label="Street Address" v-model="model.streetAddress" :rules="addressRules" />
 		<validated-input label="Suite/Apt" v-model="model.extendedAddress" />
 
 		<validated-input label="City" v-model="model.locality" :rules="localityRules"/>
