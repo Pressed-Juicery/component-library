@@ -181,7 +181,6 @@ export default {
 	}
 
 	.validated-payment-method__error {
-		@include text-body-small();
 		@include text-error();
 	}
 </style>
