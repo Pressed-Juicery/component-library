@@ -5,13 +5,12 @@
 			<validated-input label="Last Name" v-model="model.lastName" :rules="lastNameRules"/>
 		</div>
 
-		<validated-input class="address-form__input"
-		                 label="Street Address"
+		<validated-input label="Street Address"
 		                 v-model="model.streetAddress"
 		                 :rules="addressRules" />
-		<validated-input class="address-form__input" label="Suite/Apt" v-model="model.extendedAddress" />
+		<validated-input label="Suite/Apt" v-model="model.extendedAddress" />
 
-		<validated-input class="address-form__input" label="City" v-model="model.locality" :rules="localityRules"/>
+		<validated-input label="City" v-model="model.locality" :rules="localityRules"/>
 
 		<div class="address-form__grid">
 			<validated-select label="State" v-model="model.region" :options="regions" :rules="regionRules" />
@@ -31,12 +30,14 @@
 			                   @select-button="selectButton">
 				<div>Home</div>
 			</button-bar-button>
+
 			<button-bar-button class="address-form__button-bar-button"
 			                   value="Work"
 			                   :selectedButton="selectedButton"
 			                   @select-button="selectButton">
 				<div>Work</div>
 			</button-bar-button>
+
 			<button-bar-button class="address-form__button-bar-button"
 			                   value="Other"
 			                   :selectedButton="selectedButton"
@@ -227,20 +228,15 @@ export default {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: $spacing-05;
-		margin-bottom: $spacing-05;
-	}
-
-	.address-form__input {
-		margin-bottom: $spacing-05;
 	}
 
 	.address-form__phone {
-		margin-bottom: $spacing-06;
+		margin-bottom: $spacing-08;
 	}
 
 	.address-form__button-bar {
 		width: 100%;
-		margin-bottom: $spacing-05;
+		margin-bottom: $spacing-06;
 	}
 
 	.address-form__button-bar-button {
