@@ -174,7 +174,6 @@ export default {
 	}
 
 	.validated-payment-method__label {
-		@include text-body-medium();
 		@include text-bolder();
 	}
 
