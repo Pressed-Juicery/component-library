@@ -73,18 +73,20 @@ $color_info-border: $blue-20;
 // Spacing
 // -------
 
-$spacing-01: 0.2rem;
-$spacing-02: 0.4rem;
-$spacing-03: 0.8rem;
-$spacing-04: 1.2rem;
-$spacing-05: 1.6rem;
-$spacing-06: 2.4rem;
-$spacing-07: 3.2rem;
-$spacing-08: 4.0rem;
-$spacing-09: 4.8rem;
-$spacing-10: 6.4rem;
-$spacing-11: 9.6rem;
-$spacing-12: 16.0rem;
+$rem: 10px;
+
+$spacing-01: 0.2 * $rem;
+$spacing-02: 0.4 * $rem;
+$spacing-03: 0.8 * $rem;
+$spacing-04: 1.2 * $rem;
+$spacing-05: 1.6 * $rem;
+$spacing-06: 2.4 * $rem;
+$spacing-07: 3.2 * $rem;
+$spacing-08: 4.0 * $rem;
+$spacing-09: 4.8 * $rem;
+$spacing-10: 6.4 * $rem;
+$spacing-11: 9.6 * $rem;
+$spacing-12: 16.0 * $rem;
 
 
 // Screen sizes
