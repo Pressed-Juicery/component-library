@@ -89,9 +89,10 @@ export default {
 				},
 				postalCode: {
 					selector: '#postal-code',
-					type: 'text',
 					isTouched: false,
 					isValid: false,
+					minlength: 5,
+					maxlength: 5,
 				},
 			},
 		};
