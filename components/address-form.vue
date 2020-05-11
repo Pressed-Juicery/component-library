@@ -181,7 +181,7 @@ export default {
 
 	.address-form__button-bar-button {
 		height: auto;
-		padding: $spacing-03;
+		padding: $spacing-05;
 	}
 
 	.address-form__delivery-instructions-label {
