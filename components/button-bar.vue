@@ -6,7 +6,6 @@
 
 <style scoped lang="scss">
 	.button-bar__bar {
-		display: inline-flex;
-		flex: 1;
+		display: flex;
 	}
 </style>
