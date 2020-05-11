@@ -185,4 +185,10 @@ export default {
 	.validated-payment-method__error {
 		@include text-error();
 	}
+
+	@media (max-width: $max-width-tablet) {
+		.validated-payment-method__grid {
+			grid-template-columns: 1fr;
+		}
+	}
 </style>
