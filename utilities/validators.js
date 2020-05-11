@@ -19,7 +19,7 @@ export function isEmail(value) {
 }
 
 export function isNumber(value) {
-	return isEmpty(value) || !window.isNaN(value);
+	return isEmpty(value) || !Number.isNaN(Number(value));
 }
 
 export function isValidPhoneNumber(value) {
