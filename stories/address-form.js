@@ -102,7 +102,7 @@ export function EditDeliveryInstructions() {
 					postal: '93742',
 					phone: '559-242-4242',
 					title: 'Work',
-					deliveryInstructions: 'Grab Your Towel. Eat some peanuts. Lay down in front of the bulldozer.',
+					deliveryInstructions: 'Please leave the package in front of the door.',
 				},
 			};
 		},
