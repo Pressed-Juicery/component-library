@@ -1,6 +1,6 @@
 <template>
 	<div class="validated-payment-method">
-		<div>
+		<div class="validated-payment-method__row">
 			<label class="validated-payment-method__label" for="payment-method-number">Credit Card</label>
 			<div id="payment-method-number" class="validated-payment-method__input"></div>
 
@@ -11,7 +11,7 @@
 			</label>
 		</div>
 
-		<div class="validated-payment-method__grid">
+		<div class="validated-payment-method__row validated-payment-method__grid">
 			<div>
 				<label class="validated-payment-method__label" for="expiration-date">Expiration Date</label>
 				<div id="expiration-date" class="validated-payment-method__input"></div>
@@ -157,6 +157,10 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
+	.validated-payment-method__row {
+		margin-bottom: $spacing-06;
+	}
+
 	.validated-payment-method__input {
 		margin: 0;
 		width: 100%;
@@ -170,7 +174,6 @@ export default {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: $spacing-05;
-		margin-top: $spacing-05;
 	}
 
 	.validated-payment-method__label {
