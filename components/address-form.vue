@@ -176,6 +176,7 @@ export default {
 
 	.address-form__button-bar {
 		margin-bottom: $spacing-06;
+		text-align: center;
 	}
 
 	.address-form__button-bar-button {
