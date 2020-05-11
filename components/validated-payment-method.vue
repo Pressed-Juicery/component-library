@@ -166,7 +166,7 @@ export default {
 		width: 100%;
 		height: $spacing-08;
 		padding: $spacing-03;
-		border: 1px solid $border-color-light;
+		border: $border-width solid $border-color-light;
 		border-radius: $border-radius;
 	}
 
