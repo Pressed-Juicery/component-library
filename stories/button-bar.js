@@ -10,7 +10,7 @@ export function Overview() {
 	return {
 		components: { ButtonBar, ButtonBarButton },
 		template: `
-			<button-bar style="margin:20px">
+			<button-bar>
 				<button-bar-button style="padding:20px"
 				                   value="Hello World"
 				                   :selectedButton="selectedItem"
@@ -40,7 +40,7 @@ export function LoopedContent() {
 	return {
 		components: { ButtonBar, ButtonBarButton },
 		template: `
-			<button-bar style="margin:20px">
+			<button-bar>
 				<button-bar-button style="padding:20px"
 				                   v-for="(content, index) in contents"
 				                   :key="index"
@@ -71,7 +71,7 @@ export function VariedContent() {
 	return {
 		components: { ButtonBar, ButtonBarButton },
 		template: `
-			<button-bar style="margin:20px">
+			<button-bar>
 				<button-bar-button style="padding:20px"
 				                   v-for="(content, index) in contents"
 				                   :key="index"
@@ -102,7 +102,7 @@ export function LongerContent() {
 	return {
 		components: { ButtonBar, ButtonBarButton },
 		template: `
-			<button-bar style="margin:20px">
+			<button-bar>
 				<button-bar-button style="padding:20px"
 				                   v-for="(content, index) in contents"
 				                   :key="index"
@@ -133,7 +133,7 @@ export function PreSelected() {
 	return {
 		components: { ButtonBar, ButtonBarButton },
 		template: `
-			<button-bar style="margin:20px">
+			<button-bar>
 				<button-bar-button style="padding:20px"
 				                   value="Hello World"
 				                   :selectedButton="selectedItem"

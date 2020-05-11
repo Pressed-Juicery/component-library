@@ -35,7 +35,7 @@ export function ButtonBar() {
 	return {
 		components: { ButtonBarButton },
 		template: `
-			<div style="margin:20px; display:flex">
+			<div style="display:flex">
 				<button-bar-button style="padding:20px"
 				                   v-for="(content, index) in contents"
 				                   :key="index"
@@ -65,7 +65,7 @@ export function VariedButtonBar() {
 	return {
 		components: { ButtonBarButton },
 		template: `
-			<div style="margin:20px; display:flex">
+			<div style="display:flex">
 				<button-bar-button style="padding:20px"
 				                   value="A"
 				                   :selectedButton="selectedButton"
