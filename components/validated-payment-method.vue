@@ -1,12 +1,12 @@
 <template>
 	<div class="validated-payment-method">
 		<div>
-			<label class="validated-payment-method__label" for="card-number">Credit Card</label>
-			<div id="card-number" class="validated-payment-method__input"></div>
+			<label class="validated-payment-method__label" for="payment-method-number">Credit Card</label>
+			<div id="payment-method-number" class="validated-payment-method__input"></div>
 
 			<label v-if="fields.number.isTouched && !fields.number.isValid"
 			       class="validated-payment-method__error"
-			       for="card-number">
+			       for="payment-method-number">
 				Please enter a valid credit card number.
 			</label>
 		</div>
@@ -72,7 +72,7 @@ export default {
 			hostedFields: null,
 			fields: {
 				number: {
-					selector: '#card-number',
+					selector: '#payment-method-number',
 					isTouched: false,
 					isValid: false,
 				},
