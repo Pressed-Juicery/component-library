@@ -1,7 +1,7 @@
-import PaymentMethodIcon from '../components/payment-method-icon';
+import PaymentMethodIcon from '../../components/payment-method-icon';
 
 export default {
-	title: 'PaymentMethodIcon',
+	title: 'Icons / PaymentMethodIcon',
 	component: PaymentMethodIcon,
 };
 

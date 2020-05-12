@@ -1,7 +1,7 @@
-import './1-spacing.scss';
+import './spacing.scss';
 
 export default {
-	title: 'Spacing',
+	title: 'Style Guide / Spacing',
 };
 
 // eslint-disable-next-line max-lines-per-function

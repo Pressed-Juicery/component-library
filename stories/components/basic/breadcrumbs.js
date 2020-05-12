@@ -1,7 +1,7 @@
-import Breadcrumbs from '../components/breadcrumbs';
+import Breadcrumbs from '../../../components/breadcrumbs';
 
 export default {
-	title: 'Breadcrumbs',
+	title: 'Components / Basic / Breadcrumbs',
 	component: Breadcrumbs,
 };
 

@@ -1,8 +1,8 @@
-import Accordion from '../components/accordion';
+import Accordion from '../../../components/accordion';
 
 export default {
 	component: Accordion,
-	title: 'Accordion',
+	title: 'Components / Basic / Accordion',
 };
 
 export function Overview() {

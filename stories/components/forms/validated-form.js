@@ -1,10 +1,10 @@
-import { hasMinimumLength, isNotEmpty } from '../utilities/validators';
+import { hasMinimumLength, isNotEmpty } from '../../../utilities/validators';
 
-import ValidatedForm from '../components/validated-form';
-import ValidatedInput from '../components/validated-input';
+import ValidatedForm from '../../../components/validated-form';
+import ValidatedInput from '../../../components/validated-input';
 
 export default {
-	title: 'ValidatedForm',
+	title: 'Components / Forms / ValidatedForm',
 	component: ValidatedForm,
 };
 

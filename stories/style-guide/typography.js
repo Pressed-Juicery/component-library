@@ -1,8 +1,8 @@
-import './0-typography.scss';
-import Card from '../components/card';
+import './typography.scss';
+import Card from '../../components/card';
 
 export default {
-	title: 'Typography',
+	title: 'Style Guide / Typography',
 };
 
 export function HeadingTags() {

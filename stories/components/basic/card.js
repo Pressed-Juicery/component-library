@@ -1,7 +1,7 @@
-import Card from '../components/card';
+import Card from '../../../components/card';
 
 export default {
-	title: 'Card',
+	title: 'Components / Basic / Card',
 	component: Card,
 };
 

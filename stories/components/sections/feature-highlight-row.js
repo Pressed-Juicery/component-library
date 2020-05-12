@@ -1,7 +1,7 @@
-import FeatureHighlightRow from '../components/feature-highlight-row';
+import FeatureHighlightRow from '../../../components/feature-highlight-row';
 
 export default {
-	title: 'FeatureHighlightRow',
+	title: 'Sections / FeatureHighlightRow',
 	component: FeatureHighlightRow,
 };
 

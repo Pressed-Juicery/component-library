@@ -1,9 +1,9 @@
 import './media-row.scss';
-import MediaRow from '../components/media-row';
+import MediaRow from '../../../components/media-row';
 
 export default {
 	component: MediaRow,
-	title: 'MediaRow',
+	title: 'Sections / MediaRow',
 };
 
 export function Overview() {

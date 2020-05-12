@@ -1,7 +1,7 @@
-import CartSummary from '../components/cart-summary';
+import CartSummary from '../../../components/cart-summary';
 
 export default {
-	title: 'CartSummary',
+	title: 'Components / Cart / CartSummary',
 	component: CartSummary,
 };
 
