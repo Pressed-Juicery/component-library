@@ -6,7 +6,7 @@
 	</div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../styles/variables';
 
 .content-wrapper__container {
