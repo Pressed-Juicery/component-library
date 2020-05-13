@@ -11,7 +11,7 @@ export function Overview() {
 		template: `
 			<content-wrapper>
 				<div>
-					<h1>This is a content-wrapper</h1>
+					<div class="heading-3">This is a content-wrapper</div>
 					<p>The contents are completely customizable.</p>
 				</div>
 			</content-wrapper>
@@ -25,7 +25,7 @@ export function WrapperWithBackgroundColor() {
 		template: `
 			<content-wrapper style="background-color:#3d636bbf;color:#fff;">
 				<div>
-					<h1>This is a content-wrapper</h1>
+					<div class="heading-3">This is a content-wrapper</div>
 					<p>The contents are completely customizable.</p>
 				</div>
 			</content-wrapper>
