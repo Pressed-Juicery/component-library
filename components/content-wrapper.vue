@@ -1,18 +1,10 @@
 <template>
-	<div class="content-wrapper" :style="{ backgroundColor }">
+	<div class="content-wrapper">
 		<div class="content-wrapper__container">
 			<slot />
 		</div>
 	</div>
 </template>
-
-<script>
-export default {
-	props: {
-		backgroundColor: String,
-	},
-};
-</script>
 
 <style lang="scss">
 @import '../styles/variables';
