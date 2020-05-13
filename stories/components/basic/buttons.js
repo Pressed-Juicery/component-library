@@ -1,7 +1,7 @@
 import './buttons.scss';
 
 export default {
-	title: 'Buttons',
+	title: 'Components / Basic / Buttons',
 };
 
 export function Overview() {

@@ -1,7 +1,7 @@
-import RadioButton from '../components/radio-button';
+import RadioButton from '../../../components/radio-button';
 
 export default {
-	title: 'RadioButton',
+	title: 'Components / Forms / RadioButton',
 	component: RadioButton,
 };
 

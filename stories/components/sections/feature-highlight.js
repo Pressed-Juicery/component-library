@@ -1,7 +1,7 @@
-import FeatureHighlight from '../components/feature-highlight';
+import FeatureHighlight from '../../../components/feature-highlight';
 
 export default {
-	title: 'FeatureHighlight',
+	title: 'Sections / FeatureHighlight',
 	component: FeatureHighlight,
 };
 

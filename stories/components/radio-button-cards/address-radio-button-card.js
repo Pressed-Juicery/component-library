@@ -1,7 +1,7 @@
-import AddressRadioButtonCard from '../components/address-radio-button-card';
+import AddressRadioButtonCard from '../../../components/address-radio-button-card';
 
 export default {
-	title: 'AddressRadioButtonCard',
+	title: 'Components / Radio Button Cards / AddressRadioButtonCard',
 	component: AddressRadioButtonCard,
 };
 

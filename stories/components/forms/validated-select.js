@@ -1,10 +1,10 @@
-import ValidatedForm from '../components/validated-form';
-import ValidatedSelect from '../components/validated-select';
+import ValidatedForm from '../../../components/validated-form';
+import ValidatedSelect from '../../../components/validated-select';
 
-import { isNotEmpty } from '../utilities/validators';
+import { isNotEmpty } from '../../../utilities/validators';
 
 export default {
-	title: 'ValidatedSelect',
+	title: 'Components / Forms / ValidatedSelect',
 	component: ValidatedSelect,
 };
 

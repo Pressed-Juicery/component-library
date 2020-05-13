@@ -1,7 +1,7 @@
-import CartItemCard from '../components/cart-item-card';
+import CartItemCard from '../../../components/cart-item-card';
 
 export default {
-	title: 'CartItemCard',
+	title: 'Components / Cart / CartItemCard',
 	component: CartItemCard,
 };
 

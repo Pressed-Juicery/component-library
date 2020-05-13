@@ -1,7 +1,7 @@
-import PaymentMethodRadioButtonCard from '../components/payment-method-radio-button-card';
+import PaymentMethodRadioButtonCard from '../../../components/payment-method-radio-button-card';
 
 export default {
-	title: 'PaymentMethodRadioButtonCard',
+	title: 'Components / Radio Button Cards / PaymentMethodRadioButtonCard',
 	component: PaymentMethodRadioButtonCard,
 };
 

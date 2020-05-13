@@ -1,8 +1,8 @@
-import { hasMinimumLength, isEmail, isNotEmpty, isValidPhoneNumber } from '../utilities/validators';
-import ValidatedInput from '../components/validated-input';
+import { hasMinimumLength, isEmail, isNotEmpty, isValidPhoneNumber } from '../../../utilities/validators';
+import ValidatedInput from '../../../components/validated-input';
 
 export default {
-	title: 'ValidatedInput',
+	title: 'Components / Forms / ValidatedInput',
 	component: ValidatedInput,
 };
 
