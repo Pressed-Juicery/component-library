@@ -1,6 +1,6 @@
 <template>
-	<div class="content-gutter" :style="{ backgroundColor }">
-		<div class="content-gutter__container">
+	<div class="content-wrapper" :style="{ backgroundColor }">
+		<div class="content-wrapper__container">
 			<slot />
 		</div>
 	</div>
@@ -17,7 +17,7 @@ export default {
 <style lang="scss">
 @import '../styles/variables';
 
-.content-gutter__container {
+.content-wrapper__container {
 	max-width: $max-width-laptop-large;
 	margin: 0 auto;
 }
