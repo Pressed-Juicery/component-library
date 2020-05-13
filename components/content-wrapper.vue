@@ -1,6 +1,6 @@
 <template>
 	<div class="content-wrapper">
-		<div class="content-wrapper__container">
+		<div class="content-wrapper__content">
 			<slot />
 		</div>
 	</div>
@@ -9,7 +9,7 @@
 <style scoped lang="scss">
 @import '../styles/variables';
 
-.content-wrapper__container {
+.content-wrapper__content {
 	max-width: $max-width-laptop-large;
 	margin: 0 auto;
 	padding: 0 $spacing-04;
