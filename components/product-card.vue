@@ -2,7 +2,7 @@
 	<div class="product-card">
 		<a :href="product.productLink" class="product-card__link-wrapper">
 			<card class="product-card__card">
-				<img class="product-card__img" :src="product.image"/>
+				<img class="product-card__image" :src="product.image"/>
 				<div class="product-card__content">
 					<div class="product-card__title" :style="{'color' : product.themeColor}">{{ product.title }}</div>
 					<p class="product-card__description" v-html="product.description"></p>
@@ -67,7 +67,7 @@ export default {
 	min-height: 365px;
 }
 
-.product-card__img {
+.product-card__image {
 	width: 100%;
 	margin-bottom: $spacing-03;
 }
