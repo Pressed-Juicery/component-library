@@ -45,3 +45,11 @@ input[type="submit"]:disabled {
 .button--pill {
 	border-radius: 999em;
 }
+
+.button--link {
+	padding: 0;
+	line-height: 1;
+	height: auto;
+	background: transparent;
+	text-decoration: underline;
+}
