@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 	.product-card-grid {
 		display: flex;
 		flex-wrap: wrap;
