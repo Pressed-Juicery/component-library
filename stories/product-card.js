@@ -1,11 +1,11 @@
 import ProductCard from '../components/product-card';
 import ProductCardGrid from '../components/product-card-grid';
 
-const dummyImageURL = 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-berriesandcream.png';
+const image = 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-berriesandcream.png';
 
 const products = [
 	{
-		image: dummyImageURL,
+		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 		secondaryDescription: 'Includes | BlendJet & Citrus 2 (x4)',
@@ -14,7 +14,7 @@ const products = [
 		productLink: '#',
 	},
 	{
-		image: dummyImageURL,
+		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 		price: '$55.00',
@@ -22,7 +22,7 @@ const products = [
 		productLink: '#',
 	},
 	{
-		image: dummyImageURL,
+		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 		secondaryDescription: 'Includes | BlendJet & Citrus 2 (x4)',
@@ -31,7 +31,7 @@ const products = [
 		productLink: '#',
 	},
 	{
-		image: dummyImageURL,
+		image,
 		title: 'Tropical Glow',
 		description: `aSweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.
 		Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.`,
@@ -40,7 +40,7 @@ const products = [
 		productLink: '#',
 	},
 	{
-		image: dummyImageURL,
+		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 		secondaryDescription: 'Includes | BlendJet & Citrus 2 (x4)',
@@ -49,7 +49,7 @@ const products = [
 		productLink: '#',
 	},
 	{
-		image: dummyImageURL,
+		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 		secondaryDescription: 'Includes | BlendJet & Citrus 2 (x4)',
@@ -58,7 +58,7 @@ const products = [
 		productLink: '#',
 	},
 	{
-		image: dummyImageURL,
+		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 		secondaryDescription: 'Includes | BlendJet & Citrus 2 (x4)',
