@@ -1,16 +1,16 @@
 <template>
 	<div class="product-card">
-		<a :href="product.productLink" class="product-card__link-wrapper">
+		<a :href="product.url" class="product-card__link-wrapper">
 			<card class="product-card__card">
-				<img class="product-card__image" :src="product.image"/>
+				<img class="product-card__image" :src="product.imageUrl"/>
 				<div class="product-card__content">
-					<div class="product-card__title" :style="{'color' : product.themeColor}">{{ product.title }}</div>
-					<p class="product-card__description" v-html="product.description"></p>
+					<div class="product-card__title" :style="{'color' : theme.color}">{{ product.name }}</div>
+					<p class="product-card__description" v-html="product.shortDescription"></p>
 				</div>
 				<p class="product-card__secondary-content">{{ bundleItems }}</p>
 			</card>
 		</a>
-		<div class="product-card__footer" :style="{'backgroundColor' : product.themeColor}">
+		<div class="product-card__footer" :style="{'backgroundColor' : theme.color}">
 			<span class="product-card__price" v-html="product.price"></span>
 			<span class="product-card__cta">
 				<a v-if="product.ctaText" :href="product.ctaLink">{{ product.ctaText }}</a>
@@ -32,16 +32,26 @@ export default {
 			type: Object,
 			validator: object => {
 				const requiredKeys = [
-					'image',
-					'title',
-					'productLink',
-					'description',
+					'imageUrl',
+					'name',
+					'url',
+					'shortDescription',
 					'price',
-					'themeColor',
 				];
 
 				return requiredKeys.every(key => Object.prototype.hasOwnProperty.call(object, key) && object[key]);
 			},
+		},
+
+		theme: {
+			type: Object,
+			validator: object => {
+				const requiredKeys = [
+					'color'
+				];
+
+				return requiredKeys.every(key => Object.prototype.hasOwnProperty.call(object, key) && object[key]);
+			}
 		},
 	},
 

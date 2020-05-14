@@ -2,7 +2,8 @@
 	<div class="product-card-grid">
 		<product-card class="product-card-grid__card"
 			v-for="(product, i) in products"
-			:product="product"
+			:product="product.product"
+			:theme="product.theme"
 			:key="'product-' + i"
 		/>
 	</div>

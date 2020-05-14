@@ -1,100 +1,130 @@
 import ProductCard from '../components/product-card';
 import ProductCardGrid from '../components/product-card-grid';
 
-const image = 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-berriesandcream.png';
+const imageUrl = 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-berriesandcream.png';
 
 const products = [
 	{
-		image,
-		title: 'Tropical Glow',
-		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		price: '$55.00',
-		themeColor: '#dbb963',
-		productLink: '#',
-		bundleItems: [
-			{ name: 'BlendJet' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-		]
+		product: {
+			imageUrl,
+			name: 'Tropical Glow',
+			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
+			price: '$55.00',
+			url: '#',
+			bundleItems: [
+				{ name: 'BlendJet' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+			],
+		},
+		theme: {
+			color: '#dbb963',
+		},
 	},
 	{
-		image,
-		title: 'Tropical Glow',
-		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		price: '$55.00',
-		themeColor: 'pink',
-		productLink: '#',
+		product: {
+			imageUrl,
+			name: 'Tropical Glow',
+			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
+			price: '$55.00',
+			url: '#',
+		},
+		theme: {
+			color: 'pink',
+		},
 	},
 	{
-		image,
-		title: 'Tropical Glow',
-		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		price: '$55.00',
-		themeColor: 'purple',
-		productLink: '#',
-		bundleItems: [
-			{ name: 'BlendJet' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-		]
+		product: {
+			imageUrl,
+			name: 'Tropical Glow',
+			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
+			price: '$55.00',
+			url: '#',
+			bundleItems: [
+				{ name: 'BlendJet' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+			],
+		},
+		theme: {
+			color: 'purple',
+		},
 	},
 	{
-		image,
-		title: 'Tropical Glow',
-		description: `aSweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.
-		Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.`,
-		price: '$55.00',
-		themeColor: '#dbb963',
-		productLink: '#',
+		product: {
+			imageUrl,
+			name: 'Tropical Glow',
+			shortDescription: `
+				Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.
+				Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.
+			`,
+			price: '$55.00',
+			url: '#',
+		},
+		theme: {
+			color: '#dbb963',
+		},
 	},
 	{
-		image,
-		title: 'Tropical Glow',
-		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		price: '$55.00',
-		themeColor: 'green',
-		productLink: '#',
-		bundleItems: [
-			{ name: 'BlendJet' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-		]
+		product: {
+			imageUrl,
+			name: 'Tropical Glow',
+			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
+			price: '$55.00',
+			url: '#',
+			bundleItems: [
+				{ name: 'BlendJet' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+			],
+		},
+		theme: {
+			color: 'green',
+		},
 	},
 	{
-		image,
-		title: 'Tropical Glow',
-		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		price: '$55.00',
-		themeColor: '#dbb963',
-		productLink: '#',
-		bundleItems: [
-			{ name: 'BlendJet' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-		]
+		product: {
+			imageUrl,
+			name: 'Tropical Glow',
+			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
+			price: '$55.00',
+			url: '#',
+			bundleItems: [
+				{ name: 'BlendJet' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+			],
+		},
+		theme: {
+			color: '#dbb963',
+		},
 	},
 	{
-		image,
-		title: 'Tropical Glow',
-		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		price: '$55.00',
-		themeColor: '#dbb963',
-		productLink: '#',
-		bundleItems: [
-			{ name: 'BlendJet' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-			{ name: 'Citrus 2' },
-		]
+		product: {
+			imageUrl,
+			name: 'Tropical Glow',
+			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
+			price: '$55.00',
+			url: '#',
+			bundleItems: [
+				{ name: 'BlendJet' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+			],
+		},
+		theme: {
+			color: '#dbb963',
+		},
 	},
 ];
 
@@ -108,12 +138,13 @@ export function Overview() {
 		components: { ProductCard },
 		data() {
 			return {
-				product: products[0],
+				product: products[0].product,
+				theme: products[0].theme,
 			};
 		},
 		template: `
 			<div>
-				<product-card :product="product"/>
+				<product-card :product="product" :theme="theme" />
 			</div>
 		`,
 	};
