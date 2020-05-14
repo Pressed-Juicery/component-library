@@ -5,17 +5,14 @@
 				<img class="product-card__image" :src="product.imageUrl"/>
 				<div class="product-card__content">
 					<div class="product-card__title" :style="{'color' : theme.color}">{{ product.name }}</div>
-					<p class="product-card__description" v-html="product.shortDescription"></p>
+					<div class="product-card__description">{{ product.shortDescription }}</div>
 				</div>
-				<p class="product-card__secondary-content">{{ bundleItems }}</p>
+				<div class="product-card__bundle-items">{{ bundleItems }}</div>
 			</card>
 		</a>
 		<div class="product-card__footer" :style="{'backgroundColor' : theme.color}">
-			<span class="product-card__price" v-html="product.price"></span>
-			<span class="product-card__cta">
-				<a v-if="product.ctaText" :href="product.ctaLink">{{ product.ctaText }}</a>
-				<span v-else @click="$emit('cta-click')">Add To Cart</span>
-			</span>
+			<span>{{ product.price }}</span>
+			<button class="button--link" @click="$emit('cta-click')">Add To Cart</button>
 		</div>
 	</div>
 </template>
@@ -67,31 +64,28 @@ export default {
 @import '../styles/variables';
 @import '../styles/mixins';
 
-.product-card {
-	max-width: calc(25% - 1em);
-	margin: 0 $spacing-03 $spacing-04;
+$gutter: $spacing-07;
+
+.product-card,
+.product-card__link-wrapper {
+	display: flex;
+	flex-direction: column;
 }
 
-.product-card a {
-	color: inherit;
-	text-decoration: none;
+.product-card__link-wrapper,
+.product-card__card {
+	flex: 1 0 auto;
 }
 
-.product-card .product-card__card {
+.product-card__card {
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
-	padding: $spacing-07 $spacing-06;
-	min-height: 365px;
+	padding: 0 $gutter;
 }
 
 .product-card__image {
 	width: 100%;
-	margin-bottom: $spacing-03;
-}
-
-.product-card__content {
-	border-bottom: 2px solid #dad5cf;
-	margin-bottom: $spacing-05;
+	margin: $spacing-09 0 $spacing-08;
 }
 
 .product-card__title {
@@ -100,48 +94,25 @@ export default {
 }
 
 .product-card__description {
-	@include text-body;
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
+	@include line-clamp(3);
+	height: 66px; // 3 * line-height
+	margin-bottom: $spacing-06;
 }
 
-.product-card__price {
-	@include text-body;
-}
-
-.product-card__cta {
-	@include text-cta;
-	text-decoration: underline;
-	cursor: pointer;
+.product-card__bundle-items {
+	@include line-clamp(2);
+	border-top: 2px solid $beige-dark;
+	padding-top: $spacing-04;
+	margin-bottom: $spacing-06;
 }
 
 .product-card__footer {
+	@include text-cta;
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
 	color: $white;
-	padding: $spacing-05 $spacing-06;
+	padding: $spacing-05 $gutter;
 	border-bottom-right-radius: $border-radius;
 	border-bottom-left-radius: $border-radius;
-}
-
-@media (max-width: $max-width-laptop-large){
-	.product-card {
-		max-width: calc(33.3% - 1em);
-	}
-}
-
-@media (max-width: $max-width-laptop){
-	.product-card {
-		max-width: calc(50% - 1em);
-	}
-}
-
-@media (max-width: $max-width-tablet){
-	.product-card {
-		max-width: calc(100% - 1em);
-	}
 }
 </style>
