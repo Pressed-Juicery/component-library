@@ -8,10 +8,16 @@ const products = [
 		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		secondaryDescription: 'Includes | BlendJet & Citrus 2 (x4)',
 		price: '$55.00',
 		themeColor: '#dbb963',
 		productLink: '#',
+		bundleItems: [
+			{ name: 'BlendJet' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+		]
 	},
 	{
 		image,
@@ -25,10 +31,16 @@ const products = [
 		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		secondaryDescription: 'Includes | BlendJet & Citrus 2 (x4)',
 		price: '$55.00',
 		themeColor: 'purple',
 		productLink: '#',
+		bundleItems: [
+			{ name: 'BlendJet' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+		]
 	},
 	{
 		image,
@@ -43,28 +55,46 @@ const products = [
 		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		secondaryDescription: 'Includes | BlendJet & Citrus 2 (x4)',
 		price: '$55.00',
 		themeColor: 'green',
 		productLink: '#',
+		bundleItems: [
+			{ name: 'BlendJet' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+		]
 	},
 	{
 		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		secondaryDescription: 'Includes | BlendJet & Citrus 2 (x4)',
 		price: '$55.00',
 		themeColor: '#dbb963',
 		productLink: '#',
+		bundleItems: [
+			{ name: 'BlendJet' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+		]
 	},
 	{
 		image,
 		title: 'Tropical Glow',
 		description: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-		secondaryDescription: 'Includes | BlendJet & Citrus 2 (x4)',
 		price: '$55.00',
 		themeColor: '#dbb963',
 		productLink: '#',
+		bundleItems: [
+			{ name: 'BlendJet' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+			{ name: 'Citrus 2' },
+		]
 	},
 ];
 

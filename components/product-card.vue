@@ -7,7 +7,7 @@
 					<div class="product-card__title" :style="{'color' : product.themeColor}">{{ product.title }}</div>
 					<p class="product-card__description" v-html="product.description"></p>
 				</div>
-				<p class="product-card__secondary-content" v-html="product.secondaryDescription"></p>
+				<p class="product-card__secondary-content" v-html="bundleItems"></p>
 			</card>
 		</a>
 		<div class="product-card__footer" :style="{'backgroundColor' : product.themeColor}">
@@ -22,6 +22,7 @@
 
 <script>
 import Card from './card';
+import { getBundleItemSummary } from '../utilities/get-bundle-item-summary';
 
 export default {
 	components: { Card },
@@ -43,6 +44,12 @@ export default {
 			},
 		},
 	},
+
+	computed: {
+		bundleItems() {
+			return getBundleItemSummary(this.product.bundleItems);
+		}
+	}
 };
 </script>
 
