@@ -5,6 +5,7 @@
 			:product="card.product"
 			:theme="card.theme"
 			:key="'product-' + i"
+			v-on:cta-click="handleClick"
 		/>
 	</div>
 </template>
@@ -16,6 +17,9 @@ export default {
 	components: { ProductCard },
 	props: {
 		cards: Array,
+	},
+	handleClick(product) {
+		this.emit('cta-click', product);
 	},
 };
 </script>

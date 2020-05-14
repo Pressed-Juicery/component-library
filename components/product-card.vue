@@ -12,7 +12,7 @@
 		</a>
 		<div class="product-card__footer" :style="{'backgroundColor' : theme.color}">
 			<span>{{ product.price }}</span>
-			<button class="button--link" @click="$emit('cta-click')">Add To Cart</button>
+			<button class="button--link" @click="$emit('cta-click', product)">Add To Cart</button>
 		</div>
 	</div>
 </template>
