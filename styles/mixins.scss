@@ -91,8 +91,8 @@
 	font-size: 1.4 * $rem;
 }
 
-// Modifiers
-// ---------
+// Text Modifiers
+// ---------------
 
 @mixin text-subtle() {
 	color: $color-text-gray;
@@ -105,4 +105,15 @@
 @mixin text-uppercase() {
 	text-transform: uppercase;
 	letter-spacing: 0.14 * $rem;
+}
+
+
+// Utilities
+// =========
+
+@mixin line-clamp($lines) {
+	display: -webkit-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
