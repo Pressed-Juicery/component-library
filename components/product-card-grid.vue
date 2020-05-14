@@ -1,9 +1,10 @@
 <template>
 	<div class="product-card-grid">
 		<product-card class="product-card-grid__card"
-		v-for="(product, i) in products"
-		:product="product"
-		:key="'product-' + i" />
+			v-for="(product, i) in products"
+			:product="product"
+			:key="'product-' + i"
+		/>
 	</div>
 </template>
 
