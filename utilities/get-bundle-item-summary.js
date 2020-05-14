@@ -12,10 +12,11 @@ export function getBundleItemSummary(bundleItems = []) {
 		.map(([name, count]) => {
 			if (count === 1) return name;
 
-			return `${name} (x${count})`;
-		})
-		.join(', ');
+			return `${count} x ${name}`;
+		});
 
+	const lastItem = items.pop();
+	const summary = !items.length ? lastItem : [items.join(', '), lastItem].join(' & ');
 
-	return `Includes | ${items}`;
+	return `Includes | ${summary}`;
 }
