@@ -7,7 +7,7 @@
 					<div class="product-card__title" :style="{'color' : product.themeColor}">{{ product.title }}</div>
 					<p class="product-card__description" v-html="product.description"></p>
 				</div>
-				<p class="product-card__secondary-content" v-html="bundleItems"></p>
+				<p class="product-card__secondary-content">{{ bundleItems }}</p>
 			</card>
 		</a>
 		<div class="product-card__footer" :style="{'backgroundColor' : product.themeColor}">
