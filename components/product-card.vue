@@ -44,19 +44,19 @@ export default {
 			type: Object,
 			validator: object => {
 				const requiredKeys = [
-					'color'
+					'color',
 				];
 
 				return requiredKeys.every(key => Object.prototype.hasOwnProperty.call(object, key) && object[key]);
-			}
+			},
 		},
 	},
 
 	computed: {
 		bundleItems() {
 			return getBundleItemSummary(this.product.bundleItems);
-		}
-	}
+		},
+	},
 };
 </script>
 

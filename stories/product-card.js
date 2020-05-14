@@ -8,7 +8,7 @@ const cards = [
 		product: {
 			imageUrl,
 			name: 'Triple Berry',
-			shortDescription: 'This triple berry & banana smoothie recipe is perfect for a healthy refuel between meals.',
+			shortDescription: 'This triple berry & banana smoothie recipe is perfect for a healthy refuel between meals.', // eslint-disable-line max-len
 			price: '$55.00',
 			url: '#',
 			bundleItems: [
@@ -46,7 +46,7 @@ const cards = [
 		product: {
 			imageUrl,
 			name: 'Essential Greens',
-			shortDescription: 'All the leafy goodness of greens & cold-pressed juice in one powerhouse smoothie recipe. ',
+			shortDescription: 'All the leafy goodness of greens & cold-pressed juice in one powerhouse smoothie recipe.', // eslint-disable-line max-len
 			price: '$55.00',
 			url: '#',
 			bundleItems: [
@@ -65,7 +65,7 @@ const cards = [
 		product: {
 			imageUrl,
 			name: 'Power Protein',
-			shortDescription: `This chocolate peanut butter smoothie recipe is perfect for a post-workout treat.`,
+			shortDescription: 'This chocolate peanut butter smoothie recipe is perfect for a post-workout treat.',
 			price: '$55.00',
 			url: '#',
 			bundleItems: [
@@ -122,11 +122,11 @@ const cards = [
 		product: {
 			imageUrl,
 			name: 'BlendJet',
-			shortDescription: 'Small, but mighty powerful. Meet the modern day blender for a quick nutritious smoothie.',
+			shortDescription: 'Small, but mighty powerful. Meet the modern day blender for a quick nutritious smoothie.', // eslint-disable-line max-len
 			price: '$39.95',
 			url: '#',
 			bundleItems: [
-				{name: 'BlendJet'},
+				{ name: 'BlendJet' },
 			],
 		},
 		theme: {
