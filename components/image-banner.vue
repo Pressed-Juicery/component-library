@@ -1,7 +1,9 @@
 <template>
 	<div class="image-background" :style="cssVariables">
 		<span role="img" :aria-label="alt"></span>
-		<div><slot /></div>
+		<div class="image-background__content">
+			<slot />
+		</div>
 	</div>
 </template>
 
@@ -27,6 +29,7 @@ export default {
 	@import '../styles/variables';
 
 	.image-background {
+		position: relative;
 		height: 100vh;
 		width: 100%;
 		display: flex;
@@ -41,6 +44,13 @@ export default {
 	@media (max-width: $max-width-tablet) {
 		.image-background {
 			background-image: var(--mobileImage);
+		}
+
+		.image-background__content {
+			position: absolute;
+			top: 15%;
+			left: 50%;
+			transform: translate(-50%)
 		}
 	}
 </style>
