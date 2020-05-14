@@ -7,6 +7,101 @@ const cards = [
 	{
 		product: {
 			imageUrl,
+			name: 'Triple Berry',
+			shortDescription: 'This triple berry & banana smoothie recipe is perfect for a healthy refuel between meals.',
+			price: '$55.00',
+			url: '#',
+			bundleItems: [
+				{ name: 'BlendJet' },
+				{ name: 'Vanilla Almond' },
+				{ name: 'Vanilla Almond' },
+				{ name: 'Vanilla Almond' },
+				{ name: 'Vanilla Almond' },
+			],
+		},
+		theme: {
+			color: '#c58582',
+		},
+	},
+	{
+		product: {
+			imageUrl,
+			name: 'Tropical Glow',
+			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
+			price: '$55.00',
+			url: '#',
+			bundleItems: [
+				{ name: 'BlendJet' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Citrus 2' },
+			],
+		},
+		theme: {
+			color: '#e0c069',
+		},
+	},
+	{
+		product: {
+			imageUrl,
+			name: 'Essential Greens',
+			shortDescription: 'All the leafy goodness of greens & cold-pressed juice in one powerhouse smoothie recipe. ',
+			price: '$55.00',
+			url: '#',
+			bundleItems: [
+				{ name: 'BlendJet' },
+				{ name: 'Greens 2' },
+				{ name: 'Greens 2' },
+				{ name: 'Greens 2' },
+				{ name: 'Greens 2' },
+			],
+		},
+		theme: {
+			color: '#50561a',
+		},
+	},
+	{
+		product: {
+			imageUrl,
+			name: 'Power Protein',
+			shortDescription: `This chocolate peanut butter smoothie recipe is perfect for a post-workout treat.`,
+			price: '$55.00',
+			url: '#',
+			bundleItems: [
+				{ name: 'BlendJet' },
+				{ name: 'Chocolate Almond' },
+				{ name: 'Chocolate Almond' },
+				{ name: 'Chocolate Almond' },
+				{ name: 'Chocolate Almond' },
+			],
+		},
+		theme: {
+			color: '#af7340',
+		},
+	},
+	{
+		product: {
+			imageUrl,
+			name: 'Variety Pack',
+			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
+			price: '$55.00',
+			url: '#',
+			bundleItems: [
+				{ name: 'BlendJet' },
+				{ name: 'Greens 2' },
+				{ name: 'Citrus 2' },
+				{ name: 'Vanilla Almond' },
+				{ name: 'Chocolate Almond' },
+			],
+		},
+		theme: {
+			color: '#3f3d62',
+		},
+	},
+	{
+		product: {
+			imageUrl,
 			name: 'Tropical Glow',
 			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 			price: '$55.00',
@@ -26,104 +121,16 @@ const cards = [
 	{
 		product: {
 			imageUrl,
-			name: 'Tropical Glow',
-			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-			price: '$55.00',
-			url: '#',
-		},
-		theme: {
-			color: 'pink',
-		},
-	},
-	{
-		product: {
-			imageUrl,
-			name: 'Tropical Glow',
-			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-			price: '$55.00',
+			name: 'BlendJet',
+			shortDescription: 'Small, but mighty powerful. Meet the modern day blender for a quick nutritious smoothie.',
+			price: '$39.95',
 			url: '#',
 			bundleItems: [
-				{ name: 'BlendJet' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
+				{name: 'BlendJet'},
 			],
 		},
 		theme: {
-			color: 'purple',
-		},
-	},
-	{
-		product: {
-			imageUrl,
-			name: 'Tropical Glow',
-			shortDescription: `
-				Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.
-				Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.
-			`,
-			price: '$55.00',
-			url: '#',
-		},
-		theme: {
-			color: '#dbb963',
-		},
-	},
-	{
-		product: {
-			imageUrl,
-			name: 'Tropical Glow',
-			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-			price: '$55.00',
-			url: '#',
-			bundleItems: [
-				{ name: 'BlendJet' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-			],
-		},
-		theme: {
-			color: 'green',
-		},
-	},
-	{
-		product: {
-			imageUrl,
-			name: 'Tropical Glow',
-			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-			price: '$55.00',
-			url: '#',
-			bundleItems: [
-				{ name: 'BlendJet' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-			],
-		},
-		theme: {
-			color: '#dbb963',
-		},
-	},
-	{
-		product: {
-			imageUrl,
-			name: 'Tropical Glow',
-			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-			price: '$55.00',
-			url: '#',
-			bundleItems: [
-				{ name: 'BlendJet' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-			],
-		},
-		theme: {
-			color: '#dbb963',
+			color: '#282321',
 		},
 	},
 ];
