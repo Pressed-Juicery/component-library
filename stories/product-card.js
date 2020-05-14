@@ -3,7 +3,7 @@ import ProductCardGrid from '../components/product-card-grid';
 
 const imageUrl = 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-berriesandcream.png';
 
-const products = [
+const cards = [
 	{
 		product: {
 			imageUrl,
@@ -138,8 +138,8 @@ export function Overview() {
 		components: { ProductCard },
 		data() {
 			return {
-				product: products[0].product,
-				theme: products[0].theme,
+				product: cards[0].product,
+				theme: cards[0].theme,
 			};
 		},
 		template: `
@@ -154,13 +154,11 @@ export function MultipleCards() {
 	return {
 		components: { ProductCardGrid, ProductCard },
 		data() {
-			return {
-				products: products,
-			};
+			return { cards };
 		},
 		template: `
 			<div>
-				<product-card-grid :products="products" />
+				<product-card-grid :cards="cards" />
 			</div>
 		`,
 	};

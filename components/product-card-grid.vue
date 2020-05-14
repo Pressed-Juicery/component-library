@@ -1,9 +1,9 @@
 <template>
 	<div class="product-card-grid">
 		<product-card class="product-card-grid__card"
-			v-for="(product, i) in products"
-			:product="product.product"
-			:theme="product.theme"
+			v-for="(card, i) in cards"
+			:product="card.product"
+			:theme="card.theme"
 			:key="'product-' + i"
 		/>
 	</div>
@@ -15,7 +15,7 @@ import ProductCard from './product-card';
 export default {
 	components: { ProductCard },
 	props: {
-		products: Array,
+		cards: Array,
 	},
 };
 </script>
