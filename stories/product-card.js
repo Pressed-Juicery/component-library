@@ -69,7 +69,7 @@ const products = [
 ];
 
 export default {
-	title: 'ProductCard',
+	title: 'Components / Products / ProductCard',
 	component: ProductCard,
 };
 
