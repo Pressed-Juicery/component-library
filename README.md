@@ -2,11 +2,9 @@
 
 This repo contains the component library for Pressed Juicery.
 
-## Getting Started
-
-Run the following commands to install packages and start the development server.
-
-```console
-npm install
-npm start
-```
+| Script        | Description                        |
+| ---           | ----                               |
+| npm install   | Install dependencies               |
+| npm start     | Serve Storybook with hot-reloading |
+| npm run build | Compile and minify components      |
+| npm run lint  | Lint files                         |
