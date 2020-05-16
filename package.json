@@ -3,10 +3,13 @@
 	"version": "0.0.0",
 	"description": "Pressed Juicery Component Library",
 	"private": true,
+	"main": "dist/component-library.common.js",
 	"scripts": {
 		"start": "start-storybook -s ./assets -p 6006",
-		"build": "build-storybook",
-		"lint": "eslint . --ext .js,.vue"
+		"lint": "eslint . --ext .js,.vue",
+		"build": "vue-cli-service build --target lib --name component-library ./components/index.js",
+		"build-storybook": "build-storybook",
+		"postinstall": "npm run build"
 	},
 	"files": [
 		"assets/**/*",
@@ -22,7 +25,10 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"homepage": "https://github.com/Pressed-Juicery/component-library#readme",
 	"dependencies": {
-		"normalize.css": "8.0.1"
+		"core-js": "^3.6.4",
+		"normalize.css": "8.0.1",
+		"@vue/cli-plugin-babel": "~4.3.0",
+		"@vue/cli-service": "~4.3.0"
 	},
 	"devDependencies": {
 		"@babel/core": "7.9.0",
