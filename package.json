@@ -9,7 +9,8 @@
 		"lint": "eslint . --ext .js,.vue",
 		"build": "vue-cli-service build --target lib --name component-library ./components/index.js",
 		"build-storybook": "build-storybook",
-		"postinstall": "npm run build"
+		"postinstall": "npm run build",
+		"snapshots": "npx percy exec -- node snapshots.js"
 	},
 	"files": [
 		"assets/**/*",
@@ -32,6 +33,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "7.9.0",
+		"@percy/script": "1.0.3",
 		"@storybook/addon-a11y": "5.3.18",
 		"@storybook/addon-actions": "5.3.18",
 		"@storybook/addon-docs": "5.3.18",
