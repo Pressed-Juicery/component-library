@@ -1,6 +1,6 @@
 <template>
-	<div class="product-card-grid">
-		<product-card class="product-card-grid__card"
+	<div :class="$style.root">
+		<product-card
 			v-for="(card, i) in cards"
 			:product="card.product"
 			:theme="card.theme"
@@ -20,10 +20,10 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 	@import '../styles/variables';
 
-	.product-card-grid {
+	.root {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		grid-gap: $spacing-07;

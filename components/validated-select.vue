@@ -1,13 +1,13 @@
 <template>
-	<div class="validated-select">
-		<label v-if="label" class="validated-select__label" :for="id">{{ label }}</label>
+	<div :class="$style.root">
+		<label v-if="label" :class="$style.label" :for="id">{{ label }}</label>
 		<select :id="id" v-model="model">
 			<option v-for="(option, index) in options" :key="index" :value="option.value">
 				{{ option.name }}
 			</option>
 		</select>
 
-		<label v-if="error" class="validated-select__error" :for="id">{{ error }}</label>
+		<label v-if="error" :class="$style.error" :for="id">{{ error }}</label>
 	</div>
 </template>
 
@@ -69,19 +69,19 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.validated-select {
+	.root {
 		margin-bottom: $spacing-06;
 	}
 
-	.validated-select__label {
+	.label {
 		@include text-bolder();
 	}
 
-	.validated-select__error {
+	.error {
 		@include text-error();
 	}
 </style>

@@ -1,16 +1,16 @@
 <template>
-	<div class="product-card">
-		<a :href="product.url" class="product-card__link-wrapper">
-			<card class="product-card__card">
-				<img class="product-card__image" :src="product.imageUrl"/>
-				<div class="product-card__content">
-					<div class="product-card__title" :style="{'color' : theme.color}">{{ product.name }}</div>
-					<div class="product-card__description">{{ product.shortDescription }}</div>
+	<div :class="$style.root">
+		<a :href="product.url" :class="$style.linkWrapper">
+			<card :class="$style.card">
+				<img :class="$style.image" :src="product.imageUrl"/>
+				<div :class="$style.content">
+					<div :class="$style.title" :style="{'color' : theme.color}">{{ product.name }}</div>
+					<div :class="$style.description">{{ product.shortDescription }}</div>
 				</div>
-				<div class="product-card__bundle-items">{{ bundleItems }}</div>
+				<div :class="$style.bundleItems">{{ bundleItems }}</div>
 			</card>
 		</a>
-		<div class="product-card__footer" :style="{'backgroundColor' : theme.color}">
+		<div :class="$style.footer" :style="{'backgroundColor' : theme.color}">
 			<span>{{ product.price }}</span>
 			<button class="button--link" @click="$emit('cta-click')">Add To Cart</button>
 		</div>
@@ -60,53 +60,53 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import '../styles/variables';
 @import '../styles/mixins';
 
 $gutter: $spacing-07;
 
-.product-card,
-.product-card__link-wrapper {
+.root,
+.linkWrapper {
 	display: flex;
 	flex-direction: column;
 }
 
-.product-card__link-wrapper,
-.product-card__card {
+.linkWrapper,
+.card {
 	flex: 1 0 auto;
 }
 
-.product-card__card {
+.card {
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
 	padding: 0 $gutter;
 }
 
-.product-card__image {
+.image {
 	width: 100%;
 	margin: $spacing-09 0 $spacing-08;
 }
 
-.product-card__title {
+.title {
 	@include text-heading-5;
 	margin-bottom: $spacing-03;
 }
 
-.product-card__description {
+.description {
 	@include line-clamp(3);
 	height: 66px; // 3 * line-height
 	margin-bottom: $spacing-06;
 }
 
-.product-card__bundle-items {
+.bundleItems {
 	@include line-clamp(2);
 	border-top: 2px solid $beige-dark;
 	padding-top: $spacing-04;
 	margin-bottom: $spacing-06;
 }
 
-.product-card__footer {
+.footer {
 	@include text-cta;
 	display: flex;
 	justify-content: space-between;

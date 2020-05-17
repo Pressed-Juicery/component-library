@@ -1,5 +1,5 @@
 <template>
-	<div class="image-background" :style="cssVariables">
+	<div :class="$style.root" :style="cssVariables">
 		<span role="img" :aria-label="alt"></span>
 		<div><slot /></div>
 	</div>
@@ -23,10 +23,10 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 	@import '../styles/variables';
 
-	.image-background {
+	.root {
 		height: 100vh;
 		width: 100%;
 		display: flex;
@@ -39,7 +39,7 @@ export default {
 	}
 
 	@media (max-width: $max-width-tablet) {
-		.image-background {
+		.root {
 			background-image: var(--mobileImage);
 		}
 	}

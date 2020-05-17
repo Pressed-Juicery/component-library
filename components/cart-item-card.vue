@@ -1,17 +1,17 @@
 <template>
-	<card class="cart-item-card">
-		<div class="cart-item-card__image-wrapper">
-			<img class="cart-item-card__image" :src="item.imageSrc" :alt="item.name" />
+	<card :class="$style.root">
+		<div :class="$style.imageWrapper">
+			<img :class="$style.image" :src="item.imageSrc" :alt="item.name" />
 		</div>
 
-		<div class="cart-item-card__description-wrapper">
-			<div class="cart-item-card__description">
-				<div class="cart-item-card__title">{{ item.name }}</div>
-				<div class="cart-item-card__additional-info">{{ additionalInformation }}</div>
-				<div class="cart-item-card__quantity">Qty {{ item.quantity }}</div>
+		<div :class="$style.descriptionWrapper">
+			<div :class="$style.description">
+				<div :class="$style.title">{{ item.name }}</div>
+				<div :class="$style.additionalInfo">{{ additionalInformation }}</div>
+				<div :class="$style.quantity">Qty {{ item.quantity }}</div>
 			</div>
 
-			<span class="cart-item-card__price">{{ displayPrice }}</span>
+			<span :class="$style.price">{{ displayPrice }}</span>
 		</div>
 	</card>
 </template>
@@ -41,45 +41,45 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.cart-item-card {
+	.root {
 		display: flex;
 		padding: $spacing-04;
 		margin-bottom: $spacing-03;
 	}
 
-	.cart-item-card__image-wrapper {
+	.imageWrapper {
 		width: $spacing-10;
 		margin-right: $spacing-04;
 	}
 
-	.cart-item-card__image {
+	.image {
 		width: 100%;
 	}
 
-	.cart-item-card__description-wrapper {
+	.descriptionWrapper {
 		display: flex;
 		flex: 1;
 	}
 
-	.cart-item-card__description {
+	.description {
 		flex: 1;
 	}
 
-	.cart-item-card__title,
-	.cart-item-card__price {
+	.title,
+	.price {
 		@include text-bold();
 	}
 
-	.cart-item-card__additional-info,
-	.cart-item-card__quantity {
+	.additionalInfo,
+	.quantity {
 		@include text-body-small();
 	}
 
-	.cart-item-card__additional-info {
+	.additionalInfo {
 		color: $color-text-gray;
 		margin-bottom: $spacing-03;
 	}
