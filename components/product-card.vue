@@ -84,10 +84,8 @@ $gutter: $spacing-07;
 }
 
 .image {
-	height: $spacing-11;
 	width: 100%;
 	margin: $spacing-09 0 $spacing-08;
-	object-fit: contain;
 }
 
 .title {
