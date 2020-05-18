@@ -114,7 +114,7 @@ const cards = [
 ];
 
 export default {
-	title: 'ProductCardSection',
+	title: 'Sections / ProductCardSection',
 	component: ProductCardSection,
 };
 
