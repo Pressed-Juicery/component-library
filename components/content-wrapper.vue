@@ -1,17 +1,32 @@
 <template>
 	<div>
-		<div :class="$style.content">
+		<div :class="[$style.content, { [$style.isSmall]: isSmall }]">
 			<slot />
 		</div>
 	</div>
 </template>
 
+<script>
+	export default {
+		props: {
+			isSmall: Boolean,
+		},
+	};
+</script>
+
 <style module lang="scss">
 @import '../styles/variables';
 
+$content-padding: $spacing-06;
+$padding-offset: $content-padding * 2;
+
 .content {
-	max-width: $max-width-laptop-large;
+	max-width: 1248 * $padding-offset;
+	padding: 0 $content-padding;
 	margin: 0 auto;
-	padding: 0 $spacing-04;
+}
+
+.isSmall {
+	max-width: 1024 + $padding-offset;
 }
 </style>
