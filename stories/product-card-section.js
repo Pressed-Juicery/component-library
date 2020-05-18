@@ -3,7 +3,7 @@ import ProductCardSection from '../components/product-card-section';
 const cards = [
 	{
 		product: {
-			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-berriesandcream.png',
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/BJ-vanilla.png',
 			name: 'Triple Berry',
 			shortDescription: 'This triple berry & banana smoothie recipe is perfect for a healthy refuel between meals.', // eslint-disable-line max-len
 			price: '$55.00',
@@ -22,7 +22,7 @@ const cards = [
 	},
 	{
 		product: {
-			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-tropicalglow.png',
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/BJ-citrus.png',
 			name: 'Tropical Glow',
 			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 			price: '$55.00',
@@ -41,7 +41,7 @@ const cards = [
 	},
 	{
 		product: {
-			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-essentialgreens.png',
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/BJ-greens.png',
 			name: 'Essential Greens',
 			shortDescription: 'All the leafy goodness of greens & cold-pressed juice in one powerhouse smoothie recipe.', // eslint-disable-line max-len
 			price: '$55.00',
@@ -60,7 +60,7 @@ const cards = [
 	},
 	{
 		product: {
-			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-powerprotein.png',
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/BJ-chocolate.png',
 			name: 'Power Protein',
 			shortDescription: 'This chocolate peanut butter smoothie recipe is perfect for a post-workout treat.',
 			price: '$55.00',
@@ -79,7 +79,7 @@ const cards = [
 	},
 	{
 		product: {
-			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-variety.png',
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/BJ-variety.png',
 			name: 'Variety Pack',
 			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 			price: '$55.00',
@@ -98,7 +98,7 @@ const cards = [
 	},
 	{
 		product: {
-			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/blendjet-blender.png',
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/blendjet.png',
 			name: 'BlendJet',
 			shortDescription: 'Small, but mighty powerful. Meet the modern day blender for a quick nutritious smoothie.', // eslint-disable-line max-len
 			price: '$39.95',
