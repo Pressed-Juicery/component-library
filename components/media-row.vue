@@ -43,7 +43,6 @@ export default {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: $spacing-10;
-	padding: $spacing-09;
 }
 
 .contentWrapper {
