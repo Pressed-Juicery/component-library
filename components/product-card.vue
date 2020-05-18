@@ -112,6 +112,7 @@ $gutter: $spacing-07;
 	@include text-cta;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	color: $white;
 	padding: $spacing-05 $gutter;
 	border-bottom-right-radius: $border-radius;
