@@ -5,19 +5,20 @@
 		<product-card-grid :cards="config.cards" />
 	</content-wrapper>
 </template>
-<script>
-	import ContentWrapper from './content-wrapper';
-	import ProductCardGrid from './product-card-grid';
 
-	export default {
-		components: { ProductCardGrid, ContentWrapper },
-		props: {
-			config: {
-				type: Object,
-				required: true,
-			},
+<script>
+import ContentWrapper from './content-wrapper';
+import ProductCardGrid from './product-card-grid';
+
+export default {
+	components: { ProductCardGrid, ContentWrapper },
+	props: {
+		config: {
+			type: Object,
+			required: true,
 		},
-	};
+	},
+};
 </script>
 
 <style module lang="scss">

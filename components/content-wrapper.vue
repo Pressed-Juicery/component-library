@@ -7,11 +7,11 @@
 </template>
 
 <script>
-	export default {
-		props: {
-			isSmall: Boolean,
-		},
-	};
+export default {
+	props: {
+		isSmall: Boolean,
+	},
+};
 </script>
 
 <style module lang="scss">

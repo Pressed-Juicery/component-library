@@ -131,7 +131,7 @@ export function Overview() {
 						Simply combine your fruit, veggie or protein ingredients, add your Pressed juice, blend and go!
 					`,
 					cards,
-				}
+				},
 			};
 		},
 	};
