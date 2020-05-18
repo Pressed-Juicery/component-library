@@ -45,6 +45,7 @@ const groups = [{
 	groupName: 'Sections',
 	stories: [
 		'FeatureHighlightRow',
+		'ProductCardSection',
 	],
 }];
 
