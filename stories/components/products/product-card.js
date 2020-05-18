@@ -1,5 +1,5 @@
-import ProductCard from '../components/product-card';
-import ProductCardGrid from '../components/product-card-grid';
+import ProductCard from '../../../components/product-card';
+import ProductCardGrid from '../../../components/product-card-grid';
 
 const imageUrl = 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-berriesandcream.png';
 
