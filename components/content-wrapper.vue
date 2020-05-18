@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div :style="{ backgroundColor, color }">
 		<div :class="[$style.content, { [$style.isSmall]: isSmall }]">
 			<slot />
 		</div>
@@ -10,6 +10,8 @@
 export default {
 	props: {
 		isSmall: Boolean,
+		backgroundColor: String,
+		color: String,
 	},
 };
 </script>
