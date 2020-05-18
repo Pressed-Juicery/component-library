@@ -1,12 +1,10 @@
 <template>
-	<label class="radio-button-card">
+	<label :class="$style.root">
 		<card>
-			<span class="radio-button-card__content">
-				<span class="radio-button-card__primary-content"><slot /></span>
-				<span v-if="$slots.secondary"
-					  class="radio-button-card__secondary-content"
-				><slot name="secondary" /></span>
-				<radio-button class="radio-button-card__radio-button" :value="value" v-model="model" />
+			<span :class="$style.content">
+				<span :class="$style.primaryContent"><slot /></span>
+				<span v-if="$slots.secondary" :class="$style.secondaryContent"><slot name="secondary" /></span>
+				<radio-button :class="$style.radioButton" :value="value" v-model="model" />
 			</span>
 		</card>
 	</label>
@@ -42,31 +40,31 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import '../styles/variables';
 
-.radio-button-card {
+.root {
 	display: block;
 	margin-bottom: $spacing-06;
 	cursor: pointer;
 }
 
-.radio-button-card__content {
+.content {
 	display: flex;
 	position: relative;
 }
 
-.radio-button-card__primary-content {
+.primaryContent {
 	flex: 1;
 	margin-right: $spacing-06;
 	word-break: break-word;
 }
 
-.radio-button-card__secondary-content {
+.secondaryContent {
 	margin-bottom: $spacing-08;
 }
 
-.radio-button-card__radio-button {
+.radioButton {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);

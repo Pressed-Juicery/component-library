@@ -1,7 +1,7 @@
 <template>
-	<span class="radio-button" @click="model = value">
-		<input :id="id" class="radio-button__input" type="radio" :value="value" v-model="model" />
-		<span class="radio-button__button" />
+	<span :class="$style.root" @click="model = value">
+		<input :id="id" :class="$style.input" type="radio" :value="value" v-model="model" />
+		<span :class="$style.button" />
 	</span>
 </template>
 
@@ -31,20 +31,20 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import '../styles/variables';
 
-.radio-button {
+.root {
 	font-size: 0;
 	line-height: 0;
 	vertical-align: middle;
 }
 
-.radio-button__input {
+.input {
 	display: none;
 }
 
-.radio-button__button {
+.button {
 	display: inline-block;
 	height: $spacing-05;
 	width: $spacing-05;
@@ -54,7 +54,7 @@ export default {
 	cursor: pointer;
 }
 
-.radio-button__input:checked + .radio-button__button {
+.input:checked + .button {
 	background-color: $border-color;
 }
 </style>

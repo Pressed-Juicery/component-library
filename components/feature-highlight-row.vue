@@ -1,5 +1,5 @@
 <template>
-	<div class="feature-highlight-row">
+	<div :class="$style.root">
 		<feature-highlight
 			v-for="(feature, index) in features"
 			:key="index"
@@ -21,10 +21,10 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 	@import '../styles/variables';
 
-	.feature-highlight-row {
+	.root {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: $spacing-10;
