@@ -1,7 +1,7 @@
 import ButtonBar from '../components/button-bar';
 
 export default {
-	title: 'ButtonBar',
+	title: 'Components / Basic / ButtonBar',
 	component: ButtonBar,
 };
 
