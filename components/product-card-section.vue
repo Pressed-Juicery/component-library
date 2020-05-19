@@ -2,7 +2,7 @@
 	<content-wrapper :is-small="true">
 		<div :class="$style.title">{{ config.title }}</div>
 		<div :class="$style.description">{{ config.description }}</div>
-		<product-card-grid :cards="config.cards" />
+		<product-card-grid :cards="config.cards" @cta-click="product => $emit('cta-click', product)"/>
 	</content-wrapper>
 </template>
 

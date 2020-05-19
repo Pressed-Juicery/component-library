@@ -121,7 +121,7 @@ export default {
 export function Overview() {
 	return {
 		components: { ProductCardSection },
-		template: '<product-card-section :config="config" />',
+		template: '<product-card-section :config="config" @cta-click="onClick"/>',
 		data() {
 			return {
 				config: {
@@ -133,6 +133,11 @@ export function Overview() {
 					cards,
 				},
 			};
+		},
+		methods: {
+			onClick(product) {
+				console.log(`Clicked CTA for ${product.name}`); // eslint-disable-line no-console
+			},
 		},
 	};
 }

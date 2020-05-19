@@ -5,6 +5,7 @@
 			:product="card.product"
 			:theme="card.theme"
 			:key="'product-' + i"
+			@cta-click="product => $emit('cta-click', product)"
 		/>
 	</div>
 </template>
