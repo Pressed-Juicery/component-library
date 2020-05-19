@@ -19,6 +19,8 @@ export function Overview() {
 
 				<button class="button--pill button--secondary">Secondary Pill</button><br />
 				<button class="button--pill button--secondary" disabled>Disabled Secondary Pill</button><br />
+
+				<button class="button--link">Button Link</button><br />
 			</div>
 		`,
 	};

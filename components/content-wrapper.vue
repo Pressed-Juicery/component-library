@@ -21,7 +21,7 @@ $content-padding: $spacing-06;
 $padding-offset: $content-padding * 2;
 
 .content {
-	max-width: 1248 * $padding-offset;
+	max-width: 1248 + $padding-offset;
 	padding: 0 $content-padding;
 	margin: 0 auto;
 }

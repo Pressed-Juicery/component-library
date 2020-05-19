@@ -40,7 +40,7 @@ const groups = [{
 }, {
 	groupName: 'Components / Products',
 	stories: [
-		'BundleCard',
+		'BundleCardGrid',
 	],
 }, {
 	groupName: 'Sections',
