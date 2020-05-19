@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<img :src="icon" />
+		<img :class="$style.icon" :src="icon" />
 		<div :class="$style.title">{{ title }}</div>
 		<div v-html="description" />
 	</div>
@@ -19,6 +19,10 @@ export default {
 <style module lang="scss">
 @import '../styles/variables';
 @import '../styles/mixins';
+
+.icon {
+	height: $spacing-08;
+}
 
 .title {
 	@include text-heading-5;
