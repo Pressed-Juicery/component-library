@@ -108,4 +108,5 @@ $border-width: 1px;
 $border-radius: 4px;
 $border-color: $gray-40;
 $border-color-light: $gray-20;
+$border: $border-width solid $border-color;
 $border-light: $border-width solid $border-color-light;
