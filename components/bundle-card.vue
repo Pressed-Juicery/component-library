@@ -12,7 +12,7 @@
 		</a>
 		<div :class="$style.footer" :style="{'backgroundColor' : theme.color}">
 			<span>{{ product.price }}</span>
-			<button class="button--link" @click="$emit('cta-click')">Add To Cart</button>
+			<button class="button--link" @click="$emit('cta-click', product)">Add To Cart</button>
 		</div>
 	</div>
 </template>
@@ -110,6 +110,7 @@ $gutter: $spacing-07;
 	@include text-cta;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	color: $white;
 	padding: $spacing-05 $gutter;
 	border-bottom-right-radius: $border-radius;

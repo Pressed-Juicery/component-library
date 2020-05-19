@@ -1,19 +1,20 @@
 <template>
 	<div :class="$style.root">
-		<product-card
+		<bundle-card
 			v-for="(card, i) in cards"
 			:product="card.product"
 			:theme="card.theme"
 			:key="'product-' + i"
+			@cta-click="product => $emit('cta-click', product)"
 		/>
 	</div>
 </template>
 
 <script>
-import ProductCard from './product-card';
+import BundleCard from './bundle-card';
 
 export default {
-	components: { ProductCard },
+	components: { BundleCard },
 	props: {
 		cards: Array,
 	},
@@ -25,7 +26,7 @@ export default {
 
 	.root {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 		grid-gap: $spacing-07;
 	}
 </style>
