@@ -14,4 +14,22 @@ addParameters({
 		viewports: INITIAL_VIEWPORTS,
 		defaultViewport: 'responsive',
 	},
+	options: {
+		storySort,
+	},
 });
+
+function storySort(a, b) {
+	const sortOrder = [
+		'Style Guide / Typography',
+		'Style Guide / Spacing',
+		'Icons',
+		'Components / Basic',
+		'Sections',
+	].reverse();
+
+	const aIndex = sortOrder.length - sortOrder.findIndex(element => a[1].kind.startsWith(element));
+	const bIndex = sortOrder.length - sortOrder.findIndex(element => b[1].kind.startsWith(element));
+
+	return aIndex - bIndex;
+}

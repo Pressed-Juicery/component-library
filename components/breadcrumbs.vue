@@ -1,8 +1,8 @@
 <template>
-	<div class="breadcrumbs">
+	<div>
 		<span v-for="(breadcrumb, index) in breadcrumbs" :key="index">
-			<span class="breadcrumbs__breadcrumb" @click="$emit('select', breadcrumb)">{{ breadcrumb.name }}</span>
-			<span v-if="index < breadcrumbs.length - 1" class="breadcrumbs__divider"> / </span>
+			<span :class="$style.breadcrumb" @click="$emit('select', breadcrumb)">{{ breadcrumb.name }}</span>
+			<span v-if="index < breadcrumbs.length - 1" :class="$style.divider"> / </span>
 		</span>
 	</div>
 </template>
@@ -18,10 +18,10 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 	@import '../styles/mixins';
 
-	.breadcrumbs__breadcrumb {
+	.breadcrumb {
 		@include text-subtle();
 		cursor: pointer;
 
@@ -31,7 +31,7 @@ export default {
 		}
 	}
 
-	.breadcrumbs__divider {
+	.divider {
 		@include text-subtle();
 	}
 </style>

@@ -1,12 +1,12 @@
 <template>
 	<radio-button-card :value="store" v-model="model">
-		<div class="store-radio-button-card__title">{{ store.name }}</div>
+		<div :class="$style.title">{{ store.name }}</div>
 
 		<div>{{ store.streetAddress }}</div>
 		<div v-if="store.extendedAddress">{{ store.extendedAddress }}</div>
 		<div>{{ store.locality }}, {{ store.region }} {{ store.postal }}</div>
 
-		<div v-if="store.storeHours" class="store-radio-button-card__details">
+		<div v-if="store.storeHours" :class="$style.details">
 			<div v-for="(hours, index) in store.storeHours" :key="index">{{ hours }}</div>
 		</div>
 	</radio-button-card>
@@ -41,16 +41,16 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import '../styles/variables';
 @import '../styles/mixins';
 
-.store-radio-button-card__title {
+.title {
 	margin-bottom: $spacing-04;
 	@include text-bold();
 }
 
-.store-radio-button-card__details {
+.details {
 	margin-top: $spacing-04;
 	@include text-body-small();
 }
