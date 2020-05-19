@@ -1,6 +1,6 @@
 <template>
 	<div :class="$style.root">
-		<product-card
+		<bundle-card
 			v-for="(card, i) in cards"
 			:product="card.product"
 			:theme="card.theme"
@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import ProductCard from './product-card';
+import BundleCard from './bundle-card';
 
 export default {
-	components: { ProductCard },
+	components: { BundleCard },
 	props: {
 		cards: Array,
 	},

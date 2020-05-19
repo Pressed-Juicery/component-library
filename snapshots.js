@@ -39,13 +39,13 @@ const groups = [{
 }, {
 	groupName: 'Components / Products',
 	stories: [
-		'ProductCard',
+		'BundleCard',
 	],
 }, {
 	groupName: 'Sections',
 	stories: [
 		'FeatureHighlightRow',
-		'ProductCardSection',
+		'BundleCardSection',
 	],
 }];
 

@@ -2,16 +2,16 @@
 	<content-wrapper :is-small="true">
 		<div :class="$style.title">{{ config.title }}</div>
 		<div :class="$style.description">{{ config.description }}</div>
-		<product-card-grid :cards="config.cards" @cta-click="product => $emit('cta-click', product)"/>
+		<bundle-card-grid :cards="config.cards" @cta-click="product => $emit('cta-click', product)"/>
 	</content-wrapper>
 </template>
 
 <script>
+import BundleCardGrid from './bundle-card-grid';
 import ContentWrapper from './content-wrapper';
-import ProductCardGrid from './product-card-grid';
 
 export default {
-	components: { ProductCardGrid, ContentWrapper },
+	components: { BundleCardGrid, ContentWrapper },
 	props: {
 		config: {
 			type: Object,

@@ -1,12 +1,9 @@
-import ProductCard from '../../../components/product-card';
-import ProductCardGrid from '../../../components/product-card-grid';
-
-const imageUrl = 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/bundle-card-berriesandcream.png';
+import BundleCardSection from '../components/bundle-card-section';
 
 const cards = [
 	{
 		product: {
-			imageUrl,
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/BJ-vanilla.png',
 			name: 'Triple Berry',
 			shortDescription: 'This triple berry & banana smoothie recipe is perfect for a healthy refuel between meals.', // eslint-disable-line max-len
 			price: '$55.00',
@@ -25,7 +22,7 @@ const cards = [
 	},
 	{
 		product: {
-			imageUrl,
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/BJ-citrus.png',
 			name: 'Tropical Glow',
 			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 			price: '$55.00',
@@ -44,7 +41,7 @@ const cards = [
 	},
 	{
 		product: {
-			imageUrl,
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/BJ-greens.png',
 			name: 'Essential Greens',
 			shortDescription: 'All the leafy goodness of greens & cold-pressed juice in one powerhouse smoothie recipe.', // eslint-disable-line max-len
 			price: '$55.00',
@@ -63,7 +60,7 @@ const cards = [
 	},
 	{
 		product: {
-			imageUrl,
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/BJ-chocolate.png',
 			name: 'Power Protein',
 			shortDescription: 'This chocolate peanut butter smoothie recipe is perfect for a post-workout treat.',
 			price: '$55.00',
@@ -82,7 +79,7 @@ const cards = [
 	},
 	{
 		product: {
-			imageUrl,
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/BJ-variety.png',
 			name: 'Variety Pack',
 			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
 			price: '$55.00',
@@ -101,26 +98,7 @@ const cards = [
 	},
 	{
 		product: {
-			imageUrl,
-			name: 'Tropical Glow',
-			shortDescription: 'Sweet peach and mango meet citrus flavors in this crowd-pleaser smoothie recipe.',
-			price: '$55.00',
-			url: '#',
-			bundleItems: [
-				{ name: 'BlendJet' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-				{ name: 'Citrus 2' },
-			],
-		},
-		theme: {
-			color: '#dbb963',
-		},
-	},
-	{
-		product: {
-			imageUrl,
+			imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/shopify/pages/blendjet-landing/blendjet.png',
 			name: 'BlendJet',
 			shortDescription: 'Small, but mighty powerful. Meet the modern day blender for a quick nutritious smoothie.', // eslint-disable-line max-len
 			price: '$39.95',
@@ -136,37 +114,30 @@ const cards = [
 ];
 
 export default {
-	title: 'Components / Products / ProductCard',
-	component: ProductCard,
+	title: 'Sections / BundleCardSection',
+	component: BundleCardSection,
 };
 
 export function Overview() {
 	return {
-		components: { ProductCard },
+		components: { BundleCardSection },
+		template: '<bundle-card-section :config="config" @cta-click="onClick"/>',
 		data() {
 			return {
-				product: cards[0].product,
-				theme: cards[0].theme,
+				config: {
+					title: 'Choose Your Bundle',
+					description: `
+						Each bundle includes a BlendJet, a recipe guide and nutritious cold-pressed juices.
+						Simply combine your fruit, veggie or protein ingredients, add your Pressed juice, blend and go!
+					`,
+					cards,
+				},
 			};
 		},
-		template: `
-			<div>
-				<product-card :product="product" :theme="theme" />
-			</div>
-		`,
-	};
-}
-
-export function MultipleCards() {
-	return {
-		components: { ProductCardGrid, ProductCard },
-		data() {
-			return { cards };
+		methods: {
+			onClick(product) {
+				console.log(`Clicked CTA for ${product.name}`); // eslint-disable-line no-console
+			},
 		},
-		template: `
-			<div>
-				<product-card-grid :cards="cards" />
-			</div>
-		`,
 	};
 }
