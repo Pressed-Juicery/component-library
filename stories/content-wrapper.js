@@ -1,7 +1,7 @@
 import ContentWrapper from '../components/content-wrapper';
 
 export default {
-	title: 'ContentWrapper',
+	title: 'Components / Basic / ContentWrapper',
 	component: ContentWrapper,
 };
 
