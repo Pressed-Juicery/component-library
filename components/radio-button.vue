@@ -48,7 +48,7 @@ export default {
 	display: inline-block;
 	height: $spacing-05;
 	width: $spacing-05;
-	border: $border-width solid $border-color;
+	border: $border;
 	border-radius: 50%;
 	background-color: $white;
 	cursor: pointer;

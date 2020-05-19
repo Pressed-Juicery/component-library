@@ -11,6 +11,7 @@ const groups = [{
 	stories: [
 		'Accordion',
 		'Breadcrumbs',
+		'ButtonBar',
 		'Buttons',
 		'Card',
 	],
