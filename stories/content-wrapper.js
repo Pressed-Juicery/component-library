@@ -32,3 +32,17 @@ export function WrapperWithBackgroundColor() {
 		`,
 	};
 }
+
+export function SmallContentWrapper() {
+	return {
+		components: { ContentWrapper },
+		template: `
+			<content-wrapper style="background-color:#3d636bbf;color:#fff;" :is-small="true">
+				<div>
+					<div class="heading-3">This is a small content-wrapper.</div>
+					<p>It has a smaller maximum-width.</p>
+				</div>
+			</content-wrapper>
+		`,
+	};
+}
