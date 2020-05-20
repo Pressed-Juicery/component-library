@@ -16,16 +16,18 @@
 <script>
 export default {
 	props: {
-		heading   : { type: String, required: true },
-		linkText  : { type: String, required: true },
-		linkPath  : { type: String, required: true },
-		linkStyle : { type: String, required: false },
-		altText   : { type: String, required: true },
-		small     : { type: Object, required: true },
-		medium    : { type: Object, required: false },
-		large     : { type: Object, required: true },
+		heading: { type: String, required: true },
+		linkText: { type: String, required: true },
+		linkPath: { type: String, required: true },
+		linkStyle: { type: String, required: false },
+		altText: { type: String, required: true },
+		small: { type: Object, required: true },
+		medium: { type: Object, required: false },
+		large: { type: Object, required: true },
 	},
 	computed: {
+
+		// eslint-disable-next-line complexity
 		outerWrapperVars() {
 			const defaultTop = '50%';
 			const defaultTransform = 'translateY(-50%)';
@@ -33,15 +35,16 @@ export default {
 			const mediumTextTop = (this.medium && this.medium.textTop) || this.large.textTop;
 
 			return {
-				'--small-text-top':  this.small.textTop || defaultTop,
-				'--medium-text-top':  mediumTextTop || defaultTop,
-				'--large-text-top':  this.large.textTop || defaultTop,
+				'--small-text-top': this.small.textTop || defaultTop,
+				'--medium-text-top': mediumTextTop || defaultTop,
+				'--large-text-top': this.large.textTop || defaultTop,
 				'--small-text-transform': this.small.textTop ? 'none' : defaultTransform,
 				'--medium-text-transform': mediumTextTop ? 'none' : defaultTransform,
 				'--large-text-transform': this.large.textTop ? 'none' : defaultTransform,
 			};
 		},
 
+		// eslint-disable-next-line complexity
 		innerWrapperVars() {
 			const defaultWidth = '80%';
 			const mediumTextMaxWidth = (this.medium && this.medium.textMaxWidth) || this.large.textMaxWidth;
@@ -55,7 +58,9 @@ export default {
 
 		linkClass() {
 			if (this.linkStyle !== 'button') return 'button--link';
-		}
+
+			return '';
+		},
 	},
 };
 </script>

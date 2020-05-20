@@ -25,6 +25,7 @@ export function Overview() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function ConfigurationDemonstration() {
 	return {
 		components: { ImageBanner },
@@ -42,7 +43,7 @@ export function ConfigurationDemonstration() {
 		`,
 		data() {
 			return {
-				heading: `<i>Headings can have</i> <span style="font-weight: 700">custom styling</span>`,
+				heading: '<i>Headings can have</i> <span style="font-weight: 700">custom styling</span>',
 				linkText: 'Button or Link CTA Styling',
 				linkPath: '#',
 				linkStyle: 'button',
@@ -57,7 +58,7 @@ export function ConfigurationDemonstration() {
 				small: {
 					image: 'small.png',
 					textTop: '10%',
-				}
+				},
 			};
 		},
 	};
