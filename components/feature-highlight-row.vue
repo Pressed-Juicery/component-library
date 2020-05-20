@@ -40,7 +40,7 @@ export default {
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: $spacing-10;
 
-		@media (max-width: $max-width-tablet) {
+		@media (max-width: $max-width-small) {
 			grid-template-columns: 1fr;
 			grid-gap: $spacing-07;
 		}

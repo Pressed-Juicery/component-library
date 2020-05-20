@@ -127,7 +127,7 @@ export default {
 	}
 
 	// Small Image
-	@media (max-width: $max-width-tablet) {
+	@media (max-width: $max-width-small) {
 		.smallImage {
 			display: inline;
 		}
