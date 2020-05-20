@@ -5,6 +5,19 @@ export default {
 	title: 'Style Guide / Typography',
 };
 
+export function Fonts() {
+	return {
+		template: `
+			<div>
+				<div class="heading-3 text-light">Light &mdash; TT Commons Light</div>
+				<div class="heading-3 text-normal">Normal &mdash; TT Commons Regular</div>
+				<div class="heading-3 text-bold">Bold &mdash; TT Commons Medium</div>
+				<div class="heading-3 text-bolder">Bolder &mdash; TT Commons DemiBold</div>
+			</div>
+		`,
+	};
+}
+
 export function HeadingTags() {
 	return {
 		template: `
