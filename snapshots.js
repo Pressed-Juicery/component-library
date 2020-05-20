@@ -48,6 +48,7 @@ const groups = [{
 		'BundleCardSection',
 		'FeatureHighlightRow',
 		'HighlightSection',
+		'ImageBanner',
 	],
 }];
 
