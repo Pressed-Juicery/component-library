@@ -5,6 +5,14 @@
 	margin: $spacing-03 0 $spacing-09;
 }
 
+// Fonts
+// -----
+
+.text-light { @include text-light(); }
+.text-normal { @include text-normal(); }
+.text-bold { @include text-bold(); }
+.text-bolder { @include text-bolder(); }
+
 // Font Weights
 // ------------
 
