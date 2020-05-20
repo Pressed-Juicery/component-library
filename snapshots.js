@@ -50,6 +50,11 @@ const groups = [{
 		'HighlightSection',
 		'ImageBanner',
 	],
+}, {
+	groupName: 'Templates',
+	stories: [
+		'LandingPageTemplate',
+	],
 }];
 
 PercyScript.run(async (page, percySnapshot) => {
