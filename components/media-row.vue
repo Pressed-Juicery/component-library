@@ -63,7 +63,7 @@ export default {
 	width: 100%;
 }
 
-@media (max-width: $max-width-tablet) {
+@media (max-width: $max-width-small) {
 	.root {
 		grid-template-columns: 1fr;
 		grid-gap: $spacing-07;
