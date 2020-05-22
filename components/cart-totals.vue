@@ -101,14 +101,21 @@
 
 	.shippingInfo {
 		@include text-body-small();
+		@include text-bold();
 	}
 
 	.discountLabel,
 	.discountAmount {
+		@include text-body-small();
+		@include text-bold();
 		@include text-subtle();
 	}
 
-	.totalLabel, .total {
+	.totalLabel {
 		@include text-bolder();
+	}
+
+	.total {
+		@include text-heading-5();
 	}
 </style>
