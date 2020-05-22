@@ -1,10 +1,15 @@
 <template>
 	<div :class="$style.cartTotals">
 		<div :class="[$style.row, $style.rowGroup]">
-			<div :class="[$style.subtotalToggle, $style.rowGroup, { [$style.isOpen]: isOpen }]" @click="toggle()">
+			<div :class="[$style.rowGroup, {
+			         [$style.isClosed]: !isOpen,
+			         [$style.subtotalToggle]: cart.discounts && cart.discounts.length
+			     }]"
+			     @click="toggle()">
 				<div>Subtotal</div>
-				<arrow-down-icon v-if="cart.discounts && cart.discounts.length" :class="$style.icon" />
+				<up-caret-icon v-if="cart.discounts && cart.discounts.length" :class="$style.icon" />
 			</div>
+
 			<div :class="$style.rowGroup">
 				<div v-if="cart.originalTotalPrice" :class="$style.originalTotalPrice">
 					{{ formatCurrency(cart.originalTotalPrice) }}
@@ -36,11 +41,11 @@
 </template>
 
 <script>
-	import ArrowDownIcon from './icons/arrow-down-icon';
+	import UpCaretIcon from './icons/up-caret-icon';
 	import { formatCurrency } from '../utilities/formatters';
 
 	export default {
-		components: { ArrowDownIcon },
+		components: { UpCaretIcon },
 
 		props: {
 			cart: Object,
@@ -87,12 +92,10 @@
 	}
 
 	.icon {
-		width: $spacing-04;
-		fill: $gray-90;
 		margin-left: $spacing-03;
 	}
 
-	.isOpen {
+	.isClosed {
 		.icon {
 			transform: rotate(180deg);
 		}
