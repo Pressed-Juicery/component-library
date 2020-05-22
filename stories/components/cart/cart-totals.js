@@ -17,7 +17,7 @@ export function Overview() {
 					total: 150.5,
 				},
 			};
-		}
+		},
 	};
 }
 
