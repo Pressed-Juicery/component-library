@@ -5,7 +5,12 @@
 				<div>Subtotal</div>
 				<arrow-down-icon v-if="cart.discounts && cart.discounts.length" :class="$style.icon" />
 			</div>
-			<div>{{ formatCurrency(cart.subtotal) }}</div>
+			<div :class="$style.rowGroup">
+				<div v-if="cart.originalTotalPrice" :class="$style.originalTotalPrice">
+					{{ formatCurrency(cart.originalTotalPrice) }}
+				</div>
+				<div>{{ formatCurrency(cart.subtotal) }}</div>
+			</div>
 		</div>
 
 		<div v-if="isOpen && cart.discounts && cart.discounts.length"
@@ -85,6 +90,13 @@
 		.icon {
 			transform: rotate(180deg);
 		}
+	}
+
+	.originalTotalPrice {
+		@include text-subtle();
+		@include text-strikethrough();
+
+		margin-right: $spacing-03;
 	}
 
 	.shippingInfo {
