@@ -18,12 +18,13 @@
 			</div>
 		</div>
 
-		<div v-if="isOpen && cart.discounts && cart.discounts.length"
-		     :class="[$style.row, $style.rowGroup]"
-		     v-for="discount in cart.discounts"
-		     :key="discount.name">
-			<div :class="$style.discountLabel">{{ discount.name }}</div>
-			<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(discount.amount)) }}</div>
+		<div v-if="isOpen && cart.discounts && cart.discounts.length">
+			<div :class="[$style.row, $style.rowGroup]"
+			     v-for="discount in cart.discounts"
+			     :key="discount.name">
+				<div :class="$style.discountLabel">{{ discount.name }}</div>
+				<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(discount.amount)) }}</div>
+			</div>
 		</div>
 
 		<div :class="[$style.row, $style.rowGroup]">
@@ -33,7 +34,7 @@
 			<div v-else :class="$style.shippingInfo">calculated at next step</div>
 		</div>
 
-		<div :class="[$style.row, $style.rowGroup]">
+		<div :class="[$style.totalRow, $style.rowGroup]">
 			<div :class="$style.totalLabel">Estimated Total</div>
 			<div :class="$style.total">{{ formatCurrency(cart.total) }}</div>
 		</div>
@@ -41,32 +42,32 @@
 </template>
 
 <script>
-	import UpCaretIcon from './icons/up-caret-icon';
-	import { formatCurrency } from '../utilities/formatters';
+import UpCaretIcon from './icons/up-caret-icon';
+import { formatCurrency } from '../utilities/formatters';
 
-	export default {
-		components: { UpCaretIcon },
+export default {
+	components: { UpCaretIcon },
 
-		props: {
-			cart: Object,
+	props: {
+		cart: Object,
+	},
+
+	data() {
+		return {
+			isOpen: false,
+		};
+	},
+
+	methods: {
+		formatCurrency(amount) {
+			return formatCurrency(amount);
 		},
 
-		data() {
-			return {
-				isOpen: false,
-			};
+		toggle() {
+			this.isOpen = !this.isOpen;
 		},
-
-		methods: {
-			formatCurrency(amount) {
-				return formatCurrency(amount);
-			},
-
-			toggle() {
-				this.isOpen = !this.isOpen;
-			},
-		},
-	}
+	},
+};
 </script>
 
 <style module lang="scss">
@@ -79,10 +80,7 @@
 
 	.row {
 		justify-content: space-between;
-
-		&:not(:last-child) {
-			margin-bottom: $spacing-04;
-		}
+		margin-bottom: $spacing-04;
 	}
 
 	.rowGroup {
@@ -124,6 +122,10 @@
 		@include text-body-small();
 		@include text-bold();
 		@include text-subtle();
+	}
+
+	.totalRow {
+		justify-content: space-between;
 	}
 
 	.totalLabel {
