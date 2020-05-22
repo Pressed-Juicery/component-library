@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div :class="$style.cartTotals">
 		<div :class="[$style.row, $style.rowGroup]">
 			<div :class="[$style.subtotalToggle, $style.rowGroup, { [$style.isOpen]: isOpen }]" @click="toggle()">
 				<div>Subtotal</div>
@@ -67,6 +67,10 @@
 <style module lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
+
+	.cartTotals {
+		padding: $spacing-06;
+	}
 
 	.row {
 		justify-content: space-between;
