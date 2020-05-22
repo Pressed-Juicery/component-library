@@ -56,6 +56,7 @@ export function Discounts() {
 		data() {
 			return {
 				cart: {
+					originalTotalPrice: 220.4,
 					subtotal: 100,
 					total: 150.5,
 					discounts: [
