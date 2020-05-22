@@ -1,10 +1,10 @@
 <template>
-	<div :class="['accordion', { 'accordion--open': isOpen }]">
-		<div class="accordion__title-wrapper" @click="toggle">
+	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
+		<div :class="$style.title" @click="toggle">
 			<div>{{ title }}</div>
-			<arrow-down-icon class="accordion__icon" />
+			<arrow-down-icon :class="$style.icon" />
 		</div>
-		<div v-if="isOpen" class="accordion__slot">
+		<div v-if="isOpen" :class="$style.slot">
 			<slot />
 		</div>
 	</div>
@@ -35,18 +35,18 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 	@import '../styles/variables';
 
 	$accordion-padding: $spacing-06;
 
-	.accordion {
+	.root {
 		border: 1px solid $border-color;
 		border-radius: $border-radius;
 		margin-bottom: $spacing-06;
 	}
 
-	.accordion__title-wrapper {
+	.title {
 		padding: $accordion-padding;
 		display: flex;
 		align-items: center;
@@ -54,19 +54,19 @@ export default {
 		cursor: pointer;
 	}
 
-	.accordion__icon {
+	.icon {
 		flex-shrink: 0;
 		width: $spacing-05;
 		fill: $border-color;
 		margin-left: $spacing-06;
 	}
 
-	.accordion__slot {
+	.slot {
 		padding: 0 $accordion-padding $accordion-padding;
 	}
 
-	.accordion--open {
-		.accordion__icon {
+	.isOpen {
+		.icon {
 			transform: rotate(180deg);
 		}
 	}

@@ -1,13 +1,13 @@
 <template>
-	<div class="media-row">
-		<div class="media-row__content-wrapper">
+	<div :class="$style.root">
+		<div :class="$style.contentWrapper">
 			<div>
-				<img v-if="icon" class="media-row__icon" :src="icon" />
-				<div class="media-row__title">{{ title }}</div>
-				<div class="media-row__text" v-html="description" />
+				<img v-if="icon" :class="$style.icon" :src="icon" />
+				<div :class="$style.title">{{ title }}</div>
+				<div :class="$style.text" v-html="description" />
 			</div>
 		</div>
-		<img class="media-row__image" :src="img" :alt="alt" />
+		<img :class="$style.image" :src="img" :alt="alt" />
 	</div>
 </template>
 
@@ -35,37 +35,36 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style module lang="scss">
 @import '../styles/variables';
 @import '../styles/mixins';
 
-.media-row {
+.root {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: $spacing-10;
-	padding: $spacing-09;
 }
 
-.media-row__content-wrapper {
+.contentWrapper {
 	display: flex;
 	align-items: center;
 }
 
-.media-row__icon {
+.icon {
 	margin-bottom: $spacing-07;
 }
 
-.media-row__title {
+.title {
 	@include text-heading-4;
 	margin-bottom: $spacing-03;
 }
 
-.media-row__image {
+.image {
 	width: 100%;
 }
 
-@media (max-width: $max-width-tablet) {
-	.media-row {
+@media (max-width: $max-width-small) {
+	.root {
 		grid-template-columns: 1fr;
 		grid-gap: $spacing-07;
 	}

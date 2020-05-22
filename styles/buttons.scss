@@ -7,6 +7,7 @@ button,
 .button,
 input[type="button"],
 input[type="submit"] {
+	display: inline-block;
 	@include text-cta();
 	text-align: center;
 	background: $color-primary;
@@ -16,6 +17,7 @@ input[type="submit"] {
 	border-radius: $border-radius;
 	user-select: none;
 	height: $button-height;
+	overflow: hidden;
 
 	// NOTE: The 1px border and 2px offset is required to correctly center the text vertically.
 	border: 1px solid transparent;
@@ -44,4 +46,13 @@ input[type="submit"]:disabled {
 
 .button--pill {
 	border-radius: 999em;
+}
+
+.button--link {
+	color: inherit;
+	padding: 0;
+	line-height: 1;
+	height: auto;
+	background: transparent;
+	text-decoration: underline;
 }
