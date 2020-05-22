@@ -79,7 +79,10 @@
 
 	.row {
 		justify-content: space-between;
-		margin: $spacing-03 0;
+
+		&:not(:last-child) {
+			margin-bottom: $spacing-04;
+		}
 	}
 
 	.rowGroup {
@@ -111,6 +114,9 @@
 	.shippingInfo {
 		@include text-body-small();
 		@include text-bold();
+
+		margin-left: $spacing-02;
+		text-align: right;
 	}
 
 	.discountLabel,
