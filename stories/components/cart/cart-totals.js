@@ -48,6 +48,23 @@ export function ShippingDeliveryPrice() {
 	};
 }
 
+export function FreeShipping() {
+	return {
+		components: { CartTotals },
+		template: '<cart-totals :cart="cart"  style="margin:40px" />',
+
+		data() {
+			return {
+				cart: {
+					subtotal: 100,
+					total: 150.5,
+					shippingPrice: 0.0,
+				},
+			};
+		},
+	};
+}
+
 export function Discounts() {
 	return {
 		components: { CartTotals },
