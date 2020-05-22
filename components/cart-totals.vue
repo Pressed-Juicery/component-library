@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<div :class="[$style.row]">
-			<div :class="[$style.subtotalToggle, { [$style.isOpen]: isOpen }]" @click="toggle()">
+		<div :class="[$style.row, $style.rowGroup]">
+			<div :class="[$style.subtotalToggle, $style.rowGroup, { [$style.isOpen]: isOpen }]" @click="toggle()">
 				<div>Subtotal</div>
 				<arrow-down-icon v-if="cart.discounts && cart.discounts.length" :class="$style.icon" />
 			</div>
@@ -14,20 +14,21 @@
 		</div>
 
 		<div v-if="isOpen && cart.discounts && cart.discounts.length"
-		     :class="[$style.row]"
+		     :class="[$style.row, $style.rowGroup]"
 		     v-for="discount in cart.discounts"
 		     :key="discount.name">
 			<div :class="$style.discountLabel">{{ discount.name }}</div>
 			<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(discount.amount)) }}</div>
 		</div>
 
-		<div :class="[$style.row]">
+		<div :class="[$style.row, $style.rowGroup]">
 			<div>Shipping/Delivery</div>
 			<div v-if="cart.shippingPrice">{{ formatCurrency(cart.shippingPrice) }}</div>
+			<div v-else-if="cart.shippingPrice === 0" :class="$style.shippingInfo">Free</div>
 			<div v-else :class="$style.shippingInfo">calculated at next step</div>
 		</div>
 
-		<div :class="$style.row">
+		<div :class="[$style.row, $style.rowGroup]">
 			<div :class="$style.totalLabel">Estimated Total</div>
 			<div :class="$style.total">{{ formatCurrency(cart.total) }}</div>
 		</div>
@@ -68,15 +69,16 @@
 	@import '../styles/variables';
 
 	.row {
-		display: flex;
 		justify-content: space-between;
-		align-items: center;
 		margin: $spacing-03 0;
 	}
 
-	.subtotalToggle {
-		display:flex;
+	.rowGroup {
+		display: flex;
 		align-items: center;
+	}
+
+	.subtotalToggle {
 		cursor: pointer;
 	}
 
