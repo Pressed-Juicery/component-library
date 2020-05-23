@@ -21,34 +21,6 @@
 		                 v-model="model.phone"
 		                 :rules="phoneRules" />
 
-		<button-bar class="address-form__button-bar">
-			<button-bar-button class="address-form__button-bar-button"
-			                   value="Home"
-			                   :selectedButton="selectedButton"
-			                   @select-button="selectButton">
-				<div>Home</div>
-			</button-bar-button>
-
-			<button-bar-button class="address-form__button-bar-button"
-			                   value="Work"
-			                   :selectedButton="selectedButton"
-			                   @select-button="selectButton">
-				<div>Work</div>
-			</button-bar-button>
-
-			<button-bar-button class="address-form__button-bar-button"
-			                   value="Other"
-			                   :selectedButton="selectedButton"
-			                   @select-button="selectButton">
-				<div>Other</div>
-			</button-bar-button>
-		</button-bar>
-
-		<validated-input v-if="hasCustomTitle"
-		                 label="Title"
-		                 v-model="model.title"
-		                 :rules="customTitleRules" />
-
 		<Label v-if="showDeliveryInstructions">
 			<span class="address-form__delivery-instructions-label">Delivery Instructions</span>
 			<textarea v-model="model.deliveryInstructions"
@@ -71,10 +43,6 @@ import { regions } from '../constants/regions';
 export default {
 	components: { ButtonBar, ButtonBarButton, ValidatedInput, ValidatedSelect },
 
-	model: {
-		prop: 'address',
-		event: 'change',
-	},
 
 	props: {
 		address: { required: true },
@@ -85,7 +53,6 @@ export default {
 	data() {
 		return {
 			regions,
-			hasCustomTitle: false,
 
 			firstNameRules: [{
 				validator: isNotEmpty,
@@ -132,30 +99,6 @@ export default {
 				message: 'Please enter a title.',
 			}],
 		};
-	},
-
-	computed: {
-		model: {
-			get() { return this.address },
-			set(value) { this.$emit('change', value) },
-		},
-
-		selectedButton() {
-			if (!this.address.title && !this.hasCustomTitle) return 'Home';
-			if (this.address.title !== 'Home' && this.address.title !== 'Work') return 'Other';
-
-			return this.address.title;
-		},
-	},
-
-	methods: {
-		selectButton(value) {
-			if (this.selectedButton === value) return;
-
-			this.model = { ...this.model, title: value === 'Other' ? '' : value };
-
-			this.hasCustomTitle = value === 'Other';
-		},
 	},
 };
 </script>
