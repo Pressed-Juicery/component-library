@@ -47,7 +47,7 @@ export function EditAddress() {
 		template: `
 			<div>
 				<address-form :formId="formName" :address="address" />
-				<button type="submit" :form="formName" @submit="submit()">Save</button>
+				<button type="submit" :form="formName">Save</button>
 
 				<div v-if="address.firstName">First Name: {{ address.firstName }}</div>
 				<div v-if="address.lastName">Last Name: {{ address.lastName }}</div>
@@ -76,8 +76,6 @@ export function EditAddress() {
 				},
 			};
 		},
-
-		methods: { submit() {} },
 	};
 }
 
@@ -102,6 +100,7 @@ export function DeliveryInstructions() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function EditDeliveryInstructions() {
 	return {
 		components: { AddressForm },
@@ -110,9 +109,8 @@ export function EditDeliveryInstructions() {
 			<div>
 				<address-form :formId="formName"
 				              :address="address"
-				              @submit="submit()"
 				              :showDeliveryInstructions="true" />
-				<button type="submit" :form="formName" @submit="submit()">Save</button>
+				<button type="submit" :form="formName">Save</button>
 
 				<div v-if="address.deliveryInstructions">Delivery Instructions: {{ address.deliveryInstructions }}</div>
 			</div>
@@ -134,7 +132,5 @@ export function EditDeliveryInstructions() {
 				},
 			};
 		},
-
-		methods: { submit() {} },
 	};
 }
