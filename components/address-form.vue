@@ -1,33 +1,33 @@
 <template>
-	<div class="address-form">
+	<validated-form :id="formId" class="address-form" @submit="$emit('submit', address)">
 		<div class="address-form__grid">
-			<validated-input label="First Name" v-model="model.firstName" :rules="firstNameRules" />
-			<validated-input label="Last Name" v-model="model.lastName" :rules="lastNameRules" />
+			<validated-input label="First Name" v-model="address.firstName" :rules="firstNameRules" />
+			<validated-input label="Last Name" v-model="address.lastName" :rules="lastNameRules" />
 		</div>
 
-		<validated-input label="Street Address" v-model="model.streetAddress" :rules="addressRules" />
-		<validated-input label="Suite/Apt" v-model="model.extendedAddress" />
+		<validated-input label="Street Address" v-model="address.streetAddress" :rules="addressRules" />
+		<validated-input label="Suite/Apt" v-model="address.extendedAddress" />
 
-		<validated-input label="City" v-model="model.locality" :rules="localityRules"/>
+		<validated-input label="City" v-model="address.locality" :rules="localityRules" />
 
 		<div class="address-form__grid">
-			<validated-select label="State" v-model="model.region" :options="regions" :rules="regionRules" />
-			<validated-input label="Zip Code" v-model="model.postal" :rules="postalRules" />
+			<validated-select label="State" v-model="address.region" :options="regions" :rules="regionRules" />
+			<validated-input label="Zip Code" v-model="address.postal" :rules="postalRules" />
 		</div>
 
 		<validated-input class="address-form__phone"
 		                 type="phone"
 		                 label="Phone Number"
-		                 v-model="model.phone"
+		                 v-model="address.phone"
 		                 :rules="phoneRules" />
 
 		<Label v-if="showDeliveryInstructions">
 			<span class="address-form__delivery-instructions-label">Delivery Instructions</span>
-			<textarea v-model="model.deliveryInstructions"
+			<textarea v-model="address.deliveryInstructions"
 			          rows="4"
 			          placeholder="i.e. gate code or if it should be left at your door, etc." />
 		</Label>
-	</div>
+	</validated-form>
 </template>
 
 <script>
@@ -43,7 +43,11 @@ export default {
 	components: { ValidatedForm, ValidatedInput, ValidatedSelect },
 
 	props: {
-		address: { required: true },
+		formId: String,
+		address: {
+			type: Object,
+			default() { return {} },
+		},
 		showDeliveryInstructions: Boolean,
 	},
 
