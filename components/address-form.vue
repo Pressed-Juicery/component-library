@@ -33,16 +33,14 @@
 <script>
 import { hasExactLength, isNotEmpty, isNumber, isValidPhoneNumber } from '../utilities/validators';
 
-import ButtonBar from './button-bar';
-import ButtonBarButton from './button-bar-button';
+import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
 import ValidatedSelect from './validated-select';
 
 import { regions } from '../constants/regions';
 
 export default {
-	components: { ButtonBar, ButtonBarButton, ValidatedInput, ValidatedSelect },
-
+	components: { ValidatedForm, ValidatedInput, ValidatedSelect },
 
 	props: {
 		address: { required: true },
