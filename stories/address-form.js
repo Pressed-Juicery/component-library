@@ -8,7 +8,7 @@ export default {
 export function Overview() {
 	return {
 		components: { AddressForm },
-		template: '<address-form style="margin:40px;" />',
+		template: '<address-form />',
 	};
 }
 
@@ -17,9 +17,9 @@ export function NewAddress() {
 		components: { AddressForm },
 
 		template: `
-			<div style="margin:40px;">
-				<address-form :formId="formName" style="marginBottom: 20px;" @submit="newAddress => address = newAddress" />
-				<button type="submit" :form="formName" style="marginBottom: 20px;">Save</button>
+			<div>
+				<address-form :formId="formName" @submit="newAddress => address = newAddress" />
+				<button type="submit" :form="formName">Save</button>
 
 				<div v-if="address">
 					<div v-if="address.firstName">First Name: {{ address.firstName }}</div>
@@ -45,9 +45,9 @@ export function EditAddress() {
 		components: { AddressForm },
 
 		template: `
-			<div style="margin:40px;">
-				<address-form :formId="formName" :address="address" style="marginBottom:20px;" />
-				<button type="submit" :form="formName" style="marginBottom:20px;" @submit="submit()">Save</button>
+			<div>
+				<address-form :formId="formName" :address="address" />
+				<button type="submit" :form="formName" @submit="submit()">Save</button>
 
 				<div v-if="address.firstName">First Name: {{ address.firstName }}</div>
 				<div v-if="address.lastName">Last Name: {{ address.lastName }}</div>
@@ -86,12 +86,11 @@ export function DeliveryInstructions() {
 		components: { AddressForm },
 
 		template: `
-			<div style="margin:40px;">
+			<div>
 				<address-form :formId="formName"
-				              style="marginBottom: 20px;"
 				              :showDeliveryInstructions="true"
 				              @submit="newAddress => address = newAddress" />
-				<button type="submit" :form="formName" style="marginBottom: 20px;">Save</button>
+				<button type="submit" :form="formName">Save</button>
 
 				<div v-if="address && address.deliveryInstructions">
 					Delivery Instructions: {{ address.deliveryInstructions }}
@@ -108,13 +107,12 @@ export function EditDeliveryInstructions() {
 		components: { AddressForm },
 
 		template: `
-			<div style="margin:40px;">
+			<div>
 				<address-form :formId="formName"
-				              style="marginBottom: 20px;"
 				              :address="address"
 				              @submit="submit()"
 				              :showDeliveryInstructions="true" />
-				<button type="submit" :form="formName" style="marginBottom:20px;" @submit="submit()">Save</button>
+				<button type="submit" :form="formName" @submit="submit()">Save</button>
 
 				<div v-if="address.deliveryInstructions">Delivery Instructions: {{ address.deliveryInstructions }}</div>
 			</div>
