@@ -115,20 +115,6 @@ export default {
 		grid-gap: $spacing-05;
 	}
 
-	.address-form__phone {
-		margin-bottom: $spacing-08;
-	}
-
-	.address-form__button-bar {
-		margin-bottom: $spacing-06;
-		text-align: center;
-	}
-
-	.address-form__button-bar-button {
-		height: auto;
-		padding: $spacing-05;
-	}
-
 	.address-form__delivery-instructions-label {
 		@include text-bolder();
 	}
