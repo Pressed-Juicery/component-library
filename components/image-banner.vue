@@ -133,7 +133,7 @@ export default {
 	}
 
 	// Small Image
-	@media (max-width: $max-width-small) {
+	@media (max-width: $max-width-extra-small) {
 		.smallImage {
 			display: block;
 		}
