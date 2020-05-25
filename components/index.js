@@ -1,5 +1,5 @@
 export { default as Accordion } from './accordion';
-export { default as AddressForm} from './address-form';
+export { default as AddressForm } from './address-form';
 export { default as AddressRadioButtonCard } from './address-radio-button-card';
 export { default as Breadcrumbs } from './breadcrumbs';
 export { default as ButtonBar } from './button-bar';
