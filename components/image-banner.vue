@@ -89,6 +89,7 @@ export default {
 	.smallImage,
 	.mediumImage,
 	.largeImage {
+		display: block;
 		width: 100%;
 		height: 680px;
 		object-fit: cover;
@@ -114,7 +115,7 @@ export default {
 	// Medium Image
 	@media (max-width: $max-width-medium) {
 		.mediumImage {
-			display: inline;
+			display: block;
 		}
 
 		.largeImage {
@@ -132,9 +133,9 @@ export default {
 	}
 
 	// Small Image
-	@media (max-width: $max-width-small) {
+	@media (max-width: $max-width-extra-small) {
 		.smallImage {
-			display: inline;
+			display: block;
 		}
 
 		.mediumImage,
