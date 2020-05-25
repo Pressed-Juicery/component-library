@@ -30,5 +30,6 @@ export default {
 
 	.text {
 		@include text-body-small();
+		@include text-bold();
 	}
 </style>
