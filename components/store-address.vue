@@ -26,5 +26,6 @@ export default {
 
 	.details {
 		@include text-body-small();
+		@include text-bold();
 	}
 </style>
