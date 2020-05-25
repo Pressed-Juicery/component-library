@@ -15,6 +15,7 @@ export { default as BundleCard } from './bundle-card';
 export { default as BundleCardGrid } from './bundle-card-grid';
 export { default as RadioButton } from './radio-button';
 export { default as RadioButtonCard } from './radio-button-card';
+export { default as StoreAddress } from './store-address';
 export { default as StoreRadioButtonCard } from './store-radio-button-card';
 export { default as ValidatedForm } from './validated-form';
 export { default as ValidatedInput } from './validated-input';
