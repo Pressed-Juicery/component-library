@@ -10,5 +10,8 @@ export function formatCurrency(amount) {
 }
 
 export function formatPhoneNumber(phone) {
-	return (phone || '').replace(/^(\d{3})(\d{3})(\d{4})$/, '$1-$2-$3');
+	const numbersOnly = phone.replace(/\D/g,'');
+	const sections = numbersOnly.match(/^(\d{3})(\d{3})(\d{4})$/);
+
+	return `(${sections[1]}) ${sections[2]}-${sections[3]}`;
 }

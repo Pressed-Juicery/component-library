@@ -6,14 +6,22 @@
 		<div :class="$style.text" v-if="address.extendedAddress">{{ address.extendedAddress }}</div>
 		<div :class="$style.text">{{ address.locality }}, {{ address.region }} {{ address.postal }}</div>
 
-		<div :class="$style.text" v-if="address.phone">{{ address.phone }}</div>
+		<div :class="$style.text" v-if="address.phone">{{ phone }}</div>
 	</div>
 </template>
 
 <script>
+import { formatPhoneNumber } from '../utilities/formatters';
+
 export default {
 	props: {
 		address: { required: true },
+	},
+
+	computed: {
+		phone() {
+			return formatPhoneNumber(this.address.phone);
+		},
 	},
 };
 </script>

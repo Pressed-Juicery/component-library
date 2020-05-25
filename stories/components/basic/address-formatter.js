@@ -73,7 +73,7 @@ export function Phone() {
 					locality: 'Locality',
 					region: 'OR',
 					postal: '97705',
-					phone: '559-345-4567',
+					phone: '559-123-1234',
 				},
 			};
 		},
@@ -94,7 +94,7 @@ export function All() {
 					locality: 'Locality',
 					region: 'OR',
 					postal: '97705',
-					phone: '559-345-4567',
+					phone: '5591231234',
 				},
 			};
 		},
