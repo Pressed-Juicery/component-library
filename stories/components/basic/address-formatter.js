@@ -1,14 +1,14 @@
-import Address from '../../../components/address';
+import AddressFormatter from '../../../components/address-formatter';
 
 export default {
-	title: 'Components / Basic / Address',
-	component: Address,
+	title: 'Components / Basic / AddressFormatter',
+	component: AddressFormatter,
 };
 
 export function Overview() {
 	return {
-		components: { Address },
-		template: '<Address :address="address" />',
+		components: { AddressFormatter },
+		template: '<address-formatter :address="address" />',
 
 		data() {
 			return {
@@ -25,8 +25,8 @@ export function Overview() {
 
 export function Named() {
 	return {
-		components: { Address },
-		template: '<Address :address="address" />',
+		components: { AddressFormatter },
+		template: '<address-formatter :address="address" />',
 
 		data() {
 			return {
@@ -44,8 +44,8 @@ export function Named() {
 
 export function ExtendedAddress() {
 	return {
-		components: { Address },
-		template: '<Address :address="address" />',
+		components: { AddressFormatter },
+		template: '<address-formatter :address="address" />',
 
 		data() {
 			return {
@@ -63,8 +63,8 @@ export function ExtendedAddress() {
 
 export function Phone() {
 	return {
-		components: { Address },
-		template: '<Address :address="address" />',
+		components: { AddressFormatter },
+		template: '<address-formatter :address="address" />',
 
 		data() {
 			return {
@@ -82,8 +82,8 @@ export function Phone() {
 
 export function All() {
 	return {
-		components: { Address },
-		template: '<Address :address="address" />',
+		components: { AddressFormatter },
+		template: '<address-formatter :address="address" />',
 
 		data() {
 			return {
