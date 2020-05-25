@@ -30,7 +30,8 @@
 		"core-js": "^3.6.4",
 		"normalize.css": "8.0.1",
 		"@vue/cli-plugin-babel": "~4.3.0",
-		"@vue/cli-service": "~4.3.0"
+		"@vue/cli-service": "~4.3.0",
+		"braintree-web": "^3.61.0",
 	},
 	"devDependencies": {
 		"@babel/core": "7.9.0",
