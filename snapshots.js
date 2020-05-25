@@ -14,6 +14,7 @@ const groups = [{
 		'ButtonBar',
 		'Buttons',
 		'Card',
+		'StoreAddress',
 	],
 }, {
 	groupName: 'Components / Cart',
