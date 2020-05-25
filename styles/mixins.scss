@@ -107,6 +107,9 @@
 	letter-spacing: 0.14 * $rem;
 }
 
+@mixin text-strikethrough() {
+	text-decoration: line-through;
+}
 
 // Utilities
 // =========
