@@ -1,5 +1,5 @@
 <template>
-	<div :class="$style.cartTotals">
+	<div>
 		<div :class="[$style.row, $style.rowGroup]">
 			<div :class="[$style.rowGroup, {
 			         [$style.isClosed]: !isOpen,
@@ -73,10 +73,6 @@ export default {
 <style module lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
-
-	.cartTotals {
-		padding: $spacing-06;
-	}
 
 	.row {
 		justify-content: space-between;
