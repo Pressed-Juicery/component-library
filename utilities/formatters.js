@@ -10,8 +10,9 @@ export function formatCurrency(amount) {
 }
 
 export function formatPhoneNumber(phone) {
-	const numbersOnly = phone.replace(/\D/g,'');
+	const numbersOnly = phone.replace(/\D/g, '');
 	const sections = numbersOnly.match(/^(\d{3})(\d{3})(\d{4})$/);
 
+	// eslint-disable-next-line no-magic-numbers
 	return `(${sections[1]}) ${sections[2]}-${sections[3]}`;
 }
