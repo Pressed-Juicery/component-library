@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<Address :address="store.address" />
+		<address-formatter :address="store.address" />
 		<div v-if="store.storeHours" :class="$style.details">
 			<div v-for="(hours, index) in store.storeHours" :key="index">{{ hours }}</div>
 		</div>
@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import Address from './address.vue';
+import AddressFormatter from './address-formatter.vue';
 
 export default {
-	components: { Address },
+	components: { AddressFormatter },
 
 	props: {
 		store: {
