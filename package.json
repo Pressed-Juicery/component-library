@@ -16,6 +16,7 @@
 		"assets/**/*",
 		"components/**/*",
 		"constants/**/*",
+		"services/**/*",
 		"styles/**/*",
 		"utilities/**/*"
 	],
