@@ -74,10 +74,6 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.cartTotals {
-		padding: $spacing-06;
-	}
-
 	.row {
 		justify-content: space-between;
 		margin-bottom: $spacing-04;
