@@ -186,9 +186,9 @@ export default {
 		@include text-error();
 	}
 
-	@media (max-width: $max-width-tablet) {
+	/* @media (max-width: $max-width-tablet) {
 		.validated-payment-method__grid {
 			grid-template-columns: 1fr;
 		}
-	}
+	} */
 </style>
