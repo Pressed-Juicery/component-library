@@ -127,6 +127,7 @@ export default {
 	.saveAddressCheckbox {
 		display: flex;
 		align-items: center;
+		margin-bottom: $spacing-06;
 	}
 
 	.checkboxLabel {
