@@ -12,7 +12,7 @@
 
 		<div :class="$style.grid">
 			<validated-select label="State" v-model="address.region" :options="regions" :rules="regionRules" />
-			<validated-input label="Zip Code" v-model="address.postal" :rules="postalRules" />
+			<validated-input label="ZIP Code" v-model="address.postal" :rules="postalRules" />
 		</div>
 
 		<validated-input type="phone"
