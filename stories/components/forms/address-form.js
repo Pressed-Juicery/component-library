@@ -30,6 +30,7 @@ export function NewAddress() {
 					<div>Region: {{ address.region }}</div>
 					<div>Postal: {{ address.postal }}</div>
 					<div>Phone: {{ address.phone }}</div>
+					<div>Save Address: {{ address.shouldSaveAddress }}</div>
 				</div>
 			</div>
 		`,
@@ -56,6 +57,7 @@ export function EditAddress() {
 				<div>Region: {{ address.region }}</div>
 				<div>Postal: {{ address.postal }}</div>
 				<div>Phone: {{ address.phone }}</div>
+				<div>Save Address: {{ address.shouldSaveAddress }}</div>
 			</div>
 		`,
 
