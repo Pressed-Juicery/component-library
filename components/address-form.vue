@@ -39,8 +39,8 @@ import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
 import ValidatedSelect from './validated-select';
 
-import { regions } from '../constants/regions';
 import { getRandom } from '../utilities/get-random';
+import { regions } from '../constants/regions';
 
 export default {
 	components: { ValidatedForm, ValidatedInput, ValidatedSelect },
