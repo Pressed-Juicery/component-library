@@ -28,7 +28,7 @@
 				:id="textareaId"
 				v-model="address.deliveryInstructions"
 				rows="4"
-				placeholder="i.e. gate code or if it should be left at your door, etc."
+				placeholder="e.g. &quot;ring bell and leave at door&quot;, gate code, etc."
 			/>
 		</div>
 	</validated-form>
