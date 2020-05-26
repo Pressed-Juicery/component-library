@@ -197,7 +197,7 @@ export default {
 		@include text-error();
 	}
 
-	.saveAddressCheckbox {
+	.savePaymentMethodCheckbox {
 		display: flex;
 		align-items: center;
 	}
