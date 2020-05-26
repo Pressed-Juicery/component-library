@@ -15,10 +15,12 @@
 			<validated-input label="ZIP Code" v-model="address.postal" :rules="postalRules" />
 		</div>
 
-		<validated-input type="phone"
-		                 label="Phone Number"
-		                 v-model="address.phone"
-		                 :rules="phoneRules" />
+		<validated-input
+			type="phone"
+			label="Phone Number"
+			v-model="address.phone"
+			:rules="phoneRules"
+		/>
 
 		<div v-if="showDeliveryInstructions" :class="$style.deliveryInstructions">
 			<label :class="$style.deliveryInstructionsLabel" :for="textareaId">Delivery Instructions</label>
