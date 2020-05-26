@@ -6,12 +6,20 @@ export function isNotEmpty(value) {
 	return !isEmpty(value);
 }
 
+export function hasExactLength(value, { length }) {
+	return isEmpty(value) || value.length === length;
+}
+
 export function hasMinimumLength(value, { length }) {
 	return isEmpty(value) || value.length >= length;
 }
 
 export function isEmail(value) {
 	return isEmpty(value) || /^\S+@\S+\.\S+$/.test(value);
+}
+
+export function isNumber(value) {
+	return isEmpty(value) || !Number.isNaN(Number(value));
 }
 
 export function isTrue(value) {

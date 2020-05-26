@@ -1,6 +1,6 @@
 {
 	"name": "component-library",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Pressed Juicery Component Library",
 	"private": true,
 	"main": "dist/component-library.common.js",
@@ -15,6 +15,7 @@
 	"files": [
 		"assets/**/*",
 		"components/**/*",
+		"constants/**/*",
 		"styles/**/*",
 		"utilities/**/*"
 	],
@@ -26,10 +27,11 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"homepage": "https://github.com/Pressed-Juicery/component-library#readme",
 	"dependencies": {
-		"core-js": "^3.6.4",
-		"normalize.css": "8.0.1",
 		"@vue/cli-plugin-babel": "~4.3.0",
-		"@vue/cli-service": "~4.3.0"
+		"@vue/cli-service": "~4.3.0",
+		"braintree-web": "3.62.1",
+		"core-js": "^3.6.4",
+		"normalize.css": "8.0.1"
 	},
 	"devDependencies": {
 		"@babel/core": "7.9.0",

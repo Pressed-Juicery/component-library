@@ -10,10 +10,12 @@ const groups = [{
 	groupName: 'Components / Basic',
 	stories: [
 		'Accordion',
+		'AddressFormatter',
 		'Breadcrumbs',
 		'ButtonBar',
 		'Buttons',
 		'Card',
+		'StoreAddress',
 	],
 }, {
 	groupName: 'Components / Cart',
@@ -24,9 +26,11 @@ const groups = [{
 }, {
 	groupName: 'Components / Forms',
 	stories: [
+		'AddressForm',
 		'RadioButton',
 		'ValidatedForm',
 		'ValidatedInput',
+		'ValidatedPaymentMethod',
 		'ValidatedSelect',
 	],
 }, {
