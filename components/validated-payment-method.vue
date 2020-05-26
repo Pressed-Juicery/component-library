@@ -35,7 +35,7 @@
 			</div>
 
 			<div>
-				<label :class="$style.label"  for="postal-code">ZIP Code</label>
+				<label :class="$style.label" for="postal-code">ZIP Code</label>
 				<div id="postal-code" :class="$style.input"></div>
 
 				<label v-if="fields.postalCode.isTouched && !fields.postalCode.isValid"
