@@ -23,7 +23,9 @@
 		/>
 
 		<div :class="$style.saveAddressCheckbox">
-			<validated-checkbox :id="checkboxId" :value="address.shouldSaveAddress" v-model="address.shouldSaveAddress" />
+			<validated-checkbox :id="checkboxId"
+			                    :value="address.shouldSaveAddress"
+			                    v-model="address.shouldSaveAddress" />
 			<label :for="checkboxId" :class="$style.checkboxLabel">Save Address for Future Orders</label>
 		</div>
 

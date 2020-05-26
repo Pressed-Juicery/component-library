@@ -63,9 +63,9 @@
 </template>
 
 <script>
-import { hostedFieldsService } from '../services/hosted-fields.service';
-
 import ValidatedCheckbox from './validated-checkbox';
+
+import { hostedFieldsService } from '../services/hosted-fields.service';
 
 export default {
 	components: { ValidatedCheckbox },
