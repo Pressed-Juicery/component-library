@@ -14,5 +14,5 @@ export function formatPhoneNumber(phone) {
 	const sections = numbersOnly.match(/^(\d{3})(\d{3})(\d{4})$/);
 
 	// eslint-disable-next-line no-magic-numbers
-	return `(${sections[1]}) ${sections[2]}-${sections[3]}`;
+	return sections ? `(${sections[1]}) ${sections[2]}-${sections[3]}` : numbersOnly;
 }
