@@ -20,11 +20,13 @@ export function InValidatedForm() {
 		components: { ValidatedForm, ValidatedPaymentMethod },
 		template: `
 			<validated-form>
-				<validated-payment-method :braintree-tokenization-key="braintreeTokenizationKey"
-				                          @change="nonce => result = nonce" />
-				
+				<validated-payment-method
+					:braintree-tokenization-key="braintreeTokenizationKey"
+					@change="nonce => result = nonce"
+				/>
+
 				<button type="submit">Submit</button>
-				
+
 				<p>Result: {{ result }}</p>
 			</validated-form>
 		`,
