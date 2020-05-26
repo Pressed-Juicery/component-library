@@ -20,6 +20,7 @@ export { default as PaymentMethodIcon } from './payment-method-icon';
 export { default as PaymentMethodRadioButtonCard } from './payment-method-radio-button-card';
 export { default as RadioButton } from './radio-button';
 export { default as RadioButtonCard } from './radio-button-card';
+export { default as StoreAddress } from './store-address';
 export { default as StoreRadioButtonCard } from './store-radio-button-card';
 export { default as ValidatedForm } from './validated-form';
 export { default as ValidatedInput } from './validated-input';
