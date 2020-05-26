@@ -102,10 +102,6 @@ export default {
 				validator: isValidPhoneNumber,
 				message: 'Please enter a valid ten-digit phone number.',
 			}],
-			customTitleRules: [{
-				validator: isNotEmpty,
-				message: 'Please enter a title.',
-			}],
 		};
 	},
 };
