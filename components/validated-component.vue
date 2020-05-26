@@ -1,10 +1,10 @@
 <template>
-	<div class="validated-component">
-		<label v-if="label" class="validated-component__label" :for="id" >{{ label }}</label>
+	<div :class="$style.root">
+		<label v-if="label" :class="$style.label" :for="id" >{{ label }}</label>
 		<label v-if="labelHelper" :for="id">{{ labelHelper }}</label>
 		<slot />
 
-		<label v-if="error" class="validated-component__error" :for="id">{{ error }}</label>
+		<label v-if="error" :class="$style.error" :for="id">{{ error }}</label>
 	</div>
 </template>
 
@@ -62,19 +62,19 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.validated-component {
+	.root {
 		margin-bottom: $spacing-06;
 	}
 
-	.validated-component__label {
+	.label {
 		@include text-bolder();
 	}
 
-	.validated-component__error {
+	.error {
 		@include text-error();
 	}
 </style>
