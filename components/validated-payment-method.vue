@@ -1,52 +1,52 @@
 <template>
-	<div class="validated-payment-method">
-		<div class="row">
-			<label class="label" for="payment-method-number">Credit Card</label>
-			<div id="payment-method-number" class="input"></div>
+	<div>
+		<div :class="$style.row">
+			<label :class="$style.label" for="payment-method-number">Credit Card</label>
+			<div id="payment-method-number" :class="$style.input"></div>
 
 			<label v-if="fields.number.isTouched && !fields.number.isValid"
-			       class="error"
+			       :class="$style.error"
 			       for="payment-method-number">
 				Please enter a valid credit card number.
 			</label>
 		</div>
 
-		<div class="row grid">
+		<div :class="[$style.row, $style.grid]">
 			<div>
-				<label class="label" for="expiration-date">Expiration Date</label>
-				<div id="expiration-date" class="input"></div>
+				<label :class="$style.label" for="expiration-date">Expiration Date</label>
+				<div id="expiration-date" :class="$style.input"></div>
 
 				<label for="expiration-date"
 				       v-if="fields.expirationDate.isTouched && !fields.expirationDate.isValid"
-				       class="error">
+				       :class="$style.error">
 					Please enter a valid expiration date (MM/YY).
 				</label>
 			</div>
 
 			<div>
-				<label class="label" for="cvv">Security Code</label>
-				<div id="cvv" class="input"></div>
+				<label :class="$style.label" for="cvv">Security Code</label>
+				<div id="cvv" :class="$style.input"></div>
 
 				<label v-if="fields.cvv.isTouched && !fields.cvv.isValid"
-				       class="error"
+				       :class="$style.error"
 				       for="cvv">
 					Please enter a valid CVV.
 				</label>
 			</div>
 
 			<div>
-				<label class="label"  for="postal-code">ZIP Code</label>
-				<div id="postal-code" class="input"></div>
+				<label :class="$style.label"  for="postal-code">ZIP Code</label>
+				<div id="postal-code" :class="$style.input"></div>
 
 				<label v-if="fields.postalCode.isTouched && !fields.postalCode.isValid"
-				       class="error"
+				       :class="$style.error"
 				       for="postal-code" >
 					Please enter a valid 5-digit ZIP code.
 				</label>
 			</div>
 		</div>
 
-		<div v-if="cannotLoadForm" class="error">
+		<div v-if="cannotLoadForm" :class="$style.error">
 			<p>We are currently unable to complete your membership. Please try again at a later time.</p>
 			<p>If you have any questions or concerns, please contact customer service at
 				<a href="tel:+1-888-445-8423">888.44.JUICE (888.445.8423)</a>
@@ -155,7 +155,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style module lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
