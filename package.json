@@ -52,7 +52,7 @@
 		"eslint-config-pressed-juicery": "github:Pressed-Juicery/eslint-config-pressed-juicery#v1.0.0",
 		"eslint-plugin-import": "2.20.2",
 		"eslint-plugin-vue": "6.2.2",
-		"node-sass": "4.13.1",
+		"node-sass": "4.14.1",
 		"sass-loader": "8.0.2",
 		"vue": "2.6.11",
 		"vue-loader": "15.9.1",
