@@ -20,12 +20,12 @@
 		                 v-model="address.phone"
 		                 :rules="phoneRules" />
 
-		<Label v-if="showDeliveryInstructions">
+		<label v-if="showDeliveryInstructions">
 			<span :class="$style.deliveryInstructionsLabel">Delivery Instructions</span>
 			<textarea v-model="address.deliveryInstructions"
 			          rows="4"
 			          placeholder="i.e. gate code or if it should be left at your door, etc." />
-		</Label>
+		</label>
 	</validated-form>
 </template>
 
