@@ -10,6 +10,7 @@ const groups = [{
 	groupName: 'Components / Basic',
 	stories: [
 		'Accordion',
+		'AddressFormatter',
 		'Breadcrumbs',
 		'ButtonBar',
 		'Buttons',
