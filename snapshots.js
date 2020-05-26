@@ -29,6 +29,7 @@ const groups = [{
 		'RadioButton',
 		'ValidatedForm',
 		'ValidatedInput',
+		'ValidatedPaymentMethod',
 		'ValidatedSelect',
 	],
 }, {
