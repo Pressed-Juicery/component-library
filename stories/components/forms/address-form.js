@@ -30,7 +30,6 @@ export function NewAddress() {
 					<div v-if="address.region">Region: {{ address.region }}</div>
 					<div v-if="address.postal">Postal: {{ address.postal }}</div>
 					<div v-if="address.phone">Phone: {{ address.phone }}</div>
-					<div v-if="address.title">Title: {{ address.title }}</div>
 				</div>
 			</div>
 		`,
@@ -57,7 +56,6 @@ export function EditAddress() {
 				<div v-if="address.region">Region: {{ address.region }}</div>
 				<div v-if="address.postal">Postal: {{ address.postal }}</div>
 				<div v-if="address.phone">Phone: {{ address.phone }}</div>
-				<div v-if="address.title">Title: {{ address.title }}</div>
 			</div>
 		`,
 
@@ -72,7 +70,6 @@ export function EditAddress() {
 					region: 'MA',
 					postal: '93742',
 					phone: '559-242-4242',
-					title: 'Work',
 				},
 			};
 		},
@@ -127,7 +124,6 @@ export function EditDeliveryInstructions() {
 					region: 'MA',
 					postal: '93742',
 					phone: '559-242-4242',
-					title: 'Work',
 					deliveryInstructions: 'Please leave the package in front of the door.',
 				},
 			};
