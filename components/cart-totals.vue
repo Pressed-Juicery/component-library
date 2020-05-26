@@ -28,7 +28,11 @@
 		</div>
 
 		<div :class="[$style.row, $style.rowGroup]">
-			<div>Shipping/Delivery</div>
+			<div v-if="cart.fulfillmentSelection && cart.fulfillmentSelection.method">
+				{{ cart.fulfillmentSelection.method }}
+			</div>
+			<div v-else>Shipping/Delivery</div>
+
 			<div v-if="cart.shippingPrice">{{ formatCurrency(cart.shippingPrice) }}</div>
 			<div v-else-if="cart.shippingPrice === 0" :class="$style.shippingInfo">Free</div>
 			<div v-else-if="!cart.isShippingAvailable" :class="$style.dashes">- - -</div>
