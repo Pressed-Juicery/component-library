@@ -1,8 +1,8 @@
 import AddressForm from '../../../components/address-form';
 
 export default {
+	title: 'Components / Forms / AddressForm',
 	component: AddressForm,
-	title: 'AddressForm',
 };
 
 export function Overview() {
