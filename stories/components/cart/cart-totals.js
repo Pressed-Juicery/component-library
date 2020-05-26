@@ -100,3 +100,66 @@ export function Discounts() {
 		},
 	};
 }
+
+export function Pickup() {
+	return {
+		components: { CartTotals },
+		template: '<cart-totals :cart="cart" />',
+
+		data() {
+			return {
+				cart: {
+					subtotal: 100,
+					total: 100,
+					isShippingAvailable: true,
+					fulfillmentSelection: {
+						method: 'Pickup',
+						price: 0,
+					},
+				},
+			};
+		},
+	};
+}
+
+export function LocalDelivery() {
+	return {
+		components: { CartTotals },
+		template: '<cart-totals :cart="cart" />',
+
+		data() {
+			return {
+				cart: {
+					subtotal: 100,
+					total: 110,
+					isShippingAvailable: true,
+					fulfillmentSelection: {
+						method: 'Local Delivery',
+						price: 10,
+					},
+				},
+			};
+		},
+	};
+}
+
+export function NationwideShipping() {
+	return {
+		components: { CartTotals },
+		template: '<cart-totals :cart="cart" />',
+
+		data() {
+			return {
+				cart: {
+					subtotal: 100,
+					total: 115,
+					isShippingAvailable: true,
+					fulfillmentSelection: {
+						method: 'Nationwide Shipping',
+						price: 15,
+					},
+				},
+			};
+		},
+	};
+}
