@@ -14,6 +14,10 @@ export function isEmail(value) {
 	return isEmpty(value) || /^\S+@\S+\.\S+$/.test(value);
 }
 
+export function isTrue(value) {
+	return Boolean(value);
+}
+
 export function isValidPhoneNumber(value) {
 	return isEmpty(value) || /^\D*(\d\D*){10}$/.test(value);
 }
