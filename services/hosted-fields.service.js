@@ -26,16 +26,12 @@ class HostedFields {
 }
 
 function create(authorization, fields, styles) {
-	return braintree.client.create({ authorization })
-		.then(client => {
-			const options = {
-				authorization,
-				client,
-				fields,
-				styles,
-			};
+	const options = {
+		authorization,
+		fields,
+		styles,
+	};
 
-			return braintree.hostedFields.create(options);
-		})
+	return braintree.hostedFields.create(options)
 		.then(hostedFields => new HostedFields(hostedFields));
 }
