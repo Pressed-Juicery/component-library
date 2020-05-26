@@ -1,3 +1,5 @@
+<!-- eslint-disable max-lines -->
+
 <template>
 	<div>
 		<div :class="$style.row">
