@@ -65,7 +65,11 @@
 <script>
 import { hostedFieldsService } from '../services/hosted-fields.service';
 
+import ValidatedCheckbox from './validated-checkbox';
+
 export default {
+	components: { ValidatedCheckbox },
+
 	props: {
 		braintreeTokenizationKey: {
 			type: String,
