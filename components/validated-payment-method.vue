@@ -152,7 +152,7 @@ export default {
 
 			return promise
 				.then(nonce => {
-					this.$emit('change', nonce);
+					this.$emit('change', { nonce, shouldSavePaymentMethod: this.shouldSavePaymentMethod });
 				})
 				.catch(error => {
 					Object.keys(this.fields).forEach(field => {
