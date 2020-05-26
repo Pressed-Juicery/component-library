@@ -5,7 +5,7 @@ const braintreeTokenizationKey = process.env.BRAINTREE_TOKENIZATION_KEY;
 
 export default {
 	title: 'Components / Forms / ValidatedPaymentMethod',
-	components: 'ValidatedPaymentMethod',
+	component: ValidatedPaymentMethod,
 };
 
 export function Overview() {
