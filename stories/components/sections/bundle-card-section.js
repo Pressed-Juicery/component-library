@@ -1,5 +1,5 @@
-import BundleCardSection from '../components/bundle-card-section';
-import { bundleCardSectionData } from '../demo-data/bundle-card-section.data';
+import BundleCardSection from '../../../components/bundle-card-section';
+import { bundleCardSectionData } from '../../../demo-data/bundle-card-section.data';
 
 export default {
 	title: 'Sections / BundleCardSection',

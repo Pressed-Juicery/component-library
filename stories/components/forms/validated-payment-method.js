@@ -1,6 +1,6 @@
-import ValidatedForm from '../components/validated-form';
-import ValidatedPaymentMethod from '../components/validated-payment-method';
-import { config } from '../constants/config';
+import ValidatedForm from '../../../components/validated-form';
+import ValidatedPaymentMethod from '../../../components/validated-payment-method';
+import { config } from '../../../config';
 
 export default {
 	title: 'Components / Forms / ValidatedPaymentMethod',
