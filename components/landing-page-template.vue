@@ -1,8 +1,12 @@
 <template>
 	<div>
 		<image-banner v-bind="config.imageBannerSection" />
-		<highlight-section :config="config.highlightSection"/>
-		<bundle-card-section :class="$style.bundleCardSection" :config="config.bundleCardSection"/>
+		<highlight-section :config="config.highlightSection" />
+		<bundle-card-section
+			:class="$style.bundleCardSection"
+			:config="config.bundleCardSection"
+			@cta-click="(product) => $emit('bundle-card-cta-click', product)"
+		/>
 	</div>
 </template>
 
