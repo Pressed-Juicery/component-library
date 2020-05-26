@@ -1,12 +1,12 @@
 <template>
-	<div>
+	<div :class="$style.root">
 		<div v-if="address.name" :class="$style.name">{{ address.name }}</div>
 
-		<div :class="$style.text">{{ address.streetAddress }}</div>
-		<div :class="$style.text" v-if="address.extendedAddress">{{ address.extendedAddress }}</div>
-		<div :class="$style.text">{{ address.locality }}, {{ address.region }} {{ address.postal }}</div>
+		<div>{{ address.streetAddress }}</div>
+		<div v-if="address.extendedAddress">{{ address.extendedAddress }}</div>
+		<div>{{ address.locality }}, {{ address.region }} {{ address.postal }}</div>
 
-		<div :class="$style.text" v-if="address.phone">{{ phone }}</div>
+		<div v-if="address.phone">{{ phone }}</div>
 	</div>
 </template>
 
@@ -30,14 +30,13 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.name {
-		@include text-bold();
-
-		margin-bottom: $spacing-02;
-	}
-
-	.text {
+	.root {
 		@include text-body-small();
 		@include text-bold();
+	}
+
+	.name {
+		@include text-body();
+		margin-bottom: $spacing-02;
 	}
 </style>
