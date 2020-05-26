@@ -47,7 +47,7 @@
 		</div>
 
 		<div v-if="cannotLoadForm" :class="$style.error">
-			<p>We are currently unable to complete your membership. Please try again at a later time.</p>
+			<p>We are currently unable to process your credit card. Please try again at a later time.</p>
 			<p>If you have any questions or concerns, please contact customer service at
 				<a href="tel:+1-888-445-8423">888.44.JUICE (888.445.8423)</a>
 			</p>
