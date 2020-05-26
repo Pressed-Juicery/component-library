@@ -4,7 +4,7 @@ import ValidatedPaymentMethod from '../components/validated-payment-method';
 const braintreeTokenizationKey = process.env.BRAINTREE_TOKENIZATION_KEY;
 
 export default {
-	title: 'ValidatedPaymentMethod',
+	title: 'Components / Forms / ValidatedPaymentMethod',
 	components: 'ValidatedPaymentMethod',
 };
 
