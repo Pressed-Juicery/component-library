@@ -33,8 +33,8 @@
 			</div>
 			<div v-else>Shipping/Delivery</div>
 
-			<div v-if="cart.shippingPrice">{{ formatCurrency(cart.shippingPrice) }}</div>
-			<div v-else-if="cart.shippingPrice === 0" :class="$style.shippingInfo">Free</div>
+			<div v-if="shippingPrice">{{ formatCurrency(shippingPrice) }}</div>
+			<div v-else-if="shippingPrice === 0" :class="$style.shippingInfo">Free</div>
 			<div v-else-if="!cart.isShippingAvailable" :class="$style.dashes">- - -</div>
 			<div v-else :class="$style.shippingInfo">calculated at next step</div>
 		</div>
@@ -73,6 +73,12 @@ export default {
 
 		toggle() {
 			this.isOpen = !this.isOpen;
+		},
+	},
+
+	computed: {
+		shippingPrice() {
+			return this.cart.fulfillmentSelection && this.cart.fulfillmentSelection.price;
 		},
 	},
 };

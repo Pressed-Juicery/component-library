@@ -32,8 +32,10 @@ export function ShippingDeliveryPrice() {
 				cart: {
 					subtotal: 100,
 					total: 150.5,
-					shippingPrice: 40,
 					isShippingAvailable: true,
+					fulfillmentSelection: {
+						price: 40,
+					},
 				},
 			};
 		},
@@ -50,8 +52,10 @@ export function FreeShipping() {
 				cart: {
 					subtotal: 100,
 					total: 150.5,
-					shippingPrice: 0.0,
 					isShippingAvailable: true,
+					fulfillmentSelection: {
+						price: 0,
+					},
 				},
 			};
 		},
