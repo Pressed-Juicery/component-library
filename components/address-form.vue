@@ -1,5 +1,5 @@
 <template>
-	<validated-form :id="formId" @submit="$emit('submit', address)">
+	<validated-form :id="id" @submit="$emit('submit', address)">
 		<div :class="$style.grid">
 			<validated-input label="First Name" v-model="address.firstName" :rules="firstNameRules" />
 			<validated-input label="Last Name" v-model="address.lastName" :rules="lastNameRules" />
@@ -48,7 +48,7 @@ export default {
 	components: { ValidatedForm, ValidatedInput, ValidatedSelect },
 
 	props: {
-		formId: String,
+		id: String,
 		address: {
 			type: Object,
 			default() { return {} },

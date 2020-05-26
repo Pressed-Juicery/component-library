@@ -18,7 +18,7 @@ export function NewAddress() {
 
 		template: `
 			<div>
-				<address-form :formId="formName" @submit="newAddress => address = newAddress" />
+				<address-form :id="formName" @submit="newAddress => address = newAddress" />
 				<button type="submit" :form="formName">Save</button>
 
 				<div v-if="address">
@@ -46,7 +46,7 @@ export function EditAddress() {
 
 		template: `
 			<div>
-				<address-form :formId="formName" :address="address" />
+				<address-form :id="formName" :address="address" />
 				<button type="submit" :form="formName">Save</button>
 
 				<div v-if="address.firstName">First Name: {{ address.firstName }}</div>
@@ -85,7 +85,7 @@ export function DeliveryInstructions() {
 
 		template: `
 			<div>
-				<address-form :formId="formName"
+				<address-form :id="formName"
 				              :showDeliveryInstructions="true"
 				              @submit="newAddress => address = newAddress" />
 				<button type="submit" :form="formName">Save</button>
@@ -107,7 +107,7 @@ export function EditDeliveryInstructions() {
 
 		template: `
 			<div>
-				<address-form :formId="formName"
+				<address-form :id="formName"
 				              :address="address"
 				              :showDeliveryInstructions="true" />
 				<button type="submit" :form="formName">Save</button>
