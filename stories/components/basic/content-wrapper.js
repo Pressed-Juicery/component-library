@@ -1,4 +1,4 @@
-import ContentWrapper from '../components/content-wrapper';
+import ContentWrapper from '../../../components/content-wrapper';
 
 export default {
 	title: 'Components / Basic / ContentWrapper',
