@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div v-if="address.name" :class="$style.title">{{ address.name }}</div>
+		<div v-if="address.name" :class="$style.name">{{ address.name }}</div>
 
 		<div :class="$style.text">{{ address.streetAddress }}</div>
 		<div :class="$style.text" v-if="address.extendedAddress">{{ address.extendedAddress }}</div>
@@ -30,7 +30,7 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.title {
+	.name {
 		@include text-bold();
 
 		margin-bottom: $spacing-02;
