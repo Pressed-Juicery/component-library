@@ -1,45 +1,45 @@
 <template>
 	<div class="validated-payment-method">
-		<div class="validated-payment-method__row">
-			<label class="validated-payment-method__label" for="payment-method-number">Credit Card</label>
-			<div id="payment-method-number" class="validated-payment-method__input"></div>
+		<div class="row">
+			<label class="label" for="payment-method-number">Credit Card</label>
+			<div id="payment-method-number" class="input"></div>
 
 			<label v-if="fields.number.isTouched && !fields.number.isValid"
-			       class="validated-payment-method__error"
+			       class="error"
 			       for="payment-method-number">
 				Please enter a valid credit card number.
 			</label>
 		</div>
 
-		<div class="validated-payment-method__row validated-payment-method__grid">
+		<div class="row grid">
 			<div>
-				<label class="validated-payment-method__label" for="expiration-date">Expiration Date</label>
-				<div id="expiration-date" class="validated-payment-method__input"></div>
+				<label class="label" for="expiration-date">Expiration Date</label>
+				<div id="expiration-date" class="input"></div>
 
 				<label for="expiration-date"
 				       v-if="fields.expirationDate.isTouched && !fields.expirationDate.isValid"
-				       class="validated-payment-method__error">
+				       class="error">
 					Please enter a valid expiration date (MM/YY).
 				</label>
 			</div>
 
 			<div>
-				<label class="validated-payment-method__label" for="cvv">Security Code</label>
-				<div id="cvv" class="validated-payment-method__input"></div>
+				<label class="label" for="cvv">Security Code</label>
+				<div id="cvv" class="input"></div>
 
 				<label v-if="fields.cvv.isTouched && !fields.cvv.isValid"
-				       class="validated-payment-method__error"
+				       class="error"
 				       for="cvv">
 					Please enter a valid CVV.
 				</label>
 			</div>
 
 			<div>
-				<label class="validated-payment-method__label"  for="postal-code">ZIP Code</label>
-				<div id="postal-code" class="validated-payment-method__input"></div>
+				<label class="label"  for="postal-code">ZIP Code</label>
+				<div id="postal-code" class="input"></div>
 
 				<label v-if="fields.postalCode.isTouched && !fields.postalCode.isValid"
-				       class="validated-payment-method__error"
+				       class="error"
 				       for="postal-code" >
 					Please enter a valid 5-digit ZIP code.
 				</label>
@@ -155,15 +155,15 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.validated-payment-method__row {
+	.row {
 		margin-bottom: $spacing-06;
 	}
 
-	.validated-payment-method__input {
+	.input {
 		margin: 0;
 		width: 100%;
 		height: $spacing-08;
@@ -172,22 +172,22 @@ export default {
 		border-radius: $border-radius;
 	}
 
-	.validated-payment-method__grid {
+	.grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: $spacing-05;
 	}
 
-	.validated-payment-method__label {
+	.label {
 		@include text-bolder();
 	}
 
-	.validated-payment-method__error {
+	.error {
 		@include text-error();
 	}
 
 	@media (max-width: $max-width-small) {
-		.validated-payment-method__grid {
+		.grid {
 			grid-template-columns: 1fr;
 		}
 	}
