@@ -23,6 +23,7 @@ export { default as RadioButton } from './radio-button';
 export { default as RadioButtonCard } from './radio-button-card';
 export { default as StoreAddress } from './store-address';
 export { default as StoreRadioButtonCard } from './store-radio-button-card';
+export { default as ValidatedCheckbox } from './validated-checkbox';
 export { default as ValidatedForm } from './validated-form';
 export { default as ValidatedInput } from './validated-input';
 export { default as ValidatedSelect } from './validated-select';
