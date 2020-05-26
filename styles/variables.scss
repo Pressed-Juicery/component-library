@@ -3,6 +3,7 @@
 
 $white: #fff;
 $beige: #f6f4ec;
+$beige-dark: #d4d2ca;
 
 $gray-10: #f4f4f4;
 $gray-20: #e0e0e0;
@@ -73,29 +74,28 @@ $color_info-border: $blue-20;
 // Spacing
 // -------
 
-$spacing-01: 0.2rem;
-$spacing-02: 0.4rem;
-$spacing-03: 0.8rem;
-$spacing-04: 1.2rem;
-$spacing-05: 1.6rem;
-$spacing-06: 2.4rem;
-$spacing-07: 3.2rem;
-$spacing-08: 4.0rem;
-$spacing-09: 4.8rem;
-$spacing-10: 6.4rem;
-$spacing-11: 9.6rem;
-$spacing-12: 16.0rem;
+$rem: 10px;
+
+$spacing-01: 0.2 * $rem;
+$spacing-02: 0.4 * $rem;
+$spacing-03: 0.8 * $rem;
+$spacing-04: 1.2 * $rem;
+$spacing-05: 1.6 * $rem;
+$spacing-06: 2.4 * $rem;
+$spacing-07: 3.2 * $rem;
+$spacing-08: 4.0 * $rem;
+$spacing-09: 4.8 * $rem;
+$spacing-10: 6.4 * $rem;
+$spacing-11: 9.6 * $rem;
+$spacing-12: 12.0 * $rem;
 
 
 // Screen sizes
 // ------------
 
-$max-width-laptop-large: 1440px;
-$max-width-laptop: 1100px;
-$max-width-tablet-large: 1024px;
-$max-width-tablet: 768px;
-$max-width-phone-large: 480px;
-$max-width-phone: 370px;
+$max-width-extra-small: 568px;
+$max-width-small: 768px;
+$max-width-medium: 1152px;
 
 
 // Borders
@@ -105,3 +105,5 @@ $border-width: 1px;
 $border-radius: 4px;
 $border-color: $gray-40;
 $border-color-light: $gray-20;
+$border: $border-width solid $border-color;
+$border-light: $border-width solid $border-color-light;

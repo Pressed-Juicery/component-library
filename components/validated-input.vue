@@ -1,10 +1,10 @@
 <template>
-	<div class="validated-input">
-		<label v-if="label" class="validated-input__label" :for="id" >{{ label }}</label>
+	<div :class="$style.root">
+		<label v-if="label" :class="$style.label" :for="id" >{{ label }}</label>
 		<label v-if="labelHelper" :for="id">{{ labelHelper }}</label>
 		<input :id="id" v-bind="$attrs" v-model="model" @blur="validate()">
 
-		<label v-if="error" class="validated-input__error" :for="id">{{ error }}</label>
+		<label v-if="error" :class="$style.error" :for="id">{{ error }}</label>
 	</div>
 </template>
 
@@ -65,19 +65,19 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.validated-input {
+	.root {
 		margin-bottom: $spacing-06;
 	}
 
-	.validated-input__label {
+	.label {
 		@include text-bolder();
 	}
 
-	.validated-input__error {
+	.error {
 		@include text-error();
 	}
 </style>

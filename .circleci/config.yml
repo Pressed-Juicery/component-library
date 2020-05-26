@@ -20,3 +20,18 @@ jobs:
       - run:
           name: Run lint
           command: npm run lint
+      - run:
+          name: Compile and serve Storybook
+          command: npm start
+          background: true
+      - run:
+          name: Wait until server is live
+          command: |
+                  wget --retry-connrefused --waitretry=1 --timeout=10 --tries 60 --spider http://localhost:6006
+                  :
+      - run:
+          name: Take screenshots
+          command: npm run snapshots
+      - run:
+          name: Kill Storybook
+          command: pkill -f storybook

@@ -1,7 +1,7 @@
 <template>
-	<div class="feature-highlight">
-		<img :src="icon" />
-		<div class="feature-highlight__title">{{ title }}</div>
+	<div>
+		<img :class="$style.icon" :src="icon" />
+		<div :class="$style.title">{{ title }}</div>
 		<div v-html="description" />
 	</div>
 </template>
@@ -16,11 +16,15 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import '../styles/variables';
 @import '../styles/mixins';
 
-.feature-highlight__title {
+.icon {
+	height: $spacing-08;
+}
+
+.title {
 	@include text-heading-5;
 	margin: $spacing-05 0 $spacing-02;
 }
