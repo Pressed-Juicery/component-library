@@ -22,14 +22,14 @@ export function NewAddress() {
 				<button type="submit" :form="formName">Save</button>
 
 				<div v-if="address">
-					<div v-if="address.firstName">First Name: {{ address.firstName }}</div>
-					<div v-if="address.lastName">Last Name: {{ address.lastName }}</div>
-					<div v-if="address.streetAddress">Street Address: {{ address.streetAddress }}</div>
-					<div v-if="address.extendedAddress">Extended Address: {{ address.extendedAddress }}</div>
-					<div v-if="address.locality">Locality: {{ address.locality }}</div>
-					<div v-if="address.region">Region: {{ address.region }}</div>
-					<div v-if="address.postal">Postal: {{ address.postal }}</div>
-					<div v-if="address.phone">Phone: {{ address.phone }}</div>
+					<div>First Name: {{ address.firstName }}</div>
+					<div>Last Name: {{ address.lastName }}</div>
+					<div>Street Address: {{ address.streetAddress }}</div>
+					<div>Extended Address: {{ address.extendedAddress }}</div>
+					<div>Locality: {{ address.locality }}</div>
+					<div>Region: {{ address.region }}</div>
+					<div>Postal: {{ address.postal }}</div>
+					<div>Phone: {{ address.phone }}</div>
 				</div>
 			</div>
 		`,
@@ -48,14 +48,14 @@ export function EditAddress() {
 				<address-form :id="formName" :address="address" />
 				<button type="submit" :form="formName">Save</button>
 
-				<div v-if="address.firstName">First Name: {{ address.firstName }}</div>
-				<div v-if="address.lastName">Last Name: {{ address.lastName }}</div>
-				<div v-if="address.streetAddress">Street Address: {{ address.streetAddress }}</div>
-				<div v-if="address.extendedAddress">Extended Address: {{ address.extendedAddress }}</div>
-				<div v-if="address.locality">Locality: {{ address.locality }}</div>
-				<div v-if="address.region">Region: {{ address.region }}</div>
-				<div v-if="address.postal">Postal: {{ address.postal }}</div>
-				<div v-if="address.phone">Phone: {{ address.phone }}</div>
+				<div>First Name: {{ address.firstName }}</div>
+				<div>Last Name: {{ address.lastName }}</div>
+				<div>Street Address: {{ address.streetAddress }}</div>
+				<div>Extended Address: {{ address.extendedAddress }}</div>
+				<div>Locality: {{ address.locality }}</div>
+				<div>Region: {{ address.region }}</div>
+				<div>Postal: {{ address.postal }}</div>
+				<div>Phone: {{ address.phone }}</div>
 			</div>
 		`,
 
@@ -109,7 +109,7 @@ export function EditDeliveryInstructions() {
 				              :showDeliveryInstructions="true" />
 				<button type="submit" :form="formName">Save</button>
 
-				<div v-if="address.deliveryInstructions">Delivery Instructions: {{ address.deliveryInstructions }}</div>
+				<div>Delivery Instructions: {{ address.deliveryInstructions }}</div>
 			</div>
 		`,
 
