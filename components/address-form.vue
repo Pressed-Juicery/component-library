@@ -20,12 +20,14 @@
 		                 v-model="address.phone"
 		                 :rules="phoneRules" />
 
-		<label v-if="showDeliveryInstructions">
-			<span :class="$style.deliveryInstructionsLabel">Delivery Instructions</span>
-			<textarea v-model="address.deliveryInstructions"
-			          rows="4"
-			          placeholder="i.e. gate code or if it should be left at your door, etc." />
-		</label>
+		<div v-if="showDeliveryInstructions" :class="$style.deliveryInstructions">
+			<label v-if="showDeliveryInstructions">
+				<span :class="$style.deliveryInstructionsLabel">Delivery Instructions</span>
+				<textarea v-model="address.deliveryInstructions"
+						  rows="4"
+						  placeholder="i.e. gate code or if it should be left at your door, etc." />
+			</label>
+		</div>
 	</validated-form>
 </template>
 
@@ -112,6 +114,10 @@ export default {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: $spacing-05;
+	}
+
+	.deliveryInstructions {
+		margin-bottom: $spacing-06;
 	}
 
 	.deliveryInstructionsLabel {
