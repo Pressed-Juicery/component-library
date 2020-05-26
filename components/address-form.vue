@@ -21,12 +21,13 @@
 		                 :rules="phoneRules" />
 
 		<div v-if="showDeliveryInstructions" :class="$style.deliveryInstructions">
-			<label v-if="showDeliveryInstructions">
-				<span :class="$style.deliveryInstructionsLabel">Delivery Instructions</span>
-				<textarea v-model="address.deliveryInstructions"
-						  rows="4"
-						  placeholder="i.e. gate code or if it should be left at your door, etc." />
-			</label>
+			<label :class="$style.deliveryInstructionsLabel" :for="textareaId">Delivery Instructions</label>
+			<textarea
+				:id="textareaId"
+				v-model="address.deliveryInstructions"
+				rows="4"
+				placeholder="i.e. gate code or if it should be left at your door, etc."
+			/>
 		</div>
 	</validated-form>
 </template>
@@ -39,6 +40,7 @@ import ValidatedInput from './validated-input';
 import ValidatedSelect from './validated-select';
 
 import { regions } from '../constants/regions';
+import { getRandom } from '../utilities/get-random';
 
 export default {
 	components: { ValidatedForm, ValidatedInput, ValidatedSelect },
@@ -56,6 +58,7 @@ export default {
 	data() {
 		return {
 			regions,
+			textareaId: getRandom(),
 
 			firstNameRules: [{
 				validator: isNotEmpty,
