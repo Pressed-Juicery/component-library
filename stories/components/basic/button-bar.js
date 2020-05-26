@@ -1,4 +1,4 @@
-import ButtonBar from '../components/button-bar';
+import ButtonBar from '../../components/basic/button-bar';
 
 export default {
 	title: 'Components / Basic / ButtonBar',
