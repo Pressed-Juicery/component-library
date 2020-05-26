@@ -1,6 +1,8 @@
 import ValidatedForm from '../components/validated-form';
 import ValidatedPaymentMethod from '../components/validated-payment-method';
 
+const braintreeTokenizationKey = process.env.BRAINTREE_TOKENIZATION_KEY;
+
 export default {
 	title: 'ValidatedPaymentMethod',
 	components: 'ValidatedPaymentMethod',
@@ -11,7 +13,7 @@ export function Overview() {
 		components: { ValidatedPaymentMethod },
 		template: '<validated-payment-method :braintree-tokenization-key="braintreeTokenizationKey" />',
 
-		data() { return { braintreeTokenizationKey: 'sandbox_x6kjt36z_3cr8bsrh82p5jrcp' } },
+		data() { return { braintreeTokenizationKey } },
 	};
 }
 
@@ -31,6 +33,6 @@ export function InValidatedForm() {
 			</validated-form>
 		`,
 
-		data() { return { braintreeTokenizationKey: 'sandbox_x6kjt36z_3cr8bsrh82p5jrcp', result: null } },
+		data() { return { braintreeTokenizationKey, result: null } },
 	};
 }
