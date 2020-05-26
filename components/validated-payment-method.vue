@@ -46,6 +46,13 @@
 			</div>
 		</div>
 
+		<div :class="$style.savePaymentMethodCheckbox">
+			<validated-checkbox :id="checkboxId"
+			                    :value="address.shouldSavePaymentMethod"
+			                    v-model="address.shouldSavePaymentMethod" />
+			<label :for="checkboxId" :class="$style.checkboxLabel">Save Payment Method for Future Orders</label>
+		</div>
+
 		<div v-if="cannotLoadForm" :class="$style.error">
 			<p>We are currently unable to process your credit card. Please try again at a later time.</p>
 			<p>If you have any questions or concerns, please contact customer service at
@@ -184,6 +191,18 @@ export default {
 
 	.error {
 		@include text-error();
+	}
+
+	.saveAddressCheckbox {
+		display: flex;
+		align-items: center;
+	}
+
+	.checkboxLabel {
+		@include text-body-small();
+		@include text-bold();
+
+		margin-left: $spacing-03;
 	}
 
 	@media (max-width: $max-width-small) {
