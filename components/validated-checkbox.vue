@@ -110,7 +110,7 @@ export default {
 		left: 0;
 		height: $spacing-06;
 		width: $spacing-06;
-		border: $border;
+		border: $border-light;
 		border-radius: $border-radius;
 		cursor: pointer;
 	}
