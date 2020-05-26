@@ -22,6 +22,11 @@
 			:rules="phoneRules"
 		/>
 
+		<div :class="$style.saveAddressCheckbox">
+			<validated-checkbox :id="checkboxId" :value="address.shouldSaveAddress" v-model="address.shouldSaveAddress" />
+			<label :for="checkboxId" :class="$style.checkboxLabel">Save Address for Future Orders</label>
+		</div>
+
 		<div v-if="showDeliveryInstructions" :class="$style.deliveryInstructions">
 			<label :class="$style.deliveryInstructionsLabel" :for="textareaId">Delivery Instructions</label>
 			<textarea
@@ -37,6 +42,7 @@
 <script>
 import { hasExactLength, isNotEmpty, isNumber, isValidPhoneNumber } from '../utilities/validators';
 
+import ValidatedCheckbox from './validated-checkbox';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
 import ValidatedSelect from './validated-select';
@@ -45,7 +51,7 @@ import { getRandom } from '../utilities/get-random';
 import { regions } from '../constants/regions';
 
 export default {
-	components: { ValidatedForm, ValidatedInput, ValidatedSelect },
+	components: { ValidatedCheckbox, ValidatedForm, ValidatedInput, ValidatedSelect },
 
 	props: {
 		id: String,
@@ -60,6 +66,7 @@ export default {
 	data() {
 		return {
 			regions,
+			checkboxId: getRandom(),
 			textareaId: getRandom(),
 
 			firstNameRules: [{
@@ -115,6 +122,18 @@ export default {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: $spacing-05;
+	}
+
+	.saveAddressCheckbox {
+		display: flex;
+		align-items: center;
+	}
+
+	.checkboxLabel {
+		@include text-body-small();
+		@include text-bold();
+
+		margin-left: $spacing-03;
 	}
 
 	.deliveryInstructions {
