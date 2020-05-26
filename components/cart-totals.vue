@@ -50,7 +50,10 @@ export default {
 	components: { UpCaretIcon },
 
 	props: {
-		cart: Object,
+		cart: {
+			type: Object,
+			required: true,
+		},
 	},
 
 	data() {
