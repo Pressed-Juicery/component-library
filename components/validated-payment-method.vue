@@ -48,8 +48,8 @@
 
 		<div :class="$style.savePaymentMethodCheckbox">
 			<validated-checkbox :id="checkboxId"
-			                    :value="address.shouldSavePaymentMethod"
-			                    v-model="address.shouldSavePaymentMethod" />
+			                    :value="shouldSavePaymentMethod"
+			                    v-model="shouldSavePaymentMethod" />
 			<label :for="checkboxId" :class="$style.checkboxLabel">Save Payment Method for Future Orders</label>
 		</div>
 
