@@ -52,7 +52,7 @@
 			<validated-checkbox :id="checkboxId"
 			                    :value="shouldSavePaymentMethod"
 			                    v-model="shouldSavePaymentMethod" />
-			<label :for="checkboxId" :class="$style.checkboxLabel">Save Payment Method for Future Orders</label>
+			<label :for="checkboxId" :class="$style.checkboxLabel">Save payment method for future orders</label>
 		</div>
 
 		<div v-if="cannotLoadForm" :class="$style.error">
