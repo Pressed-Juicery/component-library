@@ -48,7 +48,7 @@
 			</div>
 		</div>
 
-		<div :class="$style.savePaymentMethodCheckbox">
+		<div v-if="showSaveCheckbox" :class="$style.savePaymentMethodCheckbox">
 			<validated-checkbox :id="checkboxId"
 			                    :value="shouldSavePaymentMethod"
 			                    v-model="shouldSavePaymentMethod" />
@@ -73,6 +73,7 @@ export default {
 	components: { ValidatedCheckbox },
 
 	props: {
+		showSaveCheckbox: Boolean,
 		braintreeTokenizationKey: {
 			type: String,
 			required: true,
