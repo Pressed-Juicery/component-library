@@ -8,7 +8,7 @@
 		       ref="input"
 		       @blur="validate()" />
 		<span :class="$style.overlay">
-			<checkmark-white-icon v-if="isChecked" :class="$style.icon" />
+			<check-mark-white-icon v-if="isChecked" :class="$style.icon" />
 		</span>
 
 		<span v-if="error" :class="$style.error" :for="id">{{ error }}</span>
@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import CheckmarkWhiteIcon from './icons/checkmark-white-icon';
+import CheckMarkWhiteIcon from './icons/check-mark-white-icon';
 
 import { validate } from '../utilities/validate';
 
 export default {
-	components: { CheckmarkWhiteIcon },
+	components: { CheckMarkWhiteIcon },
 
 	model: {
 		prop: 'isChecked',
