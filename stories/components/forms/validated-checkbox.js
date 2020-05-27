@@ -12,7 +12,7 @@ export function Overview() {
 		components: { ValidatedCheckbox },
 		template: `
 			<div>
-				<validated-checkbox :value="isChecked" v-model="isChecked" label="Label" />
+				<validated-checkbox v-model="isChecked" label="Label" />
 				<div>isChecked: {{ isChecked }}</div>
 			</div>
 		`,
@@ -32,7 +32,6 @@ export function Validation() {
 			<validated-form>
 				<div>
 					<validated-checkbox
-						:value="isSelected"
 						label="Checking this box is required"
 						:rules="stateRules"
 						v-model="isSelected"

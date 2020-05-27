@@ -32,7 +32,7 @@ export default {
 	components: { CheckMarkWhiteIcon },
 
 	model: {
-		prop: 'isChecked',
+		prop: 'value',
 		event: 'change',
 	},
 
