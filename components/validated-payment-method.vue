@@ -48,11 +48,12 @@
 			</div>
 		</div>
 
-		<div v-if="showSaveCheckbox" :class="$style.savePaymentMethodCheckbox">
-			<validated-checkbox :id="checkboxId"
-			                    :value="shouldSavePaymentMethod"
-			                    v-model="shouldSavePaymentMethod" />
-			<label :for="checkboxId" :class="$style.checkboxLabel">Save payment method for future orders</label>
+		<div v-if="showSaveCheckbox">
+			<validated-checkbox
+				:value="shouldSavePaymentMethod"
+				v-model="shouldSavePaymentMethod"
+				label="Save payment method for future orders"
+			/>
 		</div>
 
 		<div v-if="cannotLoadForm" :class="$style.error">
@@ -86,7 +87,6 @@ export default {
 			cannotLoadForm: false,
 			hostedFields: null,
 			shouldSavePaymentMethod: this.showSaveCheckbox,
-			checkboxId: 'should-save-payment-method',
 			fields: {
 				number: {
 					selector: '#payment-method-number',
@@ -200,18 +200,6 @@ export default {
 
 	.error {
 		@include text-error();
-	}
-
-	.savePaymentMethodCheckbox {
-		display: flex;
-		align-items: center;
-	}
-
-	.checkboxLabel {
-		@include text-body-small();
-		@include text-bold();
-
-		margin-left: $spacing-03;
 	}
 
 	@media (max-width: $max-width-small) {

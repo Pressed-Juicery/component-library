@@ -1,23 +1,31 @@
 <template>
-	<span @click="onClick()">
-		<input :class="$style.input"
-		       type="checkbox"
-		       :id="id"
-		       v-bind="$attrs"
-		       v-model="isChecked"
-		       ref="input"
-		       @blur="validate()" />
-		<span :class="$style.checkbox">
-			<check-mark-white-icon :class="$style.icon" />
-		</span>
+	<div>
+		<div :class="$style.wrapper">
+			<input
+				:class="$style.input"
+				type="checkbox"
+				:id="id"
+				v-bind="$attrs"
+				v-model="isChecked"
+				ref="input"
+				@blur="validate()"
+			/>
+
+			<span :class="$style.checkbox" @click="onClick()">
+				<check-mark-white-icon :class="$style.icon" />
+			</span>
+
+			<label :class="$style.label" :for="id">{{ label }}</label>
+		</div>
 
 		<span v-if="error" :class="$style.error" :for="id">{{ error }}</span>
-	</span>
+	</div>
 </template>
 
 <script>
 import CheckMarkWhiteIcon from './icons/check-mark-white-icon';
 
+import { getRandom } from '../utilities/get-random';
 import { validate } from '../utilities/validate';
 
 export default {
@@ -29,7 +37,10 @@ export default {
 	},
 
 	props: {
-		id: String,
+		label: {
+			type: String,
+			required: true,
+		},
 		value: {
 			type: Boolean,
 			default: false,
@@ -42,6 +53,7 @@ export default {
 
 	data() {
 		return {
+			id: getRandom(),
 			isLazy: true,
 			error: null,
 		};
@@ -92,6 +104,17 @@ export default {
 <style module lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		margin-bottom: $spacing-06;
+	}
+
+	.label {
+		@include text-bold();
+		margin-left: $spacing-03;
+	}
 
 	.input {
 		display: none;

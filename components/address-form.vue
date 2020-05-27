@@ -22,11 +22,12 @@
 			:rules="phoneRules"
 		/>
 
-		<div v-if="showSaveCheckbox" :class="$style.saveAddressCheckbox">
-			<validated-checkbox :id="checkboxId"
-			                    :value="address.shouldSaveAddress"
-			                    v-model="address.shouldSaveAddress" />
-			<label :for="checkboxId" :class="$style.checkboxLabel">Save address for future orders</label>
+		<div v-if="showSaveCheckbox">
+			<validated-checkbox
+				:value="address.shouldSaveAddress"
+				v-model="address.shouldSaveAddress"
+				label="Save address for future orders"
+			/>
 		</div>
 
 		<div v-if="showDeliveryInstructions" :class="$style.deliveryInstructions">
@@ -73,7 +74,6 @@ export default {
 	data() {
 		return {
 			regions,
-			checkboxId: getRandom(),
 			textareaId: getRandom(),
 
 			firstNameRules: [{
@@ -129,19 +129,6 @@ export default {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: $spacing-05;
-	}
-
-	.saveAddressCheckbox {
-		display: flex;
-		align-items: center;
-		margin-bottom: $spacing-06;
-	}
-
-	.checkboxLabel {
-		@include text-body-small();
-		@include text-bold();
-
-		margin-left: $spacing-03;
 	}
 
 	.deliveryInstructions {
