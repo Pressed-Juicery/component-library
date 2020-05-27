@@ -73,9 +73,7 @@ export default {
 
 	methods: {
 		onClick() {
-			if (this.id || !this.$refs.input.labels.length) {
-				this.isChecked = !this.isChecked;
-			}
+			this.isChecked = !this.isChecked;
 		},
 
 		lazilyValidate() {
