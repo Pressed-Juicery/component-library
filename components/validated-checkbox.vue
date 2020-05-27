@@ -69,7 +69,6 @@ export default {
 	watch: {
 		isChecked() { this.lazilyValidate() },
 		rules() { this.lazilyValidate() },
-		errorMessage(value) { this.error = value },
 	},
 
 	methods: {
