@@ -26,4 +26,5 @@ export { default as StoreAddress } from './store-address';
 export { default as StoreRadioButtonCard } from './store-radio-button-card';
 export { default as ValidatedForm } from './validated-form';
 export { default as ValidatedInput } from './validated-input';
+export { default as ValidatedPaymentMethod } from './validated-payment-method';
 export { default as ValidatedSelect } from './validated-select';
