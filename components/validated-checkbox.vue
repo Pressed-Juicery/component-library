@@ -18,7 +18,7 @@
 			<label :class="$style.label" :for="id">{{ label }}</label>
 		</div>
 
-		<span v-if="error" :class="$style.error">{{ error }}</span>
+		<div :class="$style.error">{{ error }}</div>
 	</div>
 </template>
 
@@ -108,7 +108,6 @@ export default {
 	.wrapper {
 		display: flex;
 		align-items: center;
-		margin-bottom: $spacing-06;
 	}
 
 	.label {
@@ -149,6 +148,7 @@ export default {
 
 	.error {
 		@include text-error();
+		margin-bottom: $spacing-06;
 	}
 </style>
 
