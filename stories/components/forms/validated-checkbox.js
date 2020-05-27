@@ -1,6 +1,6 @@
 import ValidatedCheckbox from '../../../components/validated-checkbox';
 import ValidatedForm from '../../../components/validated-form';
-import { isTrue } from '../../../utilities/validators';
+import { isTruthy } from '../../../utilities/validators';
 
 export default {
 	title: 'Components / Forms / ValidatedCheckbox',
@@ -89,7 +89,7 @@ export function Validation() {
 				checkboxId: 'checkboxWithValidation',
 				isSelected: false,
 				stateRules: [{
-					validator: isTrue,
+					validator: isTruthy,
 					message: 'Item must be selected.',
 				}],
 			};

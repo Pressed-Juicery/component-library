@@ -22,7 +22,7 @@ export function isNumber(value) {
 	return isEmpty(value) || !Number.isNaN(Number(value));
 }
 
-export function isTrue(value) {
+export function isTruthy(value) {
 	return Boolean(value);
 }
 
