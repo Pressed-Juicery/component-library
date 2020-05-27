@@ -12,8 +12,6 @@
 <script>
 import CartItemCard from './cart-item-card';
 
-import { formatCurrency } from '../utilities/formatters';
-
 export default {
 	props: {
 		cart: Object,
