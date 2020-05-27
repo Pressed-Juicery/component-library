@@ -60,7 +60,11 @@ export default {
 		showSaveCheckbox: Boolean,
 		address: {
 			type: Object,
-			default() { return {} },
+			default() {
+				return {
+					shouldSaveAddress: this.showSaveCheckbox,
+				};
+			},
 		},
 		showDeliveryInstructions: Boolean,
 	},
