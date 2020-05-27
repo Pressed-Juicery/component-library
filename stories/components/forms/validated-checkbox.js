@@ -19,7 +19,7 @@ export function Overview() {
 
 		data() {
 			return {
-				isChecked: false,
+				isChecked: true,
 			};
 		},
 	};
