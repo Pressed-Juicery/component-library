@@ -38,7 +38,7 @@ export function Validation() {
 					/>
 				</div>
 
-				<button type="submit" style="marginTop:20px;">Submit</button>
+				<button type="submit">Submit</button>
 			</validated-form>
 		`,
 
