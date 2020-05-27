@@ -18,7 +18,7 @@
 			<label :class="$style.label" :for="id">{{ label }}</label>
 		</div>
 
-		<span v-if="error" :class="$style.error" :for="id">{{ error }}</span>
+		<span v-if="error" :class="$style.error">{{ error }}</span>
 	</div>
 </template>
 
