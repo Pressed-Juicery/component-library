@@ -6,33 +6,6 @@
 		</div>
 
 		<cart-item-card v-for="(item, index) in cart.items" :key="index" :item="item" />
-
-		<div :class="$style.pricesSummary">
-			<div :class="[$style.pricesSummaryRow, $style.row]">
-				<div>Subtotal</div>
-				<div>{{ formatCurrency(cart.subtotal) }}</div>
-			</div>
-
-			<div :class="[$style.pricesSummaryRow, $style.row]">
-				<div>Shipping/Delivery</div>
-				<div v-if="cart.shippingPrice">{{ formatCurrency(cart.shippingPrice) }}</div>
-				<div v-else :class="$style.shippingInfo">calculated at next step</div>
-			</div>
-
-			<div v-if="cart.discounts && cart.discounts.length">
-				<div :class="[$style.pricesSummaryRow, $style.row]"
-				     v-for="discount in cart.discounts"
-				     :key="discount.name">
-					<div :class="$style.discountLabel">{{ discount.name }}</div>
-					<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(discount.amount)) }}</div>
-				</div>
-			</div>
-		</div>
-
-		<div :class="$style.row">
-			<div :class="$style.totalLabel">Estimated Total</div>
-			<div :class="$style.total">{{ formatCurrency(cart.total) }}</div>
-		</div>
 	</div>
 </template>
 
@@ -47,12 +20,6 @@ export default {
 	},
 
 	components: { CartItemCard },
-
-	methods: {
-		formatCurrency(amount) {
-			return formatCurrency(amount);
-		},
-	},
 };
 </script>
 
@@ -76,31 +43,5 @@ export default {
 
 	.itemCount {
 		@include text-bold();
-	}
-
-	.pricesSummary {
-		border-width: 1px 0;
-		border-style: solid;
-		border-color: $border-color-light;
-		padding: $spacing-05 0;
-		margin: $spacing-06 0;
-	}
-
-	.pricesSummaryRow {
-		line-height: $spacing-06;
-	}
-
-	.shippingInfo {
-		@include text-body-small();
-	}
-
-	.discountLabel,
-	.discountAmount,
-	.totalLabel {
-		@include text-bolder();
-	}
-
-	.total {
-		@include text-heading-5();
 	}
 </style>
