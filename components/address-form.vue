@@ -26,7 +26,7 @@
 			<validated-checkbox :id="checkboxId"
 			                    :value="address.shouldSaveAddress"
 			                    v-model="address.shouldSaveAddress" />
-			<label :for="checkboxId" :class="$style.checkboxLabel">Save Address for Future Orders</label>
+			<label :for="checkboxId" :class="$style.checkboxLabel">Save address for future orders</label>
 		</div>
 
 		<div v-if="showDeliveryInstructions" :class="$style.deliveryInstructions">
