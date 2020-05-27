@@ -11,7 +11,7 @@
 				@blur="validate()"
 			/>
 
-			<span :class="$style.checkbox" @click="onClick()">
+			<span :class="[$style.checkbox, { [$style.isChecked]: isChecked }]" @click="onClick()">
 				<check-mark-white-icon :class="$style.icon" />
 			</span>
 
@@ -133,7 +133,7 @@ export default {
 		display: none;
 	}
 
-	.input:checked + .checkbox {
+	.isChecked {
 		border-color: $color-primary;
 		background-color: $color-primary;
 
