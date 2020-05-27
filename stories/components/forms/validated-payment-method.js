@@ -10,7 +10,12 @@ export default {
 export function Overview() {
 	return {
 		components: { ValidatedPaymentMethod },
-		template: '<validated-payment-method :braintree-tokenization-key="braintreeTokenizationKey" />',
+		template: `
+			<validated-payment-method
+				:braintree-tokenization-key="braintreeTokenizationKey"
+				:show-save-checkbox="true"
+			/>
+		`,
 
 		data() { return { braintreeTokenizationKey: config.braintreeTokenizationKey } },
 	};
@@ -23,6 +28,7 @@ export function InValidatedForm() {
 			<validated-form>
 				<validated-payment-method
 					:braintree-tokenization-key="braintreeTokenizationKey"
+					:show-save-checkbox="true"
 					@change="nonce => result = nonce"
 				/>
 

@@ -1,3 +1,5 @@
+<!-- eslint-disable max-lines -->
+
 <template>
 	<div>
 		<div :class="$style.row">
@@ -46,6 +48,14 @@
 			</div>
 		</div>
 
+		<div v-if="showSaveCheckbox">
+			<validated-checkbox
+				:value="shouldSavePaymentMethod"
+				v-model="shouldSavePaymentMethod"
+				label="Save payment method for future orders"
+			/>
+		</div>
+
 		<div v-if="cannotLoadForm" :class="$style.error">
 			<p>We are currently unable to process your credit card. Please try again at a later time.</p>
 			<p>If you have any questions or concerns, please contact customer service at
@@ -56,10 +66,15 @@
 </template>
 
 <script>
+import ValidatedCheckbox from './validated-checkbox';
+
 import { hostedFieldsService } from '../services/hosted-fields.service';
 
 export default {
+	components: { ValidatedCheckbox },
+
 	props: {
+		showSaveCheckbox: Boolean,
 		braintreeTokenizationKey: {
 			type: String,
 			required: true,
@@ -71,6 +86,7 @@ export default {
 		return {
 			cannotLoadForm: false,
 			hostedFields: null,
+			shouldSavePaymentMethod: this.showSaveCheckbox,
 			fields: {
 				number: {
 					selector: '#payment-method-number',
@@ -139,7 +155,7 @@ export default {
 
 			return promise
 				.then(nonce => {
-					this.$emit('change', nonce);
+					this.$emit('change', { nonce, shouldSavePaymentMethod: this.shouldSavePaymentMethod });
 				})
 				.catch(error => {
 					Object.keys(this.fields).forEach(field => {

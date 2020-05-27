@@ -29,6 +29,7 @@ const groups = [{
 	stories: [
 		'AddressForm',
 		'RadioButton',
+		'ValidatedCheckbox',
 		'ValidatedForm',
 		'ValidatedInput',
 		'ValidatedPaymentMethod',

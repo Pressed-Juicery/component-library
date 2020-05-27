@@ -22,6 +22,14 @@
 			:rules="phoneRules"
 		/>
 
+		<div v-if="showSaveCheckbox">
+			<validated-checkbox
+				:value="address.shouldSaveAddress"
+				v-model="address.shouldSaveAddress"
+				label="Save address for future orders"
+			/>
+		</div>
+
 		<div v-if="showDeliveryInstructions" :class="$style.deliveryInstructions">
 			<label :class="$style.deliveryInstructionsLabel" :for="textareaId">Delivery Instructions</label>
 			<textarea
@@ -37,6 +45,7 @@
 <script>
 import { hasExactLength, isNotEmpty, isNumber, isValidPhoneNumber } from '../utilities/validators';
 
+import ValidatedCheckbox from './validated-checkbox';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
 import ValidatedSelect from './validated-select';
@@ -45,13 +54,18 @@ import { getRandom } from '../utilities/get-random';
 import { regions } from '../constants/regions';
 
 export default {
-	components: { ValidatedForm, ValidatedInput, ValidatedSelect },
+	components: { ValidatedCheckbox, ValidatedForm, ValidatedInput, ValidatedSelect },
 
 	props: {
 		id: String,
+		showSaveCheckbox: Boolean,
 		address: {
 			type: Object,
-			default() { return {} },
+			default() {
+				return {
+					shouldSaveAddress: this.showSaveCheckbox,
+				};
+			},
 		},
 		showDeliveryInstructions: Boolean,
 	},

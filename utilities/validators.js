@@ -22,6 +22,10 @@ export function isNumber(value) {
 	return isEmpty(value) || !Number.isNaN(Number(value));
 }
 
+export function isTruthy(value) {
+	return Boolean(value);
+}
+
 export function isValidPhoneNumber(value) {
 	return isEmpty(value) || /^\D*(\d\D*){10}$/.test(value);
 }
