@@ -1,16 +1,6 @@
 <template>
 	<div>
 		<div :class="$style.wrapper">
-			<input
-				:class="$style.input"
-				type="checkbox"
-				:id="id"
-				v-bind="$attrs"
-				v-model="isChecked"
-				ref="input"
-				@blur="validate()"
-			/>
-
 			<span :class="[$style.checkbox, { [$style.isChecked]: isChecked }]" @click="onClick()">
 				<check-mark-white-icon :class="$style.icon" />
 			</span>
@@ -19,6 +9,16 @@
 		</div>
 
 		<div :class="$style.error">{{ error }}</div>
+
+		<input
+			:class="$style.input"
+			type="checkbox"
+			:id="id"
+			v-bind="$attrs"
+			v-model="isChecked"
+			ref="input"
+			@blur="validate()"
+		/>
 	</div>
 </template>
 
