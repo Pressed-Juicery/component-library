@@ -85,7 +85,7 @@ export default {
 		return {
 			cannotLoadForm: false,
 			hostedFields: null,
-			shouldSavePaymentMethod: null,
+			shouldSavePaymentMethod: this.showSaveCheckbox,
 			checkboxId: 'should-save-payment-method',
 			fields: {
 				number: {
