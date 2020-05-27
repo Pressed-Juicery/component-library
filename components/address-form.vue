@@ -22,7 +22,7 @@
 			:rules="phoneRules"
 		/>
 
-		<div :class="$style.saveAddressCheckbox">
+		<div v-if="showSaveCheckbox" :class="$style.saveAddressCheckbox">
 			<validated-checkbox :id="checkboxId"
 			                    :value="address.shouldSaveAddress"
 			                    v-model="address.shouldSaveAddress" />
@@ -57,6 +57,7 @@ export default {
 
 	props: {
 		id: String,
+		showSaveCheckbox: Boolean,
 		address: {
 			type: Object,
 			default() { return {} },

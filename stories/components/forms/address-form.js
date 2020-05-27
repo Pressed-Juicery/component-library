@@ -8,7 +8,7 @@ export default {
 export function Overview() {
 	return {
 		components: { AddressForm },
-		template: '<address-form />',
+		template: '<address-form :show-save-checkbox="true"/>',
 	};
 }
 
@@ -18,7 +18,7 @@ export function NewAddress() {
 
 		template: `
 			<div>
-				<address-form :id="formName" @submit="newAddress => address = newAddress" />
+				<address-form :id="formName" :show-save-checkbox="true" @submit="newAddress => address = newAddress" />
 				<button type="submit" :form="formName">Save</button>
 
 				<div v-if="address">
@@ -57,7 +57,6 @@ export function EditAddress() {
 				<div>Region: {{ address.region }}</div>
 				<div>Postal: {{ address.postal }}</div>
 				<div>Phone: {{ address.phone }}</div>
-				<div>Save Address: {{ address.shouldSaveAddress }}</div>
 			</div>
 		`,
 
