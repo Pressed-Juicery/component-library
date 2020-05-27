@@ -1,5 +1,5 @@
 <template>
-	<span :class="$style.root" @click="onClick()">
+	<span @click="onClick()">
 		<input :class="$style.input"
 		       type="checkbox"
 		       :id="id"
@@ -7,8 +7,8 @@
 		       v-model="isChecked"
 		       ref="input"
 		       @blur="validate()" />
-		<span :class="$style.overlay">
-			<check-mark-white-icon v-if="isChecked" :class="$style.icon" />
+		<span :class="$style.checkbox">
+			<check-mark-white-icon :class="$style.icon" />
 		</span>
 
 		<span v-if="error" :class="$style.error" :for="id">{{ error }}</span>
@@ -93,42 +93,34 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.root {
-		position: relative;
-		vertical-align: middle;
-	}
-
 	.input {
-		width: $spacing-06;
-		height: $spacing-06;
-		opacity: 0;
+		display: none;
 	}
 
-	.overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
+	.checkbox {
+		display: block;
 		height: $spacing-06;
 		width: $spacing-06;
 		border: $border-light;
 		border-radius: $border-radius;
 		cursor: pointer;
+		position: relative;
 	}
 
 	.icon {
 		display: none;
 	}
 
-	.input:checked + .overlay {
-		border-color: $gray-90;
-		background-color: $gray-90;
+	.input:checked + .checkbox {
+		border-color: $color-primary;
+		background-color: $color-primary;
 
 		.icon {
+			display: block;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			display: inline-block;
 		}
 	}
 
