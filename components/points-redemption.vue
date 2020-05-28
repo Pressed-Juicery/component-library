@@ -25,7 +25,8 @@ export default {
 
 	methods: {
 		handleChange(obj) {
-			const {title, points, quantity} = obj;
+			const { title, points, quantity } = obj;
+
 			this.$emit('change', { title, points, quantity });
 		},
 	},

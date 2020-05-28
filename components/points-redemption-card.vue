@@ -14,7 +14,7 @@ import QuantitySelector from './quantity-selector';
 export default {
 	components: {
 		Card,
-		QuantitySelector
+		QuantitySelector,
 	},
 
 	props: {
@@ -24,10 +24,10 @@ export default {
 		points: String,
 	},
 
-	data(){
+	data() {
 		return {
 			quantity: 0,
-		}
+		};
 	},
 
 	methods: {

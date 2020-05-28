@@ -7,7 +7,13 @@
 			</g>
 		</svg>
 		<div :class="[$style.inputContainer, { [$style.showInput] : showInput }]">
-			<input v-if="showInput" @keydown.enter="submitInput" @focus="editing = true" @blur="editing = false" type="number" :ref="`bulk-input-${id}`" v-model="value"/>
+			<input v-if="showInput"
+				type="number"
+				v-model="value"
+				:ref="`bulk-input-${id}`"
+				@keydown.enter="submitInput"
+				@focus="editing = true"
+				@blur="editing = false" />
 			<select v-if="!showPlusIcon && !showInput" :class="$style.select" v-model="value">
 				<option v-for="(option, i) in options" :value="option" :key="i">{{ option }}</option>
 			</select>
@@ -22,6 +28,7 @@ export default {
 		quantity: Number,
 		options: {
 			type: Array,
+			/* eslint-disable no-magic-numbers */
 			default: () => [
 				0,
 				1,
@@ -51,10 +58,10 @@ export default {
 
 	computed: {
 		showInput() {
-			return (this.value > 9 || this.value === '10+') || this.editing
+			return (this.value > 9 || this.value === '10+') || this.editing;
 		},
 
-		showPlusIcon(){
+		showPlusIcon() {
 			return !this.quantity && !this.value && !this.editing;
 		},
 	},
@@ -67,19 +74,19 @@ export default {
 		submitInput() {
 			this.editing = false;
 			this.$refs[`bulk-input-${this.id}`].blur();
-			this.$emit('change', parseInt(this.value));
+			this.$emit('change', parseInt(this.value, 10));
 		},
 	},
 
 	watch: {
 		value(val) {
-			if (val === '10+'){
+			if (val === '10+') {
 				this.value = 10;
 				this.$nextTick(() => this.$refs[`bulk-input-${this.id}`].focus());
 			}
 
-			if(!this.editing){
-				this.$emit('change', parseInt(this.value));
+			if (!this.editing) {
+				this.$emit('change', parseInt(this.value, 10));
 			}
 		},
 	},
@@ -93,11 +100,11 @@ export default {
 	$arrowGray: #c6c6c6;
 
 	input, select {
-  	-moz-appearance: textfield;
+		-moz-appearance: textfield;
 		-webkit-appearance: none;
 		appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
+		text-indent: 1px;
+		text-overflow: '';
 		background-color: transparent;
 		outline: none;
 		border: 0;
@@ -152,8 +159,8 @@ export default {
 	.inputContainer:before {
 		content: '';
 		position: absolute;
-    top: 13px;
-    right: 30px;
+		top: 13px;
+		right: 30px;
 		height: 10px;
 		width: 3px;
 		transform: rotate(-45deg);
@@ -164,8 +171,8 @@ export default {
 	.inputContainer:after {
 		content: '';
 		position: absolute;
-    top: 13px;
-    right: 25px;
+		top: 13px;
+		right: 25px;
 		height: 10px;
 		width: 3px;
 		transform: rotate(45deg);
