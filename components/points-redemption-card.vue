@@ -3,26 +3,37 @@
 		<img :class="$style.icon" :src="icon"/>
 		<div :class="$style.title">{{ title }}</div>
 		<div :class="$style.points">{{ points }}<span :class="$style.pointsIndicator">Pts</span></div>
+		<quantity-selector :id="id" :quantity="quantity" @change="handleChange"/>
 	</card>
 </template>
 
 <script>
 import Card from './card';
+import QuantitySelector from './quantity-selector';
 
 export default {
-	components: { Card },
+	components: {
+		Card,
+		QuantitySelector
+	},
 
 	props: {
+		id: Number,
 		icon: String,
 		title: String,
 		points: String,
 	},
 
-	methods: {
-		handleChange() {
-			const { title, points, quantity } = this;
+	data(){
+		return {
+			quantity: 0,
+		}
+	},
 
-			this.$emit('change', { title, points, quantity });
+	methods: {
+		handleChange(quantity) {
+			this.quantity = quantity;
+			this.$emit('change', { title: this.title, points: this.points, quantity });
 		},
 	},
 };
@@ -46,10 +57,12 @@ export default {
 	.title {
 		margin-bottom: $spacing-02;
 		text-align: center;
+		white-space: nowrap;
 	}
 
 	.points {
 		@include text-heading-6;
+		margin-bottom: $spacing-03;
 	}
 
 	.pointsIndicator {
