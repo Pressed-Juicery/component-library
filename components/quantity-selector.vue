@@ -178,7 +178,7 @@ export default {
 	.downArrow {
 		position: absolute;
 		top: 15px;
-		right: 30px;
+		right: 25px;
 		height: 6px;
 		width: 10px;
 		pointer-events: none;
