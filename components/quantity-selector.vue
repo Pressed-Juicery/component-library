@@ -1,6 +1,7 @@
 <template>
 	<div :class="[$style.button, { [$style.isActive]: !showPlusIcon || showInput }]">
 		<svg v-if="showPlusIcon" @click="setQuantity" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+		<svg v-if="!state" :class="$style.addButton" @click="setQuantity" xmlns="http://www.w3.org/2000/svg">
 			<g fill="none" fill-rule="evenodd" stroke="#D1D1D1">
 				<circle cx="20" cy="20" r="19.5"/>
 				<path stroke-linecap="round" stroke-width="2" d="M16 20h8m-4-4v8"/>
@@ -144,6 +145,11 @@ export default {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.addButton {
+		width: $spacing-08;
+		height: $spacing-08;
 	}
 
 	.inputContainer {
