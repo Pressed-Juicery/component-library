@@ -10,7 +10,6 @@
 		<div :class="[$style.inputContainer, { [$style.isInputActive] : state === 'input' }]">
 			<input v-if="state === 'input'"
 				type="number"
-				v-model="value"
 				:ref="`bulk-input-${id}`"
 				@keydown.enter="submitInput($event)"
 				@blur="submitInput($event)" />
@@ -78,22 +77,21 @@ export default {
 			this.value = 1;
 		},
 
-		submitInput() {
-			this.editing = false;
+		submitInput(event) {
+			const value = parseInt(event.target.value, 10);
+			this.value = value;
 			this.$refs[`bulk-input-${this.id}`].blur();
-			this.$emit('change', parseInt(this.value, 10));
+			this.$emit('change', this.value);
 		},
 	},
 
 	watch: {
 		value(val) {
-			if (val === '10+') {
-				this.value = 10;
-				this.$nextTick(() => this.$refs[`bulk-input-${this.id}`].focus());
-			}
-
-			if (!this.editing) {
-				this.$emit('change', parseInt(this.value, 10));
+			if (this.state === 'input' && val === 10) {
+				this.$nextTick(() => {
+					this.$refs[`bulk-input-${this.id}`].value = val;
+					this.$refs[`bulk-input-${this.id}`].focus()
+				});
 			}
 		},
 	},
