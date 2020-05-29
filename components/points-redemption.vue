@@ -38,13 +38,9 @@ export default {
 
 	.row {
 		display: grid;
-		grid-gap: $spacing-01;
+		grid-gap: $spacing-02;
 		grid-template-columns: repeat(12, 150px);
 		grid-template-rows: minmax(200px, 1fr);
-	}
-
-	.card {
-		margin: 0 $spacing-02;
 	}
 
 	.card:first-of-type {
@@ -53,6 +49,15 @@ export default {
 
 	.card:last-of-type {
 		margin-right: 0;
+	}
+
+	@media (max-width: $max-width-small) {
+		.row {
+			grid-row-gap: $spacing-02;
+			grid-column-gap: $spacing-02;
+			grid-template-columns: repeat(3, calc(33.3% - 3px));
+			grid-template-rows: minmax(200px, 1fr);
+		}
 	}
 
 </style>
