@@ -7,7 +7,7 @@
 			</g>
 		</svg>
 		<div :class="[$style.inputContainer, { [$style.isInputActive] : state === 'input' }]">
-			<input v-if="state === 'input'"
+			<input v-if="state === 'input'" :class="$style.input"
 				type="number"
 				:ref="`bulk-input-${id}`"
 				@keydown.enter="submitInput($event)"
@@ -116,7 +116,7 @@ export default {
 	$selectorGray: #D1D1D1;
 	$arrowGray: #c6c6c6;
 
-	input, select {
+	.input, .select {
 		-moz-appearance: textfield;
 		-webkit-appearance: none;
 		appearance: none;
@@ -129,19 +129,19 @@ export default {
 		background: none;
 	}
 
-	select {
+	.select {
 		cursor: pointer;
 		width: 100%;
 		padding-left: 36px;
 		padding-right: 0;
 	}
 
-	input {
+	.input {
 		padding-left: 33px;
 	}
 
-	input::-webkit-outer-spin-button,
-	input::-webkit-inner-spin-button {
+	.input::-webkit-outer-spin-button,
+	.input::-webkit-inner-spin-button {
 		-webkit-appearance: none
 	}
 
