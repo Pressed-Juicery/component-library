@@ -2,7 +2,7 @@ import QuantitySelector from '../../../components/quantity-selector';
 
 export default {
 	component: QuantitySelector,
-	title: 'Components / Basic / QuantitySelector',
+	title: 'Components / Forms / QuantitySelector',
 };
 
 export function Overview() {

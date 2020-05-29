@@ -16,7 +16,6 @@ const groups = [{
 		'Buttons',
 		'Card',
 		'StoreAddress',
-		'QuantitySelector',
 	],
 }, {
 	groupName: 'Components / Cart',
@@ -36,6 +35,7 @@ const groups = [{
 		'ValidatedInput',
 		'ValidatedPaymentMethod',
 		'ValidatedSelect',
+		'QuantitySelector',
 	],
 }, {
 	groupName: 'Components / Radio Button Cards',
