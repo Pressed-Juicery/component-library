@@ -67,7 +67,7 @@ export default {
 	},
 
 	computed: {
-		/* eslint-disable complexity */
+		/* eslint-disable-next-line complexity */
 		state() {
 			const lastOption = this.options[this.options.length - 1];
 			const shouldShowInput = (this.value === lastOption || this.value > this.options[this.options.length - 2]);
