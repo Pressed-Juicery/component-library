@@ -14,7 +14,7 @@
 				@blur="submitInput($event)" />
 			<select v-if="state === 'select'" :class="$style.select" v-model="value">
 				<option v-for="(option, i) in options" :value="option" :key="i">
-					<span v-if="i === (options.length - 1)">{{ option }}+</span>
+					<span v-if="canUseInput && i === (options.length - 1)">{{ option }}+</span>
 					<span v-else>{{ option }}</span>
 				</option>
 			</select>
@@ -27,6 +27,10 @@ export default {
 	props: {
 		id: Number,
 		quantity: Number,
+		canUseInput: {
+			type: Boolean,
+			default: true,
+		},
 		options: {
 			type: Array,
 			/* eslint-disable no-magic-numbers */
@@ -59,10 +63,10 @@ export default {
 	computed: {
 
 		state() {
-			if (this.value === this.options[this.options.length-1] || this.value > 9) {
+			if ( this.canUseInput && (this.value === this.options[this.options.length-1] || this.value > 9)) {
 				return 'input';
 			}
-			else if (this.value && this.value !== this.options[this.options.length-1]) {
+			else if ((this.value && !this.canUseInput) || (this.value && this.value !== this.options[this.options.length-1])) {
 				return 'select';
 			}
 			else {
@@ -86,11 +90,13 @@ export default {
 
 	watch: {
 		value(val) {
-			if (this.state === 'input' && val === 10) {
-				this.$nextTick(() => {
-					this.$refs[`bulk-input-${this.id}`].value = val;
-					this.$refs[`bulk-input-${this.id}`].focus()
-				});
+			if (this.canUseInput) {
+				if (this.state === 'input' && val === this.options[this.options.length-1]) {
+					this.$nextTick(() => {
+						this.$refs[`bulk-input-${this.id}`].value = val;
+						this.$refs[`bulk-input-${this.id}`].focus()
+					});
+				}
 			}
 		},
 	},
@@ -118,7 +124,7 @@ export default {
 
 	select {
 		width: 100%;
-		padding-left: 38px;
+		padding-left: 36px;
 		padding-right: 0;
 	}
 
