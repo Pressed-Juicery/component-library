@@ -1,22 +1,20 @@
 <template>
-	<div :class="[$style.button, { [$style.isActive]: !showPlusIcon || showInput }]">
 		<svg v-if="showPlusIcon" @click="setQuantity" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+	<div :class="[$style.button, { [$style.isActive]: state }]">
 		<svg v-if="!state" :class="$style.addButton" @click="setQuantity" xmlns="http://www.w3.org/2000/svg">
 			<g fill="none" fill-rule="evenodd" stroke="#D1D1D1">
 				<circle cx="20" cy="20" r="19.5"/>
 				<path stroke-linecap="round" stroke-width="2" d="M16 20h8m-4-4v8"/>
 			</g>
 		</svg>
-		<div :class="[$style.inputContainer, { [$style.showInput] : showInput }]">
-			<input v-if="showInput"
+		<div :class="[$style.inputContainer, { [$style.isInputActive] : state === 'input' }]">
+			<input v-if="state === 'input'"
 				type="number"
 				v-model="value"
 				:ref="`bulk-input-${id}`"
 				@keydown.enter="submitInput"
-				@focus="editing = true"
-				@blur="editing = false" />
-			<select v-if="!showPlusIcon && !showInput" :class="$style.select" v-model="value">
 				<option v-for="(option, i) in options" :value="option" :key="i">{{ option }}</option>
+			<select v-if="state === 'select'" :class="$style.select" v-model="value">
 			</select>
 		</div>
 	</div>
@@ -53,17 +51,21 @@ export default {
 	data() {
 		return {
 			value: null,
-			editing: false,
 		};
 	},
 
 	computed: {
-		showInput() {
-			return (this.value > 9 || this.value === '10+') || this.editing;
-		},
 
-		showPlusIcon() {
-			return !this.quantity && !this.value && !this.editing;
+		state() {
+			if (this.value === this.options[this.options.length-1] || this.value > 9) {
+				return 'input';
+			}
+			else if (this.value && this.value !== this.options[this.options.length-1]) {
+				return 'select';
+			}
+			else {
+				return '';
+			}
 		},
 	},
 
