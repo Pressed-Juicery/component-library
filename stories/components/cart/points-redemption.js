@@ -2,7 +2,7 @@ import PointsRedemption from '../../../components/points-redemption';
 import PointsRedemptionCard from '../../../components/points-redemption-card';
 
 export default {
-	title: 'Components / Cart / Points Redemption',
+	title: 'Components / Cart / PointsRedemption',
 	component: PointsRedemption,
 };
 
