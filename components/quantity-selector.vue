@@ -1,5 +1,4 @@
 <template>
-		<svg v-if="showPlusIcon" @click="setQuantity" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
 	<div :class="[$style.button, { [$style.isActive]: state }]">
 		<svg v-if="!state" :class="$style.addButton" @click="setQuantity" xmlns="http://www.w3.org/2000/svg">
 			<g fill="none" fill-rule="evenodd" stroke="#D1D1D1">
@@ -161,8 +160,8 @@ export default {
 		position: relative;
 	}
 
-	.inputContainer.showInput:before,
-	.inputContainer.showInput:after {
+	.inputContainer.isInputActive:before,
+	.inputContainer.isInputActive:after {
 		display: none;
 	}
 
