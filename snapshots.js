@@ -16,6 +16,7 @@ const groups = [{
 		'Buttons',
 		'Card',
 		'StoreAddress',
+		'QuantitySelector',
 	],
 }, {
 	groupName: 'Components / Cart',
@@ -23,6 +24,7 @@ const groups = [{
 		'CartItemCard',
 		'CartSummary',
 		'CartTotals',
+		'PointsRedemption',
 	],
 }, {
 	groupName: 'Components / Forms',
