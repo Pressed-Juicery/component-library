@@ -1,6 +1,6 @@
 <template>
 	<div :class="[$style.button, { [$style.isActive]: state }]">
-		<svg v-if="!state" :class="$style.addButton" @click="setQuantity" xmlns="http://www.w3.org/2000/svg">
+		<svg v-if="!state" :class="$style.addButton" @click="value = 1" xmlns="http://www.w3.org/2000/svg">
 			<g fill="none" fill-rule="evenodd" stroke="#D1D1D1">
 				<circle cx="20" cy="20" r="19.5"/>
 				<path stroke-linecap="round" stroke-width="2" d="M16 20h8m-4-4v8"/>
@@ -61,27 +61,28 @@ export default {
 	},
 
 	computed: {
-
+		/* eslint-disable complexity */
 		state() {
-			if ( this.canUseInput && (this.value === this.options[this.options.length-1] || this.value > 9)) {
+			const lastOption = this.options[this.options.length - 1];
+			const shouldShowInput = (this.value === lastOption || this.value > this.options[this.options.length - 2]);
+			const shouldShowSelect = (this.value && this.value !== lastOption);
+
+			if (this.canUseInput && shouldShowInput) {
 				return 'input';
 			}
-			else if ((this.value && !this.canUseInput) || (this.value && this.value !== this.options[this.options.length-1])) {
+
+			if ((this.value && !this.canUseInput) || shouldShowSelect) {
 				return 'select';
 			}
-			else {
-				return '';
-			}
+
+			return '';
 		},
 	},
 
 	methods: {
-		setQuantity() {
-			this.value = 1;
-		},
-
 		submitInput(event) {
 			const value = parseInt(event.target.value, 10);
+
 			this.value = value;
 			this.$refs[`bulk-input-${this.id}`].blur();
 			this.$emit('change', this.value);
@@ -91,10 +92,10 @@ export default {
 	watch: {
 		value(val) {
 			if (this.canUseInput) {
-				if (this.state === 'input' && val === this.options[this.options.length-1]) {
+				if (this.state === 'input' && val === this.options[this.options.length - 1]) {
 					this.$nextTick(() => {
 						this.$refs[`bulk-input-${this.id}`].value = val;
-						this.$refs[`bulk-input-${this.id}`].focus()
+						this.$refs[`bulk-input-${this.id}`].focus();
 					});
 				}
 			}
