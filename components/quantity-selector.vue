@@ -12,9 +12,13 @@
 				type="number"
 				v-model="value"
 				:ref="`bulk-input-${id}`"
-				@keydown.enter="submitInput"
-				<option v-for="(option, i) in options" :value="option" :key="i">{{ option }}</option>
+				@keydown.enter="submitInput($event)"
+				@blur="submitInput($event)" />
 			<select v-if="state === 'select'" :class="$style.select" v-model="value">
+				<option v-for="(option, i) in options" :value="option" :key="i">
+					<span v-if="i === (options.length - 1)">{{ option }}+</span>
+					<span v-else>{{ option }}</span>
+				</option>
 			</select>
 		</div>
 	</div>
@@ -39,7 +43,7 @@ export default {
 				7,
 				8,
 				9,
-				'10+',
+				10,
 			],
 		},
 	},
