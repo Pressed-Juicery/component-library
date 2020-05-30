@@ -1,5 +1,5 @@
 <template>
-	<div :class="[$style.button, { [$style.isActive]: value }]">
+	<div :class="[$style.root, { [$style.isActive]: value }]">
 		<div v-if="shouldShowInput" :class="$style.inputWrapper">
 			<input
 				:class="$style.input"
@@ -11,15 +11,16 @@
 		</div>
 
 		<div v-else-if="value" :class="$style.inputWrapper">
-			<select :class="$style.select" v-model="value">
+			<select :class="$style.select" v-model="value" ref="select">
 				<option v-for="(option, index) in options" :value="option" :key="index">
 					{{ canUseInput && index === options.length - 1 ? `${option}+` : option }}
 				</option>
 			</select>
-			<arrow-down-icon :class="$style.downArrow" />
+			<div :class="$style.selectOverlay" @click="() => $refs.select.focus()">{{value}}</div>
+			<arrow-down-icon :class="$style.arrowIcon" />
 		</div>
 
-		<span v-else :class="$style.addButton" @click="value = 1"><plus-icon /></span>
+		<span v-else :class="$style.defaultButton" @click="value = 1"><plus-icon /></span>
 	</div>
 </template>
 
@@ -71,24 +72,21 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/mixins';
+	@import '../styles/variables';
 
-	$selectorGray: #D1D1D1;
-	$arrowGray: #c6c6c6;
+	$button-height: $spacing-08;
 
-	.button {
-		height: 40px;
+	.root {
+		display: flex;
+		height: $button-height;
+		width: $button-height;
+		border: 1px solid $gray-30;
+		border-radius: 999em;
 		cursor: pointer;
-		overflow: hidden;
 	}
 
-	.button.isActive {
-		width: 90px;
-		border: 1px solid $selectorGray;
-		border-radius: $spacing-10;
-		cursor: default;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	.isActive {
+		min-width: 88px;
 	}
 
 	.inputWrapper {
@@ -100,15 +98,12 @@ export default {
 		-moz-appearance: textfield;
 		-webkit-appearance: none;
 		appearance: none;
-		text-indent: 1px;
 		text-overflow: '';
 		outline: none;
 		border: 0;
 		background: none;
-	}
-
-	.input {
-		padding-left: 33px;
+		height: $button-height;
+		width: 100%;
 	}
 
 	.input::-webkit-outer-spin-button,
@@ -116,24 +111,32 @@ export default {
 		-webkit-appearance: none
 	}
 
-	.select {
-		cursor: pointer;
-		width: 100%;
-		padding-left: 36px;
-		padding-right: 0;
+	.input {
+		text-align: center;
+		cursor: default;
 	}
 
-	.downArrow {
+	.selectOverlay {
+		line-height: $button-height;
+		text-align: center;
+	}
+
+	.select {
+		opacity: 0;
 		position: absolute;
-		top: 15px;
-		right: 25px;
-		height: 6px;
-		width: 10px;
+	}
+
+	.arrowIcon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: $spacing-04;
+		width: $spacing-04;
 		pointer-events: none;
 	}
 
-	.addButton {
-		width: $spacing-08;
-		height: $spacing-08;
+	.defaultButton {
+		width: $button-height;
+		height: $button-height;
 	}
 </style>
