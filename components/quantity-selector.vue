@@ -1,6 +1,6 @@
 <template>
-	<div :class="[$style.button, { [$style.isActive]: state }]">
-		<span v-if="!state" :class="$style.addButton" @click="value = 1"><circle-plus-icon /></span>
+	<div :class="[$style.button, { [$style.isActive]: state !== 'inactive' }]">
+		<span v-if="state === 'inactive'" :class="$style.addButton" @click="value = 1"><circle-plus-icon /></span>
 		<div :class="[$style.inputContainer, { [$style.isInputActive] : state === 'input' }]">
 			<input v-if="state === 'input'" :class="$style.input"
 				type="number"
@@ -56,7 +56,7 @@ export default {
 			if (shouldShowInput) return 'input';
 			if (canShowSelect) return 'select';
 
-			return '';
+			return 'inactive';
 		},
 	},
 
