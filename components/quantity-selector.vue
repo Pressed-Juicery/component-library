@@ -42,13 +42,9 @@ export default {
 		},
 	},
 
-	created() {
-		this.value = this.quantity || null;
-	},
-
 	data() {
 		return {
-			value: null,
+			value: this.quantity,
 		};
 	},
 
