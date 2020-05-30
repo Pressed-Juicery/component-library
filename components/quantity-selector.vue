@@ -12,24 +12,7 @@
 				ref="input"
 				@keydown.enter="submitInput($event)"
 				@blur="submitInput($event)" />
-			<svg :class="$style.downArrow" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<!-- Generator: Sketch 64 (93537) - https://sketch.com -->
-					<title>carrot - right</title>
-					<desc>Created with Sketch.</desc>
-					<g id="Symbols" stroke="none" stroke-width="1"
-					fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-							<g id="Quantity-Filled"
-							transform="translate(-50.000000, -19.000000)" stroke="#C6C6C6" stroke-width="2">
-									<g id="carrot---right" transform="translate(51.000000, 17.000000)">
-											<path d="M6,5 L2,9 M6,5 L2,1"
-											id="Combined-Shape"
-											transform="translate(4.000000, 5.000000)
-											rotate(-270.000000) translate(-4.000000, -5.000000)">
-											</path>
-									</g>
-							</g>
-					</g>
-			</svg>
+			<arrow-down-icon :class="$style.downArrow" />
 			<select v-if="state === 'select'" :class="$style.select" v-model="value">
 				<option v-for="(option, i) in options" :value="option" :key="i">
 					<span v-if="canUseInput && i === (options.length - 1)">{{ option }}+</span>
@@ -41,7 +24,10 @@
 </template>
 
 <script>
+import ArrowDownIcon from './icons/arrow-down-icon';
+
 export default {
+	components: { ArrowDownIcon },
 	props: {
 		quantity: Number,
 		canUseInput: {
