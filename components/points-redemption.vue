@@ -1,6 +1,6 @@
 <template>
 	<div :class="$style.root">
-		<points-redemption-card :class="$style.card" v-for="(card, i) in cards"
+		<points-redemption-card v-for="(card, i) in cards"
 			:key="i"
 			:icon="card.icon"
 			:title="card.title"
@@ -41,14 +41,6 @@ export default {
 		grid-gap: $spacing-02;
 		grid-template-columns: repeat(12, 150px);
 		grid-template-rows: minmax(200px, 1fr);
-	}
-
-	.card:first-of-type {
-		margin-left: 0;
-	}
-
-	.card:last-of-type {
-		margin-right: 0;
 	}
 
 	@media (max-width: $max-width-small) {
