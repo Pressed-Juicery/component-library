@@ -50,7 +50,7 @@ export default {
 		},
 		options: {
 			type: Array,
-			/* eslint-disable-next-line no-magic-numbers */
+			// eslint-disable-next-line no-magic-numbers
 			default: () => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 		},
 	},
@@ -66,7 +66,7 @@ export default {
 	},
 
 	computed: {
-		/* eslint-disable-next-line complexity */
+		// eslint-disable-next-line complexity
 		state() {
 			const lastOption = this.options[this.options.length - 1];
 			const shouldShowInput = (this.value === lastOption || this.value > this.options[this.options.length - 2]);
