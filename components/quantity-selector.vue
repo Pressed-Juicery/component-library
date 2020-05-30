@@ -4,7 +4,7 @@
 			<input
 				:class="$style.input"
 				type="number"
-				ref="input"
+				:value="value"
 				@keydown.enter="submitInput($event)"
 				@blur="submitInput($event)"
 			/>
@@ -60,21 +60,12 @@ export default {
 			const value = parseInt(event.target.value, 10);
 
 			this.value = value;
-			this.$refs.input.blur();
+			event.target.blur();
 		},
 	},
 
 	watch: {
-		value(val) {
-			if (this.canUseInput) {
-				if (this.shouldShowInput && val === this.options[this.options.length - 1]) {
-					this.$nextTick(() => {
-						this.$refs.input.value = val;
-						this.$refs.input.focus();
-					});
-				}
-			}
-
+		value() {
 			this.$emit('change', this.value);
 		},
 	},
