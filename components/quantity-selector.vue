@@ -14,8 +14,7 @@
 			<arrow-down-icon :class="$style.downArrow" />
 			<select :class="$style.select" v-model="value">
 				<option v-for="(option, i) in options" :value="option" :key="i">
-					<span v-if="canUseInput && i === (options.length - 1)">{{ option }}+</span>
-					<span v-else>{{ option }}</span>
+					{{ canUseInput && i === options.length - 1 ? `${option}+` : option }}
 				</option>
 			</select>
 		</div>
