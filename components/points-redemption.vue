@@ -1,12 +1,14 @@
 <template>
 	<div :class="$style.root">
-		<points-redemption-card v-for="(card, i) in cards"
+		<points-redemption-card
+			v-for="(card, i) in cards"
 			:key="i"
 			:icon="card.icon"
 			:title="card.title"
 			:points="card.points"
 			:quantity-available="card.quantityAvailable"
-			@change="handleChange"/>
+			@change="handleChange"
+		/>
 	</div>
 </template>
 
