@@ -57,14 +57,15 @@ export default {
 	@import '../styles/mixins';
 
 	.card {
+		@include text-body-small();
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: $spacing-07 $spacing-06;
+		padding: $spacing-06 $spacing-05;
 	}
 
 	.icon {
-		height: $spacing-09;
+		height: $spacing-08;
 		margin-bottom: $spacing-03;
 	}
 
@@ -75,7 +76,8 @@ export default {
 	}
 
 	.points {
-		@include text-heading-6;
+		@include text-body();
+		@include text-bold();
 		margin-bottom: $spacing-03;
 	}
 </style>
