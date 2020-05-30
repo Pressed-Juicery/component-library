@@ -1,20 +1,26 @@
 <template>
 	<div :class="[$style.button, { [$style.isActive]: state !== 'inactive' }]">
-		<span v-if="state === 'inactive'" :class="$style.addButton" @click="value = 1"><circle-plus-icon /></span>
-		<div :class="[$style.inputContainer, { [$style.isInputActive] : state === 'input' }]">
-			<input v-if="state === 'input'" :class="$style.input"
+		<div v-if="state === 'input'" :class="$style.inputContainer">
+			<input
+				:class="$style.input"
 				type="number"
 				ref="input"
 				@keydown.enter="submitInput($event)"
-				@blur="submitInput($event)" />
+				@blur="submitInput($event)"
+			/>
+		</div>
+
+		<div v-else-if="state === 'select'" :class="$style.inputContainer">
 			<arrow-down-icon :class="$style.downArrow" />
-			<select v-if="state === 'select'" :class="$style.select" v-model="value">
+			<select :class="$style.select" v-model="value">
 				<option v-for="(option, i) in options" :value="option" :key="i">
 					<span v-if="canUseInput && i === (options.length - 1)">{{ option }}+</span>
 					<span v-else>{{ option }}</span>
 				</option>
 			</select>
 		</div>
+
+		<span v-else :class="$style.addButton" @click="value = 1"><circle-plus-icon /></span>
 	</div>
 </template>
 
@@ -144,10 +150,6 @@ export default {
 	.inputContainer {
 		width: 100%;
 		position: relative;
-	}
-
-	.inputContainer.isInputActive .downArrow {
-		display: none;
 	}
 
 	.downArrow {
