@@ -165,5 +165,4 @@ export default {
 		width: 10px;
 		pointer-events: none;
 	}
-
 </style>
