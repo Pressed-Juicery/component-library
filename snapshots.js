@@ -23,6 +23,7 @@ const groups = [{
 		'CartItemCard',
 		'CartSummary',
 		'CartTotals',
+		'CartSidebar',
 	],
 }, {
 	groupName: 'Components / Forms',
