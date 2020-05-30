@@ -3,7 +3,13 @@
 		<img :class="$style.icon" :src="icon"/>
 		<div :class="$style.title">{{ title }}</div>
 		<div :class="$style.points">{{ points }}<span :class="$style.pointsIndicator">Pts</span></div>
-		<quantity-selector :id="id" :quantity="quantity" @change="handleChange" :can-use-input="false" />
+		<quantity-selector
+			:id="id"
+			:options="options"
+			:quantity="quantity"
+			@change="handleChange"
+			:can-use-input="false"
+		/>
 	</card>
 </template>
 
@@ -22,6 +28,10 @@ export default {
 		icon: String,
 		title: String,
 		points: String,
+		quantityAvailable: {
+			type: Number,
+			required: true,
+		},
 	},
 
 	data() {
@@ -34,6 +44,12 @@ export default {
 		handleChange(quantity) {
 			this.quantity = quantity;
 			this.$emit('change', { title: this.title, points: this.points, quantity });
+		},
+	},
+
+	computed: {
+		options() {
+			return [...Array(this.quantityAvailable + 1).keys()];
 		},
 	},
 };

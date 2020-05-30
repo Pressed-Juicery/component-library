@@ -6,6 +6,7 @@
 			:icon="card.icon"
 			:title="card.title"
 			:points="card.points"
+			:quantity-available="card.quantityAvailable"
 			@change="handleChange"/>
 	</div>
 </template>
