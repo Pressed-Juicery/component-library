@@ -57,9 +57,7 @@ export default {
 
 	methods: {
 		submitInput(event) {
-			const value = parseInt(event.target.value, 10);
-
-			this.value = value;
+			this.value = Number(event.target.value);
 			event.target.blur();
 		},
 	},
