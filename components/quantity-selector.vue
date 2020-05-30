@@ -91,7 +91,6 @@ export default {
 
 			this.value = value;
 			this.$refs[`bulk-input-${this.id}`].blur();
-			this.$emit('change', this.value);
 		},
 	},
 
@@ -105,6 +104,8 @@ export default {
 					});
 				}
 			}
+
+			this.$emit('change', this.value);
 		},
 	},
 };
