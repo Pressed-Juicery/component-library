@@ -47,10 +47,7 @@ export default {
 
 	@media (max-width: $max-width-small) {
 		.root {
-			grid-row-gap: $spacing-02;
-			grid-column-gap: $spacing-02;
 			grid-template-columns: repeat(3, calc(33.3% - 3px));
-			grid-template-rows: minmax(200px, 1fr);
 		}
 	}
 
