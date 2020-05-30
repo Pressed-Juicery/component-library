@@ -19,16 +19,16 @@
 			<arrow-down-icon :class="$style.downArrow" />
 		</div>
 
-		<span v-else :class="$style.addButton" @click="value = 1"><circle-plus-icon /></span>
+		<span v-else :class="$style.addButton" @click="value = 1"><plus-icon /></span>
 	</div>
 </template>
 
 <script>
-import CirclePlusIcon from './icons/circle-plus-icon';
 import ArrowDownIcon from './icons/arrow-down-icon';
+import PlusIcon from './icons/plus-icon';
 
 export default {
-	components: { CirclePlusIcon, ArrowDownIcon },
+	components: { ArrowDownIcon, PlusIcon },
 	props: {
 		quantity: Number,
 		canUseInput: {
