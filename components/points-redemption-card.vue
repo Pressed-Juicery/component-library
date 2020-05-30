@@ -2,7 +2,7 @@
 	<card :class="$style.card">
 		<img :class="$style.icon" :src="icon"/>
 		<div :class="$style.title">{{ title }}</div>
-		<div :class="$style.points">{{ points }}<span :class="$style.pointsIndicator">Pts</span></div>
+		<div :class="$style.points">{{ points }} Pts</div>
 		<quantity-selector
 			:id="id"
 			:options="options"
@@ -80,9 +80,4 @@ export default {
 		@include text-heading-6;
 		margin-bottom: $spacing-03;
 	}
-
-	.pointsIndicator {
-		margin-left: $spacing-02;
-	}
-
 </style>
