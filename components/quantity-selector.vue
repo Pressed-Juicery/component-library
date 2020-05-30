@@ -11,12 +11,12 @@
 		</div>
 
 		<div v-else-if="value" :class="$style.inputWrapper">
-			<arrow-down-icon :class="$style.downArrow" />
 			<select :class="$style.select" v-model="value">
 				<option v-for="(option, index) in options" :value="option" :key="index">
 					{{ canUseInput && index === options.length - 1 ? `${option}+` : option }}
 				</option>
 			</select>
+			<arrow-down-icon :class="$style.downArrow" />
 		</div>
 
 		<span v-else :class="$style.addButton" @click="value = 1"><circle-plus-icon /></span>
@@ -75,35 +75,6 @@ export default {
 	$selectorGray: #D1D1D1;
 	$arrowGray: #c6c6c6;
 
-	.input, .select {
-		-moz-appearance: textfield;
-		-webkit-appearance: none;
-		appearance: none;
-		text-indent: 1px;
-		text-overflow: '';
-		background-color: transparent;
-		outline: none;
-		border: 0;
-		background-image: none;
-		background: none;
-	}
-
-	.select {
-		cursor: pointer;
-		width: 100%;
-		padding-left: 36px;
-		padding-right: 0;
-	}
-
-	.input {
-		padding-left: 33px;
-	}
-
-	.input::-webkit-outer-spin-button,
-	.input::-webkit-inner-spin-button {
-		-webkit-appearance: none
-	}
-
 	.button {
 		height: 40px;
 		cursor: pointer;
@@ -120,14 +91,38 @@ export default {
 		align-items: center;
 	}
 
-	.addButton {
-		width: $spacing-08;
-		height: $spacing-08;
-	}
-
 	.inputWrapper {
 		width: 100%;
 		position: relative;
+	}
+
+	.input, .select {
+		-moz-appearance: textfield;
+		-webkit-appearance: none;
+		appearance: none;
+		text-indent: 1px;
+		text-overflow: '';
+		background-color: transparent;
+		outline: none;
+		border: 0;
+		background-image: none;
+		background: none;
+	}
+
+	.input {
+		padding-left: 33px;
+	}
+
+	.input::-webkit-outer-spin-button,
+	.input::-webkit-inner-spin-button {
+		-webkit-appearance: none
+	}
+
+	.select {
+		cursor: pointer;
+		width: 100%;
+		padding-left: 36px;
+		padding-right: 0;
 	}
 
 	.downArrow {
@@ -137,5 +132,10 @@ export default {
 		height: 6px;
 		width: 10px;
 		pointer-events: none;
+	}
+
+	.addButton {
+		width: $spacing-08;
+		height: $spacing-08;
 	}
 </style>
