@@ -25,6 +25,7 @@ const groups = [{
 		'CartSummary',
 		'CartTotals',
 		'PointsRedemption',
+		'CartSidebar',
 	],
 }, {
 	groupName: 'Components / Forms',
