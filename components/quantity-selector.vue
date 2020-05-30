@@ -51,12 +51,10 @@ export default {
 		// eslint-disable-next-line complexity
 		state() {
 			const lastOption = this.options[this.options.length - 1];
-			const shouldShowInput = this.value >= lastOption;
+			const shouldShowInput = this.canUseInput && this.value >= lastOption;
 			const shouldShowSelect = (this.value && this.value !== lastOption);
 
-			if (this.canUseInput && shouldShowInput) {
-				return 'input';
-			}
+			if (shouldShowInput) return 'input';
 
 			if ((this.value && !this.canUseInput) || shouldShowSelect) {
 				return 'select';
