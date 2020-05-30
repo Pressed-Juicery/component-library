@@ -1,6 +1,6 @@
 <template>
-	<div :class="[$style.button, { [$style.isActive]: state !== 'inactive' }]">
-		<div v-if="state === 'input'" :class="$style.inputContainer">
+	<div :class="[$style.button, { [$style.isActive]: value }]">
+		<div v-if="shouldShowInput" :class="$style.inputContainer">
 			<input
 				:class="$style.input"
 				type="number"
@@ -10,7 +10,7 @@
 			/>
 		</div>
 
-		<div v-else-if="state === 'select'" :class="$style.inputContainer">
+		<div v-else-if="value" :class="$style.inputContainer">
 			<arrow-down-icon :class="$style.downArrow" />
 			<select :class="$style.select" v-model="value">
 				<option v-for="(option, i) in options" :value="option" :key="i">
@@ -49,15 +49,9 @@ export default {
 	},
 
 	computed: {
-		state() {
+		shouldShowInput() {
 			const lastOption = this.options[this.options.length - 1];
-			const shouldShowInput = this.canUseInput && this.value >= lastOption;
-			const canShowSelect = this.value;
-
-			if (shouldShowInput) return 'input';
-			if (canShowSelect) return 'select';
-
-			return 'inactive';
+			return this.canUseInput && this.value >= lastOption;
 		},
 	},
 
@@ -73,7 +67,7 @@ export default {
 	watch: {
 		value(val) {
 			if (this.canUseInput) {
-				if (this.state === 'input' && val === this.options[this.options.length - 1]) {
+				if (this.shouldShowInput && val === this.options[this.options.length - 1]) {
 					this.$nextTick(() => {
 						this.$refs.input.value = val;
 						this.$refs.input.focus();
