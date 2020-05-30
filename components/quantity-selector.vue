@@ -10,17 +10,21 @@
 			/>
 		</div>
 
-		<div v-else-if="value" :class="$style.inputWrapper">
+		<div v-else :class="$style.inputWrapper">
 			<select :class="$style.select" v-model="value" ref="select">
 				<option v-for="(option, index) in options" :value="option" :key="index">
 					{{ canUseInput && index === options.length - 1 ? `${option}+` : option }}
 				</option>
 			</select>
-			<div :class="$style.selectOverlay" @click="() => $refs.select.focus()">{{value}}</div>
-			<arrow-down-icon :class="$style.arrowIcon" />
+
+			<div v-if="value" :class="$style.selectOverlay">
+				<div  @click="() => $refs.select.focus()">{{value}}</div>
+				<arrow-down-icon :class="$style.arrowIcon" />
+			</div>
+
+			<div v-else :class="$style.defaultButton"><plus-icon /></div>
 		</div>
 
-		<span v-else :class="$style.defaultButton" @click="value = 1"><plus-icon /></span>
 	</div>
 </template>
 
