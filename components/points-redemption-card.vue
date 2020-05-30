@@ -3,7 +3,7 @@
 		<img :class="$style.icon" :src="icon"/>
 		<div :class="$style.title">{{ title }}</div>
 		<div :class="$style.points">{{ points }}<span :class="$style.pointsIndicator">Pts</span></div>
-		<quantity-selector :id="id" :quantity="quantity" @change="handleChange"/>
+		<quantity-selector :id="id" :quantity="quantity" @change="handleChange" :can-use-input="false" />
 	</card>
 </template>
 
