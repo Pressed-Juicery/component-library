@@ -1,5 +1,5 @@
 <template>
-	<div :class="$style.row">
+	<div :class="$style.root">
 		<points-redemption-card :class="$style.card" v-for="(card, i) in cards"
 			:key="i"
 			:icon="card.icon"
@@ -36,7 +36,7 @@ export default {
 <style module lang="scss">
 	@import '../styles/variables';
 
-	.row {
+	.root {
 		display: grid;
 		grid-gap: $spacing-02;
 		grid-template-columns: repeat(12, 150px);
@@ -52,7 +52,7 @@ export default {
 	}
 
 	@media (max-width: $max-width-small) {
-		.row {
+		.root {
 			grid-row-gap: $spacing-02;
 			grid-column-gap: $spacing-02;
 			grid-template-columns: repeat(3, calc(33.3% - 3px));
