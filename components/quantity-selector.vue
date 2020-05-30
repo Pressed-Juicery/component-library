@@ -1,11 +1,6 @@
 <template>
 	<div :class="[$style.button, { [$style.isActive]: state }]">
-		<svg v-if="!state" :class="$style.addButton" @click="value = 1" xmlns="http://www.w3.org/2000/svg">
-			<g fill="none" fill-rule="evenodd" stroke="#D1D1D1">
-				<circle cx="20" cy="20" r="19.5"/>
-				<path stroke-linecap="round" stroke-width="2" d="M16 20h8m-4-4v8"/>
-			</g>
-		</svg>
+		<span v-if="!state" :class="$style.addButton" @click="value = 1"><circle-plus-icon /></span>
 		<div :class="[$style.inputContainer, { [$style.isInputActive] : state === 'input' }]">
 			<input v-if="state === 'input'" :class="$style.input"
 				type="number"
@@ -24,10 +19,11 @@
 </template>
 
 <script>
+import CirclePlusIcon from './icons/circle-plus-icon';
 import ArrowDownIcon from './icons/arrow-down-icon';
 
 export default {
-	components: { ArrowDownIcon },
+	components: { CirclePlusIcon, ArrowDownIcon },
 	props: {
 		quantity: Number,
 		canUseInput: {
