@@ -65,9 +65,7 @@ export function Overview() {
 
 		data() {
 			return {
-				icon: cards[0].icon,
-				points: cards[0].points,
-				title: cards[0].title,
+				...cards[0],
 				quantitySelected: null,
 			};
 		},
