@@ -1,19 +1,23 @@
 <template>
-	<div :class="$style.root">
-		<points-redemption-card
-			v-for="(card, i) in cards"
-			:key="i"
-			:icon="card.icon"
-			:title="card.title"
-			:points="card.points"
-			:quantity-available="card.quantityAvailable"
-			@change="handleChange"
-		/>
+	<div :class="isMobileDevice ? $style.cardLine : $style.cardGrid">
+		<div :class="$style.wrapper">
+			<points-redemption-card
+				:class="$style.card"
+				v-for="(card, i) in cards"
+				:key="i"
+				:icon="card.icon"
+				:title="card.title"
+				:points="card.points"
+				:quantity-available="card.quantityAvailable"
+				@change="handleChange"
+			/>
+		</div>
 	</div>
 </template>
 
 <script>
 import PointsRedemptionCard from './points-redemption-card';
+import { isMobileDevice } from '../utilities/is-mobile-device';
 
 export default {
 	components: { PointsRedemptionCard },
@@ -23,6 +27,10 @@ export default {
 			type: Array,
 			required: true,
 		},
+	},
+
+	data() {
+		return { isMobileDevice: isMobileDevice() };
 	},
 
 	methods: {
@@ -38,17 +46,26 @@ export default {
 <style module lang="scss">
 	@import '../styles/variables';
 
-	.root {
-		display: grid;
-		grid-gap: $spacing-02;
-		grid-template-columns: repeat(12, 150px);
-		grid-template-rows: minmax(200px, 1fr);
-	}
+	$card-width: $spacing-12;
+	$card-spacing: $spacing-02;
 
-	@media (max-width: $max-width-small) {
-		.root {
-			grid-template-columns: repeat(3, calc(33.3% - 3px));
+	.cardLine {
+		overflow-x: auto;
+		overflow-y: hidden;
+
+		.wrapper {
+			display: flex;
+		}
+
+		.card {
+			flex: 0 0 $card-width;
+			margin-right: $card-spacing;
 		}
 	}
 
+	.cardGrid .wrapper {
+		display: grid;
+		grid-gap: $card-spacing;
+		grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
+	}
 </style>
