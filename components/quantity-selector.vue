@@ -1,6 +1,6 @@
 <template>
 	<div :class="[$style.button, { [$style.isActive]: value }]">
-		<div v-if="shouldShowInput" :class="$style.inputContainer">
+		<div v-if="shouldShowInput" :class="$style.inputWrapper">
 			<input
 				:class="$style.input"
 				type="number"
@@ -10,7 +10,7 @@
 			/>
 		</div>
 
-		<div v-else-if="value" :class="$style.inputContainer">
+		<div v-else-if="value" :class="$style.inputWrapper">
 			<arrow-down-icon :class="$style.downArrow" />
 			<select :class="$style.select" v-model="value">
 				<option v-for="(option, index) in options" :value="option" :key="index">
@@ -125,7 +125,7 @@ export default {
 		height: $spacing-08;
 	}
 
-	.inputContainer {
+	.inputWrapper {
 		width: 100%;
 		position: relative;
 	}
