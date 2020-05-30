@@ -13,8 +13,8 @@
 		<div v-else-if="value" :class="$style.inputContainer">
 			<arrow-down-icon :class="$style.downArrow" />
 			<select :class="$style.select" v-model="value">
-				<option v-for="(option, i) in options" :value="option" :key="i">
-					{{ canUseInput && i === options.length - 1 ? `${option}+` : option }}
+				<option v-for="(option, index) in options" :value="option" :key="index">
+					{{ canUseInput && index === options.length - 1 ? `${option}+` : option }}
 				</option>
 			</select>
 		</div>
