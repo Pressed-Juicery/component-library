@@ -51,15 +51,32 @@ const cards = [{
 export function Overview() {
 	return {
 		components: { PointsRedemptionCard },
-		template: '<points-redemption-card :icon="icon" :title="title" :points="points" @change="handleChange" />',
+		template: `
+			<div>
+				<points-redemption-card
+					:icon="icon"
+					:title="title"
+					:points="points"
+					@change="onChange"
+				/>
+				<div>Quantity selected: {{ quantitySelected }}</div>
+			</div>
+		`,
 
 		data() {
 			return {
 				icon: cards[0].icon,
 				points: cards[0].points,
 				title: cards[0].title,
+				quantitySelected: null,
 			};
 		},
+
+		methods: {
+			onChange(redemptionItem) {
+				this.quantitySelected = redemptionItem.quantity;
+			}
+		}
 	};
 }
 
