@@ -9,7 +9,7 @@
 		<div :class="[$style.inputContainer, { [$style.isInputActive] : state === 'input' }]">
 			<input v-if="state === 'input'" :class="$style.input"
 				type="number"
-				:ref="`bulk-input-${id}`"
+				ref="input"
 				@keydown.enter="submitInput($event)"
 				@blur="submitInput($event)" />
 			<svg :class="$style.downArrow" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -43,7 +43,6 @@
 <script>
 export default {
 	props: {
-		id: Number,
 		quantity: Number,
 		canUseInput: {
 			type: Boolean,
@@ -90,7 +89,7 @@ export default {
 			const value = parseInt(event.target.value, 10);
 
 			this.value = value;
-			this.$refs[`bulk-input-${this.id}`].blur();
+			this.$refs.input.blur();
 		},
 	},
 
@@ -99,8 +98,8 @@ export default {
 			if (this.canUseInput) {
 				if (this.state === 'input' && val === this.options[this.options.length - 1]) {
 					this.$nextTick(() => {
-						this.$refs[`bulk-input-${this.id}`].value = val;
-						this.$refs[`bulk-input-${this.id}`].focus();
+						this.$refs.input.value = val;
+						this.$refs.input.focus();
 					});
 				}
 			}

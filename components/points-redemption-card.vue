@@ -4,7 +4,6 @@
 		<div :class="$style.title">{{ title }}</div>
 		<div :class="$style.points">{{ points }} Pts</div>
 		<quantity-selector
-			:id="id"
 			:options="options"
 			:quantity="quantity"
 			@change="handleChange"
@@ -24,7 +23,6 @@ export default {
 	},
 
 	props: {
-		id: Number,
 		icon: String,
 		title: String,
 		points: String,

@@ -1,7 +1,6 @@
 <template>
 	<div :class="$style.row">
 		<points-redemption-card :class="$style.card" v-for="(card, i) in cards"
-			:id="i"
 			:key="i"
 			:icon="card.icon"
 			:title="card.title"
