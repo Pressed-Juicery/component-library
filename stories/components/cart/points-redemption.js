@@ -84,8 +84,8 @@ export function Overview() {
 		methods: {
 			onChange(redemptionItem) {
 				this.quantitySelected = redemptionItem.quantity;
-			}
-		}
+			},
+		},
 	};
 }
 

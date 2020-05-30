@@ -55,6 +55,7 @@ export default {
 	computed: {
 		shouldShowInput() {
 			const lastOption = this.options[this.options.length - 1];
+
 			return this.canUseInput && this.value >= lastOption;
 		},
 	},
