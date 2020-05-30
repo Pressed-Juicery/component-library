@@ -1,5 +1,3 @@
 <template>
-	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="31.844" height="17.91" viewBox="0 0 31.844 17.91">
-		<path d="M15.922,17.918 C15.647,17.918 15.385,17.804 15.197,17.603 L0.291,1.689 C-0.084,1.288 -0.064, 0.659 0.336,0.283 C0.737,-0.092 1.366,-0.073 1.741,0.328 L15.922,15.469 L30.103,0.328 C30.478,-0.072 31.107,-0.093 31.508,0.283 C31.908,0.659 31.928,1.288 31.553,1.689 L16.647,17.603 C16.459,17.804 16.197, 17.918 15.922,17.918 Z" />
-	</svg>
+	<svg viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><path d="m6 5-4 4m4-4-4-4" fill="none" stroke="#c6c6c6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(0 1 -1 0 10 -1)"/></svg>
 </template>
