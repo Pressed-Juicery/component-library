@@ -102,10 +102,8 @@ export default {
 		appearance: none;
 		text-indent: 1px;
 		text-overflow: '';
-		background-color: transparent;
 		outline: none;
 		border: 0;
-		background-image: none;
 		background: none;
 	}
 
