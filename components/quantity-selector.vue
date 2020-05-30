@@ -52,13 +52,10 @@ export default {
 		state() {
 			const lastOption = this.options[this.options.length - 1];
 			const shouldShowInput = this.canUseInput && this.value >= lastOption;
-			const shouldShowSelect = (this.value && this.value !== lastOption);
+			const canShowSelect = this.value;
 
 			if (shouldShowInput) return 'input';
-
-			if ((this.value && !this.canUseInput) || shouldShowSelect) {
-				return 'select';
-			}
+			if (canShowSelect) return 'select';
 
 			return '';
 		},
