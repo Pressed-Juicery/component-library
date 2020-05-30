@@ -95,9 +95,7 @@ export function CardRow() {
 		template: '<points-redemption :cards="cards" />',
 
 		data() {
-			return {
-				cards: cards,
-			};
+			return { cards };
 		},
 	};
 }
