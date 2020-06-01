@@ -1,5 +1,6 @@
 <template>
-	<div :class="[$style.overlay, {[$style.isActive]: active}]" @click.self="$emit('close')">
+	<div :class="[$style.root, {[$style.isActive]: active}]">
+		<div :class="$style.overlay" @click.self="$emit('close')"></div>
 		<div :class="$style.sidebar">
 
 			<div :class="[$style.sidebarNavigation, {[$style.noBackButton] : !shouldShowBackButton}]">
@@ -41,7 +42,7 @@ export default {
 		transition: .5s ease opacity;
 	}
 
-	.overlay.isActive {
+	.root.isActive .overlay {
 		opacity: 0.55;
 		pointer-events: all;
 	}
@@ -55,9 +56,10 @@ export default {
 		padding: $spacing-09 $spacing-07;
 		transform: translate(100%);
 		transition: .5s ease transform;
+		z-index: 10;
 	}
 
-	.overlay.isActive .sidebar {
+	.root.isActive .sidebar {
 		transform: translate(0%);
 	}
 
