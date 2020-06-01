@@ -52,7 +52,7 @@ export default {
 		right: 0;
 		height: 100%;
 		width: 350px;
-		background-color: $beige;
+		background-color: $white;
 		padding: $spacing-09 $spacing-07;
 		transform: translate(100%);
 		transition: .5s ease transform;
