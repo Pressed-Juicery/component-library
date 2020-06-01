@@ -17,6 +17,7 @@ const groups = [{
 		'Card',
 		'StoreAddress',
 		'StepProgressBar',
+		'SidebarOverlay',
 	],
 }, {
 	groupName: 'Components / Cart',

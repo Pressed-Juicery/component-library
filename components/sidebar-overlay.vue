@@ -1,8 +1,8 @@
 <template>
 	<div :class="[$style.overlay, {[$style.isActive]: active}]" @click.self="$emit('close')">
 		<div :class="$style.sidebar">
-			<div :class="[$style.sidebarNavigation, {[$style.noBackButton] : !shouldShowBackButton}]">
 
+			<div :class="[$style.sidebarNavigation, {[$style.noBackButton] : !shouldShowBackButton}]">
 				<svg v-if="shouldShowBackButton" :class="$style.backButton" @click="$emit('back')"
 				version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<g id="Web-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -46,9 +46,10 @@
 						</g>
 					</g>
 				</svg>
-
 			</div>
+
 			<slot />
+
 		</div>
 	</div>
 </template>
