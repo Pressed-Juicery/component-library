@@ -24,6 +24,7 @@ const groups = [{
 		'CartItemCard',
 		'CartSummary',
 		'CartTotals',
+		'PointsRedemption',
 	],
 }, {
 	groupName: 'Components / Forms',
@@ -35,6 +36,7 @@ const groups = [{
 		'ValidatedInput',
 		'ValidatedPaymentMethod',
 		'ValidatedSelect',
+		'QuantitySelector',
 	],
 }, {
 	groupName: 'Components / Radio Button Cards',
