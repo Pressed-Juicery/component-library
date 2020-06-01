@@ -1,5 +1,6 @@
 <template>
-	<div :class="[$style.overlay, {[$style.isActive]: active}]" @click.self="$emit('close')">
+	<div :class="[$style.root, {[$style.isActive]: active}]">
+		<div :class="$style.overlay" @click.self="$emit('close')"></div>
 		<div :class="$style.sidebar">
 
 			<div :class="[$style.sidebarNavigation, {[$style.noBackButton] : !shouldShowBackButton}]">
