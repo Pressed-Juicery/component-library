@@ -7,10 +7,19 @@ export default {
 	decorators: [withKnobs],
 };
 
+const methods = {
+	methods: {
+		closeSlider() {
+			this.active = false;
+		},
+	},
+};
+
 export function Overview() {
 	return {
 		components: { SidebarOverlay },
-		template: '<sidebar-overlay :active="active"/>',
+		mixins: [methods],
+		template: '<sidebar-overlay :active="active" @close="closeSlider"/>',
 		props: {
 			active: {
 				default: boolean('Active', true),
@@ -22,16 +31,20 @@ export function Overview() {
 export function ShowBackButton() {
 	return {
 		components: { SidebarOverlay },
-		template: '<sidebar-overlay :active="active" :shouldShowBackButton="shouldShowBackButton"/>',
+		mixins: [methods],
+		template: `<sidebar-overlay
+			:active="active"
+			:shouldShowBackButton="shouldShowBackButton"
+			@close="closeSlider"/>`,
 		props: {
 			active: {
 				default: boolean('Active', true),
 			},
-    },
-    data() {
-      return {
-        shouldShowBackButton: true,
-      };
-    },
+		},
+		data() {
+			return {
+				shouldShowBackButton: true,
+			};
+		},
 	};
 }
