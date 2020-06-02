@@ -1,8 +1,8 @@
 <template>
-  <div :class="[$style.root, {[$style.noBackButton] : !shouldShowBackButton}]">
-    <back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back')"/>
-    <close-icon :class="$style.closeButton" @click.native="$emit('close')"/>
-  </div>
+	<div :class="[$style.root, {[$style.noBackButton] : !shouldShowBackButton}]">
+		<back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back')"/>
+		<close-icon :class="$style.closeButton" @click.native="$emit('close')"/>
+	</div>
 </template>
 
 <script>
@@ -10,15 +10,15 @@ import BackArrowIcon from './icons/back-arrow-icon';
 import CloseIcon from './icons/close-icon';
 
 export default {
-  components: { BackArrowIcon, CloseIcon },
-  props: {
-    shouldShowBackButton: Boolean,
-  },
+	components: { BackArrowIcon, CloseIcon },
+	props: {
+		shouldShowBackButton: Boolean,
+	},
 };
 </script>
 
 <style module lang="scss">
-  @import '../styles/variables';
+	@import '../styles/variables';
 
 	.root {
 		display: flex;

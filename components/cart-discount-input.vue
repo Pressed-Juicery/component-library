@@ -6,16 +6,14 @@
 </template>
 
 <script>
-// import ValidatedInput from './validated-input';
 
 export default {
-	// components: { ValidatedInput },
 	props: {
 		placeholder: {
 			type: String,
 		},
 	},
-	data(){
+	data() {
 		return {
 			value: '',
 		};

@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import CartNavigation from './cart-navigation';
-import SidebarOverlay from './sidebar-overlay';
-import CartSummary from './cart-summary';
-import CartDiscountInput from './cart-discount-input';
-import CartPointsDisplay from './cart-points-display';
 import CartCheckoutFooter from './cart-checkout-footer';
+import CartDiscountInput from './cart-discount-input';
+import CartNavigation from './cart-navigation';
+import CartPointsDisplay from './cart-points-display';
+import CartSummary from './cart-summary';
+import SidebarOverlay from './sidebar-overlay';
 
 export default {
 	components: {
