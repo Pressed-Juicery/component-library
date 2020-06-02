@@ -2,10 +2,10 @@
 	<div>
 		<div :class="[$style.header, $style.row]">
 			<div :class="$style.title">Your Cart</div>
-			<div :class="$style.itemCount">{{ cart.itemCount }} Items</div>
+			<div :class="$style.itemCount">{{ cart.itemCount || 0 }} Items</div>
 		</div>
-
-		<cart-item-card v-for="(item, index) in cart.items" :key="index" :item="item" />
+		<div v-if="!cart.itemCount">Your cart is currently empty.</div>
+		<cart-item-card :class="$style.card" v-for="(item, index) in cart.items" :key="index" :item="item" />
 	</div>
 </template>
 
@@ -40,6 +40,11 @@ export default {
 	}
 
 	.itemCount {
+		@include text-heading-5;
 		@include text-bold();
+	}
+
+	.card:last-of-type {
+		margin-bottom: 0;
 	}
 </style>
