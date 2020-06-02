@@ -1,27 +1,35 @@
 <template>
-	<card :class="$style.root">
-		<div :class="$style.imageWrapper">
-			<img :class="$style.image" :src="item.imageSrc" :alt="item.name" />
-		</div>
-
-		<div :class="$style.descriptionWrapper">
-			<div :class="$style.description">
-				<div :class="$style.title">{{ item.name }}</div>
-				<div :class="$style.additionalInfo">{{ additionalInformation }}</div>
-				<div :class="$style.quantity">Qty {{ item.quantity }}</div>
+	<div :class="[$style.root, {[$style.hasCardExtension]: additionalInformation}]" >
+		<card :class="$style.card">
+			<div :class="$style.imageWrapper">
+				<img :class="$style.image" :src="item.imageSrc" :alt="item.name" />
 			</div>
 
-			<span :class="$style.price">{{ displayPrice }}</span>
+			<div :class="$style.descriptionWrapper">
+				<div :class="$style.description">
+					<div :class="$style.title">{{ item.name }}</div>
+					<div :class="$style.price">{{ displayPrice }}</div>
+				</div>
+
+				<quantity-selector :quantity="item.quantity"/>
+			</div>
+		</card>
+		<div v-if="additionalInformation" :class="$style.detailsWrapper">
+			<div :class="$style.additionalInfo">
+				<span v-if="item.modifiers && item.modifiers.toppings">Toppings: </span>
+				{{ additionalInformation }}
+			</div>
 		</div>
-	</card>
+	</div>
 </template>
 
 <script>
 import Card from './card.vue';
+import QuantitySelector from './quantity-selector';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { Card },
+	components: { Card, QuantitySelector },
 
 	props: {
 		item: Object,
@@ -46,9 +54,17 @@ export default {
 	@import '../styles/variables';
 
 	.root {
+		margin-bottom: $spacing-03;
+	}
+
+	.root.hasCardExtension .card {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	.card {
 		display: flex;
 		padding: $spacing-04;
-		margin-bottom: $spacing-03;
 	}
 
 	.imageWrapper {
@@ -63,6 +79,7 @@ export default {
 	.descriptionWrapper {
 		display: flex;
 		flex: 1;
+		align-items: center;
 	}
 
 	.description {
@@ -74,6 +91,14 @@ export default {
 		@include text-bold();
 	}
 
+	.detailsWrapper {
+		border-top: 1px solid $gray-30;
+		background-color: $beige;
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+		padding: $spacing-03 $spacing-06;
+	}
+
 	.additionalInfo,
 	.quantity {
 		@include text-body-small();
@@ -81,6 +106,5 @@ export default {
 
 	.additionalInfo {
 		color: $color-text-gray;
-		margin-bottom: $spacing-03;
 	}
 </style>
