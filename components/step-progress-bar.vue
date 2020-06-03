@@ -1,5 +1,5 @@
 <template>
-<div :class='$style.box'>
+<div :class='$style.root'>
 	<div :class='$style.line' />
 	<div
 		:class='[$style.stepContainer, {[$style.current]: index === currentIndex}]'
@@ -53,7 +53,7 @@ export default {
 <style module lang="scss">
 @import "../styles/variables.scss";
 
-.box {
+.root {
 	display: flex;
 	position: relative;
 	justify-content: space-around;
