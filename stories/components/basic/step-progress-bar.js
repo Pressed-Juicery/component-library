@@ -30,3 +30,22 @@ export function Overview() {
 		},
 	};
 }
+
+export function OnPreviouslyCompletedState() {
+	return {
+		components: { StepProgressBar },
+		template: `
+			<step-progress-bar
+				:states="states"
+				:currentState="currentState"
+				@stateChange="state => currentState = state"
+			/>
+		`,
+		data() {
+			return {
+				states,
+				currentState: states[1],
+			};
+		},
+	};
+}
