@@ -2,7 +2,7 @@
 <div :class='$style.root'>
 	<div :class='$style.line' />
 	<div
-		:class='[$style.stepContainer, {[$style.current]: index === currentIndex}]'
+		:class='[$style.stepContainer, { [$style.current]: index === currentIndex }]'
 		v-for='(step, index) in states'
 		:key='index'
 	>
