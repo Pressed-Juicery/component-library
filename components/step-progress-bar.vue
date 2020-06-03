@@ -10,8 +10,7 @@
 			<span
 				:class='[
 					$style.circle,
-					{[$style.circle]: step.completed === false},
-					{[$style.dot]: step.completed === true},
+					{ [$style.dot]: step.completed },
 				]'
 				@click='changeState(index)'
 			></span>
