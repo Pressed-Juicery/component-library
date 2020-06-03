@@ -1,30 +1,22 @@
 <template>
   <div class="box">
     <div class="line" />
-    <div class="step-cont">
+    <div
+      :class="['step-cont', {current: index === currentIndex}]"
+      v-for="(step, index) in states"
+      :key="index"
+    >
       <div class="bubble-box">
         <!-- Refer to a computed property for styles -->
-        <span class="dot" @click="changeState(0)"></span>
+        <span
+          :class="{
+          circle: index >= currentIndex,
+          dot: index <= currentIndex
+          }"
+          @click="changeState(index)"
+        ></span>
       </div>
-      <p>{{ states[0].name }}</p>
-    </div>
-    <div class="step-cont">
-      <div class="bubble-box">
-        <span class="circle" @click="changeState(1)"></span>
-      </div>
-      <p>{{ states[1].name }}</p>
-    </div>
-    <div class="step-cont current">
-      <div class="bubble-box">
-        <span class="circle" @click="changeState(2)"></span>
-      </div>
-      <p>{{ states[2].name }}</p>
-    </div>
-    <div class="step-cont">
-      <div class="bubble-box">
-        <span class="circle" @click="changeState(3)"></span>
-      </div>
-      <p>{{ states[3].name }}</p>
+      <p>{{ states[index].name }}</p>
     </div>
   </div>
 </template>
@@ -49,15 +41,16 @@ export default {
         { name: "Payment", completed: false },
         { name: "Review", completed: false }
       ],
-      currentState: { name: "Cart", completed: false }
+      currentState: { name: "Cart", completed: false },
+      currentIndex: 0
     };
   },
   computed: {
-    stepIndicator() {
-      return {
-        dot: this.currentState.completed,
-        circle: this.currentState.name
-      };
+    current() {
+      // Any time currentIndex is updated this will re-render.
+      // Use this to set current
+      currentIndex = this.states.indexOf(this.currentState);
+      return this.state[this.currentIndex];
     }
   },
   methods: {
