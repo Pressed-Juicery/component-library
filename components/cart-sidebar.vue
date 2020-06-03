@@ -1,16 +1,23 @@
 <template>
 	<sidebar-overlay :active="active" @close="$emit('close')">
 
-		<cart-navigation slot="navigation" @close="$emit('close')" />
+		<cart-navigation slot="navigation"
+			:shouldShowBackButton="shouldShowBackButton"
+			@back="setCartState"
+			@close="$emit('close')" />
 
-		<div>
+		<div v-if="state === 'cart'">
 			<cart-summary :class="$style.cartSummary" :cart="cart" />
-			<cart-discount-input @submit="$emit('submit-discount')"/>
+			<cart-discount-input @submit="$emit('submit-discount')" />
 			<hr :class="$style.partition">
-			<cart-points-display />
+			<cart-points-display @stateChange="setCartState" :points="0" />
 		</div>
 
-		<cart-checkout-footer slot="footer" :cart="cart" @checkout="$emit('checkout')"/>
+		<div v-if="state === 'points'">
+			<cart-points-redemption :cards="cards" :points="10" />
+		</div>
+
+		<cart-checkout-footer slot="footer" :cart="cart" @checkout="$emit('checkout')" />
 
 	</sidebar-overlay>
 </template>
@@ -20,22 +27,40 @@ import CartCheckoutFooter from './cart-checkout-footer';
 import CartDiscountInput from './cart-discount-input';
 import CartNavigation from './cart-navigation';
 import CartPointsDisplay from './cart-points-display';
+import CartPointsRedemption from './cart-points-redemption';
 import CartSummary from './cart-summary';
 import SidebarOverlay from './sidebar-overlay';
 
 export default {
 	components: {
-		CartNavigation,
-		SidebarOverlay,
-		CartSummary,
-		CartDiscountInput,
-		CartPointsDisplay,
 		CartCheckoutFooter,
+		CartDiscountInput,
+		CartNavigation,
+		CartPointsDisplay,
+		CartPointsRedemption,
+		CartSummary,
+		SidebarOverlay,
 	},
 	props: {
 		active: Boolean,
 		cart: Object,
 		user: Object,
+		pointsCards: Array, // Placeholder
+	},
+	data() {
+		return {
+			state: 'cart',
+		};
+	},
+	methods: {
+		setCartState(state) { this.state = state },
+	},
+	computed: {
+		shouldShowBackButton() { return this.state !== 'cart' },
+		cards() {
+			// placeholder for when we have a service that builds the card objects
+			return this.pointsCards;
+		},
 	},
 };
 </script>
