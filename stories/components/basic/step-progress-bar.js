@@ -5,6 +5,13 @@ export default {
 	component: StepProgressBar,
 };
 
+const states = [
+	{ name: 'Cart', completed: true },
+	{ name: 'Fulfillment', completed: true },
+	{ name: 'Payment', completed: false },
+	{ name: 'Review', completed: false },
+];
+
 export function Overview() {
 	return {
 		components: { StepProgressBar },
@@ -17,13 +24,8 @@ export function Overview() {
 		`,
 		data() {
 			return {
-				states: [
-					{ name: 'Cart', completed: true },
-					{ name: 'Fulfillment', completed: true },
-					{ name: 'Payment', completed: false },
-					{ name: 'Review', completed: false },
-				],
-				currentState: 2,
+				states,
+				currentState: states[2],
 			};
 		},
 	};

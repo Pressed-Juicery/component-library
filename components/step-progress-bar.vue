@@ -2,10 +2,10 @@
 <div :class='$style.root'>
 	<div :class='$style.line' />
 	<div
-		:class='[$style.stepContainer, { [$style.current]: index === currentState }]'
+		:class='[$style.stepContainer, { [$style.current]: step === currentState }]'
 		v-for='(step, index) in states'
 		:key='index'
-		@click='changeState(index)'
+		@click='changeState(step)'
 	>
 		<div :class='$style.bubbleBox'>
 			<span :class='[$style.circle, { [$style.dot]: step.completed }]'></span>
@@ -23,16 +23,20 @@ export default {
 			required: true,
 		},
 		currentState: {
-			type: Number,
+			type: Object,
 			required: true,
 		},
 	},
 	methods: {
-		changeState(index) {
-			const nextStep = this.states.reduce((index, state) => state.completed ? index + 1 : index, 0);
+		changeState(state) {
+			const lastCompletedIndex = this.states.reduce((lastCompletedIndex, state, index) => {
+				return state.completed ? index : lastCompletedIndex;
+			}, 0);
 
-			if (this.states[index].completed || index === nextStep) {
-				this.$emit('stateChange', index);
+			const firstIncompleteState = this.states[lastCompletedIndex + 1];
+
+			if (state.completed || state === firstIncompleteState) {
+				this.$emit('stateChange', state);
 			}
 		},
 
