@@ -35,6 +35,33 @@ const fullCart = [{
 	},
 }];
 
+const cards = [{
+	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/water-and-shot.svg',
+	title: 'Shot or Water',
+	points: '70',
+	quantityAvailable: 7,
+}, {
+	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/freeze-size-1.svg',
+	title: 'Size 1 Freeze',
+	points: '140',
+	quantityAvailable: 3,
+}, {
+	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/juice.svg',
+	title: 'Any Juice',
+	points: '150',
+	quantityAvailable: 3,
+}, {
+	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/signature-blend.svg',
+	title: 'Signature Blend',
+	points: '180',
+	quantityAvailable: 2,
+}, {
+	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/freeze-size-2.svg',
+	title: 'Size 2 Freeze',
+	points: '180',
+	quantityAvailable: 2,
+}];
+
 const mixins = {
 	methods: {
 		closeSlider() {
@@ -70,6 +97,7 @@ export function Overview() {
 			:active="active"
 			:user="user"
 			:cart="cart"
+			:pointsCards="pointsCards"
 			@close="closeSlider"/>`,
 		props: {
 			active: {
@@ -83,6 +111,9 @@ export function Overview() {
 					firstName: 'Carl',
 					lastName: 'McGee',
 				},
+				// vvvv this is a placeholder to demo functionality,
+				// cards should be generated from a service based on user data, not passed in
+				pointsCards: cards,
 			};
 		},
 	};
