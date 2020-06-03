@@ -9,9 +9,9 @@
 		<div :class='$style.bubbleBox'>
 			<span
 				:class='[
-				$style.circle,
-				{[$style.circle]: step.completed === false},
-				{[$style.dot]: step.completed === true},
+					$style.circle,
+					{[$style.circle]: step.completed === false},
+					{[$style.dot]: step.completed === true},
 				]'
 				@click='changeState(index)'
 			></span>
