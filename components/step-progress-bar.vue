@@ -56,26 +56,26 @@ export default {
 
 .line {
 	width: 100%;
-	height: $spacing-02;
+	height: $spacing-01;
 	position: absolute;
 	border-radius: $spacing-03;
 	z-index: -1;
-	top: $spacing-04;
+	top: 14px;
 	background-color: $gray-30;
 }
 
 .dot {
-	height: $spacing-05;
-	width: $spacing-05;
+	height: $spacing-03;
+	width: $spacing-03;
 	background-color: $gray-30;
 	border-radius: 50%;
 }
 
 .circle {
 	box-sizing: border-box;
-	height: $spacing-05;
-	width: $spacing-05;
-	border: $spacing-02 solid $gray-30;
+	height: $spacing-03;
+	width: $spacing-03;
+	border: $spacing-01 solid $gray-30;
 	border-radius: 50%;
 }
 
@@ -98,7 +98,7 @@ export default {
 	justify-content: center;
 	align-items: center;
 	height: $spacing-07;
-	width: $spacing-07;
+	width: $spacing-05;
 	background-color: $white;
 }
 
