@@ -2,6 +2,7 @@ export { default as Accordion } from './accordion';
 export { default as AddressForm } from './address-form';
 export { default as AddressFormatter } from './address-formatter';
 export { default as AddressRadioButtonCard } from './address-radio-button-card';
+export { default as ArrowDownIcon } from './icons/arrow-down-icon';
 export { default as Breadcrumbs } from './breadcrumbs';
 export { default as BundleCard } from './bundle-card';
 export { default as BundleCardGrid } from './bundle-card-grid';
