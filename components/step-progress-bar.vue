@@ -32,7 +32,7 @@ export default {
 			const nextStep = this.states.reduce((index, state) => state.completed ? index + 1 : index, 0);
 
 			if (this.states[index].completed || index === nextStep) {
-				this.$emit('newState', index);
+				this.$emit('stateChange', index);
 			}
 		},
 

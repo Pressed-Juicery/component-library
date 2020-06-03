@@ -12,7 +12,7 @@ export function Overview() {
 			<step-progress-bar
 				:states="states"
 				:currentState="currentState"
-				@newState="newState => currentState = newState"
+				@stateChange="state => currentState = state"
 			/>
 		`,
 		data() {
