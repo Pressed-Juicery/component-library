@@ -1,8 +1,8 @@
 import StepProgressBar from '../../../components/step-progress-bar.vue';
 
 export default {
-	component: StepProgressBar,
 	title: 'Components / Basic / StepProgressBar',
+	component: StepProgressBar,
 };
 
 export function Overview() {
