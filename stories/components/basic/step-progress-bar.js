@@ -18,7 +18,6 @@ export function Overview() {
 					{ name: 'Review', completed: false },
 				],
 				currentState: 2,
-				currentIndex: this.currentState,
 			};
 		},
 	};
