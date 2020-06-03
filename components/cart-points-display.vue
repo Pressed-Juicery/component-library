@@ -2,9 +2,9 @@
   <div>
     <div :class="$style.balanceWrapper">
       <div>Pressed Points Balance</div>
-      <div>{{ points || 0 }}</div>
+      <div>{{ points }}</div>
     </div>
-    <button :class="$style.redeemPoints">Redeem Pressed Points</button>
+    <button @click="$emit('stateChange', 'points')" :class="$style.redeemPoints">Redeem Pressed Points</button>
   </div>
 </template>
 
