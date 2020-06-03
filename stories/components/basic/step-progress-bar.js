@@ -8,7 +8,7 @@ export default {
 export function Overview() {
 	return {
 		components: { StepProgressBar },
-		template: `<step-progress-bar :states="states" :currentState="currentState" />`,
+		template: '<step-progress-bar :states="states" :currentState="currentState" />',
 		data() {
 			return {
 				states: [
