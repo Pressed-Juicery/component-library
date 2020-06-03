@@ -154,8 +154,8 @@ export default {
 				: Promise.reject(new Error('No hosted fields.'));
 
 			return promise
-				.then(nonce => {
-					this.$emit('change', { nonce, shouldSavePaymentMethod: this.shouldSavePaymentMethod });
+				.then(paymentMethod => {
+					this.$emit('change', { paymentMethod, shouldSavePaymentMethod: this.shouldSavePaymentMethod });
 				})
 				.catch(error => {
 					Object.keys(this.fields).forEach(field => {
