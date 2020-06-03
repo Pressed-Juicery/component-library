@@ -2,8 +2,8 @@ import StepProgressBar from '../../../components/step-progress-bar.vue';
 
 export default {
 	component: StepProgressBar,
-	title: "Components / Basic / StepProgressBar",
-}
+	title: 'Components / Basic / StepProgressBar',
+};
 
 export function Overview() {
 	return {
@@ -14,15 +14,15 @@ export function Overview() {
 		data() {
 			return {
 				states: [
-					{ name: "Cart", completed: true },
-					{ name: "Fulfillment", completed: true },
-					{ name: "Payment", completed: false },
-					{ name: "Review", completed: false }
+					{ name: 'Cart', completed: true },
+					{ name: 'Fulfillment', completed: true },
+					{ name: 'Payment', completed: false },
+					{ name: 'Review', completed: false },
 				],
 				currentState: 2,
-				currentIndex: this.currentState
-			}
-		}
-	}
+				currentIndex: this.currentState,
+			};
+		},
+	};
 }
 
