@@ -2,7 +2,7 @@
 <div :class='$style.root'>
 	<div :class='$style.line' />
 	<div
-		:class='[$style.stepContainer, { [$style.current]: index === currentIndex }]'
+		:class='[$style.stepContainer, { [$style.current]: index === currentState }]'
 		v-for='(step, index) in states'
 		:key='index'
 		@click='changeState(index)'
@@ -27,16 +27,12 @@ export default {
 			required: true,
 		},
 	},
-	data() {
-		return {
-			currentIndex: this.currentState,
-		};
-	},
 	methods: {
 		changeState(index) {
-			if (this.states[index].completed || index === this.currentState) {
-				this.currentIndex = index;
-				this.$emit('newState', this.currentIndex);
+			const nextStep = this.states.reduce((index, state) => state.completed ? index + 1 : index, 0);
+
+			if (this.states[index].completed || index === nextStep) {
+				this.$emit('newState', index);
 			}
 		},
 
