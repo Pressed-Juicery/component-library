@@ -111,6 +111,7 @@ export function Overview() {
 					firstName: 'Carl',
 					lastName: 'McGee',
 				},
+
 				// vvvv this is a placeholder to demo functionality,
 				// cards should be generated from a service based on user data, not passed in
 				pointsCards: cards,
