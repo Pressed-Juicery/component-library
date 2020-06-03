@@ -5,17 +5,12 @@
 		:class='[$style.stepContainer, { [$style.current]: index === currentIndex }]'
 		v-for='(step, index) in states'
 		:key='index'
+		@click='changeState(index)'
 	>
 		<div :class='$style.bubbleBox'>
-			<span
-				:class='[
-					$style.circle,
-					{ [$style.dot]: step.completed },
-				]'
-				@click='changeState(index)'
-			></span>
+			<span :class='[$style.circle, { [$style.dot]: step.completed }]'></span>
 		</div>
-		<p>{{ states[index].name }}</p>
+		<div :class="$style.text">{{ states[index].name }}</div>
 	</div>
 </div>
 </template>
@@ -85,7 +80,7 @@ export default {
 }
 
 .current {
-	p {
+	.text {
 		color: $color-primary;
 	}
 
@@ -113,5 +108,6 @@ export default {
 	align-items: center;
 	flex-direction: column;
 	color: $gray-30;
+	cursor: pointer;
 }
 </style>
