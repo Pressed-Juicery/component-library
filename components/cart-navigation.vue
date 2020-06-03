@@ -1,6 +1,6 @@
 <template>
 	<div :class="[$style.root, {[$style.noBackButton] : !shouldShowBackButton}]">
-		<back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back')"/>
+		<back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back', 'cart')"/>
 		<close-icon :class="$style.closeButton" @click.native="$emit('close')"/>
 	</div>
 </template>
