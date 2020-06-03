@@ -21,9 +21,7 @@ class HostedFields {
 
 	getNonce() {
 		return this._hostedFields.tokenize()
-			.then(payload => {
-				return { ...payload.details, nonce: payload.nonce };
-			});
+			.then(payload => ({ ...payload.details, nonce: payload.nonce }));
 	}
 }
 
