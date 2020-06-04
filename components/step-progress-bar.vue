@@ -2,16 +2,16 @@
 <div :class='$style.root'>
 	<div :class='$style.line' />
 	<div
-		:class='[$style.stepWrapper, { [$style.current]: step === currentState },
+		:class='[$style.stepWrapper, { [$style.current]: step === currentStep },
 			{ [$style.isCursor]: index <= lastCompletedIndex() + 1 }]'
-		v-for='(step, index) in states'
+		v-for='(step, index) in steps'
 		:key='index'
-		v-on:click='changeState(step)'
+		v-on:click='changeStep(step)'
 	>
 		<div :class='$style.circleWrapper'>
 			<span :class='[$style.circleOpen, { [$style.circleClosed]: step.completed }]'></span>
 		</div>
-		<div :class="$style.text">{{ states[index].name }}</div>
+		<div :class="$style.text">{{ steps[index].name }}</div>
 	</div>
 </div>
 </template>
@@ -19,26 +19,26 @@
 <script>
 export default {
 	props: {
-		states: {
+		steps: {
 			type: Array,
 			required: true,
 		},
-		currentState: {
+		currentStep: {
 			type: Object,
 			required: true,
 		},
 	},
 	methods: {
-		changeState(state) {
-			const firstIncompleteState = this.states[this.lastCompletedIndex() + 1];
+		changeStep(step) {
+			const firstIncompleteStep = this.steps[this.lastCompletedIndex() + 1];
 
-			if (state.completed || state === firstIncompleteState) {
-				this.$emit('stateChange', state);
+			if (step.completed || step === firstIncompleteStep) {
+				this.$emit('stepChange', step);
 			}
 		},
 		lastCompletedIndex() {
-			return this.states.reduce((lastCompletedIndex, state, index) => (
-				state.completed ? index : lastCompletedIndex), 0
+			return this.steps.reduce((lastCompletedIndex, step, index) => (
+				step.completed ? index : lastCompletedIndex), 0
 			);
 		},
 	},

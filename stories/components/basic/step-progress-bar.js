@@ -5,7 +5,7 @@ export default {
 	component: StepProgressBar,
 };
 
-const states = [
+const steps = [
 	{ name: 'Cart', completed: true },
 	{ name: 'Fulfillment', completed: true },
 	{ name: 'Payment', completed: false },
@@ -17,34 +17,34 @@ export function Overview() {
 		components: { StepProgressBar },
 		template: `
 			<step-progress-bar
-				:states="states"
-				:currentState="currentState"
-				@stateChange="state => currentState = state"
+				:steps="steps"
+				:currentStep="currentStep"
+				@stepChange="step => currentStep = step"
 			/>
 		`,
 		data() {
 			return {
-				states,
-				currentState: states[2],
+				steps,
+				currentStep: steps[2],
 			};
 		},
 	};
 }
 
-export function OnPreviouslyCompletedState() {
+export function OnPreviouslyCompletedStep() {
 	return {
 		components: { StepProgressBar },
 		template: `
 			<step-progress-bar
-				:states="states"
-				:currentState="currentState"
-				@stateChange="state => currentState = state"
+				:steps="steps"
+				:currentStep="currentStep"
+				@stepChange="step => currentStep = step"
 			/>
 		`,
 		data() {
 			return {
-				states,
-				currentState: states[1],
+				steps,
+				currentStep: steps[1],
 			};
 		},
 	};
