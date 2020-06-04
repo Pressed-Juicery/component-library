@@ -3,11 +3,11 @@
 		<div :class="$style.header">
 			<div :class="$style.row">
 				<div :class="$style.title">Pressed Points</div>
-				<div :class="$style.points">{{ points }}</div>
+				<div :class="$style.points">{{ displayPoints }}</div>
 			</div>
 			<div :class="$style.subtitle">Rewards you're eligible for:</div>
 		</div>
-		<points-redemption :cards="cards"/>
+		<points-redemption @change="handlePointsChange" :points="displayPoints"/>
 	</div>
 </template>
 
@@ -18,10 +18,38 @@ export default {
 	components: {
 		PointsRedemption,
 	},
+
 	props: {
-		cards: Object,
 		points: Number,
 	},
+
+	data() {
+		return {
+			productRedemptions: [],
+		};
+	},
+
+	computed: {
+		displayPoints() {
+			return this.points - this.redeemedPoints;
+		},
+		redeemedPoints() {
+			return this.productRedemptions.reduce((accum, obj) => accum + (obj.points * obj.quantity), 0);
+		},
+	},
+
+	methods: {
+		handlePointsChange({ points, quantity, title }) {
+			const product = this.productRedemptions.find(obj => obj.title === title);
+
+			if (product) {
+				product.quantity = quantity;
+			} else {
+				this.productRedemptions.push({ title, points, quantity });
+			}
+		},
+	},
+
 };
 </script>
 

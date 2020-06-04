@@ -3,8 +3,8 @@
 		<div :class="$style.wrapper">
 			<points-redemption-card
 				:class="$style.card"
-				v-for="(card, i) in cards"
-				:key="i"
+				v-for="card in displayCards"
+				:key="card.id"
 				:icon="card.icon"
 				:title="card.title"
 				:points="card.points"
@@ -18,26 +18,49 @@
 <script>
 import PointsRedemptionCard from './points-redemption-card';
 import { isMobileDevice } from '../utilities/is-mobile-device';
+import { pointsRewardCards } from '../constants/points-reward-cards';
 
 export default {
 	components: { PointsRedemptionCard },
 
 	props: {
-		cards: {
-			type: Array,
+		points: {
+			type: Number,
 			required: true,
 		},
 	},
 
 	data() {
-		return { isMobileDevice: isMobileDevice() };
+		return {
+			isMobileDevice: isMobileDevice(),
+			cards: pointsRewardCards,
+		};
 	},
 
 	methods: {
 		handleChange(obj) {
 			const { title, points, quantity } = obj;
+			const index = this.cards.findIndex(card => card.title === title);
+
+			this.cards[index].selected = quantity;
 
 			this.$emit('change', { title, points, quantity });
+		},
+	},
+
+	computed: {
+		displayCards() {
+			return this.cards
+				.filter(card => card.selected || card.points <= this.points)
+				.map(card => {
+					const quantityAvailable = Math.floor((this.points + this.redeemedPoints) / card.points);
+
+					return { ...card, quantityAvailable };
+				});
+		},
+
+		redeemedPoints() {
+			return this.cards.reduce((accum, card) => accum + (card.selected * card.points), 0);
 		},
 	},
 };

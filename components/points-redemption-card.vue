@@ -5,7 +5,7 @@
 		<div :class="$style.points">{{ points }} Pts</div>
 		<quantity-selector
 			:options="options"
-			:quantity="quantity"
+			:quantity="selected"
 			@change="handleChange"
 			:can-use-input="false"
 		/>
@@ -25,7 +25,11 @@ export default {
 	props: {
 		icon: String,
 		title: String,
-		points: String,
+		points: Number,
+		quantity: {
+			type: Number,
+			default: 0,
+		},
 		quantityAvailable: {
 			type: Number,
 			required: true,
@@ -34,13 +38,12 @@ export default {
 
 	data() {
 		return {
-			quantity: 0,
+			selected: this.quantity,
 		};
 	},
 
 	methods: {
 		handleChange(quantity) {
-			this.quantity = quantity;
 			this.$emit('change', { title: this.title, points: this.points, quantity });
 		},
 	},
