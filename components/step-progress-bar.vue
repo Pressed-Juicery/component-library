@@ -4,7 +4,7 @@
 	<div
 		:class='[
 			$style.stepWrapper, {
-			[$style.current]: step === currentStep,
+			[$style.currentStep]: step === currentStep,
 			[$style.showCursor]: index <= firstIncompleteStepIndex()
 		}]'
 		v-for='(step, index) in steps'
@@ -86,7 +86,7 @@ export default {
 	border: $spacing-01 solid $gray-30;
 }
 
-.current {
+.currentStep {
 	.text {
 		color: $color-primary;
 	}
