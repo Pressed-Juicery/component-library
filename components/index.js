@@ -25,6 +25,7 @@ export { default as PointsRedemption } from './points-redemption';
 export { default as QuantitySelector } from './quantity-selector';
 export { default as RadioButton } from './radio-button';
 export { default as RadioButtonCard } from './radio-button-card';
+export { default as StepProgressBar } from './step-progress-bar';
 export { default as StoreAddress } from './store-address';
 export { default as StoreRadioButtonCard } from './store-radio-button-card';
 export { default as ValidatedCheckbox } from './validated-checkbox';
