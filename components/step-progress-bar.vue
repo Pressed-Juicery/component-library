@@ -2,13 +2,14 @@
 <div :class='$style.root'>
 	<div :class='$style.line' />
 	<div
-		:class='[$style.stepContainer, { [$style.current]: step === currentState }]'
+		:class='[$style.stepWrapper, { [$style.current]: step === currentState },
+			{ [$style.isCursor]: index <= lastCompletedIndex() + 1 }]'
 		v-for='(step, index) in states'
 		:key='index'
-		@click='changeState(step)'
+		v-on:click='changeState(step)'
 	>
-		<div :class='$style.bubbleBox'>
-			<span :class='[$style.circle, { [$style.dot]: step.completed }]'></span>
+		<div :class='$style.circleWrapper'>
+			<span :class='[$style.circleOpen, { [$style.circleClosed]: step.completed }]'></span>
 		</div>
 		<div :class="$style.text">{{ states[index].name }}</div>
 	</div>
@@ -29,17 +30,17 @@ export default {
 	},
 	methods: {
 		changeState(state) {
-			const lastCompletedIndex = this.states.reduce((lastCompletedIndex, state, index) => {
-				return state.completed ? index : lastCompletedIndex;
-			}, 0);
-
-			const firstIncompleteState = this.states[lastCompletedIndex + 1];
+			const firstIncompleteState = this.states[this.lastCompletedIndex() + 1];
 
 			if (state.completed || state === firstIncompleteState) {
 				this.$emit('stateChange', state);
 			}
 		},
-
+		lastCompletedIndex() {
+			return this.states.reduce((lastCompletedIndex, state, index) => (
+				state.completed ? index : lastCompletedIndex)
+			);
+		},
 	},
 };
 </script>
@@ -64,19 +65,20 @@ export default {
 	background-color: $gray-30;
 }
 
-.dot {
+.circleClosed,
+.circleOpen {
 	height: $spacing-03;
 	width: $spacing-03;
-	background-color: $gray-30;
 	border-radius: 50%;
 }
 
-.circle {
+.circleClosed {
+	background-color: $gray-30;
+}
+
+.circleOpen {
 	box-sizing: border-box;
-	height: $spacing-03;
-	width: $spacing-03;
 	border: $spacing-01 solid $gray-30;
-	border-radius: 50%;
 }
 
 .current {
@@ -84,30 +86,34 @@ export default {
 		color: $color-primary;
 	}
 
-	.dot {
+	.circleClosed {
 		background-color: $color-primary;
 	}
 
-	.circle {
+	.circleOpen {
 		border-color: $color-primary;
 	}
 }
 
-.bubbleBox {
+.circleWrapper,
+.stepWrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.circleWrapper {
 	height: $spacing-07;
 	width: $spacing-05;
 	background-color: $white;
 }
 
-.stepContainer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.isCursor {
+	cursor: pointer;
+}
+
+.stepWrapper {
 	flex-direction: column;
 	color: $gray-30;
-	cursor: pointer;
 }
 </style>
