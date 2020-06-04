@@ -57,7 +57,6 @@ export default {
 	display: flex;
 	position: relative;
 	justify-content: space-around;
-	align-items: center;
 }
 
 .line {
