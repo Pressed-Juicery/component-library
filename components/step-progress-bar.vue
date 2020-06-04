@@ -2,8 +2,11 @@
 <div :class='$style.root'>
 	<div :class='$style.line' />
 	<div
-		:class='[$style.stepWrapper, { [$style.current]: step === currentStep },
-			{ [$style.showCursor]: index <= firstIncompleteStepIndex() }]'
+		:class='[
+			$style.stepWrapper, {
+			[$style.current]: step === currentStep,
+			[$style.showCursor]: index <= firstIncompleteStepIndex()
+		}]'
 		v-for='(step, index) in steps'
 		:key='index'
 		v-on:click='changeStep(step)'
