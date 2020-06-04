@@ -3,7 +3,7 @@
 	<div :class='$style.line' />
 	<div
 		:class='[$style.stepWrapper, { [$style.current]: step === currentStep },
-			{ [$style.isCursor]: index <= lastCompletedIndex() + 1 }]'
+			{ [$style.showCursor]: index <= lastCompletedIndex() + 1 }]'
 		v-for='(step, index) in steps'
 		:key='index'
 		v-on:click='changeStep(step)'
@@ -108,7 +108,7 @@ export default {
 	background-color: $white;
 }
 
-.isCursor {
+.showCursor {
 	cursor: pointer;
 }
 
