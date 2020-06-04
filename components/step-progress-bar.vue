@@ -65,7 +65,7 @@ export default {
 	position: absolute;
 	border-radius: 999em;
 	z-index: -1;
-	top: 14px;
+	top: 3px;
 	background-color: $gray-30;
 }
 
@@ -82,8 +82,9 @@ export default {
 }
 
 .circleWrapper {
-	height: $spacing-07;
+	height: $spacing-03;
 	width: $spacing-05;
+	margin-bottom: $spacing-03;
 	background-color: $white;
 }
 
