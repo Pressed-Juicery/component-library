@@ -8,11 +8,13 @@ export default {
 };
 
 const fullCart = [{
+	id: 1,
 	name: 'Strawberry Basil Lemonade',
 	quantity: 1,
 	imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 	price: 6.75,
 }, {
+	id: 2,
 	name: 'Chocolate Freeze (Size 1)',
 	quantity: 1,
 	imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Chocolate_large.png?v=1565302867',

@@ -7,8 +7,8 @@
 		<div v-if="!cart.itemCount">Your cart is currently empty.</div>
 		<cart-item-card
 			:class="$style.card"
-			v-for="(item, index) in cart.items"
-			:key="index"
+			v-for="item in cart.items"
+			:key="item.id"
 			:item="item"
 			@change="handleQuantityChange"/>
 	</div>
