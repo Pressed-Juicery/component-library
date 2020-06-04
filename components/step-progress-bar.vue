@@ -3,7 +3,7 @@
 	<div :class='$style.line' />
 	<div
 		:class='[$style.stepWrapper, { [$style.current]: step === currentStep },
-			{ [$style.showCursor]: index <= lastCompletedIndex() + 1 }]'
+			{ [$style.showCursor]: index <= firstIncompleteStepIndex() }]'
 		v-for='(step, index) in steps'
 		:key='index'
 		v-on:click='changeStep(step)'
@@ -30,16 +30,18 @@ export default {
 	},
 	methods: {
 		changeStep(step) {
-			const firstIncompleteStep = this.steps[this.lastCompletedIndex() + 1];
+			const firstIncompleteStep = this.steps[this.firstIncompleteStepIndex()];
 
 			if (step.completed || step === firstIncompleteStep) {
 				this.$emit('stepChange', step);
 			}
 		},
-		lastCompletedIndex() {
-			return this.steps.reduce((lastCompletedIndex, step, index) => (
-				step.completed ? index : lastCompletedIndex), 0
-			);
+		firstIncompleteStepIndex() {
+			for (let index = 0; index < this.steps.length; index++) {
+				if (!this.steps[index].completed) return index;
+			}
+
+			return this.steps.length - 1;
 		},
 	},
 };
