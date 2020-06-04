@@ -18,7 +18,7 @@ const fullCart = [{
 	imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Chocolate_large.png?v=1565302867',
 	price: 6.55,
 	modifiers: {
-		toppings: 'peanuts, caramel, vegan imitation bat wings',
+		toppings: 'peanuts, caramel, bananas',
 	},
 }];
 
