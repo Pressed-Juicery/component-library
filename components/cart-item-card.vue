@@ -49,7 +49,7 @@ export default {
 
 	methods: {
 		handleQuantityChange(quantity) {
-			this.$emit('change', { name: this.item.name, quantity});
+			this.$emit('change', { name: this.item.name, quantity });
 		},
 	},
 };

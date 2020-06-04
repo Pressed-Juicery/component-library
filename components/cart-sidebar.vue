@@ -54,8 +54,8 @@ export default {
 	methods: {
 		setCartState(state) { this.state = state },
 
-		handleDiscountCode(discount) {
-			// TODO
+		handleDiscountCode(discount) { // eslint-disable-line no-unused-vars
+			// Placeholder for discount handler
 		},
 
 		handleQuantityChange(quantity) {

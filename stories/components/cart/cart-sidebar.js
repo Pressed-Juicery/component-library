@@ -58,6 +58,7 @@ const mixins = {
 
 		getSubtotal() {
 			const subtotal = this.getOriginalTotalPrice(this.items) - this.getTotalDiscounts(this.getCartDiscounts());
+
 			return subtotal > 0 ? subtotal : 0;
 		},
 
@@ -82,12 +83,12 @@ const mixins = {
 			// Placeholder for async call
 			return {
 				price: 40,
-			}
+			};
 		},
 
 		getTotal() {
 			const subtotal = this.getSubtotal();
-			const { price: shipping }  = this.getFulfillmentSelection();
+			const { price: shipping } = this.getFulfillmentSelection();
 
 			return subtotal + shipping;
 		},
@@ -121,14 +122,13 @@ const mixins = {
 		updateItemQuantity(item) {
 			const index = this.items.findIndex(cartItem => cartItem.name.toLowerCase() === item.name.toLowerCase());
 
-			if(!item.quantity) {
-				this.items = this.items.filter(cartItem => cartItem.name.toLowerCase() !== item.name.toLowerCase())
-			}
-			else {
+			if (item.quantity) {
 				this.items[index].quantity = item.quantity;
+			} else {
+				this.items = this.items.filter(cartItem => cartItem.name.toLowerCase() !== item.name.toLowerCase());
 			}
 
-			this.getCart()
+			this.getCart();
 		},
 
 	},
