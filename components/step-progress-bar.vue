@@ -69,36 +69,16 @@ export default {
 	background-color: $gray-30;
 }
 
-.circle {
-	height: $spacing-03;
-	width: $spacing-03;
-	border-radius: 50%;
-	border: $spacing-01 solid $gray-30;
-}
-
-.circleClosed {
-	background-color: $gray-30;
-}
-
-.currentStep {
-	.stepName {
-		color: $color-primary;
-	}
-
-	.circleClosed {
-		background-color: $color-primary;
-	}
-
-	.circle {
-		border-color: $color-primary;
-	}
-}
-
-.circleWrapper,
-.stepWrapper {
+.stepWrapper,
+.circleWrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.stepWrapper {
+	flex-direction: column;
+	color: $gray-30;
 }
 
 .circleWrapper {
@@ -111,8 +91,28 @@ export default {
 	cursor: pointer;
 }
 
-.stepWrapper {
-	flex-direction: column;
-	color: $gray-30;
+.circle {
+	height: $spacing-03;
+	width: $spacing-03;
+	border-radius: 50%;
+	border: $spacing-01 solid $gray-30;
+}
+
+.circleClosed {
+	background-color: $gray-30;
+}
+
+.currentStep {
+	.circle {
+		border-color: $color-primary;
+	}
+
+	.circleClosed {
+		background-color: $color-primary;
+	}
+
+	.stepName {
+		color: $color-primary;
+	}
 }
 </style>
