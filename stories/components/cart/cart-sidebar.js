@@ -33,6 +33,10 @@ const mixins = {
 			this.items = fullCart;
 		},
 
+		getEmptyItems() {
+			this.items = [];
+		},
+
 		getUser() {
 			// Placeholder for async call
 			this.user = {
@@ -51,7 +55,8 @@ const mixins = {
 		},
 
 		getSubtotal() {
-			return this.getOriginalTotalPrice(this.items) - this.getTotalDiscounts(this.getCartDiscounts());
+			const subtotal = this.getOriginalTotalPrice(this.items) - this.getTotalDiscounts(this.getCartDiscounts());
+			return subtotal > 0 ? subtotal : 0;
 		},
 
 		getCartDiscounts() {
@@ -172,7 +177,7 @@ export function EmptyCart() {
 			},
 		},
 		created() {
-			this.getItems();
+			this.getEmptyItems();
 			this.getEmptyCart();
 			this.getUser();
 		},
