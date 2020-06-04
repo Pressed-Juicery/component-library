@@ -69,19 +69,15 @@ export default {
 	background-color: $gray-30;
 }
 
-.circleClosed,
 .circleOpen {
 	height: $spacing-03;
 	width: $spacing-03;
 	border-radius: 50%;
+	border: $spacing-01 solid $gray-30;
 }
 
 .circleClosed {
 	background-color: $gray-30;
-}
-
-.circleOpen {
-	border: $spacing-01 solid $gray-30;
 }
 
 .currentStep {
