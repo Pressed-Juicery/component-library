@@ -12,7 +12,7 @@
 		v-on:click='changeStep(step)'
 	>
 		<div :class='$style.circleWrapper'>
-			<span :class='[$style.circleOpen, { [$style.circleClosed]: step.completed }]'></span>
+			<span :class='[$style.circle, { [$style.circleClosed]: step.completed }]'></span>
 		</div>
 		<div :class="$style.stepName">{{ step.name }}</div>
 	</div>
@@ -69,7 +69,7 @@ export default {
 	background-color: $gray-30;
 }
 
-.circleOpen {
+.circle {
 	height: $spacing-03;
 	width: $spacing-03;
 	border-radius: 50%;
@@ -89,7 +89,7 @@ export default {
 		background-color: $color-primary;
 	}
 
-	.circleOpen {
+	.circle {
 		border-color: $color-primary;
 	}
 }
