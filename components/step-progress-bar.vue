@@ -14,7 +14,7 @@
 		<div :class='$style.circleWrapper'>
 			<span :class='[$style.circleOpen, { [$style.circleClosed]: step.completed }]'></span>
 		</div>
-		<div :class="$style.text">{{ step.name }}</div>
+		<div :class="$style.stepName">{{ step.name }}</div>
 	</div>
 </div>
 </template>
@@ -87,7 +87,7 @@ export default {
 }
 
 .currentStep {
-	.text {
+	.stepName {
 		color: $color-primary;
 	}
 
