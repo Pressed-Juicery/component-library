@@ -2,10 +2,15 @@
 	<div>
 		<div :class="[$style.header, $style.row]">
 			<div :class="$style.title">Your Cart</div>
-			<div :class="$style.itemCount">{{ cart.itemCount || 0 }} Items</div>
+			<div :class="$style.itemCount">{{ cart.itemCount }} Items</div>
 		</div>
 		<div v-if="!cart.itemCount">Your cart is currently empty.</div>
-		<cart-item-card :class="$style.card" v-for="(item, index) in cart.items" :key="index" :item="item" />
+		<cart-item-card
+			:class="$style.card"
+			v-for="(item, index) in cart.items"
+			:key="index"
+			:item="item"
+			@change="handleQuantityChange"/>
 	</div>
 </template>
 
@@ -15,6 +20,12 @@ import CartItemCard from './cart-item-card';
 export default {
 	props: {
 		cart: Object,
+	},
+
+	methods: {
+		handleQuantityChange(item) {
+			this.$emit('change', item);
+		},
 	},
 
 	components: { CartItemCard },

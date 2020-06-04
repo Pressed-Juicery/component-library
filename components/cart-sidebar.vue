@@ -7,10 +7,10 @@
 			@close="$emit('close')" />
 
 		<div v-if="state === 'cart'">
-			<cart-summary :class="$style.cartSummary" :cart="cart" />
-			<cart-discount-input @submit="$emit('submit-discount')" />
+			<cart-summary :class="$style.cartSummary" @change="handleQuantityChange" :cart="cart" />
+			<cart-discount-input @submit="handleDiscountCode" />
 			<hr :class="$style.partition">
-			<cart-points-display @stateChange="setCartState" :points="0" />
+			<cart-points-display @stateChange="setCartState" :points="user.points" />
 		</div>
 
 		<div v-if="state === 'points'">
@@ -53,6 +53,15 @@ export default {
 	},
 	methods: {
 		setCartState(state) { this.state = state },
+
+		handleDiscountCode(discount) {
+			// TODO
+		},
+
+		handleQuantityChange(quantity) {
+			this.$emit('cart-quantity-change', quantity);
+		},
+
 	},
 	computed: {
 		shouldShowBackButton() { return this.state !== 'cart' },
