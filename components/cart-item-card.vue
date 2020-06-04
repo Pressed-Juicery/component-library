@@ -11,7 +11,7 @@
 					<div :class="$style.price">{{ displayPrice }}</div>
 				</div>
 
-				<quantity-selector :quantity="item.quantity"/>
+				<quantity-selector @change="handleQuantityChange" :quantity="item.quantity"/>
 			</div>
 		</card>
 		<div v-if="additionalInformation" :class="$style.detailsWrapper">
@@ -44,6 +44,12 @@ export default {
 		},
 		displayPrice() {
 			return formatCurrency(this.item.price);
+		},
+	},
+
+	methods: {
+		handleQuantityChange(quantity) {
+			this.$emit('change', { name: this.item.name, quantity});
 		},
 	},
 };
