@@ -20,46 +20,6 @@ const fullCart = [{
 	modifiers: {
 		toppings: 'peanuts, caramel, vegan imitation bat wings',
 	},
-}, {
-	name: 'Strawberry Basil Lemonade',
-	quantity: 1,
-	imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-	price: 6.75,
-}, {
-	name: 'Chocolate Freeze (Size 1)',
-	quantity: 1,
-	imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Chocolate_large.png?v=1565302867',
-	price: 6.55,
-	modifiers: {
-		toppings: 'peanuts, caramel, vegan imitation bat wings',
-	},
-}];
-
-const cards = [{
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/water-and-shot.svg',
-	title: 'Shot or Water',
-	points: '70',
-	quantityAvailable: 7,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/freeze-size-1.svg',
-	title: 'Size 1 Freeze',
-	points: '140',
-	quantityAvailable: 3,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/juice.svg',
-	title: 'Any Juice',
-	points: '150',
-	quantityAvailable: 3,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/signature-blend.svg',
-	title: 'Signature Blend',
-	points: '180',
-	quantityAvailable: 2,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/freeze-size-2.svg',
-	title: 'Size 2 Freeze',
-	points: '180',
-	quantityAvailable: 2,
 }];
 
 const mixins = {
@@ -67,25 +27,103 @@ const mixins = {
 		closeSlider() {
 			this.active = false;
 		},
-	},
-	computed: {
-		itemCount() {
-			return this.items.reduce((accum, item) => accum + item.quantity, 0);
+
+		getItems() {
+			// Placeholder for async call
+			this.items = fullCart;
 		},
-		cart() {
-			return {
-				itemCount: this.itemCount,
-				items: this.items,
-				originalTotalPrice: 220.4,
-				subtotal: 100,
-				total: 150.5,
-				isShippingAvailable: true,
-				discounts: [
-					{ name: 'VIP Member Savings', amount: 2.5 },
-					{ name: 'Points Redemption', amount: 6.5 },
-				],
+
+		getUser() {
+			// Placeholder for async call
+			this.user = {
+				firstName: 'Carl',
+				lastName: 'McGee',
+				points: 220,
 			};
 		},
+
+		getItemCount(items) {
+			return items.reduce((accum, item) => accum + Number(item.quantity), 0);
+		},
+
+		getOriginalTotalPrice(items) {
+			return items.reduce((accum, item) => accum + (Number(item.price) * Number(item.quantity)), 0) || 0;
+		},
+
+		getSubtotal() {
+			return this.getOriginalTotalPrice(this.items) - this.getTotalDiscounts(this.getCartDiscounts());
+		},
+
+		getCartDiscounts() {
+			// Placeholder for async call
+			return [
+				{ name: 'VIP Member Savings', amount: 2.5 },
+				{ name: 'Points Redemption', amount: 6.5 },
+			];
+		},
+
+		getTotalDiscounts(discounts) {
+			return discounts.reduce((accum, discount) => accum + Number(discount.amount), 0) || 0;
+		},
+
+		isShippingAvailable() {
+			// Placeholder for async call
+			return true;
+		},
+
+		getFulfillmentSelection() {
+			// Placeholder for async call
+			return {
+				price: 40,
+			}
+		},
+
+		getTotal() {
+			const subtotal = this.getSubtotal();
+			const { price: shipping }  = this.getFulfillmentSelection();
+
+			return subtotal + shipping;
+		},
+
+		getCart() {
+			this.cart = {
+				itemCount: this.getItemCount(this.items),
+				items: this.items,
+				originalTotalPrice: this.getOriginalTotalPrice(this.items),
+				subtotal: this.getSubtotal(this.items),
+				discounts: this.getCartDiscounts(),
+				total: this.getTotal(),
+				isShippingAvailable: this.isShippingAvailable(),
+				fulfillmentSelection: this.getFulfillmentSelection(),
+			};
+		},
+
+		getEmptyCart() {
+			this.cart = {
+				itemCount: this.getItemCount(this.items),
+				items: [],
+				originalTotalPrice: this.getOriginalTotalPrice(this.items),
+				subtotal: this.getSubtotal(this.items),
+				discounts: this.getCartDiscounts(),
+				total: this.getTotal(),
+				isShippingAvailable: this.isShippingAvailable(),
+				fulfillmentSelection: this.getFulfillmentSelection(),
+			};
+		},
+
+		updateItemQuantity(item) {
+			const index = this.items.findIndex(cartItem => cartItem.name.toLowerCase() === item.name.toLowerCase());
+
+			if(!item.quantity) {
+				this.items = this.items.filter(cartItem => cartItem.name.toLowerCase() !== item.name.toLowerCase())
+			}
+			else {
+				this.items[index].quantity = item.quantity;
+			}
+
+			this.getCart()
+		},
+
 	},
 };
 
@@ -97,24 +135,23 @@ export function Overview() {
 			:active="active"
 			:user="user"
 			:cart="cart"
-			:pointsCards="pointsCards"
-			@close="closeSlider"/>`,
+			@close="closeSlider"
+			@cart-quantity-change="updateItemQuantity"/>`,
 		props: {
 			active: {
 				default: boolean('Active', true),
 			},
 		},
+		created() {
+			this.getItems();
+			this.getCart();
+			this.getUser();
+		},
 		data() {
 			return {
-				items: fullCart,
-				user: {
-					firstName: 'Carl',
-					lastName: 'McGee',
-				},
-
-				// vvvv this is a placeholder to demo functionality,
-				// cards should be generated from a service based on user data, not passed in
-				pointsCards: cards,
+				items: [],
+				cart: {},
+				user: {},
 			};
 		},
 	};
@@ -134,9 +171,15 @@ export function EmptyCart() {
 				default: boolean('Active', true),
 			},
 		},
+		created() {
+			this.getItems();
+			this.getEmptyCart();
+			this.getUser();
+		},
 		data() {
 			return {
 				items: [],
+				user: {},
 			};
 		},
 	};
