@@ -14,7 +14,7 @@
 		</div>
 
 		<div v-if="state === 'points'">
-			<cart-points-redemption :cards="cards" :points="10" />
+			<cart-points-redemption :points="user.points" />
 		</div>
 
 		<cart-checkout-footer slot="footer" :cart="cart" @checkout="$emit('checkout')" />
@@ -45,7 +45,6 @@ export default {
 		active: Boolean,
 		cart: Object,
 		user: Object,
-		pointsCards: Array, // Placeholder
 	},
 	data() {
 		return {
@@ -57,10 +56,6 @@ export default {
 	},
 	computed: {
 		shouldShowBackButton() { return this.state !== 'cart' },
-		cards() {
-			// placeholder for when we have a service that builds the card objects
-			return this.pointsCards;
-		},
 	},
 };
 </script>
