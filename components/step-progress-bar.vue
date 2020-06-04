@@ -38,7 +38,7 @@ export default {
 		},
 		lastCompletedIndex() {
 			return this.states.reduce((lastCompletedIndex, state, index) => (
-				state.completed ? index : lastCompletedIndex)
+				state.completed ? index : lastCompletedIndex), 0
 			);
 		},
 	},
