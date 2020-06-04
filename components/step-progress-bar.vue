@@ -81,7 +81,6 @@ export default {
 }
 
 .circleOpen {
-	box-sizing: border-box;
 	border: $spacing-01 solid $gray-30;
 }
 
