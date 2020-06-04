@@ -14,7 +14,7 @@
 		<div :class='$style.circleWrapper'>
 			<span :class='[$style.circleOpen, { [$style.circleClosed]: step.completed }]'></span>
 		</div>
-		<div :class="$style.text">{{ steps[index].name }}</div>
+		<div :class="$style.text">{{ step.name }}</div>
 	</div>
 </div>
 </template>
