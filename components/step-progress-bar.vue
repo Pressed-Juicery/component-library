@@ -63,7 +63,7 @@ export default {
 	width: 100%;
 	height: $spacing-01;
 	position: absolute;
-	border-radius: $spacing-03;
+	border-radius: 999em;
 	z-index: -1;
 	top: 14px;
 	background-color: $gray-30;
