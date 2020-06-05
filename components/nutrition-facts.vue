@@ -1,13 +1,13 @@
 <template>
-	<div>
+	<div :class="$style.root">
 		<div>Serving size {{ nutritionDetails.servingSize }}, Servings {{ nutritionDetails.servingsPerContainer }}</div>
 		<div>Calories per serving {{ nutritionDetails.calories }}</div>
 			<div :class="$style.wrapper">
 				<div :class="$style.leftColumn">
-					<div>Amount/Serving</div>
+					<div :class="$style.bolder">Amount/Serving</div>
 					<!-- Start column one -->
 					<div v-for="(fact, index) in nutritionDetails.facts" :key="index">
-						<div :class="$style.spacing">{{ fact.label }} {{ fact.amountPerServing }}</div>
+						<div :class="$style.spacing"><span :class="$style.bolder">{{ fact.label }}</span> {{ fact.amountPerServing }}</div>
 						<template v-if="fact.children.length > 0">
 							<div :class="$style.child" v-for="(factChild, index) in fact.children" :key="index">
 								<div :class="$style.spacing">{{ factChild.label }} {{ factChild.amountPerServing }}</div>
@@ -16,7 +16,7 @@
 					</div>
 				</div>
 				<div :class="$style.rightColumn">
-					<div>%DV</div>
+					<div :class="$style.bolder">%DV</div>
 					<!-- Start column two -->
 					<div v-for="(fact, index) in nutritionDetails.facts" :key="index">
 						<div :class="$style.spacing">{{ fact.dailyValue === null ? '\0' : fact.dailyValue }}</div>
@@ -45,6 +45,10 @@ export default {
 </script>
 
 <style module lang="scss">
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+
 .wrapper {
 	display: flex;
 	justify-content: space-around;
@@ -54,6 +58,7 @@ export default {
 
 .leftColumn, .rightColumn {
 	flex-grow: 1;
+	margin-top: 20px;
 }
 
 
@@ -68,7 +73,12 @@ export default {
 // Control for all spacing
 .spacing {
 	padding: 10px 0;
+	margin: 10px 0;
 	// background-color: #00ffff80;
 	border-bottom: 1px solid silver;
+}
+.bolder {
+	@include text-bolder();
+	line-height: 0;
 }
 </style>
