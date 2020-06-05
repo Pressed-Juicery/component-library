@@ -64,7 +64,7 @@ export default {
 
 .icon {
 	height: $spacing-08;
-	width: $spacing-08;
+	width: 100%;
 }
 
 .title {
