@@ -1,5 +1,5 @@
 <template>
-	<svg width="66px" height="46px" viewBox="0 0 66 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<svg width="44px" height="25px" viewBox="0 0 66 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
 		<title>Discover</title>
 		<desc>Created with Sketch.</desc>
