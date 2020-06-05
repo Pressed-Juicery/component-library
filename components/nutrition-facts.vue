@@ -3,24 +3,28 @@
 		<div>Serving size {{ nutritionDetails.servingSize }}, Servings {{ nutritionDetails.servingsPerContainer }}</div>
 		<div>Calories per serving {{ nutritionDetails.calories }}</div>
 			<div :class="$style.wrapper">
-				<div :class="$style.left">
+				<div :class="$style.leftColumn">
 					<div>Amount/Serving</div>
 					<!-- Start column one -->
-					<div v-for="fact in nutritionDetails.facts" :key="fact">
-						<div>{{ fact.label }} {{ fact.amountPerServing }}</div>
+					<div v-for="(fact, index) in nutritionDetails.facts" :key="index">
+						<div :class="$style.spacing">{{ fact.label }} {{ fact.amountPerServing }}</div>
 						<template v-if="fact.children.length > 0">
-							<div :class="$style.child" v-for="factChild in fact.children" :key="factChild">{{ factChild.label }} {{ factChild.amountPerServing }}</div>
+							<div :class="$style.child" v-for="(factChild, index) in fact.children" :key="index">
+								<div :class="$style.spacing">{{ factChild.label }} {{ factChild.amountPerServing }}</div>
+							</div>
 						</template>
 					</div>
 				</div>
-
-				<div :class="$style.right">
+				<div :class="$style.rightColumn">
 					<div>%DV</div>
 					<!-- Start column two -->
-					<div v-for="fact in nutritionDetails.facts" :key="fact">
-						<div>{{ fact.dailyValue }}</div>
+					<div v-for="(fact, index) in nutritionDetails.facts" :key="index">
+						<div :class="$style.spacing">{{ fact.dailyValue === null ? '\0' : fact.dailyValue }}</div>
 						<template v-if="fact.children.length > 0">
-							<div :class="$style.child" v-for="factChild in fact.children" :key="factChild">{{ factChild.dailyValue }}</div>
+							<div :class="$style.child" v-for="(factChild, index) in fact.children" :key="index">
+								<!-- TODO if this is null it looks aweful -->
+								<div :class="$style.spacing">{{ factChild.dailyValue === null ? '\0' : factChild.dailyValue }}</div>
+							</div>
 						</template>
 					</div>
 				</div>
@@ -48,21 +52,23 @@ export default {
 	align-items: stretch;
 }
 
-.left, .right {
+.leftColumn, .rightColumn {
 	flex-grow: 1;
 }
 
-// Control for all spacing
-.left > div,
-.right > div, .child {
-	margin: 30px 0;
-}
 
-.right {
+.rightColumn {
 	text-align: right;
 }
 
 .child {
 	text-indent: 20px;
+}
+
+// Control for all spacing
+.spacing {
+	padding: 10px 0;
+	// background-color: #00ffff80;
+	border-bottom: 1px solid silver;
 }
 </style>

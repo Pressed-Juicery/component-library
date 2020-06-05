@@ -38,6 +38,7 @@ export function Overview() {
 						{ label: 'Cholest', amountPerServing: '0g', dailyValue: '0%', children: [] },
 						{ label: 'Sodium', amountPerServing: '10mg', dailyValue: '0%', children: [] },
 						{ label: 'Cholest', amountPerServing: '0g', dailyValue: null, children: [] },
+						{ label: 'Sodium', amountPerServing: '10mg', dailyValue: '0%', children: [] },
 					],
 				},
 			}
