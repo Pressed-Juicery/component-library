@@ -2,24 +2,26 @@
 	<div>
 		<div>Serving size {{ nutritionDetails.servingSize }}, Servings {{ nutritionDetails.servingsPerContainer }}</div>
 		<div>Calories per serving {{ nutritionDetails.calories }}</div>
-		<div :class="$style.gridWrapper" v-for="(fact, index) in nutritionDetails.facts" :key="index">
-			<div :class="$style.leftColumn">
-				<div>{{ fact.label }} {{ fact.amountPerServing }}</div>
-				<div v-if="fact.children.length > 0">
-					<div :class="$style.leftColumn" v-for="(fact, index) in fact.children" :key="index">
-						<div>
-							<div :class="$style.textIndent">{{ fact.label }} {{ fact.amountPerServing }}</div>
-						</div>
+			<div :class="$style.wrapper">
+				<div :class="$style.left">
+					<div>Amount/Serving</div>
+					<!-- Start column one -->
+					<div v-for="fact in nutritionDetails.facts" :key="fact">
+						<div>{{ fact.label }} {{ fact.amountPerServing }}</div>
+						<template v-if="fact.children.length > 0">
+							<div :class="$style.child" v-for="factChild in fact.children" :key="factChild">{{ factChild.label }} {{ factChild.amountPerServing }}</div>
+						</template>
 					</div>
 				</div>
-			</div>
-			<div :class="$style.rightColumn">
-				<div>{{ fact.dailyValue }}</div>
-				<div v-if="fact.children.length > 0">
-					<div v-for="(fact, index) in fact.children" :key="index">
-						<div :class="$style.rightColumn">
-							<div>{{ fact.dailyValue }}</div>
-						</div>
+
+				<div :class="$style.right">
+					<div>%DV</div>
+					<!-- Start column two -->
+					<div v-for="fact in nutritionDetails.facts" :key="fact">
+						<div>{{ fact.dailyValue }}</div>
+						<template v-if="fact.children.length > 0">
+							<div :class="$style.child" v-for="factChild in fact.children" :key="factChild">{{ factChild.dailyValue }}</div>
+						</template>
 					</div>
 				</div>
 			</div>
@@ -39,22 +41,28 @@ export default {
 </script>
 
 <style module lang="scss">
-.gridWrapper {
-	display: grid;
-	grid-template-areas:
-		"leftColumn rightColumn";
+.wrapper {
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row;
+	align-items: stretch;
 }
 
-.textIndent {
-	text-indent: 15px;
+.left, .right {
+	flex-grow: 1;
 }
 
-.leftColumn {
-	grid-area: leftColumn;
+// Control for all spacing
+.left > div,
+.right > div, .child {
+	margin: 30px 0;
 }
 
-.rightColumn {
-	grid-area: rightColumn;
+.right {
 	text-align: right;
+}
+
+.child {
+	text-indent: 20px;
 }
 </style>
