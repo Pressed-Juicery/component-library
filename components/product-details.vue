@@ -1,40 +1,39 @@
 <template>
-	<div :class="$style.root">
-		<div :class="$style.overview">{{ productInfo.overview }}</div>
-		<div>
-			<div :class="$style.gridWrapper" v-for="(detail, index) in productInfo.details" :key="index">
-				<div :class="$style.leftColumn">
-					<img :class="$style.icon" :src="getImageSrc(detail.icon)" alt=""/>
-				</div>
-				<div :class="$style.rightColumn">
-					<div :class="$style.title">{{ detail.title }}</div>
-					<div>{{ detail.content }}</div>
-				</div>
+<div :class="$style.root">
+	<div :class="$style.overview">{{ productInfo.overview }}</div>
+	<div>
+		<div :class="$style.gridWrapper" v-for="(detail, index) in productInfo.details" :key="index">
+			<div :class="$style.leftColumn">
+				<img :class="$style.icon" :src="getImageSrc(detail.icon)" alt />
+			</div>
+			<div :class="$style.rightColumn">
+				<div :class="$style.title">{{ detail.title }}</div>
+				<div>{{ detail.content }}</div>
 			</div>
 		</div>
 	</div>
+</div>
 </template>
 
 <script>
-
-
-	export default {
-		props: {
-			productInfo: {
-				type: Object,
-				required: true
-			}
+export default {
+	props: {
+		productInfo: {
+			type: Object,
+			required: true,
 		},
-		methods: {
-			getImageSrc(imageName) {
-				const filename = imageName.replace(/\s/g, '-').toLowerCase();
-				return `//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/${filename}.svg`;
-			},
-		}
-	}
+	},
+	methods: {
+		getImageSrc(imageName) {
+			const filename = imageName.replace(/\s/g, '-').toLowerCase();
+
+			return `//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/${filename}.svg`;
+		},
+	},
+};
 </script>
 
-<style module lang="scss">
+<style module lang='scss'>
 @import "../styles/variables.scss";
 @import "../styles/mixins.scss";
 
