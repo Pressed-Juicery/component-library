@@ -1,11 +1,13 @@
 <template>
 	<div :class="$style.root">
-		<div>{{ details.overview }}</div>
+		<div :class="$style.overview">{{ productInfo.overview }}</div>
 		<div>
-			<div :class="$style.gridWrapper" v-for="(detail, index) in details.details" :key="index">
-				<div :class="$style.icon">{{ detail.icon }}</div>
-				<div :class="$style.detail">
-					<div>{{ detail.title }}</div>
+			<div :class="$style.gridWrapper" v-for="(detail, index) in productInfo.details" :key="index">
+				<div :class="$style.leftColumn">
+					<img :class="$style.icon" :src="getImageSrc(detail.icon)" alt=""/>
+				</div>
+				<div :class="$style.rightColumn">
+					<div :class="$style.title">{{ detail.title }}</div>
 					<div>{{ detail.content }}</div>
 				</div>
 			</div>
@@ -14,36 +16,60 @@
 </template>
 
 <script>
+
+
 	export default {
 		props: {
-			details: {
+			productInfo: {
 				type: Object,
 				required: true
 			}
 		},
+		methods: {
+			getImageSrc(imageName) {
+				const filename = imageName.replace(/\s/g, '-').toLowerCase();
+				return `//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/${filename}.svg`;
+			},
+		}
 	}
 </script>
 
 <style module lang="scss">
 @import "../styles/variables.scss";
+@import "../styles/mixins.scss";
 
 .root {
 	width: 100%;
 }
 
+.overview,
 .gridWrapper {
-	padding-top: $spacing-06;
-	display: grid;
-	grid-template-columns: 1fr 5fr;
+	margin-bottom: $spacing-07;
 }
 
-.icon {
-	// Eventually an icon will live here.
+.gridWrapper {
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+	grid-column-gap: $spacing-05;
+}
+
+.leftColumn {
+	display: flex;
+	justify-content: center;
 	grid-column-start: 1;
 }
 
-.detail {
+.rightColumn {
 	grid-column-start: 2;
 }
 
+.icon {
+	height: $spacing-08;
+	width: $spacing-08;
+}
+
+.title {
+	@include text-heading-6();
+	@include text-bolder();
+}
 </style>

@@ -8,26 +8,26 @@ export default {
 export function Overview() {
 	return {
 		components: { ProductDetails },
-		template: '<product-details :details="details" />',
+		template: '<product-details :productInfo="productInfo" />',
 		data() {
 			return {
-					details: {
-						overview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo similique velit doloremque? Provident, dicta fuga!",
+					productInfo: {
+						overview: "With 190% of your daily vitamin C, this blood orange juice is the perfect elevated OJ to take you from winter to spring!",
 						details: [
 							{ 
-								icon: "some/icon",
-								title: "Lorem ipsum dolor sit amet.",
-								content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta perspiciatis pariatur ad quaerat explicabo consequuntur sunt officia, quos aliquid molestiae veniam doloribus architecto sit labore?"
+								icon: "greens",
+								title: "Your Daily Greens: Leveled Up",
+								content: "The combination of apple cider vinegar with fresh-pressed juices from ginger, spinach & more add minerals and prebiotics."
 							},
 							{ 
-								icon: "some/icon",
-								title: "Lorem ipsum dolor sit amet.",
-								content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta perspiciatis pariatur ad quaerat explicabo consequuntur sunt officia, quos aliquid molestiae veniam doloribus architecto sit labore?"
+								icon: "probiotics",
+								title: "With the Mother",
+								content: "Bragg apple cider vinegar contains the amazing vinegar “Mother,” which occurs naturally as it produces prebiotics."
 							},
 							{ 
-								icon: "some/icon",
-								title: "Lorem ipsum dolor sit amet.",
-								content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta perspiciatis pariatur ad quaerat explicabo consequuntur sunt officia, quos aliquid molestiae veniam doloribus architecto sit labore?"
+								icon: "acv",
+								title: "Balancing Your Appetite",
+								content: "Bragg apple cider vinegar is full of zesty natural goodness. Studies show when incorporated as part of a healthy diet, it may help maintain a healthy weight - it’s associated with increased feelings of fullness!"
 							},
 						]
 					}
