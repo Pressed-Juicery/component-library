@@ -22,13 +22,25 @@
 						<div :class="$style.spacing">{{ fact.dailyValue === null ? '\0' : fact.dailyValue }}</div>
 						<template v-if="fact.children.length > 0">
 							<div :class="$style.child" v-for="(factChild, index) in fact.children" :key="index">
-								<!-- TODO if this is null it looks aweful -->
 								<div :class="$style.spacing">{{ factChild.dailyValue === null ? '\0' : factChild.dailyValue }}</div>
 							</div>
 						</template>
 					</div>
 				</div>
 			</div>
+		<!-- End table -->
+		<div>
+			<!-- TODO Find a way to render this as a string with spaces and lines between. -->
+			<span v-for="(vitamin, index) in nutritionDetails.vitamins" :key="index">
+				<span :class="$style.vitamin"> {{ vitamin.value }} {{ vitamin.label }} </span>
+			</span>
+			<p>The % Daily Value tells you how much nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutritional advice.</p>
+			<span v-for="(claim, index) in nutritionDetails.claims" :key="index">
+				<span :class="$style.claims"> {{ claim }} </span>
+			</span>
+			<span v-for="(warning, index) in nutritionDetails.warnings" :key="index">
+				<span :class="$style.warning"> {{ warning }} </span>
+			</span>
 		</div>
 	</div>
 </template>
@@ -80,5 +92,18 @@ export default {
 .bolder {
 	@include text-bolder();
 	line-height: 0;
+}
+
+// Figure out a way to get this to render with the bars in between but not on last.
+.vitamin::after, .claims::after {
+	content: " | "
+}
+
+.vitamin {
+	@include text-bold();
+}
+
+.claims {
+	@include text-heading-6()
 }
 </style>
