@@ -31,16 +31,23 @@
 		<!-- End table -->
 		<div>
 			<!-- TODO Find a way to render this as a string with spaces and lines between. -->
-			<span v-for="(vitamin, index) in nutritionDetails.vitamins" :key="index">
-				<span :class="$style.vitamin"> {{ vitamin.value }} {{ vitamin.label }} </span>
+			<span :class="$style.vitamins" v-for="(vitamin, index) in nutritionDetails.vitamins" :key="index">
+				<span> {{ vitamin.value }} {{ vitamin.label }} </span>
 			</span>
+		</div>
+		<div>
 			<p>The % Daily Value tells you how much nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutritional advice.</p>
-			<span v-for="(claim, index) in nutritionDetails.claims" :key="index">
-				<span :class="$style.claims"> {{ claim }} </span>
+		</div>
+		<div>
+			<span :class="$style.claims" v-for="(claim, index) in nutritionDetails.claims" :key="index">
+				<span> {{ claim }} </span>
 			</span>
+		</div>
+		<div>
 			<span v-for="(warning, index) in nutritionDetails.warnings" :key="index">
 				<span :class="$style.warning"> {{ warning }} </span>
 			</span>
+		</div>
 		</div>
 	</div>
 </template>
@@ -95,11 +102,13 @@ export default {
 }
 
 // Figure out a way to get this to render with the bars in between but not on last.
-.vitamin::after, .claims::after {
-	content: " | "
+.vitamins:not(:first-child):before,
+.claims:not(:first-child):before {
+	content: " | ";
+	background-color: #00ffff80;
 }
 
-.vitamin {
+.vitamins {
 	@include text-bold();
 }
 
