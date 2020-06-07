@@ -33,7 +33,7 @@ export function Overview() {
 							children: [
 								{ label: 'Sat Fat', amountPerServing: '0g', dailyValue: '0%' },
 								{ label: 'Trans Fat', amountPerServing: '0g', dailyValue: '0%' },
-							]
+							],
 						},
 						{ label: 'Cholest', amountPerServing: '0g', dailyValue: '0%', children: [] },
 						{ label: 'Sodium', amountPerServing: '10mg', dailyValue: '0%', children: [] },
@@ -41,7 +41,7 @@ export function Overview() {
 						{ label: 'Sodium', amountPerServing: '10mg', dailyValue: '0%', children: [] },
 					],
 				},
-			}
-		}
-	}
+			};
+		},
+	};
 }
