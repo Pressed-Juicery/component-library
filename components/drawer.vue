@@ -29,10 +29,10 @@
 								<h3>Test</h3>
 								<h3>Test</h3>
 								<h3>Test</h3>
-								<button style='width: 100%;' @click='isOpen = !isOpen'>Done</button>
-							</div>
+							<button style='width: 100%;' @click='isOpen = !isOpen'>Done</button>
 						</div>
 					</div>
+				</div>
 				</div>
 			</transition>
 		</div>
