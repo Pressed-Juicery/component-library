@@ -1,4 +1,4 @@
-import Drawer from '../../../components/drawer.vue'
+import Drawer from '../../../components/drawer.vue';
 
 export default {
 	title: 'Components / Basic / Drawer',
@@ -16,4 +16,4 @@ export function Overview() {
 			};
 		},
 	};
-};
+}

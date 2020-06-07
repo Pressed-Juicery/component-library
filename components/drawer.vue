@@ -1,27 +1,27 @@
 <template>
-	<div :class="$style.root">
+	<div :class='$style.root'>
 		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+			rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css'
 		/>
 		<div>
-		<div v-if="isOpen" :class="$style.clickArea" @click="isOpen = !isOpen"></div>
+		<div v-if='isOpen' :class='$style.clickArea' @click='isOpen = !isOpen'></div>
 			<transition
-				name="custom-classes-transition"
-				enter-active-class="animate__animated animate__fadeInUp"
-				leave-active-class="animate__animated animate__fadeOutDown"
+				name='custom-classes-transition'
+				enter-active-class='animate__animated animate__fadeInUp'
+				leave-active-class='animate__animated animate__fadeOutDown'
 			>
-				<div v-if="isOpen" :class="$style.drawer" key="drawer">
-					<div :class="$style.titleBar" @click="isOpen = !isOpen">
-						<div :class="$style.container">
-							<div :class="$style.title">{{ title }}</div>
-							<ArrowDown :class="$style.icon" />
+				<div v-if='isOpen' :class='$style.drawer' key='drawer'>
+					<div :class='$style.titleBar' @click='isOpen = !isOpen'>
+						<div :class='$style.container'>
+							<div :class='$style.title'>{{ title }}</div>
+							<ArrowDown :class='$style.icon' />
 						</div>
 					</div>
-					<div :class="$style.drawerContent">
-						<div :class="$style.container">
+					<div :class='$style.drawerContent'>
+						<div :class='$style.container'>
 							<slot />
-							<div style="width: 100%">
+							<div style='width: 100%'>
 								<h3>Test</h3>
 								<h3>Test</h3>
 								<h3>Test</h3>
@@ -29,37 +29,37 @@
 								<h3>Test</h3>
 								<h3>Test</h3>
 								<h3>Test</h3>
-								<button style="width: 100%;" @click="isOpen = !isOpen">Done</button>
+								<button style='width: 100%;' @click='isOpen = !isOpen'>Done</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</transition>
 		</div>
-		<button style="position: fixed; top: 0;" @click="isOpen = !isOpen">Toggle Drawer</button>
+		<button style='position: fixed; top: 0;' @click='isOpen = !isOpen'>Toggle Drawer</button>
 	</div>
 </template>
 
 <script>
-import ArrowDown from "./icons/arrow-down-icon.vue";
+import ArrowDown from './icons/arrow-down-icon.vue';
 export default {
 	props: {
 		title: {
 			type: String,
-			required: true
+			required: true,
 		},
 		isOpen: {
 			type: Boolean,
-			require: true
-		}
+			require: true,
+		},
 	},
 	components: { ArrowDown },
 };
 </script>
 
-<style module lang="scss">
-@import "../styles/variables.scss";
-@import "../styles/mixins.scss";
+<style module lang='scss'>
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
 
 @mixin flex($flow: row wrap, $justify: center, $align: center){
 	display: flex;
