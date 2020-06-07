@@ -29,25 +29,27 @@
 				</div>
 			</div>
 		<!-- End table -->
-		<div>
-			<!-- TODO Find a way to render this as a string with spaces and lines between. -->
-			<span :class="$style.vitamins" v-for="(vitamin, index) in nutritionDetails.vitamins" :key="index">
-				<span> {{ vitamin.value }} {{ vitamin.label }} </span>
-			</span>
-		</div>
-		<div>
-			<p>The % Daily Value tells you how much nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutritional advice.</p>
-		</div>
-		<div>
-			<span :class="$style.claims" v-for="(claim, index) in nutritionDetails.claims" :key="index">
-				<span> {{ claim }} </span>
-			</span>
-		</div>
-		<div>
-			<span v-for="(warning, index) in nutritionDetails.warnings" :key="index">
-				<span :class="$style.warning"> {{ warning }} </span>
-			</span>
-		</div>
+		<section :class="$style.information">
+			<div> <!-- needs 16px between -->
+				<!-- TODO Find a way to render this as a string with spaces and lines between. -->
+				<span :class="$style.vitamins" v-for="(vitamin, index) in nutritionDetails.vitamins" :key="index">
+					<span> {{ vitamin.value }} {{ vitamin.label }} </span>
+				</span>
+			</div>
+			<div> <!-- needs 8px between -->
+				<span :class="$style.dailyValue">The % Daily Value tells you how much nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutritional advice.</span>
+			</div>
+			<div> <!-- needs 16px between -->
+				<span :class="$style.claims" v-for="(claim, index) in nutritionDetails.claims" :key="index">
+					<span> {{ claim }} </span>
+				</span>
+			</div>
+			<div> <!-- needs 8px between -->
+				<span v-for="(warning, index) in nutritionDetails.warnings" :key="index">
+					<span :class="$style.warning"> {{ warning }} </span>
+				</span>
+			</div>
+		</section>
 		</div>
 	</div>
 </template>
@@ -101,18 +103,32 @@ export default {
 	line-height: 0;
 }
 
+.information div:nth-child(odd) {
+	margin-top: $spacing-05;
+}
+.information div:nth-child(even) {
+	margin-top: $spacing-03;
+}
+
 // Figure out a way to get this to render with the bars in between but not on last.
 .vitamins:not(:first-child):before,
 .claims:not(:first-child):before {
 	content: " | ";
-	background-color: #00ffff80;
 }
 
-.vitamins {
-	@include text-bold();
+.dailyValue {
+	@include text-subtle();
 }
+
+// .vitamins {
+// 	@include text-body-small();
+// }
 
 .claims {
-	@include text-heading-6()
+	@include text-heading-6();
+}
+
+.warnings {
+	@include text-cta-small();
 }
 </style>
