@@ -97,7 +97,7 @@ export default {
 	z-index: 1;
 	height: $spacing-10;
 	border-radius: $spacing-05 $spacing-05 0 0;
-	box-shadow: 0px -1px 7px $gray-20;
+	box-shadow: 0px -1px 5px $gray-20;
 	background-color: $white;
 }
 
