@@ -15,7 +15,7 @@
 					<div :class="$style.titleBar" @click="isOpen = !isOpen">
 						<div :class="$style.container">
 							<div :class="$style.title">{{ title }}</div>
-							<ArrowDownIcon :class="$style.icon" />
+							<ArrowDown :class="$style.icon" />
 						</div>
 					</div>
 					<div :class="$style.drawerContent">
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import ArrowDownIcon from "./icons/arrow-down-icon.vue";
+import ArrowDown from "./icons/arrow-down-icon.vue";
 export default {
 	props: {
 		title: {
@@ -53,8 +53,7 @@ export default {
 			require: true
 		}
 	},
-	components: { ArrowDownIcon },
-	methods: {}
+	components: { ArrowDown },
 };
 </script>
 
@@ -72,17 +71,20 @@ export default {
 .drawer {
 	z-index: 2;
 	position: fixed;
-	bottom: 0;
 	@include flex(column, center, space-around);
+	bottom: 0;
 	width: 100%;
 }
 
+.clickArea, .titleBar {
+	cursor: pointer;
+}
+
 .clickArea {
+	z-index: 1;
 	position: relative;
 	top:0;
-	z-index: 1;
 	height: 100vh;
-	cursor: pointer;
 }
 
 .icon {
@@ -92,18 +94,17 @@ export default {
 
 .titleBar {
 	@include flex(row, space-around, center);
-	height: $spacing-10;
-	background-color: white;
 	z-index: 1;
+	height: $spacing-10;
 	border-radius: $spacing-05 $spacing-05 0 0;
-	box-shadow: 0px -2px 7px 1px $gray-20;
-	cursor: pointer;
+	box-shadow: 0px -1px 7px $gray-20;
+	background-color: $white;
 }
 
 .drawerContent {
 	@include flex();
 	padding: $spacing-07 0;
-	background-color: white;
+	background-color: $white;
 }
 
 .container {
