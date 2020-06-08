@@ -5,11 +5,12 @@ export default {
 	component: ProductDetails,
 };
 
+// eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
 		components: { ProductDetails },
 		template: '<product-details :productInfo="productInfo" />',
-		data() {
+		data() { // eslint-disable-line max-lines-per-function
 			return {
 				productInfo: {
 					overview: `
