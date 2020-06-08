@@ -18,7 +18,7 @@ export function Overview() {
 					`,
 					details: [
 						{
-							icon: 'greens',
+							iconUrl: '//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/greens.svg',
 							title: 'Your Daily Greens: Leveled Up',
 							content: `
 								The combination of apple cider vinegar with fresh-pressed juices
@@ -26,7 +26,7 @@ export function Overview() {
 							`,
 						},
 						{
-							icon: 'probiotics',
+							iconUrl: '//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/probiotics.svg',
 							title: 'With the Mother',
 							content: `
 								Bragg apple cider vinegar contains the amazing vinegar “Mother,” which
@@ -34,7 +34,7 @@ export function Overview() {
 							`,
 						},
 						{
-							icon: 'acv',
+							iconUrl: '//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/acv.svg',
 							title: 'Balancing Your Appetite',
 							content: `
 								Bragg apple cider vinegar is full of zesty natural goodness. Studies show when

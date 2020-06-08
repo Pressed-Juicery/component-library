@@ -4,7 +4,7 @@
 	<div>
 		<div :class="$style.gridWrapper" v-for="(detail, index) in productInfo.details" :key="index">
 			<div :class="$style.leftColumn">
-				<img :class="$style.icon" :src="getImageSrc(detail.icon)" alt />
+				<img :class="$style.icon" :src="detail.iconUrl" alt />
 			</div>
 			<div :class="$style.rightColumn">
 				<div :class="$style.title">{{ detail.title }}</div>
@@ -21,13 +21,6 @@ export default {
 		productInfo: {
 			type: Object,
 			required: true,
-		},
-	},
-	methods: {
-		getImageSrc(imageName) {
-			const filename = imageName.replace(/\s/g, '-').toLowerCase();
-
-			return `//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/${filename}.svg`;
 		},
 	},
 };
