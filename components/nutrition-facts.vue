@@ -2,22 +2,21 @@
 	<div>
 		<div>Serving size {{ nutritionDetails.servingSize }}, Servings {{ nutritionDetails.servingsPerContainer }}</div>
 		<div>Calories per serving {{ nutritionDetails.calories }}</div>
-		<div :class="$style.titles">
+		<div :class="[$style.titles, $style.row]">
 			<div :class="$style.heading">Amount/Serving</div>
 			<div :class="[$style.heading, $style.right]">%DV</div>
 		</div>
-		<div :class="$style.wrapper" v-for="fact in nutritionDetails.facts" :key="fact.label">
-			<dt>
-				<span :class="$style.heading">{{ fact.label }}</span>
-				{{ fact.amountPerServing }}
-			</dt>
-			<dd :class="$style.right">{{ fact.dailyValue }}</dd>
-			<template v-if="fact.children.length > 0" v-for="child in fact.children">
-				<dd :class="$style.subheading">
-					{{ child.label }} {{ child.amountPerServing }}
-				</dd>
-				<dd :class="$style.right">{{ child.dailyValue }}</dd>
-			</template>
+		<div v-for="fact in nutritionDetails.facts" :key="fact.label">
+			<div :class="$style.row">
+				<div>
+					<span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}
+				</div>
+				<div :class="$style.right">{{ fact.dailyValue }}</div>
+			</div>
+			<div :class="$style.row" v-if="fact.children.length > 0" v-for="child in fact.children">
+				<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
+				<div :class="$style.right">{{ child.dailyValue }}</div>
+			</div>
 		</div>
 		<section :class="$style.information">
 			<div>
@@ -64,22 +63,17 @@ export default {
 @import '../styles/variables.scss';
 @import '../styles/mixins.scss';
 
-.wrapper,
-.titles {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-
-.wrapper {
-	margin: 0;
-}
-
 .titles {
 	margin-top: $spacing-05;
 }
 
+.row {
+	display: flex;
+	justify-content: space-between;
+}
+
 .titles,
-.wrapper > * {
+.row {
 	padding: $spacing-03 0;
 	border-bottom: $border;
 }
