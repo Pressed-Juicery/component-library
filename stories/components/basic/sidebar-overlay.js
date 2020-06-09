@@ -40,18 +40,13 @@ export function ShowBackButton() {
 		template: `
 			<sidebar-overlay
 				:active="active"
-				:shouldShowBackButton="shouldShowBackButton"
+				:shouldShowBackButton="true"
 				@close="closeSlider"/>
 		`,
 		props: {
 			active: {
 				default: boolean('Active', true),
 			},
-		},
-		data() {
-			return {
-				shouldShowBackButton: true,
-			};
 		},
 	};
 }
