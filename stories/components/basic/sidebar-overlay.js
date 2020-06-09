@@ -1,4 +1,5 @@
-import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { addons } from '@storybook/addons';
+import { boolean, withKnobs, CHANGE } from '@storybook/addon-knobs';
 import SidebarOverlay from '../../../components/sidebar-overlay';
 
 export default {
@@ -10,7 +11,11 @@ export default {
 const mixins = [{
 	methods: {
 		closeSlider() {
-			this.active = false;
+			// Reference: https://github.com/storybookjs/storybook/issues/3855#issuecomment-638245040
+			addons.getChannel().emit(CHANGE, {
+				name: 'Active',
+				value: false,
+			});
 		},
 	},
 }];
