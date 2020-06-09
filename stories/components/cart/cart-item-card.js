@@ -23,6 +23,28 @@ export function Overview() {
 	};
 }
 
+export function DiscountedPrice() {
+	return {
+		components: { CartItemCard },
+		template: '<cart-item-card :item="item" />',
+
+		data() {
+			return {
+				item: {
+					variant: {
+						name: 'Strawberry Basil Lemonade',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+
+					},
+					quantity: 3,
+					originalPrice: 6.50,
+					price: 5.00,
+				},
+			};
+		},
+	};
+}
+
 export function AdditionalInformation() {
 	return {
 		components: { CartItemCard },
