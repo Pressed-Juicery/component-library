@@ -1,18 +1,18 @@
 <template>
-<div :class='$style.root'>
-	<div :class='$style.line' />
+<div :class="$style.root">
+	<div :class="$style.line" />
 	<div
-		:class='[
+		:class="[
 			$style.stepWrapper, {
 			[$style.currentStep]: step === currentStep,
 			[$style.showCursor]: index <= firstIncompleteStepIndex()
-		}]'
-		v-for='(step, index) in steps'
-		:key='index'
-		v-on:click='changeStep(step)'
+		}]"
+		v-for="(step, index) in steps"
+		:key="index"
+		v-on:click="changeStep(step)"
 	>
-		<div :class='$style.circleWrapper'>
-			<span :class='[$style.circle, { [$style.circleClosed]: step.completed }]'></span>
+		<div :class="$style.circleWrapper">
+			<span :class="[$style.circle, { [$style.circleClosed]: step.completed }]"></span>
 		</div>
 		<div :class="$style.stepName">{{ step.name }}</div>
 	</div>
