@@ -2,7 +2,7 @@
 	<div :class="[$style.root, {[$style.hasCardExtension]: additionalInformation}]" >
 		<card :class="$style.card">
 			<div :class="$style.imageWrapper">
-				<img :class="$style.image" :src="item.imageSrc" :alt="item.variant.name" />
+				<img :class="$style.image" :src="item.variant.imageUrl" :alt="item.variant.name" />
 			</div>
 
 			<div :class="$style.descriptionWrapper">
