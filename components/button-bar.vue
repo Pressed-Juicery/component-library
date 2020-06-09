@@ -49,6 +49,7 @@ export default {
 		padding: $spacing-05;
 		border: $border-light;
 		border-right: 0;
+		cursor: pointer;
 
 		&:first-child {
 			border-top-left-radius: $border-radius;
