@@ -29,7 +29,7 @@ export function InValidatedForm() {
 				<validated-payment-method
 					:braintree-tokenization-key="braintreeTokenizationKey"
 					:show-save-checkbox="true"
-					@change="nonce => result = nonce"
+					@change="paymentMethod => result = paymentMethod"
 				/>
 
 				<button type="submit">Submit</button>

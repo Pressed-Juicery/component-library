@@ -1,4 +1,5 @@
-import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { addons } from '@storybook/addons';
+import { boolean, withKnobs, CHANGE } from '@storybook/addon-knobs';
 import SidebarOverlay from '../../../components/sidebar-overlay';
 
 export default {
@@ -7,19 +8,23 @@ export default {
 	decorators: [withKnobs],
 };
 
-const methods = {
+const mixins = [{
 	methods: {
 		closeSlider() {
-			this.active = false;
+			// Reference: https://github.com/storybookjs/storybook/issues/3855#issuecomment-638245040
+			addons.getChannel().emit(CHANGE, {
+				name: 'Active',
+				value: false,
+			});
 		},
 	},
-};
+}];
 
 export function Overview() {
 	return {
 		components: { SidebarOverlay },
-		mixins: [methods],
-		template: '<sidebar-overlay :active="active" @close="closeSlider"/>',
+		mixins,
+		template: '<sidebar-overlay :is-active="active" @close="closeSlider"/>',
 		props: {
 			active: {
 				default: boolean('Active', true),
@@ -31,20 +36,17 @@ export function Overview() {
 export function ShowBackButton() {
 	return {
 		components: { SidebarOverlay },
-		mixins: [methods],
-		template: `<sidebar-overlay
-			:active="active"
-			:shouldShowBackButton="shouldShowBackButton"
-			@close="closeSlider"/>`,
+		mixins,
+		template: `
+			<sidebar-overlay
+				:is-active="active"
+				:should-show-back-button="true"
+				@close="closeSlider"/>
+		`,
 		props: {
 			active: {
 				default: boolean('Active', true),
 			},
-		},
-		data() {
-			return {
-				shouldShowBackButton: true,
-			};
 		},
 	};
 }

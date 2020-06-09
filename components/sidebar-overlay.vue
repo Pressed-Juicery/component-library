@@ -1,41 +1,37 @@
 <template>
-	<div :class="[$style.root, {[$style.isActive]: active}]">
-		<div :class="$style.overlay" @click.self="$emit('close')"></div>
+	<div :class="[{[$style.isActive]: isActive}]">
+		<div :class="$style.overlay" @click="$emit('close')"></div>
 		<div :class="$style.sidebar">
-
-			<div :class="$style.sidebarWrapper">
-				<slot name="navigation" />
-				<slot />
+			<div :class="[$style.sidebarNavigation, {[$style.noBackButton] : !shouldShowBackButton}]">
+				<back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back')"/>
+				<close-icon :class="$style.closeButton" @click.native="$emit('close')"/>
 			</div>
 
-			<div :class="$style.footerWrapper">
-				<slot name="footer" />
-			</div>
+			<slot />
 		</div>
 	</div>
 </template>
 
 <script>
+import BackArrowIcon from './icons/back-arrow-icon';
+import CloseIcon from './icons/close-icon';
+
 export default {
+	components: { BackArrowIcon, CloseIcon },
 	props: {
-		active: Boolean,
+		isActive: Boolean,
 		shouldShowBackButton: Boolean,
-		cart: Object,
 	},
 };
 </script>
 
 <style module lang="scss">
-	@import '../styles/buttons';
-
-	$black: $gray-100;
+	@import '../styles/mixins';
 
 	.overlay {
 		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		height: 100vh;
+		width: 100%;
 		z-index: 2;
 		background-color: rgba(0, 0, 0, 0.25);
 		opacity: 0;
@@ -43,7 +39,7 @@ export default {
 		transition: .5s ease opacity;
 	}
 
-	.root.isActive .overlay {
+	.isActive .overlay {
 		opacity: 0.55;
 		pointer-events: all;
 	}
@@ -52,29 +48,40 @@ export default {
 		position: absolute;
 		right: 0;
 		height: 100%;
-		width: 430px;
+		width: 352px;
 		background-color: $white;
+		padding: $spacing-09 $spacing-07;
 		transform: translate(100%);
 		transition: .5s ease transform;
 		z-index: 10;
-		overflow: scroll;
 	}
 
-	.sidebarWrapper {
-		height: 100%;
-		padding: $spacing-09 $spacing-07;
-	}
-
-	.root.isActive .sidebar {
+	.isActive .sidebar {
 		transform: translate(0%);
 	}
 
-	.footerWrapper {
-		position: sticky;
-		right: 0;
-		bottom: 0;
-		padding: 0 $spacing-07 $spacing-09 $spacing-07;
-		background-color: $white;
+	.sidebarNavigation {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
+	.sidebarNavigation.noBackButton {
+		justify-content: flex-end;
+	}
+
+	.backButton,
+	.closeButton {
+		cursor: pointer;
+	}
+
+	.backButton {
+		width: $spacing-06;
+		height: $spacing-06;
+	}
+
+	.closeButton {
+		width: $spacing-04;
+		height: $spacing-04;
+	}
 </style>
