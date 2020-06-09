@@ -6,34 +6,25 @@
 			<div :class="[$style.bolder]">Amount/Serving</div>
 			<div :class="[$style.bolder, $style.right]">%DV</div>
 		</div>
-		<dl :class="$style.wrapper">
-			<template v-for="(fact, index) in nutritionDetails.facts">
-				<dt :key="fact.label">
-					<span :class="$style.bolder">{{ fact.label }}</span>
-					{{ fact.amountPerServing }}
-				</dt>
-				<dd
-					:class="$style.right"
-					:key="index + 1 * Math.random() * 10"
-				>{{ fact.dailyValue === null ? "\0" : fact.dailyValue }}</dd>
-				<template v-if="fact.children.length > 0">
-					<template v-for="(child, index) in fact.children">
-						<dd
-							:class="$style.left"
-							:key="child.label"
-						>
-							{{ child.label }} {{ child.amountPerServing }}
-						</dd>
-						<dd
-							:class="$style.right"
-							:key="index + 1 * Math.random() * 10"
-						>
-							{{ child.dailyValue === null ? "\0" : child.dailyValue }}
-						</dd>
-					</template>
+		<div :class="$style.wrapper" v-for="fact in nutritionDetails.facts" :key="fact.label">
+			<dt>
+				<span :class="$style.bolder">{{ fact.label }}</span>
+				{{ fact.amountPerServing }}
+			</dt>
+			<dd :class="$style.right">
+				{{ fact.dailyValue === null ? "\0" : fact.dailyValue }}
+			</dd>
+			<template v-if="fact.children.length > 0">
+				<template v-for="child in fact.children">
+					<dd :class="$style.left">
+						{{ child.label }} {{ child.amountPerServing }}
+					</dd>
+					<dd :class="$style.right">
+						{{ child.dailyValue === null ? "\0" : child.dailyValue }}
+					</dd>
 				</template>
 			</template>
-		</dl>
+		</div>
 		<section :class="$style.information">
 			<div>
 				<template v-for="(vitamin) in nutritionDetails.vitamins">
@@ -85,7 +76,7 @@ export default {
 	grid-template-columns: 1fr 1fr;
 }
 
-dl.wrapper {
+.wrapper {
 	margin: 0;
 }
 
@@ -94,7 +85,7 @@ dl.wrapper {
 }
 
 .titles,
-dl.wrapper > * {
+.wrapper > * {
 	padding: $spacing-03 0;
 	border-bottom: $border;
 }
