@@ -9,6 +9,7 @@ export { default as BundleCardSection } from './bundle-card-section';
 export { default as ButtonBar } from './button-bar';
 export { default as Card } from './card';
 export { default as CartItemCard } from './cart-item-card';
+export { default as CartSidebar } from './cart-sidebar';
 export { default as CartSummary } from './cart-summary';
 export { default as CartTotals } from './cart-totals';
 export { default as ContentWrapper } from './content-wrapper';
