@@ -2,12 +2,12 @@
 	<div :class="[$style.root, {[$style.hasCardExtension]: additionalInformation}]" >
 		<card :class="$style.card">
 			<div :class="$style.imageWrapper">
-				<img :class="$style.image" :src="item.imageSrc" :alt="item.name" />
+				<img :class="$style.image" :src="item.imageSrc" :alt="item.variant.name" />
 			</div>
 
 			<div :class="$style.descriptionWrapper">
 				<div :class="$style.description">
-					<div :class="$style.title">{{ item.name }}</div>
+					<div :class="$style.title">{{ item.variant.name }}</div>
 					<div :class="$style.price">{{ displayPrice }}</div>
 				</div>
 
@@ -49,7 +49,7 @@ export default {
 
 	methods: {
 		handleQuantityChange(quantity) {
-			this.$emit('change', { name: this.item.name, quantity });
+			this.$emit('change', { id: this.item.id, name: this.item.variant.name, quantity });
 		},
 	},
 };

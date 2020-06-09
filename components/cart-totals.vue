@@ -3,11 +3,11 @@
 		<div :class="[$style.row, $style.rowGroup]">
 			<div :class="[$style.rowGroup, {
 			         [$style.isClosed]: !isOpen,
-			         [$style.subtotalToggle]: cart.discounts && cart.discounts.length
+			         [$style.subtotalToggle]: cart.discountSummary && cart.discountSummary.length
 			     }]"
 			     @click="toggle()">
 				<div>Subtotal</div>
-				<up-caret-icon v-if="cart.discounts && cart.discounts.length" :class="$style.icon" />
+				<up-caret-icon v-if="cart.discountSummary && cart.discountSummary.length" :class="$style.icon" />
 			</div>
 
 			<div :class="$style.rowGroup">
@@ -18,12 +18,12 @@
 			</div>
 		</div>
 
-		<div v-if="isOpen && cart.discounts && cart.discounts.length">
+		<div v-if="isOpen && cart.discountSummary && cart.discountSummary.length">
 			<div :class="[$style.row, $style.rowGroup]"
-			     v-for="discount in cart.discounts"
+			     v-for="discount in cart.discountSummary"
 			     :key="discount.name">
 				<div :class="$style.discountLabel">{{ discount.name }}</div>
-				<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(discount.amount)) }}</div>
+				<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(discount.totalDiscount)) }}</div>
 			</div>
 		</div>
 
