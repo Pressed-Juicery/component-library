@@ -42,6 +42,13 @@ export default {
 				|| (this.item.modifiers && this.item.modifiers.toppings)
 				|| '';
 		},
+
+		originalPrice() {
+			return this.item.originalPrice && this.item.originalPrice !== this.item.price
+				? formatCurrency(this.item.originalPrice)
+				: null;
+		},
+
 		displayPrice() {
 			return formatCurrency(this.item.price);
 		},
