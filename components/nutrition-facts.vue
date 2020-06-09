@@ -2,6 +2,7 @@
 	<div>
 		<div>Serving size {{ nutritionDetails.servingSize }}, Servings {{ nutritionDetails.servingsPerContainer }}</div>
 		<div>Calories per serving {{ nutritionDetails.calories }}</div>
+
 		<div :class="[$style.titles, $style.row]">
 			<div :class="$style.heading">Amount/Serving</div>
 			<div :class="[$style.heading]">%DV</div>
@@ -16,6 +17,7 @@
 				<div>{{ child.dailyValue }}</div>
 			</div>
 		</div>
+
 		<section :class="$style.information">
 			<div>
 				<span
