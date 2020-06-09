@@ -18,7 +18,7 @@ export function Overview() {
 					calories: 200,
 					claims: ['Vegan', 'Gluten Free', 'Kosher', '100% Cold Pressed Juice', 'Non-GMO Project Certified'],
 					additionalInfo: ['Perishable.', 'Keep Refrigerated.', 'Shake away separation.'],
-					warnings: ['Manufactured in a facility that processes tree nuts.'],
+					warnings: ['Manufactured in a facility that processes tree nuts.', 'Manufactured in a facility that processes tree nuts.'],
 					vitamins: [
 						{ label: 'Vitamin A', value: '20%' },
 						{ label: 'Vitamin C', value: '20%' },
