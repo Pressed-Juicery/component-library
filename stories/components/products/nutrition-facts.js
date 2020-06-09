@@ -18,7 +18,7 @@ export function Overview() {
 					calories: 200,
 					claims: ['Vegan', 'Gluten Free', 'Kosher', '100% Cold Pressed Juice', 'Non-GMO Project Certified'],
 					additionalInfo: ['Perishable.', 'Keep Refrigerated.', 'Shake away separation.'],
-					warnings: ['Manufactured in a facility that processes tree nuts.', 'Manufactured in a facility that processes tree nuts.'],
+					warnings: ['Manufactured in a facility that processes tree nuts.'],
 					vitamins: [
 						{ label: 'Vitamin A', value: '20%' },
 						{ label: 'Vitamin C', value: '20%' },
@@ -36,8 +36,6 @@ export function Overview() {
 							],
 						},
 						{ label: 'Cholest', amountPerServing: '0g', dailyValue: '0%', children: [] },
-						{ label: 'Sodium', amountPerServing: '10mg', dailyValue: '0%', children: [] },
-						{ label: 'Cholest', amountPerServing: '0g', dailyValue: null, children: [] },
 						{ label: 'Sodium', amountPerServing: '10mg', dailyValue: '0%', children: [] },
 					],
 				},
