@@ -1,5 +1,5 @@
 <template>
-	<div :class="[$style.root, {[$style.isActive]: active}]">
+	<div :class="[{[$style.isActive]: active}]">
 		<div :class="$style.overlay" @click.self="$emit('close')"></div>
 		<div :class="$style.sidebar">
 
@@ -42,7 +42,7 @@ export default {
 		transition: .5s ease opacity;
 	}
 
-	.root.isActive .overlay {
+	.isActive .overlay {
 		opacity: 0.55;
 		pointer-events: all;
 	}
@@ -59,7 +59,7 @@ export default {
 		z-index: 10;
 	}
 
-	.root.isActive .sidebar {
+	.isActive .sidebar {
 		transform: translate(0%);
 	}
 
