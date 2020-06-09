@@ -2,14 +2,12 @@
 	<div :class="[{[$style.isActive]: isActive}]">
 		<div :class="$style.overlay" @click="$emit('close')"></div>
 		<div :class="$style.sidebar">
-
 			<div :class="[$style.sidebarNavigation, {[$style.noBackButton] : !shouldShowBackButton}]">
 				<back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back')"/>
 				<close-icon :class="$style.closeButton" @click.native="$emit('close')"/>
 			</div>
 
 			<slot />
-
 		</div>
 	</div>
 </template>
@@ -17,6 +15,7 @@
 <script>
 import BackArrowIcon from './icons/back-arrow-icon';
 import CloseIcon from './icons/close-icon';
+
 export default {
 	components: { BackArrowIcon, CloseIcon },
 	props: {
@@ -84,5 +83,4 @@ export default {
 		width: 11px;
 		height: 12px;
 	}
-
 </style>
