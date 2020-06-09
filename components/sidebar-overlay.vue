@@ -70,7 +70,8 @@ export default {
 		justify-content: flex-end;
 	}
 
-	.backButton, .closeButton {
+	.backButton,
+	.closeButton {
 		cursor: pointer;
 	}
 
