@@ -69,12 +69,6 @@ export default {
 		display: flex;
 	}
 
-	.bottomBorder {
-		margin: 0 (-$spacing-03) $spacing-03;
-		padding-bottom: $spacing-03;
-		border-bottom: $border-light;
-	}
-
 	.divider {
 		margin: 0 (-$spacing-03) $spacing-03;
 		border: $border-light;
