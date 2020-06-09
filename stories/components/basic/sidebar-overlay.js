@@ -37,10 +37,12 @@ export function ShowBackButton() {
 	return {
 		components: { SidebarOverlay },
 		mixins,
-		template: `<sidebar-overlay
-			:active="active"
-			:shouldShowBackButton="shouldShowBackButton"
-			@close="closeSlider"/>`,
+		template: `
+			<sidebar-overlay
+				:active="active"
+				:shouldShowBackButton="shouldShowBackButton"
+				@close="closeSlider"/>
+		`,
 		props: {
 			active: {
 				default: boolean('Active', true),
