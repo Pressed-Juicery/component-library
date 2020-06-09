@@ -11,17 +11,13 @@
 				<span :class="$style.heading">{{ fact.label }}</span>
 				{{ fact.amountPerServing }}
 			</dt>
-			<dd :class="$style.right">
-				{{ fact.dailyValue === null ? "\0" : fact.dailyValue }}
-			</dd>
+			<dd :class="$style.right">{{ fact.dailyValue }}</dd>
 			<template v-if="fact.children.length > 0">
 				<template v-for="child in fact.children">
 					<dd :class="$style.left">
 						{{ child.label }} {{ child.amountPerServing }}
 					</dd>
-					<dd :class="$style.right">
-						{{ child.dailyValue === null ? "\0" : child.dailyValue }}
-					</dd>
+					<dd :class="$style.right">{{ child.dailyValue }}</dd>
 				</template>
 			</template>
 		</div>
