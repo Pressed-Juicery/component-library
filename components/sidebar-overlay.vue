@@ -76,12 +76,12 @@ export default {
 	}
 
 	.backButton {
-		width: 23px;
-		height: 23px;
+		width: $spacing-06;
+		height: $spacing-06;
 	}
 
 	.closeButton {
-		width: 11px;
-		height: 12px;
+		width: $spacing-04;
+		height: $spacing-04;
 	}
 </style>
