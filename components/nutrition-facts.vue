@@ -12,13 +12,11 @@
 				{{ fact.amountPerServing }}
 			</dt>
 			<dd :class="$style.right">{{ fact.dailyValue }}</dd>
-			<template v-if="fact.children.length > 0">
-				<template v-for="child in fact.children">
-					<dd :class="$style.subheading">
-						{{ child.label }} {{ child.amountPerServing }}
-					</dd>
-					<dd :class="$style.right">{{ child.dailyValue }}</dd>
-				</template>
+			<template v-if="fact.children.length > 0" v-for="child in fact.children">
+				<dd :class="$style.subheading">
+					{{ child.label }} {{ child.amountPerServing }}
+				</dd>
+				<dd :class="$style.right">{{ child.dailyValue }}</dd>
 			</template>
 		</div>
 		<section :class="$style.information">
