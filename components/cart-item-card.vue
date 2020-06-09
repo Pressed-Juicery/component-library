@@ -61,6 +61,7 @@ export default {
 	@import '../styles/variables';
 
 	.root {
+		margin-bottom: $spacing-03;
 		padding: $spacing-03;
 	}
 
