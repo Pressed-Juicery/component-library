@@ -17,18 +17,18 @@
 					:key='index + 1 * Math.random() * 10'
 				>{{ fact.dailyValue === null ? '\0' : fact.dailyValue }}</dd>
 				<template v-if='fact.children.length > 0'>
-					<template v-for='(factChild, index) in fact.children'>
+					<template v-for='(child, index) in fact.children'>
 						<dd
 							:class='$style.left'
-							:key='factChild.label'
+							:key='child.label'
 						>
-							{{ factChild.label }} {{ factChild.amountPerServing }}
+							{{ child.label }} {{ child.amountPerServing }}
 						</dd>
 						<dd
 							:class='$style.right'
 							:key='index + 1 * Math.random() * 10'
 						>
-							{{ factChild.dailyValue === null ? '\0' : factChild.dailyValue }}
+							{{ child.dailyValue === null ? '\0' : child.dailyValue }}
 						</dd>
 					</template>
 				</template>
