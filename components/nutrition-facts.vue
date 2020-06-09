@@ -4,30 +4,27 @@
 		<div>Calories per serving {{ nutritionDetails.calories }}</div>
 		<div :class="[$style.titles, $style.row]">
 			<div :class="$style.heading">Amount/Serving</div>
-			<div :class="[$style.heading, $style.right]">%DV</div>
+			<div :class="[$style.heading]">%DV</div>
 		</div>
 		<div v-for="fact in nutritionDetails.facts" :key="fact.label">
 			<div :class="$style.row">
-				<div>
-					<span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}
-				</div>
-				<div :class="$style.right">{{ fact.dailyValue }}</div>
+				<div><span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}</div>
+				<div>{{ fact.dailyValue }}</div>
 			</div>
 			<div :class="$style.row" v-if="fact.children.length > 0" v-for="child in fact.children">
 				<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
-				<div :class="$style.right">{{ child.dailyValue }}</div>
+				<div>{{ child.dailyValue }}</div>
 			</div>
 		</div>
 		<section :class="$style.information">
 			<div>
-				<template v-for="(vitamin) in nutritionDetails.vitamins">
-					<span
-						:class="$style.vitamins"
-						:key="vitamin.label"
-					>
-						{{ vitamin.value }} {{ vitamin.label }}
-					</span>
-				</template>
+				<span
+					:class="$style.vitamins"
+					v-for="(vitamin) in nutritionDetails.vitamins"
+					:key="vitamin.label"
+				>
+					{{ vitamin.value }} {{ vitamin.label }}
+				</span>
 			</div>
 			<div :class="$style.dailyValue">
 				The % Daily Value tells you how much nutrient in a serving of
@@ -35,14 +32,10 @@
 				is used for general nutritional advice.
 			</div>
 			<div>
-				<template v-for="(claim) in nutritionDetails.claims">
-					<span :class="$style.claims" :key="claim">{{ claim }}</span>
-				</template>
+				<span :class="$style.claims" v-for="(claim) in nutritionDetails.claims" :key="claim">{{ claim }}</span>
 			</div>
 			<div>
-				<template v-for="(warning) in nutritionDetails.warnings">
-					<span :class="$style.warnings" :key="warning">{{ warning }}</span>
-				</template>
+				<span :class="$style.warnings" v-for='(warning) in nutritionDetails.warnings' :key="warning">{{ warning }}</span>
 			</div>
 		</section>
 	</div>
@@ -78,18 +71,10 @@ export default {
 	border-bottom: $border;
 }
 
-.subheading, .right {
-	margin: 0;
-}
-
 .subheading {
+	margin: 0;
 	grid-column: 1;
 	text-indent: $spacing-06;
-}
-
-.right {
-	grid-column: 2;
-	text-align: right;
 }
 
 .heading {
