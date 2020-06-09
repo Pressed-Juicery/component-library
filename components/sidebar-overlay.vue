@@ -1,5 +1,5 @@
 <template>
-	<div :class="[{[$style.isActive]: active}]">
+	<div :class="[{[$style.isActive]: isActive}]">
 		<div :class="$style.overlay" @click.self="$emit('close')"></div>
 		<div :class="$style.sidebar">
 
@@ -20,7 +20,7 @@ import CloseIcon from './icons/close-icon';
 export default {
 	components: { BackArrowIcon, CloseIcon },
 	props: {
-		active: Boolean,
+		isActive: Boolean,
 		shouldShowBackButton: Boolean,
 	},
 };
