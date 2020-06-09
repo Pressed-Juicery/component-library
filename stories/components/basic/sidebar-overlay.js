@@ -40,7 +40,7 @@ export function ShowBackButton() {
 		template: `
 			<sidebar-overlay
 				:is-active="active"
-				:shouldShowBackButton="true"
+				:should-show-back-button="true"
 				@close="closeSlider"/>
 		`,
 		props: {
