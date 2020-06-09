@@ -13,8 +13,10 @@ export function Overview() {
 		data() {
 			return {
 				item: {
-					name: 'Strawberry Basil Lemonade',
-					imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+					variant: {
+						name: 'Strawberry Basil Lemonade',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+					},
 					quantity: 3,
 					price: 6.50,
 				},
@@ -53,9 +55,11 @@ export function AdditionalInformation() {
 		data() {
 			return {
 				item: {
-					name: 'Strawberry Almond',
-					imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-					additionalInformation: 'Chocolate chip cookies, granola, chocolate chips',
+					variant: {
+						name: 'Strawberry Almond',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+					},
+					additionalInformation: 'Toppings: Chocolate chip cookies, granola, chocolate chips',
 					quantity: 3,
 					price: 6.50,
 				},
@@ -72,10 +76,12 @@ export function LongAdditionalInformation() {
 		data() {
 			return {
 				item: {
-					name: 'Strawberry Basil Lemonade',
-					imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+					variant: {
+						name: 'Strawberry Basil Lemonade',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+					},
 					additionalInformation: `
-						Chocolate chip cookies, granola, chocolate chips, coconut,
+						Toppings: Chocolate chip cookies, granola, chocolate chips, coconut,
 						blueberries, pistachios, almonds, chocolate sauce, caramel
 					`,
 					quantity: 3,
