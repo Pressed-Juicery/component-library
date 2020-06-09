@@ -3,12 +3,12 @@
 		<div>Serving size {{ nutritionDetails.servingSize }}, Servings {{ nutritionDetails.servingsPerContainer }}</div>
 		<div>Calories per serving {{ nutritionDetails.calories }}</div>
 		<div :class="$style.titles">
-			<div :class="[$style.bolder]">Amount/Serving</div>
-			<div :class="[$style.bolder, $style.right]">%DV</div>
+			<div :class="[$style.heading]">Amount/Serving</div>
+			<div :class="[$style.heading, $style.right]">%DV</div>
 		</div>
 		<div :class="$style.wrapper" v-for="fact in nutritionDetails.facts" :key="fact.label">
 			<dt>
-				<span :class="$style.bolder">{{ fact.label }}</span>
+				<span :class="$style.heading">{{ fact.label }}</span>
 				{{ fact.amountPerServing }}
 			</dt>
 			<dd :class="$style.right">
@@ -104,7 +104,7 @@ export default {
 	text-align: right;
 }
 
-.bolder {
+.heading {
 	@include text-bolder();
 }
 
