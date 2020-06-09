@@ -29,8 +29,6 @@ export default {
 <style module lang="scss">
 	@import '../styles/mixins';
 
-	$black: $gray-100;
-
 	.overlay {
 		position: fixed;
 		height: 100vh;
@@ -78,13 +76,11 @@ export default {
 	}
 
 	.backButton {
-		fill: $black;
 		width: 23px;
 		height: 23px;
 	}
 
 	.closeButton {
-		fill: $black;
 		width: 11px;
 		height: 12px;
 	}
