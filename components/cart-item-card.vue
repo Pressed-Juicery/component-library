@@ -61,9 +61,22 @@ export default {
 	@import '../styles/variables';
 
 	.root {
+		padding: $spacing-03;
+	}
+
+	.mainContent {
 		display: flex;
-		padding: $spacing-04;
-		margin-bottom: $spacing-03;
+	}
+
+	.bottomBorder {
+		margin: 0 (-$spacing-03) $spacing-03;
+		padding-bottom: $spacing-03;
+		border-bottom: $border-light;
+	}
+
+	.divider {
+		margin: 0 (-$spacing-03) $spacing-03;
+		border: $border-light;
 	}
 
 	.imageWrapper {
@@ -89,13 +102,21 @@ export default {
 		@include text-bold();
 	}
 
-	.additionalInfo,
+	.originalPrice {
+		@include text-subtle();
+		@include text-strikethrough();
+
+		margin: 0 $spacing-02;
+	}
+
+	.additionalContent,
 	.quantity {
 		@include text-body-small();
 	}
 
-	.additionalInfo {
-		color: $color-text-gray;
-		margin-bottom: $spacing-03;
+	.additionalContent {
+		@include text-subtle();
+
+		margin-left: $spacing-05;
 	}
 </style>
