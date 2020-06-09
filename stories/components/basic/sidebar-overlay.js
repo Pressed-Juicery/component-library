@@ -7,18 +7,18 @@ export default {
 	decorators: [withKnobs],
 };
 
-const methods = {
+const mixins = [{
 	methods: {
 		closeSlider() {
 			this.active = false;
 		},
 	},
-};
+}];
 
 export function Overview() {
 	return {
 		components: { SidebarOverlay },
-		mixins: [methods],
+		mixins,
 		template: '<sidebar-overlay :active="active" @close="closeSlider"/>',
 		props: {
 			active: {
@@ -31,7 +31,7 @@ export function Overview() {
 export function ShowBackButton() {
 	return {
 		components: { SidebarOverlay },
-		mixins: [methods],
+		mixins,
 		template: `<sidebar-overlay
 			:active="active"
 			:shouldShowBackButton="shouldShowBackButton"
