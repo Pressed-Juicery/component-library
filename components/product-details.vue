@@ -4,7 +4,7 @@
 	<div :class='$style.wrapper'>
 		<template  v-for='(detail, index) in productInfo.details'>
 			<div :key='index + 1 * Math.random() * 10'>
-				<img :class='$style.icon' :src='detail.icon' alt />
+				<img :class='$style.icon' :src='detail.iconUrl' alt />
 			</div>
 			<div :key='index + 1 * Math.random() * 10'>
 				<div :class='$style.title'>{{ detail.title }}</div>
