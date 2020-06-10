@@ -3,9 +3,9 @@
 		<div>Serving size {{ nutritionDetails.servingSize }}, Servings {{ nutritionDetails.servingsPerContainer }}</div>
 		<div>Calories per serving {{ nutritionDetails.calories }}</div>
 
-		<div :class="[$style.titles, $style.row]">
-			<div :class="$style.heading">Amount/Serving</div>
-			<div :class="[$style.heading]">%DV</div>
+		<div :class="[$style.titles, $style.row, $style.heading]">
+			<div>Amount/Serving</div>
+			<div>%DV</div>
 		</div>
 		<div v-for="fact in nutritionDetails.facts" :key="fact.label">
 			<div :class="$style.row">
