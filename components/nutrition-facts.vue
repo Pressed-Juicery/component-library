@@ -18,28 +18,29 @@
 			</div>
 		</div>
 
-		<section :class="$style.information">
-			<div>
-				<span
-					:class="$style.vitamin"
-					v-for="(vitamin) in nutritionDetails.vitamins"
-					:key="vitamin.label"
-				>
-					{{ vitamin.value }} {{ vitamin.label }}
-				</span>
-			</div>
-			<div :class="$style.dailyValue">
-				The % Daily Value tells you how much a nutrient in a serving of
-				food contributes to a daily diet. 2,000 calories a day
-				is used for general nutritional advice.
-			</div>
-			<div>
-				<span :class="$style.claim" v-for="(claim) in nutritionDetails.claims" :key="claim">{{ claim }}</span>
-			</div>
-			<div>
-				<span :class="$style.warnings" v-for='(warning) in nutritionDetails.warnings' :key="warning">{{ warning }}</span>
-			</div>
-		</section>
+		<div :class="$style.vitamins">
+			<span
+				:class="$style.vitamin"
+				v-for="(vitamin) in nutritionDetails.vitamins"
+				:key="vitamin.label"
+			>
+				{{ vitamin.value }} {{ vitamin.label }}
+			</span>
+		</div>
+
+		<div :class="$style.dailyValue">
+			The % Daily Value tells you how much a nutrient in a serving of
+			food contributes to a daily diet. 2,000 calories a day
+			is used for general nutritional advice.
+		</div>
+
+		<div :class="$style.claims">
+			<span :class="$style.claim" v-for="(claim) in nutritionDetails.claims" :key="claim">{{ claim }}</span>
+		</div>
+
+		<div>
+			<span :class="$style.warnings" v-for='(warning) in nutritionDetails.warnings' :key="warning">{{ warning }}</span>
+		</div>
 	</div>
 </template>
 
@@ -83,10 +84,12 @@ export default {
 	@include text-bolder();
 }
 
-.information div:nth-child(odd) {
+.vitamins,
+.claims {
 	margin-top: $spacing-05;
 }
-.information div:nth-child(even) {
+.dailyValue,
+.warnings {
 	margin-top: $spacing-03;
 }
 
