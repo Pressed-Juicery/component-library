@@ -38,7 +38,7 @@
 			<span :class="$style.claim" v-for="(claim) in nutritionDetails.claims" :key="claim">{{ claim }}</span>
 		</div>
 
-		<div :class="$style.warnings" v-for='(warning) in nutritionDetails.warnings' :key="warning">{{ warning }}</div>
+		<div :class="$style.warnings">{{ warning }}</div>
 	</div>
 </template>
 
@@ -50,6 +50,11 @@ export default {
 			required: true,
 		},
 	},
+	computed: {
+		warning() {
+			return (this.nutritionDetails.warnings || []).join(' ');
+		}
+	}
 };
 </script>
 
