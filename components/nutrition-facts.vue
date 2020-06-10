@@ -14,7 +14,7 @@
 				<div>{{ fact.dailyValue }}</div>
 			</div>
 
-			<div v-if="fact.children" :class="$style.row" v-for="(child, index) in fact.children" :key="index">
+			<div :class="$style.row" v-for="(child, index) in (fact.children || [])" :key="index">
 				<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
 				<div>{{ child.dailyValue }}</div>
 			</div>
