@@ -36,7 +36,7 @@ export default {
 	}
 
 	.title {
-		@include text-heading-4();
+		@include text-heading-5();
 	}
 
 	.itemCount {
