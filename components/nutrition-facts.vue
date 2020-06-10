@@ -71,12 +71,12 @@ export default {
 	border-bottom: $border;
 }
 
-.subheading {
-	text-indent: $spacing-06;
-}
-
 .heading {
 	@include text-bolder();
+}
+
+.subheading {
+	text-indent: $spacing-06;
 }
 
 .vitamins,
