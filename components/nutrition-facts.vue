@@ -21,7 +21,7 @@
 		<section :class="$style.information">
 			<div>
 				<span
-					:class="$style.vitamins"
+					:class="$style.vitamin"
 					v-for="(vitamin) in nutritionDetails.vitamins"
 					:key="vitamin.label"
 				>
@@ -34,7 +34,7 @@
 				is used for general nutritional advice.
 			</div>
 			<div>
-				<span :class="$style.claims" v-for="(claim) in nutritionDetails.claims" :key="claim">{{ claim }}</span>
+				<span :class="$style.claim" v-for="(claim) in nutritionDetails.claims" :key="claim">{{ claim }}</span>
 			</div>
 			<div>
 				<span :class="$style.warnings" v-for='(warning) in nutritionDetails.warnings' :key="warning">{{ warning }}</span>
@@ -90,13 +90,13 @@ export default {
 	margin-top: $spacing-03;
 }
 
-.vitamins,
+.vitamin,
 .warnings {
 	@include text-body-small();
 }
 
-.vitamins:not(:first-child):before,
-.claims:not(:first-child):before {
+.vitamin:not(:first-child):before,
+.claim:not(:first-child):before {
 	content: '|';
 	margin: 0 $spacing-01;
 }
@@ -105,7 +105,7 @@ export default {
 	@include text-subtle();
 }
 
-.claims {
+.claim {
 	@include text-body();
 }
 
