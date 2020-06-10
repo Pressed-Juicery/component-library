@@ -87,6 +87,7 @@ export default {
 }
 
 .vitamins,
+.dailyValue,
 .warnings {
 	@include text-body-small();
 }
