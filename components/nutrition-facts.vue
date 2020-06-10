@@ -59,7 +59,7 @@ export default {
 @import '../styles/mixins.scss';
 
 .calories {
-	margin-bottom: $spacing-05;
+	margin: $spacing-02 0 $spacing-05;
 }
 
 .row {
