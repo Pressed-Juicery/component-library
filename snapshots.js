@@ -49,6 +49,7 @@ const groups = [{
 	groupName: 'Components / Products',
 	stories: [
 		'BundleCardGrid',
+		'ProductDetails',
 	],
 }, {
 	groupName: 'Sections',
