@@ -1,13 +1,16 @@
 <template>
-	<div :class="[{[$style.isActive]: isActive}]">
-		<div :class="$style.overlay" @click="$emit('close')"></div>
+	<div :class="{[$style.isActive]: isActive}">
+		<div :class="$style.overlay" @click.self="$emit('close')"></div>
 		<div :class="$style.sidebar">
-			<div :class="[$style.sidebarNavigation, {[$style.noBackButton] : !shouldShowBackButton}]">
-				<back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back')"/>
-				<close-icon :class="$style.closeButton" @click.native="$emit('close')"/>
+
+			<div :class="$style.sidebarWrapper">
+				<slot name="navigation" />
+				<slot />
 			</div>
 
-			<slot />
+			<div :class="$style.footerWrapper">
+				<slot name="footer" />
+			</div>
 		</div>
 	</div>
 </template>
