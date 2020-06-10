@@ -64,9 +64,6 @@ export default {
 .row {
 	display: flex;
 	justify-content: space-between;
-}
-
-.row {
 	padding: $spacing-03 0;
 	border-bottom: $border;
 }
