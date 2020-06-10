@@ -1,11 +1,11 @@
 <template>
 <div>
 	<div :class="$style.overview">{{ productInfo.overview }}</div>
-	<div :class="$style.row" v-for="(detail, index) in productInfo.details">
-		<div :class="$style.iconWrapper" :key="index + 1 * Math.random() * 10">
+	<div :class="$style.row" v-for="(detail, index) in productInfo.details" :key="index">
+		<div :class="$style.iconWrapper">
 			<img :class="$style.icon" :src="detail.iconUrl" alt />
 		</div>
-		<div :key="index + 1 * Math.random() * 10">
+		<div>
 			<div :class="$style.title">{{ detail.title }}</div>
 			<div>{{ detail.content }}</div>
 		</div>
