@@ -112,6 +112,6 @@ export default {
 	.additionalContent {
 		@include text-subtle();
 
-		margin-left: $spacing-05;
+		margin: 0 $spacing-05;
 	}
 </style>
