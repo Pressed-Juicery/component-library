@@ -13,11 +13,7 @@
 </template>
 
 <script>
-import BackArrowIcon from './icons/back-arrow-icon';
-import CloseIcon from './icons/close-icon';
-
 export default {
-	components: { BackArrowIcon, CloseIcon },
 	props: {
 		isActive: Boolean,
 		shouldShowBackButton: Boolean,
