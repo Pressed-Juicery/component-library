@@ -94,9 +94,14 @@ export default {
 	@include text-body-small();
 }
 
-.vitamin:not(:first-child):before,
-.claim:not(:first-child):before {
-	content: ' | ';
+.vitamin,
+.claim {
+	display: inline-block;
+
+	&:not(:last-child):after {
+		content: ' | ';
+		white-space: pre;
+	}
 }
 
 .dailyValue {
