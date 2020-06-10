@@ -1,6 +1,6 @@
-import { addons } from '@storybook/addons';
-import { boolean, withKnobs, CHANGE } from '@storybook/addon-knobs';
+import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 import SidebarOverlay from '../../../components/sidebar-overlay';
+import { addons } from '@storybook/addons';
 
 export default {
 	title: 'Components / Basic / SidebarOverlay',
