@@ -1,5 +1,5 @@
 <template>
-	<sidebar-overlay :active="active" @close="$emit('close')">
+	<sidebar-overlay :is-active="isActive" @close="$emit('close')">
 
 		<cart-navigation slot="navigation"
 			:shouldShowBackButton="shouldShowBackButton"
@@ -42,7 +42,7 @@ export default {
 		SidebarOverlay,
 	},
 	props: {
-		active: Boolean,
+		isActive: Boolean,
 		cart: Object,
 		user: Object,
 	},
