@@ -132,7 +132,6 @@ export function LocalDelivery() {
 					fulfillmentPrice: 10,
 					fulfillmentSelection: {
 						method: 'Local Delivery',
-
 					},
 				},
 			};
