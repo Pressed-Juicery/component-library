@@ -1,14 +1,9 @@
 <template>
 	<radio-button-card :value="paymentMethod" v-model="model">
-		<template>
-			<div :class="$style.titleRow">
-				<payment-method-icon :class="$style.icon" :type="paymentMethod.cardType" />
-				<span :class="$style.title">{{ paymentMethod.maskedNumber }}</span>
-			</div>
-
-			<div>{{ paymentMethod.expirationDate }}</div>
-			<div>{{ paymentMethod.billingAddress.postalCode }}</div>
-		</template>
+		<div :class="$style.content">
+			<payment-method-icon :class="$style.icon" :type="paymentMethod.cardType" />
+			{{ paymentMethod.identifier }}
+		</div>
 	</radio-button-card>
 </template>
 
@@ -47,18 +42,14 @@ export default {
 @import '../styles/variables';
 @import '../styles/mixins';
 
-.titleRow {
+.content {
 	display: flex;
 	align-items: center;
-	margin-bottom: $spacing-03;
-	@include text-bold();
 }
 
 .icon {
-	line-height: .7;
-}
-
-.title {
-	margin-left: $spacing-03;
+	line-height: 0;
+	width: $spacing-08;
+	margin-right: $spacing-03;
 }
 </style>
