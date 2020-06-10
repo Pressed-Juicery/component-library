@@ -7,11 +7,13 @@
 			<div>Amount/Serving</div>
 			<div>%DV</div>
 		</div>
+
 		<div v-for="(fact, index) in nutritionDetails.facts" :key="index">
 			<div :class="$style.row">
 				<div><span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}</div>
 				<div>{{ fact.dailyValue }}</div>
 			</div>
+
 			<div v-if="fact.children" :class="$style.row" v-for="(child, index) in fact.children" :key="index">
 				<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
 				<div>{{ child.dailyValue }}</div>
