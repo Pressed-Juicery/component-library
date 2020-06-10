@@ -1,16 +1,14 @@
 <template>
 <div>
 	<div :class="$style.overview">{{ productInfo.overview }}</div>
-	<div :class="$style.wrapper">
-		<template v-for="(detail, index) in productInfo.details">
-			<div :class="$style.iconWrapper" :key="index + 1 * Math.random() * 10">
-				<img :class="$style.icon" :src="detail.iconUrl" alt />
-			</div>
-			<div :key="index + 1 * Math.random() * 10">
-				<div :class="$style.title">{{ detail.title }}</div>
-				<div>{{ detail.content }}</div>
-			</div>
-		</template>
+	<div :class="$style.row" v-for="(detail, index) in productInfo.details">
+		<div :class="$style.iconWrapper" :key="index + 1 * Math.random() * 10">
+			<img :class="$style.icon" :src="detail.iconUrl" alt />
+		</div>
+		<div :key="index + 1 * Math.random() * 10">
+			<div :class="$style.title">{{ detail.title }}</div>
+			<div>{{ detail.content }}</div>
+		</div>
 	</div>
 </div>
 </template>
@@ -34,16 +32,16 @@ export default {
 	margin-bottom: $spacing-07;
 }
 
-.wrapper {
-	display: grid;
-	grid-template-columns: $spacing-10 1fr;
-	grid-column-gap: $spacing-05;
-	grid-row-gap: $spacing-07;
+.row {
+	display: flex;
+	margin-bottom: $spacing-07;
 }
 
 .iconWrapper {
-	display: flex;
-	justify-content: center;
+	flex-shrink: 0;
+	text-align: center;
+	width: $spacing-10;
+	margin-right: $spacing-05;
 }
 
 .icon {
