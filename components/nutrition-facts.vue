@@ -89,7 +89,7 @@ export default {
 	margin-top: $spacing-03;
 }
 
-.vitamin,
+.vitamins,
 .warnings {
 	@include text-body-small();
 }
@@ -104,7 +104,7 @@ export default {
 	@include text-subtle();
 }
 
-.claim {
+.claims {
 	@include text-body();
 }
 </style>
