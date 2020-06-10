@@ -65,7 +65,7 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	padding: $spacing-03 0;
-	border-bottom: $border;
+	border-bottom: $border-light;
 }
 
 .heading {
