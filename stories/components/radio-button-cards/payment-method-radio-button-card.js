@@ -7,32 +7,32 @@ export default {
 
 const mastercard = {
 	identifier: '····6789',
-	cardType: 'mastercard',
+	vendor: 'mastercard',
 };
 
 const visa = {
 	identifier: '····4321',
-	cardType: 'visa',
+	vendor: 'visa',
 };
 
 const visa2 = {
 	identifier: '····9360',
-	cardType: 'visa',
+	vendor: 'visa',
 };
 
 const discover = {
 	identifier: '····1111',
-	cardType: 'discover',
+	vendor: 'discover',
 };
 
 const americanExpress = {
 	identifier: '····2222',
-	cardType: 'american express',
+	vendor: 'american express',
 };
 
 const unknown = {
 	identifier: '····3563',
-	cardType: 'unknown',
+	vendor: 'unknown',
 };
 
 export function Overview() {

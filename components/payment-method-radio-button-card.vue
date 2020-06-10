@@ -1,7 +1,7 @@
 <template>
 	<radio-button-card :value="paymentMethod" v-model="model">
 		<div :class="$style.content">
-			<payment-method-icon :class="$style.icon" :type="paymentMethod.cardType" />
+			<payment-method-icon :class="$style.icon" :type="paymentMethod.vendor" />
 			{{ paymentMethod.identifier }}
 		</div>
 	</radio-button-card>
