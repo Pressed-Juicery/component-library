@@ -103,8 +103,4 @@ export default {
 .dailyValue {
 	@include text-subtle();
 }
-
-.claims {
-	@include text-body();
-}
 </style>
