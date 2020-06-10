@@ -40,6 +40,6 @@ export default {
 	}
 
 	.itemCount {
-		@include text-bold();
+		@include text-heading-5();
 	}
 </style>
