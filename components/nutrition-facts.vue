@@ -1,9 +1,9 @@
 <template>
 	<div>
 		<div>Serving size {{ nutritionDetails.servingSize }}, Servings {{ nutritionDetails.servingsPerContainer }}</div>
-		<div>Calories per serving {{ nutritionDetails.calories }}</div>
+		<div :class="$style.calories">Calories per serving {{ nutritionDetails.calories }}</div>
 
-		<div :class="[$style.titles, $style.row, $style.heading]">
+		<div :class="[$style.row, $style.heading]">
 			<div>Amount/Serving</div>
 			<div>%DV</div>
 		</div>
@@ -59,8 +59,8 @@ export default {
 @import '../styles/variables.scss';
 @import '../styles/mixins.scss';
 
-.titles {
-	margin-top: $spacing-05;
+.calories {
+	margin-bottom: $spacing-05;
 }
 
 .row {
@@ -68,7 +68,6 @@ export default {
 	justify-content: space-between;
 }
 
-.titles,
 .row {
 	padding: $spacing-03 0;
 	border-bottom: $border;
