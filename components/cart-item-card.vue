@@ -1,18 +1,24 @@
 <template>
 	<card :class="$style.root">
-		<div :class="$style.imageWrapper">
-			<img :class="$style.image" :src="item.imageSrc" :alt="item.name" />
-		</div>
-
-		<div :class="$style.descriptionWrapper">
-			<div :class="$style.description">
-				<div :class="$style.title">{{ item.name }}</div>
-				<div :class="$style.additionalInfo">{{ additionalInformation }}</div>
-				<div :class="$style.quantity">Qty {{ item.quantity }}</div>
+		<div :class="$style.mainContent">
+			<div :class="$style.imageWrapper">
+				<img :class="$style.image" :src="item.variant.imageUrl" :alt="item.variant.name" />
 			</div>
 
-			<span :class="$style.price">{{ displayPrice }}</span>
+			<div :class="$style.descriptionWrapper">
+				<div :class="$style.description">
+					<div :class="$style.title">{{ item.variant.name }}</div>
+					<div :class="$style.quantity">Qty {{ item.quantity }}</div>
+				</div>
+
+				<div>
+					<span :class="$style.originalPrice">{{ originalPrice }}</span>
+					<span :class="$style.price">{{ displayPrice }}</span>
+				</div>
+			</div>
 		</div>
+
+		<div v-if="additionalContent" :class="$style.additionalContent">{{ additionalContent }}</div>
 	</card>
 </template>
 
@@ -28,12 +34,19 @@ export default {
 	},
 
 	computed: {
-		additionalInformation() {
+		additionalContent() {
 			return this.item.additionalInformation
 				|| this.item.bundleItems
 				|| (this.item.modifiers && this.item.modifiers.toppings)
 				|| '';
 		},
+
+		originalPrice() {
+			return this.item.originalPrice && this.item.originalPrice !== this.item.price
+				? formatCurrency(this.item.originalPrice)
+				: null;
+		},
+
 		displayPrice() {
 			return formatCurrency(this.item.price);
 		},
@@ -46,9 +59,12 @@ export default {
 	@import '../styles/variables';
 
 	.root {
-		display: flex;
-		padding: $spacing-04;
 		margin-bottom: $spacing-03;
+		padding: $spacing-03;
+	}
+
+	.mainContent {
+		display: flex;
 	}
 
 	.imageWrapper {
@@ -74,13 +90,23 @@ export default {
 		@include text-bold();
 	}
 
-	.additionalInfo,
+	.originalPrice {
+		@include text-subtle();
+		@include text-strikethrough();
+
+		margin: 0 $spacing-02;
+	}
+
+	.additionalContent,
 	.quantity {
 		@include text-body-small();
 	}
 
-	.additionalInfo {
-		color: $color-text-gray;
-		margin-bottom: $spacing-03;
+	.additionalContent {
+		@include text-subtle();
+
+		margin: 0 (-$spacing-03);
+		padding: $spacing-03 $spacing-05 0;
+		border-top: $border-light;
 	}
 </style>
