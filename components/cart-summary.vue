@@ -32,7 +32,7 @@ export default {
 	}
 
 	.header {
-		margin-bottom: $spacing-07;
+		margin-bottom: $spacing-06;
 	}
 
 	.title {
