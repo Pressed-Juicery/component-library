@@ -93,8 +93,7 @@ export default {
 
 .vitamin:not(:first-child):before,
 .claim:not(:first-child):before {
-	content: '|';
-	margin: 0 $spacing-01;
+	content: ' | ';
 }
 
 .dailyValue {
