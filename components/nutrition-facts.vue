@@ -85,6 +85,7 @@ export default {
 .claims {
 	margin-top: $spacing-05;
 }
+
 .dailyValue,
 .warnings {
 	margin-top: $spacing-03;
