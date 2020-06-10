@@ -32,7 +32,11 @@
 		</div>
 
 		<div :class="$style.claims">
-			<span :class="$style.claim" v-for="(claim, index) in nutritionDetails.claims" :key="index">{{ claim }}</span>
+			<span
+				:class="$style.claim"
+				v-for="(claim, index) in nutritionDetails.claims"
+				:key="index"
+			>{{ claim }}</span>
 		</div>
 
 		<div :class="$style.warnings">{{ warning }}</div>
@@ -50,8 +54,8 @@ export default {
 	computed: {
 		warning() {
 			return (this.nutritionDetails.warnings || []).join(' ');
-		}
-	}
+		},
+	},
 };
 </script>
 

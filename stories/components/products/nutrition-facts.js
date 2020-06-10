@@ -5,11 +5,12 @@ export default {
 	component: NutritionFacts,
 };
 
+// eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
 		components: { NutritionFacts },
 		template: '<nutrition-facts :nutritionDetails="nutritionDetails" />',
-		data() {
+		data() { // eslint-disable-line max-lines-per-function
 			return {
 				nutritionDetails: {
 					servingSize: '2 fl oz',
