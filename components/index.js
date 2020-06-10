@@ -21,7 +21,7 @@ export { default as MediaRow } from './media-row';
 export { default as PaymentMethodIcon } from './payment-method-icon';
 export { default as PaymentMethodRadioButtonCard } from './payment-method-radio-button-card';
 export { default as PointsRedemption } from './points-redemption';
-export { default as ProductDetails } from './product-details.vue'
+export { default as ProductDetails } from './product-details.vue';
 export { default as QuantitySelector } from './quantity-selector';
 export { default as RadioButton } from './radio-button';
 export { default as RadioButtonCard } from './radio-button-card';
