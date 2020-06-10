@@ -12,7 +12,7 @@
 				<div><span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}</div>
 				<div>{{ fact.dailyValue }}</div>
 			</div>
-			<div :class="$style.row" v-if="fact.children.length > 0" v-for="child in fact.children">
+			<div v-if="fact.children" :class="$style.row" v-for="child in fact.children">
 				<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
 				<div>{{ child.dailyValue }}</div>
 			</div>
