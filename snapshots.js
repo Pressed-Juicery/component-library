@@ -16,6 +16,7 @@ const groups = [{
 		'Buttons',
 		'Card',
 		'StoreAddress',
+		'StepProgressBar',
 	],
 }, {
 	groupName: 'Components / Cart',
@@ -49,6 +50,7 @@ const groups = [{
 	groupName: 'Components / Products',
 	stories: [
 		'BundleCardGrid',
+		'NutritionFacts',
 		'ProductDetails',
 	],
 }, {

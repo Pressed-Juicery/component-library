@@ -1,17 +1,20 @@
 <template>
-<div :class='$style.root'>
-	<div :class='$style.line' />
+<div :class="$style.root">
+	<div :class="$style.line" />
 	<div
-		:class='[$style.stepWrapper, { [$style.current]: step === currentState },
-			{ [$style.isCursor]: index <= lastCompletedIndex() + 1 }]'
-		v-for='(step, index) in states'
-		:key='index'
-		v-on:click='changeState(step)'
+		:class="[
+			$style.stepWrapper, {
+			[$style.currentStep]: step === currentStep,
+			[$style.showCursor]: index <= firstIncompleteStepIndex()
+		}]"
+		v-for="(step, index) in steps"
+		:key="index"
+		v-on:click="changeStep(step)"
 	>
-		<div :class='$style.circleWrapper'>
-			<span :class='[$style.circleOpen, { [$style.circleClosed]: step.completed }]'></span>
+		<div :class="$style.circleWrapper">
+			<span :class="[$style.circle, { [$style.circleClosed]: step.completed }]"></span>
 		</div>
-		<div :class="$style.text">{{ states[index].name }}</div>
+		<div :class="$style.stepName">{{ step.name }}</div>
 	</div>
 </div>
 </template>
@@ -19,27 +22,29 @@
 <script>
 export default {
 	props: {
-		states: {
+		steps: {
 			type: Array,
 			required: true,
 		},
-		currentState: {
+		currentStep: {
 			type: Object,
 			required: true,
 		},
 	},
 	methods: {
-		changeState(state) {
-			const firstIncompleteState = this.states[this.lastCompletedIndex() + 1];
+		changeStep(step) {
+			const firstIncompleteStep = this.steps[this.firstIncompleteStepIndex()];
 
-			if (state.completed || state === firstIncompleteState) {
-				this.$emit('stateChange', state);
+			if (step.completed || step === firstIncompleteStep) {
+				this.$emit('stepChange', step);
 			}
 		},
-		lastCompletedIndex() {
-			return this.states.reduce((lastCompletedIndex, state, index) => (
-				state.completed ? index : lastCompletedIndex), 0
-			);
+		firstIncompleteStepIndex() {
+			for (let index = 0; index < this.steps.length; index++) {
+				if (!this.steps[index].completed) return index;
+			}
+
+			return this.steps.length - 1;
 		},
 	},
 };
@@ -52,68 +57,63 @@ export default {
 	display: flex;
 	position: relative;
 	justify-content: space-around;
-	align-items: center;
 }
 
 .line {
 	width: 100%;
 	height: $spacing-01;
 	position: absolute;
-	border-radius: $spacing-03;
+	border-radius: 999em;
 	z-index: -1;
-	top: 14px;
+	top: 3px;
 	background-color: $gray-30;
 }
 
-.circleClosed,
-.circleOpen {
+.stepWrapper,
+.circleWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.stepWrapper {
+	flex-direction: column;
+	color: $gray-30;
+}
+
+.circleWrapper {
+	height: $spacing-03;
+	width: $spacing-05;
+	margin-bottom: $spacing-03;
+	background-color: $white;
+}
+
+.showCursor {
+	cursor: pointer;
+}
+
+.circle {
 	height: $spacing-03;
 	width: $spacing-03;
 	border-radius: 50%;
+	border: $spacing-01 solid $gray-30;
 }
 
 .circleClosed {
 	background-color: $gray-30;
 }
 
-.circleOpen {
-	box-sizing: border-box;
-	border: $spacing-01 solid $gray-30;
-}
-
-.current {
-	.text {
-		color: $color-primary;
+.currentStep {
+	.circle {
+		border-color: $color-primary;
 	}
 
 	.circleClosed {
 		background-color: $color-primary;
 	}
 
-	.circleOpen {
-		border-color: $color-primary;
+	.stepName {
+		color: $color-primary;
 	}
-}
-
-.circleWrapper,
-.stepWrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.circleWrapper {
-	height: $spacing-07;
-	width: $spacing-05;
-	background-color: $white;
-}
-
-.isCursor {
-	cursor: pointer;
-}
-
-.stepWrapper {
-	flex-direction: column;
-	color: $gray-30;
 }
 </style>
