@@ -18,8 +18,6 @@
 			</div>
 		</div>
 
-		<hr v-if="additionalContent" :class="$style.divider" />
-
 		<div v-if="additionalContent" :class="$style.additionalContent">{{ additionalContent }}</div>
 	</card>
 </template>
@@ -69,11 +67,6 @@ export default {
 		display: flex;
 	}
 
-	.divider {
-		margin: 0 (-$spacing-03) $spacing-03;
-		border: $border-light;
-	}
-
 	.imageWrapper {
 		width: $spacing-10;
 		margin-right: $spacing-04;
@@ -112,6 +105,8 @@ export default {
 	.additionalContent {
 		@include text-subtle();
 
-		margin: 0 $spacing-05;
+		margin: 0 (-$spacing-03);
+		padding: $spacing-03 $spacing-05 0;
+		border-top: $border-light;
 	}
 </style>
