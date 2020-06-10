@@ -11,17 +11,17 @@ const fullCart = [{
 	id: 1,
 	variant: {
 		name: 'Strawberry Basil Lemonade',
+		imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 	},
 	quantity: 1,
-	imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 	price: 6.75,
 }, {
 	id: 2,
 	variant: {
 		name: 'Chocolate Freeze (Size 1)',
+		imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 	},
 	quantity: 1,
-	imageSrc: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Chocolate_large.png?v=1565302867',
 	price: 6.55,
 	modifiers: {
 		toppings: 'peanuts, caramel, bananas',
@@ -36,11 +36,11 @@ const mixins = {
 
 		getItems() {
 			// Placeholder for async call
-			this.items = fullCart;
+			return fullCart;
 		},
 
 		getEmptyItems() {
-			this.items = [];
+			return [];
 		},
 
 		getUser() {
@@ -143,18 +143,19 @@ export function Overview() {
 		components: { CartSidebar },
 		mixins: [mixins],
 		template: `<cart-sidebar
-			:active="active"
+			:is-active="isActive"
+			:items="items"
 			:user="user"
 			:cart="cart"
 			@close="closeSlider"
 			@cart-quantity-change="updateItemQuantity"/>`,
 		props: {
-			active: {
+			isActive: {
 				default: boolean('Active', true),
 			},
 		},
-		created() {
-			this.getItems();
+		async created() {
+			this.items = await this.getItems();
 			this.getCart();
 			this.getUser();
 		},
