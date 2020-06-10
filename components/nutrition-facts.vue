@@ -72,8 +72,6 @@ export default {
 }
 
 .subheading {
-	margin: 0;
-	grid-column: 1;
 	text-indent: $spacing-06;
 }
 
