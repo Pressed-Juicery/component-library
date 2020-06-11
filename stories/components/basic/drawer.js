@@ -5,7 +5,7 @@ export default {
 	component: Drawer,
 };
 
-export function DrawerOpen() {
+export function Overview() {
 	return {
 		components: { Drawer },
 		template: `
