@@ -5,7 +5,7 @@
 		<div :class="$style.drawer">
 			<div :class="$style.drawerHeader" @click="toggleDrawer">
 				<div :class="$style.wrapper">
-					<div :class="$style.title">{{ title }}</div>
+					<div>{{ title }}</div>
 					<ArrowDown :class="$style.icon" />
 				</div>
 			</div>
@@ -124,9 +124,6 @@ export default {
 	height: $spacing-10;
 	border-radius: $spacing-05 $spacing-05 0 0;
 	box-shadow: 0px -1px 5px $gray-30;
-}
-
-.title {
 	@include text-cta();
 }
 
