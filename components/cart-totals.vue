@@ -11,8 +11,8 @@
 			</div>
 
 			<div :class="$style.rowGroup">
-				<div v-if="cart.originalTotalPrice" :class="$style.originalTotalPrice">
-					{{ formatCurrency(cart.originalTotalPrice) }}
+				<div v-if="cart.originalSubtotal !== cart.subtotal" :class="$style.originalSubtotal">
+					{{ formatCurrency(cart.originalSubtotal) }}
 				</div>
 				<div>{{ formatCurrency(cart.subtotal) }}</div>
 			</div>
@@ -112,7 +112,7 @@ export default {
 		}
 	}
 
-	.originalTotalPrice {
+	.originalSubtotal {
 		@include text-subtle();
 		@include text-strikethrough();
 
