@@ -1,78 +1,76 @@
 <template>
-	<div :class='$style.root'>
-		<h3>Hello</h3>
-		<div :class="$style.wrapper">
-			<!-- Photo grid goes here -->
-			<div class='leftColumn'>
-				${{ product.variants[0].nonMemberPrice }}
-				<span :class="$style.modifierPricing">(+${{ product.availableModifiers[0].price }} Toppings)</span>
-			</div>
-			<div class='rightColumn'>
-				{{ product.variants[0].calories }} cal
-			</div>
+	<div>
+		<div :class="$style.productName">{{ product.name }}</div>
+		<div :class="$style.information">
+			<div
+				:class="$style.price"
+			>${{ isVip ? product.variants[currentVariant].memberPrice : product.variants[currentVariant].nonMemberPrice }}</div>
+			<div :class="$style.calories">{{ product.variants[currentVariant].calories }} cal</div>
 		</div>
-		<!-- This section will likely will depend on the product -->
-		<select>
-			<option value="Size 1">Size 1</option>
-			<option value="Size 2">Size 2</option>
-			<option value="Size 3">Size 3</option>
+		<select v-model="currentVariant">
+			<option
+				v-for="(variant, index) in product.variants"
+				:value="index"
+				:key="index"
+			>{{ variant.name }}</option>
 		</select>
-		<select>
-			<option value="Size 1">Size 1</option>
-			<option value="Size 2">Size 2</option>
-			<option value="Size 3">Size 3</option>
-		</select>
-		<!-- Selected Options array printed here I assume? -->
-		<!-- Button group -->
-		<button class="button--secondary">1</button>
-		<button>Add to Cart</button>
+		<input type="number" v-model="quantity" min="0" oninput="validity.valid||(value='');" />
+		<button :disabled="isDisabled" @click="addedToCart">add to cart</button>
 	</div>
 </template>
 
 <script>
-	export default {
-		props: {
-			isVip: {
-				type: Boolean,
-				required: true,
-			},
-			product: {
-				type: Object,
-				required: true,
-			}
+export default {
+	props: {
+		isVip: {
+			type: Boolean,
+			required: true
 		},
-		addedToCart(item) {
-			this.$emit("addedToCart", item)
+		product: {
+			type: Object,
+			required: true
+		}
+	},
+	data() {
+		return {
+			currentVariant: 0,
+			quantity: 1
+		};
+	},
+	computed: {
+		isDisabled() {
+			return this.quantity < 1 ? true : false;
+		}
+	},
+	methods: {
+		addedToCart() {
+			let cartItem = {
+				variantId: this.product.variants[this.currentVariant].id,
+				quantity: Number(this.quantity)
+			};
+			this.$emit("addedToCart", cartItem);
 		}
 	}
+};
 </script>
 
 <style module lang="scss">
 @import "../styles/variables.scss";
 @import "../styles/mixins.scss";
 
-.root {
-	background-color: $beige;
+.productName {
+	@include text-heading-4();
 }
 
-.wrapper {
+.information {
 	display: flex;
+}
+
+.information {
 	justify-content: space-between;
-	flex-flow: row;
-	align-items: stretch;
 }
 
-.leftColumn {
-	flex-grow: 1;
+.price {
+	@include text-heading-5();
 }
-
-.rightColumn {
-	flex-grow: 1;
-}
-
-.modifierPricing {
-	color: $beige-dark;
-	margin-left: 10px;
-}
-
 </style>
