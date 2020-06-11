@@ -1,53 +1,43 @@
-<link
-	rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-/>
 <template>
 	<div>
 		<div>
 			<div v-if="isOpen" :class="$style.overlay" @click="toggleDrawer"></div>
-			<transition
-				name="custom-classes-transition"
-				enter-to-class="animate__animated animate__fadeInUp"
-				leave-to-class="animate__animated animate__fadeOutDown"
-			>
-				<div v-if="isOpen" :class="$style.drawer">
-					<div :class="$style.drawerHeader" @click="toggleDrawer">
-						<div :class="$style.wrapper">
-							<div :class="$style.title">{{ title }}</div>
-							<ArrowDown :class="$style.icon" />
-						</div>
-					</div>
-					<div :class="$style.drawerContent">
-						<div :class="$style.wrapper">
-							<slot />
-						</div>
+			<div v-if="isOpen" :class="$style.drawer">
+				<div :class="$style.drawerHeader" @click="toggleDrawer">
+					<div :class="$style.wrapper">
+						<div :class="$style.title">{{ title }}</div>
+						<ArrowDown :class="$style.icon" />
 					</div>
 				</div>
-			</transition>
+				<div :class="$style.drawerContent">
+					<div :class="$style.wrapper">
+						<slot />
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import ArrowDown from './icons/arrow-down-icon.vue';
+import ArrowDown from "./icons/arrow-down-icon.vue";
 export default {
 	props: {
 		title: {
 			type: String,
-			required: true,
+			required: true
 		},
 		isOpen: {
 			type: Boolean,
-			require: true,
-		},
+			require: true
+		}
 	},
 	components: { ArrowDown },
 	methods: {
 		toggleDrawer() {
-			this.$emit('toggleDrawer', !this.isOpen);
-		},
-	},
+			this.$emit("toggleDrawer", !this.isOpen);
+		}
+	}
 };
 </script>
 
@@ -105,7 +95,6 @@ export default {
 .wrapper {
 	width: 75%;
 	justify-content: space-between;
-
 }
 
 .drawerHeader {
