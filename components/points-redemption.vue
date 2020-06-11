@@ -53,7 +53,7 @@ export default {
 			return this.cards
 				.filter(card => card.selected || card.points <= this.points)
 				.map(card => {
-					const quantityAvailable = Math.floor((this.points + this.redeemedPoints) / card.points);
+					const quantityAvailable = Math.floor(this.points / card.points) + card.selected;
 
 					return { ...card, quantityAvailable };
 				});
@@ -75,6 +75,7 @@ export default {
 	.cardLine {
 		overflow-x: auto;
 		overflow-y: hidden;
+		margin-bottom: $spacing-05;
 
 		.wrapper {
 			display: flex;
@@ -90,5 +91,6 @@ export default {
 		display: grid;
 		grid-gap: $card-spacing;
 		grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
+		margin-bottom: $spacing-05;
 	}
 </style>
