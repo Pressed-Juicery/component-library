@@ -30,24 +30,24 @@
 </template>
 
 <script>
-import ArrowDown from "./icons/arrow-down-icon.vue";
+import ArrowDown from './icons/arrow-down-icon.vue';
 export default {
 	props: {
 		title: {
 			type: String,
-			required: true
+			required: true,
 		},
 		isOpen: {
 			type: Boolean,
-			require: true
-		}
+			require: true,
+		},
 	},
 	components: { ArrowDown },
 	methods: {
 		toggleDrawer() {
-			this.$emit("toggleDrawer", !this.isOpen);
-		}
-	}
+			this.$emit('toggleDrawer', !this.isOpen);
+		},
+	},
 };
 </script>
 
