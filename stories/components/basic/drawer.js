@@ -16,7 +16,7 @@ export function DrawerOpen() {
 				>
 					toggle drawer
 				</button>
-				<drawer :title="title" :isOpen="isOpen" @toggleDrawer="drawerAction">
+				<drawer :title="title" :isOpen="isOpen" @toggleDrawer="drawer">
 					<div style="width: 100%;">
 						<button style="width: 100%; margin: 10px 0;">
 							done
@@ -35,7 +35,7 @@ export function DrawerOpen() {
 			};
 		},
 		methods: {
-			drawerAction() {
+			drawer() {
 				this.isOpen = !this.isOpen;
 			},
 		},
