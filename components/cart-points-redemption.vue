@@ -20,7 +20,7 @@ export default {
 	},
 
 	props: {
-		points: Number,
+		user: Object,
 	},
 
 	data() {
@@ -31,7 +31,7 @@ export default {
 
 	computed: {
 		displayPoints() {
-			return this.points - this.redeemedPoints;
+			return this.user.points - this.redeemedPoints;
 		},
 		redeemedPoints() {
 			return this.productRedemptions.reduce((accum, obj) => accum + (obj.points * obj.quantity), 0);
