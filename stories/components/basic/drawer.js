@@ -32,7 +32,7 @@ export function DrawerOpen() {
 		},
 		methods: {
 			drawer() {
-				this.isOpen = !this.isOpen
+				this.isOpen = !this.isOpen;
 			},
 		},
 	};
