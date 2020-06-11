@@ -8,24 +8,32 @@ export default {
 export function DrawerOpen() {
 	return {
 		components: { Drawer },
-		template: '<drawer :title="title" :isOpen="isOpen"></drawer>',
+		template: `
+			<div style="height: 100vh">
+				<button 
+					style="position:fixed; top: 0; background-color: navajowhite;"
+					@click="drawer"
+				>
+					toggle drawer
+				</button>
+				<drawer :title="title" :isOpen="isOpen" @toggleDrawer="drawer">
+					<div style="width: 100%;">
+						<button style="width: 100%; margin: 10px 0;">done</button>
+						<button style="width: 100%; margin: 10px 0;">cancel</button>
+					</div>
+				</drawer>
+			</div>
+		`,
 		data() {
 			return {
 				title: 'enhance your cleanse',
 				isOpen: true,
 			};
 		},
-	};
-}
-export function DrawerClosed() {
-	return {
-		components: { Drawer },
-		template: '<drawer :title="title" :isOpen="isOpen"></drawer>',
-		data() {
-			return {
-				title: 'enhance your cleanse',
-				isOpen: false,
-			};
+		methods: {
+			drawer() {
+				this.isOpen = !this.isOpen
+			},
 		},
 	};
 }
