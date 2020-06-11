@@ -1,5 +1,5 @@
 <template>
-	<sidebar-overlay :is-active="isActive">
+	<sidebar-overlay :is-active="isActive" @close="$emit('close')">
 
 		<cart-navigation slot="navigation"
 			:shouldShowBackButton="shouldShowBackButton"
