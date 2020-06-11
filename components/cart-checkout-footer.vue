@@ -1,6 +1,5 @@
 <template>
-	<div :class="$style.root">
-		<hr :class="$style.partition">
+	<div>
 		<cart-totals :class="$style.totals" :cart="cart"/>
 		<div :class="$style.checkOutButton">
 			<div :class="$style.checkoutDisclaimer">Taxes and Delivery Fees will be applied at checkout.</div>
@@ -24,17 +23,6 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/buttons';
-
-	.root {
-		z-index: 100;
-		background-color: $white;
-	}
-
-	.partition {
-		border: 1px solid $gray-30;
-		margin-top: $spacing-05;
-		margin-bottom: $spacing-06;
-	}
 
 	.totals {
 		padding-bottom: $spacing-07;
