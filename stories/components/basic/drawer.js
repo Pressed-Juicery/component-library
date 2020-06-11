@@ -1,43 +1,38 @@
+import { addons } from '@storybook/addons';
+import { boolean, withKnobs, CHANGE } from '@storybook/addon-knobs';
 import Drawer from '../../../components/drawer.vue';
 
 export default {
 	title: 'Components / Basic / Drawer',
 	component: Drawer,
+	decorators: [withKnobs],
 };
+
+const mixins = [{
+	methods: {
+		closeDrawer() {
+			addons.getChannel().emit(CHANGE, {
+				name: "Open",
+				value: false
+			})
+		}
+	}
+}]
 
 export function Overview() {
 	return {
 		components: { Drawer },
-		template: `
-			<div style="height: 100vh">
-				<button 
-					style="position:fixed; top: 0; background-color: navajowhite;"
-					@click="drawer"
-				>
-					toggle drawer
-				</button>
-				<drawer :title="title" :isOpen="isOpen" @toggleDrawer="drawer">
-					<div style="width: 100%;">
-						<button style="width: 100%; margin: 10px 0;">
-							done
-						</button>
-						<button style="width: 100%; margin: 10px 0;">
-							cancel
-						</button>
-					</div>
-				</drawer>
-			</div>
-		`,
+		mixins,
+		template: '<drawer :title="title" :isOpen="isOpen" @toggleDrawer="closeDrawer"></drawer>',
+		props: {
+			isOpen: {
+				default: boolean("Open", true),
+			}
+		},
 		data() {
 			return {
 				title: 'enhance your cleanse',
-				isOpen: true,
-			};
-		},
-		methods: {
-			drawer() {
-				this.isOpen = !this.isOpen;
-			},
-		},
+			}
+		}
 	};
 }
