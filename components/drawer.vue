@@ -60,7 +60,7 @@ export default {
 	position: relative;
 	height: 100vh;
 	background-color: $gray-90;
-	opacity: 0.3;
+	opacity: 0.2;
 }
 
 .drawer {
