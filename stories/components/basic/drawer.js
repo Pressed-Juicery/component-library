@@ -1,5 +1,5 @@
 import { addons } from '@storybook/addons';
-import { boolean, withKnobs, CHANGE } from '@storybook/addon-knobs';
+import { boolean, CHANGE, withKnobs } from '@storybook/addon-knobs';
 import Drawer from '../../../components/drawer.vue';
 
 export default {
@@ -12,12 +12,12 @@ const mixins = [{
 	methods: {
 		closeDrawer() {
 			addons.getChannel().emit(CHANGE, {
-				name: "Open",
-				value: false
-			})
-		}
-	}
-}]
+				name: 'Open',
+				value: false,
+			});
+		},
+	},
+}];
 
 export function Overview() {
 	return {
@@ -26,13 +26,13 @@ export function Overview() {
 		template: '<drawer :title="title" :isOpen="isOpen" @toggleDrawer="closeDrawer"></drawer>',
 		props: {
 			isOpen: {
-				default: boolean("Open", true),
-			}
+				default: boolean('Open', true),
+			},
 		},
 		data() {
 			return {
 				title: 'enhance your cleanse',
-			}
-		}
+			};
+		},
 	};
 }
