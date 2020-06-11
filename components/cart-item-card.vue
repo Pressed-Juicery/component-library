@@ -8,7 +8,10 @@
 			<div :class="$style.descriptionWrapper">
 				<div :class="$style.description">
 					<div :class="$style.title">{{ item.variant.name }}</div>
-					<div :class="$style.price">{{ displayPrice }}</div>
+					<div :class="$style.priceWrapper">
+						<div v-if="item.originalPrice !== item.price" :class="$style.originalPrice">{{ formatCurrency(item.originalPrice) }}</div>
+						<div :class="$style.price">{{ formatCurrency(item.price) }}</div>
+					</div>
 				</div>
 
 				<quantity-selector @change="handleQuantityChange" :quantity="item.quantity"/>
@@ -42,15 +45,16 @@ export default {
 				|| (this.item.modifiers && this.item.modifiers.toppings)
 				|| '';
 		},
-		displayPrice() {
-			return formatCurrency(this.item.price);
-		},
 	},
 
 	methods: {
 		handleQuantityChange(quantity) {
 			this.$emit('change', { id: this.item.id, name: this.item.variant.name, quantity });
 		},
+
+		formatCurrency(number) {
+			return formatCurrency(number);
+		}
 	},
 };
 </script>
@@ -92,9 +96,20 @@ export default {
 		flex: 1;
 	}
 
+	.priceWrapper {
+		display: flex;
+	}
+
 	.title,
 	.price {
 		@include text-bold();
+	}
+
+	.originalPrice {
+		@include text-subtle();
+		@include text-strikethrough();
+
+		margin-right: $spacing-03;
 	}
 
 	.detailsWrapper {
