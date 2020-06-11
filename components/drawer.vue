@@ -1,18 +1,18 @@
 <template>
-	<div>
-		<div>
-			<div v-if="isOpen" :class="$style.overlay" @click="toggleDrawer"></div>
-			<div v-if="isOpen" :class="$style.drawer">
-				<div :class="$style.drawerHeader" @click="toggleDrawer">
-					<div :class="$style.wrapper">
-						<div :class="$style.title">{{ title }}</div>
-						<ArrowDown :class="$style.icon" />
-					</div>
+	<div :class="[{[$style.isOpen]: isOpen}, $style.root]">
+		<div :class="$style.overlay" @click="toggleDrawer"></div>
+
+		<div :class="$style.drawer">
+			<div :class="$style.drawerHeader" @click="toggleDrawer">
+				<div :class="$style.wrapper">
+					<div :class="$style.title">{{ title }}</div>
+					<ArrowDown :class="$style.icon" />
 				</div>
-				<div :class="$style.drawerContent">
-					<div :class="$style.wrapper">
-						<slot />
-					</div>
+			</div>
+
+			<div :class="$style.drawerContent">
+				<div :class="$style.wrapper">
+					<slot />
 				</div>
 			</div>
 		</div>
@@ -45,19 +45,41 @@ export default {
 @import "../styles/variables.scss";
 @import "../styles/mixins.scss";
 
+.root,
+.overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.root {
+	overflow: hidden;
+}
+
 .overlay {
 	z-index: 1;
-	position: relative;
-	height: 100vh;
 	background-color: $gray-90;
+	opacity: 0;
+	pointer-events: none;
+	transition: .5s ease opacity;
+}
+
+.isOpen .overlay {
 	opacity: 0.2;
+	pointer-events: all;
 }
 
 .drawer {
-	position: fixed;
+	position: absolute;
 	flex-flow: column;
 	bottom: 0;
 	width: 100%;
+	transform: translateY(110%);
+	transition: .5s ease transform;
+}
+
+.isOpen .drawer {
+	transform: translateY(0%);
 }
 
 .drawer,
@@ -109,7 +131,7 @@ export default {
 }
 
 .icon {
-	width: $spacing-03;
+	height: $spacing-03;
 }
 
 .drawerContent {
