@@ -32,6 +32,7 @@ export default {
 
 	.partition {
 		border: 1px solid $gray-30;
+		margin-top: $spacing-05;
 		margin-bottom: $spacing-06;
 	}
 

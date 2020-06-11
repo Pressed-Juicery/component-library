@@ -46,8 +46,7 @@ export default {
 	.sidebar {
 		position: absolute;
 		right: 0;
-		height: 100%;
-		width: 352px;
+		width: 432px;
 		background-color: $white;
 		padding: $spacing-09 $spacing-07;
 		transform: translate(100%);
