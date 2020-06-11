@@ -12,6 +12,7 @@ export { default as Card } from './card';
 export { default as CartItemCard } from './cart-item-card';
 export { default as CartSummary } from './cart-summary';
 export { default as CartTotals } from './cart-totals';
+export { default as Drawer } from './drawer';
 export { default as ContentWrapper } from './content-wrapper';
 export { default as FeatureHighlight } from './feature-highlight';
 export { default as FeatureHighlightRow } from './feature-highlight-row';
