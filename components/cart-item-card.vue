@@ -9,7 +9,9 @@
 				<div :class="$style.description">
 					<div :class="$style.title">{{ item.variant.name }}</div>
 					<div :class="$style.priceWrapper">
-						<div v-if="item.originalPrice !== item.price" :class="$style.originalPrice">{{ formatCurrency(item.originalPrice) }}</div>
+						<div v-if="item.originalPrice !== item.price" :class="$style.originalPrice">
+							{{ formatCurrency(item.originalPrice) }}
+						</div>
 						<div :class="$style.price">{{ formatCurrency(item.price) }}</div>
 					</div>
 				</div>
@@ -54,7 +56,7 @@ export default {
 
 		formatCurrency(number) {
 			return formatCurrency(number);
-		}
+		},
 	},
 };
 </script>
