@@ -3,11 +3,9 @@
 		<div :class="$style.overlay" @click.self="$emit('close')"></div>
 		<div :class="$style.sidebar">
 
-			<div :class="$style.sidebarWrapper">
-				<slot name="navigation" />
-				<slot />
-				<slot name="footer" />
-			</div>
+			<slot name="navigation" />
+			<slot />
+			<slot name="footer" />
 
 		</div>
 	</div>
@@ -42,18 +40,17 @@ export default {
 	}
 
 	.sidebar {
-		position: absolute;
+		position: fixed;
+		top: 0;
+		bottom: 0;
 		right: 0;
 		width: 432px;
+		padding: $spacing-09 $spacing-07;
 		background-color: $white;
 		transform: translate(100%);
 		transition: .5s ease transform;
 		z-index: 10;
-	}
-
-	.sidebarWrapper {
-		padding: $spacing-09 $spacing-07;
-		overflow: scroll;
+		overflow-y: scroll;
 	}
 
 	.isActive .sidebar {
