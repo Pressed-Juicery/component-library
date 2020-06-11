@@ -10,12 +10,12 @@
 			<cart-summary :class="$style.cartSummary" @change="handleQuantityChange" :cart="cart" />
 			<cart-discount-input @submit="handleDiscountCode" />
 			<hr :class="$style.partition">
-			<cart-points-display @stateChange="setCartState" :points="user.points" />
+			<!-- <cart-points-display @stateChange="setCartState" :user="user" /> -->
 		</div>
 
-		<div v-if="state === 'points'">
-			<cart-points-redemption :points="user.points" />
-		</div>
+		<!-- <div v-if="state === 'points'">
+			<cart-points-redemption :user="user" />
+		</div> -->
 
 		<cart-checkout-footer slot="footer" :cart="cart" @checkout="$emit('checkout')" />
 
