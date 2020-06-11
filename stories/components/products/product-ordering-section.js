@@ -18,18 +18,23 @@ export function Overview() {
 			return {
 				isVip: false,
 				product: {
-					variants: [{
-						id: 1,
-						name: "Something",
-						calories: "200",
-						nonMemberPrice: "6.50",
-						memberPrice: "5.00",
-					}],
-					availableModifiers: [{
-						id: 1,
-						name: "First Mod",
-						price: "1.50",
-					}]
+					name: "Vanilla Freeze",
+					variants: [
+						{
+							id: 1,
+							name: "Size 1",
+							calories: "200",
+							nonMemberPrice: "6.50",
+							memberPrice: "5.00",
+						},
+						{
+							id: 2,
+							name: "Size 2",
+							calories: "400",
+							nonMemberPrice: "8.50",
+							memberPrice: "7.00",
+						},
+					],
 				}
 			}
 		}
