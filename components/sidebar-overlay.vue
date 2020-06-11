@@ -6,11 +6,9 @@
 			<div :class="$style.sidebarWrapper">
 				<slot name="navigation" />
 				<slot />
-			</div>
-
-			<div :class="$style.footerWrapper">
 				<slot name="footer" />
 			</div>
+
 		</div>
 	</div>
 </template>
@@ -48,10 +46,14 @@ export default {
 		right: 0;
 		width: 432px;
 		background-color: $white;
-		padding: $spacing-09 $spacing-07;
 		transform: translate(100%);
 		transition: .5s ease transform;
 		z-index: 10;
+	}
+
+	.sidebarWrapper {
+		padding: $spacing-09 $spacing-07;
+		overflow: scroll;
 	}
 
 	.isActive .sidebar {
