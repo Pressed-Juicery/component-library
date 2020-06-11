@@ -2,8 +2,8 @@
 	<div :class="$style.root">
 		<div
 			v-for="(buttonLabel, index) in buttonLabels"
-			:class="[$style.button, { [$style.isActive]: buttonLabel === selected }]"
-			@click="onClick(buttonLabel)"
+			:class="[$style.button, { [$style.isActive]: buttonLabel === selectedLabel }]"
+			@click="$emit('change', buttonLabel)"
 			:key="index"
 		>
 			{{ buttonLabel }}
@@ -20,17 +20,6 @@ export default {
 		},
 		selectedLabel: {
 			type: String,
-		},
-	},
-	data() {
-		return {
-			selected: this.selectedLabel,
-		};
-	},
-	methods: {
-		onClick(buttonLabel) {
-			this.selected = buttonLabel;
-			this.$emit('change', this.selected);
 		},
 	},
 };

@@ -11,13 +11,18 @@ export function Overview() {
 		template: `
 			<button-bar
 				:button-labels="['Pick Up', 'Delivery', 'Shipping']"
-				selected-label="Pick Up"
+				:selected-label="selectedLabel"
 				@change="onChange"
 			/>
 		`,
+		data() {
+			return {
+				selectedLabel: 'Pick Up',
+			};
+		},
 		methods: {
 			onChange(value) {
-				console.log(`Selected button changed: ${value}`); // eslint-disable-line no-console
+				this.selectedLabel = value;
 			},
 		},
 	};
