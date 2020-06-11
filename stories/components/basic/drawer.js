@@ -18,8 +18,12 @@ export function DrawerOpen() {
 				</button>
 				<drawer :title="title" :isOpen="isOpen" @toggleDrawer="drawer">
 					<div style="width: 100%;">
-						<button style="width: 100%; margin: 10px 0;">done</button>
-						<button style="width: 100%; margin: 10px 0;">cancel</button>
+						<button style="width: 100%; margin: 10px 0;">
+							done
+						</button>
+						<button style="width: 100%; margin: 10px 0;">
+							cancel
+						</button>
 					</div>
 				</drawer>
 			</div>
