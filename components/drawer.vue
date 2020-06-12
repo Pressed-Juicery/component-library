@@ -95,8 +95,7 @@ export default {
 	@include text-cta();
 }
 
-.drawer,
-.drawerHeader {
+.drawer {
 	z-index: 2;
 }
 
