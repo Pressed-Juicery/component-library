@@ -64,7 +64,7 @@ export default {
 
 .isOpen .overlay {
 	opacity: 0.2;
-	pointer-events: all;
+	pointer-events: auto;
 }
 
 .drawer {
