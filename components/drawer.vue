@@ -73,6 +73,7 @@ export default {
 	justify-content: center;
 	flex-flow: column;
 	bottom: 0;
+	left: 0;
 	width: 100%;
 	transform: translateY(110%);
 	transition: .5s ease transform;
