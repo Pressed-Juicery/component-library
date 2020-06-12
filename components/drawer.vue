@@ -110,6 +110,6 @@ export default {
 }
 
 .drawerContent {
-	padding: $spacing-07 0;
+	padding: $spacing-05 $spacing-07 $spacing-07 $spacing-07;
 }
 </style>
