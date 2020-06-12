@@ -109,7 +109,6 @@ export default {
 	background-color: $white;
 }
 
-.overlay,
 .drawerHeader {
 	cursor: pointer;
 }
