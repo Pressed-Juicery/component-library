@@ -106,7 +106,7 @@ export default {
 }
 
 .icon {
-	height: $spacing-03;
+	width: $spacing-04;
 }
 
 .drawerContent {
