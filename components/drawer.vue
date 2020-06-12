@@ -109,11 +109,6 @@ export default {
 	background-color: $white;
 }
 
-.overlay,
-.drawerHeader {
-	cursor: pointer;
-}
-
 .wrapper {
 	width: 75%;
 	justify-content: space-between;
