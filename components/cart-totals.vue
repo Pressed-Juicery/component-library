@@ -33,10 +33,10 @@
 			</div>
 			<div v-else>Shipping/Delivery</div>
 
-			<div v-if="shippingPrice">{{ formatCurrency(shippingPrice) }}</div>
-			<div v-else-if="shippingPrice === 0" :class="$style.shippingInfo">Free</div>
+			<div v-if="cart.fulfillmentPrice">{{ formatCurrency(cart.fulfillmentPrice) }}</div>
+			<div v-else-if="cart.fulfillmentPrice === 0" :class="$style.fulfillmentInfo">Free</div>
 			<div v-else-if="!cart.isShippingAvailable" :class="$style.dashes">- - -</div>
-			<div v-else :class="$style.shippingInfo">calculated at next step</div>
+			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
 		</div>
 
 		<div :class="[$style.totalRow, $style.rowGroup]">
@@ -73,12 +73,6 @@ export default {
 
 		toggle() {
 			this.isOpen = !this.isOpen;
-		},
-	},
-
-	computed: {
-		shippingPrice() {
-			return this.cart.fulfillmentSelection && this.cart.fulfillmentSelection.price;
 		},
 	},
 };
@@ -119,7 +113,7 @@ export default {
 		margin-right: $spacing-03;
 	}
 
-	.shippingInfo {
+	.fulfillmentInfo {
 		@include text-body-small();
 		@include text-bold();
 

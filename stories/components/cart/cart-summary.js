@@ -18,41 +18,41 @@ export function Overview() {
 					itemCount: 101,
 					items: [
 						{
-							name: 'Strawberry Basil Lemonade',
 							quantity: 10,
-							variant: {
-								imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-							},
 							originalPrice: 10,
 							price: 10,
-						},
-						{
-							name: 'Turmeric Almond',
-							quantity: 5,
 							variant: {
+								name: 'Strawberry Basil Lemonade',
 								imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 							},
+						},
+						{
+							quantity: 5,
 							originalPrice: 25,
 							price: 22.50,
-						},
-						{
-							name: 'Daily Fuel',
-							quantity: 1,
 							variant: {
+								name: 'Turmeric Almond',
 								imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 							},
+						},
+						{
+							quantity: 1,
 							originalPrice: 26.57,
 							price: 25.50,
+							variant: {
+								name: 'Daily Fuel',
+								imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+							},
 							bundleItems: 'Vanilla Almond, Chocolate Almond',
 						},
 						{
-							name: 'Strawberry Freeze',
 							quantity: 101,
-							variant: {
-								imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
-							},
 							originalPrice: 122.5,
 							price: 10,
+							variant: {
+								name: 'Strawberry Freeze',
+								imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
+							},
 							modifiers: {
 								toppings: 'Chocolate Chips, Granola, Coconut',
 							},
