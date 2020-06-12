@@ -105,11 +105,6 @@ export default {
 	background-color: $white;
 }
 
-// .wrapper {
-// 	width: 75%;
-// 	justify-content: space-between;
-// }
-
 .drawerHeader {
 	justify-content: space-around;
 	height: $spacing-10;
