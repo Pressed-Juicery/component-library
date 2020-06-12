@@ -69,6 +69,8 @@ export default {
 
 .drawer {
 	position: absolute;
+	display: flex;
+	justify-content: center;
 	flex-flow: column;
 	bottom: 0;
 	width: 100%;
@@ -80,13 +82,16 @@ export default {
 	transform: translateY(0%);
 }
 
-.drawer,
 .drawerHeader {
-	display: flex;
-}
-
-.drawer {
-	justify-content: center;
+	cursor: pointer;
+	padding: $spacing-06 $spacing-07;
+	display: grid;
+	grid-template-columns: 1fr $spacing-04;
+	grid-column-gap: $spacing-06;
+	align-items: center;
+	border-radius: $spacing-05 $spacing-05 0 0;
+	box-shadow: 0px -1px 5px $gray-30;
+	@include text-cta();
 }
 
 .drawer,
@@ -94,23 +99,9 @@ export default {
 	z-index: 2;
 }
 
-.drawerHeader {
-	cursor: pointer;
-	align-items: center;
-	justify-content: space-between;
-}
-
 .drawerHeader,
 .drawerContent {
 	background-color: $white;
-}
-
-.drawerHeader {
-	justify-content: space-around;
-	height: $spacing-10;
-	border-radius: $spacing-05 $spacing-05 0 0;
-	box-shadow: 0px -1px 5px $gray-30;
-	@include text-cta();
 }
 
 .icon {
