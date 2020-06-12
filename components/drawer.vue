@@ -1,9 +1,9 @@
 <template>
 	<div :class="[{[$style.isOpen]: isOpen}, $style.root]">
-		<div :class="$style.overlay" @click="toggleDrawer"></div>
+		<div :class="$style.overlay" @click="close"></div>
 
 		<div :class="$style.drawer">
-			<div :class="$style.drawerHeader" @click="toggleDrawer">
+			<div :class="$style.drawerHeader" @click="close">
 				<div :class="$style.wrapper">
 					<div>{{ title }}</div>
 					<ArrowDown :class="$style.icon" />
@@ -34,8 +34,8 @@ export default {
 	},
 	components: { ArrowDown },
 	methods: {
-		toggleDrawer() {
-			this.$emit('toggleDrawer', !this.isOpen);
+		close() {
+			this.$emit('close');
 		},
 	},
 };
@@ -111,10 +111,6 @@ export default {
 .drawerHeader,
 .drawerContent {
 	background-color: $white;
-}
-
-.drawerHeader {
-	cursor: pointer;
 }
 
 .wrapper {
