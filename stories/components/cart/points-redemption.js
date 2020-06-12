@@ -1,62 +1,11 @@
 import PointsRedemption from '../../../components/points-redemption';
 import PointsRedemptionCard from '../../../components/points-redemption-card';
+import { pointsRewardCards } from '../../../constants/points-reward-cards';
 
 export default {
 	title: 'Components / Cart / PointsRedemption',
 	component: PointsRedemption,
 };
-
-const cards = [{
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/water-and-shot.svg',
-	title: 'Shot or Water',
-	points: '70',
-	quantityAvailable: 7,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/freeze-size-1.svg',
-	title: 'Size 1 Freeze',
-	points: '140',
-	quantityAvailable: 3,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/juice.svg',
-	title: 'Any Juice',
-	points: '150',
-	quantityAvailable: 3,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/signature-blend.svg',
-	title: 'Signature Blend',
-	points: '180',
-	quantityAvailable: 2,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/freeze-size-2.svg',
-	title: 'Size 2 Freeze',
-	points: '180',
-	quantityAvailable: 2,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/water-and-shot.svg',
-	title: 'Shot or Water',
-	points: '70',
-	quantityAvailable: 7,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/freeze-size-1.svg',
-	title: 'Size 1 Freeze',
-	points: '140',
-	quantityAvailable: 3,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/juice.svg',
-	title: 'Any Juice',
-	points: '150',
-	quantityAvailable: 3,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/signature-blend.svg',
-	title: 'Signature Blend',
-	points: '180',
-	quantityAvailable: 2,
-}, {
-	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/freeze-size-2.svg',
-	title: 'Size 2 Freeze',
-	points: '180',
-	quantityAvailable: 2,
-}];
 
 export function Overview() {
 	return {
@@ -76,7 +25,7 @@ export function Overview() {
 
 		data() {
 			return {
-				...cards[0],
+				...pointsRewardCards[0],
 				quantitySelected: null,
 			};
 		},
@@ -92,10 +41,10 @@ export function Overview() {
 export function CardRow() {
 	return {
 		components: { PointsRedemption },
-		template: '<points-redemption :cards="cards" />',
+		template: '<points-redemption :points="points" />',
 
 		data() {
-			return { cards };
+			return { points: 2000 };
 		},
 	};
 }

@@ -14,7 +14,8 @@ const fullCart = [{
 		imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 	},
 	quantity: 1,
-	price: 6.75,
+	originalPrice: 6.75,
+	price: 6.00,
 }, {
 	id: 2,
 	variant: {
@@ -22,25 +23,25 @@ const fullCart = [{
 		imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 	},
 	quantity: 1,
-	price: 6.55,
+	originalPrice: 6.75,
+	price: 6.00,
 	modifiers: {
 		toppings: 'peanuts, caramel, bananas',
 	},
 }];
 
-const mixins = {
+const mixins = [{
 	methods: {
 		closeSlider() {
-			this.active = false;
+			this.isActive = false;
 		},
 
 		getItems() {
-			// Placeholder for async call
-			return fullCart;
+			this.items = fullCart;
 		},
 
 		getEmptyItems() {
-			return [];
+			this.items = [];
 		},
 
 		getUser() {
@@ -49,44 +50,6 @@ const mixins = {
 				firstName: 'Carl',
 				lastName: 'McGee',
 				points: 220,
-			};
-		},
-
-		getItemCount(items) {
-			return items.reduce((accum, item) => accum + Number(item.quantity), 0);
-		},
-
-		getOriginalTotalPrice(items) {
-			return items.reduce((accum, item) => accum + (Number(item.price) * Number(item.quantity)), 0) || 0;
-		},
-
-		getSubtotal() {
-			const subtotal = this.getOriginalTotalPrice(this.items) - this.getTotalDiscounts(this.getCartDiscounts());
-
-			return subtotal > 0 ? subtotal : 0;
-		},
-
-		getCartDiscounts() {
-			// Placeholder for async call
-			return [
-				{ name: 'VIP Member Savings', amount: 2.5 },
-				{ name: 'Points Redemption', amount: 6.5 },
-			];
-		},
-
-		getTotalDiscounts(discounts) {
-			return discounts.reduce((accum, discount) => accum + Number(discount.totalDiscount), 0) || 0;
-		},
-
-		isShippingAvailable() {
-			// Placeholder for async call
-			return true;
-		},
-
-		getFulfillmentSelection() {
-			// Placeholder for async call
-			return {
-				price: 40,
 			};
 		},
 
@@ -99,69 +62,73 @@ const mixins = {
 
 		getCart() {
 			this.cart = {
-				itemCount: this.getItemCount(this.items),
-				items: this.items,
-				originalTotalPrice: this.getOriginalTotalPrice(this.items),
-				subtotal: this.getSubtotal(this.items),
-				discounts: this.getCartDiscounts(),
-				total: this.getTotal(),
-				isShippingAvailable: this.isShippingAvailable(),
-				fulfillmentSelection: this.getFulfillmentSelection(),
+				itemCount: 2,
+				items: fullCart,
+				originalSubtotal: 14.5,
+				subtotal: 10,
+				discounts: [
+					{ name: 'VIP Member Savings', amount: 2.5 },
+					{ name: 'Points Redemption', amount: 6.5 },
+				],
+				total: 100,
+				isShippingAvailable: true,
+				fulfillmentSelection: { price: 40 },
 			};
 		},
 
 		getEmptyCart() {
 			this.cart = {
-				itemCount: this.getItemCount(this.items),
+				itemCount: 2,
 				items: [],
-				originalTotalPrice: this.getOriginalTotalPrice(this.items),
-				subtotal: this.getSubtotal(this.items),
-				discounts: this.getCartDiscounts(),
-				total: this.getTotal(),
-				isShippingAvailable: this.isShippingAvailable(),
-				fulfillmentSelection: this.getFulfillmentSelection(),
+				originalSubtotal: 14.5,
+				subtotal: 10,
+				discounts: [
+					{ name: 'VIP Member Savings', amount: 2.5 },
+					{ name: 'Points Redemption', amount: 6.5 },
+				],
+				total: 100,
+				isShippingAvailable: true,
+				fulfillmentSelection: { price: 40 },
 			};
 		},
 
 		updateItemQuantity(item) {
-			const index = this.items.findIndex(cartItem => cartItem.name.toLowerCase() === item.name.toLowerCase());
+			const index = this.cart.items.findIndex(cartItem => cartItem.id === item.id);
 
 			if (item.quantity) {
-				this.items[index].quantity = item.quantity;
+				this.cart.items[index].quantity = item.quantity;
 			} else {
-				this.items = this.items.filter(cartItem => cartItem.name.toLowerCase() !== item.name.toLowerCase());
+				this.cart.items = this.cart.items.filter(cartItem => cartItem.id === item.id);
 			}
 
 			this.getCart();
 		},
 
 	},
-};
+}];
 
 export function Overview() {
 	return {
 		components: { CartSidebar },
-		mixins: [mixins],
-		template: `<cart-sidebar
-			:is-active="isActive"
-			:items="items"
-			:user="user"
-			:cart="cart"
-			@close="closeSlider"
-			@cart-quantity-change="updateItemQuantity"/>`,
+		mixins,
+		template: `
+			<cart-sidebar
+				:is-active="isActive"
+				:user="user"
+				:cart="cart"
+				@close="closeSlider"
+				@cart-quantity-change="updateItemQuantity"/>`,
 		props: {
 			isActive: {
 				default: boolean('Active', true),
 			},
 		},
-		async created() {
-			this.items = await this.getItems();
+		created() {
 			this.getCart();
 			this.getUser();
 		},
 		data() {
 			return {
-				items: [],
 				cart: {},
 				user: {},
 			};
@@ -172,14 +139,15 @@ export function Overview() {
 export function EmptyCart() {
 	return {
 		components: { CartSidebar },
-		mixins: [mixins],
-		template: `<cart-sidebar
-			:active="active"
-			:user="user"
-			:cart="cart"
-			@close="closeSlider"/>`,
+		mixins,
+		template: `
+			<cart-sidebar
+				:is-active="isActive"
+				:user="user"
+				:cart="cart"
+				@close="closeSlider"/>`,
 		props: {
-			active: {
+			isActive: {
 				default: boolean('Active', true),
 			},
 		},
@@ -190,7 +158,7 @@ export function EmptyCart() {
 		},
 		data() {
 			return {
-				items: [],
+				cart: {},
 				user: {},
 			};
 		},
