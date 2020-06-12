@@ -4,16 +4,12 @@
 
 		<div :class="$style.drawer">
 			<div :class="$style.drawerHeader" @click="close">
-				<div :class="$style.wrapper">
-					<div>{{ title }}</div>
-					<ArrowDown :class="$style.icon" />
-				</div>
+				<div>{{ title }}</div>
+				<ArrowDown :class="$style.icon" />
 			</div>
 
 			<div :class="$style.drawerContent">
-				<div :class="$style.wrapper">
-					<slot />
-				</div>
+				<slot />
 			</div>
 		</div>
 	</div>
@@ -85,20 +81,12 @@ export default {
 }
 
 .drawer,
-.drawerContent,
-.drawerHeader,
-.wrapper {
+.drawerHeader {
 	display: flex;
 }
 
-.drawer,
-.drawerContent {
+.drawer {
 	justify-content: center;
-}
-
-.drawerContent,
-.wrapper {
-	align-items: center;
 }
 
 .drawer,
@@ -108,6 +96,8 @@ export default {
 
 .drawerHeader {
 	cursor: pointer;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .drawerHeader,
@@ -115,10 +105,10 @@ export default {
 	background-color: $white;
 }
 
-.wrapper {
-	width: 75%;
-	justify-content: space-between;
-}
+// .wrapper {
+// 	width: 75%;
+// 	justify-content: space-between;
+// }
 
 .drawerHeader {
 	justify-content: space-around;
