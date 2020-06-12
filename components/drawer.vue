@@ -77,6 +77,13 @@ export default {
 	width: 100%;
 	transform: translateY(110%);
 	transition: .5s ease transform;
+	background-color: $white;
+	box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
+}
+
+.drawer,
+.drawerHeader {
+	border-radius: $spacing-05 $spacing-05 0 0;
 }
 
 .isOpen .drawer {
@@ -90,18 +97,12 @@ export default {
 	grid-template-columns: 1fr $spacing-04;
 	grid-column-gap: $spacing-06;
 	align-items: center;
-	border-radius: $spacing-05 $spacing-05 0 0;
-	box-shadow: 0px -1px 5px $gray-30;
+	box-shadow: 0 7px 10px -8px rgba(226, 226, 226, 0.5);
 	@include text-cta();
 }
 
 .drawer {
-	z-index: 2;
-}
-
-.drawerHeader,
-.drawerContent {
-	background-color: $white;
+	z-index: 1;
 }
 
 .icon {
