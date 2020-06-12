@@ -78,12 +78,8 @@ export default {
 	transform: translateY(110%);
 	transition: .5s ease transform;
 	background-color: $white;
-	box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
-}
-
-.drawer,
-.drawerHeader {
 	border-radius: $spacing-05 $spacing-05 0 0;
+	box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
 }
 
 .isOpen .drawer {
