@@ -104,6 +104,10 @@ export default {
 	z-index: 2;
 }
 
+.drawerHeader {
+	cursor: pointer;
+}
+
 .drawerHeader,
 .drawerContent {
 	background-color: $white;
