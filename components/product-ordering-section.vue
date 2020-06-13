@@ -147,7 +147,7 @@ export default {
 	color: $gray-30;
 	position: absolute;
 	right: $spacing-07;
-	margin-top: $spacing-05;
+	top: $spacing-05;
 }
 
 .variant,
@@ -160,7 +160,7 @@ export default {
 .quantity {
 	background-color: #ffffff;
 	border-radius: $spacing-02;
-	border-color: transparent;
+	border: none;
 }
 
 .quantity,
