@@ -72,11 +72,12 @@ const groups = [{
 		'BundleCardGrid',
 		'BundleItems',
 		'CleanseGuide',
+		'Ingredients',
 		'NutritionFacts',
 		'ProductDetails',
 		'ProductCard',
+		'ProductOrderingSection',
 		'ProductReview',
-		'Ingredients',
 	],
 }, {
 	groupName: 'Sections',

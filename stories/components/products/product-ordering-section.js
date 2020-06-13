@@ -9,34 +9,29 @@ export function Overview() {
 	return {
 		components: { ProductOrderingSection },
 		template: '<product-ordering-section :isVip="isVip" :product="product" @addedToCart="addToCart"/>',
-		methods: {
-			addToCart(item) {
-				console.log("Added to cart", item)
-			}
-		},
 		data() {
 			return {
-				isVip: false,
+				isVip: true,
 				product: {
-					name: "Vanilla Freeze",
+					name: 'Vanilla Freeze',
 					variants: [
 						{
 							id: 1,
-							name: "Size 1",
-							calories: "200",
-							nonMemberPrice: "6.50",
-							memberPrice: "5.00",
+							name: 'Size 1',
+							calories: '200',
+							nonMemberPrice: '6.50',
+							memberPrice: '5.00',
 						},
 						{
 							id: 2,
-							name: "Size 2",
-							calories: "400",
-							nonMemberPrice: "8.50",
-							memberPrice: "7.00",
+							name: 'Size 2',
+							calories: '400',
+							nonMemberPrice: '8.50',
+							memberPrice: '7.00',
 						},
 					],
-				}
-			}
-		}
-	}
+				},
+			};
+		},
+	};
 }
