@@ -15,7 +15,12 @@
 			<div :class="$style.calories">{{ product.variants[currentVariant].calories }} cal</div>
 		</div>
 
-		<div v-if="!isVip" :class="$style.cta">
+		<div v-if="
+			!isVip
+				&& product.variants[currentVariant].memberPrice
+				!== product.variants[currentVariant].nonMemberPrice"
+				:class="$style.cta"
+			>
 			<div>
 				Just ${{ product.variants[currentVariant].memberPrice }} for our VIP Members
 			</div>

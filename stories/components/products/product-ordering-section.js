@@ -11,7 +11,7 @@ export function Overview() {
 		template: '<product-ordering-section :isVip="isVip" :product="product" @addedToCart="addToCart"/>',
 		data() {
 			return {
-				isVip: true,
+				isVip: false,
 				product: {
 					name: 'Vanilla Freeze',
 					variants: [
@@ -19,8 +19,8 @@ export function Overview() {
 							id: 1,
 							name: 'Size 1',
 							calories: '200',
-							nonMemberPrice: '6.50',
-							memberPrice: '5.00',
+							nonMemberPrice: '5.00',
+							memberPrice: '6.50',
 						},
 						{
 							id: 2,
@@ -28,6 +28,13 @@ export function Overview() {
 							calories: '400',
 							nonMemberPrice: '8.50',
 							memberPrice: '7.00',
+						},
+						{
+							id: 3,
+							name: 'Size 3',
+							calories: '100',
+							nonMemberPrice: '4.00',
+							memberPrice: '4.00',
 						},
 					],
 				},
