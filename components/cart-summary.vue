@@ -32,14 +32,14 @@ export default {
 	}
 
 	.header {
-		margin-bottom: $spacing-07;
+		margin-bottom: $spacing-06;
 	}
 
 	.title {
-		@include text-heading-4();
+		@include text-heading-5();
 	}
 
 	.itemCount {
-		@include text-bold();
+		@include text-heading-5();
 	}
 </style>

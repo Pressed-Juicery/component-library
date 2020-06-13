@@ -3,27 +3,27 @@
 		<div :class="[$style.row, $style.rowGroup]">
 			<div :class="[$style.rowGroup, {
 			         [$style.isClosed]: !isOpen,
-			         [$style.subtotalToggle]: cart.discounts && cart.discounts.length
+			         [$style.subtotalToggle]: cart.discountSummary && cart.discountSummary.length
 			     }]"
 			     @click="toggle()">
 				<div>Subtotal</div>
-				<up-caret-icon v-if="cart.discounts && cart.discounts.length" :class="$style.icon" />
+				<up-caret-icon v-if="cart.discountSummary && cart.discountSummary.length" :class="$style.icon" />
 			</div>
 
 			<div :class="$style.rowGroup">
-				<div v-if="cart.originalTotalPrice" :class="$style.originalTotalPrice">
-					{{ formatCurrency(cart.originalTotalPrice) }}
+				<div v-if="cart.originalSubtotal" :class="$style.originalSubtotal">
+					{{ formatCurrency(cart.originalSubtotal) }}
 				</div>
 				<div>{{ formatCurrency(cart.subtotal) }}</div>
 			</div>
 		</div>
 
-		<div v-if="isOpen && cart.discounts && cart.discounts.length">
+		<div v-if="isOpen && cart.discountSummary && cart.discountSummary.length">
 			<div :class="[$style.row, $style.rowGroup]"
-			     v-for="discount in cart.discounts"
+			     v-for="discount in cart.discountSummary"
 			     :key="discount.name">
 				<div :class="$style.discountLabel">{{ discount.name }}</div>
-				<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(discount.amount)) }}</div>
+				<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(discount.totalDiscount)) }}</div>
 			</div>
 		</div>
 
@@ -33,10 +33,10 @@
 			</div>
 			<div v-else>Shipping/Delivery</div>
 
-			<div v-if="shippingPrice">{{ formatCurrency(shippingPrice) }}</div>
-			<div v-else-if="shippingPrice === 0" :class="$style.shippingInfo">Free</div>
+			<div v-if="cart.fulfillmentPrice">{{ formatCurrency(cart.fulfillmentPrice) }}</div>
+			<div v-else-if="cart.fulfillmentPrice === 0" :class="$style.fulfillmentInfo">Free</div>
 			<div v-else-if="!cart.isShippingAvailable" :class="$style.dashes">- - -</div>
-			<div v-else :class="$style.shippingInfo">calculated at next step</div>
+			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
 		</div>
 
 		<div :class="[$style.totalRow, $style.rowGroup]">
@@ -75,12 +75,6 @@ export default {
 			this.isOpen = !this.isOpen;
 		},
 	},
-
-	computed: {
-		shippingPrice() {
-			return this.cart.fulfillmentSelection && this.cart.fulfillmentSelection.price;
-		},
-	},
 };
 </script>
 
@@ -112,14 +106,14 @@ export default {
 		}
 	}
 
-	.originalTotalPrice {
+	.originalSubtotal {
 		@include text-subtle();
 		@include text-strikethrough();
 
 		margin-right: $spacing-03;
 	}
 
-	.shippingInfo {
+	.fulfillmentInfo {
 		@include text-body-small();
 		@include text-bold();
 

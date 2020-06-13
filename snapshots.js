@@ -50,7 +50,9 @@ const groups = [{
 	groupName: 'Components / Products',
 	stories: [
 		'BundleCardGrid',
-		'ProductOrderingSection'
+		'NutritionFacts',
+		'ProductDetails',
+		'ProductOrderingSection',
 	],
 }, {
 	groupName: 'Sections',
