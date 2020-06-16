@@ -9,7 +9,7 @@ export default {
 	decorators: [withKnobs],
 };
 
-const fullCart = [{
+const cartItems = [{
 	id: 1,
 	variant: {
 		name: 'Strawberry Basil Lemonade',
@@ -59,7 +59,7 @@ const mixins = [{
 		getCart() {
 			this.cart = {
 				itemCount: 2,
-				items: fullCart,
+				items: cartItems,
 				originalSubtotal: 14.5,
 				subtotal: 10,
 				discounts: [
