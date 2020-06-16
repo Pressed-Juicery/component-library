@@ -23,7 +23,7 @@ export function Overview() {
 	return {
 		components: { Drawer },
 		mixins,
-		template: '<drawer :title="title" :isOpen="isOpen" @close="closeDrawer"></drawer>',
+		template: '<body style="background: navajowhite; height: 1500px; margin: 200px 0"><drawer :title="title" :isOpen="isOpen" @close="closeDrawer"></drawer></body>',
 		props: {
 			isOpen: {
 				default: boolean('Open', true),
