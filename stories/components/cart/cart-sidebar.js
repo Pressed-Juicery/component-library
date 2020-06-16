@@ -1,5 +1,6 @@
-import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 import CartSidebar from '../../../components/cart-sidebar';
+import { addons } from '@storybook/addons';
 import { redemptionRates } from '../../../demo-data/redemption-rates.data';
 
 export default {
@@ -35,7 +36,11 @@ const fullCart = [{
 const mixins = [{
 	methods: {
 		closeSlider() {
-			this.isActive = false;
+			// Reference: https://github.com/storybookjs/storybook/issues/3855#issuecomment-638245040
+			addons.getChannel().emit(CHANGE, {
+				name: 'Active',
+				value: false,
+			});
 		},
 
 		getItems() {
