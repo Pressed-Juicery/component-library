@@ -39,5 +39,4 @@ export default {
 		@extend .button--pill;
 		width: 100%;
 	}
-
 </style>
