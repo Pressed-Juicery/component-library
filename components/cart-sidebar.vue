@@ -1,10 +1,11 @@
 <template>
 	<sidebar-overlay :is-active="isActive" @close="$emit('close')">
 
-		<cart-navigation slot="navigation"
+		<cart-navigation
 			:shouldShowBackButton="shouldShowBackButton"
 			@back="setCartState"
-			@close="$emit('close')" />
+			@close="$emit('close')"
+		/>
 
 		<div v-if="state === 'cart'">
 			<cart-summary
@@ -22,7 +23,7 @@
 			<cart-points-redemption :user="user" :redemption-rates="redemptionRates"/>
 		</div> -->
 
-		<cart-checkout-footer slot="footer" :cart="cart" @continue="$emit('continue')" />
+		<cart-checkout-footer :cart="cart" @continue="$emit('continue')" />
 
 	</sidebar-overlay>
 </template>

@@ -2,11 +2,7 @@
 	<div :class="{[$style.isActive]: isActive}">
 		<div :class="$style.overlay" @click.self="$emit('close')"></div>
 		<div :class="$style.sidebar">
-
-			<slot name="navigation" />
 			<slot />
-			<slot name="footer" />
-
 		</div>
 	</div>
 </template>
