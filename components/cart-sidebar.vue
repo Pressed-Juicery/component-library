@@ -69,8 +69,8 @@ export default {
 			// Placeholder for discount handler
 		},
 
-		handleQuantityChange(quantity) {
-			this.$emit('cart-quantity-change', quantity);
+		handleQuantityChange(changeSummary) {
+			this.$emit('cart-quantity-change', changeSummary);
 		},
 
 	},
