@@ -52,7 +52,7 @@ export default {
 		transform: translate(100%);
 		transition: .5s ease transform;
 		z-index: 10;
-		overflow-y: scroll;
+		overflow-y: auto;
 	}
 
 	.isActive .sidebar {
