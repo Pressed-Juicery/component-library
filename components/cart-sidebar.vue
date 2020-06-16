@@ -14,7 +14,7 @@
 				:can-update-quantity="true"
 				@change="changeSummary => $emit('cart-quantity-change', changeSummary)"
 			/>
-			<cart-discount-input @submit="handleDiscountCode" />
+			<cart-discount-input @submit="discountCode => $emit('apply-discount-code', discountCode)" />
 			<hr :class="$style.partition">
 			<cart-points-display @click="setCartState('points')" :user="user" />
 		</div>
@@ -64,10 +64,6 @@ export default {
 	},
 	methods: {
 		setCartState(state) { this.state = state },
-
-		handleDiscountCode(discount) { // eslint-disable-line no-unused-vars
-			// Placeholder for discount handler
-		},
 	},
 	computed: {
 		shouldShowBackButton() { return this.state !== 'cart' },

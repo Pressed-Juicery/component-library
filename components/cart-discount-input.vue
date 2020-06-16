@@ -1,7 +1,11 @@
 <template>
 	<div :class="$style.root">
 		<input placeholder="Discount Code" :class="$style.input" v-model="value"/>
-		<button :class="[$style.button, 'button--tertiary']" :disabled="!value">Apply</button>
+		<button
+			:class="[$style.button, 'button--tertiary']"
+			:disabled="!value"
+			@click="$emit('submit', value)"
+		>Apply</button>
 	</div>
 </template>
 
