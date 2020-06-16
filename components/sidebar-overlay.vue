@@ -34,7 +34,7 @@ export default {
 
 	.isActive .overlay {
 		opacity: 0.55;
-		pointer-events: all;
+		pointer-events: auto;
 	}
 
 	.sidebar {
