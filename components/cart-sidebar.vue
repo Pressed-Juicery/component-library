@@ -3,7 +3,7 @@
 
 		<cart-navigation
 			:shouldShowBackButton="shouldShowBackButton"
-			@back="setCartState"
+			@back="setCartState('cart')"
 			@close="$emit('close')"
 		/>
 
@@ -16,7 +16,7 @@
 			/>
 			<cart-discount-input @submit="handleDiscountCode" />
 			<hr :class="$style.partition">
-			<!-- <cart-points-display @stateChange="setCartState" :user="user" /> -->
+			<!-- <cart-points-display @stateChange="setCartState('points')" :user="user" /> -->
 		</div>
 
 		<!-- <div v-if="state === 'points'">

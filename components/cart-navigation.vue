@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.root">
 		<close-icon :class="$style.closeButton" @click.native="$emit('close')"/>
-		<back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back', 'cart')"/>
+		<back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back')"/>
 	</div>
 </template>
 
