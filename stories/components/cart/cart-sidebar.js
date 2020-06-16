@@ -70,17 +70,12 @@ const mixins = [{
 
 		getEmptyCart() {
 			this.cart = {
-				itemCount: 2,
+				itemCount: 0,
 				items: [],
-				originalSubtotal: 14.5,
-				subtotal: 10,
-				discounts: [
-					{ name: 'VIP Member Savings', amount: 2.5 },
-					{ name: 'Points Redemption', amount: 6.5 },
-				],
-				total: 100,
-				isShippingAvailable: true,
-				fulfillmentSelection: { price: 40 },
+				originalSubtotal: 0,
+				subtotal: 0,
+				total: 0,
+				isShippingAvailable: false,
 			};
 		},
 
