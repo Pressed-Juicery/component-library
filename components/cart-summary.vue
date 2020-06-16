@@ -11,7 +11,7 @@
 			v-for="item in cart.items"
 			:key="item.id"
 			:item="item"
-			@change="handleQuantityChange"/>
+			@change="value => $emit('change', value)"/>
 	</div>
 </template>
 
@@ -23,12 +23,6 @@ export default {
 	props: {
 		cart: Object,
 		canUpdateQuantity: Boolean,
-	},
-
-	methods: {
-		handleQuantityChange(item) {
-			this.$emit('change', item);
-		},
 	},
 
 	components: { CartItemCard, CheckoutItemCard },
