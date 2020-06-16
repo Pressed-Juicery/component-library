@@ -35,14 +35,13 @@ export default {
 		cursor: pointer;
 	}
 
-	.backButton {
-		height: $nav-height;
-		width: $nav-height;
-	}
-
 	.closeButton {
 		width: $spacing-04;
 		height: $spacing-04;
 	}
 
+	.backButton {
+		height: $nav-height;
+		width: $nav-height;
+	}
 </style>
