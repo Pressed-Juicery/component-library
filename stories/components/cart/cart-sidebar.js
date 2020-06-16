@@ -52,22 +52,6 @@ const mixins = [{
 			};
 		},
 
-		getCart() {
-			this.cart = {
-				itemCount: 2,
-				items: cartItems,
-				originalSubtotal: 14.5,
-				subtotal: 10,
-				discounts: [
-					{ name: 'VIP Member Savings', amount: 2.5 },
-					{ name: 'Points Redemption', amount: 6.5 },
-				],
-				total: 100,
-				isShippingAvailable: true,
-				fulfillmentSelection: { price: 40 },
-			};
-		},
-
 		updateItemQuantity(item) {
 			const index = this.cart.items.findIndex(cartItem => cartItem.id === item.id);
 
@@ -103,12 +87,23 @@ export function Overview() {
 			},
 		},
 		created() {
-			this.getCart();
 			this.getUser();
 		},
 		data() {
 			return {
-				cart: {},
+				cart: {
+					itemCount: 2,
+					items: cartItems,
+					originalSubtotal: 14.5,
+					subtotal: 10,
+					discounts: [
+						{ name: 'VIP Member Savings', amount: 2.5 },
+						{ name: 'Points Redemption', amount: 6.5 },
+					],
+					total: 100,
+					isShippingAvailable: true,
+					fulfillmentSelection: { price: 40 },
+				},
 				user: {},
 				redemptionRates,
 			};
