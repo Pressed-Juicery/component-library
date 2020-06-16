@@ -44,8 +44,7 @@ const mixins = [{
 		},
 
 		getUser() {
-			// Placeholder for async call
-			this.user = {
+			return {
 				firstName: 'Carl',
 				lastName: 'McGee',
 				points: 220,
@@ -86,9 +85,6 @@ export function Overview() {
 				default: boolean('Active', true),
 			},
 		},
-		created() {
-			this.getUser();
-		},
 		data() {
 			return {
 				cart: {
@@ -104,7 +100,7 @@ export function Overview() {
 					isShippingAvailable: true,
 					fulfillmentSelection: { price: 40 },
 				},
-				user: {},
+				user: this.getUser(),
 				redemptionRates,
 			};
 		},
@@ -130,9 +126,6 @@ export function EmptyCart() {
 				default: boolean('Active', true),
 			},
 		},
-		created() {
-			this.getUser();
-		},
 		data() {
 			return {
 				cart: {
@@ -143,7 +136,7 @@ export function EmptyCart() {
 					total: 0,
 					isShippingAvailable: false,
 				},
-				user: {},
+				user: this.getUser(),
 				items: [],
 				redemptionRates,
 			};
