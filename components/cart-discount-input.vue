@@ -1,10 +1,10 @@
 <template>
 	<div :class="$style.root">
-		<input placeholder="Discount Code" :class="$style.input" v-model="value"/>
+		<input placeholder="Discount Code" :class="$style.input" v-model="discountCode"/>
 		<button
 			:class="[$style.button, 'button--tertiary']"
-			:disabled="!value"
-			@click="$emit('submit', value)"
+			:disabled="!discountCode"
+			@click="$emit('submit', discountCode)"
 		>Apply</button>
 	</div>
 </template>
@@ -14,7 +14,7 @@
 export default {
 	data() {
 		return {
-			value: null,
+			discountCode: null,
 		};
 	},
 };
