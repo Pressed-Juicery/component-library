@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { hasExactLength, isNotEmpty, isNumber, isValidPhoneNumber } from '../utilities/validators';
+import { isNotEmpty, isEmail, isValidPhoneNumber, hasMinimumLength } from '../utilities/validators';
 import RadioButtonCard from './radio-button-card';
 import UpgradeForm from './upgrade-form';
 import ValidatedForm from './validated-form';
@@ -73,23 +73,25 @@ export default {
 				}],
 				lastName: [{
 					validator: isNotEmpty,
-					message: 'Please enter your first name.',
+					message: 'Please enter your last name.',
 				}],
 				email: [{
 					validator: isNotEmpty,
-					message: 'Please enter your first name.',
+					message: 'Please enter a valid Email address.',
+				}, {
+					validator: isEmail,
+					message: 'Please enter a valid Email address.',
 				}],
 				password: [{
 					validator: isNotEmpty,
-					message: 'Please enter your first name.',
-				}],
-				birthday: [{
-					validator: isNotEmpty,
-					message: 'Please enter your first name.',
+					message: 'Please enter a valid password.',
 				}],
 				phone: [{
 					validator: isNotEmpty,
-					message: 'Please enter your first name.',
+					message: 'Please enter a valid phone number.',
+				}, {
+					validator: isValidPhoneNumber,
+					message: 'Please enter a valid phone number.',
 				}],
 			},
 		};
