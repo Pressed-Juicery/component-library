@@ -29,3 +29,7 @@ export function isTruthy(value) {
 export function isValidPhoneNumber(value) {
 	return isEmpty(value) || /^\D*(\d\D*){10}$/.test(value);
 }
+
+export function isZipCode(value) {
+	return isEmpty(value) || (/^\d{5}(-\d{4})?$/).test(value);
+}
