@@ -41,11 +41,6 @@ export default {
 		transition: 0.5s ease opacity;
 	}
 
-	.isActive .overlay {
-		opacity: 0.55;
-		pointer-events: auto;
-	}
-
 	.sidebar {
 		position: fixed;
 		top: 0;
@@ -60,7 +55,14 @@ export default {
 		overflow-y: auto;
 	}
 
-	.isActive .sidebar {
-		transform: translate(0%);
+	.isActive {
+		.overlay {
+			opacity: 0.55;
+			pointer-events: auto;
+		}
+
+		.sidebar {
+			transform: translate(0%);
+		}
 	}
 </style>
