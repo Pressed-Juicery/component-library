@@ -7,7 +7,12 @@
 			@close="$emit('close')" />
 
 		<div v-if="state === 'cart'">
-			<cart-summary :class="$style.cartSummary" @change="handleQuantityChange" :cart="cart" />
+			<cart-summary
+				:class="$style.cartSummary"
+				@change="handleQuantityChange"
+				:cart="cart"
+				:can-update-quantity="true"
+			/>
 			<cart-discount-input @submit="handleDiscountCode" />
 			<hr :class="$style.partition">
 			<!-- <cart-points-display @stateChange="setCartState" :user="user" /> -->
