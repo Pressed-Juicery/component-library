@@ -11,15 +11,21 @@
 		<div>
 			<radio-button-card value="points" :selectedValue="selectedCard" @change="handleCardSelect">
 				<div :class="$style.cardTitle">Just Points & Rewards</div>
-				<div :class="$style.cardBodyText">As a Pressed Points Insider, you collect points on every order to be able to redeem for free items.</div>
+				<div :class="$style.cardBodyText">
+					As a Pressed Points Insider, you collect points on every order to be able to redeem for free items.
+				</div>
 			</radio-button-card>
 			<radio-button-card value="vip" :selectedValue="selectedCard" @change="handleCardSelect">
 				<div :class="$style.cardTitle">Get Discounts!</div>
-				<div :class="$style.cardBodyText">Become a VIP member by committing to a minimum $10 monthly spend and get discounted pricing everyday!</div>
+				<div :class="$style.cardBodyText">
+					Become a VIP member by committing to a minimum $10 monthly spend and
+					get discounted pricing everyday!
+				</div>
 			</radio-button-card>
 		</div>
 		<div :class="$style.disclaimer">
-			By signing up you are agreeing to the <a :class="$style.disclaimerLink" href="#">Terms & Conditions</a> and the <a :class="$style.disclaimerLink" href="#">Membership Program</a>.
+			By signing up you are agreeing to the <a :class="$style.disclaimerLink" href="#">Terms & Conditions</a>
+			and the <a :class="$style.disclaimerLink" href="#">Membership Program</a>.
 		</div>
 		<button :class="$style.submit">Confirm</button>
 	</validated-form>
@@ -34,19 +40,19 @@ export default {
 	components: {
 		RadioButtonCard,
 		ValidatedForm,
-		ValidatedInput
+		ValidatedInput,
 	},
 
 	data() {
 		return {
-			selectedCard: ''
+			selectedCard: '',
 		};
 	},
 
 	methods: {
 		handleCardSelect(val) {
 			this.selectedCard = val;
-		}
+		},
 	},
 };
 </script>
