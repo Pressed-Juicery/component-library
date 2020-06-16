@@ -26,7 +26,6 @@ export default {
 
 	.root {
 		display: flex;
-		align-items: center;
 	}
 
 	.button {
