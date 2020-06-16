@@ -43,10 +43,6 @@ const mixins = [{
 			});
 		},
 
-		getItems() {
-			this.items = fullCart;
-		},
-
 		getEmptyItems() {
 			this.items = [];
 		},
@@ -58,13 +54,6 @@ const mixins = [{
 				lastName: 'McGee',
 				points: 220,
 			};
-		},
-
-		getTotal() {
-			const subtotal = this.getSubtotal();
-			const { price: shipping } = this.getFulfillmentSelection();
-
-			return subtotal + shipping;
 		},
 
 		getCart() {
