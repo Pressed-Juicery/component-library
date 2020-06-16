@@ -4,20 +4,33 @@
 			<div :class="$style.title">Your Cart</div>
 			<div :class="$style.itemCount">{{ cart.itemCount }} Items</div>
 		</div>
-
-		<cart-item-card v-for="(item, index) in cart.items" :key="index" :item="item" />
+		<div v-if="!cart.itemCount">Your cart is currently empty.</div>
+		<component
+			:is="cardComponent"
+			v-for="item in cart.items"
+			:key="item.id"
+			:item="item"
+			@change="value => $emit('change', value)"/>
 	</div>
 </template>
 
 <script>
 import CartItemCard from './cart-item-card';
+import CheckoutItemCard from './checkout-item-card';
 
 export default {
 	props: {
 		cart: Object,
+		canUpdateQuantity: Boolean,
 	},
 
-	components: { CartItemCard },
+	components: { CartItemCard, CheckoutItemCard },
+
+	data() {
+		return {
+			cardComponent: this.canUpdateQuantity ? CartItemCard : CheckoutItemCard,
+		};
+	},
 };
 </script>
 
@@ -41,5 +54,6 @@ export default {
 
 	.itemCount {
 		@include text-heading-5();
+		@include text-bold();
 	}
 </style>

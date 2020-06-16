@@ -11,7 +11,7 @@
 			</div>
 
 			<div :class="$style.rowGroup">
-				<div v-if="cart.originalSubtotal" :class="$style.originalSubtotal">
+				<div v-if="cart.originalSubtotal !== cart.subtotal" :class="$style.originalSubtotal">
 					{{ formatCurrency(cart.originalSubtotal) }}
 				</div>
 				<div>{{ formatCurrency(cart.subtotal) }}</div>
