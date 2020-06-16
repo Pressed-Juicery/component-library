@@ -38,7 +38,7 @@ export default {
 		background-color: rgba(0, 0, 0, 0.25);
 		opacity: 0;
 		pointer-events: none;
-		transition: .5s ease opacity;
+		transition: 0.5s ease opacity;
 	}
 
 	.isActive .overlay {
@@ -55,7 +55,7 @@ export default {
 		padding: $spacing-09 $spacing-07;
 		background-color: $white;
 		transform: translate(100%);
-		transition: .5s ease transform;
+		transition: 0.5s ease transform;
 		z-index: 10;
 		overflow-y: auto;
 	}
