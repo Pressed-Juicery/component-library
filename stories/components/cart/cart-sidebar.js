@@ -53,6 +53,7 @@ const mixins = [{
 
 		updateItemQuantity(item) {
 			const items = this.cart.items.filter(cartItem => cartItem.id !== item.id);
+
 			this.cart = { ...this.cart, items };
 		},
 	},
