@@ -1,6 +1,5 @@
 <template>
 	<sidebar-overlay :is-active="isActive" @close="$emit('close')">
-
 		<cart-navigation
 			:shouldShowBackButton="shouldShowBackButton"
 			@back="setCartState('cart')"
@@ -19,10 +18,9 @@
 			<cart-points-display @click="setCartState('points')" :user="user" />
 		</div>
 
-		<cart-points-redemption v-else-if="state === 'points'" :user="user" :redemption-rates="redemptionRates"/>
+		<cart-points-redemption v-else-if="state === 'points'" :user="user" :redemption-rates="redemptionRates" />
 
 		<cart-checkout-footer :cart="cart" @continue="$emit('continue')" />
-
 	</sidebar-overlay>
 </template>
 
@@ -30,7 +28,6 @@
 import CartCheckoutFooter from './cart-checkout-footer';
 import CartDiscountInput from './cart-discount-input';
 import CartNavigation from './cart-navigation';
-
 import CartPointsDisplay from './cart-points-display';
 import CartPointsRedemption from './cart-points-redemption';
 import CartSummary from './cart-summary';
@@ -81,5 +78,4 @@ export default {
 		border: 1px solid $gray-30;
 		margin: $spacing-05 0;
 	}
-
 </style>
