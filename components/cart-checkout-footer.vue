@@ -30,6 +30,7 @@ export default {
 	.disclaimer {
 		@include text-subtle;
 		@include text-body-small;
+		@include text-bold;
 		text-align: center;
 		margin-bottom: $spacing-05;
 	}
