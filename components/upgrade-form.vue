@@ -1,5 +1,13 @@
 <template>
-
+  <validated-form>
+    <validated-input label="Monthly Membership Reload"/>
+    <validated-input label="Payment Method"/>
+    <validated-input label="Expiration Date"/>
+    <div :class="$style.row">
+      <validated-input label="CVV"/>
+      <validated-input label="ZIP Code"/>
+    </div>
+  </validated-form>
 </template>
 
 <script>
@@ -15,5 +23,9 @@ export default {
 </script>
 
 <style module lang="scss">
+
+.row {
+  display: flex;
+}
 
 </style>
