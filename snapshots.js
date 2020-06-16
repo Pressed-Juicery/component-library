@@ -25,6 +25,7 @@ const groups = [{
 		'CartItemCard',
 		'CartSummary',
 		'CartTotals',
+		'CheckoutItemCard',
 		'PointsRedemption',
 	],
 }, {
