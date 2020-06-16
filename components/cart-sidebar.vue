@@ -10,9 +10,9 @@
 		<div v-if="state === 'cart'">
 			<cart-summary
 				:class="$style.cartSummary"
-				@change="handleQuantityChange"
 				:cart="cart"
 				:can-update-quantity="true"
+				@change="handleQuantityChange"
 			/>
 			<cart-discount-input @submit="handleDiscountCode" />
 			<hr :class="$style.partition">
