@@ -7,7 +7,6 @@
 		<div v-if="!cart.itemCount">Your cart is currently empty.</div>
 		<component
 			:is="cardComponent"
-			:class="$style.card"
 			v-for="item in cart.items"
 			:key="item.id"
 			:item="item"
@@ -56,9 +55,5 @@ export default {
 	.itemCount {
 		@include text-heading-5();
 		@include text-bold();
-	}
-
-	.card:last-of-type {
-		margin-bottom: 0;
 	}
 </style>

@@ -69,6 +69,10 @@ export default {
 	.root {
 		margin-bottom: $spacing-03;
 		padding: $spacing-03;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 
 	.mainContent {
