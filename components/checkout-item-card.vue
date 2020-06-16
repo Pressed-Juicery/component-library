@@ -57,7 +57,7 @@ export default {
 
 		hasModifiers() {
 			return this.item.modifiers && this.item.modifiers.length;
-		}
+		},
 	},
 };
 </script>
