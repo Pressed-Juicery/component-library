@@ -19,7 +19,7 @@
 		</div>
 
 		<div v-if="hasModifiers" :class="$style.additionalContent">
-			<div v-for="modifier in item.modifiers">
+			<div v-for="modifier in item.modifiers" :key="modifier.groupName">
 				{{ modifier.groupName }}: {{ modifier.name }}
 			</div>
 		</div>

@@ -20,7 +20,7 @@
 			</div>
 		</card>
 		<div v-if="hasModifiers" :class="$style.detailsWrapper">
-			<div :class="$style.additionalInfo" v-for="modifier in item.modifiers">
+			<div :class="$style.additionalInfo" v-for="modifier in item.modifiers" :key="modifier.groupName">
 				{{ modifier.groupName }}: {{ modifier.name }}
 			</div>
 		</div>
