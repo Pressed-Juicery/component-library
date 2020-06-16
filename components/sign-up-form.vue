@@ -1,5 +1,5 @@
 <template>
-	<validated-form>
+	<validated-form @submit="handleFormSubmit">
 		<div :class="$style.row">
 			<validated-input
 				:class="$style.inputHalf"
@@ -95,6 +95,10 @@ export default {
 	methods: {
 		handleCardSelect(val) {
 			this.selectedCard = val;
+		},
+
+		handleFormSubmit() {
+
 		},
 	},
 };
