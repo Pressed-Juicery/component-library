@@ -54,7 +54,7 @@ export default {
 	}
 
 	.itemCount {
-		@include text-heading-5;
+		@include text-heading-5();
 		@include text-bold();
 	}
 
