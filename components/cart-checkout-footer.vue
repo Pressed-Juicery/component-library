@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<cart-totals :class="$style.totals" :cart="cart"/>
-		<div :class="$style.checkoutDisclaimer">Taxes and delivery fees will be applied at checkout.</div>
-		<button :class="[$style.checkOutButton, 'button--pill']" @click="$emit('checkout')">Check Out</button>
+		<div :class="$style.disclaimer">Taxes and delivery fees will be applied at checkout.</div>
+		<button :class="[$style.button, 'button--pill']" @click="$emit('checkout')">Check Out</button>
 	</div>
 </template>
 
@@ -20,20 +20,21 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import '../styles/buttons';
+	@import '../styles/mixins';
+	@import '../styles/variables';
 
 	.totals {
 		padding-bottom: $spacing-07;
 	}
 
-	.checkoutDisclaimer {
+	.disclaimer {
 		@include text-subtle;
 		@include text-body-small;
 		text-align: center;
 		margin-bottom: $spacing-05;
 	}
 
-	.checkOutButton {
+	.button {
 		width: 100%;
 	}
 </style>
