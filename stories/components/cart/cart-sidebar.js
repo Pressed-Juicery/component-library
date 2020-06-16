@@ -74,10 +74,9 @@ const mixins = [{
 			if (item.quantity) {
 				this.cart.items[index].quantity = item.quantity;
 			} else {
-				this.cart.items = this.cart.items.filter(cartItem => cartItem.id === item.id);
+				const items = this.cart.items.filter(cartItem => cartItem.id !== item.id);
+				this.cart = { ...this.cart, items };
 			}
-
-			this.getCart();
 		},
 
 	},
