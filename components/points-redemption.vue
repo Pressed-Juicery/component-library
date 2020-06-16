@@ -4,7 +4,7 @@
 			<points-redemption-card
 				:class="$style.card"
 				v-for="card in displayCards"
-				:key="card.id"
+				:key="card.title"
 				:icon="card.icon"
 				:title="card.title"
 				:points="card.points"
