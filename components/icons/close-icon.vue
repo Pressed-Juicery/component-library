@@ -1,22 +1,8 @@
 <template>
-	<svg
-	version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		<g id="Web-"
-		stroke="none"
-		stroke-width="1"
-		fill-rule="evenodd"
-		stroke-linecap="round"
-		stroke-linejoin="round">
-			<g id="Web---Pressed-Points"
-			transform="translate(-1206.000000, -55.000000)"
-			stroke="#000000" stroke-width="2">
-				<g id="Group-7" transform="translate(1206.000000, 56.000000)">
-					<line x1="0.998494545"
-					y1="9.55740364" x2="9.43883273" y2="0.557403636" id="Path"></line>
-					<line x1="0.998494545"
-					y1="0.557403636" x2="9.44033818" y2="9.44033818" id="Path"></line>
-				</g>
-			</g>
+	<svg xmlns="http://www.w3.org/2000/svg">
+		<g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+			<path d="m.998495 10.557404 8.440338-9"/>
+			<path d="m.998495 1.557404 8.441843 8.882934"/>
 		</g>
 	</svg>
 </template>
