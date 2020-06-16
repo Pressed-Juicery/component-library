@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import '../styles/buttons';
+	@import '../styles/variables';
 
 	.root {
 		display: flex;
