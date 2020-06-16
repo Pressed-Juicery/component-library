@@ -43,10 +43,6 @@ const mixins = [{
 			});
 		},
 
-		getEmptyItems() {
-			this.items = [];
-		},
-
 		getUser() {
 			// Placeholder for async call
 			this.user = {
@@ -157,7 +153,6 @@ export function EmptyCart() {
 			},
 		},
 		created() {
-			this.getEmptyItems();
 			this.getEmptyCart();
 			this.getUser();
 		},
@@ -165,6 +160,7 @@ export function EmptyCart() {
 			return {
 				cart: {},
 				user: {},
+				items: [],
 				redemptionRates,
 			};
 		},
