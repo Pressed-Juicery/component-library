@@ -11,7 +11,6 @@
 export default {
 	props: {
 		isActive: Boolean,
-		shouldShowBackButton: Boolean,
 	},
 };
 </script>
