@@ -1,4 +1,4 @@
-import UpgradeForm from '../../../components';
+import UpgradeForm from '../../../components/upgrade-form';
 
 export default {
 	title: 'Components / Forms / UpgradeForm',
