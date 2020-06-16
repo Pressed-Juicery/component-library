@@ -52,16 +52,9 @@ const mixins = [{
 		},
 
 		updateItemQuantity(item) {
-			const index = this.cart.items.findIndex(cartItem => cartItem.id === item.id);
-
-			if (item.quantity) {
-				this.cart.items[index].quantity = item.quantity;
-			} else {
-				const items = this.cart.items.filter(cartItem => cartItem.id !== item.id);
-				this.cart = { ...this.cart, items };
-			}
+			const items = this.cart.items.filter(cartItem => cartItem.id !== item.id);
+			this.cart = { ...this.cart, items };
 		},
-
 	},
 }];
 
