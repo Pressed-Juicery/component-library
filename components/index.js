@@ -48,6 +48,7 @@ export { default as RadioButton } from './radio-button';
 export { default as RadioButtonCard } from './radio-button-card';
 export { default as Sidebar } from './sidebar';
 export { default as Signin } from './sign-in';
+export { default as SignUpForm } from './sign-up-form';
 export { default as StarRating } from './star-rating';
 export { default as StepProgressBar } from './step-progress-bar';
 export { default as StoreAddress } from './store-address';
