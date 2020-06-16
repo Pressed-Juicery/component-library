@@ -8,9 +8,19 @@
 </template>
 
 <script>
+import { preventBodyScrolling } from '../utilities/prevent-body-scrolling';
+
 export default {
 	props: {
 		isActive: Boolean,
+	},
+	created() {
+		preventBodyScrolling(this.isActive);
+	},
+	watch: {
+		isActive() {
+			preventBodyScrolling(this.isActive);
+		}
 	},
 };
 </script>
