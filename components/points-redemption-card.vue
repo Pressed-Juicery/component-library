@@ -5,7 +5,7 @@
 		<div :class="$style.points">{{ points }} Pts</div>
 		<quantity-selector
 			:options="options"
-			:quantity="selected"
+			:quantity="quantity"
 			@change="handleChange"
 			:can-use-input="false"
 		/>
@@ -34,12 +34,6 @@ export default {
 			type: Number,
 			required: true,
 		},
-	},
-
-	data() {
-		return {
-			selected: this.quantity,
-		};
 	},
 
 	methods: {
