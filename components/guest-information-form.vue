@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { isNotEmpty, isEmail, isValidPhoneNumber } from '../utilities/validators';
+import { isEmail, isNotEmpty, isValidPhoneNumber } from '../utilities/validators';
 
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
@@ -46,7 +46,7 @@ export default {
 			}],
 		};
 	},
-}
+};
 </script>
 
 <style module lang="scss">
