@@ -19,6 +19,7 @@ export { default as CheckoutItemCard } from './checkout-item-card';
 export { default as ContentWrapper } from './content-wrapper';
 export { default as FeatureHighlight } from './feature-highlight';
 export { default as FeatureHighlightRow } from './feature-highlight-row';
+export { default as GuestInformationForm } from './guest-information-form';
 export { default as HighlightSection } from './highlight-section';
 export { default as ImageBanner } from './image-banner';
 export { default as Ingredients } from './ingredients.vue';

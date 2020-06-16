@@ -1,0 +1,83 @@
+<template>
+	<validated-form @submit="$emit('add-guest', guest)">
+		<div :class="$style.title">Your Info</div>
+
+		<validated-input :class="$style.row" label="Name" v-model="guest.name" :rules="nameRules" />
+		<validated-input :class="$style.row" label="Phone Number" v-model="guest.phone" :rules="phoneRules" />
+		<validated-input :class="$style.lastRow" label="Email" v-model="guest.email" :rules="emailRules" />
+
+		<button :class="$style.submitButton" type="submit">{{ buttonText }}</button>
+	</validated-form>
+</template>
+
+<script>
+import { isNotEmpty, isEmail, isValidPhoneNumber } from '../utilities/validators';
+
+import ValidatedForm from './validated-form';
+import ValidatedInput from './validated-input';
+
+export default {
+	components: { ValidatedForm, ValidatedInput },
+
+	props: {
+		buttonText: String,
+	},
+
+	data() {
+		return {
+			guest: {},
+			nameRules: [{
+				validator: isNotEmpty,
+				message: 'Please enter your name.',
+			}],
+			emailRules: [{
+				validator: isNotEmpty,
+				message: 'Please enter your email.',
+			}, {
+				validator: isEmail,
+				message: 'Please enter a valid email address.',
+			}],
+			phoneRules: [{
+				validator: isNotEmpty,
+				message: 'Please enter a phone number.',
+			}, {
+				validator: isValidPhoneNumber,
+				message: 'Please enter a valid ten-digit phone number.',
+			}],
+		};
+	},
+}
+</script>
+
+<style module lang="scss">
+	@import '../styles/buttons';
+	@import '../styles/mixins';
+	@import '../styles/variables';
+
+	.title {
+		@include text-heading-5();
+
+		margin-bottom: $spacing-07;
+	}
+
+	.row {
+		margin-bottom: $spacing-05;
+	}
+
+	.lastRow {
+		margin-bottom: $spacing-08;
+	}
+
+	.submitButton {
+		@extend .button--pill;
+
+		display: block;
+		width: 100%;
+		max-width: $spacing-09 * $spacing-03 / 1px;
+		margin: 0 auto;
+
+		&:focus {
+			outline: none;
+		}
+	}
+</style>
