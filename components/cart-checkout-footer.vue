@@ -1,10 +1,8 @@
 <template>
 	<div>
 		<cart-totals :class="$style.totals" :cart="cart"/>
-		<div :class="$style.checkOutButton">
-			<div :class="$style.checkoutDisclaimer">Taxes and delivery fees will be applied at checkout.</div>
-			<button :class="$style.checkOutButton" @click="$emit('checkout')">Check Out</button>
-		</div>
+		<div :class="$style.checkoutDisclaimer">Taxes and delivery fees will be applied at checkout.</div>
+		<button :class="$style.checkOutButton" @click="$emit('checkout')">Check Out</button>
 	</div>
 </template>
 
