@@ -20,7 +20,7 @@ export default {
 	watch: {
 		isActive() {
 			preventBodyScrolling(this.isActive);
-		}
+		},
 	},
 };
 </script>
