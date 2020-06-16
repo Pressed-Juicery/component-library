@@ -1,6 +1,6 @@
 <template>
 	<div :class="{[$style.isActive]: isActive}">
-		<div :class="$style.overlay" @click.self="$emit('close')"></div>
+		<div :class="$style.overlay" @click="$emit('close')"></div>
 		<div :class="$style.sidebar">
 			<slot />
 		</div>
