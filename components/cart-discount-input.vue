@@ -23,11 +23,11 @@ export default {
 		display: flex;
 	}
 
-	.button {
-		flex-shrink: 0;
-	}
-
 	.input {
 		margin-right: $spacing-03;
+	}
+
+	.button {
+		flex-shrink: 0;
 	}
 </style>
