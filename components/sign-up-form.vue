@@ -130,6 +130,7 @@ export default {
 
 .disclaimer {
 	@include text-body-small;
+	text-align: center;
 	margin-bottom: $spacing-06;
 }
 
