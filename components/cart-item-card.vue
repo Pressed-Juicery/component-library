@@ -87,7 +87,6 @@ export default {
 	.descriptionWrapper {
 		display: flex;
 		flex: 1;
-		align-items: center;
 	}
 
 	.description {
