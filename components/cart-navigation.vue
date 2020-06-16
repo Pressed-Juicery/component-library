@@ -33,13 +33,11 @@ export default {
 	}
 
 	.backButton {
-		fill: $gray-100;
 		width: 23px;
 		height: 23px;
 	}
 
 	.closeButton {
-		fill: $gray-100;
 		width: 11px;
 		height: 12px;
 	}
