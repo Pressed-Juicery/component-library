@@ -23,6 +23,7 @@ const groups = [{
 	groupName: 'Components / Cart',
 	stories: [
 		'CartItemCard',
+		'CartSidebar',
 		'CartSummary',
 		'CartTotals',
 		'CheckoutItemCard',
