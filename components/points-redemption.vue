@@ -60,10 +60,6 @@ export default {
 					return { ...card, quantityAvailable };
 				});
 		},
-
-		redeemedPoints() {
-			return this.redemptionRates.reduce((accum, card) => accum + (card.selected * card.points), 0);
-		},
 	},
 };
 </script>
