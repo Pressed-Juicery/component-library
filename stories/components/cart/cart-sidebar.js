@@ -68,17 +68,6 @@ const mixins = [{
 			};
 		},
 
-		getEmptyCart() {
-			this.cart = {
-				itemCount: 0,
-				items: [],
-				originalSubtotal: 0,
-				subtotal: 0,
-				total: 0,
-				isShippingAvailable: false,
-			};
-		},
-
 		updateItemQuantity(item) {
 			const index = this.cart.items.findIndex(cartItem => cartItem.id === item.id);
 
@@ -148,12 +137,18 @@ export function EmptyCart() {
 			},
 		},
 		created() {
-			this.getEmptyCart();
 			this.getUser();
 		},
 		data() {
 			return {
-				cart: {},
+				cart: {
+					itemCount: 0,
+					items: [],
+					originalSubtotal: 0,
+					subtotal: 0,
+					total: 0,
+					isShippingAvailable: false,
+				},
 				user: {},
 				items: [],
 				redemptionRates,
