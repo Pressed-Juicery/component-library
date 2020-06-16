@@ -17,7 +17,7 @@
 			<cart-points-redemption :user="user" />
 		</div> -->
 
-		<cart-checkout-footer slot="footer" :cart="cart" @checkout="$emit('checkout')" />
+		<cart-checkout-footer slot="footer" :cart="cart" @continue="$emit('continue')" />
 
 	</sidebar-overlay>
 </template>
