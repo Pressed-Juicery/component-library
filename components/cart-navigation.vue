@@ -20,11 +20,14 @@ export default {
 <style module lang="scss">
 	@import '../styles/variables';
 
+	$nav-height: $spacing-06;
+
 	.root {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		flex-direction: row-reverse;
+		height: $nav-height; // Note: this prevents the height from changing when toggling the back button
 	}
 
 	.closeButton,
@@ -33,8 +36,8 @@ export default {
 	}
 
 	.backButton {
-		height: $spacing-06;
-		width: $spacing-06;
+		height: $nav-height;
+		width: $nav-height;
 	}
 
 	.closeButton {
