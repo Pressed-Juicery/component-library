@@ -12,7 +12,7 @@
 				:class="$style.cartSummary"
 				:cart="cart"
 				:can-update-quantity="true"
-				@change="handleQuantityChange"
+				@change="changeSummary => $emit('cart-quantity-change', changeSummary)"
 			/>
 			<cart-discount-input @submit="handleDiscountCode" />
 			<hr :class="$style.partition">
@@ -68,11 +68,6 @@ export default {
 		handleDiscountCode(discount) { // eslint-disable-line no-unused-vars
 			// Placeholder for discount handler
 		},
-
-		handleQuantityChange(changeSummary) {
-			this.$emit('cart-quantity-change', changeSummary);
-		},
-
 	},
 	computed: {
 		shouldShowBackButton() { return this.state !== 'cart' },
