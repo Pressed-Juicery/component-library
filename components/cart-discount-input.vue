@@ -21,8 +21,8 @@ export default {
 		submit() {
 			this.$emit('submit', this.discountCode);
 			this.discountCode = null;
-		}
-	}
+		},
+	},
 };
 </script>
 
