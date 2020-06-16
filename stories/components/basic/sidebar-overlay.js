@@ -32,22 +32,3 @@ export function Overview() {
 		},
 	};
 }
-
-export function ShowBackButton() {
-	return {
-		components: { SidebarOverlay },
-		mixins,
-		template: `
-			<sidebar-overlay
-				:is-active="active"
-				:should-show-back-button="true"
-				@close="closeSlider"
-			/>
-		`,
-		props: {
-			active: {
-				default: boolean('Active', true),
-			},
-		},
-	};
-}
