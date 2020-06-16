@@ -1,7 +1,7 @@
 <template>
-	<div :class="[$style.root, {[$style.isEmpty]: !value}]">
+	<div :class="$style.root">
 		<input placeholder="Discount Code" :class="$style.input" v-model="value"/>
-		<button :class="$style.button">Apply</button>
+		<button :class="$style.button" :disabled="!value">Apply</button>
 	</div>
 </template>
 
@@ -31,11 +31,6 @@ export default {
 
 	.button {
 		flex-shrink: 0;
-	}
-
-	.root.isEmpty .button {
-		background-color: $gray-30;
-		color: $gray-100;
 	}
 
 	.input {
