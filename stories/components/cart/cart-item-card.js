@@ -19,7 +19,7 @@ export function Overview() {
 					},
 					quantity: 3,
 					price: 6.50,
-					originalPrice: 122.5,
+					originalPrice: 6.50,
 				},
 			};
 		},
@@ -65,7 +65,7 @@ export function AdditionalInformation() {
 					}],
 					quantity: 3,
 					price: 6.50,
-					originalPrice: 122.5,
+					originalPrice: 6.50,
 				},
 			};
 		},
@@ -93,7 +93,7 @@ export function LongAdditionalInformation() {
 					}],
 					quantity: 3,
 					price: 6.50,
-					originalPrice: 122.5,
+					originalPrice: 6.50,
 				},
 			};
 		},
