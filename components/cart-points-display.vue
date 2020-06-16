@@ -5,7 +5,7 @@
       <div>{{ user.points }}</div>
     </div>
     <button @click="$emit('stateChange', 'points')" :class="$style.redeemPoints">Redeem Pressed Points</button>
-		<hr :class="$style.partition">
+	<hr :class="$style.partition">
   </div>
 </template>
 
