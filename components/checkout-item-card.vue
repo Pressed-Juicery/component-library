@@ -18,7 +18,11 @@
 			</div>
 		</div>
 
-		<div v-if="additionalContent" :class="$style.additionalContent">{{ additionalContent }}</div>
+		<div v-if="hasModifiers" :class="$style.additionalContent">
+			<div v-for="modifier in item.modifiers">
+				{{ modifier.groupName }}: {{ modifier.name }}
+			</div>
+		</div>
 	</card>
 </template>
 
@@ -50,6 +54,10 @@ export default {
 		displayPrice() {
 			return formatCurrency(this.item.price);
 		},
+
+		hasModifiers() {
+			return this.item.modifiers && this.item.modifiers.length;
+		}
 	},
 };
 </script>

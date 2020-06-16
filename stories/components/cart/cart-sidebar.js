@@ -25,9 +25,10 @@ const fullCart = [{
 	quantity: 1,
 	originalPrice: 6.75,
 	price: 6.00,
-	modifiers: {
-		toppings: 'peanuts, caramel, bananas',
-	},
+	modifiers: [{
+		groupName: 'Toppings',
+		name: 'peanuts, caramel, bananas',
+	}],
 }];
 
 const mixins = [{

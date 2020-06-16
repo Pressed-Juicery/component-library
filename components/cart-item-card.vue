@@ -1,5 +1,5 @@
 <template>
-	<div :class="[$style.root, {[$style.hasCardExtension]: additionalInformation}]" >
+	<div :class="[$style.root, {[$style.hasCardExtension]: hasModifiers}]" >
 		<card :class="$style.card">
 			<div :class="$style.imageWrapper">
 				<img :class="$style.image" :src="item.variant.imageUrl" :alt="item.variant.name" />
@@ -19,10 +19,9 @@
 				<quantity-selector @change="handleQuantityChange" :quantity="item.quantity"/>
 			</div>
 		</card>
-		<div v-if="additionalInformation" :class="$style.detailsWrapper">
-			<div :class="$style.additionalInfo">
-				<span v-if="item.modifiers && item.modifiers.toppings">Toppings: </span>
-				{{ additionalInformation }}
+		<div v-if="hasModifiers" :class="$style.detailsWrapper">
+			<div :class="$style.additionalInfo" v-for="modifier in item.modifiers">
+				{{ modifier.groupName }}: {{ modifier.name }}
 			</div>
 		</div>
 	</div>
@@ -41,11 +40,8 @@ export default {
 	},
 
 	computed: {
-		additionalInformation() {
-			return this.item.additionalInformation
-				|| this.item.bundleItems
-				|| (this.item.modifiers && this.item.modifiers.toppings)
-				|| '';
+		hasModifiers() {
+			return this.item.modifiers && this.item.modifiers.length;
 		},
 	},
 

@@ -34,7 +34,10 @@ const cart = {
 				name: 'Daily Fuel',
 				imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 			},
-			bundleItems: 'Vanilla Almond, Chocolate Almond',
+			modifiers: [{
+				groupName: 'Bundle Items',
+				name: 'Vanilla Almond, Chocolate Almond',
+			}],
 		},
 		{
 			quantity: 101,
@@ -44,9 +47,10 @@ const cart = {
 				name: 'Strawberry Freeze',
 				imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/STLEM_43924384-906a-4aaa-a74f-6fcb8fb22cfb_large.png?v=1565306900',
 			},
-			modifiers: {
-				toppings: 'Chocolate Chips, Granola, Coconut',
-			},
+			modifiers: [{
+				groupName: 'Toppings',
+				name: 'Chocolate Chips, Granola, Coconut',
+			}],
 		},
 	],
 };
