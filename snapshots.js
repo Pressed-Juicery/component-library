@@ -36,6 +36,7 @@ const groups = [{
 	groupName: 'Components / Forms',
 	stories: [
 		'AddressForm',
+		'GuestInformationForm',
 		'RadioButton',
 		'ValidatedCheckbox',
 		'ValidatedForm',
