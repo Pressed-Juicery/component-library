@@ -9,11 +9,11 @@
 			<validated-input label="Birthday (optional)"/>
 			<validated-input label="Phone Number"/>
 		<div>
-			<radio-button-card>
+			<radio-button-card value="points" :selectedValue="selectedCard" @change="handleCardSelect">
 				<div :class="$style.cardTitle">Just Points & Rewards</div>
 				<div :class="$style.cardBodyText">As a Pressed Points Insider, you collect points on every order to be able to redeem for free items.</div>
 			</radio-button-card>
-			<radio-button-card>
+			<radio-button-card value="vip" :selectedValue="selectedCard" @change="handleCardSelect">
 				<div :class="$style.cardTitle">Get Discounts!</div>
 				<div :class="$style.cardBodyText">Become a VIP member by committing to a minimum $10 monthly spend and get discounted pricing everyday!</div>
 			</radio-button-card>
@@ -31,8 +31,24 @@ import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
 
 export default {
-	components: { RadioButtonCard, ValidatedForm, ValidatedInput },
-}
+	components: {
+		RadioButtonCard,
+		ValidatedForm,
+		ValidatedInput
+	},
+
+	data() {
+		return {
+			selectedCard: ''
+		};
+	},
+
+	methods: {
+		handleCardSelect(val) {
+			this.selectedCard = val;
+		}
+	},
+};
 </script>
 
 <style module lang="scss">
