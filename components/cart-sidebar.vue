@@ -16,7 +16,7 @@
 			/>
 			<cart-discount-input @submit="handleDiscountCode" />
 			<hr :class="$style.partition">
-			<cart-points-display @stateChange="setCartState('points')" :user="user" />
+			<cart-points-display @click="setCartState('points')" :user="user" />
 		</div>
 
 		<div v-if="state === 'points'">
