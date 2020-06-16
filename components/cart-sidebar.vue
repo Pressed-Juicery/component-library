@@ -19,7 +19,7 @@
 		</div>
 
 		<!-- <div v-if="state === 'points'">
-			<cart-points-redemption :user="user" />
+			<cart-points-redemption :user="user" :redemption-rates="redemptionRates"/>
 		</div> -->
 
 		<cart-checkout-footer slot="footer" :cart="cart" @continue="$emit('continue')" />
@@ -52,6 +52,10 @@ export default {
 		isActive: Boolean,
 		cart: Object,
 		user: Object,
+		redemptionRates: {
+			type: Array,
+			required: true,
+		},
 	},
 	data() {
 		return {

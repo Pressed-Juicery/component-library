@@ -1,5 +1,6 @@
 import { boolean, withKnobs } from '@storybook/addon-knobs';
 import CartSidebar from '../../../components/cart-sidebar';
+import { redemptionRates } from '../../../demo-data/redemption-rates.data';
 
 export default {
 	title: 'Components / Cart / CartSidebar',
@@ -108,6 +109,7 @@ const mixins = [{
 	},
 }];
 
+// eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
 		components: { CartSidebar },
@@ -117,8 +119,11 @@ export function Overview() {
 				:is-active="isActive"
 				:user="user"
 				:cart="cart"
+				:redemption-rates="redemptionRates"
 				@close="closeSlider"
-				@cart-quantity-change="updateItemQuantity"/>`,
+				@cart-quantity-change="updateItemQuantity"
+			/>
+		`,
 		props: {
 			isActive: {
 				default: boolean('Active', true),
@@ -132,11 +137,13 @@ export function Overview() {
 			return {
 				cart: {},
 				user: {},
+				redemptionRates,
 			};
 		},
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function EmptyCart() {
 	return {
 		components: { CartSidebar },
@@ -146,7 +153,10 @@ export function EmptyCart() {
 				:is-active="isActive"
 				:user="user"
 				:cart="cart"
-				@close="closeSlider"/>`,
+				:redemption-rates="redemptionRates"
+				@close="closeSlider"
+			/>
+		`,
 		props: {
 			isActive: {
 				default: boolean('Active', true),
@@ -161,6 +171,7 @@ export function EmptyCart() {
 			return {
 				cart: {},
 				user: {},
+				redemptionRates,
 			};
 		},
 	};

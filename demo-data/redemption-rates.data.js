@@ -1,4 +1,4 @@
-export const pointsRewardCards = [{
+export const redemptionRates = [{
 	id: 1,
 	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/water-and-shot.svg',
 	title: 'Shot or Water',

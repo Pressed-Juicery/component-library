@@ -7,7 +7,7 @@
 			</div>
 			<div :class="$style.subtitle">Rewards you're eligible for:</div>
 		</div>
-		<points-redemption @change="handlePointsChange" :points="displayPoints"/>
+		<points-redemption @change="handlePointsChange" :points="displayPoints" :redemption-rates="redemptionRates"/>
 	</div>
 </template>
 
@@ -21,6 +21,10 @@ export default {
 
 	props: {
 		user: Object,
+		redemptionRates: {
+			type: Array,
+			required: true,
+		},
 	},
 
 	data() {

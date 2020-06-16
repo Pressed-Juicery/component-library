@@ -18,7 +18,6 @@
 <script>
 import PointsRedemptionCard from './points-redemption-card';
 import { isMobileDevice } from '../utilities/is-mobile-device';
-import { pointsRewardCards } from '../constants/points-reward-cards';
 
 export default {
 	components: { PointsRedemptionCard },
@@ -28,21 +27,24 @@ export default {
 			type: Number,
 			required: true,
 		},
+		redemptionRates: {
+			type: Array,
+			required: true,
+		},
 	},
 
 	data() {
 		return {
 			isMobileDevice: isMobileDevice(),
-			cards: pointsRewardCards,
 		};
 	},
 
 	methods: {
 		handleChange(obj) {
 			const { title, points, quantity } = obj;
-			const index = this.cards.findIndex(card => card.title === title);
+			const index = this.redemptionRates.findIndex(card => card.title === title);
 
-			this.cards[index].selected = quantity;
+			this.redemptionRates[index].selected = quantity;
 
 			this.$emit('change', { title, points, quantity });
 		},
@@ -50,7 +52,7 @@ export default {
 
 	computed: {
 		displayCards() {
-			return this.cards
+			return this.redemptionRates
 				.filter(card => card.selected || card.points <= this.points)
 				.map(card => {
 					const quantityAvailable = Math.floor(this.points / card.points) + card.selected;
@@ -60,7 +62,7 @@ export default {
 		},
 
 		redeemedPoints() {
-			return this.cards.reduce((accum, card) => accum + (card.selected * card.points), 0);
+			return this.redemptionRates.reduce((accum, card) => accum + (card.selected * card.points), 0);
 		},
 	},
 };

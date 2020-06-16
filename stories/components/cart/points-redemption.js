@@ -1,6 +1,6 @@
 import PointsRedemption from '../../../components/points-redemption';
 import PointsRedemptionCard from '../../../components/points-redemption-card';
-import { pointsRewardCards } from '../../../constants/points-reward-cards';
+import { redemptionRates } from '../../../demo-data/redemption-rates.data';
 
 export default {
 	title: 'Components / Cart / PointsRedemption',
@@ -25,7 +25,7 @@ export function Overview() {
 
 		data() {
 			return {
-				...pointsRewardCards[0],
+				...redemptionRates[0],
 				quantitySelected: null,
 			};
 		},
@@ -41,10 +41,13 @@ export function Overview() {
 export function CardRow() {
 	return {
 		components: { PointsRedemption },
-		template: '<points-redemption :points="points" />',
+		template: '<points-redemption :points="points" :redemption-rates="redemptionRates" />',
 
 		data() {
-			return { points: 2000 };
+			return {
+				points: 2000,
+				redemptionRates,
+			};
 		},
 	};
 }
