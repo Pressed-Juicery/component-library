@@ -27,7 +27,8 @@ export default {
 		flex-direction: row-reverse;
 	}
 
-	.backButton, .closeButton {
+	.closeButton,
+	.backButton {
 		cursor: pointer;
 	}
 
