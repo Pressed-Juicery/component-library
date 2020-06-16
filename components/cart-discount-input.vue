@@ -4,7 +4,7 @@
 		<button
 			:class="[$style.button, 'button--tertiary']"
 			:disabled="!discountCode"
-			@click="$emit('submit', discountCode)"
+			@click="submit"
 		>Apply</button>
 	</div>
 </template>
@@ -17,6 +17,12 @@ export default {
 			discountCode: null,
 		};
 	},
+	methods: {
+		submit() {
+			this.$emit('submit', this.discountCode);
+			this.discountCode = null;
+		}
+	}
 };
 </script>
 
