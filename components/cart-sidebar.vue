@@ -19,7 +19,7 @@
 			<cart-points-display @click="setCartState('points')" :user="user" />
 		</div>
 
-		<div v-if="state === 'points'">
+		<div v-else-if="state === 'points'">
 			<cart-points-redemption :user="user" :redemption-rates="redemptionRates"/>
 		</div>
 
