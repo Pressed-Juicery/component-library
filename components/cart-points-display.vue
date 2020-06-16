@@ -22,12 +22,6 @@ export default {
 <style module lang="scss">
   @import '../styles/variables';
 
-	.partition {
-		border: 1px solid $gray-30;
-		margin-top: $spacing-05;
-		margin-bottom: $spacing-06;
-	}
-
 	.balanceWrapper {
 		display: flex;
 		justify-content: space-between;
@@ -36,5 +30,11 @@ export default {
 
 	.redeemPoints {
 		width: 100%;
+	}
+
+	.partition {
+		border: 1px solid $gray-30;
+		margin-top: $spacing-05;
+		margin-bottom: $spacing-06;
 	}
 </style>
