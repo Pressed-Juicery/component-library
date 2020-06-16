@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div :class="$style.sectionTitle">ingredients</div>
-		
+
 		<div :class="$style.ingredients">
 			<div :class="$style.ingredient" v-for="(ingredient, index) in ingredients" :key="index">
 				<img :class="$style.icon" :src="ingredient.iconUrl" :alt="ingredient.title">
@@ -13,14 +13,14 @@
 </template>
 
 <script>
-	export default {
-		props: {
-			ingredients: {
-				type: Array,
-				required: true,
-			},
+export default {
+	props: {
+		ingredients: {
+			type: Array,
+			required: true,
 		},
-	};
+	},
+};
 </script>
 
 <style module lang="scss">
