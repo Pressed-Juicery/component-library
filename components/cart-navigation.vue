@@ -1,7 +1,7 @@
 <template>
-	<div :class="[$style.root, {[$style.noBackButton] : !shouldShowBackButton}]">
-		<back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back', 'cart')"/>
+	<div :class="$style.root">
 		<close-icon :class="$style.closeButton" @click.native="$emit('close')"/>
+		<back-arrow-icon v-if="shouldShowBackButton" :class="$style.backButton" @click.native="$emit('back', 'cart')"/>
 	</div>
 </template>
 
@@ -24,10 +24,7 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-	}
-
-	.root.noBackButton {
-		justify-content: flex-end;
+		flex-direction: row-reverse;
 	}
 
 	.backButton, .closeButton {
