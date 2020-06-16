@@ -37,9 +37,4 @@ export default {
 	.input {
 		margin-right: $spacing-03;
 	}
-
-	.input::placeholder {
-		color: $gray-30;
-	}
-
 </style>

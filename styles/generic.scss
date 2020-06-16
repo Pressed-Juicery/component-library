@@ -37,6 +37,10 @@ input, textarea {
 	padding: $spacing-03;
 	border: $border-width solid $border-color-light;
 	border-radius: $border-radius;
+
+	&::placeholder {
+		color: $gray-30;
+	}
 }
 
 select {
