@@ -29,7 +29,7 @@ export default {
 		align-items: center;
 	}
 
-	.root.isEmpty .button{
+	.root.isEmpty .button {
 		background-color: $gray-30;
 		color: $gray-100;
 	}
