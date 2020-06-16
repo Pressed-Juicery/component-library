@@ -29,6 +29,7 @@
 					Become a VIP member by committing to a minimum $10 monthly spend and
 					get discounted pricing everyday!
 				</div>
+				<upgrade-form v-if="selectedCard === 'vip'" :class="$style.upgradeForm"/>
 			</radio-button-card>
 		</div>
 		<div :class="$style.disclaimer">
@@ -42,12 +43,14 @@
 <script>
 import { hasExactLength, isNotEmpty, isNumber, isValidPhoneNumber } from '../utilities/validators';
 import RadioButtonCard from './radio-button-card';
+import UpgradeForm from './upgrade-form';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
 
 export default {
 	components: {
 		RadioButtonCard,
+		UpgradeForm,
 		ValidatedForm,
 		ValidatedInput,
 	},
@@ -134,6 +137,10 @@ export default {
 
 .submit {
 	width: 100%;
+}
+
+.upgradeForm {
+	margin-top: $spacing-06;
 }
 
 </style>
