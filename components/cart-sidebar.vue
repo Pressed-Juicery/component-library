@@ -16,12 +16,12 @@
 			/>
 			<cart-discount-input @submit="handleDiscountCode" />
 			<hr :class="$style.partition">
-			<!-- <cart-points-display @stateChange="setCartState('points')" :user="user" /> -->
+			<cart-points-display @stateChange="setCartState('points')" :user="user" />
 		</div>
 
-		<!-- <div v-if="state === 'points'">
+		<div v-if="state === 'points'">
 			<cart-points-redemption :user="user" :redemption-rates="redemptionRates"/>
-		</div> -->
+		</div>
 
 		<cart-checkout-footer :cart="cart" @continue="$emit('continue')" />
 
@@ -33,8 +33,8 @@ import CartCheckoutFooter from './cart-checkout-footer';
 import CartDiscountInput from './cart-discount-input';
 import CartNavigation from './cart-navigation';
 
-// import CartPointsDisplay from './cart-points-display';
-// import CartPointsRedemption from './cart-points-redemption';
+import CartPointsDisplay from './cart-points-display';
+import CartPointsRedemption from './cart-points-redemption';
 import CartSummary from './cart-summary';
 import SidebarOverlay from './sidebar-overlay';
 
@@ -43,9 +43,8 @@ export default {
 		CartCheckoutFooter,
 		CartDiscountInput,
 		CartNavigation,
-
-		// CartPointsDisplay,
-		// CartPointsRedemption,
+		CartPointsDisplay,
+		CartPointsRedemption,
 		CartSummary,
 		SidebarOverlay,
 	},
