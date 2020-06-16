@@ -18,6 +18,7 @@ export { default as FeatureHighlight } from './feature-highlight';
 export { default as FeatureHighlightRow } from './feature-highlight-row';
 export { default as HighlightSection } from './highlight-section';
 export { default as ImageBanner } from './image-banner';
+export { default as Ingredients } from './ingredients.vue';
 export { default as LandingPageTemplate } from './landing-page-template';
 export { default as MediaRow } from './media-row';
 export { default as NutritionFacts } from './nutrition-facts.vue';
