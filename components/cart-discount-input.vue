@@ -29,6 +29,10 @@ export default {
 		align-items: center;
 	}
 
+	.button {
+		flex-shrink: 0;
+	}
+
 	.root.isEmpty .button {
 		background-color: $gray-30;
 		color: $gray-100;
