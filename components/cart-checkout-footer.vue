@@ -2,7 +2,7 @@
 	<div>
 		<cart-totals :class="$style.totals" :cart="cart"/>
 		<div :class="$style.checkoutDisclaimer">Taxes and delivery fees will be applied at checkout.</div>
-		<button :class="$style.checkOutButton" @click="$emit('checkout')">Check Out</button>
+		<button :class="[$style.checkOutButton, 'button--pill']" @click="$emit('checkout')">Check Out</button>
 	</div>
 </template>
 
@@ -34,7 +34,6 @@ export default {
 	}
 
 	.checkOutButton {
-		@extend .button--pill;
 		width: 100%;
 	}
 </style>
