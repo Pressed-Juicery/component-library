@@ -63,29 +63,4 @@ export default {
 	.isActive .sidebar {
 		transform: translate(0%);
 	}
-
-	.sidebarNavigation {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	.sidebarNavigation.noBackButton {
-		justify-content: flex-end;
-	}
-
-	.backButton,
-	.closeButton {
-		cursor: pointer;
-	}
-
-	.backButton {
-		width: $spacing-06;
-		height: $spacing-06;
-	}
-
-	.closeButton {
-		width: $spacing-04;
-		height: $spacing-04;
-	}
 </style>
