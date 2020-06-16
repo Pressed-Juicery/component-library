@@ -24,7 +24,7 @@ export function Overview() {
 	return {
 		components: { SidebarOverlay },
 		mixins,
-		template: '<sidebar-overlay :is-active="active" @close="closeSlider"/>',
+		template: '<sidebar-overlay :is-active="active" @close="closeSlider" />',
 		props: {
 			active: {
 				default: boolean('Active', true),
@@ -41,7 +41,8 @@ export function ShowBackButton() {
 			<sidebar-overlay
 				:is-active="active"
 				:should-show-back-button="true"
-				@close="closeSlider"/>
+				@close="closeSlider"
+			/>
 		`,
 		props: {
 			active: {
