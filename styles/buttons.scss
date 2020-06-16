@@ -39,6 +39,11 @@ input[type="submit"]:disabled {
 	color: $color-primary;
 }
 
+.button--tertiary {
+	background-color: $beige-dark;
+	color: $color-primary;
+}
+
 .button--secondary:disabled {
 	background: transparent;
 	border-color: rgba(0,0,0,0.1);
