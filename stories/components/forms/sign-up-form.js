@@ -21,7 +21,7 @@ export function Overview() {
 		data() {
 			return {
 				selectedAmount: 10,
-				data: null
+				data: null,
 			};
 		},
 		methods: {

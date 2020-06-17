@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { isNotEmpty, isEmail, isValidPhoneNumber } from '../utilities/validators';
+import { isEmail, isNotEmpty, isValidPhoneNumber } from '../utilities/validators';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
 
@@ -30,7 +30,7 @@ export default {
 		ValidatedForm,
 		ValidatedInput,
 	},
-
+	// eslint-disable-next-line max-lines-per-function
 	data() {
 		return {
 			user: {

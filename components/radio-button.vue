@@ -1,5 +1,5 @@
 <template>
-	<span :class="$style.root" @click="model = value">
+	<span :class="$style.root" @click.stop="model = value">
 		<input :id="id" :class="$style.input" type="radio" :value="value" v-model="model" />
 		<span :class="$style.button" />
 	</span>

@@ -5,12 +5,16 @@ export default {
 	component: UpgradeForm,
 };
 
+// eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
 		components: { UpgradeForm },
 		template: `
 			<div>
-				<upgrade-form :selectedAmount="selectedAmount" :reloadAmounts="reloadAmounts" @change="handlePaymentMethodChange">
+				<upgrade-form
+					:selectedAmount="selectedAmount"
+					:reloadAmounts="reloadAmounts"
+					@change="handlePaymentMethodChange">
 					<button type="submit">submit</button>
 				</upgrade-form>
 				<p>data:
@@ -27,17 +31,12 @@ export function Overview() {
 		methods: {
 			handlePaymentMethodChange(data) {
 				this.data = data;
-			}
+			},
 		},
 		computed: {
-			reloadAmounts(){
-				return Array.from(Array(10), (_, i) => {
-					const reloadAmount = (i + 1) * 10;
-					return {
-						name: reloadAmount,
-						value: reloadAmount,
-					};
-				});
+			reloadAmounts() {
+				// eslint-disable-next-line no-magic-numbers
+				return [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 			},
 		},
 	};
