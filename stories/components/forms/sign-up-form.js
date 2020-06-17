@@ -8,6 +8,26 @@ export default {
 export function Overview() {
 	return {
 		components: { SignUpForm },
-		template: '<sign-up-form />',
+		template: `
+			<div>
+				<sign-up-form ref="signup" @submit="handleSubmit">
+					<button type="submit">submit</button>
+				</sign-up-form>
+				<p>data:
+				<code>{{ data }}</code>
+				</p>
+			</div>
+		`,
+		data() {
+			return {
+				selectedAmount: 10,
+				data: null
+			};
+		},
+		methods: {
+			handleSubmit(data) {
+				this.data = data;
+			},
+		},
 	};
 }
