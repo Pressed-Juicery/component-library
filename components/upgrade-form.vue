@@ -1,35 +1,44 @@
 <template>
-  <validated-form>
-    <validated-input label="Monthly Membership Reload"/>
-    <validated-input label="Payment Method"/>
-    <validated-input label="Expiration Date"/>
-    <div :class="$style.row">
-      <validated-input :class="$style.halfRow" label="CVV"/>
-      <validated-input :class="$style.halfRow" label="ZIP Code"/>
-    </div>
-  </validated-form>
+	<validated-form @submit="$emit('change', paymentMethod)">
+		<validated-select  v-model="selectedAmount" label="Monthly Membership Reload" :options="reloadAmounts"/>
+		<validated-payment-method :braintreeTokenizationKey="braintreeTokenizationKey" @change="paymentMethodData => paymentMethod = paymentMethodData" />
+		<slot />
+	</validated-form>
 </template>
 
 <script>
+import { config } from '../config';
+import { isNotEmpty, hasMinimumLength } from '../utilities/validators';
 import ValidatedForm from './validated-form';
-import ValidatedInput from './validated-input';
+import ValidatedSelect from './validated-select';
+import ValidatedPaymentMethod from './validated-payment-method';
 
 export default {
 	components: {
 		ValidatedForm,
-		ValidatedInput,
+		ValidatedSelect,
+		ValidatedPaymentMethod,
+	},
+
+	props: {
+		reloadAmounts: {
+			type: Array,
+			required: true,
+		},
+		selectedAmount: {
+			type: Number,
+		},
+	},
+
+	data() {
+		return {
+			braintreeTokenizationKey: config.braintreeTokenizationKey,
+			paymentMethod: null,
+		}
 	},
 };
 </script>
 
 <style module lang="scss">
-
-.row {
-  display: flex;
-}
-
-.halfRow {
-  flex: 1 1 0;
-}
 
 </style>
