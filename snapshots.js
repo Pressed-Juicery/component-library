@@ -39,6 +39,7 @@ const groups = [{
 		'AddressForm',
 		'GuestInformationForm',
 		'RadioButton',
+		'Signin',
 		'ValidatedCheckbox',
 		'ValidatedForm',
 		'ValidatedInput',
