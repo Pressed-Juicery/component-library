@@ -36,7 +36,9 @@ export function Overview() {
 		computed: {
 			reloadAmounts() {
 				// eslint-disable-next-line no-magic-numbers
-				return [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+				return [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(value => {
+					return { name: value, value };
+				});
 			},
 		},
 	};
