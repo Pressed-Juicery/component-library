@@ -17,6 +17,7 @@
 
 <script>
 import ArrowDown from './icons/arrow-down-icon.vue';
+import { PreventBodyScrolling, preventBodyScrolling } from '../utilities/prevent-body-scrolling';
 export default {
 	props: {
 		title: {
@@ -33,7 +34,16 @@ export default {
 		close() {
 			this.$emit('close');
 		},
+
 	},
+	created() {
+		preventBodyScrolling(this.isOpen);
+	},
+	watch: {
+		isOpen() {
+			preventBodyScrolling(this.isOpen);
+		}
+	}
 };
 </script>
 
