@@ -27,7 +27,6 @@ export default {
 @import "../styles/variables.scss";
 
 .sectionTitle {
-	@include text-cta-small();
 	margin-bottom: $spacing-07;
 }
 
@@ -45,7 +44,11 @@ export default {
 }
 
 .learnMore {
-	@include text-body-small();
 	border-bottom: 1px solid black;
+}
+
+.sectionTitle,
+.learnMore {
+	@include text-body-small();
 }
 </style>
