@@ -5,47 +5,34 @@ export default {
 	component: PaymentMethodRadioButtonCard,
 };
 
-const paymentMethod = {
-	expirationDate: '11/22',
-	billingAddress: {
-		postalCode: '93711',
-	},
-};
-
 const mastercard = {
-	maskedNumber: '····6789',
-	cardType: 'mastercard',
-	...paymentMethod,
+	identifier: '····6789',
+	vendor: 'mastercard',
 };
 
 const visa = {
-	maskedNumber: '····4321',
-	cardType: 'visa',
-	...paymentMethod,
+	identifier: '····4321',
+	vendor: 'visa',
 };
 
 const visa2 = {
-	maskedNumber: '····9360',
-	cardType: 'visa',
-	...paymentMethod,
+	identifier: '····9360',
+	vendor: 'visa',
 };
 
 const discover = {
-	maskedNumber: '····1111',
-	cardType: 'discover',
-	...paymentMethod,
+	identifier: '····1111',
+	vendor: 'discover',
 };
 
 const americanExpress = {
-	maskedNumber: '····2222',
-	cardType: 'american express',
-	...paymentMethod,
+	identifier: '····2222',
+	vendor: 'american express',
 };
 
 const unknown = {
-	maskedNumber: '····3563',
-	cardType: 'unknown',
-	...paymentMethod,
+	identifier: '····3563',
+	vendor: 'unknown',
 };
 
 export function Overview() {
@@ -119,7 +106,7 @@ export function RadioGroup() {
 		template: `
 			<div>
 				<payment-method-radio-button-card v-for="paymentMethod in paymentMethods"
-				                                  :key="paymentMethod.maskedNumber"
+				                                  :key="paymentMethod.identifier"
 				                                  :paymentMethod="paymentMethod"
 				                                  v-model="selectedPaymentMethod" />
 			</div>
