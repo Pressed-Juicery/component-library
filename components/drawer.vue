@@ -42,8 +42,8 @@ export default {
 	watch: {
 		isOpen() {
 			preventBodyScrolling(this.isOpen);
-		}
-	}
+		},
+	},
 };
 </script>
 
