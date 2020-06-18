@@ -13,6 +13,7 @@ export function Overview() {
 		data() {
 			return {
 				cart: {
+					originalSubtotal: 150,
 					subtotal: 100,
 					total: 150.5,
 					isShippingAvailable: true,
@@ -30,6 +31,7 @@ export function ShippingDeliveryPrice() {
 		data() {
 			return {
 				cart: {
+					originalSubtotal: 150,
 					subtotal: 100,
 					total: 150.5,
 					isShippingAvailable: true,
@@ -48,6 +50,7 @@ export function FreeShipping() {
 		data() {
 			return {
 				cart: {
+					originalSubtotal: 150,
 					subtotal: 100,
 					total: 150.5,
 					isShippingAvailable: true,
@@ -66,6 +69,7 @@ export function UnavailableShipping() {
 		data() {
 			return {
 				cart: {
+					originalSubtotal: 150,
 					subtotal: 100,
 					total: 150.5,
 					isShippingAvailable: false,
@@ -105,6 +109,7 @@ export function Pickup() {
 		data() {
 			return {
 				cart: {
+					originalSubtotal: 150,
 					subtotal: 100,
 					total: 100,
 					isShippingAvailable: true,
@@ -126,6 +131,7 @@ export function LocalDelivery() {
 		data() {
 			return {
 				cart: {
+					originalSubtotal: 150,
 					subtotal: 100,
 					total: 110,
 					isShippingAvailable: true,
@@ -147,6 +153,7 @@ export function NationwideShipping() {
 		data() {
 			return {
 				cart: {
+					originalSubtotal: 150,
 					subtotal: 100,
 					total: 115,
 					isShippingAvailable: true,

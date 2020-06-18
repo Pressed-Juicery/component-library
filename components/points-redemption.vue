@@ -3,8 +3,8 @@
 		<div :class="$style.wrapper">
 			<points-redemption-card
 				:class="$style.card"
-				v-for="(card, i) in cards"
-				:key="i"
+				v-for="card in displayCards"
+				:key="card.title"
 				:icon="card.icon"
 				:title="card.title"
 				:points="card.points"
@@ -23,21 +23,42 @@ export default {
 	components: { PointsRedemptionCard },
 
 	props: {
-		cards: {
+		points: {
+			type: Number,
+			required: true,
+		},
+		redemptionRates: {
 			type: Array,
 			required: true,
 		},
 	},
 
 	data() {
-		return { isMobileDevice: isMobileDevice() };
+		return {
+			isMobileDevice: isMobileDevice(),
+		};
 	},
 
 	methods: {
 		handleChange(obj) {
 			const { title, points, quantity } = obj;
+			const index = this.redemptionRates.findIndex(card => card.title === title);
+
+			this.redemptionRates[index].selected = quantity;
 
 			this.$emit('change', { title, points, quantity });
+		},
+	},
+
+	computed: {
+		displayCards() {
+			return this.redemptionRates
+				.filter(card => card.selected || card.points <= this.points)
+				.map(card => {
+					const quantityAvailable = Math.floor(this.points / card.points) + card.selected;
+
+					return { ...card, quantityAvailable };
+				});
 		},
 	},
 };
@@ -52,6 +73,7 @@ export default {
 	.cardLine {
 		overflow-x: auto;
 		overflow-y: hidden;
+		margin-bottom: $spacing-05;
 
 		.wrapper {
 			display: flex;
@@ -67,5 +89,6 @@ export default {
 		display: grid;
 		grid-gap: $card-spacing;
 		grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
+		margin-bottom: $spacing-05;
 	}
 </style>

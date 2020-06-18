@@ -18,13 +18,16 @@ const groups = [{
 		'Drawer',
 		'StoreAddress',
 		'StepProgressBar',
+		'SidebarOverlay',
 	],
 }, {
 	groupName: 'Components / Cart',
 	stories: [
 		'CartItemCard',
+		'CartSidebar',
 		'CartSummary',
 		'CartTotals',
+		'CheckoutItemCard',
 		'PointsRedemption',
 	],
 }, {

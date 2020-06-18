@@ -1,15 +1,14 @@
-import CartItemCard from '../../../components/cart-item-card';
+import CheckoutItemCard from '../../../components/checkout-item-card';
 
 export default {
-	title: 'Components / Cart / CartItemCard',
-	component: CartItemCard,
+	title: 'Components / Cart / CheckoutItemCard',
+	component: CheckoutItemCard,
 };
 
 export function Overview() {
 	return {
-		components: { CartItemCard },
-		template: '<cart-item-card :item="item" />',
-
+		components: { CheckoutItemCard },
+		template: '<checkout-item-card :item="item" />',
 		data() {
 			return {
 				item: {
@@ -19,7 +18,6 @@ export function Overview() {
 					},
 					quantity: 3,
 					price: 6.50,
-					originalPrice: 6.50,
 				},
 			};
 		},
@@ -28,9 +26,8 @@ export function Overview() {
 
 export function DiscountedPrice() {
 	return {
-		components: { CartItemCard },
-		template: '<cart-item-card :item="item" />',
-
+		components: { CheckoutItemCard },
+		template: '<checkout-item-card :item="item" />',
 		data() {
 			return {
 				item: {
@@ -49,9 +46,8 @@ export function DiscountedPrice() {
 
 export function AdditionalInformation() {
 	return {
-		components: { CartItemCard },
-		template: '<cart-item-card :item="item" />',
-
+		components: { CheckoutItemCard },
+		template: '<checkout-item-card :item="item" />',
 		data() {
 			return {
 				item: {
@@ -65,7 +61,6 @@ export function AdditionalInformation() {
 					}],
 					quantity: 3,
 					price: 6.50,
-					originalPrice: 6.50,
 				},
 			};
 		},
@@ -74,9 +69,8 @@ export function AdditionalInformation() {
 
 export function LongAdditionalInformation() {
 	return {
-		components: { CartItemCard },
-		template: '<cart-item-card :item="item" />',
-
+		components: { CheckoutItemCard },
+		template: '<checkout-item-card :item="item" />',
 		data() {
 			return {
 				item: {
@@ -93,7 +87,6 @@ export function LongAdditionalInformation() {
 					}],
 					quantity: 3,
 					price: 6.50,
-					originalPrice: 6.50,
 				},
 			};
 		},
