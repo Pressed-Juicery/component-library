@@ -18,11 +18,6 @@ export default {
 			required: true,
 		},
 	},
-	computed: {
-		bundleLength() {
-			return this.cleanseBundle.length;
-		},
-	},
 };
 </script>
 
