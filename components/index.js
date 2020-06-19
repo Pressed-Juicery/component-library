@@ -22,7 +22,7 @@ export { default as CartSummary } from './cart-summary';
 export { default as CartTotals } from './cart-totals';
 export { default as CheckoutAuthentication } from './checkout-authentication';
 export { default as CheckoutItemCard } from './checkout-item-card';
-export { default as CleanseBundleIncludes } from './cleanse-bundle-includes'
+export { default as CleanseBundleIncludes } from './cleanse-bundle-includes';
 export { default as CleanseGuide } from './cleanse-guide';
 export { default as CollapsibleDrawer } from './collapsible-drawer';
 export { default as ConfirmDrawer } from './confirm-drawer';

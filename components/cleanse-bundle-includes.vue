@@ -11,19 +11,19 @@
 </template>
 
 <script>
-	export default {
-		props: {
-			cleanseBundle: {
-				type: Array,
-				required: true,
-			},
+export default {
+	props: {
+		cleanseBundle: {
+			type: Array,
+			required: true,
 		},
-		computed: {
-			bundleLength() {
-				return this.cleanseBundle.length
-			}
-		}
-	};
+	},
+	computed: {
+		bundleLength() {
+			return this.cleanseBundle.length;
+		},
+	},
+};
 </script>
 
 <style module lang="scss">
