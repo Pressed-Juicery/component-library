@@ -1,14 +1,14 @@
-import { boolean, CHANGE, withKnobs } from '@storybook/addon-knobs';
+import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 
-import Drawer from '../../../components/drawer';
 import BackArrowDrawer from '../../../components/back-arrow-drawer';
+import Drawer from '../../../components/drawer';
 import SidebarOverlay from '../../../components/sidebar-overlay';
 
 import { addons } from '@storybook/addons';
 
 export default {
 	title: 'Components / Basic / BackArrowDrawer',
-	component:  BackArrowDrawer,
+	component: BackArrowDrawer,
 	decorators: [withKnobs],
 };
 
@@ -78,6 +78,7 @@ export function HeaderItem() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function Sidebar() {
 	return {
 		components: { BackArrowDrawer, Drawer, SidebarOverlay },
