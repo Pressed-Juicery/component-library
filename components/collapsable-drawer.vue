@@ -10,19 +10,19 @@
 </template>
 
 <script>
-	import ArrowDown from './icons/arrow-down-icon';
-	import Drawer from './drawer';
+import ArrowDown from './icons/arrow-down-icon';
+import Drawer from './drawer';
 
-	export default {
-		components: { ArrowDown, Drawer },
+export default {
+	components: { ArrowDown, Drawer },
 
-		props: {
-			title: {
-				type: String,
-				required: true,
-			},
+	props: {
+		title: {
+			type: String,
+			required: true,
 		},
-	};
+	},
+};
 </script>
 
 <style module lang="scss">
