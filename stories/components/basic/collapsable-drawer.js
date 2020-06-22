@@ -1,8 +1,10 @@
-import { addons } from '@storybook/addons';
-import { boolean, CHANGE, withKnobs } from '@storybook/addon-knobs';
+import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
+
 import CollapsableDrawer from '../../../components/collapsable-drawer';
 import Drawer from '../../../components/drawer';
 import SidebarOverlay from '../../../components/sidebar-overlay';
+
+import { addons } from '@storybook/addons';
 
 export default {
 	title: 'Components / Basic / CollapsableDrawer',

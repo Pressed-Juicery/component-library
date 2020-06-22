@@ -11,10 +11,9 @@
 
 <script>
 import ArrowDown from './icons/arrow-down-icon';
-import Drawer from './drawer';
 
 export default {
-	components: { ArrowDown, Drawer },
+	components: { ArrowDown },
 
 	props: {
 		title: {
