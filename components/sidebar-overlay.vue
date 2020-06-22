@@ -55,7 +55,6 @@ export default {
 		transform: translate(100%);
 		transition: 0.5s ease transform;
 		z-index: 10;
-		overflow-y: auto;
 	}
 
 	.isOpen {
@@ -67,5 +66,9 @@ export default {
 		.sidebar {
 			transform: translate(0%);
 		}
+	}
+
+	.overflow {
+		overflow-y: auto;
 	}
 </style>
