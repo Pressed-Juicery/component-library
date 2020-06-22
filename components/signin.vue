@@ -11,7 +11,7 @@
 		                 :rules="emailRules" />
 
 		<validated-input :class="$style.lastRow"
-		                 type="text"
+		                 type="password"
 		                 label="Password"
 		                 v-model="password"
 		                 :rules="passwordRules" />
