@@ -2,34 +2,21 @@
 	<div :class="[{ [$style.isOpen]: isOpen }, $style.root]">
 		<div :class="$style.overlay" @click="close"></div>
 
-		<div :class="$style.drawer">
-			<div :class="$style.drawerHeader" @click="close">
-				<div>{{ title }}</div>
-				<ArrowDown :class="$style.icon" />
-			</div>
-
-			<div :class="$style.drawerContent">
-				<slot />
-			</div>
+		<div :class="[{ [$style.hide]: !isOpen }, $style.drawer]">
+			<slot />
 		</div>
 	</div>
 </template>
 
 <script>
-import ArrowDown from './icons/arrow-down-icon.vue';
 import { preventBodyScrolling } from '../utilities/prevent-body-scrolling';
 export default {
 	props: {
-		title: {
-			type: String,
-			required: true,
-		},
 		isOpen: {
 			type: Boolean,
 			require: true,
 		},
 	},
-	components: { ArrowDown },
 	methods: {
 		close() {
 			this.$emit('close');
@@ -92,26 +79,10 @@ export default {
 	transform: translateY(0%);
 }
 
-.drawerHeader {
-	cursor: pointer;
-	padding: $spacing-06 $spacing-07;
-	display: grid;
-	grid-template-columns: 1fr $spacing-04;
-	grid-column-gap: $spacing-06;
-	align-items: center;
-	box-shadow: 0 7px 10px -8px rgba(226, 226, 226, 0.5);
-	@include text-cta();
-}
 
 .drawer {
 	z-index: 1;
 }
 
-.icon {
-	width: $spacing-04;
-}
 
-.drawerContent {
-	padding: $spacing-05 $spacing-07 $spacing-07 $spacing-07;
-}
 </style>
