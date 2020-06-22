@@ -23,16 +23,17 @@ export function Overview() {
 	return {
 		components: { Drawer },
 		mixins,
-		template: '<body style="background: navajowhite; height: 1500px; margin: 200px 0"><drawer :title="title" :isOpen="isOpen" @close="closeDrawer"></drawer></body>',
+		template: `
+			<div style="background: navajowhite; height: 1500px; margin: 200px 0">
+				<drawer :isOpen="isOpen" @close="closeDrawer">
+					<div style="padding: 40px;">Fully Customizable Drawer Content</div>
+				</drawer>
+			</div>`,
+
 		props: {
 			isOpen: {
 				default: boolean('Open', true),
 			},
-		},
-		data() {
-			return {
-				title: 'enhance your cleanse',
-			};
 		},
 	};
 }
