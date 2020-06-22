@@ -61,6 +61,10 @@ export default{
 		margin-bottom: $spacing-08;
 	}
 
+	.close {
+		cursor: pointer;
+	}
+
 	.selection {
 		@include text-heading-5();
 
