@@ -1,6 +1,6 @@
 <template>
 	<div :class="[{ [$style.isOpen]: isOpen }, $style.root]">
-		<div :class="$style.overlay" @click="close"></div>
+		<div :class="$style.overlay" @click="close" />
 
 		<div :class="[{ [$style.hide]: !isOpen }, $style.drawer]">
 			<slot />
