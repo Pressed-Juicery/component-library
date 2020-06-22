@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.root">
 		<div :class="$style.header">
-			<back-arrow-icon :class="$style.backButton" @click.native="$emit('close')" />
+			<back-arrow-icon :class="$style.backButton" @click.native="$emit('back')" />
 			<slot name="header-item" />
 		</div>
 
