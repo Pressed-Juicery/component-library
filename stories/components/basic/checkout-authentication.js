@@ -32,7 +32,7 @@ const mixins = [{
 
 export function Overview() {
 	return {
-		components: { CheckoutAuthentication, Drawer },
+		components: { CheckoutAuthentication },
 		mixins,
 
 		template: `
