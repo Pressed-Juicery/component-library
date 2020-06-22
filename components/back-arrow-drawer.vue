@@ -21,7 +21,7 @@ export default {
 	@import "../styles/variables.scss";
 	@import "../styles/mixins.scss";
 
-	$header-height: $spacing-06;
+	$icon-size: $spacing-06;
 
 	.root {
 		margin: $spacing-06 $spacing-07;
@@ -35,8 +35,8 @@ export default {
 	}
 
 	.backButton {
-		height: $header-height;
-		width: $header-height;
+		height: $icon-size;
+		width: $icon-size;
 		cursor: pointer;
 	}
 </style>
