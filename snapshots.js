@@ -11,6 +11,7 @@ const groups = [{
 	stories: [
 		'Accordion',
 		'AddressFormatter',
+		'BackArrowHeader',
 		'Breadcrumbs',
 		'ButtonBar',
 		'Buttons',
