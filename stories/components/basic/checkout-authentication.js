@@ -47,3 +47,26 @@ export function Overview() {
 		data() { return { user: null, guest: null }},
 	};
 }
+
+export function InDrawer() {
+	return {
+		components: { CheckoutAuthentication, Drawer },
+		mixins,
+
+		template: `
+			<drawer :is-open="isDrawerOpen" @close="closeDrawer">
+				<checkout-authentication @sign-in="credentials => user = credentials"
+				                         @add-guest="guestInfo => guest = guestInfo"
+				                         @close="closeDrawer" />
+			</drawer>
+		`,
+
+		props: {
+			isDrawerOpen: {
+				default: boolean('DrawerOpen', true),
+			},
+		},
+
+		data() { return { user: null, guest: null }},
+	};
+}
