@@ -53,26 +53,19 @@ export default {
 
 .drawer {
 	position: absolute;
-	display: flex;
-	justify-content: center;
-	flex-flow: column;
-	bottom: 0;
 	left: 0;
+	bottom: 0;
 	width: 100%;
-	transform: translateY(110%);
-	transition: .5s ease transform;
-	background-color: $white;
 	border-radius: $spacing-05 $spacing-05 0 0;
+	background-color: $white;
 	box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
-}
-
-.isOpen .drawer {
-	transform: translateY(0%);
-}
-
-
-.drawer {
 	z-index: 1;
+}
+
+.hide {
+	animation: slide-down .5s ease forwards;
+}
+
 @keyframes slide-down {
 	0% {
 		transform: translateY(0%);
@@ -87,6 +80,4 @@ export default {
 		visibility: hidden;
 	}
 }
-
-
 </style>
