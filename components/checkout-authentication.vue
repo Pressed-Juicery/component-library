@@ -3,7 +3,7 @@
 		<div :class="$style.orderPreference" v-if="drawerPane === 'order-preference'">
 			<div :class="$style.titleRow">
 				<div>How would you like to order?</div>
-				<div @click="closeDrawer()">x</div>
+				<div :class="$style.close" @click="$emit('close')">x</div>
 			</div>
 
 			<div :class="$style.selection" @click="drawerPane = 'signin'">Sign in to Pressed Points</div>
@@ -18,6 +18,10 @@
 		</back-arrow-drawer>
 
 		<back-arrow-drawer v-if="drawerPane === 'guest-info'">
+			<template v-slot:header-item>
+				<div :class="$style.signup" @click="$emit('signup')">Sign Up</div>
+			</template>
+
 			<template v-slot:main-content>
 				<guest-information-form buttonText="Continue as Guest" @add-guest="guest => $emit('add-guest', guest)" />
 			</template>
