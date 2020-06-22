@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { preventBodyScrolling } from '../utilities/prevent-body-scrolling';
 export default {
 	props: {
 		isOpen: {
@@ -22,15 +21,7 @@ export default {
 			this.$emit('close');
 		},
 
-	},
-	created() {
-		preventBodyScrolling(this.isOpen);
-	},
-	watch: {
-		isOpen() {
-			preventBodyScrolling(this.isOpen);
 		},
-	},
 };
 </script>
 
