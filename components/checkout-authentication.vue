@@ -70,4 +70,8 @@ export default{
 
 		margin-bottom: $spacing-07;
 	}
+
+	.signup {
+		@include text-cta-small();
+	}
 </style>
