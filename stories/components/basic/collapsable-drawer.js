@@ -22,7 +22,6 @@ const mixins = [{
 		},
 
 		closeSidebar() {
-			// Reference: https://github.com/storybookjs/storybook/issues/3855#issuecomment-638245040
 			addons.getChannel().emit(CHANGE, {
 				name: 'SidebarOpen',
 				value: false,
