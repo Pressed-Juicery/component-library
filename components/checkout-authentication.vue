@@ -23,7 +23,8 @@
 			</template>
 
 			<template v-slot:main-content>
-				<guest-information-form buttonText="Continue as Guest" @add-guest="guest => $emit('add-guest', guest)" />
+				<guest-information-form buttonText="Continue as Guest"
+				                        @add-guest="guest => $emit('add-guest', guest)" />
 			</template>
 		</back-arrow-drawer>
 	</div>
