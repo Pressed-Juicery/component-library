@@ -10,11 +10,11 @@
 </template>
 
 <script>
-	import BackArrowIcon from './icons/back-arrow-icon';
+import BackArrowIcon from './icons/back-arrow-icon';
 
-	export default {
-		components: { BackArrowIcon },
-	};
+export default {
+	components: { BackArrowIcon },
+};
 </script>
 
 <style module lang="scss">
