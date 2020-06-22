@@ -1,5 +1,5 @@
 <template>
-	<sidebar-overlay :is-open="isActive" :is-active="isActive" @close="$emit('close')">
+	<sidebar-overlay :is-open="isActive" :is-active="!isDrawerOpen" @close="$emit('close')">
 		<cart-navigation
 			:shouldShowBackButton="shouldShowBackButton"
 			@back="setCartState('cart')"
@@ -21,6 +21,13 @@
 		<cart-points-redemption v-else-if="state === 'points'" :user="user" :redemption-rates="redemptionRates" />
 
 		<cart-checkout-footer :cart="cart" @continue="$emit('continue')" />
+
+		<drawer :is-open="isDrawerOpen" @close="closeDrawer">
+			<checkout-authentication @sign-up="$emit('sign-up')"
+			                         @sign-in="credentials => $emit('sign-in', credentials)"
+			                         @add-guest="guest => $emit('add-guest', guest)"
+			                         @close="closeDrawer" />
+		</drawer>
 	</sidebar-overlay>
 </template>
 
@@ -31,6 +38,8 @@ import CartNavigation from './cart-navigation';
 import CartPointsDisplay from './cart-points-display';
 import CartPointsRedemption from './cart-points-redemption';
 import CartSummary from './cart-summary';
+import CheckoutAuthentication from './checkout-authentication';
+import Drawer from './drawer';
 import SidebarOverlay from './sidebar-overlay';
 
 export default {
@@ -41,6 +50,8 @@ export default {
 		CartPointsDisplay,
 		CartPointsRedemption,
 		CartSummary,
+		CheckoutAuthentication,
+		Drawer,
 		SidebarOverlay,
 	},
 	props: {
@@ -52,14 +63,22 @@ export default {
 			required: true,
 		},
 	},
+
 	data() {
 		return {
 			state: 'cart',
+			isDrawerOpen: true,
 		};
 	},
+
 	methods: {
 		setCartState(state) { this.state = state },
+
+		closeDrawer() {
+			this.isDrawerOpen = false;
+		}
 	},
+
 	computed: {
 		shouldShowBackButton() { return this.state !== 'cart' },
 	},
