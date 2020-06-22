@@ -58,7 +58,7 @@ export default {
 		overflow-y: auto;
 	}
 
-	.isActive {
+	.isOpen {
 		.overlay {
 			opacity: 0.55;
 			pointer-events: auto;
