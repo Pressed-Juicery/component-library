@@ -52,10 +52,12 @@ export default{
 	@import "../styles/variables";
 
 	.orderPreference {
-		margin-top: $spacing-03;
+		padding: $spacing-08 $spacing-06;
 	}
 
 	.titleRow {
+		@include text-subtle();
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
