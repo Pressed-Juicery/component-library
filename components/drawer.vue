@@ -16,6 +16,7 @@ export default {
 			require: true,
 		},
 	},
+
 	methods: {
 		close() {
 			this.$emit('close');
