@@ -73,6 +73,19 @@ export default {
 
 .drawer {
 	z-index: 1;
+@keyframes slide-down {
+	0% {
+		transform: translateY(0%);
+		visibility: visible;
+	}
+	99% {
+		transform: translateY(110%);
+		visibility: visible;
+	}
+	100% {
+		transform: translateY(110%);
+		visibility: hidden;
+	}
 }
 
 
