@@ -24,7 +24,7 @@ export default {
 	$icon-size: $spacing-06;
 
 	.root {
-		margin: $spacing-06 $spacing-07;
+		margin: $spacing-08 $spacing-07;
 	}
 
 	.header {
