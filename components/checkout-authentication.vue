@@ -3,7 +3,7 @@
 		<div :class="$style.orderPreference" v-if="drawerPane === 'order-preference'">
 			<div :class="$style.titleRow">
 				<div>How would you like to order?</div>
-				<div :class="$style.close" @click="$emit('close')">x</div>
+				<div :class="$style.close" @click="$emit('close')">&#10005;</div>
 			</div>
 
 			<div :class="$style.selection" @click="drawerPane = 'signin'">Sign in to Pressed Points</div>
