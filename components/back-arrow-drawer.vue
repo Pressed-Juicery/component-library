@@ -37,5 +37,6 @@
 	.backButton {
 		height: $header-height;
 		width: $header-height;
+		cursor: pointer;
 	}
 </style>
