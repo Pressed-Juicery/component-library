@@ -24,7 +24,7 @@ export function Overview() {
 	return {
 		components: { SidebarOverlay },
 		mixins,
-		template: '<sidebar-overlay :is-active="active" @close="closeSlider" />',
+		template: '<sidebar-overlay :is-open="active" :is-active="active" @close="closeSlider" />',
 		props: {
 			active: {
 				default: boolean('Active', true),
