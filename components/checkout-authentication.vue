@@ -7,7 +7,7 @@
 			</div>
 
 			<div :class="$style.selection" @click="drawerPane = 'signin'">Sign in to Pressed Points</div>
-			<div :class="$style.selection" @click="$emit('signup')">Join now</div>
+			<div :class="$style.selection" @click="$emit('sign-up')">Join now</div>
 			<div :class="$style.selection" @click="drawerPane = 'guest-info'">Continue as guest</div>
 		</div>
 
@@ -19,7 +19,7 @@
 
 		<back-arrow-drawer v-if="drawerPane === 'guest-info'" @back="drawerPane = 'order-preference'">
 			<template v-slot:header-item>
-				<div :class="$style.signup" @click="$emit('signup')">Sign Up</div>
+				<div :class="$style.signup" @click="$emit('sign-up')">Sign Up</div>
 			</template>
 
 			<template v-slot:main-content>
