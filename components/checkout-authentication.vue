@@ -11,13 +11,13 @@
 			<div :class="$style.selection" @click="drawerPane = 'guest-info'">Continue as guest</div>
 		</div>
 
-		<back-arrow-drawer v-if="drawerPane === 'signin'">
+		<back-arrow-drawer v-if="drawerPane === 'signin'" @back="drawerPane = 'order-preference'">
 			<template v-slot:main-content>
 				<signin buttonText="Sign In & Check Out" @sign-in="credentials => $emit('sign-in', credentials)" />
 			</template>
 		</back-arrow-drawer>
 
-		<back-arrow-drawer v-if="drawerPane === 'guest-info'">
+		<back-arrow-drawer v-if="drawerPane === 'guest-info'" @back="drawerPane = 'order-preference'">
 			<template v-slot:header-item>
 				<div :class="$style.signup" @click="$emit('signup')">Sign Up</div>
 			</template>
