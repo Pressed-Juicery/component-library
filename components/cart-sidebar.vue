@@ -82,9 +82,11 @@ export default {
 		},
 
 		continueToCheckout() {
-			if (this.user) return this.$emit('continue');
+			if (!this.user) {
+				this.isDrawerOpen = true;
+			}
 
-			this.isDrawerOpen = true;
+			return this.$emit('continue');
 		},
 	},
 
