@@ -1,6 +1,5 @@
 import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 
-import CartSidebar from '../../../components/cart-sidebar';
 import CheckoutAuthentication from '../../../components/checkout-authentication';
 import Drawer from '../../../components/drawer';
 
