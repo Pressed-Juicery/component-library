@@ -21,11 +21,14 @@ export default {
 
 	props: {
 		buttonText: String,
+		guest: {
+			type: Object,
+			default: function () { return {}},
+		},
 	},
 
 	data() {
 		return {
-			guest: {},
 			nameRules: [{
 				validator: isNotEmpty,
 				message: 'Please enter your name.',
