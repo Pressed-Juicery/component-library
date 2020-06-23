@@ -18,3 +18,17 @@ export function Overview() {
 		data() { return { guest: null } },
 	};
 }
+
+export function PrePopulated() {
+	return {
+		components: { GuestInformationForm },
+		template: `
+			<div>
+				<guest-information-form buttonText="Submit" :guest="guest" @add-guest="data => guest = data" />
+				<div v-if="guest">Guest: {{ guest }}</div>
+			</div>
+		`,
+
+		data() { return { guest: { name: 'Test Guest', phone: '1231231234', email: 'testguest@example.com' } } },
+	};
+}
