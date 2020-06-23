@@ -20,7 +20,7 @@
 
 		<cart-points-redemption v-else-if="state === 'points'" :user="user" :redemption-rates="redemptionRates" />
 
-		<cart-checkout-footer :cart="cart" @continue="$emit('continue')" />
+		<cart-checkout-footer :cart="cart" @continue="continueToCheckout()" />
 
 		<drawer :is-open="isDrawerOpen" @close="closeDrawer">
 			<checkout-authentication @sign-up="$emit('sign-up')"
@@ -78,6 +78,11 @@ export default {
 			this.isDrawerOpen = false;
 		}
 	},
+		continueToCheckout() {
+			if (this.user) return this.$emit('continue');
+
+			this.isDrawerOpen = true;
+		},
 
 	computed: {
 		shouldShowBackButton() { return this.state !== 'cart' },
