@@ -14,6 +14,7 @@ export { default as CartItemCard } from './cart-item-card';
 export { default as CartSidebar } from './cart-sidebar';
 export { default as CartSummary } from './cart-summary';
 export { default as CartTotals } from './cart-totals';
+export { default as CheckoutAuthentication } from './checkout-authentication';
 export { default as CollapsableDrawer } from './collapsable-drawer';
 export { default as Drawer } from './drawer';
 export { default as ContentWrapper } from './content-wrapper';
