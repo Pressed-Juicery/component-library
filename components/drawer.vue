@@ -2,7 +2,7 @@
 	<div :class="[{ [$style.isOpen]: isOpen }, $style.root]">
 		<div :class="$style.overlay" @click="close" />
 
-		<div :class="[{ [$style.hide]: !isOpen }, $style.drawer]">
+		<div :class="[{ [$style.hidden]: !isOpen }, $style.drawer]">
 			<slot />
 		</div>
 	</div>
@@ -62,7 +62,7 @@ export default {
 	z-index: 1;
 }
 
-.hide {
+.hidden {
 	animation: slide-down .5s ease forwards;
 }
 
