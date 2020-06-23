@@ -23,7 +23,8 @@
 		<cart-checkout-footer :cart="cart" @continue="continueToCheckout()" />
 
 		<drawer :is-open="isDrawerOpen" @close="closeDrawer">
-			<checkout-authentication @sign-up="$emit('sign-up')"
+			<checkout-authentication :guest="guest"
+			                         @sign-up="$emit('sign-up')"
 			                         @sign-in="credentials => $emit('sign-in', credentials)"
 			                         @add-guest="guest => $emit('add-guest', guest)"
 			                         @close="closeDrawer" />
@@ -54,10 +55,12 @@ export default {
 		Drawer,
 		SidebarOverlay,
 	},
+
 	props: {
 		isActive: Boolean,
 		cart: Object,
 		user: Object,
+		guest: Object,
 		redemptionRates: {
 			type: Array,
 			required: true,
