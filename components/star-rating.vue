@@ -1,10 +1,22 @@
 <template>
-	<div :class="$style.starOuter" @mousemove="starPercentage" @click="setStarRating">
-		<div :class="$style.starInner" :style="{width: dynamicWidth + '%'}"></div>
+	<div :class="$style.root">
+		<div :class="$style.stars" v-for="(star, index) in maxStars" :key="index" @mouseover="setCurrentStar($event, index)">
+			<star-filled v-if="index < currentIndex || index <= currentIndex && starPosition >= (18 * .75)"/>
+			<star-25 v-else-if="index == currentIndex && starPosition <= (18 * .25) && starPosition != 0"/>
+			<star-50 v-else-if="index == currentIndex && starPosition <= (18 * .50) && starPosition != 0"/>
+			<star-75 v-else-if="index == currentIndex && starPosition <= (18 * .75) && starPosition != 0"/>
+			<star-empty v-else/>
+		</div>
 	</div>
 </template>
 
 <script>
+	import StarEmpty from './icons/star-empty.vue';
+	import StarFilled from './icons/star-filled.vue';
+	import Star75 from './icons/star-75.vue';
+	import Star50 from './icons/star-50.vue';
+	import Star25 from './icons/star-25.vue';
+
 	export default {
 		props: {
 			rating: {
@@ -13,57 +25,35 @@
 			},
 			disabled: { type: Boolean },
 		},
+		components: {
+			StarEmpty,
+			StarFilled,
+			Star75,
+			Star50,
+			Star25,
+		},
 		data() {
 			return {
-				dynamicWidth: 0,
-				fractionalStarPrecision: 10,
-			};
+				maxStars: 5,
+				currentIndex: this.rating,
+				starPosition: 0,
+			}
 		},
 		methods: {
-			starPercentage(e){
-				if (!this.disabled) {
-					this.dynamicWidth = Math.ceil(e.offsetX / this.fractionalStarPrecision) * this.fractionalStarPrecision
-				}
+			setCurrentStar(event, index) {
+				this.currentIndex = index
+				this.starPosition = event.offsetX
 			},
-			setStarRating(){
-				if (!this.disabled) {
-					const starRating = () => (this.dynamicWidth / this.fractionalStarPrecision) / 2
-					const value = starRating() > 5 ? 5 : starRating()
-					this.$emit('rating', value)
-					console.log(value)
-				}
-			}
-		},
-		mounted() {
-			if (this.rating <= 5) {
-				this.dynamicWidth = this.rating * this.fractionalStarPrecision * 2;
-			} else {
-				throw new Error(`Rating must be less than 5`)
-			}
 		}
 	}
 </script>
 
 <style module lang="scss">
-.starOuter {
-	display: inline-block;
-	position: relative;
+.root {
+	display: flex;
 }
 
-.starOuter::before {
-	content: "\2606  \2606  \2606  \2606  \2606";
-}
-
-.starInner {
-	position: absolute;
-	top: 0;
-	left: 0;
-	white-space: nowrap;
-	overflow: hidden;
-	max-width: 100%;
-}
-
-.starInner::before {
-	content: "\2605  \2605  \2605  \2605  \2605";
+.stars {
+	padding: 0px 3px;
 }
 </style>

@@ -11,7 +11,7 @@ export function Overview() {
 		template: '<star-rating :rating="rating" :disabled="disabled"/>',
 		data() {
 			return {
-				rating: 4.5,
+				rating: 3,
 				disabled: false,
 			};
 		},
