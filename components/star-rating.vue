@@ -68,6 +68,6 @@ export default {
 }
 
 .stars {
-	padding: 0 3px;
+	padding: 0 2px;
 }
 </style>
