@@ -1,5 +1,5 @@
 <template>
-	<validated-form ref="signup" @submit="$emit('submit', user)">
+	<validated-form :id="id" ref="signup" @submit="$emit('submit', user)">
 		<div :class="$style.row">
 			<validated-input
 				:class="$style.inputHalf"
@@ -16,7 +16,6 @@
 		<validated-input type="password" :rules="rules.password" v-model="user.password" label="Password"/>
 		<validated-input type="date" :rules="rules.birthday" v-model="user.birthday" label="Birthday (optional)"/>
 		<validated-input :rules="rules.phone" v-model="user.phone" label="Phone Number"/>
-		<slot />
 	</validated-form>
 </template>
 
@@ -29,6 +28,11 @@ export default {
 	components: {
 		ValidatedForm,
 		ValidatedInput,
+	},
+	props: {
+		id: {
+			type: String,
+		},
 	},
 	// eslint-disable-next-line max-lines-per-function
 	data() {
