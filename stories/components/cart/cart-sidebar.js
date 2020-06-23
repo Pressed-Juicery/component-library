@@ -155,9 +155,11 @@ export function Guest() {
 					@cart-quantity-change="updateItemQuantity"
 					@sign-in="credentials => userCredentials = credentials"
 					@add-guest="guest => newGuest = guest"
+					@sign-up="signupMessage = 'Signing Up'"
 				/>
 				<div>User Credentials: {{ userCredentials }}</div>
 				<div>Guest: {{ newGuest }}</div>
+				<div>{{ signupMessage }}</div>
 			</div>
 		`,
 
@@ -185,6 +187,7 @@ export function Guest() {
 				redemptionRates,
 				userCredentials: null,
 				newGuest: null,
+				signupMessage: null,
 			};
 		},
 	};
