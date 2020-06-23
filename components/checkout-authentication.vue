@@ -77,9 +77,12 @@ export default {
 		@include text-heading-5();
 
 		margin-bottom: $spacing-07;
+		cursor: pointer;
 	}
 
 	.signup {
 		@include text-cta-small();
+
+		cursor: pointer;
 	}
 </style>
