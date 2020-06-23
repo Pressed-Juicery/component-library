@@ -70,14 +70,17 @@ export default {
 	0% {
 		transform: translateY(0%);
 		visibility: visible;
+		height: auto;
 	}
 	99% {
-		transform: translateY(110%);
+		transform: translateY(160%);
 		visibility: visible;
+		height: auto;
 	}
 	100% {
-		transform: translateY(110%);
+		transform: translateY(160%);
 		visibility: hidden;
+		height: 0;
 	}
 }
 </style>
