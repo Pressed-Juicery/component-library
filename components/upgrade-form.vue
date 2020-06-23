@@ -1,5 +1,5 @@
 <template>
-	<validated-form>
+	<validated-form :id="id">
 		<validated-select v-model="selectedAmount" label="Monthly Membership Reload" :options="reloadAmounts"/>
 		<validated-payment-method
 			:braintreeTokenizationKey="braintreeTokenizationKey"
@@ -21,6 +21,9 @@ export default {
 	},
 
 	props: {
+		id: {
+			type: String,
+		},
 		reloadAmounts: {
 			type: Array,
 			required: true,
@@ -45,7 +48,3 @@ export default {
 	},
 };
 </script>
-
-<style module lang="scss">
-
-</style>
