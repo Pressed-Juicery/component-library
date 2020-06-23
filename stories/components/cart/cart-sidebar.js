@@ -1,3 +1,5 @@
+/* eslint-disable max-lines */
+
 import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 import CartSidebar from '../../../components/cart-sidebar';
 import { addons } from '@storybook/addons';
@@ -138,6 +140,7 @@ export function EmptyCart() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function Guest() {
 	return {
 		components: { CartSidebar },
@@ -187,6 +190,7 @@ export function Guest() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function PrepopulatedGuest() {
 	return {
 		components: { CartSidebar },
@@ -228,7 +232,7 @@ export function PrepopulatedGuest() {
 					fulfillmentSelection: { price: 40 },
 				},
 				redemptionRates,
-				guest: { name: 'Test Guest', phone: '1234567890', email: 'testguest@example.com'},
+				guest: { name: 'Test Guest', phone: '1234567890', email: 'testguest@example.com' },
 			};
 		},
 	};

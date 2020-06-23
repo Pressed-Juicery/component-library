@@ -43,7 +43,7 @@ export function Overview() {
 			</div>
 		`,
 
-		data() { return { user: null, guest: null }},
+		data() { return { user: null, guest: null } },
 	};
 }
 
@@ -62,7 +62,12 @@ export function PrepopulatedGuest() {
 			</div>
 		`,
 
-		data() { return { user: null, guest: { name: 'Test Guest', phone: '1234567890', email: 'testguest@example.com'} }},
+		data() {
+			return {
+				user: null,
+				guest: { name: 'Test Guest', phone: '1234567890', email: 'testguest@example.com' },
+			};
+		},
 	};
 }
 
@@ -85,6 +90,6 @@ export function InDrawer() {
 			},
 		},
 
-		data() { return { user: null, guest: null }},
+		data() { return { user: null, guest: null } },
 	};
 }

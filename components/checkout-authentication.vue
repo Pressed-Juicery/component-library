@@ -36,7 +36,7 @@ import BackArrowDrawer from './back-arrow-drawer';
 import GuestInformationForm from './guest-information-form';
 import Signin from './signin';
 
-export default{
+export default {
 	components: { BackArrowDrawer, GuestInformationForm, Signin },
 
 	props: {
