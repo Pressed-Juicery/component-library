@@ -1,10 +1,9 @@
 <template>
-	<validated-form @submit="$emit('change', paymentMethod)">
-		<validated-select  v-model="selectedAmount" label="Monthly Membership Reload" :options="reloadAmounts"/>
+	<validated-form>
+		<validated-select v-model="selectedAmount" label="Monthly Membership Reload" :options="reloadAmounts"/>
 		<validated-payment-method
 			:braintreeTokenizationKey="braintreeTokenizationKey"
-			@change="paymentMethodData => paymentMethod = paymentMethodData" />
-		<slot />
+			@change="handlePaymentSubmit" />
 	</validated-form>
 </template>
 
@@ -36,6 +35,13 @@ export default {
 			braintreeTokenizationKey: config.braintreeTokenizationKey,
 			paymentMethod: null,
 		};
+	},
+
+	methods: {
+		async handlePaymentSubmit(data) {
+			await data;
+			this.$emit('submit', { paymentMethod: data, selectedAmount: this.selectedAmount });
+		},
 	},
 };
 </script>
