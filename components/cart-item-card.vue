@@ -20,8 +20,8 @@
 			</div>
 		</card>
 		<div v-if="hasModifiers" :class="$style.detailsWrapper">
-			<div :class="$style.additionalInfo" v-for="modifier in item.modifiers" :key="modifier.groupName">
-				{{ modifier.groupName }}: {{ modifier.name }}
+			<div :class="$style.additionalInfo" v-for="(value, groupName) in displayModifiers" :key="groupName">
+				{{ groupName }}: {{ value }}
 			</div>
 		</div>
 	</div>
@@ -42,6 +42,29 @@ export default {
 	computed: {
 		hasModifiers() {
 			return this.item.modifiers && this.item.modifiers.length;
+		},
+		displayModifiers() {
+			const hasModifiers = this.item.modifiers && this.item.modifiers.length;
+
+			if (!hasModifiers) return {};
+
+			return this.item.modifiers.reduce((accum, modifier, index) => {
+				const { groupName, name } = modifier;
+
+				if (accum[groupName]) {
+					// eslint-disable-next-line no-unused-expressions
+					index === this.item.modifiers.length - 1
+						// eslint-disable-next-line no-param-reassign
+						? accum[groupName] += `, and ${name}`
+						// eslint-disable-next-line no-param-reassign
+						: accum[groupName] += `, ${name}`;
+				} else {
+					// eslint-disable-next-line no-param-reassign
+					accum[groupName] = `${name}`;
+				}
+
+				return accum;
+			}, {});
 		},
 	},
 
