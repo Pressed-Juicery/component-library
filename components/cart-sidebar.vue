@@ -70,7 +70,7 @@ export default {
 	data() {
 		return {
 			state: 'cart',
-			isDrawerOpen: true,
+			isDrawerOpen: false,
 		};
 	},
 
