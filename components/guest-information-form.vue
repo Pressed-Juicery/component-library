@@ -27,7 +27,7 @@ export default {
 
 		guest: {
 			type: Object,
-			default: function () { return {}},
+			default: function () { return {} },
 		},
 	},
 

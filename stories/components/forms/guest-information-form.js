@@ -29,6 +29,6 @@ export function PrePopulated() {
 			</div>
 		`,
 
-		data() { return { guest: { name: 'Test Guest', phone: '1231231234', email: 'testguest@example.com' } } },
+		data() { return { guest: { name: 'Test Guest', phone: '1231231234', email: 'testguest@example.com' }} },
 	};
 }
