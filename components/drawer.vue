@@ -56,10 +56,12 @@ export default {
 	left: 0;
 	bottom: 0;
 	width: 100%;
+	max-height: 82%;
 	border-radius: $spacing-05 $spacing-05 0 0;
 	background-color: $white;
 	box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
 	z-index: 1;
+	overflow: auto;
 }
 
 .hide {
