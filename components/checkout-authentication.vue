@@ -24,6 +24,7 @@
 
 			<template v-slot:main-content>
 				<guest-information-form buttonText="Continue as Guest"
+				                        :guest="guest"
 				                        @add-guest="guest => $emit('add-guest', guest)" />
 			</template>
 		</back-arrow-drawer>
@@ -37,6 +38,10 @@ import Signin from './signin';
 
 export default{
 	components: { BackArrowDrawer, GuestInformationForm, Signin },
+
+	props: {
+		guest: Object,
+	},
 
 	data() {
 		return {
