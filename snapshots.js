@@ -16,6 +16,7 @@ const groups = [{
 		'ButtonBar',
 		'Buttons',
 		'Card',
+		'CollapsableDrawer',
 		'Drawer',
 		'StoreAddress',
 		'StepProgressBar',
