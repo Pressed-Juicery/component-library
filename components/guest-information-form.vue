@@ -20,7 +20,11 @@ export default {
 	components: { ValidatedForm, ValidatedInput },
 
 	props: {
-		buttonText: String,
+		buttonText: {
+			type: String,
+			required: true,
+		},
+
 		guest: {
 			type: Object,
 			default: function () { return {}},
