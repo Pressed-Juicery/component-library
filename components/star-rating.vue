@@ -1,6 +1,6 @@
 <template>
 	<div :class="$style.root">
-		<div :class="$style.stars" v-for="(star, index) in maxStars" :key="index" @mouseover="setCurrentStar($event, index)">
+		<div :class="$style.stars" v-for="(star, index) in maxStars" :key="index" @mouseover="setCurrentStar($event, index)" @click="handleRatingSelection">
 			<star-filled v-if="index < currentIndex || index <= currentIndex && starPosition >= (18 * .75)"/>
 			<star-25 v-else-if="index == currentIndex && starPosition <= (18 * .25) && starPosition != 0"/>
 			<star-50 v-else-if="index == currentIndex && starPosition <= (18 * .50) && starPosition != 0"/>
@@ -35,15 +35,23 @@
 		data() {
 			return {
 				maxStars: 5,
-				currentIndex: this.rating,
-				starPosition: 0,
+				currentIndex: Math.floor(this.rating),
+				starPosition: Math.floor((this.rating % 1) * 18),
 			}
 		},
 		methods: {
 			setCurrentStar(event, index) {
-				this.currentIndex = index
-				this.starPosition = event.offsetX
+				if (!this.disabled){
+					this.currentIndex = index
+					if (event.offsetX >= 0){
+						this.starPosition = event.offsetX
+					}
+				}
 			},
+			handleRatingSelection() {
+				const rating = this.currentIndex + (Math.round((this.starPosition / 18) * 4) / 4)
+				this.$emit("starRating", rating > 5 ? 5 : rating)
+			}
 		}
 	}
 </script>
@@ -54,6 +62,6 @@
 }
 
 .stars {
-	padding: 0px 3px;
+	padding: 0 3px;
 }
 </style>
