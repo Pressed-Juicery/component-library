@@ -12,19 +12,20 @@ export function Overview() {
 		template: `
 			<div>
 				<upgrade-form
+					:id="'upgrade-form'"
 					:selectedAmount="selectedAmount"
 					:reloadAmounts="reloadAmounts"
-					@change="handlePaymentMethodChange">
-					<button type="submit">submit</button>
+					@submit="handlePaymentMethodChange">
 				</upgrade-form>
+				<button form="upgrade-form" type="submit">submit</button>
 				<p>data:
-				<code>{{ data }}</code>
+					<code>{{ data }}</code>
 				</p>
 			</div>
 		`,
 		data() {
 			return {
-				selectedAmount: null,
+				selectedAmount: 10,
 				data: null,
 			};
 		},
@@ -37,7 +38,7 @@ export function Overview() {
 			reloadAmounts() {
 				// eslint-disable-next-line no-magic-numbers
 				return [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(value => {
-					return { name: value, value };
+					return { name: `$${value}`, value };
 				});
 			},
 		},
