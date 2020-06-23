@@ -79,13 +79,14 @@ export default {
 
 		closeDrawer() {
 			this.isDrawerOpen = false;
-		}
-	},
+		},
+
 		continueToCheckout() {
 			if (this.user) return this.$emit('continue');
 
 			this.isDrawerOpen = true;
 		},
+	},
 
 	computed: {
 		shouldShowBackButton() { return this.state !== 'cart' },
