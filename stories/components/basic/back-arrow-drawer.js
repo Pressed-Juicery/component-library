@@ -36,7 +36,7 @@ export function Overview() {
 		mixins,
 		template: `
 			<drawer :is-open="isDrawerOpen" @close="closeDrawer">
-				<back-arrow-drawer @close="closeDrawer">
+				<back-arrow-drawer @back="closeDrawer">
 					<template v-slot:main-content>
 						Content
 					</template>
@@ -58,7 +58,7 @@ export function HeaderItem() {
 		mixins,
 		template: `
 			<drawer :is-open="isDrawerOpen" @close="closeDrawer">
-				<back-arrow-drawer @close="closeDrawer">
+				<back-arrow-drawer @back="closeDrawer">
 					<template v-slot:header-item>
 						Item
 					</template>
@@ -89,7 +89,7 @@ export function Sidebar() {
 				<hr v-for="num in 60" />
 
 				<drawer :is-open="isDrawerOpen" @close="closeDrawer">
-					<back-arrow-drawer @close="closeDrawer">
+					<back-arrow-drawer @back="closeDrawer">
 						<template v-slot:header-item>
 							Item
 						</template>
