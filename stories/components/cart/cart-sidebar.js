@@ -31,7 +31,15 @@ const cartItems = [{
 	price: 6.00,
 	modifiers: [{
 		groupName: 'Toppings',
-		name: 'peanuts, caramel, bananas',
+		name: 'peanuts',
+	},
+	{
+		groupName: 'Toppings',
+		name: 'caramel',
+	},
+	{
+		groupName: 'Toppings',
+		name: 'bananas',
 	}],
 }];
 
