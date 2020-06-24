@@ -1,16 +1,30 @@
 <template>
 	<div :class="$style.root">
 		<div
-			:class="$style.stars" v-for="(star, index) in maxStars"
-			:key="index"
-			@mouseover="setCurrentStar($event, index)"
-			@click="handleRatingSelection"
+			:class="$style.star"
+			v-for="index in wholeStars"
+			@mouseover="setSolidStars(index)"
+			@click="handleSelection"
+			:key="`${index}-wholeStar`"
 		>
-			<star-filled v-if="index < currentIndex || index <= currentIndex && starPosition >= (18 * .75)"/>
-			<star-25 v-else-if="index == currentIndex && starPosition <= (18 * .25) && starPosition != 0"/>
-			<star-50 v-else-if="index == currentIndex && starPosition <= (18 * .50) && starPosition != 0"/>
-			<star-75 v-else-if="index == currentIndex && starPosition <= (18 * .75) && starPosition != 0"/>
-			<star-empty v-else/>
+			<star-filled />
+		</div>
+		<div
+			v-if="!hoverValue"
+			:class="$style.star"
+			@mouseover="setFractionalStars"
+		>
+			<star-25 v-if="fractionalStar === 0.25"/>
+			<star-50 v-else-if="fractionalStar === 0.50"/>
+			<star-75 v-else-if="fractionalStar === 0.75"/>
+		</div>
+		<div
+			:class="$style.star"
+			v-for="index in emptyStars"
+			@mouseover="setEmptyStars(index)"
+			:key="`${index}-emptyStar`"
+		>
+			<star-empty/>
 		</div>
 	</div>
 </template>
@@ -23,13 +37,6 @@ import StarEmpty from './icons/star-empty.vue';
 import StarFilled from './icons/star-filled.vue';
 
 export default {
-	props: {
-		rating: {
-			type: Number,
-			required: true,
-		},
-		disabled: { type: Boolean },
-	},
 	components: {
 		StarEmpty,
 		StarFilled,
@@ -37,37 +44,71 @@ export default {
 		Star50,
 		Star25,
 	},
+	props: {
+		rating: {
+			type: Number,
+			default: 0,
+		},
+		isDisabled: { type: Boolean },
+	},
 	data() {
 		return {
 			maxStars: 5,
-			currentIndex: Math.floor(this.rating),
-			starPosition: Math.floor((this.rating % 1) * 18),
+			fractionalStarPrecision: 0.25,
+			hoverValue: 0,
 		};
 	},
+	created() {
+		if (this.rating > this.maxStars) throw new Error(`Rating must be less than ${this.maxStars}`);
+	},
 	methods: {
-		setCurrentStar(event, index) {
-			if (!this.disabled) {
-				this.currentIndex = index;
-				if (event.offsetX >= 0) {
-					this.starPosition = event.offsetX;
-				}
-			}
+		setSolidStars(index) {
+			if (this.isDisabled) return;
+			this.hoverValue = index;
 		},
-		handleRatingSelection() {
-			const rating = this.currentIndex + (Math.round((this.starPosition / 18) * 4) / 4);
+		setEmptyStars(index) {
+			if (this.isDisabled) return;
+			this.hoverValue = this.wholeStars + Math.ceil(this.fractionalStar) + index;
+		},
+		setFractionalStars() {
+			if (this.isDisabled) return;
+			this.hoverValue = this.wholeStars + 1;
+		},
+		handleSelection() {
+			if (this.isDisabled) return;
+			this.$emit('change', this.hoverValue);
+		},
+	},
+	computed: {
+		wholeStars() {
+			if (this.isDisabled) return Math.floor(this.rating);
 
-			this.$emit('starRating', rating > 5 ? 5 : rating);
+			return Math.floor(this.hoverValue || this.rating);
+		},
+		fractionalStar() {
+			if (this.hoverValue) return 0;
+
+			return (
+				Math.floor((this.rating % 1) / this.fractionalStarPrecision)
+				* this.fractionalStarPrecision
+			);
+		},
+		emptyStars() {
+			return (
+				this.maxStars - this.wholeStars - Math.ceil(this.fractionalStar)
+			);
 		},
 	},
 };
 </script>
 
 <style module lang="scss">
+@import "../styles/variables.scss";
+
 .root {
 	display: flex;
 }
-
-.stars {
-	padding: 0 2px;
+.star {
+	margin: 0 $spacing-01;
 }
 </style>

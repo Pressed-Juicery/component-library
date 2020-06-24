@@ -8,11 +8,11 @@ export default {
 export function Overview() {
 	return {
 		components: { StarRating },
-		template: '<star-rating :rating="rating" :disabled="disabled"/>',
+		template: '<star-rating :rating="rating" :isDisabled="isDisabled"/>',
 		data() {
 			return {
-				rating: 3,
-				disabled: false,
+				rating: 3.75,
+				isDisabled: false,
 			};
 		},
 	};
