@@ -14,15 +14,20 @@
 		</div>
 
 		<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
+
+		<div @click="$emit('close')">
+			<arrow-down :class="$style.icon" />
+		</div>
 	</div>
 </template>
 
 <script>
+import ArrowDown from './icons/arrow-down-icon';
 import QrCode from './qr-code';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { QrCode },
+	components: { ArrowDown, QrCode },
 
 	props: {
 		wallet: {
@@ -51,4 +56,10 @@ export default {
 		font-size: 14px;
 	}
 
+	.icon {
+		display: block;
+		margin: 0 auto;
+		width: $spacing-04;
+		cursor: pointer;
+	}
 </style>
