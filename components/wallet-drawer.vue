@@ -1,5 +1,7 @@
 <template>
 	<div>
+		<div :class="$style.title">In the Store?</div>
+		<div :class="$style.subtitle">Show our associate your code!</div>
 
 		<div :class="$style.grid">
 			<qr-code :code="wallet.cardNumber" />
@@ -45,6 +47,20 @@ export default {
 </script>
 
 <style module lang="scss">
+	@import "../styles/variables.scss";
+	@import "../styles/mixins.scss";
+
+	.title {
+		@include text-heading-5();
+
+		margin-bottom: $spacing-02;
+		text-align: center;
+	}
+
+	.subtitle {
+		margin-bottom: $spacing-07;
+		text-align: center;
+	}
 
 	.reloadButton {
 		@extend .button--secondary;
