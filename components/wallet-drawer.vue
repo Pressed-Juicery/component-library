@@ -12,6 +12,8 @@
 				<div :class="$style.value"></div>
 			</div>
 		</div>
+
+		<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
 	</div>
 </template>
 
@@ -38,5 +40,15 @@ export default {
 </script>
 
 <style module lang="scss">
+
+	.reloadButton {
+		@extend .button--secondary;
+		@extend .button--pill;
+
+		display: block;
+		margin: 0 auto $spacing-08;
+		padding: 0 $spacing-10;
+		font-size: 14px;
+	}
 
 </style>
