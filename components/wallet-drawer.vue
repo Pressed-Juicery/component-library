@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div :class="$style.root">
 		<div :class="$style.title">In the Store?</div>
 		<div :class="$style.subtitle">Show our associate your code!</div>
 
@@ -49,6 +49,12 @@ export default {
 <style module lang="scss">
 	@import "../styles/variables.scss";
 	@import "../styles/mixins.scss";
+	@import "../styles/buttons.scss";
+
+	.root {
+		padding: 0 $spacing-08 $spacing-07;
+		background-color: $beige;
+	}
 
 	.title {
 		@include text-heading-5();
@@ -60,6 +66,27 @@ export default {
 	.subtitle {
 		margin-bottom: $spacing-07;
 		text-align: center;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: $spacing-06;
+		margin-bottom: $spacing-08;
+	}
+
+	.label {
+		@include text-cta-small();
+
+		margin-bottom: $spacing-02;
+	}
+
+	.value {
+		@include text-heading-5();
+
+		&:not(:last-child) {
+			margin-bottom: $spacing-05;
+		}
 	}
 
 	.reloadButton {
