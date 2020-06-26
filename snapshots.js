@@ -17,9 +17,12 @@ const groups = [{
 		'Card',
 		'CollapsableDrawer',
 		'Drawer',
+		'PersistentDrawer',
+		'QrCode',
 		'StoreAddress',
 		'StepProgressBar',
 		'SidebarOverlay',
+		'WalletDrawer',
 	],
 }, {
 	groupName: 'Components / Cart',
