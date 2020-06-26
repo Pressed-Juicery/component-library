@@ -22,9 +22,9 @@ export default {
 
 	data() {
 		return {
-			src : null,
-			largeQrSrc : null,
-			smallQrSrc : null,
+			src: null,
+			largeQrSrc: null,
+			smallQrSrc: null,
 		};
 	},
 
