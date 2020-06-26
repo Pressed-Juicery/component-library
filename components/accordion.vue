@@ -46,7 +46,7 @@ export default {
 	}
 
 	.title {
-		padding: $accordion-padding;
+		padding: $accordion-padding 0;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
