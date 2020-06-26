@@ -2,19 +2,32 @@
 	<div :class="[{ [$style.isOpen]: isOpen }, $style.root]">
 		<div :class="$style.overlay" @click="close" />
 
-		<div :class="[{ [$style.hidden]: !isOpen }, $style.drawer]">
-			<slot />
+		<div :class="$style.drawer">
+			<div :class="[{ [$style.noPointerEvents]: !isOpen }, $style.transparentBlock]" @click="close"/>
+			<div :class="$style.visibleDrawer">
+				<pressed-points-circle v-if="hasLogo" :class="$style.logo"/>
+				<slot />
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import PressedPointsCircle from './icons/pressed-points-circle';
+
 	export default {
+		components: { PressedPointsCircle },
+
 		props: {
 			isOpen: {
 				type: Boolean,
 				require: true,
 			},
+
+			hasLogo: {
+				type: Boolean,
+				default: false,
+			}
 		},
 
 		methods: {
@@ -28,6 +41,8 @@
 <style module lang="scss">
 	@import "../styles/variables.scss";
 	@import "../styles/mixins.scss";
+
+	$logoOffset: 22px;
 
 	.root,
 	.overlay {
@@ -51,16 +66,37 @@
 		pointer-events: auto;
 	}
 
+	.transparentBlock {
+		height: $logoOffset;
+		opacity: 0;
+	}
+
+	.logo {
+		display: block;
+		height: 66px;
+		width: 66px;
+		margin: 0 auto (-$spacing-04);
+		position: relative;
+		top: (-$logoOffset);
+	}
+
 	.drawer {
 		position: absolute;
 		left: 0;
 		bottom: 0;
 		width: 100%;
+		z-index: 1;
+		overflow: hidden;
+	}
+
+	.visibleDrawer {
 		max-height: 82%;
 		border-radius: $spacing-05 $spacing-05 0 0;
-		background-color: $white;
+		background-color: $beige;
 		box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
-		z-index: 1;
-		overflow: auto;
+	}
+
+	.noPointerEvents {
+		pointer-events: none;
 	}
 </style>
