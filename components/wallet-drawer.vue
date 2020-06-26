@@ -141,6 +141,10 @@ export default {
 		margin: 0 auto $spacing-08;
 		padding: 0 $spacing-10;
 		font-size: 14px;
+
+		&:focus {
+			outline: none;
+		}
 	}
 
 	.toggle {
