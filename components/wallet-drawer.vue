@@ -148,6 +148,7 @@ export default {
 		margin: 0 auto;
 		width: $spacing-04;
 		cursor: pointer;
+		pointer-events: auto;
 	}
 
 	.rotate {
