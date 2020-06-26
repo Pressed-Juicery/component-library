@@ -68,5 +68,6 @@ export default {
 	.accordionIcon {
 		color: $gray-30;
 		font-size: 20px;
+		margin-right: $spacing-05;
 	}
 </style>
