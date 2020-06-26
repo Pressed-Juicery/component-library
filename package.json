@@ -32,7 +32,8 @@
 		"@vue/cli-service": "~4.3.0",
 		"braintree-web": "3.62.1",
 		"core-js": "^3.6.4",
-		"normalize.css": "8.0.1"
+		"normalize.css": "8.0.1",
+		"qrcode": "^1.4.4"
 	},
 	"devDependencies": {
 		"@babel/core": "7.9.0",
