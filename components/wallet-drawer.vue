@@ -22,8 +22,8 @@
 			</div>
 		</transition>
 
-		<div @click="$emit('close')">
-			<arrow-down :class="$style.icon" />
+		<div @click="toggleDrawer()">
+			<arrow-down :class="[{ [$style.rotate]: !showMainContent }, $style.icon]" />
 		</div>
 	</div>
 </template>
@@ -141,5 +141,9 @@ export default {
 		margin: 0 auto;
 		width: $spacing-04;
 		cursor: pointer;
+	}
+
+	.rotate {
+		transform: rotate(180deg);
 	}
 </style>
