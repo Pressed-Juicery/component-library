@@ -23,8 +23,8 @@
 			</div>
 		</transition>
 
-			<arrow-down :class="[{ [$style.rotate]: !showMainContent }, $style.icon]" />
 		<div @click="$emit('toggle')">
+			<arrow-down :class="[{ [$style.rotate]: !isOpen }, $style.icon]" color="#262626"/>
 		</div>
 	</div>
 </template>
