@@ -9,8 +9,15 @@
 import QRCode from "qrcode";
 
 export default {
-	props : {
-		code : String,
+	props: {
+		code: {
+			type: String,
+			required: true,
+		},
+		background: {
+			type: String,
+			default: '#fff',
+		},
 	},
 
 	data() {
@@ -25,11 +32,11 @@ export default {
 		this.generateQR(this.code);
 	},
 
-	methods : {
+	methods: {
 		async generateQR(text) {
 			const color = {
-				dark:"#000",
-				light:"#f6f4ec"
+				dark: "#000",
+				light: this.background,
 			};
 
 			this.smallQrSrc = await QRCode.toDataURL(text, { color, margin: 0, width: 130, type: 'image/png' });
