@@ -62,7 +62,7 @@ export default {
 	}
 
 	.slot {
-		padding: 0 $accordion-padding $accordion-padding;
+		padding-bottom: $accordion-padding;
 	}
 
 	.accordionIcon {
