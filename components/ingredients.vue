@@ -8,7 +8,6 @@
 				<div :class="$style.ingredientTitle">{{ ingredient.title }}</div>
 			</div>
 		</div>
-
 	</div>
 </template>
 
@@ -56,5 +55,4 @@ export default {
 	@include text-body-small();
 	text-align: center;
 }
-
 </style>
