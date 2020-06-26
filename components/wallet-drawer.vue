@@ -101,15 +101,25 @@ export default {
 		text-align: center;
 	}
 
-	.grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-column-gap: $spacing-06;
-		margin-bottom: $spacing-08;
 	.slidableContent {
 		overflow: hidden;
 		transition: 0.5s ease-out;
 	}
+
+	.mainContent {
+		display: flex;
+		justify-content: center;
+		max-width: 340px;
+		margin: 0 auto $spacing-08;
+	}
+
+	.qrCode {
+		width: 50%;
+	}
+
+	.walletData {
+		width: 50%;
+		margin-left: $spacing-06;
 	}
 
 	.label {
