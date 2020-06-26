@@ -159,6 +159,7 @@ export default {
 		display: block;
 		margin: 0 auto;
 		width: $spacing-04;
+		line-height: 1px;
 		cursor: pointer;
 		pointer-events: auto;
 	}
