@@ -3,19 +3,24 @@
 		<div :class="$style.title">In the Store?</div>
 		<div :class="$style.subtitle">Show our associate your code!</div>
 
-		<div :class="$style.grid">
-			<qr-code :code="wallet.cardNumber" />
-			<div>
-				<div :class="$style.label">Current Balance</div>
-				<div :class="$style.value">{{ formatCurrency(wallet.funds) }}</div>
-				<div :class="$style.label">Points Accrued</div>
-				<div :class="$style.value">{{ wallet.points }}</div>
-				<div :class="$style.label">Account #</div>
-				<div :class="$style.value"></div>
-			</div>
-		</div>
+		<transition name="slider" v-on:before-enter="beforeEnter" v-on:enter="enter"
+		            v-on:before-leave="beforeLeave" v-on:leave="leave">
+			<div v-show="showMainContent" :class="$style.slidableContent">
+				<div :class="$style.mainContent">
+					<qr-code :class="$style.qrCode" :code="wallet.cardNumber" />
+					<div :class="$style.walletData">
+						<div :class="$style.label">Current Balance</div>
+						<div :class="$style.value">{{ formatCurrency(wallet.funds) }}</div>
+						<div :class="$style.label">Points Accrued</div>
+						<div :class="$style.value">{{ wallet.points }}</div>
+						<div :class="$style.label">Account #</div>
+						<div :class="$style.value">{{ wallet.cardNumber }}</div>
+					</div>
+				</div>
 
-		<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
+				<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
+			</div>
+		</transition>
 
 		<div @click="$emit('close')">
 			<arrow-down :class="$style.icon" />
@@ -38,9 +43,37 @@ export default {
 		},
 	},
 
+	data() {
+		return {
+			showMainContent: false,
+		};
+	},
+
 	methods: {
 		formatCurrency(number) {
 			return formatCurrency(number);
+		},
+
+		toggleDrawer() {
+			this.$emit('toggle');
+
+			this.showMainContent = !this.showMainContent;
+		},
+
+		beforeEnter: function(el) {
+			el.style.height = '0';
+		},
+
+		enter: function(el) {
+			el.style.height = el.scrollHeight + 'px';
+		},
+
+		beforeLeave: function(el) {
+			el.style.height = el.scrollHeight + 'px';
+		},
+
+		leave: function(el) {
+			el.style.height = '0';
 		},
 	},
 }
@@ -73,6 +106,10 @@ export default {
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: $spacing-06;
 		margin-bottom: $spacing-08;
+	.slidableContent {
+		overflow: hidden;
+		transition: 0.5s ease-out;
+	}
 	}
 
 	.label {
