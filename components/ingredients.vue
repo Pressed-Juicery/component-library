@@ -33,7 +33,7 @@ export default {
 
 .ingredients {
 	display: grid;
-	grid-template-columns: repeat(4, 25%);
+	grid-template-columns: repeat(auto-fill, minmax($spacing-11, 1fr));
 	grid-row-gap: $spacing-06;
 	align-content: center;
 }
