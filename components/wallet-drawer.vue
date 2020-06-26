@@ -23,8 +23,8 @@
 			</div>
 		</transition>
 
-		<div @click="$emit('toggle')">
-			<arrow-down :class="[{ [$style.rotate]: !isOpen }, $style.icon]" color="#262626"/>
+		<div :class="$style.toggle" @click="$emit('toggle')">
+			<arrow-down :class="{ [$style.rotate]: !isOpen }" color="#262626" />
 		</div>
 	</div>
 </template>
@@ -143,7 +143,7 @@ export default {
 		font-size: 14px;
 	}
 
-	.icon {
+	.toggle {
 		display: block;
 		margin: 0 auto;
 		width: $spacing-04;
