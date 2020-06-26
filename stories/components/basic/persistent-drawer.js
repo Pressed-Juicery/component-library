@@ -51,6 +51,7 @@ export function SlidableContent() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function ClickableBackground() {
 	return {
 		components: { PersistentDrawer, WalletDrawer },

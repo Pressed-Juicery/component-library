@@ -53,23 +53,31 @@ export default {
 			return formatCurrency(number);
 		},
 
-		beforeEnter: function(el) {
-			el.style.height = '0';
+		beforeEnter: function (target) {
+			const elem = target;
+
+			elem.style.height = '0';
 		},
 
-		enter: function(el) {
-			el.style.height = el.scrollHeight + 'px';
+		enter: function (target) {
+			const elem = target;
+
+			elem.style.height = `${elem.scrollHeight}px`;
 		},
 
-		beforeLeave: function(el) {
-			el.style.height = el.scrollHeight + 'px';
+		beforeLeave: function (target) {
+			const elem = target;
+
+			elem.style.height = `${elem.scrollHeight}px`;
 		},
 
-		leave: function(el) {
-			el.style.height = '0';
+		leave: function (target) {
+			const elem = target;
+
+			elem.style.height = '0';
 		},
 	},
-}
+};
 </script>
 
 <style module lang="scss">

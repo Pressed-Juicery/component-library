@@ -18,6 +18,3 @@ export function Background() {
 		template: '<qr-code code="1234567890" background="#f6f4ec" />',
 	};
 }
-
-
-

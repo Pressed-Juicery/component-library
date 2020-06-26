@@ -13,31 +13,31 @@
 </template>
 
 <script>
-	import PressedPointsCircle from './icons/pressed-points-circle';
+import PressedPointsCircle from './icons/pressed-points-circle';
 
-	export default {
-		components: { PressedPointsCircle },
+export default {
+	components: { PressedPointsCircle },
 
-		props: {
-			isOpen: {
-				type: Boolean,
-				required: true,
-			},
-
-			hasLogo: {
-				type: Boolean,
-				default: false,
-			}
+	props: {
+		isOpen: {
+			type: Boolean,
+			required: true,
 		},
 
-		methods: {
-			close() {
-				if (!this.isOpen) return;
-
-				this.$emit('close');
-			},
+		hasLogo: {
+			type: Boolean,
+			default: false,
 		},
-	};
+	},
+
+	methods: {
+		close() {
+			if (!this.isOpen) return;
+
+			this.$emit('close');
+		},
+	},
+};
 </script>
 
 <style module lang="scss">

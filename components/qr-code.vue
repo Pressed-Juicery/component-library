@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import QRCode from "qrcode";
+import QRCode from 'qrcode';
 
 export default {
 	props: {
@@ -35,7 +35,7 @@ export default {
 	methods: {
 		async generateQR(text) {
 			const color = {
-				dark: "#000",
+				dark: '#000',
 				light: this.background,
 			};
 
@@ -43,7 +43,7 @@ export default {
 			this.largeQrSrc = await QRCode.toDataURL(text, { color, margin: 0, width: 167, type: 'image/png' });
 		},
 	},
-}
+};
 </script>
 
 <style module lang="scss">
