@@ -117,9 +117,12 @@ export default {
 
 .informationCta,
 .variant,
-.quantity,
-.productName {
+.quantity {
 	margin-bottom: $spacing-03;
+}
+
+.productName {
+	margin-bottom: $spacing-05;
 }
 
 .learnMore {
