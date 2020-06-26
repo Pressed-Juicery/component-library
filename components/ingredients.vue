@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div :class="$style.sectionTitle">Ingredients</div>
+		<div :class="$style.heading">Ingredients</div>
 
 		<div :class="$style.ingredients">
 			<div :class="$style.ingredient" v-for="(ingredient, index) in ingredients" :key="index">
@@ -26,7 +26,7 @@ export default {
 @import "../styles/mixins";
 @import "../styles/variables";
 
-.sectionTitle {
+.heading {
 	@include text-cta-small();
 	margin-bottom: $spacing-06;
 }
