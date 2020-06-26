@@ -28,7 +28,10 @@ export function InDrawer() {
 		components: { PersistentDrawer, WalletDrawer },
 		template: `
 			<persistent-drawer :isOpen="isOpen" :has-logo="true" @close="isOpen = false">
-				<wallet-drawer :wallet="wallet" :isOpen="isOpen" @toggle="isOpen = !isOpen" />
+				<wallet-drawer :wallet="wallet"
+				               :isOpen="isOpen"
+				               @toggle="isOpen = !isOpen"
+				               @reload-balance="isOpen = false" />
 			</persistent-drawer>
 		`,
 
