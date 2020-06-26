@@ -1,3 +1,4 @@
+import PersistentDrawer from '../../../components/persistent-drawer';
 import WalletDrawer from '../../../components/wallet-drawer';
 
 export default {
@@ -24,15 +25,17 @@ export function Overview() {
 
 export function InDrawer() {
 	return {
-		components: { Drawer, WalletDrawer },
+		components: { PersistentDrawer, WalletDrawer },
 		template: `
-			<drawer :isOpen="isOpen" @close="closeDrawer">
-				<wallet-drawer :wallet="wallet" @close="closeDrawer" />
-			</drawer>
+			<persistent-drawer :isOpen="isOpen" @toggle="isOpen = !isOpen">
+				<wallet-drawer :wallet="wallet" @toggle="isOpen = !isOpen" />
+			</persistent-drawer>
 		`,
 
 		data() {
 			return {
+				isOpen: false,
+
 				wallet: {
 					cardNumber: '411111111111',
 					points: 250,
