@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div :class="$style.sectionTitle">ingredients</div>
+		<div :class="$style.sectionTitle">Ingredients</div>
 
 		<div :class="$style.ingredients">
 			<div :class="$style.ingredient" v-for="(ingredient, index) in ingredients" :key="index">
