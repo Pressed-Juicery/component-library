@@ -1,6 +1,6 @@
 <template>
 	<div :class="[{ [$style.isOpen]: isOpen }, $style.root]">
-		<div :class="$style.overlay" @click="close" />
+		<div :class="$style.overlay" @click="$emit('close')" />
 
 		<div :class="$style.drawer">
 			<div :class="[{ [$style.noPointerEvents]: !isOpen }, $style.transparentBlock]" @click="close"/>
@@ -21,7 +21,7 @@
 		props: {
 			isOpen: {
 				type: Boolean,
-				require: true,
+				required: true,
 			},
 
 			hasLogo: {
@@ -32,6 +32,8 @@
 
 		methods: {
 			close() {
+				if (!this.isOpen) return;
+
 				this.$emit('close');
 			},
 		},

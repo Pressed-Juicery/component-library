@@ -5,7 +5,7 @@
 
 		<transition name="slider" v-on:before-enter="beforeEnter" v-on:enter="enter"
 		            v-on:before-leave="beforeLeave" v-on:leave="leave">
-			<div v-show="showMainContent" :class="$style.slidableContent">
+			<div v-show="isOpen" :class="$style.slidableContent">
 				<div :class="$style.mainContent">
 					<qr-code :class="$style.qrCode" :code="wallet.cardNumber" />
 					<div :class="$style.walletData">
@@ -22,8 +22,8 @@
 			</div>
 		</transition>
 
-		<div @click="toggleDrawer()">
 			<arrow-down :class="[{ [$style.rotate]: !showMainContent }, $style.icon]" />
+		<div @click="$emit('toggle')">
 		</div>
 	</div>
 </template>
@@ -41,23 +41,15 @@ export default {
 			type: Object,
 			required: true,
 		},
-	},
-
-	data() {
-		return {
-			showMainContent: false,
-		};
+		isOpen: {
+			type: Boolean,
+			required: true,
+		},
 	},
 
 	methods: {
 		formatCurrency(number) {
 			return formatCurrency(number);
-		},
-
-		toggleDrawer() {
-			this.$emit('toggle');
-
-			this.showMainContent = !this.showMainContent;
 		},
 
 		beforeEnter: function(el) {
