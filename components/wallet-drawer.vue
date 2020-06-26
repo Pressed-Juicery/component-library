@@ -1,5 +1,7 @@
 <template>
 	<div :class="$style.root">
+		<pressed-points-circle :class="$style.logo"/>
+
 		<div :class="$style.title">In the Store?</div>
 		<div :class="$style.subtitle">Show our associate your code!</div>
 
@@ -30,11 +32,12 @@
 
 <script>
 import ArrowDown from './icons/arrow-down-icon';
+import PressedPointsCircle from './icons/pressed-points-circle';
 import QrCode from './qr-code';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { ArrowDown, QrCode },
+	components: { ArrowDown, PressedPointsCircle, QrCode },
 
 	props: {
 		wallet: {
@@ -87,6 +90,13 @@ export default {
 	.root {
 		padding: 0 $spacing-08 $spacing-07;
 		background-color: $beige;
+	}
+
+	.logo {
+		display: block;
+		height: 66px;
+		width: 66px;
+		margin: -20px auto $spacing-05;
 	}
 
 	.title {
