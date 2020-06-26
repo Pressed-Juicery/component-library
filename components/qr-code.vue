@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<img v-if="src" :src="src" alt="qr code" />
+		<img :class="$style.largeQrCode" v-if="largeQrSrc" :src="largeQrSrc" alt="qr code" />
+		<img :class="$style.smallQrCode" v-if="smallQrSrc" :src="smallQrSrc" alt="qr code" />
 	</div>
 </template>
 
@@ -15,6 +16,8 @@ export default {
 	data() {
 		return {
 			src : null,
+			largeQrSrc : null,
+			smallQrSrc : null,
 		};
 	},
 
@@ -24,8 +27,36 @@ export default {
 
 	methods : {
 		async generateQR(text) {
-			this.src = await QRCode.toDataURL(text, { type: 'image/png' });
+			const color = {
+				dark:"#000",
+				light:"#f6f4ec"
+			};
+
+			this.smallQrSrc = await QRCode.toDataURL(text, { color, margin: 0, width: 130, type: 'image/png' });
+			this.largeQrSrc = await QRCode.toDataURL(text, { color, margin: 0, width: 167, type: 'image/png' });
 		},
 	},
 }
 </script>
+
+<style module lang="scss">
+	.largeQrCode {
+		display: block;
+	}
+
+	.smallQrCode {
+		display: none;
+	}
+
+	@media (max-width: 420px) {
+		.largeQrCode {
+			display: none;
+			margin-left: auto;
+		}
+
+		.smallQrCode {
+			display: block;
+			margin-left: auto;
+		}
+	}
+</style>
