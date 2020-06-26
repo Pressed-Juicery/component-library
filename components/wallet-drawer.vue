@@ -1,7 +1,8 @@
 <template>
 	<div :class="$style.root">
 		<div :class="$style.title">In the Store?</div>
-		<div :class="$style.subtitle">Show our associate your code!</div>
+		<div :class="$style.swipeUpMessage" v-if="!isOpen">Swipe up for your QR Code</div>
+		<div :class="$style.showCodeMessage" v-else>Show our associate your code!</div>
 
 		<transition name="slider" v-on:before-enter="beforeEnter" v-on:enter="enter"
 		            v-on:before-leave="beforeLeave" v-on:leave="leave">
@@ -87,7 +88,12 @@ export default {
 		text-align: center;
 	}
 
-	.subtitle {
+	.swipeUpMessage {
+		margin-bottom: $spacing-05;
+		text-align: center;
+	}
+
+	.showCodeMessage {
 		margin-bottom: $spacing-07;
 		text-align: center;
 	}
