@@ -53,6 +53,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+		pointer-events: none;
 	}
 
 	.overlay {
@@ -96,6 +97,7 @@
 		border-radius: $spacing-05 $spacing-05 0 0;
 		background-color: $beige;
 		box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
+		pointer-events: auto;
 	}
 
 	.noPointerEvents {
