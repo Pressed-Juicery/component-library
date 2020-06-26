@@ -8,7 +8,7 @@
 		            v-on:before-leave="beforeLeave" v-on:leave="leave">
 			<div v-show="isOpen" :class="$style.slidableContent">
 				<div :class="$style.mainContent">
-					<qr-code :class="$style.qrCode" :code="wallet.cardNumber" />
+					<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
 					<div :class="$style.walletData">
 						<div :class="$style.label">Current Balance</div>
 						<div :class="$style.value">{{ formatCurrency(wallet.funds) }}</div>
