@@ -23,8 +23,8 @@ export default {
 </script>
 
 <style module lang="scss">
-@import "../styles/mixins.scss";
-@import "../styles/variables.scss";
+@import "../styles/mixins";
+@import "../styles/variables";
 
 .sectionTitle {
 	@include text-cta-small();
