@@ -29,7 +29,11 @@
 							</div>
 						</div>
 
-						<button :class="$style.reloadButton" @click="$emit('reload')">Reload Balance</button>
+						<button :class="[$style.reloadButton, 'button', 'button--secondary', 'button--pill']"
+								@click="$emit('reload')"
+						>
+							Reload Balance
+						</button>
 					</div>
 				</transition>
 
@@ -102,7 +106,6 @@ export default {
 <style module lang="scss">
 	@import "../styles/variables";
 	@import "../styles/mixins";
-	@import "../styles/buttons";
 
 	$logoOffset: 22px;
 
@@ -198,9 +201,6 @@ export default {
 	}
 
 	.reloadButton {
-		@extend .button--secondary;
-		@extend .button--pill;
-
 		display: block;
 		margin: 0 auto $spacing-06;
 		padding: 0 $spacing-10;
