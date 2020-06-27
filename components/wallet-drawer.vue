@@ -77,27 +77,19 @@ export default {
 		toggle() { this.isOpen = !this.isOpen },
 
 		beforeEnter: function (target) {
-			const elem = target;
-
-			elem.style.height = '0';
+			target.style.height = '0';
 		},
 
 		enter: function (target) {
-			const elem = target;
-
-			elem.style.height = `${elem.scrollHeight}px`;
+			target.style.height = `${target.scrollHeight}px`;
 		},
 
 		beforeLeave: function (target) {
-			const elem = target;
-
-			elem.style.height = `${elem.scrollHeight}px`;
+			target.style.height = `${target.scrollHeight}px`;
 		},
 
 		leave: function (target) {
-			const elem = target;
-
-			elem.style.height = '0';
+			target.style.height = '0';
 		},
 	},
 };
