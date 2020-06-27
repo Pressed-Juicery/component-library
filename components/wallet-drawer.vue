@@ -29,7 +29,7 @@
 							</div>
 						</div>
 
-						<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
+						<button :class="$style.reloadButton" @click="$emit('reload')">Reload Balance</button>
 					</div>
 				</transition>
 
