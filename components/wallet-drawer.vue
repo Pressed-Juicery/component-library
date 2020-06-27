@@ -121,11 +121,6 @@ export default {
 		transition: .5s ease opacity;
 	}
 
-	.isOpen .overlay {
-		opacity: 0.2;
-		pointer-events: auto;
-	}
-
 	.logo {
 		display: block;
 		height: 66px;
@@ -231,6 +226,11 @@ export default {
 	}
 
 	.isOpen {
+		.overlay {
+			opacity: 0.2;
+			pointer-events: auto;
+		}
+
 		.toggleIcon {
 			transform: rotate(180deg);
 		}
