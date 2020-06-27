@@ -3,7 +3,6 @@
 		<div :class="$style.overlay" @click="close" />
 
 		<div :class="$style.drawer" @click="open">
-			<div :class="$style.transparentBlock" />
 			<div :class="$style.visibleDrawer">
 				<pressed-points-circle :class="$style.logo"/>
 
@@ -129,11 +128,6 @@ export default {
 		pointer-events: auto;
 	}
 
-	.transparentBlock {
-		height: $logoOffset;
-		opacity: 0;
-	}
-
 	.logo {
 		display: block;
 		height: 66px;
@@ -149,7 +143,6 @@ export default {
 		bottom: 0;
 		width: 100%;
 		z-index: 1;
-		overflow: hidden;
 	}
 
 	.visibleDrawer {
