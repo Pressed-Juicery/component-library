@@ -34,7 +34,7 @@ export default {
 .ingredients {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax($spacing-11, 1fr));
-	grid-row-gap: $spacing-06;
+	grid-gap: $spacing-06 $spacing-04;
 	align-content: center;
 }
 
@@ -42,7 +42,6 @@ export default {
 	display: flex;
 	flex-flow: column;
 	align-items: center;
-	padding: 0 $spacing-02;
 }
 
 .icon {
