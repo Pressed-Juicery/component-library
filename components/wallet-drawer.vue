@@ -9,7 +9,7 @@
 			<div :class="$style.message" v-if="!isOpen">Tap here for your QR Code</div>
 			<div :class="$style.message" v-else>Show our associate your code!</div>
 
-			<transition name="slider" v-on:enter="enter" v-on:leave="leave">
+			<transition name="slider" @enter="enter" @leave="leave">
 				<div v-show="isOpen" :class="$style.slidableContent">
 					<div :class="$style.mainContent">
 						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
