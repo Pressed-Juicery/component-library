@@ -13,10 +13,6 @@ export default {
 			type: String,
 			required: true,
 		},
-		background: {
-			type: String,
-			default: '#fff',
-		},
 	},
 
 	data() {
@@ -37,7 +33,7 @@ export default {
 				margin: 0,
 				color: {
 					dark: '#000',
-					light: this.background,
+					light: '#0000', // transparent background
 				},
 			});
 		},
