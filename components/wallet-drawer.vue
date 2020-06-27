@@ -1,44 +1,53 @@
 <template>
-	<persistent-drawer :isOpen="isOpen" :has-logo="true" @close="isOpen = false">
-		<div :class="$style.root">
-			<div :class="$style.title">In the Store?</div>
-			<div :class="$style.swipeUpMessage" v-if="!isOpen">Tap here for your QR Code</div>
-			<div :class="$style.showCodeMessage" v-else>Show our associate your code!</div>
+	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
+		<div :class="$style.overlay" @click="isOpen = false" />
 
-			<transition name="slider" v-on:before-enter="beforeEnter" v-on:enter="enter"
-						v-on:before-leave="beforeLeave" v-on:leave="leave">
-				<div v-show="isOpen" :class="$style.slidableContent">
-					<div :class="$style.mainContent">
-						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
-						<div :class="$style.walletData">
-							<div :class="$style.label">Balance</div>
-							<div :class="$style.value">{{ formatCurrency(wallet.funds) }}</div>
-							<div :class="$style.label">Points</div>
-							<div :class="$style.value">{{ wallet.points }}</div>
-							<div :class="$style.label">Account #</div>
-							<div :class="$style.value">{{ wallet.cardNumber }}</div>
+		<div :class="$style.drawer">
+			<div :class="$style.transparentBlock" @click="isOpen = false"/>
+			<div :class="$style.visibleDrawer">
+				<pressed-points-circle :class="$style.logo"/>
+
+				<div :class="$style.content">
+					<div :class="$style.title">In the Store?</div>
+					<div :class="$style.swipeUpMessage" v-if="!isOpen">Tap here for your QR Code</div>
+					<div :class="$style.showCodeMessage" v-else>Show our associate your code!</div>
+
+					<transition name="slider" v-on:before-enter="beforeEnter" v-on:enter="enter"
+								v-on:before-leave="beforeLeave" v-on:leave="leave">
+						<div v-show="isOpen" :class="$style.slidableContent">
+							<div :class="$style.mainContent">
+								<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
+								<div :class="$style.walletData">
+									<div :class="$style.label">Balance</div>
+									<div :class="$style.value">{{ formatCurrency(wallet.funds) }}</div>
+									<div :class="$style.label">Points</div>
+									<div :class="$style.value">{{ wallet.points }}</div>
+									<div :class="$style.label">Account #</div>
+									<div :class="$style.value">{{ wallet.cardNumber }}</div>
+								</div>
+							</div>
+
+							<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
 						</div>
+					</transition>
+
+					<div :class="$style.toggle" @click="isOpen = !isOpen">
+						<arrow-down :class="{ [$style.rotate]: !isOpen }" color="#262626" />
 					</div>
-
-					<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
 				</div>
-			</transition>
-
-			<div :class="$style.toggle" @click="isOpen = !isOpen">
-				<arrow-down :class="{ [$style.rotate]: !isOpen }" color="#262626" />
 			</div>
 		</div>
-	</persistent-drawer>
+	</div>
 </template>
 
 <script>
 import ArrowDown from './icons/arrow-down-icon';
-import PersistentDrawer from './persistent-drawer';
+import PressedPointsCircle from './icons/pressed-points-circle';
 import QrCode from './qr-code';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { ArrowDown, PersistentDrawer, QrCode },
+	components: { ArrowDown, PressedPointsCircle, QrCode },
 
 	props: {
 		wallet: {
@@ -90,7 +99,64 @@ export default {
 	@import "../styles/mixins.scss";
 	@import "../styles/buttons.scss";
 
-	.root {
+
+	$logoOffset: 22px;
+
+	.root,
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+
+	.overlay {
+		z-index: 1;
+		background-color: $gray-90;
+		opacity: 0;
+		pointer-events: none;
+		transition: .5s ease opacity;
+	}
+
+	.isOpen .overlay {
+		opacity: 0.2;
+		pointer-events: auto;
+	}
+
+	.transparentBlock {
+		height: $logoOffset;
+		opacity: 0;
+	}
+
+	.logo {
+		display: block;
+		height: 66px;
+		width: 66px;
+		margin: 0 auto (-$spacing-04);
+		position: relative;
+		top: (-$logoOffset);
+	}
+
+	.drawer {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: 1;
+		overflow: hidden;
+	}
+
+	.visibleDrawer {
+		max-height: 82%;
+		border-radius: $spacing-05 $spacing-05 0 0;
+		background-color: $beige;
+		box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
+		pointer-events: auto;
+	}
+
+	.content {
 		padding: 0 $spacing-08 $spacing-07;
 	}
 
