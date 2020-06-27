@@ -5,41 +5,39 @@
 		<div :class="$style.drawer" @click="open">
 			<pressed-points-circle :class="$style.logo"/>
 
-			<div :class="$style.content">
-				<div :class="$style.title">In the Store?</div>
-				<div :class="$style.message" v-if="!isOpen">Tap here for your QR Code</div>
-				<div :class="$style.message" v-else>Show our associate your code!</div>
+			<div :class="$style.title">In the Store?</div>
+			<div :class="$style.message" v-if="!isOpen">Tap here for your QR Code</div>
+			<div :class="$style.message" v-else>Show our associate your code!</div>
 
-				<transition name="slider"
-							v-on:before-enter="beforeEnter"
-							v-on:enter="enter"
-							v-on:before-leave="beforeLeave"
-							v-on:leave="leave"
-				>
-					<div v-show="isOpen" :class="$style.slidableContent">
-						<div :class="$style.mainContent">
-							<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
-							<div :class="$style.walletData">
-								<div :class="$style.label">Balance</div>
-								<div :class="$style.value">{{ balance }}</div>
-								<div :class="$style.label">Points</div>
-								<div :class="$style.value">{{ wallet.points }}</div>
-								<div :class="$style.label">Account #</div>
-								<div :class="$style.value">{{ wallet.cardNumber }}</div>
-							</div>
+			<transition name="slider"
+						v-on:before-enter="beforeEnter"
+						v-on:enter="enter"
+						v-on:before-leave="beforeLeave"
+						v-on:leave="leave"
+			>
+				<div v-show="isOpen" :class="$style.slidableContent">
+					<div :class="$style.mainContent">
+						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
+						<div :class="$style.walletData">
+							<div :class="$style.label">Balance</div>
+							<div :class="$style.value">{{ balance }}</div>
+							<div :class="$style.label">Points</div>
+							<div :class="$style.value">{{ wallet.points }}</div>
+							<div :class="$style.label">Account #</div>
+							<div :class="$style.value">{{ wallet.cardNumber }}</div>
 						</div>
-
-						<button :class="[$style.reloadButton, 'button', 'button--secondary', 'button--pill']"
-								@click="$emit('reload')"
-						>
-							Reload Balance
-						</button>
 					</div>
-				</transition>
 
-				<div :class="$style.toggleWrapper" @click.stop="toggle">
-					<arrow-down :class="$style.toggleIcon" color="#262626" />
+					<button :class="[$style.reloadButton, 'button', 'button--secondary', 'button--pill']"
+							@click="$emit('reload')"
+					>
+						Reload Balance
+					</button>
 				</div>
+			</transition>
+
+			<div :class="$style.toggleWrapper" @click.stop="toggle">
+				<arrow-down :class="$style.toggleIcon" color="#262626" />
 			</div>
 		</div>
 	</div>
@@ -149,9 +147,6 @@ export default {
 		background-color: $beige;
 		box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
 		pointer-events: auto;
-	}
-
-	.content {
 		padding: 0 $spacing-08;
 	}
 
