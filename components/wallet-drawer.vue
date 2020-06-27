@@ -21,7 +21,7 @@
 							<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
 							<div :class="$style.walletData">
 								<div :class="$style.label">Balance</div>
-								<div :class="$style.value">{{ formatCurrency(wallet.funds) }}</div>
+								<div :class="$style.value">{{ balance }}</div>
 								<div :class="$style.label">Points</div>
 								<div :class="$style.value">{{ wallet.points }}</div>
 								<div :class="$style.label">Account #</div>
@@ -67,14 +67,16 @@ export default {
 		};
 	},
 
+	computed: {
+		balance() {
+			return formatCurrency(this.wallet.funds || 0);
+		},
+	},
+
 	methods: {
 		open() { this.isOpen = true },
 		close() { this.isOpen = false },
 		toggle() { this.isOpen = !this.isOpen },
-
-		formatCurrency(number) {
-			return formatCurrency(number);
-		},
 
 		beforeEnter: function (target) {
 			const elem = target;
