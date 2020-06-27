@@ -30,7 +30,7 @@
 				</transition>
 
 				<div :class="$style.toggleWrapper" @click.stop="toggle">
-					<arrow-down :class="[$style.toggleIcon, { [$style.rotate]: !isOpen }]" color="#262626" />
+					<arrow-down :class="$style.toggleIcon" color="#262626" />
 				</div>
 			</div>
 		</div>
@@ -230,8 +230,10 @@ export default {
 		width: $spacing-04;
 	}
 
-	.rotate {
-		transform: rotate(180deg);
+	.isOpen {
+		.toggleIcon {
+			transform: rotate(180deg);
+		}
 	}
 
 	@media (max-width: 350px) {
