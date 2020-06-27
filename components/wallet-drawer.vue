@@ -3,7 +3,7 @@
 		<div :class="$style.overlay" @click="close" />
 
 		<div :class="$style.drawer" @click="open">
-			<div :class="$style.transparentBlock" @click="close"/>
+			<div :class="$style.transparentBlock" />
 			<div :class="$style.visibleDrawer">
 				<pressed-points-circle :class="$style.logo"/>
 
