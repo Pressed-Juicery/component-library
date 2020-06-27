@@ -2,7 +2,7 @@
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
 		<div :class="$style.overlay" @click="isOpen = false" />
 
-		<div :class="$style.drawer">
+		<div :class="$style.drawer" @click="isOpen = true">
 			<div :class="$style.transparentBlock" @click="isOpen = false"/>
 			<div :class="$style.visibleDrawer">
 				<pressed-points-circle :class="$style.logo"/>
@@ -31,7 +31,7 @@
 						</div>
 					</transition>
 
-					<div :class="$style.toggle" @click="isOpen = !isOpen">
+					<div :class="$style.toggle" @click.stop="isOpen != isOpen">
 						<arrow-down :class="{ [$style.rotate]: !isOpen }" color="#262626" />
 					</div>
 				</div>
