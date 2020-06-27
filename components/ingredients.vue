@@ -45,8 +45,8 @@ export default {
 
 .icon {
 	height: $spacing-08;
-	margin-bottom: $spacing-03;
 	max-width: $spacing-10;
+	margin-bottom: $spacing-03;
 }
 
 .name {
