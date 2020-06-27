@@ -31,8 +31,8 @@
 						</div>
 					</transition>
 
-					<div :class="$style.toggle" @click.stop="toggle">
-						<arrow-down :class="{ [$style.rotate]: !isOpen }" color="#262626" />
+					<div :class="$style.toggleWrapper" @click.stop="toggle">
+						<arrow-down :class="[$style.toggleIcon, { [$style.rotate]: !isOpen }]" color="#262626" />
 					</div>
 				</div>
 			</div>
@@ -161,7 +161,7 @@ export default {
 	}
 
 	.content {
-		padding: 0 $spacing-08 $spacing-07;
+		padding: 0 $spacing-08;
 	}
 
 	.title {
@@ -172,7 +172,6 @@ export default {
 	}
 
 	.swipeUpMessage {
-		margin-bottom: $spacing-05;
 		text-align: center;
 	}
 
@@ -221,7 +220,7 @@ export default {
 		@extend .button--pill;
 
 		display: block;
-		margin: 0 auto $spacing-08;
+		margin: 0 auto $spacing-06;
 		padding: 0 $spacing-10;
 		font-size: 14px;
 
@@ -230,13 +229,17 @@ export default {
 		}
 	}
 
-	.toggle {
+	.toggleWrapper {
 		display: block;
-		margin: 0 auto;
-		width: $spacing-04;
+		text-align: center;
 		line-height: 1px;
 		cursor: pointer;
 		pointer-events: auto;
+		padding: $spacing-05 0 $spacing-07;
+	}
+
+	.toggleIcon {
+		width: $spacing-04;
 	}
 
 	.rotate {
@@ -245,7 +248,7 @@ export default {
 
 	@media (max-width: 350px) {
 		.reloadButton {
-			padding: 0 $spacing-08;
+			padding: 0 $spacing-06;
 		}
 	}
 </style>
