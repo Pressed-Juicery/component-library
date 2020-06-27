@@ -9,12 +9,7 @@
 			<div :class="$style.message" v-if="!isOpen">Tap here for your QR Code</div>
 			<div :class="$style.message" v-else>Show our associate your code!</div>
 
-			<transition name="slider"
-						v-on:before-enter="beforeEnter"
-						v-on:enter="enter"
-						v-on:before-leave="beforeLeave"
-						v-on:leave="leave"
-			>
+			<transition name="slider" v-on:enter="enter" v-on:leave="leave">
 				<div v-show="isOpen" :class="$style.slidableContent">
 					<div :class="$style.mainContent">
 						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
@@ -76,15 +71,7 @@ export default {
 		close() { this.isOpen = false },
 		toggle() { this.isOpen = !this.isOpen },
 
-		beforeEnter: function (target) {
-			target.style.height = '0';
-		},
-
 		enter: function (target) {
-			target.style.height = `${target.scrollHeight}px`;
-		},
-
-		beforeLeave: function (target) {
 			target.style.height = `${target.scrollHeight}px`;
 		},
 
@@ -157,6 +144,7 @@ export default {
 		overflow: hidden;
 		transition: 0.5s ease-out;
 		margin-top: $spacing-07;
+		height: 0;
 	}
 
 	.mainContent {
