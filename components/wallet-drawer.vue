@@ -3,36 +3,34 @@
 		<div :class="$style.overlay" @click="close" />
 
 		<div :class="$style.drawer" @click="open">
-			<div :class="$style.visibleDrawer">
-				<pressed-points-circle :class="$style.logo"/>
+			<pressed-points-circle :class="$style.logo"/>
 
-				<div :class="$style.content">
-					<div :class="$style.title">In the Store?</div>
-					<div :class="$style.swipeUpMessage" v-if="!isOpen">Tap here for your QR Code</div>
-					<div :class="$style.showCodeMessage" v-else>Show our associate your code!</div>
+			<div :class="$style.content">
+				<div :class="$style.title">In the Store?</div>
+				<div :class="$style.swipeUpMessage" v-if="!isOpen">Tap here for your QR Code</div>
+				<div :class="$style.showCodeMessage" v-else>Show our associate your code!</div>
 
-					<transition name="slider" v-on:before-enter="beforeEnter" v-on:enter="enter"
-								v-on:before-leave="beforeLeave" v-on:leave="leave">
-						<div v-show="isOpen" :class="$style.slidableContent">
-							<div :class="$style.mainContent">
-								<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
-								<div :class="$style.walletData">
-									<div :class="$style.label">Balance</div>
-									<div :class="$style.value">{{ formatCurrency(wallet.funds) }}</div>
-									<div :class="$style.label">Points</div>
-									<div :class="$style.value">{{ wallet.points }}</div>
-									<div :class="$style.label">Account #</div>
-									<div :class="$style.value">{{ wallet.cardNumber }}</div>
-								</div>
+				<transition name="slider" v-on:before-enter="beforeEnter" v-on:enter="enter"
+							v-on:before-leave="beforeLeave" v-on:leave="leave">
+					<div v-show="isOpen" :class="$style.slidableContent">
+						<div :class="$style.mainContent">
+							<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
+							<div :class="$style.walletData">
+								<div :class="$style.label">Balance</div>
+								<div :class="$style.value">{{ formatCurrency(wallet.funds) }}</div>
+								<div :class="$style.label">Points</div>
+								<div :class="$style.value">{{ wallet.points }}</div>
+								<div :class="$style.label">Account #</div>
+								<div :class="$style.value">{{ wallet.cardNumber }}</div>
 							</div>
-
-							<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
 						</div>
-					</transition>
 
-					<div :class="$style.toggleWrapper" @click.stop="toggle">
-						<arrow-down :class="[$style.toggleIcon, { [$style.rotate]: !isOpen }]" color="#262626" />
+						<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
 					</div>
+				</transition>
+
+				<div :class="$style.toggleWrapper" @click.stop="toggle">
+					<arrow-down :class="[$style.toggleIcon, { [$style.rotate]: !isOpen }]" color="#262626" />
 				</div>
 			</div>
 		</div>
@@ -143,9 +141,6 @@ export default {
 		bottom: 0;
 		width: 100%;
 		z-index: 1;
-	}
-
-	.visibleDrawer {
 		max-height: 82%;
 		border-radius: $spacing-05 $spacing-05 0 0;
 		background-color: $beige;
