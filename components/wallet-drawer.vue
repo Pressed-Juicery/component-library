@@ -24,7 +24,7 @@
 				</div>
 			</transition>
 
-			<div :class="$style.toggle" @click="$emit('toggle')">
+			<div :class="$style.toggle" @click="isOpen = !isOpen">
 				<arrow-down :class="{ [$style.rotate]: !isOpen }" color="#262626" />
 			</div>
 		</div>
@@ -45,10 +45,12 @@ export default {
 			type: Object,
 			required: true,
 		},
-		isOpen: {
-			type: Boolean,
-			required: true,
-		},
+	},
+
+	data() {
+		return {
+			isOpen: false,
+		};
 	},
 
 	methods: {
