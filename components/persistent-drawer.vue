@@ -3,7 +3,7 @@
 		<div :class="$style.overlay" @click="$emit('close')" />
 
 		<div :class="$style.drawer">
-			<div :class="[{ [$style.noPointerEvents]: !isOpen }, $style.transparentBlock]" @click="close"/>
+			<div :class="$style.transparentBlock" @click="close"/>
 			<div :class="$style.visibleDrawer">
 				<pressed-points-circle v-if="hasLogo" :class="$style.logo"/>
 				<slot />
@@ -98,9 +98,5 @@ export default {
 		background-color: $beige;
 		box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
 		pointer-events: auto;
-	}
-
-	.noPointerEvents {
-		pointer-events: none;
 	}
 </style>
