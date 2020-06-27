@@ -1,5 +1,5 @@
 <template>
-	<div :class="[{ [$style.isOpen]: isOpen }, $style.root]">
+	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
 		<div v-if="isOpen" :class="$style.overlay" @click="$emit('close')" />
 
 		<div :class="$style.drawer">
