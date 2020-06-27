@@ -104,7 +104,6 @@ export default {
 	@import "../styles/mixins.scss";
 	@import "../styles/buttons.scss";
 
-
 	$logoOffset: 22px;
 
 	.root,
