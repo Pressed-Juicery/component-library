@@ -4,7 +4,7 @@
 
 		<div :class="$style.ingredients">
 			<div :class="$style.ingredient" v-for="(ingredient, index) in ingredients" :key="index">
-				<img :class="$style.icon" :src="ingredient.iconUrl" :alt="ingredient.title">
+				<img :class="$style.icon" :src="ingredient.iconUrl" alt="" />
 				<div :class="$style.ingredientTitle">{{ ingredient.title }}</div>
 			</div>
 		</div>
