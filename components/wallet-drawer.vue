@@ -1,9 +1,9 @@
 <template>
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
-		<div :class="$style.overlay" @click="isOpen = false" />
+		<div :class="$style.overlay" @click="close" />
 
-		<div :class="$style.drawer" @click="isOpen = true">
-			<div :class="$style.transparentBlock" @click="isOpen = false"/>
+		<div :class="$style.drawer" @click="open">
+			<div :class="$style.transparentBlock" @click="close"/>
 			<div :class="$style.visibleDrawer">
 				<pressed-points-circle :class="$style.logo"/>
 
@@ -31,7 +31,7 @@
 						</div>
 					</transition>
 
-					<div :class="$style.toggle" @click.stop="isOpen != isOpen">
+					<div :class="$style.toggle" @click.stop="toggle">
 						<arrow-down :class="{ [$style.rotate]: !isOpen }" color="#262626" />
 					</div>
 				</div>
@@ -63,6 +63,10 @@ export default {
 	},
 
 	methods: {
+		open() { this.isOpen = true; },
+		close() { this.isOpen = false; },
+		toggle() { this.isOpen = !this.isOpen },
+
 		formatCurrency(number) {
 			return formatCurrency(number);
 		},
