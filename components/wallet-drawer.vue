@@ -64,8 +64,8 @@ export default {
 	},
 
 	methods: {
-		open() { this.isOpen = true; },
-		close() { this.isOpen = false; },
+		open() { this.isOpen = true },
+		close() { this.isOpen = false },
 		toggle() { this.isOpen = !this.isOpen },
 
 		formatCurrency(number) {
