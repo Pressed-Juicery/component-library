@@ -1,41 +1,44 @@
 <template>
-	<div :class="$style.root">
-		<div :class="$style.title">In the Store?</div>
-		<div :class="$style.swipeUpMessage" v-if="!isOpen">Swipe up for your QR Code</div>
-		<div :class="$style.showCodeMessage" v-else>Show our associate your code!</div>
+	<persistent-drawer :isOpen="isOpen" :has-logo="true" @close="isOpen = false">
+		<div :class="$style.root">
+			<div :class="$style.title">In the Store?</div>
+			<div :class="$style.swipeUpMessage" v-if="!isOpen">Swipe up for your QR Code</div>
+			<div :class="$style.showCodeMessage" v-else>Show our associate your code!</div>
 
-		<transition name="slider" v-on:before-enter="beforeEnter" v-on:enter="enter"
-		            v-on:before-leave="beforeLeave" v-on:leave="leave">
-			<div v-show="isOpen" :class="$style.slidableContent">
-				<div :class="$style.mainContent">
-					<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
-					<div :class="$style.walletData">
-						<div :class="$style.label">Balance</div>
-						<div :class="$style.value">{{ formatCurrency(wallet.funds) }}</div>
-						<div :class="$style.label">Points</div>
-						<div :class="$style.value">{{ wallet.points }}</div>
-						<div :class="$style.label">Account #</div>
-						<div :class="$style.value">{{ wallet.cardNumber }}</div>
+			<transition name="slider" v-on:before-enter="beforeEnter" v-on:enter="enter"
+						v-on:before-leave="beforeLeave" v-on:leave="leave">
+				<div v-show="isOpen" :class="$style.slidableContent">
+					<div :class="$style.mainContent">
+						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
+						<div :class="$style.walletData">
+							<div :class="$style.label">Balance</div>
+							<div :class="$style.value">{{ formatCurrency(wallet.funds) }}</div>
+							<div :class="$style.label">Points</div>
+							<div :class="$style.value">{{ wallet.points }}</div>
+							<div :class="$style.label">Account #</div>
+							<div :class="$style.value">{{ wallet.cardNumber }}</div>
+						</div>
 					</div>
+
+					<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
 				</div>
+			</transition>
 
-				<button :class="$style.reloadButton" @click="$emit('reload-balance')">Reload Balance</button>
+			<div :class="$style.toggle" @click="$emit('toggle')">
+				<arrow-down :class="{ [$style.rotate]: !isOpen }" color="#262626" />
 			</div>
-		</transition>
-
-		<div :class="$style.toggle" @click="$emit('toggle')">
-			<arrow-down :class="{ [$style.rotate]: !isOpen }" color="#262626" />
 		</div>
-	</div>
+	</persistent-drawer>
 </template>
 
 <script>
 import ArrowDown from './icons/arrow-down-icon';
+import PersistentDrawer from './persistent-drawer';
 import QrCode from './qr-code';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { ArrowDown, QrCode },
+	components: { ArrowDown, PersistentDrawer, QrCode },
 
 	props: {
 		wallet: {
