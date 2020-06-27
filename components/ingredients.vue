@@ -5,7 +5,7 @@
 		<div :class="$style.ingredients">
 			<div :class="$style.ingredient" v-for="(ingredient, index) in ingredients" :key="index">
 				<img :class="$style.icon" :src="ingredient.iconUrl" />
-				<div :class="$style.ingredientTitle">{{ ingredient.title }}</div>
+				<div :class="$style.name">{{ ingredient.name }}</div>
 			</div>
 		</div>
 	</div>
@@ -50,7 +50,7 @@ export default {
 	max-width: $spacing-10;
 }
 
-.ingredientTitle {
+.name {
 	@include text-body-small();
 	text-align: center;
 }

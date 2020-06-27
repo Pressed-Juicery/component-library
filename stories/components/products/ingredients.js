@@ -12,19 +12,19 @@ export function Overview() {
 		data() {
 			return {
 				ingredients: [{
-					title: 'Water',
+					name: 'Water',
 					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/ingredients/filtered-water.svg',
 				}, {
-					title: 'Dates',
+					name: 'Dates',
 					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/ingredients/dates.svg',
 				}, {
-					title: 'Vanilla Extract',
+					name: 'Vanilla Extract',
 					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/ingredients/vanilla-extract.svg',
 				}, {
-					title: 'Almonds (Pressed Nuts)',
+					name: 'Almonds (Pressed Nuts)',
 					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/ingredients/almonds-(pressed-nuts).svg',
 				}, {
-					title: 'Sea Salt',
+					name: 'Sea Salt',
 					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/ingredients/sea-salt.svg',
 				}],
 			};
