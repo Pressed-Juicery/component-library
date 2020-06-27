@@ -2,7 +2,7 @@
 	<persistent-drawer :isOpen="isOpen" :has-logo="true" @close="isOpen = false">
 		<div :class="$style.root">
 			<div :class="$style.title">In the Store?</div>
-			<div :class="$style.swipeUpMessage" v-if="!isOpen">Swipe up for your QR Code</div>
+			<div :class="$style.swipeUpMessage" v-if="!isOpen">Tap here for your QR Code</div>
 			<div :class="$style.showCodeMessage" v-else>Show our associate your code!</div>
 
 			<transition name="slider" v-on:before-enter="beforeEnter" v-on:enter="enter"
