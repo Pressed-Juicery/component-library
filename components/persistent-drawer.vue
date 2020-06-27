@@ -1,6 +1,6 @@
 <template>
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
-		<div v-if="isOpen" :class="$style.overlay" @click="$emit('close')" />
+		<div :class="$style.overlay" @click="$emit('close')" />
 
 		<div :class="$style.drawer">
 			<div :class="[{ [$style.noPointerEvents]: !isOpen }, $style.transparentBlock]" @click="close"/>
