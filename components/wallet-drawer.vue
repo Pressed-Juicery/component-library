@@ -100,9 +100,9 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import "../styles/variables.scss";
-	@import "../styles/mixins.scss";
-	@import "../styles/buttons.scss";
+	@import "../styles/variables";
+	@import "../styles/mixins";
+	@import "../styles/buttons";
 
 	$logoOffset: 22px;
 
