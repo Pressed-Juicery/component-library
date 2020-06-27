@@ -31,12 +31,15 @@ export default {
 
 	methods: {
 		async generateQR(text) {
-			const color = {
-				dark: '#000',
-				light: this.background,
-			};
-
-			this.src = await QRCode.toDataURL(text, { color, margin: 0, scale: 32, type: 'image/png' });
+			this.src = await QRCode.toDataURL(text, {
+				type: 'image/png',
+				scale: 32,
+				margin: 0,
+				color: {
+					dark: '#000',
+					light: this.background,
+				},
+			});
 		},
 	},
 };
