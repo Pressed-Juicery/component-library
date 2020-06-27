@@ -35,7 +35,6 @@ export default {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax($spacing-11, 1fr));
 	grid-gap: $spacing-06 $spacing-04;
-	align-content: center;
 }
 
 .ingredient {
