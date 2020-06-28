@@ -11,7 +11,7 @@
 			<star-filled />
 		</div>
 		<div
-			v-if="!hoverValue"
+			v-if="!hoverValue && fractionalStar"
 			:class="$style.star"
 			@mouseover="setFractionalStars"
 		>
