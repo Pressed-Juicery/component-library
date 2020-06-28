@@ -4,6 +4,7 @@
 			:class="$style.star"
 			v-for="index in wholeStars"
 			@mouseover="setSolidStars(index)"
+			@mouseleave="setSolidStars(0)"
 			@click="handleSelection"
 			:key="`${index}-wholeStar`"
 		>
