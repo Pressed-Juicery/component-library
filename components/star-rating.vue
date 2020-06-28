@@ -81,13 +81,13 @@ export default {
 </script>
 
 <style module lang="scss">
-@import "../styles/variables";
+	@import "../styles/variables";
 
-.root {
-	display: flex;
-}
+	.root {
+		display: flex;
+	}
 
-.star {
-	margin: 0 $spacing-01;
-}
+	.star {
+		margin: 0 $spacing-01;
+	}
 </style>
