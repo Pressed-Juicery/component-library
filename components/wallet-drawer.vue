@@ -35,20 +35,20 @@
 			</transition>
 
 			<div :class="$style.toggleWrapper" @click.stop="toggle">
-				<arrow-down :class="$style.toggleIcon" color="#262626" />
+				<arrow-down-icon :class="$style.toggleIcon" color="#262626" />
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import ArrowDown from './icons/arrow-down-icon';
+import ArrowDownIcon from './icons/arrow-down-icon';
 import PressedPointsCircle from './icons/pressed-points-circle';
 import QrCode from './qr-code';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { ArrowDown, PressedPointsCircle, QrCode },
+	components: { ArrowDownIcon, PressedPointsCircle, QrCode },
 
 	props: {
 		wallet: {
