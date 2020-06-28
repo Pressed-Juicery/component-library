@@ -42,7 +42,7 @@ export default {
 	$accordion-padding: $spacing-06;
 
 	.root {
-		border-bottom: $border;
+		border-bottom: $border-light;
 	}
 
 	.titleWrapper {
