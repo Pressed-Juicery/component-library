@@ -37,7 +37,10 @@ export default {
 			type: Number,
 			default: 0,
 		},
-		isDisabled: { type: Boolean },
+		isDisabled: {
+			type: Boolean,
+			default: true,
+		},
 	},
 	data() {
 		return {
