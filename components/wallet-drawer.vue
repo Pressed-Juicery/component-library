@@ -146,7 +146,6 @@ export default {
 	.slidableContent {
 		overflow: hidden;
 		transition: 0.5s ease-out;
-		margin-top: $spacing-07;
 		height: 0;
 	}
 
@@ -154,7 +153,7 @@ export default {
 		display: flex;
 		justify-content: center;
 		max-width: 340px;
-		margin: 0 auto $spacing-08;
+		margin: $spacing-07 auto $spacing-08;
 	}
 
 	.qrCode {
