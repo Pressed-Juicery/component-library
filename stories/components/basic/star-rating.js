@@ -11,7 +11,7 @@ export function Overview() {
 		template: '<star-rating :rating="rating" :isDisabled="isDisabled" @change="value => rating = value"/>',
 		data() {
 			return {
-				rating: 3.75,
+				rating: 3,
 				isDisabled: false,
 			};
 		},
