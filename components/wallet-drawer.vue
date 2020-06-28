@@ -1,3 +1,4 @@
+<!-- eslint-disable max-lines -->
 <template>
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
 		<div :class="$style.overlay" @click="close" />
@@ -75,11 +76,11 @@ export default {
 		toggle() { this.isOpen = !this.isOpen },
 
 		enter: function (target) {
-			target.style.height = `${target.scrollHeight}px`;
+			target.style.height = `${target.scrollHeight}px`; // eslint-disable-line no-param-reassign
 		},
 
 		leave: function (target) {
-			target.style.height = '0';
+			target.style.height = '0'; // eslint-disable-line no-param-reassign
 		},
 	},
 };
