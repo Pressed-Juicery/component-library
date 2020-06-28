@@ -132,7 +132,6 @@ export default {
 
 	.title {
 		@include text-heading-5();
-
 		margin-bottom: $spacing-02;
 		text-align: center;
 	}
@@ -165,13 +164,11 @@ export default {
 
 	.label {
 		@include text-cta-small();
-
 		margin-bottom: $spacing-02;
 	}
 
 	.value {
 		@include text-heading-5();
-
 		&:not(:last-child) {
 			margin-bottom: $spacing-05;
 		}
