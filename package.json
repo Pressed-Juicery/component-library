@@ -9,7 +9,7 @@
 		"lint": "eslint . --ext .js,.vue",
 		"build": "vue-cli-service build --target lib --name component-library ./components/index.js",
 		"build-storybook": "build-storybook",
-		"postinstall": "npm run build",
+		"preversion": "npm run build && git add .",
 		"snapshots": "npx percy exec -- node snapshots.js"
 	},
 	"files": [
