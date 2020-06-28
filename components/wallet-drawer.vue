@@ -13,11 +13,14 @@
 				<div v-show="isOpen" :class="$style.slidableContent">
 					<div :class="$style.mainContent">
 						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
+
 						<div :class="$style.walletData">
 							<div :class="$style.label">Balance</div>
 							<div :class="$style.value">{{ balance }}</div>
+
 							<div :class="$style.label">Points</div>
 							<div :class="$style.value">{{ wallet.points }}</div>
+
 							<div :class="$style.label">Account #</div>
 							<div :class="$style.value">{{ wallet.cardNumber }}</div>
 						</div>
