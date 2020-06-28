@@ -2,30 +2,17 @@
 	<div :class="$style.root">
 		<div
 			:class="$style.star"
-			v-for="index in wholeStars"
+			v-for="index in maxStars"
 			@mouseover="setSolidStars(index)"
 			@mouseleave="setSolidStars(0)"
 			@click="handleSelection"
-			:key="`${index}-wholeStar`"
+			:key="index"
 		>
-			<star-filled />
-		</div>
-		<div
-			v-if="!hoverValue && fractionalStar"
-			:class="$style.star"
-			@mouseover="setFractionalStars"
-		>
-			<star-25 v-if="fractionalStar === 0.25"/>
-			<star-50 v-else-if="fractionalStar === 0.50"/>
-			<star-75 v-else-if="fractionalStar === 0.75"/>
-		</div>
-		<div
-			:class="$style.star"
-			v-for="index in emptyStars"
-			@mouseover="setEmptyStars(index)"
-			:key="`${index}-emptyStar`"
-		>
-			<star-empty/>
+			<star-filled v-if="getStarValue(index) === 1" />
+			<star-25 v-else-if="getStarValue(index) === 0.25" />
+			<star-50 v-else-if="getStarValue(index) === 0.50" />
+			<star-75 v-else-if="getStarValue(index) === 0.75" />
+			<star-empty v-else/>
 		</div>
 	</div>
 </template>
@@ -67,36 +54,25 @@ export default {
 			if (this.isDisabled) return;
 			this.hoverValue = index;
 		},
-		setEmptyStars(index) {
-			if (this.isDisabled) return;
-			this.hoverValue = this.wholeStars + Math.ceil(this.fractionalStar) + index;
-		},
-		setFractionalStars() {
-			if (this.isDisabled) return;
-			this.hoverValue = this.wholeStars + 1;
-		},
 		handleSelection() {
 			if (this.isDisabled) return;
 			this.$emit('change', this.hoverValue);
 		},
+		getStarValue(index) {
+			// `v-for` over a range has a starting index of 1
+			const difference = (this.hoverValue || this.rating) - index + 1;
+
+			if (difference >= 1) return 1;
+			if (difference > 0) return this.fractionalStar;
+
+			return 0;
+		},
 	},
 	computed: {
-		wholeStars() {
-			if (this.isDisabled) return Math.floor(this.rating);
-
-			return Math.floor(this.hoverValue || this.rating);
-		},
 		fractionalStar() {
-			if (this.hoverValue) return 0;
-
 			return (
 				Math.floor((this.rating % 1) / this.fractionalStarPrecision)
 				* this.fractionalStarPrecision
-			);
-		},
-		emptyStars() {
-			return (
-				this.maxStars - this.wholeStars - Math.ceil(this.fractionalStar)
 			);
 		},
 	},
