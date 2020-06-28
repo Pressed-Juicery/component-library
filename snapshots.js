@@ -15,9 +15,11 @@ const groups = [{
 		'ButtonBar',
 		'Buttons',
 		'Card',
+		'QrCode',
 		'StoreAddress',
 		'StepProgressBar',
 		'SidebarOverlay',
+		'WalletDrawer',
 	],
 }, {
 	groupName: 'Components / Cart',

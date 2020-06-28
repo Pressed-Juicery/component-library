@@ -27,6 +27,7 @@ export { default as PaymentMethodRadioButtonCard } from './payment-method-radio-
 export { default as PointsRedemption } from './points-redemption';
 export { default as ProductDetails } from './product-details.vue';
 export { default as QuantitySelector } from './quantity-selector';
+export { default as QrCode } from './qr-code';
 export { default as RadioButton } from './radio-button';
 export { default as RadioButtonCard } from './radio-button-card';
 export { default as StepProgressBar } from './step-progress-bar';
@@ -37,3 +38,4 @@ export { default as ValidatedForm } from './validated-form';
 export { default as ValidatedInput } from './validated-input';
 export { default as ValidatedPaymentMethod } from './validated-payment-method';
 export { default as ValidatedSelect } from './validated-select';
+export { default as WalletDrawer } from './wallet-drawer';
