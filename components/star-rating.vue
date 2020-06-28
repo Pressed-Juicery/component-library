@@ -3,8 +3,8 @@
 		<div
 			:class="$style.star"
 			v-for="index in maxStars"
-			@mouseover="setSolidStars(index)"
-			@mouseleave="setSolidStars(0)"
+			@mouseover="setHoverValue(index)"
+			@mouseleave="setHoverValue(0)"
 			@click="handleSelection"
 			:key="index"
 		>
@@ -50,7 +50,7 @@ export default {
 		if (this.rating > this.maxStars) throw new Error(`Rating must be less than ${this.maxStars}`);
 	},
 	methods: {
-		setSolidStars(index) {
+		setHoverValue(index) {
 			if (this.isDisabled) return;
 			this.hoverValue = index;
 		},
