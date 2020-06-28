@@ -14,10 +14,8 @@
 	},
 	"files": [
 		"assets/**/*",
-		"components/**/*",
-		"constants/**/*",
-		"services/**/*",
-		"styles/**/*",
+		"styles/mixins.scss",
+		"styles/variables.scss",
 		"utilities/**/*"
 	],
 	"repository": {
