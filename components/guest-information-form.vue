@@ -39,14 +39,14 @@ export default {
 			}],
 			emailRules: [{
 				validator: isNotEmpty,
-				message: 'Please enter your email.',
+				message: 'Please enter a valid email address.',
 			}, {
 				validator: isEmail,
 				message: 'Please enter a valid email address.',
 			}],
 			phoneRules: [{
 				validator: isNotEmpty,
-				message: 'Please enter a phone number.',
+				message: 'Please enter a valid ten-digit phone number.',
 			}, {
 				validator: isValidPhoneNumber,
 				message: 'Please enter a valid ten-digit phone number.',
