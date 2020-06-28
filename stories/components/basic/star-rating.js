@@ -18,6 +18,6 @@ export function Overview() {
 export function Readonly() {
 	return {
 		components: { StarRating },
-		template: '<star-rating :rating="4.25" :is-readonly="true"/>',
+		template: '<star-rating :rating="3.68" :is-readonly="true"/>',
 	};
 }
