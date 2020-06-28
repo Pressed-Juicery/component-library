@@ -113,9 +113,9 @@ export default {
 		display: block;
 		height: 66px;
 		width: 66px;
-		margin: 0 auto (-$spacing-04);
 		position: relative;
 		top: (-$logoOffset);
+		margin: 0 auto (-$logoOffset + $spacing-05);
 	}
 
 	.drawer {
