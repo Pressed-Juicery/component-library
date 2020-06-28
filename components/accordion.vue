@@ -1,6 +1,6 @@
 <template>
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
-		<div :class="$style.title" @click="toggle">
+		<div :class="$style.titleWrapper" @click="toggle">
 			<div>{{ title }}</div>
 			<div :class="$style.accordionIcon">
 				{{ isOpen ? '-' : '+' }}
@@ -45,7 +45,7 @@ export default {
 		border-bottom: $border;
 	}
 
-	.title {
+	.titleWrapper {
 		padding: $accordion-padding 0;
 		display: flex;
 		align-items: center;
