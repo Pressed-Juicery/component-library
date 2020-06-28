@@ -86,6 +86,7 @@ export default {
 .root {
 	display: flex;
 }
+
 .star {
 	margin: 0 $spacing-01;
 }
