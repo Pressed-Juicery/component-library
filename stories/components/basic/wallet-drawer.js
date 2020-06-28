@@ -21,27 +21,3 @@ export function Overview() {
 		},
 	};
 }
-
-export function InDrawer() {
-	return {
-		components: { WalletDrawer },
-		template: `
-			<wallet-drawer :wallet="wallet"
-			               :isOpen="isOpen"
-			               @toggle="isOpen = !isOpen"
-			               @reload-balance="isOpen = false" />
-		`,
-
-		data() {
-			return {
-				isOpen: false,
-
-				wallet: {
-					cardNumber: '411111111111',
-					points: 250,
-					funds: 50.25,
-				},
-			};
-		},
-	};
-}
