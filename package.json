@@ -4,6 +4,14 @@
 	"description": "Pressed Juicery Component Library",
 	"private": true,
 	"main": "dist/component-library.common.js",
+	"style": "dist/component-library.css",
+	"files": [
+		"dist/component-library.css",
+		"styles/mixins.scss",
+		"styles/variables.scss",
+		"assets/**/*",
+		"utilities/**/*"
+	],
 	"scripts": {
 		"start": "start-storybook -s ./assets -p 6006",
 		"lint": "eslint . --ext .js,.vue",
@@ -12,12 +20,6 @@
 		"preversion": "npm run build && git add .",
 		"snapshots": "npx percy exec -- node snapshots.js"
 	},
-	"files": [
-		"assets/**/*",
-		"styles/mixins.scss",
-		"styles/variables.scss",
-		"utilities/**/*"
-	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Pressed-Juicery/component-library.git"
