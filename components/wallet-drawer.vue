@@ -124,7 +124,6 @@ export default {
 		bottom: 0;
 		width: 100%;
 		z-index: 1;
-		max-height: 82%;
 		border-radius: $spacing-05 $spacing-05 0 0;
 		background-color: $beige;
 		box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
