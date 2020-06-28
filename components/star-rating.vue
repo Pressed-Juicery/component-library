@@ -27,10 +27,10 @@ import StarFilled from './icons/star-filled';
 export default {
 	components: {
 		StarEmpty,
-		StarFilled,
-		Star75,
-		Star50,
 		Star25,
+		Star50,
+		Star75,
+		StarFilled,
 	},
 	props: {
 		rating: {
