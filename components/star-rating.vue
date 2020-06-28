@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import Star25 from './icons/star-25.vue';
-import Star50 from './icons/star-50.vue';
-import Star75 from './icons/star-75.vue';
-import StarEmpty from './icons/star-empty.vue';
-import StarFilled from './icons/star-filled.vue';
+import Star25 from './icons/star-25';
+import Star50 from './icons/star-50';
+import Star75 from './icons/star-75';
+import StarEmpty from './icons/star-empty';
+import StarFilled from './icons/star-filled';
 
 export default {
 	components: {
