@@ -105,7 +105,6 @@ export default {
 		z-index: 1;
 		background-color: $gray-90;
 		opacity: 0;
-		pointer-events: none;
 		transition: .5s ease opacity;
 	}
 
