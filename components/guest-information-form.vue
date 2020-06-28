@@ -6,7 +6,7 @@
 		<validated-input :class="$style.row" label="Phone Number" v-model="guest.phone" :rules="phoneRules" />
 		<validated-input :class="$style.lastRow" label="Email" v-model="guest.email" :rules="emailRules" />
 
-		<button :class="$style.submitButton" type="submit">{{ buttonText }}</button>
+		<button :class="[$style.submitButton, 'button--pill']" type="submit">{{ buttonText }}</button>
 	</validated-form>
 </template>
 
@@ -57,7 +57,6 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import '../styles/buttons';
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
@@ -76,8 +75,6 @@ export default {
 	}
 
 	.submitButton {
-		@extend .button--pill;
-
 		display: block;
 		width: 100%;
 		max-width: $spacing-09 * $spacing-03 / 1px;
