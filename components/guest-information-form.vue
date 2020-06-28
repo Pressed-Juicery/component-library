@@ -76,7 +76,7 @@ export default {
 	.submitButton {
 		display: block;
 		width: 100%;
-		max-width: $spacing-09 * $spacing-03 / 1px;
+		max-width: 384px;
 		margin: 0 auto;
 
 		&:focus {
