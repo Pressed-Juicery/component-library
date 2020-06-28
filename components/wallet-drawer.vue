@@ -191,7 +191,7 @@ export default {
 	.toggleWrapper {
 		display: block;
 		text-align: center;
-		line-height: 1px;
+		line-height: 0;
 		cursor: pointer;
 		pointer-events: auto;
 		padding: $spacing-05 0 $spacing-07;
