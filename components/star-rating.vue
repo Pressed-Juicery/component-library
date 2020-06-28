@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style module lang="scss">
-@import "../styles/variables.scss";
+@import "../styles/variables";
 
 .root {
 	display: flex;
