@@ -10,7 +10,7 @@
 			<div :class="$style.message" v-else>Show our associate your code!</div>
 
 			<transition name="slider" @enter="enter" @leave="leave">
-				<div v-show="isOpen" :class="$style.slidableContent">
+				<div v-show="isOpen" :class="$style.contentWrapper">
 					<div :class="$style.mainContent">
 						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" />
 
@@ -143,7 +143,7 @@ export default {
 		text-align: center;
 	}
 
-	.slidableContent {
+	.contentWrapper {
 		overflow: hidden;
 		transition: 0.5s ease-out;
 		height: 0;
