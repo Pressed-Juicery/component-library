@@ -12,7 +12,7 @@
 			<transition name="slider" @enter="enter" @leave="leave">
 				<div v-show="isOpen" :class="$style.slidableContent">
 					<div :class="$style.mainContent">
-						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" background="#f6f4ec" />
+						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" />
 
 						<div :class="$style.walletData">
 							<div :class="$style.label">Balance</div>
