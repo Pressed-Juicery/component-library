@@ -45,7 +45,6 @@ export default {
 	data() {
 		return {
 			maxStars: 5,
-			fractionalStarPrecision: 0.25,
 			hoverValue: 0,
 		};
 	},
@@ -73,10 +72,9 @@ export default {
 	},
 	computed: {
 		fractionalStar() {
-			return (
-				Math.floor((this.rating % 1) / this.fractionalStarPrecision)
-				* this.fractionalStarPrecision
-			);
+			const fractionalStarPrecision = 0.25;
+
+			return Math.floor((this.rating % 1) / fractionalStarPrecision) * fractionalStarPrecision;
 		},
 	},
 };
