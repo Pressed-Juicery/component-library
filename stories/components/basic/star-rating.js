@@ -17,3 +17,10 @@ export function Overview() {
 		},
 	};
 }
+
+export function Readonly() {
+	return {
+		components: { StarRating },
+		template: '<star-rating :rating="4.25" :isDisabled="true"/>',
+	};
+}
