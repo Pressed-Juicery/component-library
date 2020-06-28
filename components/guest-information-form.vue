@@ -1,5 +1,5 @@
 <template>
-	<validated-form @submit="$emit('add-guest', guest)">
+	<validated-form @submit="$emit('submit', guest)">
 		<div :class="$style.title">Your Info</div>
 
 		<validated-input :class="$style.row" label="Name" v-model="guest.name" :rules="nameRules" />

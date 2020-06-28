@@ -10,7 +10,7 @@ export function Overview() {
 		components: { GuestInformationForm },
 		template: `
 			<div>
-				<guest-information-form buttonText="Submit" @add-guest="data => guest = data" />
+				<guest-information-form buttonText="Submit" @submit="data => guest = data" />
 				<div v-if="guest">Guest: {{ guest }}</div>
 			</div>
 		`,
@@ -24,7 +24,7 @@ export function PrePopulated() {
 		components: { GuestInformationForm },
 		template: `
 			<div>
-				<guest-information-form buttonText="Submit" :guest="guest" @add-guest="data => guest = data" />
+				<guest-information-form buttonText="Submit" :guest="guest" @submit="data => guest = data" />
 				<div v-if="guest">Guest: {{ guest }}</div>
 			</div>
 		`,
