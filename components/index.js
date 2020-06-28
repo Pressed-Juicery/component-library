@@ -1,3 +1,5 @@
+import '../styles/index.scss';
+
 export { default as Accordion } from './accordion';
 export { default as AddressForm } from './address-form';
 export { default as AddressFormatter } from './address-formatter';
@@ -13,12 +15,14 @@ export { default as CartItemCard } from './cart-item-card';
 export { default as CartSidebar } from './cart-sidebar';
 export { default as CartSummary } from './cart-summary';
 export { default as CartTotals } from './cart-totals';
-export { default as Drawer } from './drawer';
+export { default as CheckoutItemCard } from './checkout-item-card';
 export { default as ContentWrapper } from './content-wrapper';
+export { default as Drawer } from './drawer';
 export { default as FeatureHighlight } from './feature-highlight';
 export { default as FeatureHighlightRow } from './feature-highlight-row';
 export { default as HighlightSection } from './highlight-section';
 export { default as ImageBanner } from './image-banner';
+export { default as Ingredients } from './ingredients.vue';
 export { default as LandingPageTemplate } from './landing-page-template';
 export { default as MediaRow } from './media-row';
 export { default as NutritionFacts } from './nutrition-facts.vue';
@@ -27,8 +31,10 @@ export { default as PaymentMethodRadioButtonCard } from './payment-method-radio-
 export { default as PointsRedemption } from './points-redemption';
 export { default as ProductDetails } from './product-details.vue';
 export { default as QuantitySelector } from './quantity-selector';
+export { default as QrCode } from './qr-code';
 export { default as RadioButton } from './radio-button';
 export { default as RadioButtonCard } from './radio-button-card';
+export { default as StarRating } from './star-rating';
 export { default as StepProgressBar } from './step-progress-bar';
 export { default as StoreAddress } from './store-address';
 export { default as StoreRadioButtonCard } from './store-radio-button-card';
@@ -37,3 +43,4 @@ export { default as ValidatedForm } from './validated-form';
 export { default as ValidatedInput } from './validated-input';
 export { default as ValidatedPaymentMethod } from './validated-payment-method';
 export { default as ValidatedSelect } from './validated-select';
+export { default as WalletDrawer } from './wallet-drawer';

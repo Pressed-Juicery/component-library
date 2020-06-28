@@ -16,9 +16,12 @@ const groups = [{
 		'Buttons',
 		'Card',
 		'Drawer',
+		'QrCode',
+		'StarRating',
 		'StoreAddress',
 		'StepProgressBar',
 		'SidebarOverlay',
+		'WalletDrawer',
 	],
 }, {
 	groupName: 'Components / Cart',
@@ -56,6 +59,7 @@ const groups = [{
 		'BundleCardGrid',
 		'NutritionFacts',
 		'ProductDetails',
+		'Ingredients',
 	],
 }, {
 	groupName: 'Sections',
