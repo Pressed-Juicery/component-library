@@ -8,12 +8,9 @@ export default {
 export function Overview() {
 	return {
 		components: { StarRating },
-		template: '<star-rating :rating="rating" :isDisabled="isDisabled" @change="value => rating = value"/>',
+		template: '<star-rating :rating="rating" :is-readonly="false" @change="value => rating = value"/>',
 		data() {
-			return {
-				rating: 3,
-				isDisabled: false,
-			};
+			return { rating: 3 };
 		},
 	};
 }
@@ -21,6 +18,6 @@ export function Overview() {
 export function Readonly() {
 	return {
 		components: { StarRating },
-		template: '<star-rating :rating="4.25" :isDisabled="true"/>',
+		template: '<star-rating :rating="4.25" :is-readonly="true"/>',
 	};
 }

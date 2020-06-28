@@ -37,7 +37,7 @@ export default {
 			type: Number,
 			default: 0,
 		},
-		isDisabled: {
+		isReadonly: {
 			type: Boolean,
 			default: true,
 		},
@@ -54,11 +54,11 @@ export default {
 	},
 	methods: {
 		setHoverValue(index) {
-			if (this.isDisabled) return;
+			if (this.isReadonly) return;
 			this.hoverValue = index;
 		},
 		handleSelection() {
-			if (this.isDisabled) return;
+			if (this.isReadonly) return;
 			this.$emit('change', this.hoverValue);
 		},
 		getStarValue(index) {
