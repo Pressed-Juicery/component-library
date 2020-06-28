@@ -125,7 +125,7 @@ export default {
 		z-index: 1;
 		border-radius: $spacing-05 $spacing-05 0 0;
 		background-color: $beige;
-		box-shadow: 0 1px 15px -8px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2);
 		pointer-events: auto;
 		padding: 0 $spacing-08;
 	}
