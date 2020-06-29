@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<drawer :isOpen="isOpen" @close="$emit('close')">
 		<div :class="$style.header" @click="$emit('close')">
 			<div>{{ title }}</div>
 			<ArrowDown :class="$style.icon" />
@@ -8,16 +8,20 @@
 		<div :class="$style.content">
 			<slot />
 		</div>
-	</div>
+	</drawer>
 </template>
 
 <script>
 import ArrowDown from './icons/arrow-down-icon';
+import Drawer from './drawer';
 
 export default {
-	components: { ArrowDown },
-
+	components: { ArrowDown, Drawer },
 	props: {
+		isOpen: {
+			type: Boolean,
+			require: true,
+		},
 		title: {
 			type: String,
 			required: true,
