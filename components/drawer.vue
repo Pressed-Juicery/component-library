@@ -2,7 +2,7 @@
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
 		<div :class="$style.overlay" @click="close" />
 
-		<div :class="[{ [$style.hidden]: !isOpen }, $style.drawer]">
+		<div :class="[$style.drawer, { [$style.hidden]: !isOpen }]">
 			<slot />
 		</div>
 	</div>
