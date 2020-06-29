@@ -75,9 +75,7 @@ export default {
 
 	.drawer {
 		position: absolute;
-		display: flex;
 		justify-content: center;
-		flex-flow: column;
 		bottom: 0;
 		left: 0;
 		width: 100%;
