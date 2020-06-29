@@ -35,7 +35,6 @@ export default {
 		close() {
 			this.$emit('close');
 		},
-
 	},
 	created() {
 		preventBodyScrolling(this.isOpen);
