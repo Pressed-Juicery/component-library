@@ -1,14 +1,14 @@
 import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 
-import CollapsableDrawer from '../../../components/collapsable-drawer';
+import CollapsibleDrawer from '../../../components/collapsible-drawer';
 import Drawer from '../../../components/drawer';
 import SidebarOverlay from '../../../components/sidebar-overlay';
 
 import { addons } from '@storybook/addons';
 
 export default {
-	title: 'Components / Basic / CollapsableDrawer',
-	component: CollapsableDrawer,
+	title: 'Components / Basic / CollapsibleDrawer',
+	component: CollapsibleDrawer,
 	decorators: [withKnobs],
 };
 
@@ -32,14 +32,14 @@ const mixins = [{
 
 export function Overview() {
 	return {
-		components: { CollapsableDrawer, Drawer },
+		components: { CollapsibleDrawer, Drawer },
 		mixins,
 
 		template: `
 			<drawer :isOpen="isDrawerOpen" @close="closeDrawer">
-				<collapsable-drawer title="Title" @close="closeDrawer">
+				<collapsible-drawer title="Title" @close="closeDrawer">
 					Content
-				</collapsable-drawer>
+				</collapsible-drawer>
 			</drawer>
 		`,
 
@@ -53,7 +53,7 @@ export function Overview() {
 
 export function Sidebar() {
 	return {
-		components: { CollapsableDrawer, Drawer, SidebarOverlay },
+		components: { CollapsibleDrawer, Drawer, SidebarOverlay },
 		mixins,
 
 		template: `
@@ -61,9 +61,9 @@ export function Sidebar() {
 				<hr v-for="num in 60" />
 
 				<drawer :is-open="isDrawerOpen" @close="closeDrawer">
-					<collapsable-drawer title="Title" @close="closeDrawer">
+					<collapsible-drawer title="Title" @close="closeDrawer">
 						Content
-					</collapsable-drawer>
+					</collapsible-drawer>
 				</drawer>
 			</sidebar-overlay>
 		`,
