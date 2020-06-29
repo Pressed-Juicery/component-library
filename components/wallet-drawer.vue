@@ -47,6 +47,7 @@ import ArrowDownIcon from './icons/arrow-down-icon';
 import PressedPointsCircle from './icons/pressed-points-circle';
 import QrCode from './qr-code';
 import { formatCurrency } from '../utilities/formatters';
+import { preventBodyScrolling } from '../utilities/prevent-body-scrolling';
 
 export default {
 	components: { ArrowDownIcon, PressedPointsCircle, QrCode },
@@ -62,6 +63,16 @@ export default {
 		return {
 			isOpen: false,
 		};
+	},
+
+	created() {
+		preventBodyScrolling(this.isOpen);
+	},
+
+	watch: {
+		isOpen() {
+			preventBodyScrolling(this.isOpen);
+		},
 	},
 
 	computed: {
