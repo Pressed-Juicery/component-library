@@ -68,11 +68,6 @@ export default {
 		transition: 0.5s ease opacity;
 	}
 
-	.isOpen .overlay {
-		opacity: 0.2;
-		pointer-events: auto;
-	}
-
 	.drawer {
 		position: absolute;
 		bottom: 0;
@@ -82,10 +77,6 @@ export default {
 		transition: 0.5s ease transform;
 		background-color: $white;
 		border-radius: $spacing-05 $spacing-05 0 0;
-	}
-
-	.isOpen .drawer {
-		transform: translateY(0%);
 	}
 
 	.drawerHeader {
@@ -109,5 +100,16 @@ export default {
 
 	.drawerContent {
 		padding: $spacing-05 $spacing-07 $spacing-07 $spacing-07;
+	}
+
+	.isOpen {
+		.overlay {
+			opacity: 0.2;
+			pointer-events: auto;
+		}
+
+		.drawer {
+			transform: translateY(0%);
+		}
 	}
 </style>
