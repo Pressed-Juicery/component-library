@@ -80,13 +80,13 @@ export default {
 	}
 
 	.drawerHeader {
+		@include text-cta();
 		cursor: pointer;
 		padding: $spacing-06 $spacing-07;
 		display: grid;
 		grid-template-columns: 1fr $spacing-04;
 		grid-column-gap: $spacing-06;
 		align-items: center;
-		@include text-cta();
 	}
 
 	.drawer {
