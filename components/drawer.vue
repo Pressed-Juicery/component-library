@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import ArrowDown from './icons/arrow-down-icon.vue';
+import ArrowDown from './icons/arrow-down-icon';
 import { preventBodyScrolling } from '../utilities/prevent-body-scrolling';
 
 export default {
@@ -49,8 +49,8 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import "../styles/variables.scss";
-	@import "../styles/mixins.scss";
+	@import "../styles/variables";
+	@import "../styles/mixins";
 
 	.root,
 	.overlay {
