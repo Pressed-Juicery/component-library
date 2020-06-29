@@ -19,7 +19,7 @@ export function Overview() {
 		},
 		data() {
 			return {
-				title: 'enhance your cleanse',
+				title: 'Enhance your cleanse',
 			};
 		},
 		methods: {
