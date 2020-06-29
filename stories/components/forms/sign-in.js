@@ -1,16 +1,16 @@
-import Signin from '../../../components/signin';
+import SignIn from '../../../components/sign-in';
 
 export default {
-	title: 'Components / Forms / Signin',
-	component: Signin,
+	title: 'Components / Forms / SignIn',
+	component: SignIn,
 };
 
 export function Overview() {
 	return {
-		components: { Signin },
+		components: { SignIn },
 		template: `
 			<div>
-				<signin button-text="Sign In" @sign-in="data => credentials = data" />
+				<sign-in button-text="Sign In" @sign-in="data => credentials = data" />
 				<div v-if="credentials">credentials: {{ credentials }}</div>
 			</div>
 		`,
@@ -21,10 +21,10 @@ export function Overview() {
 
 export function CustomErrorMessage() {
 	return {
-		components: { Signin },
+		components: { SignIn },
 		template: `
 			<div>
-				<signin button-text="Sign In"
+				<sign-in button-text="Sign In"
 				        :error-message="errorMessage"
 				        @sign-in="(email, password) => credentials = { email, password }" />
 				<div v-if="credentials">credentials: {{ credentials }}</div>
