@@ -28,6 +28,7 @@ export { default as Ingredients } from './ingredients.vue';
 export { default as LandingPageTemplate } from './landing-page-template';
 export { default as MediaRow } from './media-row';
 export { default as NutritionFacts } from './nutrition-facts.vue';
+export { default as Overlay } from './overlay.vue';
 export { default as PaymentMethodIcon } from './payment-method-icon';
 export { default as PaymentMethodRadioButtonCard } from './payment-method-radio-button-card';
 export { default as PointsRedemption } from './points-redemption';

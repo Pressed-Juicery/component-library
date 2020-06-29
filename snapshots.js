@@ -17,6 +17,7 @@ const groups = [{
 		'Card',
 		'CollapsibleDrawer',
 		'Drawer',
+		'Overlay',
 		'QrCode',
 		'StarRating',
 		'StoreAddress',
