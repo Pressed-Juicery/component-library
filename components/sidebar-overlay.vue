@@ -71,4 +71,10 @@ export default {
 	.overflow {
 		overflow-y: auto;
 	}
+
+	@media (max-width: $max-width-small) {
+		.sidebar {
+			width: 100%;
+		}
+	}
 </style>

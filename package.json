@@ -1,25 +1,25 @@
 {
 	"name": "component-library",
-	"version": "0.9.0",
+	"version": "0.11.0",
 	"description": "Pressed Juicery Component Library",
 	"private": true,
 	"main": "dist/component-library.common.js",
+	"style": "dist/component-library.css",
+	"files": [
+		"dist/component-library.css",
+		"styles/mixins.scss",
+		"styles/variables.scss",
+		"assets/**/*",
+		"utilities/**/*"
+	],
 	"scripts": {
 		"start": "start-storybook -s ./assets -p 6006",
 		"lint": "eslint . --ext .js,.vue",
 		"build": "vue-cli-service build --target lib --name component-library ./components/index.js",
 		"build-storybook": "build-storybook",
-		"postinstall": "npm run build",
+		"preversion": "npm run build && git add .",
 		"snapshots": "npx percy exec -- node snapshots.js"
 	},
-	"files": [
-		"assets/**/*",
-		"components/**/*",
-		"constants/**/*",
-		"services/**/*",
-		"styles/**/*",
-		"utilities/**/*"
-	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Pressed-Juicery/component-library.git"
@@ -32,7 +32,8 @@
 		"@vue/cli-service": "~4.3.0",
 		"braintree-web": "3.62.1",
 		"core-js": "^3.6.4",
-		"normalize.css": "8.0.1"
+		"normalize.css": "8.0.1",
+		"qrcode": "^1.4.4"
 	},
 	"devDependencies": {
 		"@babel/core": "7.9.0",

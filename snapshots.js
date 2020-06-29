@@ -17,9 +17,12 @@ const groups = [{
 		'Card',
 		'CollapsableDrawer',
 		'Drawer',
+		'QrCode',
+		'StarRating',
 		'StoreAddress',
 		'StepProgressBar',
 		'SidebarOverlay',
+		'WalletDrawer',
 	],
 }, {
 	groupName: 'Components / Cart',
@@ -35,7 +38,9 @@ const groups = [{
 	groupName: 'Components / Forms',
 	stories: [
 		'AddressForm',
+		'GuestInformationForm',
 		'RadioButton',
+		'Signin',
 		'ValidatedCheckbox',
 		'ValidatedForm',
 		'ValidatedInput',
@@ -57,6 +62,7 @@ const groups = [{
 		'BundleCardGrid',
 		'NutritionFacts',
 		'ProductDetails',
+		'Ingredients',
 	],
 }, {
 	groupName: 'Sections',
