@@ -8,21 +8,9 @@ export default {
 	decorators: [withKnobs],
 };
 
-const mixins = [{
-	methods: {
-		closeDrawer() {
-			addons.getChannel().emit(CHANGE, {
-				name: 'Open',
-				value: false,
-			});
-		},
-	},
-}];
-
 export function Overview() {
 	return {
 		components: { Drawer },
-		mixins,
 		template: '<body style="background: navajowhite; height: 1500px; margin: 200px 0"><drawer :title="title" :isOpen="isOpen" @close="closeDrawer"></drawer></body>',
 		props: {
 			isOpen: {
@@ -33,6 +21,14 @@ export function Overview() {
 			return {
 				title: 'enhance your cleanse',
 			};
+		},
+		methods: {
+			closeDrawer() {
+				addons.getChannel().emit(CHANGE, {
+					name: 'Open',
+					value: false,
+				});
+			},
 		},
 	};
 }
