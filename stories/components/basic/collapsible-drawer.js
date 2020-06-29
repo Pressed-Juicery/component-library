@@ -2,7 +2,7 @@ import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 
 import CollapsibleDrawer from '../../../components/collapsible-drawer';
 import Drawer from '../../../components/drawer';
-import SidebarOverlay from '../../../components/sidebar-overlay';
+import Sidebar from '../../../components/sidebar';
 
 import { addons } from '@storybook/addons';
 
@@ -51,13 +51,13 @@ export function Overview() {
 	};
 }
 
-export function Sidebar() {
+export function InsideSidebar() {
 	return {
-		components: { CollapsibleDrawer, Drawer, SidebarOverlay },
+		components: { CollapsibleDrawer, Drawer, Sidebar },
 		mixins,
 
 		template: `
-			<sidebar-overlay :is-active="isSidebarOpen" @close="closeSidebar">
+			<sidebar :is-active="isSidebarOpen" @close="closeSidebar">
 				<hr v-for="num in 200" />
 
 				<drawer :is-open="isDrawerOpen" @close="closeDrawer">
@@ -65,7 +65,7 @@ export function Sidebar() {
 						Content
 					</collapsible-drawer>
 				</drawer>
-			</sidebar-overlay>
+			</sidebar>
 		`,
 
 		props: {

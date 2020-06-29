@@ -22,7 +22,7 @@ const groups = [{
 		'StarRating',
 		'StoreAddress',
 		'StepProgressBar',
-		'SidebarOverlay',
+		'Sidebar',
 		'WalletDrawer',
 	],
 }, {

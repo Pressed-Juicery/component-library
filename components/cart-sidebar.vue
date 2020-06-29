@@ -1,5 +1,5 @@
 <template>
-	<sidebar-overlay :is-active="isActive" @close="$emit('close')">
+	<sidebar :is-active="isActive" @close="$emit('close')">
 		<cart-navigation
 			:shouldShowBackButton="shouldShowBackButton"
 			@back="setCartState('cart')"
@@ -21,7 +21,7 @@
 		<cart-points-redemption v-else-if="state === 'points'" :user="user" :redemption-rates="redemptionRates" />
 
 		<cart-checkout-footer :cart="cart" @continue="$emit('continue')" />
-	</sidebar-overlay>
+	</sidebar>
 </template>
 
 <script>
@@ -31,7 +31,7 @@ import CartNavigation from './cart-navigation';
 import CartPointsDisplay from './cart-points-display';
 import CartPointsRedemption from './cart-points-redemption';
 import CartSummary from './cart-summary';
-import SidebarOverlay from './sidebar-overlay';
+import Sidebar from './sidebar';
 
 export default {
 	components: {
@@ -41,7 +41,7 @@ export default {
 		CartPointsDisplay,
 		CartPointsRedemption,
 		CartSummary,
-		SidebarOverlay,
+		Sidebar,
 	},
 	props: {
 		isActive: Boolean,
