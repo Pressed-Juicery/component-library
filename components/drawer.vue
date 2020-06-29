@@ -18,6 +18,7 @@
 <script>
 import ArrowDown from './icons/arrow-down-icon.vue';
 import { preventBodyScrolling } from '../utilities/prevent-body-scrolling';
+
 export default {
 	props: {
 		title: {
