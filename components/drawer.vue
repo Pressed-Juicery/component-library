@@ -75,7 +75,6 @@ export default {
 
 	.drawer {
 		position: absolute;
-		justify-content: center;
 		bottom: 0;
 		left: 0;
 		width: 100%;
