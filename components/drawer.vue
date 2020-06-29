@@ -1,6 +1,6 @@
 <template>
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
-		<div :class="$style.overlay" @click="close" />
+		<div :class="$style.overlay" @click="$emit('close')" />
 
 		<div :class="$style.drawer">
 			<slot />
@@ -14,12 +14,6 @@ export default {
 		isOpen: {
 			type: Boolean,
 			require: true,
-		},
-	},
-
-	methods: {
-		close() {
-			this.$emit('close');
 		},
 	},
 };
