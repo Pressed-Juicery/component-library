@@ -80,7 +80,6 @@ export default {
 
 	.title {
 		@include text-heading-5();
-
 		margin-bottom: $spacing-07;
 	}
 
