@@ -1,6 +1,6 @@
-import { addons } from '@storybook/addons';
-import { boolean, CHANGE, withKnobs } from '@storybook/addon-knobs';
+import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 import Drawer from '../../../components/drawer.vue';
+import { addons } from '@storybook/addons';
 
 export default {
 	title: 'Components / Basic / Drawer',
