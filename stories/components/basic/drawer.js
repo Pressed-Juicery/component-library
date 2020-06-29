@@ -15,7 +15,7 @@ export function Overview() {
 		template: `
 			<drawer :isOpen="isOpen" @close="closeDrawer">
 				<content-wrapper>
-					Drawer content goes here. Drawer content goes here. Drawer content goes here.
+					Drawer content is fully customizable.
 				</content-wrapper>
 			</drawer>
 		`,
