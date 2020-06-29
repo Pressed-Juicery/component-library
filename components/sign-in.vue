@@ -57,10 +57,10 @@ export default {
 
 			passwordRules: [{
 				validator: isNotEmpty,
-				message: 'This field is required.',
+				message: 'Please enter a password.',
 			}, {
 				validator: hasMinimumLength,
-				message: 'Must be at least 6 characters long.',
+				message: 'Passwords must be at least 6 characters long.',
 				options: { length: 6 },
 			}],
 		};
