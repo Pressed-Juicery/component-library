@@ -86,7 +86,6 @@ export default {
 		grid-template-columns: 1fr $spacing-04;
 		grid-column-gap: $spacing-06;
 		align-items: center;
-		box-shadow: 0 7px 10px -8px rgba(226, 226, 226, 0.5);
 		@include text-cta();
 	}
 
