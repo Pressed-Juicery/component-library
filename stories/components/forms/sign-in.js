@@ -10,7 +10,7 @@ export function Overview() {
 		components: { SignIn },
 		template: `
 			<div>
-				<sign-in button-text="Sign In" @sign-in="data => credentials = data" />
+				<sign-in button-text="Sign In" @submit="data => credentials = data" />
 				<div v-if="credentials">credentials: {{ credentials }}</div>
 			</div>
 		`,
@@ -24,7 +24,7 @@ export function CustomErrorMessage() {
 		components: { SignIn },
 		template: `
 			<div>
-				<sign-in button-text="Sign In" :error-message="errorMessage" @sign-in="data => credentials = data" />
+				<sign-in button-text="Sign In" :error-message="errorMessage" @submit="data => credentials = data" />
 				<div v-if="credentials">credentials: {{ credentials }}</div>
 			</div>
 		`,

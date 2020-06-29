@@ -1,5 +1,5 @@
 <template>
-	<validated-form @submit="$emit('sign-in', { email, password })"
+	<validated-form @submit="$emit('submit', { email, password })"
 	                :show-error="showError"
 	                :error-message="errorMessage">
 		<div :class="$style.title">Sign In</div>
