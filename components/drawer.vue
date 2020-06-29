@@ -79,7 +79,7 @@ export default {
 		left: 0;
 		width: 100%;
 		transform: translateY(100%);
-		transition: .5s ease transform;
+		transition: 0.5s ease transform;
 		background-color: $white;
 		border-radius: $spacing-05 $spacing-05 0 0;
 	}
