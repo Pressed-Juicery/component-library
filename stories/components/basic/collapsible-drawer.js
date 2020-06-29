@@ -36,9 +36,13 @@ export function Overview() {
 		mixins,
 
 		template: `
-			<collapsible-drawer title="Title" :is-open="isDrawerOpen" @close="closeDrawer">
-				Content
-			</collapsible-drawer>
+			<div>
+				<div v-for="number in 200">Background {{ number }}</div>
+
+				<collapsible-drawer title="Title" :is-open="isDrawerOpen"  @close="closeDrawer">
+					Content
+				</collapsible-drawer>
+			</div>
 		`,
 
 		props: {
@@ -55,13 +59,17 @@ export function InsideSidebar() {
 		mixins,
 
 		template: `
-			<sidebar :is-active="isSidebarOpen" @close="closeSidebar">
-				<hr v-for="num in 200" />
+			<div>
+				<div v-for="number in 200">Background {{ number }}</div>
 
-				<collapsible-drawer title="Title" :is-open="isDrawerOpen" @close="closeDrawer">
-					Content
-				</collapsible-drawer>
-			</sidebar>
+				<sidebar :is-active="isSidebarOpen" @close="closeSidebar">
+					<div v-for="number in 200">Sidebar {{ number }}</div>
+
+					<collapsible-drawer title="Title" :is-open="isDrawerOpen" @close="closeDrawer">
+						<div v-for="number in 20">Drawer {{ number }}</div>
+					</collapsible-drawer>
+				</sidebar>
+			</div>
 		`,
 
 		props: {
