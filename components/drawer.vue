@@ -65,7 +65,7 @@ export default {
 		background-color: $gray-90;
 		opacity: 0;
 		pointer-events: none;
-		transition: .5s ease opacity;
+		transition: 0.5s ease opacity;
 	}
 
 	.isOpen .overlay {
