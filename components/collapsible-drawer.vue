@@ -41,7 +41,7 @@ export default {
 		justify-content: space-between;
 		align-items: center;
 		padding: $spacing-06 $spacing-07;
-		box-shadow: 0 7px 10px -8px rgba(226, 226, 226, 0.5);
+		border-bottom: $border-light;
 		cursor: pointer;
 	}
 
