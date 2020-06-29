@@ -12,7 +12,7 @@ export function Overview() {
 	return {
 		components: { Drawer },
 		template: `
-			<drawer :title="title" :isOpen="isOpen" @close="closeDrawer">
+			<drawer title="Drawer title" :isOpen="isOpen" @close="closeDrawer">
 				<div>Drawer content goes here. Drawer content goes here. Drawer content goes here.</div>
 			</drawer>
 		`,
@@ -20,11 +20,6 @@ export function Overview() {
 			isOpen: {
 				default: boolean('Open', true),
 			},
-		},
-		data() {
-			return {
-				title: 'Drawer title',
-			};
 		},
 		methods: {
 			closeDrawer() {
