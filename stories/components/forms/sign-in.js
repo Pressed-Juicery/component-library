@@ -24,9 +24,7 @@ export function CustomErrorMessage() {
 		components: { SignIn },
 		template: `
 			<div>
-				<sign-in button-text="Sign In"
-				        :error-message="errorMessage"
-				        @sign-in="(email, password) => credentials = { email, password }" />
+				<sign-in button-text="Sign In" :error-message="errorMessage" @sign-in="data => credentials = data" />
 				<div v-if="credentials">credentials: {{ credentials }}</div>
 			</div>
 		`,
