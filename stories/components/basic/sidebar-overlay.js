@@ -26,9 +26,11 @@ export function Overview() {
 		mixins,
 		template: `
 			<div>
-				<div v-for="number in 160">{{ number }}</div>
+				<div v-for="number in 200">Background {{ number }}</div>
 
-				<sidebar-overlay :is-active="active" @close="closeSlider" />
+				<sidebar-overlay :is-active="active" @close="closeSlider">
+					<div v-for="number in 200">Sidebar {{ number }}</div>
+				</sidebar-overlay>
 			</div>
 		`,
 		props: {

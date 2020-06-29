@@ -58,7 +58,7 @@ export function Sidebar() {
 
 		template: `
 			<sidebar-overlay :is-active="isSidebarOpen" @close="closeSidebar">
-				<hr v-for="num in 160" />
+				<hr v-for="num in 200" />
 
 				<drawer :is-open="isDrawerOpen" @close="closeDrawer">
 					<collapsible-drawer title="Title" @close="closeDrawer">
