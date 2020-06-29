@@ -1,5 +1,5 @@
 <template>
-	<div :class="{[$style.isActive]: isActive}">
+	<div ref="root" :class="{[$style.isActive]: isActive}">
 		<div :class="$style.overlay" @click="$emit('close')"></div>
 		<div :class="$style.sidebar">
 			<slot />
@@ -8,22 +8,36 @@
 </template>
 
 <script>
-import { preventBodyScrolling } from '../utilities/prevent-body-scrolling';
+import { preventAncestorScrolling } from '../utilities/prevent-body-scrolling';
 
 export default {
 	props: {
 		isActive: Boolean,
 	},
 
-	created() {
-		preventBodyScrolling(this.isActive);
+	data() {
+		return {
+			enableScrolling: () => {},
+		};
+	},
+
+	mounted() {
+		this.enableScrolling = preventAncestorScrolling(this.$refs.root);
 	},
 
 	watch: {
 		isActive() {
-			preventBodyScrolling(this.isActive);
+			if (this.isActive) {
+				this.enableScrolling = preventAncestorScrolling(this.$refs.root);
+			} else {
+				this.enableScrolling();
+			}
 		},
 	},
+
+	destroyed() {
+		this.enableScrolling();
+	}
 };
 </script>
 

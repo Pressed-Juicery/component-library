@@ -24,7 +24,13 @@ export function Overview() {
 	return {
 		components: { SidebarOverlay },
 		mixins,
-		template: '<sidebar-overlay :is-active="active" @close="closeSlider" />',
+		template: `
+			<div>
+				<div v-for="number in 160">{{ number }}</div>
+
+				<sidebar-overlay :is-active="active" @close="closeSlider" />
+			</div>
+		`,
 		props: {
 			active: {
 				default: boolean('Active', true),
