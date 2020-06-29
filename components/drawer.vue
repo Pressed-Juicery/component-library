@@ -2,7 +2,7 @@
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
 		<div :class="$style.overlay" @click="close" />
 
-		<div :class="[$style.drawer, { [$style.hidden]: !isOpen }]">
+		<div :class="$style.drawer">
 			<slot />
 		</div>
 	</div>
@@ -46,11 +46,6 @@ export default {
 		transition: 0.5s ease opacity;
 	}
 
-	.isOpen .overlay {
-		opacity: 0.2;
-		pointer-events: auto;
-	}
-
 	.drawer {
 		position: absolute;
 		left: 0;
@@ -60,28 +55,18 @@ export default {
 		border-radius: $spacing-05 $spacing-05 0 0;
 		background-color: $white;
 		z-index: 1;
-		overflow: auto;
+		transform: translateY(100%);
+		transition: 0.5s ease transform;
 	}
 
-	.hidden {
-		animation: slide-down .5s ease forwards;
-	}
+	.isOpen {
+		.overlay {
+			opacity: 0.2;
+			pointer-events: auto;
+		}
 
-	@keyframes slide-down {
-		0% {
+		.drawer {
 			transform: translateY(0%);
-			visibility: visible;
-			height: auto;
-		}
-		99% {
-			transform: translateY(160%);
-			visibility: visible;
-			height: auto;
-		}
-		100% {
-			transform: translateY(160%);
-			visibility: hidden;
-			height: 0;
 		}
 	}
 </style>
