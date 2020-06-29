@@ -16,7 +16,7 @@
 		                 v-model="password"
 		                 :rules="passwordRules" />
 
-		<button :class="$style.submitButton" type="submit">{{ buttonText }}</button>
+		<button :class="[$style.submitButton, 'button', 'button--pill']" type="submit">{{ buttonText }}</button>
 	</validated-form>
 </template>
 
@@ -75,7 +75,6 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import '../styles/buttons';
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
@@ -94,8 +93,6 @@ export default {
 	}
 
 	.submitButton {
-		@extend .button--pill;
-
 		display: block;
 		width: 100%;
 		max-width: 384px;
