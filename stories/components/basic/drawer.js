@@ -11,7 +11,11 @@ export default {
 export function Overview() {
 	return {
 		components: { Drawer },
-		template: '<drawer :title="title" :isOpen="isOpen" @close="closeDrawer" />',
+		template: `
+			<drawer :title="title" :isOpen="isOpen" @close="closeDrawer">
+				<div>Drawer content goes here. Drawer content goes here. Drawer content goes here.</div>
+			</drawer>
+		`,
 		props: {
 			isOpen: {
 				default: boolean('Open', true),
