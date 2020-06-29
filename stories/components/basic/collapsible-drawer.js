@@ -57,7 +57,7 @@ export function Sidebar() {
 		mixins,
 
 		template: `
-			<sidebar-overlay :is-open="isSidebarOpen" :is-active="!isDrawerOpen" @close="closeSidebar">
+			<sidebar-overlay :is-active="isSidebarOpen" @close="closeSidebar">
 				<hr v-for="num in 160" />
 
 				<drawer :is-open="isDrawerOpen" @close="closeDrawer">

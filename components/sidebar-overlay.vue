@@ -1,7 +1,7 @@
 <template>
-	<div :class="{[$style.isOpen]: isOpen}">
+	<div :class="{[$style.isActive]: isActive}">
 		<div :class="$style.overlay" @click="$emit('close')"></div>
-		<div :class="[$style.sidebar, {[$style.overflow]: isActive}]">
+		<div :class="$style.sidebar">
 			<slot />
 		</div>
 	</div>
@@ -12,17 +12,16 @@ import { preventBodyScrolling } from '../utilities/prevent-body-scrolling';
 
 export default {
 	props: {
-		isOpen: Boolean,
 		isActive: Boolean,
 	},
 
 	created() {
-		preventBodyScrolling(this.isOpen);
+		preventBodyScrolling(this.isActive);
 	},
 
 	watch: {
-		isOpen() {
-			preventBodyScrolling(this.isOpen);
+		isActive() {
+			preventBodyScrolling(this.isActive);
 		},
 	},
 };
@@ -55,9 +54,10 @@ export default {
 		transform: translate(100%);
 		transition: 0.5s ease transform;
 		z-index: 10;
+		overflow-y: auto;
 	}
 
-	.isOpen {
+	.isActive {
 		.overlay {
 			opacity: 0.55;
 			pointer-events: auto;
@@ -66,10 +66,6 @@ export default {
 		.sidebar {
 			transform: translate(0%);
 		}
-	}
-
-	.overflow {
-		overflow-y: auto;
 	}
 
 	@media (max-width: $max-width-small) {
