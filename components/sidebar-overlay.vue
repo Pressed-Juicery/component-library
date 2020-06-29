@@ -1,6 +1,7 @@
 <template>
-	<div ref="root" :class="{[$style.isActive]: isActive}">
-		<div :class="$style.overlay" @click="$emit('close')"></div>
+	<div :class="{[$style.isActive]: isActive}">
+		<overlay :is-active="isActive" @close="$emit('close')"/>
+
 		<div :class="$style.sidebar">
 			<slot />
 		</div>
@@ -8,54 +9,18 @@
 </template>
 
 <script>
-import { preventAncestorScrolling } from '../utilities/prevent-body-scrolling';
+import Overlay from './overlay';
 
 export default {
+	components: { Overlay },
 	props: {
 		isActive: Boolean,
 	},
-
-	data() {
-		return {
-			enableScrolling: () => {},
-		};
-	},
-
-	mounted() {
-		this.enableScrolling = preventAncestorScrolling(this.$refs.root);
-	},
-
-	watch: {
-		isActive() {
-			if (this.isActive) {
-				this.enableScrolling = preventAncestorScrolling(this.$refs.root);
-			} else {
-				this.enableScrolling();
-			}
-		},
-	},
-
-	destroyed() {
-		this.enableScrolling();
-	}
 };
 </script>
 
 <style module lang="scss">
-	@import '../styles/mixins';
-
-	.overlay {
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 2;
-		background-color: rgba(0, 0, 0, 0.25);
-		opacity: 0;
-		pointer-events: none;
-		transition: 0.5s ease opacity;
-	}
+	@import '../styles/variables';
 
 	.sidebar {
 		position: fixed;
@@ -72,11 +37,6 @@ export default {
 	}
 
 	.isActive {
-		.overlay {
-			opacity: 0.55;
-			pointer-events: auto;
-		}
-
 		.sidebar {
 			transform: translate(0%);
 		}
