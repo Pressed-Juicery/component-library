@@ -23,7 +23,7 @@ export function Overview() {
 		},
 		data() {
 			return {
-				title: 'Enhance your cleanse',
+				title: 'Drawer title',
 			};
 		},
 		methods: {
