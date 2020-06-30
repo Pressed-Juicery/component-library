@@ -1,7 +1,7 @@
 <!-- eslint-disable max-lines -->
 <template>
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
-		<div :class="$style.overlay" @click="close" />
+		<overlay :is-active="isOpen" @close="close" />
 
 		<div :class="$style.drawer" @click="open">
 			<pressed-points-circle :class="$style.logo"/>
@@ -44,13 +44,13 @@
 
 <script>
 import ArrowDownIcon from './icons/arrow-down-icon';
+import Overlay from './overlay';
 import PressedPointsCircle from './icons/pressed-points-circle';
 import QrCode from './qr-code';
 import { formatCurrency } from '../utilities/formatters';
-import { preventBodyScrolling } from '../utilities/prevent-body-scrolling';
 
 export default {
-	components: { ArrowDownIcon, PressedPointsCircle, QrCode },
+	components: { ArrowDownIcon, Overlay, PressedPointsCircle, QrCode },
 
 	props: {
 		wallet: {
@@ -63,16 +63,6 @@ export default {
 		return {
 			isOpen: false,
 		};
-	},
-
-	created() {
-		preventBodyScrolling(this.isOpen);
-	},
-
-	watch: {
-		isOpen() {
-			preventBodyScrolling(this.isOpen);
-		},
 	},
 
 	computed: {
@@ -103,23 +93,6 @@ export default {
 
 	$logoOffset: 22px;
 
-	.root,
-	.overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		pointer-events: none;
-	}
-
-	.overlay {
-		z-index: 1;
-		background-color: $gray-90;
-		opacity: 0;
-		transition: .5s ease opacity;
-	}
-
 	.logo {
 		display: block;
 		height: 66px;
@@ -130,11 +103,11 @@ export default {
 	}
 
 	.drawer {
-		position: absolute;
+		position: fixed;
 		left: 0;
 		bottom: 0;
 		width: 100%;
-		z-index: 1;
+		z-index: 2;
 		border-radius: $spacing-05 $spacing-05 0 0;
 		background-color: $beige;
 		box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2);
@@ -211,11 +184,6 @@ export default {
 	}
 
 	.isOpen {
-		.overlay {
-			opacity: 0.2;
-			pointer-events: auto;
-		}
-
 		.toggleIcon {
 			transform: rotate(180deg);
 		}

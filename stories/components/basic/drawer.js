@@ -1,4 +1,5 @@
 import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
+import ContentWrapper from '../../../components/content-wrapper';
 import Drawer from '../../../components/drawer.vue';
 import { addons } from '@storybook/addons';
 
@@ -10,10 +11,12 @@ export default {
 
 export function Overview() {
 	return {
-		components: { Drawer },
+		components: { ContentWrapper, Drawer },
 		template: `
-			<drawer title="Drawer title" :isOpen="isOpen" @close="closeDrawer">
-				<div>Drawer content goes here. Drawer content goes here. Drawer content goes here.</div>
+			<drawer :isOpen="isOpen" @close="closeDrawer">
+				<content-wrapper>
+					Drawer content is fully customizable.
+				</content-wrapper>
 			</drawer>
 		`,
 		props: {

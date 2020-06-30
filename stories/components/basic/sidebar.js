@@ -1,10 +1,10 @@
 import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
-import SidebarOverlay from '../../../components/sidebar-overlay';
+import Sidebar from '../../../components/sidebar';
 import { addons } from '@storybook/addons';
 
 export default {
-	title: 'Components / Basic / SidebarOverlay',
-	component: SidebarOverlay,
+	title: 'Components / Basic / Sidebar',
+	component: Sidebar,
 	decorators: [withKnobs],
 };
 
@@ -22,9 +22,17 @@ const mixins = [{
 
 export function Overview() {
 	return {
-		components: { SidebarOverlay },
+		components: { Sidebar },
 		mixins,
-		template: '<sidebar-overlay :is-active="active" @close="closeSlider" />',
+		template: `
+			<div>
+				<div v-for="number in 200">Background {{ number }}</div>
+
+				<sidebar :is-active="active" @close="closeSlider">
+					<div v-for="number in 200">Sidebar {{ number }}</div>
+				</sidebar>
+			</div>
+		`,
 		props: {
 			active: {
 				default: boolean('Active', true),
