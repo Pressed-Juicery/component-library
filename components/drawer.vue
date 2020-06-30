@@ -35,6 +35,7 @@ export default {
 		border-radius: $spacing-05 $spacing-05 0 0;
 		background-color: $white;
 		z-index: 2;
+		overflow: auto;
 		transform: translateY(100%);
 		transition: 0.5s ease transform;
 	}

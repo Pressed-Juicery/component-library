@@ -37,11 +37,14 @@ export default {
 	.header {
 		@include text-cta();
 
+		position: sticky;
+		top: 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: $spacing-06 $spacing-07;
 		border-bottom: $border-light;
+		background: white;
 		cursor: pointer;
 	}
 
