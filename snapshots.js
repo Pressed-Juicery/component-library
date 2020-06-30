@@ -33,6 +33,7 @@ const groups = [{
 		'CartSummary',
 		'CartTotals',
 		'CheckoutItemCard',
+		'PaymentMethods',
 		'PointsRedemption',
 	],
 }, {
