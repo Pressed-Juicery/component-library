@@ -17,10 +17,10 @@
 		</div>
 
 		<sign-in
-				v-else-if="pane === 'sign-in'"
-				:class="$style.form"
-				buttonText="Sign In & Check Out"
-				@submit="credentials => $emit('sign-in', credentials)"
+			v-else-if="pane === 'sign-in'"
+			:class="$style.form"
+			buttonText="Sign In & Check Out"
+			@submit="credentials => $emit('sign-in', credentials)"
 		/>
 
 		<guest-information-form
