@@ -34,10 +34,11 @@ export default {
 	}
 
 	.input {
+		flex: 2;
 		margin-right: $spacing-03;
 	}
 
 	.button {
-		flex-shrink: 0;
+		flex: 1;
 	}
 </style>
