@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<pane-header @back="back" @close="$emit('close-sidebar')" />
+		<pane-header :class="$style.paneHeader" @back="back" @close="$emit('close-sidebar')" />
 
 		<div v-if="pane === 'menu'">
 			<div :class="$style.menuTitle">How would you like to checkout?</div>
@@ -73,6 +73,10 @@ export default {
 <style module lang="scss">
 	@import "../styles/mixins";
 	@import "../styles/variables";
+
+	.paneHeader {
+		margin: 0 $spacing-07;
+	}
 
 	.menuTitle {
 		@include text-heading-5();
