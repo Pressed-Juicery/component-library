@@ -1,19 +1,28 @@
 <template>
-	<div :class="$style.root">
-		<div :class="$style.header">
-			<back-arrow-icon :class="$style.backButton" @click.native="$emit('back')" />
-			<slot name="header-item" />
-		</div>
+	<drawer :is-open="isOpen" @close="$emit('close')">
+		<div :class="$style.root">
+			<div :class="$style.header">
+				<back-arrow-icon :class="$style.backButton" @click.native="$emit('close')" />
+				<slot name="header-item" />
+			</div>
 
-		<slot name="main-content"/>
-	</div>
+			<slot name="main-content"/>
+		</div>
+	</drawer>
 </template>
 
 <script>
 import BackArrowIcon from './icons/back-arrow-icon';
+import Drawer from './drawer';
 
 export default {
-	components: { BackArrowIcon },
+	components: { BackArrowIcon, Drawer },
+	props: {
+		isOpen: {
+			type: Boolean,
+			required: true,
+		},
+	},
 };
 </script>
 

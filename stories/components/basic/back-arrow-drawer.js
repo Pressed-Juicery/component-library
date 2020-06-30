@@ -34,13 +34,11 @@ export function Overview() {
 		components: { BackArrowDrawer, Drawer },
 		mixins,
 		template: `
-			<drawer :is-open="isDrawerOpen" @close="closeDrawer">
-				<back-arrow-drawer @back="closeDrawer">
-					<template v-slot:main-content>
-						Content
-					</template>
-				</back-arrow-drawer>
-			</drawer>
+			<back-arrow-drawer :is-open="isDrawerOpen" @close="closeDrawer">
+				<template v-slot:main-content>
+					Content
+				</template>
+			</back-arrow-drawer>
 		`,
 
 		props: {
@@ -56,17 +54,15 @@ export function HeaderItem() {
 		components: { BackArrowDrawer, Drawer },
 		mixins,
 		template: `
-			<drawer :is-open="isDrawerOpen" @close="closeDrawer">
-				<back-arrow-drawer @back="closeDrawer">
-					<template v-slot:header-item>
-						Item
-					</template>
+			<back-arrow-drawer :is-open="isDrawerOpen" @close="closeDrawer">
+				<template v-slot:header-item>
+					Item
+				</template>
 
-					<template v-slot:main-content>
-						Content
-					</template>
-				</back-arrow-drawer>
-			</drawer>
+				<template v-slot:main-content>
+					Content
+				</template>
+			</back-arrow-drawer>
 		`,
 
 		props: {
