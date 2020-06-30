@@ -53,11 +53,9 @@ export default {
 
 	methods: {
 		goTo(location) {
-			if (location === 'sign-up') return this.$emit('sign-up');
+			if (location === 'sign-up') return void(this.$emit('sign-up'));
 
 			this.pane = location;
-
-			return location;
 		},
 	},
 };
