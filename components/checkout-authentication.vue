@@ -1,29 +1,33 @@
 <template>
 	<div>
+		<pane-header @back="back" @close="$emit('close-sidebar')" />
+
 		<div v-if="pane === 'menu'">
-			<pane-header @back="$emit('close-checkout-authentication')" @close="$emit('close-sidebar')" />
 			<div :class="$style.menuTitle">How would you like to checkout?</div>
 
-			<div :class="$style.menuItem"
-			     v-for="item in items"
-			     :key="item.location"
-			     @click="goTo(item.location)">
+			<div
+				:class="$style.menuItem"
+				v-for="item in items"
+				:key="item.location"
+				@click="goTo(item.location)"
+			>
 				<span>{{ item.label }}</span>
 				<arrow-down-icon :class="$style.arrow" />
 			</div>
 		</div>
 
-		<div v-else-if="pane === 'sign-in'">
-			<pane-header @back="pane = 'menu'" @close="$emit('close-sidebar')" />
-			<sign-in buttonText="Sign In & Check Out" @submit="credentials => $emit('sign-in', credentials)" />
-		</div>
+		<sign-in
+				v-else-if="pane === 'sign-in'"
+				buttonText="Sign In & Check Out"
+				@submit="credentials => $emit('sign-in', credentials)"
+		/>
 
-		<div v-else-if="pane === 'guest-form'">
-			<pane-header @back="pane = 'menu'" @close="$emit('close-sidebar')" />
-			<guest-information-form buttonText="Continue"
-			                        :guest="guest"
-			                        @submit="guest => $emit('add-guest', guest)" />
-		</div>
+		<guest-information-form
+			v-else-if="pane === 'guest-form'"
+			buttonText="Continue"
+			:guest="guest"
+			@submit="guest => $emit('add-guest', guest)"
+		/>
 	</div>
 </template>
 
@@ -52,6 +56,11 @@ export default {
 	},
 
 	methods: {
+		back() {
+			if (this.pane === 'menu') this.$emit('close-checkout-authentication');
+			else this.pane = 'menu';
+		},
+
 		goTo(location) {
 			if (location === 'sign-up') return void(this.$emit('sign-up'));
 
