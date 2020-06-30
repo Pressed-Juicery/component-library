@@ -1,12 +1,12 @@
 <template>
 	<validated-form @submit="$emit('submit', guest)">
-		<div :class="$style.title">Your Info</div>
+		<div :class="$style.title">Checkout as Guest</div>
 
 		<validated-input :class="$style.row" label="Name" v-model="guest.name" :rules="nameRules" />
 		<validated-input :class="$style.row" label="Phone Number" v-model="guest.phone" :rules="phoneRules" />
 		<validated-input :class="$style.lastRow" label="Email" v-model="guest.email" :rules="emailRules" />
 
-		<button :class="[$style.submitButton, 'button--pill']" type="submit">{{ buttonText }}</button>
+		<button :class="[$style.submitButton, 'button']" type="submit">{{ buttonText }}</button>
 	</validated-form>
 </template>
 
@@ -62,7 +62,7 @@ export default {
 
 	.title {
 		@include text-heading-5();
-		margin-bottom: $spacing-07;
+		margin: $spacing-07 0;
 	}
 
 	.row {

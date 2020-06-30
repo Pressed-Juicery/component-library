@@ -16,7 +16,7 @@
 		                 v-model="password"
 		                 :rules="passwordRules" />
 
-		<button :class="[$style.submitButton, 'button', 'button--pill']" type="submit">{{ buttonText }}</button>
+		<button :class="[$style.submitButton, 'button']" type="submit">{{ buttonText }}</button>
 	</validated-form>
 </template>
 
@@ -80,7 +80,7 @@ export default {
 
 	.title {
 		@include text-heading-5();
-		margin-bottom: $spacing-07;
+		margin: $spacing-07 0;
 	}
 
 	.row {
