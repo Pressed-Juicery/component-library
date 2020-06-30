@@ -137,3 +137,104 @@ export function EmptyCart() {
 		},
 	};
 }
+
+// eslint-disable-next-line max-lines-per-function
+export function Guest() {
+	return {
+		components: { CartSidebar },
+		mixins,
+		template: `
+			<div>
+				<cart-sidebar
+					:is-active="isActive"
+					:cart="cart"
+					:redemption-rates="redemptionRates"
+					@close="closeSlider"
+					@cart-quantity-change="updateItemQuantity"
+					@sign-in="credentials => userCredentials = credentials"
+					@add-guest="guest => newGuest = guest"
+					@sign-up="signupMessage = 'Signing Up'"
+				/>
+				<div>User Credentials: {{ userCredentials }}</div>
+				<div>Guest: {{ newGuest }}</div>
+				<div>{{ signupMessage }}</div>
+			</div>
+		`,
+
+		props: {
+			isActive: {
+				default: boolean('Active', true),
+			},
+		},
+
+		data() {
+			return {
+				cart: {
+					itemCount: 2,
+					items: cartItems,
+					originalSubtotal: 14.5,
+					subtotal: 10,
+					discounts: [
+						{ name: 'VIP Member Savings', amount: 2.5 },
+						{ name: 'Points Redemption', amount: 6.5 },
+					],
+					total: 100,
+					isShippingAvailable: true,
+					fulfillmentSelection: { price: 40 },
+				},
+				redemptionRates,
+				userCredentials: null,
+				newGuest: null,
+				signupMessage: null,
+			};
+		},
+	};
+}
+
+// eslint-disable-next-line max-lines-per-function
+export function PrepopulatedGuest() {
+	return {
+		components: { CartSidebar },
+		mixins,
+		template: `
+			<div>
+				<cart-sidebar
+					:is-active="isActive"
+					:cart="cart"
+					:guest="guest"
+					:redemption-rates="redemptionRates"
+					@close="closeSlider"
+					@cart-quantity-change="updateItemQuantity"
+					@add-guest="updatedGuest => guest = updatedGuest"
+				/>
+				<div>Guest: {{ guest }}</div>
+			</div>
+		`,
+
+		props: {
+			isActive: {
+				default: boolean('Active', true),
+			},
+		},
+
+		data() {
+			return {
+				cart: {
+					itemCount: 2,
+					items: cartItems,
+					originalSubtotal: 14.5,
+					subtotal: 10,
+					discounts: [
+						{ name: 'VIP Member Savings', amount: 2.5 },
+						{ name: 'Points Redemption', amount: 6.5 },
+					],
+					total: 100,
+					isShippingAvailable: true,
+					fulfillmentSelection: { price: 40 },
+				},
+				redemptionRates,
+				guest: { name: 'Test Guest', phone: '1234567890', email: 'testguest@example.com' },
+			};
+		},
+	};
+}
