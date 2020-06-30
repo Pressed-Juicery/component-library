@@ -23,12 +23,12 @@ export default {
 			const methodName = shouldPreventScrolling ? 'add' : 'remove';
 
 			window.document.body.classList[methodName]('prevent-scrolling');
-		}
+		},
 	},
 
 	destroyed() {
 		this.preventBodyScrolling(false);
-	}
+	},
 };
 </script>
 
