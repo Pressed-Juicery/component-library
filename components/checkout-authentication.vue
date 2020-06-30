@@ -18,12 +18,14 @@
 
 		<sign-in
 				v-else-if="pane === 'sign-in'"
+				:class="$style.form"
 				buttonText="Sign In & Check Out"
 				@submit="credentials => $emit('sign-in', credentials)"
 		/>
 
 		<guest-information-form
 			v-else-if="pane === 'guest-form'"
+			:class="$style.form"
 			buttonText="Continue"
 			:guest="guest"
 			@submit="guest => $emit('add-guest', guest)"
@@ -100,5 +102,9 @@ export default {
 		height: 10px;
 		width: 10px;
 		transform: rotate(-90deg);
+	}
+
+	.form {
+		padding: 0 $spacing-07;
 	}
 </style>
