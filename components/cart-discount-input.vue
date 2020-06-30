@@ -34,6 +34,7 @@ export default {
 	}
 
 	.input {
+		padding: 9px;
 		flex: 2;
 		margin-right: $spacing-03;
 	}
