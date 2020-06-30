@@ -1,26 +1,36 @@
 <template>
 	<sidebar :is-active="isActive" @close="$emit('close')">
-		<cart-navigation
-			:shouldShowBackButton="shouldShowBackButton"
-			@back="setCartState('cart')"
-			@close="$emit('close')"
-		/>
+		<checkout-authentication v-if="showCheckoutAuthentication"
+		                         :guest="guest"
+		                         @sign-up="$emit('sign-up')"
+		                         @sign-in="credentials => $emit('sign-in', credentials)"
+		                         @add-guest="guest => $emit('add-guest', guest)"
+		                         @close-sidebar="$emit('close')"
+		                         @close-checkout-authentication="showCheckoutAuthentication = false" />
 
-		<div v-if="state === 'cart'">
-			<cart-summary
-				:class="$style.cartSummary"
-				:cart="cart"
-				:can-update-quantity="true"
-				@change="changeSummary => $emit('cart-quantity-change', changeSummary)"
+		<div v-else>
+			<cart-navigation
+				:shouldShowBackButton="shouldShowBackButton"
+				@back="setCartState('cart')"
+				@close="$emit('close')"
 			/>
-			<cart-discount-input @submit="discountCode => $emit('apply-discount-code', discountCode)" />
-			<hr :class="$style.partition">
-			<cart-points-display @click="setCartState('points')" :user="user" />
+
+			<div v-if="state === 'cart'">
+				<cart-summary
+					:class="$style.cartSummary"
+					:cart="cart"
+					:can-update-quantity="true"
+					@change="changeSummary => $emit('cart-quantity-change', changeSummary)"
+				/>
+				<cart-discount-input @submit="discountCode => $emit('apply-discount-code', discountCode)" />
+				<hr :class="$style.partition">
+				<cart-points-display @click="setCartState('points')" :user="user" />
+			</div>
+
+			<cart-points-redemption v-else-if="state === 'points'" :user="user" :redemption-rates="redemptionRates" />
+
+			<cart-checkout-footer :cart="cart" @continue="continueToCheckout()" />
 		</div>
-
-		<cart-points-redemption v-else-if="state === 'points'" :user="user" :redemption-rates="redemptionRates" />
-
-		<cart-checkout-footer :cart="cart" @continue="$emit('continue')" />
 	</sidebar>
 </template>
 
@@ -31,6 +41,8 @@ import CartNavigation from './cart-navigation';
 import CartPointsDisplay from './cart-points-display';
 import CartPointsRedemption from './cart-points-redemption';
 import CartSummary from './cart-summary';
+import CheckoutAuthentication from './checkout-authentication';
+
 import Sidebar from './sidebar';
 
 export default {
@@ -41,25 +53,38 @@ export default {
 		CartPointsDisplay,
 		CartPointsRedemption,
 		CartSummary,
+		CheckoutAuthentication,
 		Sidebar,
 	},
+
 	props: {
 		isActive: Boolean,
 		cart: Object,
 		user: Object,
+		guest: Object,
 		redemptionRates: {
 			type: Array,
 			required: true,
 		},
 	},
+
 	data() {
 		return {
 			state: 'cart',
+			showCheckoutAuthentication: false,
 		};
 	},
+
 	methods: {
 		setCartState(state) { this.state = state },
+
+		continueToCheckout() {
+			if (this.isUser) return this.$emit('continue');
+
+			this.showCheckoutAuthentication = true;
+		},
 	},
+
 	computed: {
 		shouldShowBackButton() { return this.state !== 'cart' },
 	},
