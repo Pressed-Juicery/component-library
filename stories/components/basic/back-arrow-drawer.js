@@ -2,7 +2,6 @@ import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 
 import BackArrowDrawer from '../../../components/back-arrow-drawer';
 import Drawer from '../../../components/drawer';
-import SidebarOverlay from '../../../components/sidebar-overlay';
 
 import { addons } from '@storybook/addons';
 
@@ -73,42 +72,6 @@ export function HeaderItem() {
 		props: {
 			isDrawerOpen: {
 				default: boolean('DrawerOpen', true),
-			},
-		},
-	};
-}
-
-// eslint-disable-next-line max-lines-per-function
-export function Sidebar() {
-	return {
-		components: { BackArrowDrawer, Drawer, SidebarOverlay },
-		mixins,
-
-		template: `
-			<sidebar-overlay :is-open="isSidebarOpen" :is-active="!isDrawerOpen" @close="closeSidebar">
-				<hr v-for="num in 60" />
-
-				<drawer :is-open="isDrawerOpen" @close="closeDrawer">
-					<back-arrow-drawer @back="closeDrawer">
-						<template v-slot:header-item>
-							Item
-						</template>
-
-						<template v-slot:main-content>
-							Content
-						</template>
-					</back-arrow-drawer>
-				</drawer>
-			</sidebar-overlay>
-		`,
-
-		props: {
-			isDrawerOpen: {
-				default: boolean('DrawerOpen', true),
-			},
-
-			isSidebarOpen: {
-				default: boolean('SidebarOpen', true),
 			},
 		},
 	};
