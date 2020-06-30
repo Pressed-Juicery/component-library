@@ -86,7 +86,7 @@ export default {
 		setCartState(state) { this.state = state },
 
 		continueToCheckout() {
-			if (this.isUser) return void (this.$emit('continue'));
+			if (this.user) return void (this.$emit('continue'));
 
 			this.showCheckoutAuthentication = true;
 		},
