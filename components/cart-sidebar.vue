@@ -75,6 +75,12 @@ export default {
 		};
 	},
 
+	watch: {
+		isActive() {
+			if (this.isActive === true) this.showCheckoutAuthentication = false;
+		},
+	},
+
 	methods: {
 		setCartState(state) { this.state = state },
 
