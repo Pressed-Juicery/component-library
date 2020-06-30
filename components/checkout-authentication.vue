@@ -13,12 +13,12 @@
 			</div>
 		</div>
 
-		<div v-if="pane === 'sign-in'">
+		<div v-else-if="pane === 'sign-in'">
 			<pane-header @back="pane = 'menu'" @close="$emit('close-sidebar')" />
 			<sign-in buttonText="Sign In & Check Out" @submit="credentials => $emit('sign-in', credentials)" />
 		</div>
 
-		<div v-if="pane === 'guest-form'">
+		<div v-else-if="pane === 'guest-form'">
 			<pane-header @back="pane = 'menu'" @close="$emit('close-sidebar')" />
 			<guest-information-form buttonText="Continue"
 			                        :guest="guest"
