@@ -68,7 +68,6 @@ export default {
 	.menuTitle {
 		@include text-heading-5();
 
-		margin: 0 (-$spacing-07);
 		padding: $spacing-07;
 		border-bottom: $border-light;
 	}
@@ -79,7 +78,6 @@ export default {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin: 0 (-$spacing-07);
 		padding: $spacing-07;
 		border-bottom: $border-light;
 		cursor: pointer;

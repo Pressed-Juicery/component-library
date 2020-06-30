@@ -1,6 +1,7 @@
 <template>
 	<sidebar :is-active="isActive" @close="$emit('close')">
 		<checkout-authentication v-if="showCheckoutAuthentication"
+		                         :class="$style.checkoutAuthentication"
 		                         :guest="guest"
 		                         @sign-up="$emit('sign-up')"
 		                         @sign-in="credentials => $emit('sign-in', credentials)"
@@ -99,6 +100,10 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/buttons';
+
+	.checkoutAuthentication {
+		margin: 0 (-$spacing-07);
+	}
 
 	.cartSummary {
 		margin-top: $spacing-07;
