@@ -36,7 +36,6 @@ export default {
 
 	.header {
 		@include text-cta();
-
 		position: sticky;
 		top: 0;
 		display: flex;
