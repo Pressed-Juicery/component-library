@@ -1,3 +1,5 @@
+/* eslint-disable max-lines */
+
 import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 import CartSidebar from '../../../components/cart-sidebar';
 import { addons } from '@storybook/addons';

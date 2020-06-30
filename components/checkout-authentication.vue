@@ -55,8 +55,10 @@ export default {
 		goTo(location) {
 			if (location === 'sign-up') return this.$emit('sign-up');
 
-			else this.pane = location;
-		}
+			this.pane = location;
+
+			return location;
+		},
 	},
 };
 </script>

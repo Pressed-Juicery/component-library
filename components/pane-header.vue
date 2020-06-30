@@ -15,7 +15,7 @@ import CloseIcon from './icons/close-icon';
 
 export default {
 	components: { ArrowDownIcon, CloseIcon },
-}
+};
 </script>
 
 <style module lang="scss">

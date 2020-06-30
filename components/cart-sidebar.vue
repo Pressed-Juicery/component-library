@@ -82,6 +82,8 @@ export default {
 			if (this.isUser) return this.$emit('continue');
 
 			this.showCheckoutAuthentication = true;
+
+			return this.showCheckoutAuthentication;
 		},
 	},
 
