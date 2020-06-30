@@ -1,38 +1,34 @@
 <template>
-	<div ref="root" :class="[$style.root, { [$style.isActive]: isActive }]" @click="$emit('close')"></div>
+	<div :class="[$style.root, { [$style.isActive]: isActive }]" @click="$emit('close')"></div>
 </template>
 
 <script>
-import { preventAncestorScrolling } from '../utilities/prevent-body-scrolling';
-
 export default {
 	props: {
 		isActive: Boolean,
 	},
 
-	data() {
-		return {
-			enableScrolling: () => {}, // eslint-disable-line no-empty-function
-		};
-	},
-
-	mounted() {
-		this.enableScrolling = preventAncestorScrolling(this.$refs.root);
+	created() {
+		this.preventBodyScrolling(this.isActive);
 	},
 
 	watch: {
 		isActive() {
-			if (this.isActive) {
-				this.enableScrolling = preventAncestorScrolling(this.$refs.root);
-			} else {
-				this.enableScrolling();
-			}
+			this.preventBodyScrolling(this.isActive);
 		},
 	},
 
-	destroyed() {
-		this.enableScrolling();
+	methods: {
+		preventBodyScrolling(shouldPreventScrolling) {
+			const methodName = shouldPreventScrolling ? 'add' : 'remove';
+
+			window.document.body.classList[methodName]('prevent-scrolling');
+		}
 	},
+
+	destroyed() {
+		this.preventBodyScrolling(false);
+	}
 };
 </script>
 
