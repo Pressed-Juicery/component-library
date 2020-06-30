@@ -15,14 +15,14 @@
 
 		<div v-if="pane === 'sign-in'">
 			<pane-header @back="pane = 'menu'" @close="$emit('close-sidebar')" />
-			<sign-in buttonText="Sign In & Check Out" @sign-in="credentials => $emit('sign-in', credentials)" />
+			<sign-in buttonText="Sign In & Check Out" @submit="credentials => $emit('sign-in', credentials)" />
 		</div>
 
 		<div v-if="pane === 'guest-form'">
 			<pane-header @back="pane = 'menu'" @close="$emit('close-sidebar')" />
 			<guest-information-form buttonText="Continue"
 			                        :guest="guest"
-			                        @add-guest="guest => $emit('add-guest', guest)" />
+			                        @submit="guest => $emit('add-guest', guest)" />
 		</div>
 	</div>
 </template>
