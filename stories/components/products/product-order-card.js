@@ -22,7 +22,7 @@ const products = [
 	// Default
 	{
 		title: 'Sample Juice Product',
-		imgUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
 		nonMemberPrice: 6.75,
 		nonMemberDiscountPrice: null,
 		memberPrice: 5.00,
@@ -32,7 +32,7 @@ const products = [
 	// No Discounts, Prices are the same
 	{
 		title: 'Sample Juice Product',
-		imgUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
 		nonMemberPrice: 20.00,
 		nonMemberDiscountPrice: null,
 		memberPrice: 20.00,
@@ -42,7 +42,7 @@ const products = [
 	// Non-member discount
 	{
 		title: 'Sample Juice Product',
-		imgUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
 		nonMemberPrice: 6.75,
 		nonMemberDiscountPrice: 6.00,
 		memberPrice: 5.00,
@@ -52,7 +52,7 @@ const products = [
 	// Non-member discount, Prices are the same
 	{
 		title: 'Sample Juice Product',
-		imgUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
 		nonMemberPrice: 6.75,
 		nonMemberDiscountPrice: 5.00,
 		memberPrice: 5.00,
@@ -62,7 +62,7 @@ const products = [
 	// Non-member discount, member discount
 	{
 		title: 'Sample Juice Product',
-		imgUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
 		nonMemberPrice: 6.75,
 		nonMemberDiscountPrice: 5.00,
 		memberPrice: 5.00,
@@ -72,7 +72,7 @@ const products = [
 	// Non-member discount, member discount, Prices are the same
 	{
 		title: 'Sample Juice Product',
-		imgUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
 		nonMemberPrice: 6.75,
 		nonMemberDiscountPrice: 4.00,
 		memberPrice: 5.00,
@@ -82,7 +82,7 @@ const products = [
 	// Member Discount
 	{
 		title: 'Sample Juice Product',
-		imgUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
 		nonMemberPrice: 6.75,
 		nonMemberDiscountPrice: null,
 		memberPrice: 5.00,
