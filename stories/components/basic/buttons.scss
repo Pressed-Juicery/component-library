@@ -1,5 +1,28 @@
+@import '../../../styles/mixins';
 @import '../../../styles/variables';
 
-.buttons button {
-	margin-bottom: $spacing-06;
+.buttons {
+	button {
+		margin-bottom: $spacing-06;
+	}
+
+	.button-secondary {
+		@include button-secondary();
+	}
+
+	.button-tertiary {
+		@include button-tertiary();
+	}
+
+	.button-pill {
+		@include button-pill();
+	}
+
+	.button-pill-secondary {
+		@include button-pill-secondary();
+	}
+
+	.button-link {
+		@include button-link();
+	}
 }

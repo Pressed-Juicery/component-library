@@ -16,7 +16,7 @@
 		                 v-model="password"
 		                 :rules="passwordRules" />
 
-		<button :class="[$style.submitButton, 'button']" type="submit">{{ buttonText }}</button>
+		<button :class="$style.submitButton" type="submit">{{ buttonText }}</button>
 	</validated-form>
 </template>
 
@@ -92,6 +92,7 @@ export default {
 	}
 
 	.submitButton {
+		@include button();
 		display: block;
 		width: 100%;
 		max-width: 384px;

@@ -2,7 +2,7 @@
 	<div :class="$style.root">
 		<input placeholder="Discount Code" :class="$style.input" v-model="discountCode"/>
 		<button
-			:class="[$style.button, 'button--tertiary']"
+			:class="$style.button"
 			:disabled="!discountCode"
 			@click="submit"
 		>Apply</button>
@@ -27,6 +27,7 @@ export default {
 </script>
 
 <style module lang="scss">
+	@import '../styles/mixins';
 	@import '../styles/variables';
 
 	.root {
@@ -38,6 +39,7 @@ export default {
 	}
 
 	.button {
+		@include button-tertiary();
 		flex-shrink: 0;
 	}
 </style>

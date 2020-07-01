@@ -27,7 +27,7 @@
 						</div>
 					</div>
 
-					<button :class="[$style.reloadButton, 'button', 'button--secondary', 'button--pill']"
+					<button :class="$style.reloadButton"
 							@click="$emit('reload')"
 					>
 						Reload Balance
@@ -160,6 +160,8 @@ export default {
 	}
 
 	.reloadButton {
+		@include button-pill-secondary();
+
 		display: block;
 		margin: 0 auto $spacing-06;
 		padding: 0 $spacing-10;

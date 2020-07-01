@@ -56,3 +56,9 @@ select {
 	background-position: right 10px center;
 	background-color: #fff;
 }
+
+button,
+input[type="submit"],
+input[type="button"] {
+	@include button();
+}
