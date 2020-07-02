@@ -1,7 +1,7 @@
 <template>
 	<card>
 		<div :class="$style.wrapper">
-			<img :src="product.imageUrl" :alt="`${product.name} product image`"/>
+			<img :class="$style.productImage" :src="product.imageUrl" :alt="`${product.name} product image`"/>
 			<div :class="$style.title">{{ product.name }}</div>
 
 			<div v-if="displaySamePrice" :class="$style.price">
@@ -72,6 +72,10 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.productImage {
+	max-width: 100%;
 }
 
 .title {
