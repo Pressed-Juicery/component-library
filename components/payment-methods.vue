@@ -55,7 +55,7 @@ export default {
 
 	.editLink {
 		@include text-body-small();
-		border-bottom: 1px solid black;
+		text-decoration: underline;
 		cursor: pointer;
 	}
 </style>
