@@ -40,37 +40,37 @@ export default {
 </script>
 
 <style module lang="scss">
-@import '../styles/mixins';
-@import '../styles/variables';
+	@import '../styles/mixins';
+	@import '../styles/variables';
 
-.content,
-.paymentInfo {
-	display: flex;
-	align-items: center;
-}
+	.content,
+	.paymentInfo {
+		display: flex;
+		align-items: center;
+	}
 
-.paymentMethod {
-	margin-bottom: $spacing-03;
-}
+	.paymentMethod {
+		margin-bottom: $spacing-03;
+	}
 
-.content {
-	justify-content: space-between;
-	padding: 0 $spacing-06 0 $spacing-04;
-}
+	.content {
+		justify-content: space-between;
+		padding: 0 $spacing-06 0 $spacing-04;
+	}
 
-.paymentInfo {
-	flex-flow: row;
-}
+	.paymentInfo {
+		flex-flow: row;
+	}
 
-.icon {
-	line-height: 0;
-	width: $spacing-08;
-	margin-right: $spacing-03;
-}
+	.icon {
+		line-height: 0;
+		width: $spacing-08;
+		margin-right: $spacing-03;
+	}
 
-.editLink {
-	@include text-body-small();
-	border-bottom: 1px solid black;
-	cursor: pointer;
-}
+	.editLink {
+		@include text-body-small();
+		border-bottom: 1px solid black;
+		cursor: pointer;
+	}
 </style>
