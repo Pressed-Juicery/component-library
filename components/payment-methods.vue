@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<card :class="$style.paymentMethod" v-for="(paymentMethod, index) in paymentMethods" :key="index">
-			<div :class="$style.content" @click="$emit('select', paymentMethod)">
+			<div :class="$style.content">
 				<div :class="$style.paymentInfo">
 					<payment-method-icon :class="$style.icon" :type="paymentMethod.vendor" />
 					{{ paymentMethod.identifier }}
