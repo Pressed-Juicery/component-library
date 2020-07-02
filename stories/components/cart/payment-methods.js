@@ -1,7 +1,7 @@
 import PaymentMethods from '../../../components/payment-methods.vue';
 
 export default {
-	title: 'Components / Cart / PaymentMethods',
+	title: 'Components / Basic / PaymentMethods',
 	component: PaymentMethods,
 };
 

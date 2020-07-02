@@ -18,6 +18,7 @@ const groups = [{
 		'CollapsibleDrawer',
 		'Drawer',
 		'Overlay',
+		'PaymentMethods',
 		'QrCode',
 		'StarRating',
 		'StoreAddress',
@@ -33,7 +34,6 @@ const groups = [{
 		'CartSummary',
 		'CartTotals',
 		'CheckoutItemCard',
-		'PaymentMethods',
 		'PointsRedemption',
 	],
 }, {
