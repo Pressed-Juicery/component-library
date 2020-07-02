@@ -47,10 +47,6 @@ export default {
 		padding: 0 $spacing-06 0 $spacing-04;
 	}
 
-	.paymentInfo {
-		flex-flow: row;
-	}
-
 	.icon {
 		line-height: 0;
 		width: $spacing-08;
