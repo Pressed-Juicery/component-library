@@ -1,13 +1,13 @@
 <template>
 	<div>
 		<card :class="$style.paymentMethod" v-for="(paymentMethod, index) in paymentMethods" :key="index">
-			<div :class="$style.content" @click="select(paymentMethod)">
+			<div :class="$style.content" @click="$emit('select', paymentMethod)">
 				<div :class="$style.paymentInfo">
 					<payment-method-icon :class="$style.icon" :type="paymentMethod.vendor" />
 					{{ paymentMethod.identifier }}
 				</div>
 				<div>
-					<div :class="$style.editLink" @click.stop="edit(paymentMethod)">Edit</div>
+					<div :class="$style.editLink" @click.stop="$emit('edit', paymentMethod)">Edit</div>
 				</div>
 			</div>
 		</card>
@@ -25,15 +25,6 @@ export default {
 		paymentMethods: {
 			type: Array,
 			required: true,
-		},
-	},
-
-	methods: {
-		edit(paymentMethod) {
-			this.$emit('edit', paymentMethod);
-		},
-		select(paymentMethod) {
-			this.$emit('select', paymentMethod);
 		},
 	},
 };
