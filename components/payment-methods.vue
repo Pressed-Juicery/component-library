@@ -69,7 +69,7 @@ export default {
 }
 
 .editLink {
-	border-bottom: 1px solid black;
 	@include text-body-small();
+	border-bottom: 1px solid black;
 }
 </style>
