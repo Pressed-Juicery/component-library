@@ -6,9 +6,7 @@
 					<payment-method-icon :class="$style.icon" :type="paymentMethod.vendor" />
 					{{ paymentMethod.identifier }}
 				</div>
-				<div>
-					<div :class="$style.editLink" @click.stop="$emit('edit', paymentMethod)">Edit</div>
-				</div>
+				<div :class="$style.editLink" @click.stop="$emit('edit', paymentMethod)">Edit</div>
 			</div>
 		</card>
 	</div>
