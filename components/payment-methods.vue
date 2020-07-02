@@ -50,7 +50,7 @@ export default {
 	.icon {
 		line-height: 0;
 		width: $spacing-08;
-		margin-right: $spacing-03;
+		margin-right: $spacing-04;
 	}
 
 	.editLink {
