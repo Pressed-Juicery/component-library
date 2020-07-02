@@ -8,7 +8,7 @@ export default {
 export function Overview() {
 	return {
 		components: { PaymentMethods },
-		template: '<payment-methods :paymentMethods="paymentMethods" />',
+		template: '<payment-methods :paymentMethods="paymentMethods" @edit="onEdit"/>',
 		data() {
 			return {
 				paymentMethods: [
@@ -20,6 +20,11 @@ export function Overview() {
 					{ identifier: '····3563', vendor: 'unknown' },
 				],
 			};
+		},
+		methods: {
+			onEdit() {
+				console.log('captured "edit" event'); // eslint-disable-line no-console
+			},
 		},
 	};
 }
