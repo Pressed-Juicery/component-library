@@ -4,7 +4,7 @@
       <div>Pressed Points Balance</div>
       <div>{{ user.points }}</div>
     </div>
-    <button @click="$emit('click')" :class="[$style.redeemPoints, 'button--tertiary']">
+    <button @click="$emit('click')" :class="$style.redeemPoints">
 		Redeem Pressed Points
 	</button>
 	<hr :class="$style.partition" />
@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style module lang="scss">
+  @import '../styles/mixins';
   @import '../styles/variables';
 
 	.balanceWrapper {
@@ -29,6 +30,7 @@ export default {
 	}
 
 	.redeemPoints {
+		@include button-tertiary();
 		width: 100%;
 	}
 

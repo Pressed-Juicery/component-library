@@ -6,7 +6,7 @@
 		<validated-input :class="$style.row" label="Phone Number" v-model="guest.phone" :rules="phoneRules" />
 		<validated-input :class="$style.lastRow" label="Email" v-model="guest.email" :rules="emailRules" />
 
-		<button :class="[$style.submitButton, 'button']" type="submit">{{ buttonText }}</button>
+		<button :class="$style.submitButton" type="submit">{{ buttonText }}</button>
 	</validated-form>
 </template>
 
@@ -74,6 +74,7 @@ export default {
 	}
 
 	.submitButton {
+		@include button();
 		display: block;
 		width: 100%;
 		max-width: 384px;

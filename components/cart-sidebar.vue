@@ -99,7 +99,7 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import '../styles/buttons';
+	@import '../styles/variables';
 
 	.checkoutAuthentication {
 		margin: 0 (-$spacing-07);
