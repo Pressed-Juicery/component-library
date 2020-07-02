@@ -1,8 +1,8 @@
 <template>
 	<card>
 		<div :class="$style.wrapper">
-			<img :src="product.imageUrl" :alt="`${product.title} product image`"/>
-			<div :class="$style.title">{{ product.title }}</div>
+			<img :src="product.imageUrl" :alt="`${product.name} product image`"/>
+			<div :class="$style.title">{{ product.name }}</div>
 
 			<div v-if="displaySamePrice" :class="$style.price">
 				<span>{{ displaySamePrice }}</span>
