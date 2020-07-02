@@ -34,14 +34,14 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
+	.paymentMethod {
+		margin-bottom: $spacing-03;
+	}
+
 	.content,
 	.paymentInfo {
 		display: flex;
 		align-items: center;
-	}
-
-	.paymentMethod {
-		margin-bottom: $spacing-03;
 	}
 
 	.content {
