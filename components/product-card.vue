@@ -87,12 +87,11 @@ export default {
 }
 
 .title {
-	margin-bottom: $spacing-04;
 	text-transform: capitalize;
 }
 
 .price {
-	margin-bottom: $spacing-05;
+	margin-bottom: $spacing-03;
 }
 
 .priceStrike {
