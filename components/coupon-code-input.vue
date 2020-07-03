@@ -68,7 +68,7 @@ export default {
 	.coupon {
 		display: flex;
 		align-items: center;
-		padding: $spacing-03 $spacing-04;
+		padding: $spacing-03 $spacing-05;
 		margin-right: $coupon-spacing;
 		background-color: $beige;
 		border-radius: $border-radius;
