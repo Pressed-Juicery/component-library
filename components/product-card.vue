@@ -29,8 +29,14 @@ export default {
 	components: { Card, QuantitySelector },
 
 	props: {
-		product: Object,
-		quantity: Number,
+		product: {
+			type: Object,
+			required: true,
+		},
+		quantity: {
+			type: Number,
+			required: false,
+		},
 	},
 
 	computed: {
