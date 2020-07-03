@@ -37,7 +37,6 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 0 $spacing-06 0 $spacing-04;
 	}
 
 	.editLink {
