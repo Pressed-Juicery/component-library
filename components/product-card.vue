@@ -7,11 +7,11 @@
 			<div v-if="displaySamePrice" :class="$style.price">{{ displaySamePrice }}</div>
 
 			<div v-else :class="$style.price">
-				<span :class="{ [$style.priceStrike] : product.nonMemberDiscountPrice }">{{ formatPrice(product.nonMemberPrice) }}</span> <!-- eslint-disable-line -->
-				<span>{{ formatPrice(product.nonMemberDiscountPrice) }}</span>
+				<span :class="{ [$style.priceStrike] : product.nonMemberSalePrice }">{{ formatPrice(product.nonMemberPrice) }}</span> <!-- eslint-disable-line -->
+				<span>{{ formatPrice(product.nonMemberSalePrice) }}</span>
 				<span> | </span>
-				<span :class="{ [$style.priceStrike] : product.memberDiscountPrice }">{{ formatPrice(product.memberPrice) }}</span> <!-- eslint-disable-line -->
-				<span>{{ formatPrice(product.memberDiscountPrice) }}</span>
+				<span :class="{ [$style.priceStrike] : product.memberSalePrice }">{{ formatPrice(product.memberPrice) }}</span> <!-- eslint-disable-line -->
+				<span>{{ formatPrice(product.memberSalePrice) }}</span>
 			</div>
 
 			<quantity-selector :quantity="quantity" @change="quantity => $emit('change', { product, quantity })"/>
@@ -49,12 +49,12 @@ export default {
 	methods: {
 		getPriceByMemberShip(membership) {
 			return this.hasDiscount(membership)
-				? this.product[`${membership}DiscountPrice`]
+				? this.product[`${membership}SalePrice`]
 				: this.product[`${membership}Price`];
 		},
 
 		hasDiscount(memberType) {
-			const key = `${memberType}DiscountPrice`;
+			const key = `${memberType}SalePrice`;
 
 			return Object.prototype.hasOwnProperty.call(this.product, key) && this.product[key];
 		},
