@@ -1,7 +1,7 @@
 <template>
 	<card>
 		<div :class="$style.wrapper">
-			<img :class="$style.productImage" :src="product.imageUrl" />
+			<img :class="$style.image" :src="product.imageUrl" />
 			<div :class="$style.name">{{ product.name }}</div>
 
 			<div v-if="hasSamePrice" :class="$style.price">{{ formatPrice(product.nonMemberPrice) }}</div>
@@ -66,7 +66,7 @@ export default {
 		align-items: center;
 	}
 
-	.productImage {
+	.image {
 		max-width: 100%;
 	}
 
