@@ -14,7 +14,7 @@
 			<div v-for="discount in discounts" :class="$style.discount" :key="discount.id">
 				<discount-tag :class="$style.discountTag" />
 				<div :class="$style.code">{{ discount.code }}</div>
-				<close-icon :class="$style.close" @click.native="$emit('remove', discount)"/>
+				<close-icon :class="$style.remove" @click.native="$emit('remove', discount)"/>
 			</div>
 		</div>
 	</div>
@@ -84,7 +84,7 @@ export default {
 		margin: 0 $spacing-03;
 	}
 
-	.close {
+	.remove {
 		cursor: pointer;
 		width: 11px;
 		height: 12px;
