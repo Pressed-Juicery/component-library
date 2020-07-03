@@ -2,10 +2,7 @@
 	<div>
 		<card :class="$style.paymentMethod" v-for="(paymentMethod, index) in paymentMethods" :key="index">
 			<div :class="$style.content">
-				<div :class="$style.paymentInfo">
-					<payment-method-icon :class="$style.icon" :type="paymentMethod.vendor" />
-					{{ paymentMethod.identifier }}
-				</div>
+				<payment-method-formatter :payment-method="paymentMethod" />
 				<div :class="$style.editLink" @click.stop="$emit('edit', paymentMethod)">Edit</div>
 			</div>
 		</card>
@@ -14,10 +11,10 @@
 
 <script>
 import Card from './card';
-import PaymentMethodIcon from './payment-method-icon';
+import PaymentMethodFormatter from './payment-method-formatter';
 
 export default {
-	components: { PaymentMethodIcon, Card },
+	components: { Card, PaymentMethodFormatter },
 
 	props: {
 		paymentMethods: {
@@ -36,21 +33,11 @@ export default {
 		margin-bottom: $spacing-03;
 	}
 
-	.content,
-	.paymentInfo {
+	.content {
 		display: flex;
 		align-items: center;
-	}
-
-	.content {
 		justify-content: space-between;
 		padding: 0 $spacing-06 0 $spacing-04;
-	}
-
-	.icon {
-		line-height: 0;
-		width: $spacing-08;
-		margin-right: $spacing-04;
 	}
 
 	.editLink {
