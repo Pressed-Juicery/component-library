@@ -69,34 +69,34 @@ export default {
 </script>
 
 <style module lang="scss">
-@import '../styles/mixins';
+	@import '../styles/mixins';
 
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
-.productImage {
-	max-width: 100%;
-}
+	.productImage {
+		max-width: 100%;
+	}
 
-.name,
-.price {
-	@include text-body-small();
-	@include text-bold();
-}
+	.name,
+	.price {
+		@include text-body-small();
+		@include text-bold();
+	}
 
-.name {
-	@include line-clamp(1);
-	text-transform: capitalize;
-}
+	.name {
+		@include line-clamp(1);
+		text-transform: capitalize;
+	}
 
-.price {
-	margin-bottom: $spacing-03;
-}
+	.price {
+		margin-bottom: $spacing-03;
+	}
 
-.priceStrike {
-	text-decoration: line-through;
-}
+	.priceStrike {
+		text-decoration: line-through;
+	}
 </style>
