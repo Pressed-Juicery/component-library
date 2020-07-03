@@ -12,7 +12,7 @@
 		</div>
 		<div v-if="coupons" :class="$style.couponWrapper">
 			<div v-for="coupon in coupons" :class="$style.coupon" :key="coupon.id">
-				<discount-tag :class="$style.discountTag" />
+				<coupon-tag :class="$style.couponTag" />
 				<div :class="$style.code">{{ coupon.code }}</div>
 				<close-icon :class="$style.remove" @click.native="$emit('remove', coupon)"/>
 			</div>
@@ -22,10 +22,10 @@
 
 <script>
 import CloseIcon from './icons/close-icon';
-import DiscountTag from './icons/discount-tag';
+import CouponTag from './icons/coupon-tag';
 
 export default {
-	components: { DiscountTag, CloseIcon },
+	components: { CouponTag, CloseIcon },
 	props: {
 		coupons: {
 			type: Array,
@@ -75,7 +75,7 @@ export default {
 		opacity: .8;
 	}
 
-	.discountTag {
+	.couponTag {
 		height: 16px;
 		width: 17px;
 	}
