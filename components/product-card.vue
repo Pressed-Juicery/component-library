@@ -7,10 +7,10 @@
 			<div v-if="displaySamePrice" :class="$style.price">{{ displaySamePrice }}</div>
 
 			<div v-else :class="$style.price">
-				<span :class="{ [$style.priceStrike] : product.nonMemberSalePrice }">{{ formatPrice(product.nonMemberPrice) }}</span> <!-- eslint-disable-line -->
+				<span :class="nonMemberPriceClass">{{ formatPrice(product.nonMemberPrice) }}</span>
 				<span>{{ formatPrice(product.nonMemberSalePrice) }}</span>
 				<span> | </span>
-				<span :class="{ [$style.priceStrike] : product.memberSalePrice }">{{ formatPrice(product.memberPrice) }}</span> <!-- eslint-disable-line -->
+				<span :class="memberPriceClass">{{ formatPrice(product.memberPrice) }}</span>
 				<span>{{ formatPrice(product.memberSalePrice) }}</span>
 			</div>
 
@@ -39,6 +39,8 @@ export default {
 	},
 
 	computed: {
+		nonMemberPriceClass() { return this.product.nonMemberSalePrice && this.$style.priceStrike },
+		memberPriceClass() { return this.product.memberSalePrice && this.$style.priceStrike },
 		displaySamePrice() {
 			const isSamePrice = this.getPriceByMemberShip('nonMember') === this.getPriceByMemberShip('member');
 
