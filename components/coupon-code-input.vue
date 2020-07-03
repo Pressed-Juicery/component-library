@@ -48,6 +48,8 @@ export default {
 <style module lang="scss">
 	@import '../styles/mixins';
 
+	$coupon-spacing: $spacing-03;
+
 	.root {
 		margin-bottom: $spacing-07;
 	}
@@ -60,13 +62,14 @@ export default {
 	.couponWrapper {
 		display: flex;
 		flex-wrap: wrap;
+		margin-right: (-$coupon-spacing);
 	}
 
 	.coupon {
 		display: flex;
 		align-items: center;
 		padding: $spacing-03 $spacing-04;
-		margin-right: $spacing-03;
+		margin-right: $coupon-spacing;
 		background-color: $beige;
 		border-radius: $border-radius;
 	}
