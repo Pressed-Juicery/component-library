@@ -22,8 +22,9 @@ export function Overview() {
 			};
 		},
 		methods: {
-			onEdit() {
-				console.log('captured "edit" event'); // eslint-disable-line no-console
+			onEdit(paymentMethod) {
+				// eslint-disable-next-line no-console
+				console.log(`captured "edit" event for: ${paymentMethod.vendor} ${paymentMethod.identifier}`);
 			},
 		},
 	};
