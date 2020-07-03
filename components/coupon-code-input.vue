@@ -71,10 +71,6 @@ export default {
 		border-radius: $border-radius;
 	}
 
-	.coupon:hover {
-		opacity: .8;
-	}
-
 	.couponTag {
 		height: 16px;
 		width: 17px;
