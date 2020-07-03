@@ -4,9 +4,7 @@
 			<img :class="$style.productImage" :src="product.imageUrl" :alt="`${product.name} product image`"/>
 			<div :class="$style.name">{{ product.name }}</div>
 
-			<div v-if="displaySamePrice" :class="$style.price">
-				<span>{{ displaySamePrice }}</span>
-			</div>
+			<div v-if="displaySamePrice" :class="$style.price">{{ displaySamePrice }}</div>
 
 			<div v-else :class="$style.price">
 				<span :class="[$style.price, {[$style.priceStrike] : product.nonMemberDiscountPrice }]">{{ formatPrice(product.nonMemberPrice) }}</span> <!-- eslint-disable-line -->
