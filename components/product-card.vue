@@ -50,15 +50,7 @@ export default {
 
 	methods: {
 		getPriceByMemberShip(membership) {
-			return this.hasDiscount(membership)
-				? this.product[`${membership}SalePrice`]
-				: this.product[`${membership}Price`];
-		},
-
-		hasDiscount(memberType) {
-			const key = `${memberType}SalePrice`;
-
-			return Object.prototype.hasOwnProperty.call(this.product, key) && this.product[key];
+			return this.product[`${membership}SalePrice`] || this.product[`${membership}Price`];
 		},
 
 		formatPrice(price) {
