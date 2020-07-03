@@ -23,7 +23,7 @@
 					:can-update-quantity="true"
 					@change="changeSummary => $emit('cart-quantity-change', changeSummary)"
 				/>
-				<cart-discount-input @submit="discountCode => $emit('apply-discount-code', discountCode)" />
+				<coupon-code-input @submit="discountCode => $emit('apply-discount-code', discountCode)" />
 				<hr :class="$style.partition">
 				<cart-points-display @click="setCartState('points')" :user="user" />
 			</div>
@@ -37,7 +37,7 @@
 
 <script>
 import CartCheckoutFooter from './cart-checkout-footer';
-import CartDiscountInput from './cart-discount-input';
+import CouponCodeInput from './coupon-code-input';
 import CartNavigation from './cart-navigation';
 import CartPointsDisplay from './cart-points-display';
 import CartPointsRedemption from './cart-points-redemption';
@@ -49,7 +49,7 @@ import Sidebar from './sidebar';
 export default {
 	components: {
 		CartCheckoutFooter,
-		CartDiscountInput,
+		CouponCodeInput,
 		CartNavigation,
 		CartPointsDisplay,
 		CartPointsRedemption,
