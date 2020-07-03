@@ -37,12 +37,12 @@
 
 <script>
 import CartCheckoutFooter from './cart-checkout-footer';
-import CouponCodeInput from './coupon-code-input';
 import CartNavigation from './cart-navigation';
 import CartPointsDisplay from './cart-points-display';
 import CartPointsRedemption from './cart-points-redemption';
 import CartSummary from './cart-summary';
 import CheckoutAuthentication from './checkout-authentication';
+import CouponCodeInput from './coupon-code-input';
 
 import Sidebar from './sidebar';
 
