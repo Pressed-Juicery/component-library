@@ -14,79 +14,6 @@ const mixins = {
 	},
 };
 
-const products = [
-
-	// Default
-	{
-		name: 'Sample Juice Product',
-		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-		nonMemberPrice: 6.75,
-		nonMemberDiscountPrice: null,
-		memberPrice: 5.00,
-		memberDiscountPrice: null,
-	},
-
-	// No Discounts, Prices are the same
-	{
-		name: 'Sample Juice Product',
-		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-		nonMemberPrice: 20.00,
-		nonMemberDiscountPrice: null,
-		memberPrice: 20.00,
-		memberDiscountPrice: null,
-	},
-
-	// Non-member discount
-	{
-		name: 'Sample Juice Product',
-		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-		nonMemberPrice: 6.75,
-		nonMemberDiscountPrice: 6.00,
-		memberPrice: 5.00,
-		memberDiscountPrice: null,
-	},
-
-	// Non-member discount, Prices are the same
-	{
-		name: 'Sample Juice Product',
-		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-		nonMemberPrice: 6.75,
-		nonMemberDiscountPrice: 5.00,
-		memberPrice: 5.00,
-		memberDiscountPrice: null,
-	},
-
-	// Non-member discount, member discount
-	{
-		name: 'Sample Juice Product',
-		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-		nonMemberPrice: 6.75,
-		nonMemberDiscountPrice: 5.00,
-		memberPrice: 5.00,
-		memberDiscountPrice: 4.00,
-	},
-
-	// Non-member discount, member discount, Prices are the same
-	{
-		name: 'Sample Juice Product',
-		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-		nonMemberPrice: 6.75,
-		nonMemberDiscountPrice: 4.00,
-		memberPrice: 5.00,
-		memberDiscountPrice: 4.00,
-	},
-
-	// Member Discount
-	{
-		name: 'Sample Juice Product',
-		imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-		nonMemberPrice: 6.75,
-		nonMemberDiscountPrice: null,
-		memberPrice: 5.00,
-		memberDiscountPrice: 4.00,
-	},
-];
-
 export function Overview() {
 	return {
 		components: { ProductCard },
@@ -94,7 +21,14 @@ export function Overview() {
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>', // eslint-disable-line
 		data() {
 			return {
-				sampleProduct: products[0],
+				sampleProduct: {
+					name: 'Sample Juice Product',
+					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+					nonMemberPrice: 6.75,
+					nonMemberDiscountPrice: null,
+					memberPrice: 5.00,
+					memberDiscountPrice: null,
+				},
 				quantity: 0,
 			};
 		},
@@ -108,7 +42,14 @@ export function NoDiscountsSamePrice() {
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>', // eslint-disable-line
 		data() {
 			return {
-				sampleProduct: products[1],
+				sampleProduct: {
+					name: 'Sample Juice Product',
+					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+					nonMemberPrice: 20.00,
+					nonMemberDiscountPrice: null,
+					memberPrice: 20.00,
+					memberDiscountPrice: null,
+				},
 				quantity: 0,
 			};
 		},
@@ -122,7 +63,14 @@ export function NonMemberDiscount() {
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>', // eslint-disable-line
 		data() {
 			return {
-				sampleProduct: products[2],
+				sampleProduct: {
+					name: 'Sample Juice Product',
+					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+					nonMemberPrice: 6.75,
+					nonMemberDiscountPrice: 6.00,
+					memberPrice: 5.00,
+					memberDiscountPrice: null,
+				},
 				quantity: 0,
 			};
 		},
@@ -136,7 +84,14 @@ export function NonMemberDiscountSamePrice() {
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>', // eslint-disable-line
 		data() {
 			return {
-				sampleProduct: products[3], // eslint-disable-line no-magic-numbers
+				sampleProduct: {
+					name: 'Sample Juice Product',
+					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+					nonMemberPrice: 6.75,
+					nonMemberDiscountPrice: 5.00,
+					memberPrice: 5.00,
+					memberDiscountPrice: null,
+				},
 				quantity: 0,
 			};
 		},
@@ -150,7 +105,14 @@ export function NonMemberDiscountAndMemberDiscount() {
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>', // eslint-disable-line
 		data() {
 			return {
-				sampleProduct: products[4], // eslint-disable-line no-magic-numbers
+				sampleProduct: {
+					name: 'Sample Juice Product',
+					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+					nonMemberPrice: 6.75,
+					nonMemberDiscountPrice: 5.00,
+					memberPrice: 5.00,
+					memberDiscountPrice: 4.00,
+				},
 				quantity: 0,
 			};
 		},
@@ -164,7 +126,14 @@ export function NonMemberDiscountAndMemberDiscountSamePrice() {
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>', // eslint-disable-line
 		data() {
 			return {
-				sampleProduct: products[5], // eslint-disable-line no-magic-numbers
+				sampleProduct: {
+					name: 'Sample Juice Product',
+					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+					nonMemberPrice: 6.75,
+					nonMemberDiscountPrice: 4.00,
+					memberPrice: 5.00,
+					memberDiscountPrice: 4.00,
+				},
 				quantity: 0,
 			};
 		},
@@ -178,7 +147,14 @@ export function MemberDiscount() {
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>', // eslint-disable-line
 		data() {
 			return {
-				sampleProduct: products[6], // eslint-disable-line no-magic-numbers
+				sampleProduct: {
+					name: 'Sample Juice Product',
+					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+					nonMemberPrice: 6.75,
+					nonMemberDiscountPrice: null,
+					memberPrice: 5.00,
+					memberDiscountPrice: 4.00,
+				},
 				quantity: 0,
 			};
 		},
