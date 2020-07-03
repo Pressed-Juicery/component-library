@@ -66,7 +66,7 @@ export default {
 		display: flex;
 		align-items: center;
 		padding: $spacing-03 $spacing-04;
-		margin: $spacing-02;
+		margin-right: $spacing-03;
 		background-color: $beige;
 		border-radius: $border-radius;
 	}
