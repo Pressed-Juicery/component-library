@@ -65,7 +65,7 @@ const groups = [{
 		'BundleCardGrid',
 		'NutritionFacts',
 		'ProductDetails',
-		'ProductOrderCard',
+		'ProductCard',
 		'Ingredients',
 	],
 }, {

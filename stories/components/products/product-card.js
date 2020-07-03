@@ -1,8 +1,8 @@
-import ProductOrderCard from '../../../components/product-order-card';
+import ProductCard from '../../../components/product-card';
 
 export default {
-	component: ProductOrderCard,
-	title: 'Components / Products / Product Order Card',
+	component: ProductCard,
+	title: 'Components / Products / ProductCard',
 };
 
 const mixins = {
@@ -92,9 +92,9 @@ const products = [
 
 export function Overview() {
 	return {
-		components: { ProductOrderCard },
+		components: { ProductCard },
 		mixins: [mixins],
-		template: '<product-order-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
+		template: '<product-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
 		data() {
 			return {
 				sampleProduct: products[0],
@@ -106,9 +106,9 @@ export function Overview() {
 
 export function NoDiscountsSamePrice() {
 	return {
-		components: { ProductOrderCard },
+		components: { ProductCard },
 		mixins: [mixins],
-		template: '<product-order-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
+		template: '<product-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
 		data() {
 			return {
 				sampleProduct: products[1],
@@ -120,9 +120,9 @@ export function NoDiscountsSamePrice() {
 
 export function NonMemberDiscount() {
 	return {
-		components: { ProductOrderCard },
+		components: { ProductCard },
 		mixins: [mixins],
-		template: '<product-order-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
+		template: '<product-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
 		data() {
 			return {
 				sampleProduct: products[2],
@@ -134,9 +134,9 @@ export function NonMemberDiscount() {
 
 export function NonMemberDiscountSamePrice() {
 	return {
-		components: { ProductOrderCard },
+		components: { ProductCard },
 		mixins: [mixins],
-		template: '<product-order-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
+		template: '<product-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
 		data() {
 			return {
 				sampleProduct: products[3], // eslint-disable-line no-magic-numbers
@@ -148,9 +148,9 @@ export function NonMemberDiscountSamePrice() {
 
 export function NonMemberDiscountAndMemberDiscount() {
 	return {
-		components: { ProductOrderCard },
+		components: { ProductCard },
 		mixins: [mixins],
-		template: '<product-order-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
+		template: '<product-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
 		data() {
 			return {
 				sampleProduct: products[4], // eslint-disable-line no-magic-numbers
@@ -162,9 +162,9 @@ export function NonMemberDiscountAndMemberDiscount() {
 
 export function NonMemberDiscountAndMemberDiscountSamePrice() {
 	return {
-		components: { ProductOrderCard },
+		components: { ProductCard },
 		mixins: [mixins],
-		template: '<product-order-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
+		template: '<product-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
 		data() {
 			return {
 				sampleProduct: products[5], // eslint-disable-line no-magic-numbers
@@ -176,9 +176,9 @@ export function NonMemberDiscountAndMemberDiscountSamePrice() {
 
 export function MemberDiscount() {
 	return {
-		components: { ProductOrderCard },
+		components: { ProductCard },
 		mixins: [mixins],
-		template: '<product-order-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
+		template: '<product-card :product="sampleProduct" :quantity="quantity" @updateQuantity="updateQuantity"/>', // eslint-disable-line
 		data() {
 			return {
 				sampleProduct: products[6], // eslint-disable-line no-magic-numbers
