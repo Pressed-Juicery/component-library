@@ -87,6 +87,7 @@ export default {
 }
 
 .title {
+	@include line-clamp(1);
 	text-transform: capitalize;
 }
 

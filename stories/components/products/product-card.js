@@ -33,7 +33,7 @@ export function Overview() {
 	};
 }
 
-export function PredefinedQuantity() {
+export function PredefinedQuantityWithLongProductName() {
 	return {
 		components: { ProductCard },
 		methods,
@@ -41,7 +41,7 @@ export function PredefinedQuantity() {
 		data() {
 			return {
 				sampleProduct: {
-					name: 'Sample Juice Product',
+					name: 'This is a very very very very very very very long product name',
 					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
 					nonMemberPrice: 6.75,
 					nonMemberDiscountPrice: null,
