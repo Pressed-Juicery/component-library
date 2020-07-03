@@ -59,6 +59,15 @@ export default {
 		margin-bottom: $spacing-03;
 	}
 
+	.input {
+		margin-right: $spacing-03;
+	}
+
+	.button {
+		@include button-tertiary();
+		flex-shrink: 0;
+	}
+
 	.couponWrapper {
 		display: flex;
 		flex-wrap: wrap;
@@ -87,14 +96,5 @@ export default {
 		cursor: pointer;
 		width: 11px;
 		height: 12px;
-	}
-
-	.input {
-		margin-right: $spacing-03;
-	}
-
-	.button {
-		@include button-tertiary();
-		flex-shrink: 0;
 	}
 </style>
