@@ -12,7 +12,7 @@ export { default as BundleCardSection } from './bundle-card-section';
 export { default as ButtonBar } from './button-bar';
 export { default as Card } from './card';
 export { default as CartCheckoutFooter } from './cart-checkout-footer';
-export { default as CartDiscountInput } from './cart-discount-input';
+export { default as CouponCodeInput } from './coupon-code-input';
 export { default as CartItemCard } from './cart-item-card';
 export { default as CartNavigation } from './cart-navigation';
 export { default as CartPointsDisplay } from './cart-points-display';
