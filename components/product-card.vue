@@ -24,6 +24,7 @@
 <script>
 import Card from './card';
 import QuantitySelector from './quantity-selector';
+import { formatCurrency } from '../utilities/formatters';
 
 export default {
 	components: { Card, QuantitySelector },
@@ -61,7 +62,7 @@ export default {
 		},
 
 		formatPrice(price) {
-			return price ? `$${price.toFixed(2)}` : null;
+			return price ? formatCurrency(price) : null;
 		},
 	},
 };
