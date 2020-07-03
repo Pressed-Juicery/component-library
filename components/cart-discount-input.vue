@@ -1,17 +1,33 @@
 <template>
 	<div :class="$style.root">
-		<input placeholder="Discount Code" :class="$style.input" v-model="discountCode"/>
-		<button
-			:class="$style.button"
-			:disabled="!discountCode"
-			@click="submit"
-		>Apply</button>
+		<div :class="$style.inputWrapper">
+			<input placeholder="Discount Code" :class="$style.input" v-model="discountCode"/>
+			<button
+				:class="$style.button"
+				:disabled="!discountCode"
+				@click="submit"
+			>
+			Apply
+			</button>
+		</div>
+		<div v-if="discounts" :class="$style.discountWrapper">
+			<div v-for="discount in discounts" :class="$style.discount" :key="`discount-${discount.id}`">
+				<img :class="$style.discountTag" src="../assets/discount-tag.svg" />
+				<div :class="$style.code">{{ discount.code }}</div>
+				<img :class="$style.close" src="../assets/close.svg" @click="$emit('remove', discount)"/>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
 
 export default {
+	props: {
+		discounts: {
+			type: Array,
+		},
+	},
 	data() {
 		return {
 			discountCode: null,
@@ -28,10 +44,47 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/mixins';
-	@import '../styles/variables';
 
 	.root {
+		margin-bottom: $spacing-07;
+	}
+
+	.inputWrapper {
 		display: flex;
+		margin-bottom: $spacing-03;
+	}
+
+	.discountWrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.discount {
+		display: flex;
+		align-items: center;
+		padding: $spacing-03 $spacing-04;
+		margin: $spacing-02;
+		background-color: $beige;
+		border-radius: $border-radius;
+	}
+
+	.discount:hover {
+		opacity: .8;
+	}
+
+	.discountTag {
+		height: 16px;
+		width: 17px;
+	}
+
+	.code {
+		margin: 0 $spacing-03;
+	}
+
+	.close {
+		cursor: pointer;
+		width: 11px;
+		height: 12px;
 	}
 
 	.input {
