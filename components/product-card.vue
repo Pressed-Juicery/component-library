@@ -39,8 +39,8 @@ export default {
 	},
 
 	computed: {
-		nonMemberPriceClass() { return this.product.nonMemberSalePrice && this.$style.priceStrike },
-		memberPriceClass() { return this.product.memberSalePrice && this.$style.priceStrike },
+		nonMemberPriceClass() { return this.product.nonMemberSalePrice && this.$style.strikethrough },
+		memberPriceClass() { return this.product.memberSalePrice && this.$style.strikethrough },
 		hasSamePrice() {
 			const hasSameRegularPrice = this.product.nonMemberPrice === this.product.memberPrice;
 			const hasNoSalePrice = !this.product.nonMemberSalePrice && !this.product.memberSalePrice;
@@ -85,7 +85,7 @@ export default {
 		margin-bottom: $spacing-03;
 	}
 
-	.priceStrike {
+	.strikethrough {
 		text-decoration: line-through;
 	}
 </style>
