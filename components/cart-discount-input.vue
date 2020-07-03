@@ -11,7 +11,7 @@
 			</button>
 		</div>
 		<div v-if="discounts" :class="$style.discountWrapper">
-			<div v-for="discount in discounts" :class="$style.discount" :key="`discount-${discount.id}`">
+			<div v-for="discount in discounts" :class="$style.discount" :key="discount.id">
 				<discount-tag :class="$style.discountTag" />
 				<div :class="$style.code">{{ discount.code }}</div>
 				<close-icon :class="$style.close" @click.native="$emit('remove', discount)"/>
