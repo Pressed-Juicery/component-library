@@ -80,14 +80,18 @@ export default {
 	max-width: 100%;
 }
 
+.title,
+.price {
+	@include text-body-small();
+	@include text-bold();
+}
+
 .title {
-	@include text-body-small;
 	margin-bottom: $spacing-04;
 	text-transform: capitalize;
 }
 
 .price {
-	@include text-body-small;
 	margin-bottom: $spacing-05;
 }
 
