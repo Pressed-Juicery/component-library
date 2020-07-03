@@ -8,10 +8,10 @@
 
 			<div v-else :class="$style.price">
 				<span :class="nonMemberPriceClass">{{ formatPrice(product.nonMemberPrice) }}</span>
-				<span>{{ formatPrice(product.nonMemberSalePrice) }}</span>
-				<span> | </span>
+				{{ formatPrice(product.nonMemberSalePrice) }}
+				|
 				<span :class="memberPriceClass">{{ formatPrice(product.memberPrice) }}</span>
-				<span>{{ formatPrice(product.memberSalePrice) }}</span>
+				{{ formatPrice(product.memberSalePrice) }}
 			</div>
 
 			<quantity-selector :quantity="quantity" @change="quantity => $emit('change', { product, quantity })"/>
