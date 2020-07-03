@@ -16,7 +16,7 @@
 				<span>{{ formatPrice(product.memberDiscountPrice) }}</span>
 			</div>
 
-			<quantity-selector :quantity="quantity" @updateQuantity="updateQuantity"/>
+			<quantity-selector :quantity="quantity" @change="quantity => $emit('change', { product, quantity })"/>
 		</div>
 	</card>
 </template>
@@ -56,10 +56,6 @@ export default {
 
 		formatPrice(price) {
 			return price ? `$${price.toFixed(2)}` : null;
-		},
-
-		updateQuantity(mutation) {
-			this.$emit('updateQuantity', mutation);
 		},
 	},
 };
