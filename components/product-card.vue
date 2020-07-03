@@ -2,7 +2,7 @@
 	<card>
 		<div :class="$style.wrapper">
 			<img :class="$style.productImage" :src="product.imageUrl" :alt="`${product.name} product image`"/>
-			<div :class="$style.title">{{ product.name }}</div>
+			<div :class="$style.name">{{ product.name }}</div>
 
 			<div v-if="displaySamePrice" :class="$style.price">
 				<span>{{ displaySamePrice }}</span>
@@ -80,13 +80,13 @@ export default {
 	max-width: 100%;
 }
 
-.title,
+.name,
 .price {
 	@include text-body-small();
 	@include text-bold();
 }
 
-.title {
+.name {
 	@include line-clamp(1);
 	text-transform: capitalize;
 }
