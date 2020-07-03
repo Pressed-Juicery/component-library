@@ -5,19 +5,17 @@ export default {
 	title: 'Components / Products / ProductCard',
 };
 
-const mixins = {
-	methods: {
-		change(productQuantity) {
-			// eslint-disable-next-line no-console
-			console.log(`captured "change" event: ${productQuantity.quantity} x ${productQuantity.product.name}`);
-		},
+const methods = {
+	change(productQuantity) {
+		// eslint-disable-next-line no-console
+		console.log(`captured "change" event: ${productQuantity.quantity} x ${productQuantity.product.name}`);
 	},
 };
 
 export function Overview() {
 	return {
 		components: { ProductCard },
-		mixins: [mixins],
+		methods,
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
 		data() {
 			return {
@@ -38,7 +36,7 @@ export function Overview() {
 export function NoDiscountsSamePrice() {
 	return {
 		components: { ProductCard },
-		mixins: [mixins],
+		methods,
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
 		data() {
 			return {
@@ -59,7 +57,7 @@ export function NoDiscountsSamePrice() {
 export function NonMemberDiscount() {
 	return {
 		components: { ProductCard },
-		mixins: [mixins],
+		methods,
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
 		data() {
 			return {
@@ -80,7 +78,7 @@ export function NonMemberDiscount() {
 export function NonMemberDiscountSamePrice() {
 	return {
 		components: { ProductCard },
-		mixins: [mixins],
+		methods,
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
 		data() {
 			return {
@@ -101,7 +99,7 @@ export function NonMemberDiscountSamePrice() {
 export function NonMemberDiscountAndMemberDiscount() {
 	return {
 		components: { ProductCard },
-		mixins: [mixins],
+		methods,
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
 		data() {
 			return {
@@ -122,7 +120,7 @@ export function NonMemberDiscountAndMemberDiscount() {
 export function NonMemberDiscountAndMemberDiscountSamePrice() {
 	return {
 		components: { ProductCard },
-		mixins: [mixins],
+		methods,
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
 		data() {
 			return {
@@ -143,7 +141,7 @@ export function NonMemberDiscountAndMemberDiscountSamePrice() {
 export function MemberDiscount() {
 	return {
 		components: { ProductCard },
-		mixins: [mixins],
+		methods,
 		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
 		data() {
 			return {
