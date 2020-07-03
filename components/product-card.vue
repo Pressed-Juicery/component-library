@@ -42,9 +42,9 @@ export default {
 
 	computed: {
 		displaySamePrice() {
-			const arePricesTheSame = this.getPriceByMemberShip('nonMember') === this.getPriceByMemberShip('member');
+			const isSamePrice = this.getPriceByMemberShip('nonMember') === this.getPriceByMemberShip('member');
 
-			return arePricesTheSame ? this.formatPrice(this.getPriceByMemberShip('member')) : null;
+			return isSamePrice ? this.formatPrice(this.getPriceByMemberShip('member')) : null;
 		},
 	},
 
