@@ -4,7 +4,7 @@
 			<img :class="$style.productImage" :src="product.imageUrl" :alt="`${product.name} product image`"/>
 			<div :class="$style.name">{{ product.name }}</div>
 
-			<div v-if="displaySamePrice" :class="$style.price">{{ displaySamePrice }}</div>
+			<div v-if="hasSamePrice" :class="$style.price">{{ formatPrice(product.nonMemberPrice) }}</div>
 
 			<div v-else :class="$style.price">
 				<span :class="nonMemberPriceClass">{{ formatPrice(product.nonMemberPrice) }}</span>
@@ -41,18 +41,15 @@ export default {
 	computed: {
 		nonMemberPriceClass() { return this.product.nonMemberSalePrice && this.$style.priceStrike },
 		memberPriceClass() { return this.product.memberSalePrice && this.$style.priceStrike },
-		displaySamePrice() {
-			const isSamePrice = this.getPriceByMemberShip('nonMember') === this.getPriceByMemberShip('member');
+		hasSamePrice() {
+			const hasSameRegularPrice = this.product.nonMemberPrice === this.product.memberPrice;
+			const hasNoSalePrice = !this.product.nonMemberSalePrice && !this.product.memberSalePrice;
 
-			return isSamePrice ? this.formatPrice(this.getPriceByMemberShip('member')) : null;
+			return hasSameRegularPrice && hasNoSalePrice;
 		},
 	},
 
 	methods: {
-		getPriceByMemberShip(membership) {
-			return this.product[`${membership}SalePrice`] || this.product[`${membership}Price`];
-		},
-
 		formatPrice(price) {
 			return price ? formatCurrency(price) : null;
 		},
