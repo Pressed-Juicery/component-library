@@ -12,17 +12,20 @@
 		</div>
 		<div v-if="discounts" :class="$style.discountWrapper">
 			<div v-for="discount in discounts" :class="$style.discount" :key="`discount-${discount.id}`">
-				<img :class="$style.discountTag" src="../assets/discount-tag.svg" />
+				<discount-tag :class="$style.discountTag" />
 				<div :class="$style.code">{{ discount.code }}</div>
-				<img :class="$style.close" src="../assets/close.svg" @click="$emit('remove', discount)"/>
+				<close-icon :class="$style.close" @click.native="$emit('remove', discount)"/>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import CloseIcon from './icons/close-icon';
+import DiscountTag from './icons/discount-tag';
 
 export default {
+	components: { DiscountTag, CloseIcon },
 	props: {
 		discounts: {
 			type: Array,
