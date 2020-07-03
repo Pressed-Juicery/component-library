@@ -18,6 +18,7 @@ const groups = [{
 		'CollapsibleDrawer',
 		'Drawer',
 		'Overlay',
+		'PaymentMethodFormatter',
 		'PaymentMethods',
 		'QrCode',
 		'StarRating',
