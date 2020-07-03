@@ -1,20 +1,20 @@
 <template>
 	<div :class="$style.root">
 		<div :class="$style.inputWrapper">
-			<input placeholder="Discount Code" :class="$style.input" v-model="discountCode"/>
+			<input placeholder="Discount Code" :class="$style.input" v-model="couponCode"/>
 			<button
 				:class="$style.button"
-				:disabled="!discountCode"
+				:disabled="!couponCode"
 				@click="submit"
 			>
 			Apply
 			</button>
 		</div>
-		<div v-if="discounts" :class="$style.discountWrapper">
-			<div v-for="discount in discounts" :class="$style.discount" :key="discount.id">
+		<div v-if="coupons" :class="$style.couponWrapper">
+			<div v-for="coupon in coupons" :class="$style.coupon" :key="coupon.id">
 				<discount-tag :class="$style.discountTag" />
-				<div :class="$style.code">{{ discount.code }}</div>
-				<close-icon :class="$style.remove" @click.native="$emit('remove', discount)"/>
+				<div :class="$style.code">{{ coupon.code }}</div>
+				<close-icon :class="$style.remove" @click.native="$emit('remove', coupon)"/>
 			</div>
 		</div>
 	</div>
@@ -27,19 +27,19 @@ import DiscountTag from './icons/discount-tag';
 export default {
 	components: { DiscountTag, CloseIcon },
 	props: {
-		discounts: {
+		coupons: {
 			type: Array,
 		},
 	},
 	data() {
 		return {
-			discountCode: null,
+			couponCode: null,
 		};
 	},
 	methods: {
 		submit() {
-			this.$emit('submit', this.discountCode);
-			this.discountCode = null;
+			this.$emit('submit', this.couponCode);
+			this.couponCode = null;
 		},
 	},
 };
@@ -57,12 +57,12 @@ export default {
 		margin-bottom: $spacing-03;
 	}
 
-	.discountWrapper {
+	.couponWrapper {
 		display: flex;
 		flex-wrap: wrap;
 	}
 
-	.discount {
+	.coupon {
 		display: flex;
 		align-items: center;
 		padding: $spacing-03 $spacing-04;
@@ -71,7 +71,7 @@ export default {
 		border-radius: $border-radius;
 	}
 
-	.discount:hover {
+	.coupon:hover {
 		opacity: .8;
 	}
 
