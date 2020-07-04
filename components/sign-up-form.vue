@@ -2,20 +2,22 @@
 	<validated-form :id="id" @submit="$emit('submit', user)">
 		<div :class="$style.row">
 			<validated-input
+				label="First Name"
 				:class="$style.inputHalf"
 				:rules="rules.firstName"
 				v-model="user.firstName"
-				label="First Name"/>
+			/>
 			<validated-input
+				label="Last Name"
 				:class="$style.inputHalf"
 				:rules="rules.lastName"
 				v-model="user.lastName"
-				label="Last Name"/>
+			/>
 		</div>
-		<validated-input :rules="rules.email" v-model="user.email" label="Email"/>
-		<validated-input type="password" :rules="rules.password" v-model="user.password" label="Password"/>
-		<validated-input type="date" :rules="rules.birthday" v-model="user.birthday" label="Birthday (optional)"/>
-		<validated-input :rules="rules.phone" v-model="user.phone" label="Phone Number"/>
+		<validated-input label="Email" :rules="rules.email" v-model="user.email" />
+		<validated-input type="password" label="Password" :rules="rules.password" v-model="user.password" />
+		<validated-input type="date" label="Birthday (optional)" :rules="rules.birthday" v-model="user.birthday" />
+		<validated-input label="Phone Number" :rules="rules.phone" v-model="user.phone" />
 	</validated-form>
 </template>
 
