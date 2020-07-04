@@ -44,27 +44,25 @@ export default {
 			return this.item.modifiers && this.item.modifiers.length;
 		},
 		displayModifiers() {
-			const hasModifiers = this.item.modifiers && this.item.modifiers.length;
+			const modifierSummary = {};
 
-			if (!hasModifiers) return {};
+			(this.item.modifiers || []).forEach(modifier => {
+				modifierSummary[modifier.groupName] = modifierSummary[modifier.groupName] || [];
+				modifierSummary[modifier.groupName].push(modifier.name);
+			});
 
-			return this.item.modifiers.reduce((accum, modifier, index) => {
-				const { groupName, name } = modifier;
+			Object.keys(modifierSummary)
+				.forEach(key => {
+					const modifiers = modifierSummary[key];
+					let lastItem = modifiers.pop();
 
-				if (accum[groupName]) {
-					// eslint-disable-next-line no-unused-expressions
-					index === this.item.modifiers.length - 1
-						// eslint-disable-next-line no-param-reassign
-						? accum[groupName] += `, and ${name}`
-						// eslint-disable-next-line no-param-reassign
-						: accum[groupName] += `, ${name}`;
-				} else {
-					// eslint-disable-next-line no-param-reassign
-					accum[groupName] = `${name}`;
-				}
+					if (modifiers.length === 1) lastItem = ` and ${lastItem}`;
+					if (modifiers.length > 1) lastItem = `, and ${lastItem}`;
 
-				return accum;
-			}, {});
+					modifierSummary[key] = modifiers.join(', ') + lastItem;
+				});
+
+			return modifierSummary;
 		},
 	},
 
