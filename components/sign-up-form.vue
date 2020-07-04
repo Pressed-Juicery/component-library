@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { isEmail, isNotEmpty, isValidPhoneNumber } from '../utilities/validators';
+import { hasMinimumLength, isEmail, isNotEmpty, isValidPhoneNumber } from '../utilities/validators';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
 
@@ -56,7 +56,11 @@ export default {
 				}],
 				password: [{
 					validator: isNotEmpty,
-					message: 'Please enter a valid password.',
+					message: 'Please enter a password.',
+				}, {
+					validator: hasMinimumLength,
+					options: { length: 6 },
+					message: 'Passwords must be at least 6 characters long.',
 				}],
 				phone: [{
 					validator: isNotEmpty,
