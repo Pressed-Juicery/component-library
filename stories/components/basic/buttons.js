@@ -14,6 +14,9 @@ export function Overview() {
 				<button class="button-secondary">Secondary Button</button><br />
 				<button class="button-secondary" disabled>Disabled Secondary Button</button><br />
 
+				<button class="button-tertiary">Tertiary Button</button><br />
+				<button class="button-tertiary" disabled>Disabled Tertiary Button</button><br />
+
 				<button class="button-pill">Primary Pill</button><br />
 				<button class="button-pill" disabled>Disabled Primary Pill</button><br />
 
