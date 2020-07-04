@@ -22,6 +22,10 @@
 		@include button-pill-secondary();
 	}
 
+	.button-large {
+		@include button-large();
+	}
+
 	.button-link {
 		@include button-link();
 	}

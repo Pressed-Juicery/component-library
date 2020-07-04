@@ -125,6 +125,7 @@
 // =======
 
 $button-height: $spacing-08;
+$button-height-large: 82px;
 
 @mixin _button--secondary {
 	background: transparent;
@@ -144,6 +145,15 @@ $button-height: $spacing-08;
 
 @mixin _button--pill {
 	border-radius: 999em;
+}
+
+@mixin _button--large {
+	width: 100%;
+	height: $button-height-large;
+	border-radius: 0;
+	// NOTE: The 1px border and 2px offset is required to correctly center the text vertically.
+	border: 1px solid transparent;
+	line-height: calc(#{$button-height-large} + 2px);
 }
 
 @mixin button {
@@ -189,6 +199,11 @@ $button-height: $spacing-08;
 	@include button();
 	@include _button--pill();
 	@include _button--secondary();
+}
+
+@mixin button-large {
+	@include button();
+	@include _button--large();
 }
 
 @mixin button-link {
