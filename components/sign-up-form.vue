@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import '../styles/mixins';
+	@import '../styles/variables';
 
 	.row {
 		display: flex;
