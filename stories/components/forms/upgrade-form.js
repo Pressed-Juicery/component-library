@@ -33,6 +33,7 @@ export function Overview() {
 		methods: {
 			handlePaymentMethodChange(data) {
 				this.data = data;
+				this.selectedAmount = data.selectedAmount;
 			},
 		},
 		computed: {
