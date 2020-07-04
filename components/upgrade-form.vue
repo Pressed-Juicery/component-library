@@ -1,12 +1,15 @@
 <template>
-	<validated-form :id="id">
+	<validated-form :id="id" @submit="onSubmit">
 		<validated-select
 			v-model="selectedAmount"
 			label="Monthly Membership Reload"
 			:options="reloadAmounts"
 			:rules="reloadAmountRules"
 		/>
-		<validated-payment-method :braintreeTokenizationKey="braintreeTokenizationKey" @change="handlePaymentSubmit" />
+		<validated-payment-method
+			:braintreeTokenizationKey="braintreeTokenizationKey"
+			@change="onPaymentMethodChange"
+		/>
 	</validated-form>
 </template>
 
@@ -51,11 +54,13 @@ export default {
 	},
 
 	methods: {
-		handlePaymentSubmit(data) {
-			if (!data) return;
+		onPaymentMethodChange(data) {
+			this.paymentMethod = data && data.paymentMethod;
+		},
 
+		onSubmit() {
 			this.$emit('submit', {
-				paymentMethod: data.paymentMethod,
+				paymentMethod: this.paymentMethod,
 				selectedAmount: this.selectedAmount,
 			});
 		},
