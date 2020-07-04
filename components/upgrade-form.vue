@@ -41,8 +41,7 @@ export default {
 	},
 
 	methods: {
-		async handlePaymentSubmit(data) {
-			await data;
+		handlePaymentSubmit(data) {
 			this.$emit('submit', { paymentMethod: data, selectedAmount: this.selectedAmount });
 		},
 	},
