@@ -10,7 +10,7 @@ export function Overview() {
 		components: { SignUpForm },
 		template: `
 			<div>
-				<sign-up-form :id="'sign-up-form'" @submit="handleSubmit" />
+				<sign-up-form id="sign-up-form" @submit="handleSubmit" />
 				<button form="sign-up-form" type="submit">submit</button>
 				<p>data:
 					<code>{{ data }}</code>
