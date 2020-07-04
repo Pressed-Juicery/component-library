@@ -1,10 +1,10 @@
 <template>
 	<validated-form :id="id" @submit="onSubmit">
 		<validated-select
-			v-model="selectedAmount"
 			label="Monthly Membership Reload"
 			:options="reloadAmounts"
 			:rules="reloadAmountRules"
+			v-model="selectedAmount"
 		/>
 		<validated-payment-method
 			:braintreeTokenizationKey="braintreeTokenizationKey"
