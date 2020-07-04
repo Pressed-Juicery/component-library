@@ -80,21 +80,21 @@ export default {
 </script>
 
 <style module lang="scss">
-@import '../styles/mixins';
+	@import '../styles/mixins';
 
-.row {
-	display: flex;
-}
+	.row {
+		display: flex;
+	}
 
-.inputHalf {
-	flex: 1 1 0;
-}
+	.inputHalf {
+		flex: 1 1 0;
+	}
 
-.inputHalf:first-of-type {
-	margin-right: $spacing-05;
-}
+	.inputHalf:first-of-type {
+		margin-right: $spacing-05;
+	}
 
-.inputHalf:nth-of-type(2) {
-	margin-left: $spacing-05;
-}
+	.inputHalf:nth-of-type(2) {
+		margin-left: $spacing-05;
+	}
 </style>
