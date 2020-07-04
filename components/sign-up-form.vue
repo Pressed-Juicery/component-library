@@ -14,10 +14,10 @@
 				v-model="user.lastName"
 			/>
 		</div>
-		<validated-input label="Email" :rules="rules.email" v-model="user.email" />
+		<validated-input type="email" label="Email" :rules="rules.email" v-model="user.email" />
 		<validated-input type="password" label="Password" :rules="rules.password" v-model="user.password" />
 		<validated-input type="date" label="Birthday (optional)" :rules="rules.birthday" v-model="user.birthday" />
-		<validated-input label="Phone Number" :rules="rules.phone" v-model="user.phone" />
+		<validated-input type="phone" label="Phone Number" :rules="rules.phone" v-model="user.phone" />
 	</validated-form>
 </template>
 
