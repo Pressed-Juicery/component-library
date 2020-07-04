@@ -37,15 +37,7 @@ export default {
 	// eslint-disable-next-line max-lines-per-function
 	data() {
 		return {
-			user: {
-				firstName: '',
-				lastName: '',
-				email: '',
-				password: '',
-				birthday: '',
-				phone: '',
-			},
-
+			user: {},
 			rules: {
 				firstName: [{
 					validator: isNotEmpty,
