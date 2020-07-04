@@ -1,6 +1,11 @@
 <template>
 	<validated-form :id="id">
-		<validated-select v-model="selectedAmount" label="Monthly Membership Reload" :options="reloadAmounts"/>
+		<validated-select
+			v-model="selectedAmount"
+			label="Monthly Membership Reload"
+			:options="reloadAmounts"
+			:rules="reloadAmountRules"
+		/>
 		<validated-payment-method :braintreeTokenizationKey="braintreeTokenizationKey" @change="handlePaymentSubmit" />
 	</validated-form>
 </template>
@@ -9,6 +14,7 @@
 import ValidatedForm from './validated-form';
 import ValidatedPaymentMethod from './validated-payment-method';
 import ValidatedSelect from './validated-select';
+import { isNotEmpty } from '../utilities/validators';
 
 export default {
 	components: {
@@ -37,6 +43,10 @@ export default {
 	data() {
 		return {
 			paymentMethod: null,
+			reloadAmountRules: [{
+				validator: isNotEmpty,
+				message: 'Please select a monthly reload amount.',
+			}],
 		};
 	},
 
