@@ -22,6 +22,9 @@ export function Overview() {
 
 				<button class="button-pill-secondary">Secondary Pill</button><br />
 				<button class="button-pill-secondary" disabled>Disabled Secondary Pill</button><br />
+				
+				<button class="button-large">Large Button</button><br />
+				<button class="button-large" disabled>Disabled Large Button</button><br />
 
 				<button class="button-link">Button Link</button><br />
 			</div>
