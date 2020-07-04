@@ -15,8 +15,8 @@ export function Overview() {
 					:id="'upgrade-form'"
 					:selectedAmount="selectedAmount"
 					:reloadAmounts="reloadAmounts"
-					@submit="handlePaymentMethodChange">
-				</upgrade-form>
+					@submit="handlePaymentMethodChange"
+				/>
 				<button form="upgrade-form" type="submit">submit</button>
 				<p v-if="data" style="margin-top:30px">data: <code>{{ data }}</code></p>
 			</div>
