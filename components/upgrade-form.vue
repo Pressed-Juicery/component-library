@@ -1,9 +1,7 @@
 <template>
 	<validated-form :id="id">
 		<validated-select v-model="selectedAmount" label="Monthly Membership Reload" :options="reloadAmounts"/>
-		<validated-payment-method
-			:braintreeTokenizationKey="braintreeTokenizationKey"
-			@change="handlePaymentSubmit" />
+		<validated-payment-method :braintreeTokenizationKey="braintreeTokenizationKey" @change="handlePaymentSubmit" />
 	</validated-form>
 </template>
 
