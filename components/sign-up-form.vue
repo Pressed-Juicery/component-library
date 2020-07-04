@@ -1,5 +1,5 @@
 <template>
-	<validated-form :id="id" ref="signup" @submit="$emit('submit', user)">
+	<validated-form :id="id" @submit="$emit('submit', user)">
 		<div :class="$style.row">
 			<validated-input
 				:class="$style.inputHalf"
