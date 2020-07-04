@@ -1,5 +1,5 @@
 <template>
-	<form v-bind="$attrs" @submit.prevent="validate()" novalidate>
+	<form :id="id" v-bind="$attrs" @submit.prevent="validate()" novalidate>
 		<slot></slot>
 		<div v-if="(hasError || showError) && errorMessage" class="alert alert--danger">{{ errorMessage }}</div>
 	</form>
@@ -11,6 +11,10 @@ export default {
 		errorMessage: {
 			type: String,
 			default: 'There was a problem submitting this form. Please fix any errors and try again.',
+		},
+
+		id: {
+			type: String,
 		},
 
 		showError: Boolean,

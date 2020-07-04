@@ -44,6 +44,8 @@ const groups = [{
 		'GuestInformationForm',
 		'RadioButton',
 		'Signin',
+		'SignUpForm',
+		'UpgradeForm',
 		'ValidatedCheckbox',
 		'ValidatedForm',
 		'ValidatedInput',
