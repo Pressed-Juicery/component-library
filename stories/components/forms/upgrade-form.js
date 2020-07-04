@@ -12,7 +12,7 @@ export function Overview() {
 		template: `
 			<div>
 				<upgrade-form
-					:id="'upgrade-form'"
+					id="upgrade-form"
 					:selectedAmount="selectedAmount"
 					:reloadAmounts="reloadAmounts"
 					@submit="handlePaymentMethodChange"
