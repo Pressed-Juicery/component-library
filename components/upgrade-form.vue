@@ -44,7 +44,10 @@ export default {
 		handlePaymentSubmit(data) {
 			if (!data) return;
 
-			this.$emit('submit', { paymentMethod: data, selectedAmount: this.selectedAmount });
+			this.$emit('submit', {
+				paymentMethod: data.paymentMethod,
+				selectedAmount: this.selectedAmount,
+			});
 		},
 	},
 };
