@@ -49,10 +49,10 @@ export default {
 				}],
 				email: [{
 					validator: isNotEmpty,
-					message: 'Please enter a valid Email address.',
+					message: 'Please enter a valid email address.',
 				}, {
 					validator: isEmail,
-					message: 'Please enter a valid Email address.',
+					message: 'Please enter a valid email address.',
 				}],
 				password: [{
 					validator: isNotEmpty,
