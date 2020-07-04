@@ -18,9 +18,7 @@ export function Overview() {
 					@submit="handlePaymentMethodChange">
 				</upgrade-form>
 				<button form="upgrade-form" type="submit">submit</button>
-				<p>data:
-					<code>{{ data }}</code>
-				</p>
+				<p v-if="data" style="margin-top:30px">data: <code>{{ data }}</code></p>
 			</div>
 		`,
 		data() {
