@@ -19,7 +19,7 @@ export function Overview() {
 					:reloadAmounts="reloadAmounts"
 					@submit="handlePaymentMethodChange"
 				/>
-				<button form="upgrade-form" type="submit">submit</button>
+				<button form="upgrade-form" type="submit">Submit</button>
 				<p v-if="data" style="margin-top:30px">data: <code>{{ data }}</code></p>
 			</div>
 		`,
