@@ -97,5 +97,4 @@ export default {
 .inputHalf:nth-of-type(2) {
 	margin-left: $spacing-05;
 }
-
 </style>
