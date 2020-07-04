@@ -20,7 +20,7 @@
 			</div>
 		</card>
 		<div v-if="hasModifiers" :class="$style.detailsWrapper">
-			<div :class="$style.additionalInfo" v-for="(value, groupName) in displayModifiers" :key="groupName">
+			<div :class="$style.additionalInfo" v-for="(value, groupName) in modifierSummary" :key="groupName">
 				{{ groupName }}: {{ value }}
 			</div>
 		</div>
@@ -44,7 +44,7 @@ export default {
 		hasModifiers() {
 			return this.item.modifiers && this.item.modifiers.length;
 		},
-		displayModifiers() {
+		modifierSummary() {
 			return getCartItemModifierSummary(this.item.modifiers);
 		},
 	},
