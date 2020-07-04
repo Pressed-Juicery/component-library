@@ -20,8 +20,8 @@
 			</div>
 		</card>
 		<div v-if="hasModifiers" :class="$style.detailsWrapper">
-			<div :class="$style.additionalInfo" v-for="modifier in item.modifiers" :key="modifier.groupName">
-				{{ modifier.groupName }}: {{ modifier.name }}
+			<div :class="$style.additionalInfo" v-for="(modifiers, groupName) in modifierSummary" :key="groupName">
+				{{ groupName }}: {{ modifiers }}
 			</div>
 		</div>
 	</div>
@@ -31,6 +31,7 @@
 import Card from './card.vue';
 import QuantitySelector from './quantity-selector';
 import { formatCurrency } from '../utilities/formatters';
+import { getCartItemModifierSummary } from '../utilities/get-cart-item-modifier-summary';
 
 export default {
 	components: { Card, QuantitySelector },
@@ -42,6 +43,9 @@ export default {
 	computed: {
 		hasModifiers() {
 			return this.item.modifiers && this.item.modifiers.length;
+		},
+		modifierSummary() {
+			return getCartItemModifierSummary(this.item.modifiers);
 		},
 	},
 
