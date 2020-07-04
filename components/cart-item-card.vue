@@ -31,6 +31,7 @@
 import Card from './card.vue';
 import QuantitySelector from './quantity-selector';
 import { formatCurrency } from '../utilities/formatters';
+import { getCartItemModifierSummary } from '../utilities/get-cart-item-modifier-summary';
 
 export default {
 	components: { Card, QuantitySelector },
@@ -44,25 +45,7 @@ export default {
 			return this.item.modifiers && this.item.modifiers.length;
 		},
 		displayModifiers() {
-			const modifierSummary = {};
-
-			(this.item.modifiers || []).forEach(modifier => {
-				modifierSummary[modifier.groupName] = modifierSummary[modifier.groupName] || [];
-				modifierSummary[modifier.groupName].push(modifier.name);
-			});
-
-			Object.keys(modifierSummary)
-				.forEach(key => {
-					const modifiers = modifierSummary[key];
-					let lastItem = modifiers.pop();
-
-					if (modifiers.length === 1) lastItem = ` and ${lastItem}`;
-					if (modifiers.length > 1) lastItem = `, and ${lastItem}`;
-
-					modifierSummary[key] = modifiers.join(', ') + lastItem;
-				});
-
-			return modifierSummary;
+			return getCartItemModifierSummary(this.item.modifiers);
 		},
 	},
 
