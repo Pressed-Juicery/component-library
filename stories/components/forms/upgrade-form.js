@@ -1,4 +1,5 @@
 import UpgradeForm from '../../../components/upgrade-form';
+import { config } from '../../../config';
 
 export default {
 	title: 'Components / Forms / UpgradeForm',
@@ -13,6 +14,7 @@ export function Overview() {
 			<div>
 				<upgrade-form
 					id="upgrade-form"
+					:braintreeTokenizationKey="braintreeTokenizationKey"
 					:selectedAmount="selectedAmount"
 					:reloadAmounts="reloadAmounts"
 					@submit="handlePaymentMethodChange"
@@ -23,6 +25,7 @@ export function Overview() {
 		`,
 		data() {
 			return {
+				braintreeTokenizationKey: config.braintreeTokenizationKey,
 				selectedAmount: 10,
 				data: null,
 			};

@@ -9,7 +9,6 @@
 import ValidatedForm from './validated-form';
 import ValidatedPaymentMethod from './validated-payment-method';
 import ValidatedSelect from './validated-select';
-import { config } from '../config';
 
 export default {
 	components: {
@@ -22,6 +21,10 @@ export default {
 		id: {
 			type: String,
 		},
+		braintreeTokenizationKey: {
+			type: String,
+			required: true,
+		},
 		reloadAmounts: {
 			type: Array,
 			required: true,
@@ -33,7 +36,6 @@ export default {
 
 	data() {
 		return {
-			braintreeTokenizationKey: config.braintreeTokenizationKey,
 			paymentMethod: null,
 		};
 	},
