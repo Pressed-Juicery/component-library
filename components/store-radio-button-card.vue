@@ -10,7 +10,7 @@
 			<div v-for="(hours, index) in store.storeHours" :key="index">{{ hours }}</div>
 		</div>
 
-		<div v-if="store.isAfterHours">
+		<div v-if="store.isAfterHours" :class="[$style.pickupEta]">
 			After hours order: available tomorrow for pickup at {{ store.pickupEta }}
 		</div>
 	</radio-button-card>
@@ -61,5 +61,10 @@ export default {
 
 .subtle {
 	@include text-subtle();
+}
+
+.pickupEta {
+	margin-top: $spacing-04;
+	@include text-body-small();
 }
 </style>
