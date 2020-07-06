@@ -9,6 +9,10 @@
 		<div v-if="store.storeHours" :class="[$style.details, { [$style.subtle] : store.isAfterHours }]">
 			<div v-for="(hours, index) in store.storeHours" :key="index">{{ hours }}</div>
 		</div>
+
+		<div v-if="store.isAfterHours">
+			After hours order: available tomorrow for pickup at {{ store.pickupEta }}
+		</div>
 	</radio-button-card>
 </template>
 
