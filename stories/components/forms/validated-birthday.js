@@ -1,4 +1,4 @@
-import ValidatedBirthday from "../../../components/validated-birthday.vue";
+import ValidatedBirthday from '../../../components/validated-birthday.vue';
 
 export default {
 	title: 'Components / Forms / ValidatedBirthday',
@@ -8,6 +8,6 @@ export default {
 export function Overview() {
 	return {
 		components: { ValidatedBirthday },
-		template: `<validated-birthday />`,
+		template: '<validated-birthday />',
 	};
 }

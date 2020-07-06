@@ -30,7 +30,7 @@
 						v-model="day"
 						@change="onChange">
 					<option></option>
-					<option v-for="day in days">{{ day }}</option>
+					<option v-for="day in days" :key="day">{{ day }}</option>
 				</select>
 			</div>
 		</div>
@@ -40,55 +40,59 @@
 </template>
 
 <script>
-	import { isDayOfMonth } from '../utilities/validators';
-	import { validate } from '../utilities/validate';
-	export default {
-		name: 'ValidatedBirthdayInput',
-		data: () => {
-			return {
-				month: null,
-				day: null,
-				error: null,
-				rules: [{
-					validator: isDayOfMonth,
-					message: 'Please enter a valid birthday.',
-				}],
-			};
+import { isDayOfMonth } from '../utilities/validators';
+import { validate } from '../utilities/validate';
+export default {
+	name: 'ValidatedBirthdayInput',
+	data: () => {
+		return {
+			month: null,
+			day: null,
+			error: null,
+			rules: [{
+				validator: isDayOfMonth,
+				message: 'Please enter a valid birthday.',
+			}],
+		};
+	},
+	computed: {
+		days() {
+			if (!this.month) return 31;
+			const month = this.getSelectedMonthNumber();
+			const daysPerMonth = [null, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+			return daysPerMonth[month];
 		},
-		computed: {
-			days() {
-				if (!this.month) return 31;
-				const month = this.getSelectedMonthNumber();
-				const daysPerMonth = [null, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-				return daysPerMonth[month];
-			},
-			birthday() {
-				const month = this.getSelectedMonthNumber();
-				return `${month || ''}/${this.day || ''}`;
-			},
+		birthday() {
+			const month = this.getSelectedMonthNumber();
+
+			return `${month || ''}/${this.day || ''}`;
 		},
-		methods: {
-			getSelectedMonthNumber() {
-				return this.month && this.month.split(' | ')[0];
-			},
-			onChange() {
-				this.validate().then(() => {
-					const birthday = this.birthday === '/' ? null : this.birthday;
-					this.$emit('input', birthday);
+	},
+	methods: {
+		getSelectedMonthNumber() {
+			return this.month && this.month.split(' | ')[0];
+		},
+		onChange() {
+			this.validate().then(() => {
+				const birthday = this.birthday === '/' ? null : this.birthday;
+
+				this.$emit('input', birthday);
+			});
+		},
+		validate() {
+			return validate(this.birthday, this.rules)
+				.then(error => {
+					this.error = error;
+
+					return error;
 				});
-			},
-			validate() {
-				return validate(this.birthday, this.rules)
-					.then(error => {
-						this.error = error;
-						return error;
-					});
-			},
-			isValid() {
-				return this.validate().then(hasError => !hasError);
-			},
 		},
-	};
+		isValid() {
+			return this.validate().then(hasError => !hasError);
+		},
+	},
+};
 </script>
 
 <style lang="scss" module>
