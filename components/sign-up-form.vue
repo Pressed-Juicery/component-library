@@ -14,7 +14,11 @@
 		</div>
 		<validated-input type="email" label="Email" :rules="rules.email" v-model="user.email" />
 		<validated-input type="password" label="Password" :rules="rules.password" v-model="user.password" />
-		<validated-input type="date" label="Birthday (optional)" :rules="rules.birthday" v-model="user.birthday" />
+		<div :class="$style.birthdayField">
+			<div :class="$style.birthdayLabel">Birthday (optional)</div>
+			<div :class="$style.birthdayMessage">So we can send you something sweet!</div>
+			<validated-birthday v-model="user.birthday" />
+		</div>
 		<validated-input type="tel" label="Phone Number" :rules="rules.phone" v-model="user.phone" />
 	</validated-form>
 </template>
@@ -23,11 +27,13 @@
 import { hasMinimumLength, isEmail, isNotEmpty, isValidPhoneNumber } from '../utilities/validators';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
+import ValidatedBirthday from './validated-birthday';
 
 export default {
 	components: {
 		ValidatedForm,
 		ValidatedInput,
+		ValidatedBirthday,
 	},
 	props: {
 		id: {
@@ -77,10 +83,24 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/variables';
+	@import '../styles/mixins';
 
 	.row {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-gap: $spacing-07;
+	}
+
+	.birthdayField {
+		margin-bottom: $spacing-06;
+	}
+
+	.birthdayLabel {
+		@include text-bolder();
+	}
+
+	.birthdayMessage {
+		@include text-body-small();
+		margin-bottom: $spacing-03;
 	}
 </style>
