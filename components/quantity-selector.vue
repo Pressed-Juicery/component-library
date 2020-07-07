@@ -71,6 +71,9 @@ export default {
 		value() {
 			this.$emit('change', this.value);
 		},
+		quantity() {
+			this.value = this.quantity;
+		},
 	},
 };
 </script>
