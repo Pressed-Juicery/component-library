@@ -118,7 +118,7 @@ export function AfterHours() {
 						'Sat-Sun 11am-8pm',
 					],
 					isAfterHours: true,
-					pickupEta: '10am',
+					pickupEta: 'tomorrow at 10am',
 				},
 				selectedStore: null,
 			};

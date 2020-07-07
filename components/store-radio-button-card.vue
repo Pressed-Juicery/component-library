@@ -11,7 +11,7 @@
 		</div>
 
 		<div v-if="store.isAfterHours" :class="[$style.pickupEta]">
-			After hours order: available tomorrow for pickup at {{ store.pickupEta }}
+			After hours order: available {{ store.pickupEta }}
 		</div>
 	</radio-button-card>
 </template>
