@@ -53,6 +53,7 @@ export default {
 	@import '../styles/mixins';
 
 	$coupon-spacing: $spacing-03;
+	$error-red: $red-50;
 
 	.root {
 		margin-bottom: $spacing-07;
@@ -70,6 +71,11 @@ export default {
 	.button {
 		@include button-tertiary();
 		flex-shrink: 0;
+	}
+
+	.error {
+		margin-bottom: $spacing-03;
+		color: $error-red;
 	}
 
 	.couponWrapper {
