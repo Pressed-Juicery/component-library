@@ -10,6 +10,7 @@
 			Apply
 			</button>
 		</div>
+		<div :class="$style.error">{{ error }}</div>
 		<div v-if="coupons" :class="$style.couponWrapper">
 			<div v-for="coupon in coupons" :class="$style.coupon" :key="coupon.id">
 				<coupon-tag :class="$style.couponTag" />
@@ -29,6 +30,9 @@ export default {
 	props: {
 		coupons: {
 			type: Array,
+		},
+		error: {
+			type: String,
 		},
 	},
 	data() {
@@ -66,6 +70,11 @@ export default {
 	.button {
 		@include button-tertiary();
 		flex-shrink: 0;
+	}
+
+	.error {
+		margin-bottom: $spacing-03;
+		color: $color-danger;
 	}
 
 	.couponWrapper {
