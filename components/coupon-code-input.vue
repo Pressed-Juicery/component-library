@@ -53,7 +53,6 @@ export default {
 	@import '../styles/mixins';
 
 	$coupon-spacing: $spacing-03;
-	$error-red: $red-50;
 
 	.root {
 		margin-bottom: $spacing-07;
@@ -75,7 +74,7 @@ export default {
 
 	.error {
 		margin-bottom: $spacing-03;
-		color: $error-red;
+		color: $color-danger;
 	}
 
 	.couponWrapper {
