@@ -6,8 +6,12 @@
 		<div v-if="store.extendedAddress">{{ store.extendedAddress }}</div>
 		<div>{{ store.locality }}, {{ store.region }} {{ store.postal }}</div>
 
-		<div v-if="store.storeHours" :class="$style.details">
+		<div v-if="store.storeHours" :class="[$style.details, { [$style.subtle] : store.isAfterHours }]">
 			<div v-for="(hours, index) in store.storeHours" :key="index">{{ hours }}</div>
+		</div>
+
+		<div v-if="store.isAfterHours" :class="[$style.pickupEta]">
+			After hours order: available {{ store.pickupEta }}
 		</div>
 	</radio-button-card>
 </template>
@@ -51,6 +55,15 @@ export default {
 }
 
 .details {
+	margin-top: $spacing-04;
+	@include text-body-small();
+}
+
+.subtle {
+	@include text-subtle();
+}
+
+.pickupEta {
 	margin-top: $spacing-04;
 	@include text-body-small();
 }
