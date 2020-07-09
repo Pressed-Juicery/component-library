@@ -3,11 +3,11 @@
 		<div :class="$style.header">
 			<div :class="$style.row">
 				<div :class="$style.title">Pressed Points</div>
-				<div :class="$style.points">{{ points }}</div>
+				<div :class="$style.points">{{ wallet.points }}</div>
 			</div>
 			<div :class="$style.subtitle">Rewards you're eligible for:</div>
 		</div>
-		<points-redemption @change="handlePointsChange" :points="points" :redemption-rates="redemptionRates"/>
+		<points-redemption @change="handlePointsChange" :points="wallet.points" :redemption-rates="redemptionRates"/>
 	</div>
 </template>
 
@@ -28,10 +28,6 @@ export default {
 	},
 
 	computed: {
-		points() {
-			return this.wallet.points;
-		},
-
 		redemptionRates() {
 			return this.redemptionSummary;
 		},
