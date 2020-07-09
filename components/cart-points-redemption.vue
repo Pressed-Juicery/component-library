@@ -3,11 +3,11 @@
 		<div :class="$style.header">
 			<div :class="$style.row">
 				<div :class="$style.title">Pressed Points</div>
-				<div :class="$style.points">{{ displayPoints }}</div>
+				<div :class="$style.points">{{ points }}</div>
 			</div>
 			<div :class="$style.subtitle">Rewards you're eligible for:</div>
 		</div>
-		<points-redemption @change="handlePointsChange" :points="displayPoints" :redemption-rates="redemptionRates"/>
+		<points-redemption @change="handlePointsChange" :points="points" :redemption-rates="redemptionRates"/>
 	</div>
 </template>
 
@@ -21,36 +21,25 @@ export default {
 
 	props: {
 		user: Object,
-		redemptionRates: {
+		redemptionSummary: {
 			type: Array,
 			required: true,
 		},
 	},
 
-	data() {
-		return {
-			productRedemptions: [],
-		};
-	},
-
 	computed: {
-		displayPoints() {
-			return this.user.points - this.redeemedPoints;
+		points() {
+			return this.user.points;
 		},
-		redeemedPoints() {
-			return this.productRedemptions.reduce((accum, obj) => accum + (obj.points * obj.quantity), 0);
+
+		redemptionRates() {
+			return this.redemptionSummary;
 		},
 	},
 
 	methods: {
-		handlePointsChange({ points, quantity, title }) {
-			const product = this.productRedemptions.find(obj => obj.title === title);
-
-			if (product) {
-				product.quantity = quantity;
-			} else {
-				this.productRedemptions.push({ title, points, quantity });
-			}
+		handlePointsChange({ quantity, title }) {
+			this.$emit('update-points-redemption', { title, quantity });
 		},
 	},
 
@@ -83,5 +72,4 @@ export default {
 	.subtitle {
 		@include text-subtle;
 	}
-
 </style>
