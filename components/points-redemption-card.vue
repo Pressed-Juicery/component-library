@@ -34,6 +34,10 @@ export default {
 			type: Number,
 			required: true,
 		},
+		itemQuantity: {
+			type: Number,
+			required: true,
+		},
 	},
 
 	methods: {
@@ -44,7 +48,9 @@ export default {
 
 	computed: {
 		options() {
-			return [...Array(this.quantityAvailable + 1).keys()];
+			const options = Math.min(this.itemQuantity, this.quantityAvailable + this.quantity);
+
+			return [...Array(options + 1).keys()];
 		},
 	},
 };
