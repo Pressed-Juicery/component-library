@@ -25,7 +25,7 @@
 				/>
 				<coupon-code-input @submit="discountCode => $emit('apply-discount-code', discountCode)" />
 				<hr :class="$style.partition">
-				<cart-points-display @click="setCartState('points')" :user="user" />
+				<cart-points-display @click="setCartState('points')" :wallet="user" />
 			</div>
 
 			<cart-points-redemption

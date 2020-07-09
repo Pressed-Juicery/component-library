@@ -1,8 +1,8 @@
 <template>
-  <div v-if="user && user.points >= 0">
+  <div v-if="wallet && wallet.points >= 0">
     <div :class="$style.balanceWrapper">
       <div>Pressed Points Balance</div>
-      <div>{{ user.points }}</div>
+      <div>{{ wallet.points }}</div>
     </div>
     <button @click="$emit('click')" :class="$style.redeemPoints">
 		Redeem Pressed Points
@@ -14,7 +14,7 @@
 <script>
 export default {
 	props: {
-		user: Object,
+		wallet: Object,
 	},
 };
 </script>
