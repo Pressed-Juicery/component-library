@@ -1,5 +1,5 @@
 <template>
-	<card :class="[$style.card, { [$style.disabled]: !quantity && !quantityAvailable }]">
+	<card :class="[$style.card, { [$style.disabled]: !itemQuantity || !quantity && !quantityAvailable }]">
 		<img :class="$style.icon" :src="icon"/>
 		<div :class="$style.title">{{ title }}</div>
 		<div :class="$style.points">{{ points }} Pts</div>
