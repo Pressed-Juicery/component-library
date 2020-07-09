@@ -19,9 +19,7 @@ export function Overview() {
 					points: 220,
 				},
 				redemptionSummary: redemptionRates.map(rate => {
-					rate.quantityAvailable = 1; // eslint-disable-line no-param-reassign
-
-					return rate;
+					return { ...rate, quantityAvailable: 1 };
 				}),
 			};
 		},
@@ -41,9 +39,7 @@ export function DisabledItems() {
 					points: 220,
 				},
 				redemptionSummary: redemptionRates.map((rate, index) => {
-					rate.quantityAvailable = index % 2; // eslint-disable-line no-param-reassign
-
-					return rate;
+					return { ...rate, quantityAvailable: index % 2 };
 				}),
 			};
 		},
