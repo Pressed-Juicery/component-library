@@ -16,8 +16,6 @@ export function Overview() {
 		data() {
 			return {
 				user: {
-					firstName: 'Test',
-					lastName: 'User',
 					points: 220,
 				},
 				redemptionSummary: redemptionRates.map(rate => {
@@ -40,8 +38,6 @@ export function DisabledItems() {
 		data() {
 			return {
 				user: {
-					firstName: 'Test',
-					lastName: 'User',
 					points: 220,
 				},
 				redemptionSummary: redemptionRates.map((rate, index) => {
