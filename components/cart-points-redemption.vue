@@ -7,7 +7,7 @@
 			</div>
 			<div :class="$style.subtitle">Rewards you're eligible for:</div>
 		</div>
-		<points-redemption @change="handlePointsChange" :points="wallet.points" :redemption-rates="redemptionRates"/>
+		<points-redemption @change="handlePointsChange" :points="wallet.points" :redemption-rates="redemptionSummary"/>
 	</div>
 </template>
 
@@ -24,12 +24,6 @@ export default {
 		redemptionSummary: {
 			type: Array,
 			required: true,
-		},
-	},
-
-	computed: {
-		redemptionRates() {
-			return this.redemptionSummary;
 		},
 	},
 
