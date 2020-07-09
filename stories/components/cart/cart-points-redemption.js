@@ -10,12 +10,12 @@ export function Overview() {
 	return {
 		components: { CartPointsRedemption },
 		template: `
-			<cart-points-redemption :user="user" :redemption-summary="redemptionSummary" />
+			<cart-points-redemption :wallet="wallet" :redemption-summary="redemptionSummary" />
 		`,
 
 		data() {
 			return {
-				user: {
+				wallet: {
 					points: 220,
 				},
 				redemptionSummary: redemptionRates.map(rate => {
@@ -32,12 +32,12 @@ export function DisabledItems() {
 	return {
 		components: { CartPointsRedemption },
 		template: `
-			<cart-points-redemption :user="user" :redemption-summary="redemptionSummary" />
+			<cart-points-redemption :wallet="wallet" :redemption-summary="redemptionSummary" />
 		`,
 
 		data() {
 			return {
-				user: {
+				wallet: {
 					points: 220,
 				},
 				redemptionSummary: redemptionRates.map((rate, index) => {

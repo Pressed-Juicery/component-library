@@ -20,7 +20,7 @@ export default {
 	},
 
 	props: {
-		user: Object,
+		wallet: Object,
 		redemptionSummary: {
 			type: Array,
 			required: true,
@@ -29,7 +29,7 @@ export default {
 
 	computed: {
 		points() {
-			return this.user.points;
+			return this.wallet.points;
 		},
 
 		redemptionRates() {
