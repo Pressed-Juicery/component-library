@@ -53,10 +53,9 @@ export default {
 		displayCards() {
 			return this.redemptionRates
 				.filter(card => card.selected || card.points <= this.points)
-				.map(card => {
-					const quantityAvailable = Math.floor(this.points / card.points) + card.selected;
-
-					return { ...card, quantityAvailable };
+				.sort((first, second) =>  {
+					return Boolean(second.selected) - Boolean(first.selected)
+						|| Boolean(second.quantityAvailable) - Boolean(first.quantityAvailable);
 				});
 		},
 	},
