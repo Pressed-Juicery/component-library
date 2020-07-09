@@ -53,7 +53,8 @@ export default {
 		displayCards() {
 			return this.redemptionRates
 				.filter(card => card.selected || card.points <= this.points)
-				.sort((first, second) => Boolean(second.selected) - Boolean(first.selected)
+				.sort((first, second) => Boolean(second.itemQuantity) - Boolean(first.itemQuantity)
+					|| Boolean(second.selected) - Boolean(first.selected)
 					|| Boolean(second.quantityAvailable) - Boolean(first.quantityAvailable)
 				);
 		},
