@@ -25,12 +25,12 @@
 				/>
 				<coupon-code-input @submit="discountCode => $emit('apply-discount-code', discountCode)" />
 				<hr :class="$style.partition">
-				<cart-points-display @click="setCartState('points')" :wallet="user" />
+				<cart-points-display @click="setCartState('points')" :wallet="wallet" />
 			</div>
 
 			<cart-points-redemption
 				v-else-if="state === 'points'"
-				:wallet="user"
+				:wallet="wallet"
 				:redemption-summary="redemptionRates"
 			/>
 
@@ -65,7 +65,7 @@ export default {
 	props: {
 		isActive: Boolean,
 		cart: Object,
-		user: Object,
+		wallet: Object,
 		guest: Object,
 		redemptionRates: {
 			type: Array,
@@ -90,7 +90,7 @@ export default {
 		setCartState(state) { this.state = state },
 
 		continueToCheckout() {
-			if (this.user) return void (this.$emit('continue'));
+			if (this.wallet) return void (this.$emit('continue'));
 
 			this.showCheckoutAuthentication = true;
 		},
