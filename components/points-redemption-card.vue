@@ -1,5 +1,5 @@
 <template>
-	<card :class="$style.card">
+	<card :class="[$style.card, { [$style.disabled]: !quantity && !quantityAvailable }]">
 		<img :class="$style.icon" :src="icon"/>
 		<div :class="$style.title">{{ title }}</div>
 		<div :class="$style.points">{{ points }} Pts</div>
@@ -59,6 +59,11 @@ export default {
 		flex-direction: column;
 		align-items: center;
 		padding: $spacing-06 $spacing-05;
+	}
+
+	.disabled {
+		opacity: .5;
+		pointer-events: none;
 	}
 
 	.icon {
