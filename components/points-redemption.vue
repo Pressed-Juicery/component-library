@@ -42,9 +42,7 @@ export default {
 	},
 
 	methods: {
-		handleChange(obj) {
-			const { title, quantity } = obj;
-
+		handleChange({ title, quantity }) {
 			this.$emit('change', { title, quantity });
 		},
 	},
