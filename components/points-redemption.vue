@@ -8,7 +8,9 @@
 				:icon="card.icon"
 				:title="card.title"
 				:points="card.points"
+				:quantity="card.selected"
 				:quantity-available="card.quantityAvailable"
+				:item-quantity="card.itemQuantity"
 				@change="handleChange"
 			/>
 		</div>
