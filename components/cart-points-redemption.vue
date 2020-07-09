@@ -29,7 +29,7 @@ export default {
 
 	methods: {
 		handlePointsChange({ quantity, title }) {
-			this.$emit('update-points-redemption', { title, quantity });
+			this.$emit('update-points-redemption', { quantity, title });
 		},
 	},
 
