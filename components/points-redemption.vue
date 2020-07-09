@@ -43,12 +43,9 @@ export default {
 
 	methods: {
 		handleChange(obj) {
-			const { title, points, quantity } = obj;
-			const index = this.redemptionRates.findIndex(card => card.title === title);
+			const { title, quantity } = obj;
 
-			this.redemptionRates[index].selected = quantity;
-
-			this.$emit('change', { title, points, quantity });
+			this.$emit('change', { title, quantity });
 		},
 	},
 
