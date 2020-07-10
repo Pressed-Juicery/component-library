@@ -17,41 +17,41 @@
 
 <script>
 import { isNotEmpty, isTruthy } from '../utilities/validators.js';
-import ValidatedForm from "./validated-form.vue";
-import ValidatedInput from "./validated-input.vue";
+import StarRating from './star-rating.vue';
 import ValidatedComponent from './validated-component.vue';
-import StarRating from "./star-rating.vue";
+import ValidatedForm from './validated-form.vue';
+import ValidatedInput from './validated-input.vue';
 
 export default {
 	components: { StarRating, ValidatedForm, ValidatedInput, ValidatedComponent },
 	data() {
 		return {
+			isEager: false,
 			review: {
 				rating: 0,
 				title: '',
 				description: '',
 			},
-			isEager: false,
 			basicRules: [
 				{
 					validator: isNotEmpty,
-					message: "Cannot be empty."
-				}
+					message: 'Cannot be empty.',
+				},
 			],
 			starRules: [
 				{
 					validator: isTruthy,
-					message: "Please provide rating"
-				}
-			]
-		}
+					message: 'Please provide rating',
+				},
+			],
+		};
 	},
 	methods: {
 		handleSubmit(value) {
-			console.log(value)
-		}
-	}
-}
+			console.log(value);
+		},
+	},
+};
 </script>
 
 <style lang="scss" module>
