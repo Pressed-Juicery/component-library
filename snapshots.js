@@ -71,6 +71,7 @@ const groups = [{
 		'ProductDetails',
 		'ProductCard',
 		'ProductReview',
+		'ProductReviewForm',
 		'Ingredients',
 	],
 }, {
