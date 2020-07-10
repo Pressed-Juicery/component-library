@@ -31,7 +31,7 @@
 			<cart-points-redemption
 				v-else-if="state === 'points'"
 				:wallet="wallet"
-				:redemption-summary="redemptionRates"
+				:redemption-summary="redemptionSummary"
 			/>
 
 			<cart-checkout-footer :cart="cart" @continue="continueToCheckout()" />
@@ -67,7 +67,7 @@ export default {
 		cart: Object,
 		wallet: Object,
 		guest: Object,
-		redemptionRates: {
+		redemptionSummary: {
 			type: Array,
 			required: true,
 		},

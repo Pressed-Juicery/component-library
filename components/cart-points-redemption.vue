@@ -7,7 +7,11 @@
 			</div>
 			<div :class="$style.subtitle">Rewards you're eligible for:</div>
 		</div>
-		<points-redemption @change="handlePointsChange" :points="wallet.points" :redemption-rates="redemptionSummary"/>
+		<points-redemption
+			@change="handlePointsChange"
+			:points="wallet.points"
+			:redemption-summary="redemptionSummary"
+		/>
 	</div>
 </template>
 
@@ -28,8 +32,8 @@ export default {
 	},
 
 	methods: {
-		handlePointsChange({ quantity, title }) {
-			this.$emit('update-points-redemption', { quantity, title });
+		handlePointsChange(redemptionSummaryItem) {
+			this.$emit('update-points-redemption', redemptionSummaryItem);
 		},
 	},
 

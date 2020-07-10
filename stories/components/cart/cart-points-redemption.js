@@ -1,5 +1,5 @@
 import CartPointsRedemption from '../../../components/cart-points-redemption';
-import { redemptionRates } from '../../../demo-data/redemption-rates.data';
+import { redemptionSummary } from '../../../demo-data/redemption-summary.data';
 
 export default {
 	title: 'Components / Cart / CartPointsRedemption',
@@ -18,9 +18,7 @@ export function Overview() {
 				wallet: {
 					points: 220,
 				},
-				redemptionSummary: redemptionRates.map(rate => {
-					return { ...rate, quantityAvailable: 1 };
-				}),
+				redemptionSummary,
 			};
 		},
 	};
@@ -38,8 +36,8 @@ export function DisabledItems() {
 				wallet: {
 					points: 220,
 				},
-				redemptionSummary: redemptionRates.map((rate, index) => {
-					return { ...rate, quantityAvailable: index % 2 };
+				redemptionSummary: redemptionSummary.map((rate, index) => {
+					return { ...rate, eligibleCartItemQuantity: index % 2 };
 				}),
 			};
 		},
