@@ -18,9 +18,7 @@ export function Overview() {
 				wallet: {
 					points: 220,
 				},
-				redemptionSummary: redemptionSummary.map(rate => {
-					return { ...rate, eligibleCartItemQuantity: 1 };
-				}),
+				redemptionSummary,
 			};
 		},
 	};
