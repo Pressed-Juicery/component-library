@@ -53,10 +53,8 @@ const mixins = [{
 			});
 		},
 
-		getUser() {
+		getWallet() {
 			return {
-				firstName: 'Carl',
-				lastName: 'McGee',
 				points: 220,
 			};
 		},
@@ -77,7 +75,7 @@ export function Overview() {
 		template: `
 			<cart-sidebar
 				:is-active="isActive"
-				:user="user"
+				:wallet="wallet"
 				:cart="cart"
 				:redemption-rates="redemptionRates"
 				@close="closeSlider"
@@ -104,7 +102,7 @@ export function Overview() {
 					isShippingAvailable: true,
 					fulfillmentSelection: { price: 40 },
 				},
-				user: this.getUser(),
+				wallet: this.getWallet(),
 				redemptionRates,
 			};
 		},
@@ -119,7 +117,7 @@ export function EmptyCart() {
 		template: `
 			<cart-sidebar
 				:is-active="isActive"
-				:user="user"
+				:wallet="wallet"
 				:cart="cart"
 				:redemption-rates="redemptionRates"
 				@close="closeSlider"
@@ -140,7 +138,7 @@ export function EmptyCart() {
 					total: 0,
 					isShippingAvailable: false,
 				},
-				user: this.getUser(),
+				wallet: this.getWallet(),
 				items: [],
 				redemptionRates,
 			};

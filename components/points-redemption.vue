@@ -8,7 +8,9 @@
 				:icon="card.icon"
 				:title="card.title"
 				:points="card.points"
+				:quantity="card.selected"
 				:quantity-available="card.quantityAvailable"
+				:item-quantity="card.itemQuantity"
 				@change="handleChange"
 			/>
 		</div>
@@ -40,25 +42,16 @@ export default {
 	},
 
 	methods: {
-		handleChange(obj) {
-			const { title, points, quantity } = obj;
-			const index = this.redemptionRates.findIndex(card => card.title === title);
-
-			this.redemptionRates[index].selected = quantity;
-
-			this.$emit('change', { title, points, quantity });
+		handleChange({ title, quantity }) {
+			this.$emit('change', { title, quantity });
 		},
 	},
 
 	computed: {
 		displayCards() {
-			return this.redemptionRates
-				.filter(card => card.selected || card.points <= this.points)
-				.map(card => {
-					const quantityAvailable = Math.floor(this.points / card.points) + card.selected;
-
-					return { ...card, quantityAvailable };
-				});
+			return [...this.redemptionRates]
+				.sort((first, second) => first.points - second.points)
+				.sort((first, second) => Boolean(second.quantityAvailable) - Boolean(first.quantityAvailable));
 		},
 	},
 };

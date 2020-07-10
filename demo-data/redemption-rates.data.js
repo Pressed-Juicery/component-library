@@ -4,28 +4,33 @@ export const redemptionRates = [{
 	points: 70,
 	quantityAvailable: 0,
 	selected: 0,
+	itemQuantity: 14,
 }, {
 	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/freeze-size-1.svg',
 	title: 'Size 1 Freeze',
 	points: 140,
 	quantityAvailable: 0,
 	selected: 0,
+	itemQuantity: 5,
 }, {
 	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/juice.svg',
 	title: 'Any Juice',
 	points: 150,
 	quantityAvailable: 0,
 	selected: 0,
+	itemQuantity: 1,
 }, {
 	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/signature-blend.svg',
 	title: 'Signature Blend',
 	points: 180,
 	quantityAvailable: 0,
 	selected: 0,
+	itemQuantity: 1,
 }, {
 	icon: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/pressed-points/freeze-size-2.svg',
 	title: 'Size 2 Freeze',
 	points: 180,
 	quantityAvailable: 0,
 	selected: 0,
+	itemQuantity: 1,
 }];

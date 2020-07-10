@@ -1,5 +1,5 @@
 <template>
-	<card :class="$style.card">
+	<card :class="[$style.card, { [$style.disabled]: !itemQuantity || !quantity && !quantityAvailable }]">
 		<img :class="$style.icon" :src="icon"/>
 		<div :class="$style.title">{{ title }}</div>
 		<div :class="$style.points">{{ points }} Pts</div>
@@ -34,6 +34,10 @@ export default {
 			type: Number,
 			required: true,
 		},
+		itemQuantity: {
+			type: Number,
+			required: true,
+		},
 	},
 
 	methods: {
@@ -44,7 +48,9 @@ export default {
 
 	computed: {
 		options() {
-			return [...Array(this.quantityAvailable + 1).keys()];
+			const options = Math.min(this.itemQuantity, this.quantityAvailable + this.quantity);
+
+			return [...Array(options + 1).keys()];
 		},
 	},
 };
@@ -59,6 +65,11 @@ export default {
 		flex-direction: column;
 		align-items: center;
 		padding: $spacing-06 $spacing-05;
+	}
+
+	.disabled {
+		opacity: .5;
+		pointer-events: none;
 	}
 
 	.icon {

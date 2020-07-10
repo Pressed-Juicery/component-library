@@ -1,27 +1,27 @@
 <template>
-  <div v-if="user && user.points >= 0">
-    <div :class="$style.balanceWrapper">
-      <div>Pressed Points Balance</div>
-      <div>{{ user.points }}</div>
-    </div>
-    <button @click="$emit('click')" :class="$style.redeemPoints">
-		Redeem Pressed Points
-	</button>
-	<hr :class="$style.partition" />
-  </div>
+	<div v-if="wallet && wallet.points >= 0">
+		<div :class="$style.balanceWrapper">
+			<div>Pressed Points Balance</div>
+			<div>{{ wallet.points }}</div>
+		</div>
+		<button @click="$emit('click')" :class="$style.redeemPoints">
+			Redeem Pressed Points
+		</button>
+		<hr :class="$style.partition"/>
+	</div>
 </template>
 
 <script>
 export default {
 	props: {
-		user: Object,
+		wallet: Object,
 	},
 };
 </script>
 
 <style module lang="scss">
-  @import '../styles/mixins';
-  @import '../styles/variables';
+	@import '../styles/mixins';
+	@import '../styles/variables';
 
 	.balanceWrapper {
 		display: flex;
