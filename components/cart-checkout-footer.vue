@@ -2,7 +2,7 @@
 	<div>
 		<cart-totals :class="$style.totals" :cart="cart"/>
 		<div :class="$style.disclaimer">Taxes and delivery fees will be applied at checkout.</div>
-		<button :class="$style.button" @click="$emit('continue')" :disabled="!cart.items.length">
+		<button :class="$style.button" @click="$emit('continue')" :disabled="!cart.items || !cart.items.length">
 			Check Out
 		</button>
 	</div>
