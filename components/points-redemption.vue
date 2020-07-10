@@ -3,15 +3,10 @@
 		<div :class="$style.wrapper">
 			<points-redemption-card
 				:class="$style.card"
-				v-for="card in displayCards"
-				:key="card.title"
-				:icon="card.icon"
-				:title="card.title"
-				:points="card.points"
-				:quantity="card.selected"
-				:quantity-available="card.quantityAvailable"
-				:item-quantity="card.itemQuantity"
+				v-for="redemptionSummaryItem in sortedRedemptionSummary"
+				:redemption-summary-item="redemptionSummaryItem"
 				@change="handleChange"
+				:key="redemptionSummaryItem.id"
 			/>
 		</div>
 	</div>
@@ -29,7 +24,7 @@ export default {
 			type: Number,
 			required: true,
 		},
-		redemptionRates: {
+		redemptionSummary: {
 			type: Array,
 			required: true,
 		},
@@ -42,16 +37,18 @@ export default {
 	},
 
 	methods: {
-		handleChange({ title, quantity }) {
-			this.$emit('change', { title, quantity });
+		handleChange(redemptionSummaryItem) {
+			this.$emit('change', redemptionSummaryItem);
 		},
 	},
 
 	computed: {
-		displayCards() {
-			return [...this.redemptionRates]
+		sortedRedemptionSummary() {
+			return [...this.redemptionSummary]
 				.sort((first, second) => first.points - second.points)
-				.sort((first, second) => Boolean(second.quantityAvailable) - Boolean(first.quantityAvailable));
+				.sort((first, second) => { // eslint-disable-line arrow-body-style
+					return Boolean(second.eligibleCartItemQuantity) - Boolean(first.eligibleCartItemQuantity);
+				});
 		},
 	},
 };

@@ -1,11 +1,11 @@
 <template>
-	<card :class="[$style.card, { [$style.disabled]: !itemQuantity || !quantity && !quantityAvailable }]">
-		<img :class="$style.icon" :src="icon"/>
-		<div :class="$style.title">{{ title }}</div>
-		<div :class="$style.points">{{ points }} Pts</div>
+	<card :class="[$style.card, { [$style.disabled]: !redemptionSummaryItem.eligibleCartItemQuantity }]">
+		<img :class="$style.icon" :src="redemptionSummaryItem.icon"/>
+		<div :class="$style.title">{{ redemptionSummaryItem.title }}</div>
+		<div :class="$style.points">{{ redemptionSummaryItem.points }} Pts</div>
 		<quantity-selector
 			:options="options"
-			:quantity="quantity"
+			:quantity="redemptionSummaryItem.requestedRedemptionQuantity"
 			@change="handleChange"
 			:can-use-input="false"
 		/>
@@ -23,34 +23,26 @@ export default {
 	},
 
 	props: {
-		icon: String,
-		title: String,
-		points: Number,
-		quantity: {
-			type: Number,
-			default: 0,
-		},
-		quantityAvailable: {
-			type: Number,
-			required: true,
-		},
-		itemQuantity: {
-			type: Number,
+		redemptionSummaryItem: {
+			type: Object,
 			required: true,
 		},
 	},
 
 	methods: {
-		handleChange(quantity) {
-			this.$emit('change', { title: this.title, points: this.points, quantity });
+		handleChange(requestedRedemptionQuantity) {
+			this.$emit('change', {
+				...this.redemptionSummaryItem,
+				requestedRedemptionQuantity,
+			});
 		},
 	},
 
 	computed: {
 		options() {
-			const options = Math.min(this.itemQuantity, this.quantityAvailable + this.quantity);
+			const quantity = (this.redemptionSummaryItem && this.redemptionSummaryItem.eligibleCartItemQuantity) || 0;
 
-			return [...Array(options + 1).keys()];
+			return [...Array(quantity + 1).keys()];
 		},
 	},
 };

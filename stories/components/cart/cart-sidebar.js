@@ -3,7 +3,7 @@
 import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 import CartSidebar from '../../../components/cart-sidebar';
 import { addons } from '@storybook/addons';
-import { redemptionRates } from '../../../demo-data/redemption-rates.data';
+import { redemptionSummary } from '../../../demo-data/redemption-summary.data';
 
 export default {
 	title: 'Components / Cart / CartSidebar',
@@ -77,7 +77,7 @@ export function Overview() {
 				:is-active="isActive"
 				:wallet="wallet"
 				:cart="cart"
-				:redemption-rates="redemptionRates"
+				:redemption-summary="redemptionSummary"
 				@close="closeSlider"
 				@cart-quantity-change="updateItemQuantity"
 			/>
@@ -103,7 +103,7 @@ export function Overview() {
 					fulfillmentSelection: { price: 40 },
 				},
 				wallet: this.getWallet(),
-				redemptionRates,
+				redemptionSummary,
 			};
 		},
 	};
@@ -119,7 +119,7 @@ export function EmptyCart() {
 				:is-active="isActive"
 				:wallet="wallet"
 				:cart="cart"
-				:redemption-rates="redemptionRates"
+				:redemption-summary="redemptionSummary"
 				@close="closeSlider"
 			/>
 		`,
@@ -140,7 +140,7 @@ export function EmptyCart() {
 				},
 				wallet: this.getWallet(),
 				items: [],
-				redemptionRates,
+				redemptionSummary,
 			};
 		},
 	};
@@ -156,7 +156,7 @@ export function Guest() {
 				<cart-sidebar
 					:is-active="isActive"
 					:cart="cart"
-					:redemption-rates="redemptionRates"
+					:redemption-summary="redemptionSummary"
 					@close="closeSlider"
 					@cart-quantity-change="updateItemQuantity"
 					@sign-in="credentials => userCredentials = credentials"
@@ -190,7 +190,7 @@ export function Guest() {
 					isShippingAvailable: true,
 					fulfillmentSelection: { price: 40 },
 				},
-				redemptionRates,
+				redemptionSummary,
 				userCredentials: null,
 				newGuest: null,
 				signupMessage: null,
@@ -210,7 +210,7 @@ export function PrepopulatedGuest() {
 					:is-active="isActive"
 					:cart="cart"
 					:guest="guest"
-					:redemption-rates="redemptionRates"
+					:redemption-summary="redemptionSummary"
 					@close="closeSlider"
 					@cart-quantity-change="updateItemQuantity"
 					@add-guest="updatedGuest => guest = updatedGuest"
@@ -240,7 +240,7 @@ export function PrepopulatedGuest() {
 					isShippingAvailable: true,
 					fulfillmentSelection: { price: 40 },
 				},
-				redemptionRates,
+				redemptionSummary,
 				guest: { name: 'Test Guest', phone: '1234567890', email: 'testguest@example.com' },
 			};
 		},
