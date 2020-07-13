@@ -11,7 +11,6 @@
 		ref="validatedComponent"
 	>
 		<star-rating
-			:class="$style.validatedStarRating"
 			:id="id"
 			v-bind="$attrs"
 			v-model="model"
@@ -60,9 +59,3 @@ export default {
 
 };
 </script>
-
-<style lang="scss" module>
-.validatedTextarea {
-	resize: none;
-}
-</style>
