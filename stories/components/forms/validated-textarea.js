@@ -20,7 +20,7 @@ export function Overview() {
 				description: null,
 				descriptionRules: [{
 					validator: isNotEmpty,
-					message: 'Please enter your first name.',
+					message: 'Description is required.',
 				}],
 			};
 		},
