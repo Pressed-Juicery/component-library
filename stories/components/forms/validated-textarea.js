@@ -1,5 +1,5 @@
-import { isNotEmpty } from '../../../utilities/validators';
 import ValidatedTextarea from '../../../components/validated-textarea';
+import { isNotEmpty } from '../../../utilities/validators';
 
 export default {
 	title: 'Components / Forms / ValidatedTextarea',

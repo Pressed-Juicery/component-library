@@ -11,6 +11,7 @@
 		ref="validatedComponent"
 	>
 		<textarea
+			:class="$style.validatedTextarea"
 			:id="id"
 			v-bind="$attrs"
 			v-model="model"
@@ -24,7 +25,9 @@ import ValidatedComponent from './validated-component.vue';
 import { getRandom } from '../utilities/get-random.js';
 
 export default {
+
 	components: { ValidatedComponent },
+
 	props: {
 		label: String,
 		labelHelper: String,
@@ -32,23 +35,32 @@ export default {
 		rules: Array,
 		value: null,
 	},
+
 	data() {
 		return {
 			id: getRandom(),
 			isEager: false,
 		};
 	},
+
 	computed: {
 		model: {
 			get() { return this.value },
-			set(value) { this.$emit('change', value) },
+			set(value) { this.$emit('input', value) },
 		},
 	},
+
+	methods: {
+		isValid() {
+			return this.$refs.validatedComponent.isValid();
+		},
+	},
+
 };
 </script>
 
 <style lang="scss" module>
-.root {
-
+.validatedTextarea {
+	resize: none;
 }
 </style>
