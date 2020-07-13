@@ -25,6 +25,10 @@ import StarEmpty from './icons/star-empty';
 import StarFilled from './icons/star-filled';
 
 export default {
+	model: {
+		prop: 'rating',
+		event: 'change',
+	},
 	components: {
 		StarEmpty,
 		Star25,
