@@ -17,7 +17,7 @@ export function Overview() {
 				type="text"
 				label="Rating"
 				v-model="rating"
-				:rules="descriptionRules"
+				:rules="starRules"
 			/>
 
 			<button type="submit">save</button>
@@ -27,7 +27,7 @@ export function Overview() {
 		data() {
 			return {
 				rating: 0,
-				descriptionRules: [{
+				starRules: [{
 					validator: isTruthy,
 					message: 'Please enter a rating.',
 				}],
