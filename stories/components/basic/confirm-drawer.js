@@ -15,7 +15,6 @@ export function Overview() {
 		template: `
 			<confirm-drawer
 				:title="title"
-				:body="body"
 				:cancelButtonText="cancelButtonText"
 				:confirmButtonText="confirmButtonText"
 				:isOpen="isOpen"
