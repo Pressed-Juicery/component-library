@@ -1,0 +1,88 @@
+<template>
+	<drawer :isOpen="isOpen" @close="$emit('close')">
+		<div :class="$style.content">
+			<div :class="$style.title">{{ title }}</div>
+			<div :class="$style.body">{{ body }}</div>
+			<div :class="$style.buttonGroup">
+				<button
+					:class="$style.cancelButton"
+					@click="$emit('cancel')"
+				>
+				{{ cancelButtonText }}
+				</button>
+				<button
+					:class="$style.confirmButton"
+					@click="$emit('confirm')"
+				>
+				{{ confirmButtonText }}
+				</button>
+			</div>
+		</div>
+	</drawer>
+</template>
+
+<script>
+import Drawer from './drawer.vue';
+
+export default {
+	components: { Drawer },
+
+	props: {
+		isOpen: {
+			type: Boolean,
+			require: true,
+		},
+		title: {
+			type: String,
+			require: true,
+		},
+		body: {
+			type: String,
+			require: true,
+		},
+		cancelButtonText: {
+			type: String,
+			require: true,
+		},
+		confirmButtonText: {
+			type: String,
+			require: true,
+		},
+	},
+};
+</script>
+
+<style lang="scss" module>
+	@import '../styles/mixins';
+	@import '../styles/variables';
+
+	.content {
+		padding: $spacing-08 $spacing-06;
+	}
+
+	.title {
+		@include text-heading-5();
+		margin-bottom: $spacing-03;
+	}
+
+	.body {
+		margin-bottom: $spacing-08;
+	}
+
+	.buttonGroup {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: $spacing-03;
+	}
+
+	.cancelButton,
+	.confirmButton {
+		height: 72px;
+	}
+
+	.cancelButton {
+		background-color: white;
+		color: black;
+		box-shadow: 1px 1px 7px -1px rgba(193, 193, 193, 0.5);
+	}
+</style>
