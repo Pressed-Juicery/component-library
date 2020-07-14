@@ -8,6 +8,7 @@ export default {
 	component: ConfirmDrawer,
 	decorators: [withKnobs],
 };
+
 // eslint-disable-next-line
 export function Overview() {
 	return {
