@@ -9,15 +9,15 @@ export default {
 	decorators: [withKnobs],
 };
 
-// eslint-disable-next-line
+// eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
 		components: { ContentWrapper, ConfirmDrawer },
 		template: `
 			<confirm-drawer
-				:title="title"
-				:cancelButtonText="cancelButtonText"
-				:confirmButtonText="confirmButtonText"
+				title="Terms & Conditions"
+				cancelButtonText="Disagree"
+				confirmButtonText="Agree"
 				:isOpen="isOpen"
 				@close="closeDrawer"
 			>
@@ -33,13 +33,6 @@ export function Overview() {
 				</div>
 			</confirm-drawer>
 		`,
-		data() {
-			return {
-				title: 'Terms & Conditions',
-				cancelButtonText: 'disagree',
-				confirmButtonText: 'agree',
-			};
-		},
 		props: {
 			isOpen: {
 				default: boolean('Open', true),

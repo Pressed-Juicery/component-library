@@ -38,10 +38,6 @@ export default {
 			type: String,
 			require: true,
 		},
-		body: {
-			type: String,
-			require: true,
-		},
 		cancelButtonText: {
 			type: String,
 			require: true,
