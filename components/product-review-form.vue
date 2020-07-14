@@ -1,13 +1,26 @@
 <template>
 	<validated-form @submit="handleSubmit">
 
-		<validated-star-rating v-model="review.rating" :rules="starRules" />
+		<validated-star-rating
+			v-model="review.rating"
+			:rules="starRules"
+		/>
 
-		<validated-input label="Title" v-model="review.title" :rules="basicRules" />
+		<validated-input
+			label="Title"
+			v-model="review.title"
+			:rules="basicRules"
+		/>
 
-		<validated-textarea label="Description" v-model="review.description" :rules="basicRules" />
+		<validated-textarea
+			:class="$style.description"
+			label="Description"
+			v-model="review.description"
+			:rules="basicRules"
+		/>
 
 		<button type="submit" name="button">save</button>
+
 	</validated-form>
 </template>
 
@@ -20,9 +33,9 @@ import ValidatedTextarea from './validated-textarea.vue';
 
 export default {
 	components: { ValidatedForm, ValidatedInput, ValidatedTextarea, ValidatedStarRating },
+
 	data() {
 		return {
-			isEager: false,
 			review: {
 				rating: 0,
 				title: '',
@@ -42,20 +55,21 @@ export default {
 			],
 		};
 	},
+
 	methods: {
 		handleSubmit(value) {
 			// TODO: Awaiting GraphQL mutation for adding review.
 			console.log(value);
 		},
 	},
+
 };
 </script>
 
 <style lang="scss" module>
-@import "../styles/mixins.scss";
 
 .description {
-	resize: none;
 	height: 165px;
 }
+
 </style>
