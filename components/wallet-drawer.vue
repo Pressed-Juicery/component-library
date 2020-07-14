@@ -107,7 +107,7 @@ export default {
 		left: 0;
 		bottom: 0;
 		width: 100%;
-		z-index: 2;
+		z-index: 200;
 		border-radius: $spacing-05 $spacing-05 0 0;
 		background-color: $beige;
 		box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2);
