@@ -1,15 +1,11 @@
 <template>
 	<validated-form @submit="handleSubmit">
 
-		<validated-component :value="review.rating" :rules="starRules">
-			<star-rating :is-readonly="false" v-model="review.rating" />
-		</validated-component>
+		<validated-star-rating v-model="review.rating" :rules="starRules" />
 
 		<validated-input label="Title" v-model="review.title" :rules="basicRules" />
 
-		<validated-component label="Description" :value="review.description" :rules="basicRules" :isEager="isEager">
-			<textarea v-model="review.description" :class="$style.description" @blur="isEager = true"></textarea>
-		</validated-component>
+		<validated-textarea label="Description" v-model="review.description" :rules="basicRules" />
 
 		<button type="submit" name="button">save</button>
 	</validated-form>
@@ -17,13 +13,13 @@
 
 <script>
 import { isNotEmpty, isTruthy } from '../utilities/validators.js';
-import StarRating from './star-rating.vue';
-import ValidatedComponent from './validated-component.vue';
 import ValidatedForm from './validated-form.vue';
 import ValidatedInput from './validated-input.vue';
+import ValidatedStarRating from './validated-star-rating.vue';
+import ValidatedTextarea from './validated-textarea.vue';
 
 export default {
-	components: { StarRating, ValidatedForm, ValidatedInput, ValidatedComponent },
+	components: { ValidatedForm, ValidatedInput, ValidatedTextarea, ValidatedStarRating },
 	data() {
 		return {
 			isEager: false,
@@ -48,6 +44,7 @@ export default {
 	},
 	methods: {
 		handleSubmit(value) {
+			// TODO: Awaiting GraphQL mutation for adding review.
 			console.log(value);
 		},
 	},

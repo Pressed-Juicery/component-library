@@ -14,7 +14,6 @@ export function Overview() {
 			<validated-form>
 
 			<validated-star-rating
-				type="text"
 				label="Rating"
 				v-model="rating"
 				:rules="starRules"
