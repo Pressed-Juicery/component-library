@@ -10,10 +10,12 @@ export function Overview() {
 	return {
 		components: { ValidatedTextarea },
 		template: `
-			<validated-textarea type="text"
-			                 label="Description"
-			                 v-model="description"
-			                 :rules="descriptionRules" />
+			<validated-textarea
+				type="text"
+				label="Description"
+				v-model="description"
+				:rules="descriptionRules"
+			/>
 		`,
 		data() {
 			return {

@@ -1,7 +1,7 @@
 import ProductReviewForm from '../../../components/product-review-form.vue';
 
 export default {
-	title: 'Components / Products / ProductReviewForm',
+	title: 'Components / Forms / ProductReviewForm',
 	component: ProductReviewForm,
 };
 

@@ -13,13 +13,13 @@ export function Overview() {
 		template: `
 			<validated-form>
 
-			<validated-star-rating
-				label="Rating"
-				v-model="rating"
-				:rules="starRules"
-			/>
+				<validated-star-rating
+					label="Rating"
+					v-model="rating"
+					:rules="starRules"
+				/>
 
-			<button type="submit">save</button>
+				<button type="submit">save</button>
 
 			</validated-form>
 		`,

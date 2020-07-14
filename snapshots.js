@@ -43,6 +43,7 @@ const groups = [{
 	stories: [
 		'AddressForm',
 		'GuestInformationForm',
+		'ProductReviewForm',
 		'RadioButton',
 		'Signin',
 		'SignUpForm',
@@ -53,6 +54,8 @@ const groups = [{
 		'ValidatedInput',
 		'ValidatedPaymentMethod',
 		'ValidatedSelect',
+		'ValidatedStarRating',
+		'ValidatedTextarea',
 		'QuantitySelector',
 	],
 }, {

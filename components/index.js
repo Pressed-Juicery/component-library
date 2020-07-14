@@ -63,4 +63,6 @@ export { default as ValidatedForm } from './validated-form';
 export { default as ValidatedInput } from './validated-input';
 export { default as ValidatedPaymentMethod } from './validated-payment-method';
 export { default as ValidatedSelect } from './validated-select';
+export { default as ValidatedStarRating } from './validated-star-rating.vue';
+export { default as ValidatedTextarea } from './validated-textarea.vue';
 export { default as WalletDrawer } from './wallet-drawer';
