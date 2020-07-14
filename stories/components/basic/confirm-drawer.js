@@ -20,12 +20,8 @@ export function Overview() {
 				:confirmButtonText="confirmButtonText"
 				:isOpen="isOpen"
 				@close="closeDrawer"
-			/>
-		`,
-		data() {
-			return {
-				title: 'Terms & Conditions',
-				body: `
+			>
+				<div>
 					Lorem ipsum dolor sit amet,
 					consectetur adipisicing elit, sed
 					do eiusmod tempor incididunt ut
@@ -33,8 +29,13 @@ export function Overview() {
 					enim ad minim veniam, quis nostrud
 					exercitation ullamco laboris nisi
 					ut aliquip ex ea commodo
-					consequat.
-				`,
+					consequat. <a style="text-decoration: underline;" href="https://pressedjuicery.com/">Click Here</a>
+				</div>
+			</confirm-drawer>
+		`,
+		data() {
+			return {
+				title: 'Terms & Conditions',
 				cancelButtonText: 'disagree',
 				confirmButtonText: 'agree',
 			};

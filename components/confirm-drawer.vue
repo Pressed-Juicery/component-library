@@ -2,7 +2,9 @@
 	<drawer :isOpen="isOpen" @close="$emit('close')">
 		<div :class="$style.content">
 			<div :class="$style.title">{{ title }}</div>
-			<div :class="$style.body">{{ body }}</div>
+			<div :class="$style.body">
+				<slot/>
+			</div>
 			<div :class="$style.buttonGroup">
 				<button
 					:class="$style.cancelButton"
