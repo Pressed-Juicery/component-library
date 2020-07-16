@@ -30,11 +30,22 @@
 		<div :class="[$style.row, $style.rowGroup]">
 			<div v-if="cart.fulfillmentSelection && cart.fulfillmentSelection.method">
 				{{ cart.fulfillmentSelection.method }}
+				<div v-if="(cart.fulfillmentSelection.method === 'Local Delivery') && (cart.fulfillmentPrice !== cart.originalFulfillmentPrice)" :class="$style.discountLabel">
+					Free Delivery (just pay tip)
+				</div>
 			</div>
 			<div v-else>Shipping/Delivery</div>
 
-			<div v-if="cart.fulfillmentPrice">{{ formatCurrency(cart.fulfillmentPrice) }}</div>
-			<div v-else-if="cart.fulfillmentPrice === 0" :class="$style.fulfillmentInfo">Free</div>
+			<div v-if="(cart.fulfillmentSelection && cart.fulfillmentSelection.method === 'Local Delivery' ) && (cart.fulfillmentPrice !== cart.originalFulfillmentPrice)">
+				<div :class="$style.rowGroup">
+					<div :class="$style.originalSubtotal">{{ formatCurrency(cart.originalFulfillmentPrice) }}</div>
+					<div>{{ formatCurrency(cart.fulfillmentPrice) }}</div>
+				</div>
+				<div :class="[$style.discountAmount, $style.alignRight]">
+					{{ formatCurrency(-Math.abs(cart.originalFulfillmentPrice - cart.fulfillmentPrice)) }}
+				</div>
+			</div>
+			<div v-else-if="cart.fulfillmentPrice">{{ formatCurrency(cart.fulfillmentPrice) }}</div>
 			<div v-else-if="!cart.isShippingAvailable" :class="$style.dashes">- - -</div>
 			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
 		</div>
@@ -130,6 +141,10 @@ export default {
 		@include text-body-small();
 		@include text-bold();
 		@include text-subtle();
+	}
+
+	.alignRight {
+		text-align: right;
 	}
 
 	.totalRow {
