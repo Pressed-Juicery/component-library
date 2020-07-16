@@ -33,6 +33,9 @@ export default {
 	}
 
 	.button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		flex: 1;
 		text-align: center;
 		padding: $spacing-05;
