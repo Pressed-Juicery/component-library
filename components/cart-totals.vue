@@ -30,13 +30,16 @@
 		<div :class="[$style.row, $style.rowGroup]">
 			<div v-if="cart.fulfillmentSelection && cart.fulfillmentSelection.method">
 				{{ cart.fulfillmentSelection.method }}
-				<div v-if="(cart.fulfillmentSelection.method === 'Local Delivery') && (cart.fulfillmentPrice !== cart.originalFulfillmentPrice)" :class="$style.discountLabel">
+				<div v-if="(cart.fulfillmentSelection.method === 'Local Delivery') &&
+				(cart.fulfillmentPrice !== cart.originalFulfillmentPrice)"
+				:class="$style.discountLabel">
 					Free Delivery (just pay tip)
 				</div>
 			</div>
 			<div v-else>Shipping/Delivery</div>
 
-			<div v-if="(cart.fulfillmentSelection && cart.fulfillmentSelection.method === 'Local Delivery' ) && (cart.fulfillmentPrice !== cart.originalFulfillmentPrice)">
+			<div v-if="(cart.fulfillmentSelection && cart.fulfillmentSelection.method === 'Local Delivery' ) &&
+				(cart.fulfillmentPrice !== cart.originalFulfillmentPrice)">
 				<div :class="$style.rowGroup">
 					<div :class="$style.originalSubtotal">{{ formatCurrency(cart.originalFulfillmentPrice) }}</div>
 					<div>{{ formatCurrency(cart.fulfillmentPrice) }}</div>
