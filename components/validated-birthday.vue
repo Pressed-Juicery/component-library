@@ -91,7 +91,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-	@import '../styles/variables.scss';
+	@import '../styles/variables';
 
 	.wrapper {
 		display: grid;
