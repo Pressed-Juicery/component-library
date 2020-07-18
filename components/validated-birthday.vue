@@ -57,8 +57,9 @@ export default {
 	},
 	computed: {
 		days() {
-			if (!this.month) return 31;
+			if (!this.month) return 31; // eslint-disable-line no-magic-numbers
 			const month = this.getSelectedMonthNumber();
+			// eslint-disable-next-line no-magic-numbers
 			const daysPerMonth = [null, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 			return daysPerMonth[month];
