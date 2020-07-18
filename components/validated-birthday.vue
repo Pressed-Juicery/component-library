@@ -97,15 +97,15 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import '../styles/variables.scss';
+	@import '../styles/variables.scss';
 
-.wrapper {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-column-gap: $spacing-06;
-}
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: $spacing-06;
+	}
 
-.error {
-	color: $red-60;
-}
+	.error {
+		color: $red-60;
+	}
 </style>
