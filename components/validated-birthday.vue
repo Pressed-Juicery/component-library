@@ -96,7 +96,7 @@ export default {
 	.wrapper {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-column-gap: $spacing-06;
+		grid-column-gap: $form-column-gap;
 	}
 
 	.error {
