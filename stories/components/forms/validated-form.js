@@ -22,24 +22,11 @@ export function Overview() {
 	};
 }
 
-export function ErrorMessage() {
-	return {
-		components: { ValidatedForm, ValidatedInput },
-		template: `
-			<validated-form :show-error="true">
-				<validated-input label="First Name" v-model="firstName"/>
-			</validated-form>
-		`,
-
-		data() { return { firstName: null } },
-	};
-}
-
 export function CustomErrorMessage() {
 	return {
 		components: { ValidatedForm, ValidatedInput },
 		template: `
-			<validated-form :show-error="true" error-message="Form submission failed due to a server error.">
+			<validated-form error-message="Form submission failed due to a server error.">
 				<validated-input label="First Name" v-model="firstName"/>
 			</validated-form>
 		`,
