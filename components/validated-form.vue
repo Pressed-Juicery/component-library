@@ -1,23 +1,19 @@
 <template>
 	<form :id="id" v-bind="$attrs" @submit.prevent="validate()" novalidate>
 		<slot></slot>
-		<div v-if="(hasError || showError) && errorMessage" class="alert alert--danger">{{ errorMessage }}</div>
+		<div v-if="error" class="alert alert--danger">{{ error }}</div>
 	</form>
 </template>
 
 <script>
 export default {
 	props: {
-		errorMessage: {
-			type: String,
-			default: 'There was a problem submitting this form. Please fix any errors and try again.',
-		},
-
 		id: {
 			type: String,
 		},
-
-		showError: Boolean,
+		errorMessage: {
+			type: String,
+		},
 	},
 
 	data() {
@@ -38,6 +34,14 @@ export default {
 
 					if (!this.hasError) this.$emit('submit');
 				});
+		},
+	},
+
+	computed: {
+		error() {
+			const defaultMessage = 'There was a problem submitting this form. Please fix any errors and try again.';
+
+			return this.errorMessage || (this.hasError && defaultMessage);
 		},
 	},
 };

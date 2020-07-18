@@ -22,24 +22,11 @@ export function Overview() {
 	};
 }
 
-export function ErrorMessage() {
-	return {
-		components: { ValidatedForm, ValidatedInput },
-		template: `
-			<validated-form :show-error="true">
-				<validated-input label="First Name" v-model="firstName"/>
-			</validated-form>
-		`,
-
-		data() { return { firstName: null } },
-	};
-}
-
 export function CustomErrorMessage() {
 	return {
 		components: { ValidatedForm, ValidatedInput },
 		template: `
-			<validated-form :show-error="true" error-message="Form submission failed due to a server error.">
+			<validated-form error-message="Form submission failed due to a server error.">
 				<validated-input label="First Name" v-model="firstName"/>
 			</validated-form>
 		`,
@@ -53,10 +40,7 @@ export function SingleValidatedInput() {
 		components: { ValidatedForm, ValidatedInput },
 		template: `
 			<validated-form>
-				<validated-input type="text"
-				                 label="Label"
-				                 :rules="rules"
-				                 v-model="model" />
+				<validated-input type="text" label="Label" :rules="rules" v-model="model" />
 				<button type="submit">Submit</button>
 			</validated-form>
 		`,
@@ -83,15 +67,8 @@ export function MultipleValidatedInputs() {
 		components: { ValidatedForm, ValidatedInput },
 		template: `
 			<validated-form>
-				<validated-input type="text"
-				                 label="First Name"
-				                 :rules="firstNameRules"
-				                 v-model="firstName" />
-
-				<validated-input type="text"
-				                 label="Password"
-				                 :rules="passwordRules"
-				                 v-model="password" />
+				<validated-input type="text" label="First Name" :rules="firstNameRules" v-model="firstName" />
+				<validated-input type="text" label="Password" :rules="passwordRules" v-model="password" />
 				<button type="submit">Submit</button>
 			</validated-form>
 		`,
@@ -123,15 +100,8 @@ export function CustomValidatedInputErrorMessage() {
 		components: { ValidatedForm, ValidatedInput },
 		template: `
 			<validated-form error-message="Form submission failed due to a server error.">
-				<validated-input type="text"
-				                 label="First Name"
-				                 :rules="firstNameRules"
-				                 v-model="firstName" />
-
-				<validated-input type="text"
-				                 label="Password"
-				                 :rules="passwordRules"
-				                 v-model="password" />
+				<validated-input type="text" label="First Name" :rules="firstNameRules" v-model="firstName" />
+				<validated-input type="text" label="Password" :rules="passwordRules" v-model="password" />
 				<button type="submit">Submit</button>
 			</validated-form>
 		`,
