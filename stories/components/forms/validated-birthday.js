@@ -8,6 +8,19 @@ export default {
 export function Overview() {
 	return {
 		components: { ValidatedBirthday },
-		template: '<validated-birthday />',
+		template: `
+			<div>
+				<validated-birthday @input="onInput"/>
+				<div style="margin-top:24px;">Birthday: {{ birthday }}</div>
+			</div>
+		`,
+		data() {
+			return { birthday: null };
+		},
+		methods: {
+			onInput(value) {
+				this.birthday = value;
+			},
+		},
 	};
 }
