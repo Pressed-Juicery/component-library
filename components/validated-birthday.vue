@@ -58,16 +58,17 @@ export default {
 			return daysPerMonth[this.month];
 		},
 		birthday() {
-			return `${this.month || ''}/${this.day || ''}`;
+			return this.month && this.day ? `${this.month}/${this.day}` : null;
 		},
 	},
 	methods: {
 		onChange() {
-			this.validate().then(() => {
-				const birthday = this.birthday === '/' ? null : this.birthday;
+			this.validate()
+				.then(hasError => {
+					const value = hasError ? null : this.birthday;
 
-				this.$emit('input', birthday);
-			});
+					this.$emit('input', value);
+				});
 		},
 		validate() {
 			return validate(this.birthday, this.rules)
