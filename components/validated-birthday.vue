@@ -37,7 +37,6 @@
 import { isDayOfMonth } from '../utilities/validators';
 import { validate } from '../utilities/validate';
 export default {
-	name: 'ValidatedBirthdayInput',
 	data: () => {
 		return {
 			month: null,
