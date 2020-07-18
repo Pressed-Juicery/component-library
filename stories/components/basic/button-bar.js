@@ -10,7 +10,7 @@ export function Overview() {
 		components: { ButtonBar },
 		template: `
 			<button-bar
-				:button-labels="['Pick Up', 'Delivery', 'Shipping']"
+				:button-labels="['Pick Up', 'Local Delivery', 'Shipping']"
 				:selected-label="selectedLabel"
 				@change="onChange"
 			/>
