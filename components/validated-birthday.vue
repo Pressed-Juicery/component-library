@@ -5,18 +5,18 @@
 				<label for="month">Month</label>
 				<select id="month" v-model="month" @change="onChange">
 					<option></option>
-					<option>1 | January</option>
-					<option>2 | February</option>
-					<option>3 | March</option>
-					<option>4 | April</option>
-					<option>5 | May</option>
-					<option>6 | June</option>
-					<option>7 | July</option>
-					<option>8 | August</option>
-					<option>9 | September</option>
-					<option>10 | October</option>
-					<option>11 | November</option>
-					<option>12 | December</option>
+					<option value="1">1 | January</option>
+					<option value="2">2 | February</option>
+					<option value="3">3 | March</option>
+					<option value="4">4 | April</option>
+					<option value="5">5 | May</option>
+					<option value="6">6 | June</option>
+					<option value="7">7 | July</option>
+					<option value="8">8 | August</option>
+					<option value="9">9 | September</option>
+					<option value="10">10 | October</option>
+					<option value="11">11 | November</option>
+					<option value="12">12 | December</option>
 				</select>
 			</div>
 
@@ -52,22 +52,16 @@ export default {
 	computed: {
 		days() {
 			if (!this.month) return 31; // eslint-disable-line no-magic-numbers
-			const month = this.getSelectedMonthNumber();
 			// eslint-disable-next-line no-magic-numbers
 			const daysPerMonth = [null, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-			return daysPerMonth[month];
+			return daysPerMonth[this.month];
 		},
 		birthday() {
-			const month = this.getSelectedMonthNumber();
-
-			return `${month || ''}/${this.day || ''}`;
+			return `${this.month || ''}/${this.day || ''}`;
 		},
 	},
 	methods: {
-		getSelectedMonthNumber() {
-			return this.month && this.month.split(' | ')[0];
-		},
 		onChange() {
 			this.validate().then(() => {
 				const birthday = this.birthday === '/' ? null : this.birthday;
