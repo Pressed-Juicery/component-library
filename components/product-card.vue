@@ -1,7 +1,7 @@
 <template>
 	<card>
 		<div :class="$style.wrapper">
-			<img :class="$style.image" :src="product.imageUrl" />
+			<img :class="$style.image" :src="product.imageUrl" @click="$emit('selected')" />
 			<div :class="$style.name">{{ product.name }}</div>
 
 			<div v-if="hasSamePrice" :class="$style.price">{{ formatPrice(product.nonMemberPrice) }}</div>
@@ -14,7 +14,7 @@
 				{{ formatPrice(product.memberSalePrice) }}
 			</div>
 
-			<quantity-selector :quantity="quantity" @change="quantity => $emit('change', { product, quantity })"/>
+			<quantity-selector :quantity="quantity" @change="quantity => $emit('change', { product, quantity })" />
 		</div>
 	</card>
 </template>
@@ -39,8 +39,12 @@ export default {
 	},
 
 	computed: {
-		nonMemberPriceClass() { return this.product.nonMemberSalePrice && this.$style.strikethrough },
-		memberPriceClass() { return this.product.memberSalePrice && this.$style.strikethrough },
+		nonMemberPriceClass() {
+			return this.product.nonMemberSalePrice && this.$style.strikethrough;
+		},
+		memberPriceClass() {
+			return this.product.memberSalePrice && this.$style.strikethrough;
+		},
 		hasSamePrice() {
 			const hasSameRegularPrice = this.product.nonMemberPrice === this.product.memberPrice;
 			const hasNoSalePrice = !this.product.nonMemberSalePrice && !this.product.memberSalePrice;
@@ -58,34 +62,35 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import '../styles/mixins';
+@import '../styles/mixins';
 
-	.wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
-	.image {
-		max-width: 100%;
-	}
+.image {
+	max-width: 100%;
+	cursor: pointer;
+}
 
-	.name,
-	.price {
-		@include text-body-small();
-		@include text-bold();
-	}
+.name,
+.price {
+	@include text-body-small();
+	@include text-bold();
+}
 
-	.name {
-		@include line-clamp(1);
-		text-transform: capitalize;
-	}
+.name {
+	@include line-clamp(1);
+	text-transform: capitalize;
+}
 
-	.price {
-		margin-bottom: $spacing-03;
-	}
+.price {
+	margin-bottom: $spacing-03;
+}
 
-	.strikethrough {
-		text-decoration: line-through;
-	}
+.strikethrough {
+	text-decoration: line-through;
+}
 </style>
