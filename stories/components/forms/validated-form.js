@@ -40,10 +40,7 @@ export function SingleValidatedInput() {
 		components: { ValidatedForm, ValidatedInput },
 		template: `
 			<validated-form>
-				<validated-input type="text"
-				                 label="Label"
-				                 :rules="rules"
-				                 v-model="model" />
+				<validated-input type="text" label="Label" :rules="rules" v-model="model" />
 				<button type="submit">Submit</button>
 			</validated-form>
 		`,
@@ -70,15 +67,8 @@ export function MultipleValidatedInputs() {
 		components: { ValidatedForm, ValidatedInput },
 		template: `
 			<validated-form>
-				<validated-input type="text"
-				                 label="First Name"
-				                 :rules="firstNameRules"
-				                 v-model="firstName" />
-
-				<validated-input type="text"
-				                 label="Password"
-				                 :rules="passwordRules"
-				                 v-model="password" />
+				<validated-input type="text" label="First Name" :rules="firstNameRules" v-model="firstName" />
+				<validated-input type="text" label="Password" :rules="passwordRules" v-model="password" />
 				<button type="submit">Submit</button>
 			</validated-form>
 		`,
@@ -110,15 +100,8 @@ export function CustomValidatedInputErrorMessage() {
 		components: { ValidatedForm, ValidatedInput },
 		template: `
 			<validated-form error-message="Form submission failed due to a server error.">
-				<validated-input type="text"
-				                 label="First Name"
-				                 :rules="firstNameRules"
-				                 v-model="firstName" />
-
-				<validated-input type="text"
-				                 label="Password"
-				                 :rules="passwordRules"
-				                 v-model="password" />
+				<validated-input type="text" label="First Name" :rules="firstNameRules" v-model="firstName" />
+				<validated-input type="text" label="Password" :rules="passwordRules" v-model="password" />
 				<button type="submit">Submit</button>
 			</validated-form>
 		`,
