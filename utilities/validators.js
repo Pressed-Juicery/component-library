@@ -30,10 +30,6 @@ export function isEqual(value, { comparison }) {
 	return isEmpty(value) || value === comparison;
 }
 
-export function isNotEqual(value, { comparison }) {
-	return isEmpty(value) || value !== comparison;
-}
-
 export function isValidPhoneNumber(value) {
 	return isEmpty(value) || /^\D*(\d\D*){10}$/.test(value);
 }
