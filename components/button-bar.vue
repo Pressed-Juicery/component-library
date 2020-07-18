@@ -38,7 +38,7 @@ export default {
 		align-items: center;
 		flex: 1;
 		text-align: center;
-		padding: $spacing-05;
+		padding: $spacing-05 $spacing-03;
 		border: $border-light;
 		border-right: 0;
 		cursor: pointer;
