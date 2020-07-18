@@ -3,10 +3,7 @@
 		<div :class="$style.wrapper">
 			<div>
 				<label for="month">Month</label>
-				<select
-						id="month"
-						v-model="month"
-						@change="onChange">
+				<select id="month" v-model="month" @change="onChange">
 					<option></option>
 					<option>1 | January</option>
 					<option>2 | February</option>
@@ -25,10 +22,7 @@
 
 			<div>
 				<label for="day">Day</label>
-				<select
-						id="day"
-						v-model="day"
-						@change="onChange">
+				<select id="day" v-model="day" @change="onChange">
 					<option></option>
 					<option v-for="day in days" :key="day">{{ day }}</option>
 				</select>
