@@ -1,6 +1,5 @@
 <template>
 	<validated-component
-		class="validated-textarea"
 		:id="id"
 		:label="label"
 		:label-helper="labelHelper"
