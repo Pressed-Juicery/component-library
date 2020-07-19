@@ -182,14 +182,6 @@ export default {
 	}
 
 	.isOpen {
-		.drawer {
-			pointer-events: none;
-		}
-
-		.reloadButton {
-			pointer-events: auto;
-		}
-
 		.toggleIcon {
 			transform: rotate(180deg);
 		}
