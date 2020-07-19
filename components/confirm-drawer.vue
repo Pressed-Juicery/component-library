@@ -54,7 +54,7 @@ export default {
 	}
 
 	.body {
-		margin-bottom: $spacing-08;
+		margin-bottom: $spacing-07;
 	}
 
 	.buttonGroup {
