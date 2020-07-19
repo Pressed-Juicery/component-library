@@ -1,6 +1,5 @@
 import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 import ConfirmDrawer from '../../../components/confirm-drawer.vue';
-import ContentWrapper from '../../../components/content-wrapper';
 import { addons } from '@storybook/addons';
 
 export default {
@@ -12,7 +11,7 @@ export default {
 // eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
-		components: { ContentWrapper, ConfirmDrawer },
+		components: { ConfirmDrawer },
 		template: `
 			<confirm-drawer
 				title="Terms & Conditions"
