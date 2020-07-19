@@ -24,7 +24,7 @@ export function Overview() {
 		methods: {
 			onSubmit(data) {
 				this.review = data;
-			}
-		}
+			},
+		},
 	};
 }

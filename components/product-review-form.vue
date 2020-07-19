@@ -20,7 +20,7 @@ export default {
 		id: String,
 		review: {
 			type: Object,
-			default: () => ({})
+			default: function () { return {} },
 		},
 	},
 
