@@ -9,6 +9,17 @@ export function formatCurrency(amount) {
 	return prefix + fixedPointAmount;
 }
 
+export function formatMediumDate(date) {
+	const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+	const _date = new Date(date);
+	const month = months[_date.getMonth()];
+	const day = _date.getDate();
+	const year = _date.getFullYear();
+
+	return `${month} ${day}, ${year}`;
+}
+
 export function formatPhoneNumber(phone) {
 	const numbersOnly = phone.replace(/\D/g, '');
 	const sections = numbersOnly.match(/^(\d{3})(\d{3})(\d{4})$/);
