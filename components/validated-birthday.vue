@@ -1,34 +1,32 @@
 <template>
-	<div>
-		<validated-component :class="$style.wrapper" :value="birthday" :rules="rules" :is-eager="isEager">
-			<div>
-				<label for="month">Month</label>
-				<select id="month" v-model="month" @change="onChange">
-					<option></option>
-					<option value="1">1 | January</option>
-					<option value="2">2 | February</option>
-					<option value="3">3 | March</option>
-					<option value="4">4 | April</option>
-					<option value="5">5 | May</option>
-					<option value="6">6 | June</option>
-					<option value="7">7 | July</option>
-					<option value="8">8 | August</option>
-					<option value="9">9 | September</option>
-					<option value="10">10 | October</option>
-					<option value="11">11 | November</option>
-					<option value="12">12 | December</option>
-				</select>
-			</div>
+	<validated-component :class="$style.wrapper" :value="birthday" :rules="rules" :is-eager="isEager">
+		<div>
+			<label for="month">Month</label>
+			<select id="month" v-model="month" @change="onChange">
+				<option></option>
+				<option value="1">1 | January</option>
+				<option value="2">2 | February</option>
+				<option value="3">3 | March</option>
+				<option value="4">4 | April</option>
+				<option value="5">5 | May</option>
+				<option value="6">6 | June</option>
+				<option value="7">7 | July</option>
+				<option value="8">8 | August</option>
+				<option value="9">9 | September</option>
+				<option value="10">10 | October</option>
+				<option value="11">11 | November</option>
+				<option value="12">12 | December</option>
+			</select>
+		</div>
 
-			<div>
-				<label for="day">Day</label>
-				<select id="day" v-model="day" @change="onChange">
-					<option></option>
-					<option v-for="day in daysInMonth" :key="day">{{ day }}</option>
-				</select>
-			</div>
-		</validated-component>
-	</div>
+		<div>
+			<label for="day">Day</label>
+			<select id="day" v-model="day" @change="onChange">
+				<option></option>
+				<option v-for="day in daysInMonth" :key="day">{{ day }}</option>
+			</select>
+		</div>
+	</validated-component>
 </template>
 
 <script>
