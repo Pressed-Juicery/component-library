@@ -54,7 +54,6 @@ export default {
 			return this.$refs.validatedComponent.isValid();
 		},
 	},
-
 };
 </script>
 
