@@ -62,12 +62,14 @@ export default {
 			return daysPerMonth[this.month];
 		},
 		birthday() {
-			return this.month && this.day ? `${this.month}/${this.day}` : null;
+			return this.month || this.day ? `${this.month}/${this.day}` : null;
 		},
 	},
 	watch: {
 		birthday() {
-			this.$emit('input', this.birthday);
+			const value = this.month && this.day ? this.birthday : null;
+
+			this.$emit('input', value);
 		},
 		daysInMonth() {
 			if (this.day > this.daysInMonth) this.day = this.daysInMonth;
@@ -78,7 +80,7 @@ export default {
 			return this.$refs.validatedComponent.isValid();
 		},
 		onChange() {
-			this.isEager = this.isEager || Boolean(this.birthday);
+			this.isEager = this.isEager || Boolean(this.month && this.day);
 		},
 	},
 };
