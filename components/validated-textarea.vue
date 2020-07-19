@@ -60,6 +60,6 @@ export default {
 
 <style lang="scss" module>
 	.validatedTextarea {
-		resize: none;
+		resize: vertical;
 	}
 </style>
