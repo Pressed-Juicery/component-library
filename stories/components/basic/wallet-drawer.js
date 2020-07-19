@@ -8,7 +8,11 @@ export default {
 export function Overview() {
 	return {
 		components: { WalletDrawer },
-		template: '<wallet-drawer :wallet="wallet" />',
+		template: `
+			<div style="position:fixed;bottom:0;left:0;right:0;">
+				<wallet-drawer :wallet="wallet" />
+			</div>
+		`,
 
 		data() {
 			return {
