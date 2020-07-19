@@ -215,3 +215,11 @@ $button-height-large: 82px;
 	background: transparent;
 	text-decoration: underline;
 }
+
+// Forms
+// =====
+
+@mixin label {
+	display: block;
+	@include text-bolder();
+}

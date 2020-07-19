@@ -1,7 +1,13 @@
 <template>
-	<validated-component :class="$style.wrapper" :value="birthday" :rules="rules" :is-eager="isEager">
+	<validated-component
+		ref="validatedComponent"
+		:class="$style.wrapper"
+		:value="birthday"
+		:rules="rules"
+		:is-eager="isEager"
+	>
 		<div>
-			<label for="month">Month</label>
+			<label :class="$style.label" for="month">Month</label>
 			<select id="month" v-model="month" @change="onChange">
 				<option></option>
 				<option value="1">1 | January</option>
@@ -20,7 +26,7 @@
 		</div>
 
 		<div>
-			<label for="day">Day</label>
+			<label :class="$style.label" for="day">Day</label>
 			<select id="day" v-model="day" @change="onChange">
 				<option></option>
 				<option v-for="day in daysInMonth" :key="day">{{ day }}</option>
@@ -49,37 +55,48 @@ export default {
 	computed: {
 		daysInMonth() {
 			if (!this.month) return 31; // eslint-disable-line no-magic-numbers
+
 			// eslint-disable-next-line no-magic-numbers
 			const daysPerMonth = [null, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 			return daysPerMonth[this.month];
 		},
 		birthday() {
-			return this.month && this.day ? `${this.month}/${this.day}` : null;
+			return this.month || this.day ? `${this.month}/${this.day}` : null;
 		},
 	},
 	watch: {
 		birthday() {
-			this.$emit('input', this.birthday);
+			const value = this.month && this.day ? this.birthday : null;
+
+			this.$emit('input', value);
 		},
 		daysInMonth() {
 			if (this.day > this.daysInMonth) this.day = this.daysInMonth;
 		},
 	},
 	methods: {
+		isValid() {
+			return this.$refs.validatedComponent.isValid();
+		},
 		onChange() {
-			this.isEager = this.isEager || Boolean(this.birthday);
+			this.isEager = this.isEager || Boolean(this.month && this.day);
 		},
 	},
 };
 </script>
 
 <style lang="scss" module>
+	@import '../styles/mixins';
 	@import '../styles/variables';
 
 	.wrapper {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: $form-column-gap;
+	}
+
+	.label {
+		@include label();
 	}
 </style>
