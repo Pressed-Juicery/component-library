@@ -7,7 +7,7 @@
 			</div>
 			<div :class="$style.buttonGroup">
 				<button :class="$style.cancelButton" @click="$emit('cancel')">{{ cancelButtonText }}</button>
-				<button :class="$style.confirmButton" @click="$emit('confirm')">{{ confirmButtonText }}</button>
+				<button @click="$emit('confirm')">{{ confirmButtonText }}</button>
 			</div>
 		</div>
 	</drawer>
@@ -63,14 +63,7 @@ export default {
 		grid-column-gap: $spacing-03;
 	}
 
-	.cancelButton,
-	.confirmButton {
-		height: 72px;
-	}
-
 	.cancelButton {
-		background-color: white;
-		color: black;
-		box-shadow: 1px 1px 7px -1px rgba(193, 193, 193, 0.5);
+		@include button-secondary();
 	}
 </style>
