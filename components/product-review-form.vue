@@ -1,5 +1,5 @@
 <template>
-	<validated-form :id="id" @submit="handleSubmit">
+	<validated-form :id="id" @submit="$emit('submit', review)">
 		<validated-star-rating
 			v-model="review.rating"
 			:rules="starRules"
@@ -53,13 +53,6 @@ export default {
 				},
 			],
 		};
-	},
-
-	methods: {
-		handleSubmit(value) {
-			// TODO: Awaiting GraphQL mutation for adding review.
-			console.log(value);
-		},
 	},
 };
 </script>
