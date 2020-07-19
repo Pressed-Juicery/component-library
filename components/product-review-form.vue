@@ -1,12 +1,12 @@
 <template>
 	<validated-form :id="id" @submit="$emit('submit', review)">
 		<validated-star-rating v-model="review.rating" :rules="starRules" />
-		<validated-input label="Title" v-model="review.title" :rules="basicRules" />
+		<validated-input label="Title" v-model="review.title" :rules="titleRules" />
 		<validated-textarea
 			:class="$style.description"
 			label="Description"
 			v-model="review.description"
-			:rules="basicRules"
+			:rules="descriptionRules"
 		/>
 	</validated-form>
 </template>
@@ -32,13 +32,17 @@ export default {
 				title: null,
 				description: null,
 			},
-			basicRules: [{
-				validator: isNotEmpty,
-				message: 'Cannot be empty.',
-			}],
 			starRules: [{
 				validator: isTruthy,
-				message: 'Please provide rating',
+				message: 'Please provide a rating.',
+			}],
+			titleRules: [{
+				validator: isNotEmpty,
+				message: 'Please enter a title for your review.',
+			}],
+			descriptionRules: [{
+				validator: isNotEmpty,
+				message: 'Please add your review.',
 			}],
 		};
 	},
