@@ -24,7 +24,6 @@ import ValidatedComponent from './validated-component.vue';
 import { getRandom } from '../utilities/get-random.js';
 
 export default {
-
 	components: { ValidatedComponent },
 
 	props: {
