@@ -10,7 +10,7 @@ export function Overview() {
 		components: { WalletDrawer },
 		template: `
 			<div style="position:fixed;bottom:0;left:0;right:0;">
-				<wallet-drawer :wallet="wallet" />
+				<wallet-drawer :wallet="wallet" @reload="onReload"/>
 			</div>
 		`,
 
@@ -22,6 +22,11 @@ export function Overview() {
 					funds: 50.25,
 				},
 			};
+		},
+		methods: {
+			onReload() {
+				console.log('Reload button clicked'); // eslint-disable-line no-console
+			},
 		},
 	};
 }
