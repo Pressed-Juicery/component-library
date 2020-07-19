@@ -10,9 +10,21 @@ export function Overview() {
 		components: { ProductReviewForm },
 		template: `
 			<div>
-				<product-review-form id="review-form" />
+				<product-review-form id="review-form" @submit="onSubmit" />
 				<button form="review-form" type="submit">Submit</button>
+
+				<div>Data: {{ review }}</div>
 			</div>
 		`,
+		data() {
+			return {
+				review: null,
+			};
+		},
+		methods: {
+			onSubmit(data) {
+				this.review = data;
+			}
+		}
 	};
 }
