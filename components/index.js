@@ -23,6 +23,7 @@ export { default as CartTotals } from './cart-totals';
 export { default as CheckoutAuthentication } from './checkout-authentication';
 export { default as CheckoutItemCard } from './checkout-item-card';
 export { default as CollapsibleDrawer } from './collapsible-drawer';
+export { default as ConfirmDrawer } from './confirm-drawer';
 export { default as ContentWrapper } from './content-wrapper';
 export { default as Drawer } from './drawer';
 export { default as FeatureHighlight } from './feature-highlight';
