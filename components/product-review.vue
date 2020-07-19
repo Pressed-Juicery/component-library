@@ -3,12 +3,13 @@
 		<star-rating :class="$style.stars" :rating="review.rating"></star-rating>
 		<div :class="$style.title">{{ review.title }}</div>
 		<div :class="$style.body">{{ review.body }}</div>
-		<div :class="$style.info">{{ review.name }} on {{ review.createdAt }}</div>
+		<div :class="$style.info">{{ review.name }} on {{ date }}</div>
 	</div>
 </template>
 
 <script>
 import StarRating from './star-rating.vue';
+import { formatMediumDate } from '../utilities/formatters';
 
 export default {
 	components: { StarRating },
@@ -16,6 +17,11 @@ export default {
 		review: {
 			type: Object,
 			required: true,
+		},
+	},
+	computed: {
+		date() {
+			return this.review && formatMediumDate(this.review.createdAt);
 		},
 	},
 };

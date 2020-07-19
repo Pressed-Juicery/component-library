@@ -20,7 +20,7 @@ export function Overview() {
 					`,
 					rating: 4,
 					name: 'Jane Doe',
-					createdAt: 'Jan 1, 2020',
+					createdAt: '2020-07-19T19:28:51.008Z',
 				},
 			};
 		},
