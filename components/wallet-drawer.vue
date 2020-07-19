@@ -27,9 +27,7 @@
 						</div>
 					</div>
 
-					<button :class="$style.reloadButton"
-							@click="$emit('reload')"
-					>
+					<button :class="$style.reloadButton" @click="$emit('reload')" >
 						Reload Balance
 					</button>
 				</div>
@@ -103,11 +101,9 @@ export default {
 	}
 
 	.drawer {
-		position: fixed;
-		left: 0;
-		bottom: 0;
+		position: relative; // required to enforce z-index
 		width: 100%;
-		z-index: 2;
+		z-index: 200;
 		border-radius: $spacing-05 $spacing-05 0 0;
 		background-color: $beige;
 		box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2);

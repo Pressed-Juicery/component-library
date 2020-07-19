@@ -8,7 +8,11 @@ export default {
 export function Overview() {
 	return {
 		components: { WalletDrawer },
-		template: '<wallet-drawer :wallet="wallet" />',
+		template: `
+			<div style="position:fixed;bottom:0;left:0;right:0;">
+				<wallet-drawer :wallet="wallet" @reload="onReload"/>
+			</div>
+		`,
 
 		data() {
 			return {
@@ -18,6 +22,11 @@ export function Overview() {
 					funds: 50.25,
 				},
 			};
+		},
+		methods: {
+			onReload() {
+				console.log('Reload button clicked'); // eslint-disable-line no-console
+			},
 		},
 	};
 }
