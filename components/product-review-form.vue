@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-.description {
-	height: 165px;
-}
+	.description {
+		height: 165px;
+	}
 </style>
