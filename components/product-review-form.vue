@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import { isNotEmpty, isTruthy } from '../utilities/validators.js';
-import ValidatedForm from './validated-form.vue';
-import ValidatedInput from './validated-input.vue';
-import ValidatedStarRating from './validated-star-rating.vue';
-import ValidatedTextarea from './validated-textarea.vue';
+import { isNotEmpty, isTruthy } from '../utilities/validators';
+import ValidatedForm from './validated-form';
+import ValidatedInput from './validated-input';
+import ValidatedStarRating from './validated-star-rating';
+import ValidatedTextarea from './validated-textarea';
 
 export default {
 	components: { ValidatedForm, ValidatedInput, ValidatedTextarea, ValidatedStarRating },
