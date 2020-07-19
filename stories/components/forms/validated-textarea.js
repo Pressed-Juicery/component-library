@@ -9,13 +9,7 @@ export default {
 export function Overview() {
 	return {
 		components: { ValidatedTextarea },
-		template: `
-			<validated-textarea
-				label="Description"
-				v-model="description"
-				:rules="descriptionRules"
-			/>
-		`,
+		template: '<validated-textarea label="Description" v-model="description" :rules="descriptionRules" />',
 		data() {
 			return {
 				description: null,
