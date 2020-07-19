@@ -18,7 +18,7 @@ export function Overview() {
 		`,
 		data() {
 			return {
-				rating: 0,
+				rating: null,
 				starRules: [{
 					validator: isTruthy,
 					message: 'Please enter a rating.',
