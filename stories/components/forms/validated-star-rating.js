@@ -12,7 +12,6 @@ export function Overview() {
 		components: { ValidatedStarRating, ValidatedForm },
 		template: `
 			<validated-form>
-
 				<validated-star-rating
 					label="Rating"
 					v-model="rating"
@@ -20,7 +19,6 @@ export function Overview() {
 				/>
 
 				<button type="submit">save</button>
-
 			</validated-form>
 		`,
 		data() {
