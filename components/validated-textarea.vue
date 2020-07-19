@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-.validatedTextarea {
-	resize: none;
-}
+	.validatedTextarea {
+		resize: none;
+	}
 </style>
