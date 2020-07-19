@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div :class="$style.wrapper">
+		<validated-component :class="$style.wrapper" :value="birthday" :rules="rules" :is-eager="isEager">
 			<div>
 				<label for="month">Month</label>
 				<select id="month" v-model="month" @change="onChange">
@@ -27,21 +27,20 @@
 					<option v-for="day in days" :key="day">{{ day }}</option>
 				</select>
 			</div>
-		</div>
-
-		<div v-if="error" :class="$style.error">{{ this.error }}</div>
+		</validated-component>
 	</div>
 </template>
 
 <script>
 import { isDayOfMonth } from '../utilities/validators';
-import { validate } from '../utilities/validate';
+import ValidatedComponent from './validated-component';
 export default {
+	components: { ValidatedComponent },
 	data: () => {
 		return {
 			month: null,
 			day: null,
-			error: null,
+			isEager: false,
 			rules: [{
 				validator: isDayOfMonth,
 				message: 'Please enter a valid birthday.',
@@ -60,27 +59,16 @@ export default {
 			return this.month && this.day ? `${this.month}/${this.day}` : null;
 		},
 	},
-	methods: {
-		onChange() {
-			this.validate()
-				.then(hasError => {
-					const value = hasError ? null : this.birthday;
-
-					this.$emit('input', value);
-				});
-		},
-		validate() {
-			return validate(this.birthday, this.rules)
-				.then(error => {
-					this.error = error;
-
-					return error;
-				});
-		},
-		isValid() {
-			return this.validate().then(hasError => !hasError);
+	watch: {
+		birthday() {
+			this.$emit('input', this.birthday);
 		},
 	},
+	methods: {
+		onChange() {
+			this.isEager = this.isEager || Boolean(this.birthday);
+		}
+	}
 };
 </script>
 
@@ -91,9 +79,5 @@ export default {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: $form-column-gap;
-	}
-
-	.error {
-		color: $red-60;
 	}
 </style>
