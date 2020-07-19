@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import { isDayOfMonth } from '../utilities/validators';
 import ValidatedComponent from './validated-component';
+import { isDayOfMonth } from '../utilities/validators';
 
 export default {
 	components: { ValidatedComponent },
@@ -69,8 +69,8 @@ export default {
 	methods: {
 		onChange() {
 			this.isEager = this.isEager || Boolean(this.birthday);
-		}
-	}
+		},
+	},
 };
 </script>
 
