@@ -25,9 +25,9 @@
 
 <script>
 import { hasMinimumLength, isEmail, isNotEmpty, isValidPhoneNumber } from '../utilities/validators';
+import ValidatedBirthday from './validated-birthday';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
-import ValidatedBirthday from './validated-birthday';
 
 export default {
 	components: {
