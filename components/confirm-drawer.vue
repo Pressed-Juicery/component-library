@@ -1,5 +1,5 @@
 <template>
-	<drawer :isOpen="isOpen" @close="$emit('close')">
+	<drawer :isOpen="isOpen" @close="$emit('cancel')">
 		<div :class="$style.content">
 			<div :class="$style.title">{{ title }}</div>
 			<div :class="$style.body">
