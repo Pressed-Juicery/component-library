@@ -7,7 +7,7 @@
 		:is-eager="isEager"
 	>
 		<div>
-			<label for="month">Month</label>
+			<label :class="$style.label" for="month">Month</label>
 			<select id="month" v-model="month" @change="onChange">
 				<option></option>
 				<option value="1">1 | January</option>
@@ -26,7 +26,7 @@
 		</div>
 
 		<div>
-			<label for="day">Day</label>
+			<label :class="$style.label" for="day">Day</label>
 			<select id="day" v-model="day" @change="onChange">
 				<option></option>
 				<option v-for="day in daysInMonth" :key="day">{{ day }}</option>
@@ -87,11 +87,16 @@ export default {
 </script>
 
 <style lang="scss" module>
+	@import '../styles/mixins';
 	@import '../styles/variables';
 
 	.wrapper {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: $form-column-gap;
+	}
+
+	.label {
+		@include label();
 	}
 </style>
