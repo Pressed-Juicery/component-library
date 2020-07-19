@@ -8,7 +8,6 @@ export default {
 	decorators: [withKnobs],
 };
 
-// eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
 		components: { ConfirmDrawer },
@@ -33,10 +32,7 @@ export function Overview() {
 		},
 		methods: {
 			closeDrawer() {
-				addons.getChannel().emit(CHANGE, {
-					name: 'Open',
-					value: false,
-				});
+				addons.getChannel().emit(CHANGE, { name: 'Open', value: false });
 			},
 		},
 	};
