@@ -12,12 +12,7 @@ export function Overview() {
 		components: { ValidatedStarRating, ValidatedForm },
 		template: `
 			<validated-form>
-				<validated-star-rating
-					label="Rating"
-					v-model="rating"
-					:rules="starRules"
-				/>
-
+				<validated-star-rating label="Rating" v-model="rating" :rules="starRules" />
 				<button type="submit">Save</button>
 			</validated-form>
 		`,
