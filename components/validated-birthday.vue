@@ -1,5 +1,11 @@
 <template>
-	<validated-component :class="$style.wrapper" :value="birthday" :rules="rules" :is-eager="isEager">
+	<validated-component
+		ref="validatedComponent"
+		:class="$style.wrapper"
+		:value="birthday"
+		:rules="rules"
+		:is-eager="isEager"
+	>
 		<div>
 			<label for="month">Month</label>
 			<select id="month" v-model="month" @change="onChange">
@@ -67,6 +73,9 @@ export default {
 		},
 	},
 	methods: {
+		isValid() {
+			return this.$refs.validatedComponent.isValid();
+		},
 		onChange() {
 			this.isEager = this.isEager || Boolean(this.birthday);
 		},
