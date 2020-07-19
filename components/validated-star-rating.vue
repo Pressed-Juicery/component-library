@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import StarRating from './star-rating.vue';
-import ValidatedComponent from './validated-component.vue';
-import { getRandom } from '../utilities/get-random.js';
+import StarRating from './star-rating';
+import ValidatedComponent from './validated-component';
+import { getRandom } from '../utilities/get-random';
 
 export default {
 	components: { ValidatedComponent, StarRating },
