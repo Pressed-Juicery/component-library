@@ -6,18 +6,8 @@
 				<slot/>
 			</div>
 			<div :class="$style.buttonGroup">
-				<button
-					:class="$style.cancelButton"
-					@click="$emit('cancel')"
-				>
-				{{ cancelButtonText }}
-				</button>
-				<button
-					:class="$style.confirmButton"
-					@click="$emit('confirm')"
-				>
-				{{ confirmButtonText }}
-				</button>
+				<button :class="$style.cancelButton" @click="$emit('cancel')">{{ cancelButtonText }}</button>
+				<button :class="$style.confirmButton" @click="$emit('confirm')">{{ confirmButtonText }}</button>
 			</div>
 		</div>
 	</drawer>
