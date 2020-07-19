@@ -32,7 +32,7 @@ export default {
 		labelHelper: String,
 		errorMessage: String,
 		rules: Array,
-		value: null,
+		value: Number,
 	},
 
 	data() {
