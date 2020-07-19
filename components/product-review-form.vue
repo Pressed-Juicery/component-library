@@ -2,12 +2,7 @@
 	<validated-form :id="id" @submit="$emit('submit', review)">
 		<validated-star-rating v-model="review.rating" :rules="starRules" />
 		<validated-input label="Title" v-model="review.title" :rules="titleRules" />
-		<validated-textarea
-			:class="$style.description"
-			label="Description"
-			v-model="review.description"
-			:rules="descriptionRules"
-		/>
+		<validated-textarea label="Description" v-model="review.description" :rules="descriptionRules" rows="4" />
 	</validated-form>
 </template>
 
@@ -48,9 +43,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss" module>
-	.description {
-		height: 165px;
-	}
-</style>
