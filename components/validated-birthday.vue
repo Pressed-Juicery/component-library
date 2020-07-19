@@ -32,6 +32,7 @@
 <script>
 import { isDayOfMonth } from '../utilities/validators';
 import ValidatedComponent from './validated-component';
+
 export default {
 	components: { ValidatedComponent },
 	data: () => {
