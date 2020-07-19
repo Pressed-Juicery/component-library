@@ -22,23 +22,23 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import '../styles/variables.scss';
-@import '../styles/mixins.scss';
+	@import '../styles/variables.scss';
+	@import '../styles/mixins.scss';
 
-.stars,
-.title {
-	margin-bottom: $spacing-03;
-}
+	.stars,
+	.title {
+		margin-bottom: $spacing-03;
+	}
 
-.title {
-	@include text-bolder();
-}
+	.title {
+		@include text-bolder();
+	}
 
-.body {
-	margin-bottom: $spacing-07;
-}
+	.body {
+		margin-bottom: $spacing-07;
+	}
 
-.info {
-	@include text-body-small();
-}
+	.info {
+		@include text-body-small();
+	}
 </style>
