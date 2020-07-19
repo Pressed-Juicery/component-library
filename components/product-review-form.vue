@@ -32,9 +32,9 @@ export default {
 	data() {
 		return {
 			review: {
-				rating: 0,
-				title: '',
-				description: '',
+				rating: null,
+				title: null,
+				description: null,
 			},
 			basicRules: [
 				{
