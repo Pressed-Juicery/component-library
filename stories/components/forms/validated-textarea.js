@@ -11,7 +11,6 @@ export function Overview() {
 		components: { ValidatedTextarea },
 		template: `
 			<validated-textarea
-				type="text"
 				label="Description"
 				v-model="description"
 				:rules="descriptionRules"
