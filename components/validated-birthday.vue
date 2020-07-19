@@ -50,11 +50,8 @@ export default {
 			if (!this.month) return 31; // eslint-disable-line no-magic-numbers
 			// eslint-disable-next-line no-magic-numbers
 			const daysPerMonth = [null, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-			const daysThisMonth = daysPerMonth[this.month];
 
-			if (this.day > daysThisMonth) this.day = daysThisMonth;
-
-			return daysThisMonth;
+			return daysPerMonth[this.month];
 		},
 		birthday() {
 			return this.month && this.day ? `${this.month}/${this.day}` : null;
@@ -63,6 +60,9 @@ export default {
 	watch: {
 		birthday() {
 			this.$emit('input', this.birthday);
+		},
+		daysInMonth() {
+			if (this.day > this.daysInMonth) this.day = this.daysInMonth;
 		},
 	},
 	methods: {
