@@ -102,8 +102,6 @@ export default {
 
 	.drawer {
 		position: relative;
-		left: 0;
-		bottom: 0;
 		width: 100%;
 		z-index: 200;
 		border-radius: $spacing-05 $spacing-05 0 0;
