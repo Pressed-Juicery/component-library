@@ -18,7 +18,7 @@ export function Overview() {
 					:rules="starRules"
 				/>
 
-				<button type="submit">save</button>
+				<button type="submit">Save</button>
 			</validated-form>
 		`,
 		data() {
