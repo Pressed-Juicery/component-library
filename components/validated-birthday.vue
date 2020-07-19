@@ -24,7 +24,7 @@
 				<label for="day">Day</label>
 				<select id="day" v-model="day" @change="onChange">
 					<option></option>
-					<option v-for="day in days" :key="day">{{ day }}</option>
+					<option v-for="day in daysInMonth" :key="day">{{ day }}</option>
 				</select>
 			</div>
 		</validated-component>
@@ -48,7 +48,7 @@ export default {
 		};
 	},
 	computed: {
-		days() {
+		daysInMonth() {
 			if (!this.month) return 31; // eslint-disable-line no-magic-numbers
 			// eslint-disable-next-line no-magic-numbers
 			const daysPerMonth = [null, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
