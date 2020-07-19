@@ -25,7 +25,6 @@ import ValidatedComponent from './validated-component.vue';
 import { getRandom } from '../utilities/get-random.js';
 
 export default {
-
 	components: { ValidatedComponent, StarRating },
 
 	props: {
@@ -55,6 +54,5 @@ export default {
 			return this.$refs.validatedComponent.isValid();
 		},
 	},
-
 };
 </script>
