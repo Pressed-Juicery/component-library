@@ -1,5 +1,5 @@
 <template>
-	<validated-form @submit="handleSubmit">
+	<validated-form :id="id" @submit="handleSubmit">
 		<validated-star-rating
 			v-model="review.rating"
 			:rules="starRules"
@@ -28,6 +28,10 @@ import ValidatedTextarea from './validated-textarea.vue';
 
 export default {
 	components: { ValidatedForm, ValidatedInput, ValidatedTextarea, ValidatedStarRating },
+
+	props: {
+		id: String,
+	},
 
 	data() {
 		return {
