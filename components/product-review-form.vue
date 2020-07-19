@@ -32,18 +32,14 @@ export default {
 				title: null,
 				description: null,
 			},
-			basicRules: [
-				{
-					validator: isNotEmpty,
-					message: 'Cannot be empty.',
-				},
-			],
-			starRules: [
-				{
-					validator: isTruthy,
-					message: 'Please provide rating',
-				},
-			],
+			basicRules: [{
+				validator: isNotEmpty,
+				message: 'Cannot be empty.',
+			}],
+			starRules: [{
+				validator: isTruthy,
+				message: 'Please provide rating',
+			}],
 		};
 	},
 };
