@@ -1,26 +1,21 @@
 <template>
 	<validated-form @submit="handleSubmit">
-
 		<validated-star-rating
 			v-model="review.rating"
 			:rules="starRules"
 		/>
-
 		<validated-input
 			label="Title"
 			v-model="review.title"
 			:rules="basicRules"
 		/>
-
 		<validated-textarea
 			:class="$style.description"
 			label="Description"
 			v-model="review.description"
 			:rules="basicRules"
 		/>
-
 		<button type="submit" name="button">save</button>
-
 	</validated-form>
 </template>
 
@@ -62,14 +57,11 @@ export default {
 			console.log(value);
 		},
 	},
-
 };
 </script>
 
 <style lang="scss" module>
-
 .description {
 	height: 165px;
 }
-
 </style>
