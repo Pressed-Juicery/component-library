@@ -9,30 +9,29 @@
 		:isEager="isEager"
 		ref="validatedComponent"
 	>
-		<select :id="id" v-model="model" @change="isEager = true">
-			<option v-for="(option, index) in options" :key="index" :value="option.value">
-				{{ option.name }}
-			</option>
-		</select>
+		<textarea
+			:class="$style.validatedTextarea"
+			:id="id"
+			v-bind="$attrs"
+			v-model="model"
+			@blur="isEager = true"
+		/>
 	</validated-component>
 </template>
 
 <script>
-import ValidatedComponent from './validated-component';
-import { getRandom } from '../utilities/get-random';
+import ValidatedComponent from './validated-component.vue';
+import { getRandom } from '../utilities/get-random.js';
 
 export default {
 	components: { ValidatedComponent },
+
 	props: {
 		label: String,
 		labelHelper: String,
 		errorMessage: String,
 		rules: Array,
 		value: null,
-		options: {
-			type: Array,
-			required: true,
-		},
 	},
 
 	data() {
@@ -56,3 +55,9 @@ export default {
 	},
 };
 </script>
+
+<style lang="scss" module>
+	.validatedTextarea {
+		resize: vertical;
+	}
+</style>

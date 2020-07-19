@@ -9,30 +9,30 @@
 		:isEager="isEager"
 		ref="validatedComponent"
 	>
-		<select :id="id" v-model="model" @change="isEager = true">
-			<option v-for="(option, index) in options" :key="index" :value="option.value">
-				{{ option.name }}
-			</option>
-		</select>
+		<star-rating
+			:id="id"
+			v-bind="$attrs"
+			v-model="model"
+			@blur="isEager = true"
+			:is-readonly="false"
+		/>
 	</validated-component>
 </template>
 
 <script>
+import StarRating from './star-rating';
 import ValidatedComponent from './validated-component';
 import { getRandom } from '../utilities/get-random';
 
 export default {
-	components: { ValidatedComponent },
+	components: { ValidatedComponent, StarRating },
+
 	props: {
 		label: String,
 		labelHelper: String,
 		errorMessage: String,
 		rules: Array,
-		value: null,
-		options: {
-			type: Array,
-			required: true,
-		},
+		value: Number,
 	},
 
 	data() {
