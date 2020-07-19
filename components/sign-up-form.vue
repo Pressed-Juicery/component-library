@@ -96,7 +96,7 @@ export default {
 	}
 
 	.birthdayLabel {
-		@include text-bolder();
+		@include label();
 	}
 
 	.birthdayMessage {
