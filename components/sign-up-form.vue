@@ -14,7 +14,7 @@
 		</div>
 		<validated-input type="email" label="Email" :rules="rules.email" v-model="user.email" />
 		<validated-input type="password" label="Password" :rules="rules.password" v-model="user.password" />
-		<div :class="$style.birthdayField">
+		<div :class="$style.birthdayWrapper">
 			<div :class="$style.birthdayLabel">Birthday (optional)</div>
 			<div :class="$style.birthdayMessage">So we can send you something sweet!</div>
 			<validated-birthday v-model="user.birthday" />
@@ -91,7 +91,7 @@ export default {
 		grid-gap: $spacing-07;
 	}
 
-	.birthdayField {
+	.birthdayWrapper {
 		margin-bottom: $spacing-06;
 	}
 
