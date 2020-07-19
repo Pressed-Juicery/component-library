@@ -34,6 +34,32 @@ export function isValidPhoneNumber(value) {
 	return isEmpty(value) || /^\D*(\d\D*){10}$/.test(value);
 }
 
+// eslint-disable-next-line complexity, max-statements
+export function isDayOfMonth(value) {
+	if (isEmpty(value)) return true;
+
+	try {
+		const date = value.split('/');
+		const month = parseInt(date[0], 10);
+		const day = parseInt(date[1], 10);
+
+		if (!month && !day) return true;
+		if (month && !day) return false;
+		if (day && !month) return false;
+
+		const thirtyOneDayMonths = [1, 3, 5, 7, 8, 10, 12]; // eslint-disable-line no-magic-numbers
+		const thirtyDayMonths = [4, 6, 9, 11]; // eslint-disable-line no-magic-numbers
+
+		if (thirtyOneDayMonths.includes(month)) return day <= 31; // eslint-disable-line no-magic-numbers
+		if (thirtyDayMonths.includes(month)) return day <= 30; // eslint-disable-line no-magic-numbers
+		if (month === 2) return day <= 29; // eslint-disable-line no-magic-numbers
+	} catch (error) {
+		// continue regardless of error
+	}
+
+	return false;
+}
+
 export function isZipCode(value) {
 	return isEmpty(value) || (/^\d{5}(-\d{4})?$/).test(value);
 }
