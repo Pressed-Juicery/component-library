@@ -18,15 +18,14 @@ export default {
 
 	props: {
 		id: String,
+		review: {
+			type: Object,
+			default: () => ({})
+		},
 	},
 
 	data() {
 		return {
-			review: {
-				rating: null,
-				title: null,
-				description: null,
-			},
 			starRules: [{
 				validator: isTruthy,
 				message: 'Please provide a rating.',
