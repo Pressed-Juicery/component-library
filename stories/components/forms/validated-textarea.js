@@ -9,11 +9,11 @@ export default {
 export function Overview() {
 	return {
 		components: { ValidatedTextarea },
-		template: '<validated-textarea label="Description" v-model="description" :rules="descriptionRules" />',
+		template: '<validated-textarea label="Description" v-model="description" :rules="rules" />',
 		data() {
 			return {
 				description: null,
-				descriptionRules: [{
+				rules: [{
 					validator: isNotEmpty,
 					message: 'Description is required.',
 				}],
