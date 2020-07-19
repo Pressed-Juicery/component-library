@@ -8,6 +8,11 @@ export default {
 export function Overview() {
 	return {
 		components: { ProductReviewForm },
-		template: '<product-review-form />',
+		template: `
+			<div>
+				<product-review-form id="review-form" />
+				<button form="review-form" type="submit">Submit</button>
+			</div>
+		`,
 	};
 }

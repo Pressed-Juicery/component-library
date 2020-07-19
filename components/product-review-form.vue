@@ -15,7 +15,6 @@
 			v-model="review.description"
 			:rules="basicRules"
 		/>
-		<button type="submit" name="button">save</button>
 	</validated-form>
 </template>
 
