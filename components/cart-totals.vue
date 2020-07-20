@@ -56,6 +56,11 @@
 			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
 		</div>
 
+		<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount" :class="[$style.row, $style.rowGroup]">
+			<div>Delivery Tip</div>
+			<div>{{ formatCurrency(cart.fulfillmentPrice) }}</div>
+		</div>
+
 		<div :class="[$style.totalRow, $style.rowGroup]">
 			<div :class="$style.totalLabel">Estimated Total</div>
 			<div :class="$style.total">{{ formatCurrency(cart.total) }}</div>
