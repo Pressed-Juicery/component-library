@@ -18,7 +18,7 @@
 			</div>
 		</div>
 
-		<div v-if="isDiscountListOpen && cart.discountSummary && cart.discountSummary.length" :class="[$style.row, $style.rowGroup]">
+		<div v-if="isDiscountListOpen && cart.discountSummary && cart.discountSummary.length">
 			<div :class="[$style.row, $style.rowGroup]"
 			     v-for="discount in cart.discountSummary"
 			     :key="discount.name">
