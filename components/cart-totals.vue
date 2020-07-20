@@ -2,10 +2,10 @@
 	<div>
 		<div :class="[$style.row, $style.rowGroup]">
 			<div :class="[$style.rowGroup, {
-			         [$style.isClosed]: !isOpen,
+			         [$style.isClosed]: !isDiscountListOpen,
 			         [$style.subtotalToggle]: cart.discountSummary && cart.discountSummary.length
 			     }]"
-			     @click="toggle()">
+			     @click="toggleDiscountSummary()">
 				<div>Subtotal</div>
 				<up-caret-icon v-if="cart.discountSummary && cart.discountSummary.length" :class="$style.icon" />
 			</div>
@@ -18,7 +18,7 @@
 			</div>
 		</div>
 
-		<div v-if="isOpen && cart.discountSummary && cart.discountSummary.length">
+		<div v-if="isDiscountListOpen && cart.discountSummary && cart.discountSummary.length">
 			<div :class="[$style.row, $style.rowGroup]"
 			     v-for="discount in cart.discountSummary"
 			     :key="discount.name">
@@ -33,6 +33,11 @@
 				<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount"
 				:class="$style.discountLabel">
 					Free Delivery (just pay tip)
+				<div :class="[$style.rowGroup, {
+							[$style.isClosed]: !isTipSummaryOpen,
+							[$style.subtotalToggle]: isLocalDelivery,
+						}]"
+						@click="toggleTipSummary()">
 				</div>
 			</div>
 			<div v-else>Shipping/Delivery</div>
