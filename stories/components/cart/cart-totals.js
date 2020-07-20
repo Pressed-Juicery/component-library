@@ -180,11 +180,11 @@ export function LocalShippingWithTip() {
 					fulfillmentSelection: {
 						method: 'Local Delivery',
 					},
-					id:"asdf",
+					id: 'asdf',
 					itemCount: 10,
 					originalFulfillmentPrice: 13.11,
 					originalSubtotal: 69.5,
-					redemptionSummary:[],
+					redemptionSummary: [],
 					subtotal: 62.5,
 					total: 65.63,
 					userId: null,
