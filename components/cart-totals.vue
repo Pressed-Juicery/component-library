@@ -74,13 +74,14 @@ export default {
 
 	data() {
 		return {
-			isOpen: false,
+			isDiscountListOpen: false,
+			isTipSummaryOpen: false,
 		};
 	},
 
 	computed: {
 		isLocalDelivery() {
-			return cart.fulfillmentSelection && cart.fulfillmentSelection.method === 'Local Delivery';
+			return this.cart.fulfillmentSelection && this.cart.fulfillmentSelection.method === 'Local Delivery';
 		},
 
 		hasFulfillmentPriceDiscount() {
@@ -93,8 +94,12 @@ export default {
 			return formatCurrency(amount);
 		},
 
-		toggle() {
-			this.isOpen = !this.isOpen;
+		toggleDiscountSummary() {
+			this.isDiscountListOpen = !this.isDiscountListOpen;
+		},
+
+		toggleTipSummary() {
+			this.isTipSummaryOpen = !this.isTipSummaryOpen;
 		},
 	},
 };
