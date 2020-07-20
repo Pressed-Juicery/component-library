@@ -166,3 +166,30 @@ export function NationwideShipping() {
 		},
 	};
 }
+
+export function LocalShippingWithTip() {
+	return {
+		components: { CartTotals },
+		template: '<cart-totals :cart="cart" />',
+
+		data() {
+			return {
+				cart: {
+					coupons: [],
+					fulfillmentPrice: 3.13,
+					fulfillmentSelection: {
+						method: 'Local Delivery',
+					},
+					id:"asdf",
+					itemCount: 10,
+					originalFulfillmentPrice: 13.11,
+					originalSubtotal: 69.5,
+					redemptionSummary:[],
+					subtotal: 62.5,
+					total: 65.63,
+					userId: null,
+				},
+			};
+		},
+	};
+}
