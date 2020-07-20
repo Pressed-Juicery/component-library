@@ -80,7 +80,7 @@ export default {
 
 	computed: {
 		isLocalDelivery() {
-			return cart.fulfillmentSelection && cart.fulfillmentSelection.method === 'Local Delivery';
+			return this.cart.fulfillmentSelection && this.cart.fulfillmentSelection.method === 'Local Delivery';
 		},
 
 		hasFulfillmentPriceDiscount() {
