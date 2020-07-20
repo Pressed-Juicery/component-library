@@ -28,32 +28,35 @@
 		</div>
 
 		<div :class="[$style.row, $style.rowGroup]">
+
 			<div v-if="cart.fulfillmentSelection && cart.fulfillmentSelection.method">
-				{{ cart.fulfillmentSelection.method }}
-				<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount"
-				:class="$style.discountLabel">
-					Free Delivery (just pay tip)
 				<div :class="[$style.rowGroup, {
 							[$style.isClosed]: !isTipSummaryOpen,
 							[$style.subtotalToggle]: isLocalDelivery,
 						}]"
 						@click="toggleTipSummary()">
+					{{ cart.fulfillmentSelection.method }}
+					<up-caret-icon v-if="isLocalDelivery && hasFulfillmentPriceDiscount" :class="$style.icon" />
 				</div>
 			</div>
 			<div v-else>Shipping/Delivery</div>
 
-			<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount">
-				<div :class="$style.rowGroup">
-					<div :class="$style.originalSubtotal">{{ formatCurrency(cart.originalFulfillmentPrice) }}</div>
-					<div>{{ formatCurrency(cart.fulfillmentPrice) }}</div>
-				</div>
-				<div :class="[$style.discountAmount, $style.alignRight]">
-					{{ formatCurrency(-Math.abs(cart.originalFulfillmentPrice - cart.fulfillmentPrice)) }}
-				</div>
+			<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount" :class="$style.rowGroup">
+				<div :class="$style.originalSubtotal">{{ formatCurrency(cart.originalFulfillmentPrice) }}</div>
+				<div>FREE</div>
 			</div>
-			<div v-else-if="cart.fulfillmentPrice">{{ formatCurrency(cart.fulfillmentPrice) }}</div>
+			<div v-else-if="cart.fulfillmentPrice && !hasFulfillmentPriceDiscount">{{ formatCurrency(cart.fulfillmentPrice) }}</div>
 			<div v-else-if="!cart.isShippingAvailable" :class="$style.dashes">- - -</div>
 			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
+		</div>
+
+		<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount">
+			<div v-if="isTipSummaryOpen && hasFulfillmentPriceDiscount" :class="$style.row">
+				<div :class="[$style.row, $style.rowGroup, $style.discountAmount]">
+					<div>Free local delivery (just pay tip)</div>
+					<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(cart.originalFulfillmentPrice)) }}</div>
+				</div>
+			</div>
 		</div>
 
 		<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount" :class="[$style.row, $style.rowGroup]">
