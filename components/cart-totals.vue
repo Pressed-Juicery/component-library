@@ -45,7 +45,9 @@
 				<div :class="$style.originalSubtotal">{{ formatCurrency(cart.originalFulfillmentPrice) }}</div>
 				<div>FREE</div>
 			</div>
-			<div v-else-if="cart.fulfillmentPrice && !hasFulfillmentPriceDiscount">{{ formatCurrency(cart.fulfillmentPrice) }}</div>
+			<div v-else-if="cart.fulfillmentPrice && !hasFulfillmentPriceDiscount">
+				{{ formatCurrency(cart.fulfillmentPrice) }}
+			</div>
 			<div v-else-if="!cart.isShippingAvailable" :class="$style.dashes">- - -</div>
 			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
 		</div>
@@ -54,7 +56,9 @@
 			<div v-if="isTipSummaryOpen && hasFulfillmentPriceDiscount" :class="$style.row">
 				<div :class="[$style.row, $style.rowGroup, $style.discountAmount]">
 					<div>Free local delivery (just pay tip)</div>
-					<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(cart.originalFulfillmentPrice)) }}</div>
+					<div :class="$style.discountAmount">
+						{{ formatCurrency(-Math.abs(cart.originalFulfillmentPrice)) }}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -99,7 +103,7 @@ export default {
 
 		hasFulfillmentPriceDiscount() {
 			return this.cart.fulfillmentPrice !== this.cart.originalFulfillmentPrice;
-		}
+		},
 	},
 
 	methods: {
