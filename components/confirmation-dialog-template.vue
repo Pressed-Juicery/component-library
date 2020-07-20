@@ -14,22 +14,22 @@
 </template>
 
 <script>
-	export default {
-		props: {
-			title: {
-				type: String,
-				require: true,
-			},
-			cancelButtonText: {
-				type: String,
-				require: true,
-			},
-			confirmButtonText: {
-				type: String,
-				require: true,
-			},
+export default {
+	props: {
+		title: {
+			type: String,
+			require: true,
 		},
-	}
+		cancelButtonText: {
+			type: String,
+			require: true,
+		},
+		confirmButtonText: {
+			type: String,
+			require: true,
+		},
+	},
+};
 </script>
 
 <style lang="scss" module>
