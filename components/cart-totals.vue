@@ -54,7 +54,7 @@
 			<div v-if="isTipSummaryOpen && hasFulfillmentPriceDiscount" :class="$style.row">
 				<div :class="[$style.row, $style.rowGroup, $style.discountAmount]">
 					<div>Free local delivery (just pay tip)</div>
-					<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(cart.originalFulfillmentPrice - cart.fulfillmentPrice)) }}</div>
+					<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(cart.originalFulfillmentPrice)) }}</div>
 				</div>
 			</div>
 		</div>
