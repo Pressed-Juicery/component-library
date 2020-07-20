@@ -25,6 +25,7 @@ export { default as CheckoutAuthentication } from './checkout-authentication';
 export { default as CheckoutItemCard } from './checkout-item-card';
 export { default as CleanseGuide } from './cleanse-guide';
 export { default as CollapsibleDrawer } from './collapsible-drawer';
+export { default as ConfirmationDialogTemplate } from './confirmation-dialog-template';
 export { default as ConfirmDrawer } from './confirm-drawer';
 export { default as ContentWrapper } from './content-wrapper';
 export { default as Drawer } from './drawer';
