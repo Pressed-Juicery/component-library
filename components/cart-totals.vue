@@ -2,10 +2,10 @@
 	<div>
 		<div :class="[$style.row, $style.rowGroup]">
 			<div :class="[$style.rowGroup, {
-			         [$style.isClosed]: !isOpen,
+			         [$style.isClosed]: !isDiscountListOpen,
 			         [$style.subtotalToggle]: cart.discountSummary && cart.discountSummary.length
 			     }]"
-			     @click="toggle()">
+			     @click="toggleDiscountSummary()">
 				<div>Subtotal</div>
 				<up-caret-icon v-if="cart.discountSummary && cart.discountSummary.length" :class="$style.icon" />
 			</div>
@@ -18,7 +18,7 @@
 			</div>
 		</div>
 
-		<div v-if="isOpen && cart.discountSummary && cart.discountSummary.length">
+		<div v-if="isDiscountListOpen && cart.discountSummary && cart.discountSummary.length" :class="[$style.row, $style.rowGroup]">
 			<div :class="[$style.row, $style.rowGroup]"
 			     v-for="discount in cart.discountSummary"
 			     :key="discount.name">
@@ -28,27 +28,40 @@
 		</div>
 
 		<div :class="[$style.row, $style.rowGroup]">
+
 			<div v-if="cart.fulfillmentSelection && cart.fulfillmentSelection.method">
-				{{ cart.fulfillmentSelection.method }}
-				<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount"
-				:class="$style.discountLabel">
-					Free Delivery (just pay tip)
+				<div :class="[$style.rowGroup, {
+							[$style.isClosed]: !isTipSummaryOpen,
+							[$style.subtotalToggle]: isLocalDelivery,
+						}]"
+						@click="toggleTipSummary()">
+					{{ cart.fulfillmentSelection.method }}
+					<up-caret-icon v-if="isLocalDelivery && hasFulfillmentPriceDiscount" :class="$style.icon" />
 				</div>
 			</div>
 			<div v-else>Shipping/Delivery</div>
 
-			<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount">
-				<div :class="$style.rowGroup">
-					<div :class="$style.originalSubtotal">{{ formatCurrency(cart.originalFulfillmentPrice) }}</div>
-					<div>{{ formatCurrency(cart.fulfillmentPrice) }}</div>
-				</div>
-				<div :class="[$style.discountAmount, $style.alignRight]">
-					{{ formatCurrency(-Math.abs(cart.originalFulfillmentPrice - cart.fulfillmentPrice)) }}
-				</div>
+			<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount" :class="$style.rowGroup">
+				<div :class="$style.originalSubtotal">{{ formatCurrency(cart.originalFulfillmentPrice) }}</div>
+				<div>FREE</div>
 			</div>
-			<div v-else-if="cart.fulfillmentPrice">{{ formatCurrency(cart.fulfillmentPrice) }}</div>
+			<div v-else-if="cart.fulfillmentPrice && !hasFulfillmentPriceDiscount">{{ formatCurrency(cart.fulfillmentPrice) }}</div>
 			<div v-else-if="!cart.isShippingAvailable" :class="$style.dashes">- - -</div>
 			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
+		</div>
+
+		<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount">
+			<div v-if="isTipSummaryOpen && hasFulfillmentPriceDiscount" :class="$style.row">
+				<div :class="[$style.row, $style.rowGroup, $style.discountAmount]">
+					<div>Free local delivery (just pay tip)</div>
+					<div :class="$style.discountAmount">{{ formatCurrency(-Math.abs(cart.originalFulfillmentPrice - cart.fulfillmentPrice)) }}</div>
+				</div>
+			</div>
+		</div>
+
+		<div v-if="isLocalDelivery && hasFulfillmentPriceDiscount" :class="[$style.row, $style.rowGroup]">
+			<div>Delivery Tip</div>
+			<div>{{ formatCurrency(cart.fulfillmentPrice) }}</div>
 		</div>
 
 		<div :class="[$style.totalRow, $style.rowGroup]">
@@ -74,7 +87,8 @@ export default {
 
 	data() {
 		return {
-			isOpen: false,
+			isDiscountListOpen: false,
+			isTipSummaryOpen: false,
 		};
 	},
 
@@ -93,8 +107,12 @@ export default {
 			return formatCurrency(amount);
 		},
 
-		toggle() {
-			this.isOpen = !this.isOpen;
+		toggleDiscountSummary() {
+			this.isDiscountListOpen = !this.isDiscountListOpen;
+		},
+
+		toggleTipSummary() {
+			this.isTipSummaryOpen = !this.isTipSummaryOpen;
 		},
 	},
 };
@@ -168,5 +186,9 @@ export default {
 
 	.total {
 		@include text-heading-5();
+	}
+
+	.noBottomMargin {
+		margin-bottom: 0;
 	}
 </style>

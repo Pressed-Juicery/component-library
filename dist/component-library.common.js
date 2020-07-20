@@ -28023,7 +28023,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"row":"cart-totals_row_mZL7s","rowGroup":"cart-totals_rowGroup_22xfY","subtotalToggle":"cart-totals_subtotalToggle_1nsof","icon":"cart-totals_icon_mbPkO","isClosed":"cart-totals_isClosed_ahyK3","originalSubtotal":"cart-totals_originalSubtotal_3wGZq","fulfillmentInfo":"cart-totals_fulfillmentInfo_3--om","dashes":"cart-totals_dashes_3r_Mr","discountLabel":"cart-totals_discountLabel_2lpVq","discountAmount":"cart-totals_discountAmount_29SL-","alignRight":"cart-totals_alignRight_39q4T","totalRow":"cart-totals_totalRow_4b_jW","totalLabel":"cart-totals_totalLabel_6bZ-1","total":"cart-totals_total_2s49c"};
+module.exports = {"row":"cart-totals_row_mZL7s","rowGroup":"cart-totals_rowGroup_22xfY","subtotalToggle":"cart-totals_subtotalToggle_1nsof","icon":"cart-totals_icon_mbPkO","isClosed":"cart-totals_isClosed_ahyK3","originalSubtotal":"cart-totals_originalSubtotal_3wGZq","fulfillmentInfo":"cart-totals_fulfillmentInfo_3--om","dashes":"cart-totals_dashes_3r_Mr","discountLabel":"cart-totals_discountLabel_2lpVq","discountAmount":"cart-totals_discountAmount_29SL-","alignRight":"cart-totals_alignRight_39q4T","totalRow":"cart-totals_totalRow_4b_jW","totalLabel":"cart-totals_totalLabel_6bZ-1","total":"cart-totals_total_2s49c","noBottomMargin":"cart-totals_noBottomMargin_czWn_"};
 
 /***/ }),
 
@@ -32708,14 +32708,14 @@ var cart_checkout_footervue_type_template_id_707f1c2a_staticRenderFns = []
 
 // CONCATENATED MODULE: ./components/cart-checkout-footer.vue?vue&type=template&id=707f1c2a&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7be638da-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/cart-totals.vue?vue&type=template&id=16bfd853&
-var cart_totalsvue_type_template_id_16bfd853_render = function () {
-var _obj;
-var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{class:[_vm.$style.row, _vm.$style.rowGroup]},[_c('div',{class:[_vm.$style.rowGroup, ( _obj = {}, _obj[_vm.$style.isClosed] = !_vm.isOpen, _obj[_vm.$style.subtotalToggle] = _vm.cart.discountSummary && _vm.cart.discountSummary.length, _obj )],on:{"click":function($event){return _vm.toggle()}}},[_c('div',[_vm._v("Subtotal")]),(_vm.cart.discountSummary && _vm.cart.discountSummary.length)?_c('up-caret-icon',{class:_vm.$style.icon}):_vm._e()],1),_c('div',{class:_vm.$style.rowGroup},[(_vm.cart.originalSubtotal !== _vm.cart.subtotal)?_c('div',{class:_vm.$style.originalSubtotal},[_vm._v(" "+_vm._s(_vm.formatCurrency(_vm.cart.originalSubtotal))+" ")]):_vm._e(),_c('div',[_vm._v(_vm._s(_vm.formatCurrency(_vm.cart.subtotal)))])])]),(_vm.isOpen && _vm.cart.discountSummary && _vm.cart.discountSummary.length)?_c('div',_vm._l((_vm.cart.discountSummary),function(discount){return _c('div',{key:discount.name,class:[_vm.$style.row, _vm.$style.rowGroup]},[_c('div',{class:_vm.$style.discountLabel},[_vm._v(_vm._s(discount.name))]),_c('div',{class:_vm.$style.discountAmount},[_vm._v(_vm._s(_vm.formatCurrency(-Math.abs(discount.totalDiscount))))])])}),0):_vm._e(),_c('div',{class:[_vm.$style.row, _vm.$style.rowGroup]},[(_vm.cart.fulfillmentSelection && _vm.cart.fulfillmentSelection.method)?_c('div',[_vm._v(" "+_vm._s(_vm.cart.fulfillmentSelection.method)+" "),(_vm.isLocalDelivery && _vm.hasFulfillmentPriceDiscount)?_c('div',{class:_vm.$style.discountLabel},[_vm._v(" Free Delivery (just pay tip) ")]):_vm._e()]):_c('div',[_vm._v("Shipping/Delivery")]),(_vm.isLocalDelivery && _vm.hasFulfillmentPriceDiscount)?_c('div',[_c('div',{class:_vm.$style.rowGroup},[_c('div',{class:_vm.$style.originalSubtotal},[_vm._v(_vm._s(_vm.formatCurrency(_vm.cart.originalFulfillmentPrice)))]),_c('div',[_vm._v(_vm._s(_vm.formatCurrency(_vm.cart.fulfillmentPrice)))])]),_c('div',{class:[_vm.$style.discountAmount, _vm.$style.alignRight]},[_vm._v(" "+_vm._s(_vm.formatCurrency(-Math.abs(_vm.cart.originalFulfillmentPrice - _vm.cart.fulfillmentPrice)))+" ")])]):(_vm.cart.fulfillmentPrice)?_c('div',[_vm._v(_vm._s(_vm.formatCurrency(_vm.cart.fulfillmentPrice)))]):(!_vm.cart.isShippingAvailable)?_c('div',{class:_vm.$style.dashes},[_vm._v("- - -")]):_c('div',{class:_vm.$style.fulfillmentInfo},[_vm._v("calculated at next step")])]),_c('div',{class:[_vm.$style.totalRow, _vm.$style.rowGroup]},[_c('div',{class:_vm.$style.totalLabel},[_vm._v("Estimated Total")]),_c('div',{class:_vm.$style.total},[_vm._v(_vm._s(_vm.formatCurrency(_vm.cart.total)))])])])}
-var cart_totalsvue_type_template_id_16bfd853_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7be638da-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/cart-totals.vue?vue&type=template&id=5fde8da4&
+var cart_totalsvue_type_template_id_5fde8da4_render = function () {
+var _obj, _obj$1;
+var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{class:[_vm.$style.row, _vm.$style.rowGroup]},[_c('div',{class:[_vm.$style.rowGroup, ( _obj = {}, _obj[_vm.$style.isClosed] = !_vm.isDiscountListOpen, _obj[_vm.$style.subtotalToggle] = _vm.cart.discountSummary && _vm.cart.discountSummary.length, _obj )],on:{"click":function($event){return _vm.toggleDiscountSummary()}}},[_c('div',[_vm._v("Subtotal")]),(_vm.cart.discountSummary && _vm.cart.discountSummary.length)?_c('up-caret-icon',{class:_vm.$style.icon}):_vm._e()],1),_c('div',{class:_vm.$style.rowGroup},[(_vm.cart.originalSubtotal !== _vm.cart.subtotal)?_c('div',{class:_vm.$style.originalSubtotal},[_vm._v(" "+_vm._s(_vm.formatCurrency(_vm.cart.originalSubtotal))+" ")]):_vm._e(),_c('div',[_vm._v(_vm._s(_vm.formatCurrency(_vm.cart.subtotal)))])])]),(_vm.isDiscountListOpen && _vm.cart.discountSummary && _vm.cart.discountSummary.length)?_c('div',{class:[_vm.$style.row, _vm.$style.rowGroup]},_vm._l((_vm.cart.discountSummary),function(discount){return _c('div',{key:discount.name,class:[_vm.$style.row, _vm.$style.rowGroup]},[_c('div',{class:_vm.$style.discountLabel},[_vm._v(_vm._s(discount.name))]),_c('div',{class:_vm.$style.discountAmount},[_vm._v(_vm._s(_vm.formatCurrency(-Math.abs(discount.totalDiscount))))])])}),0):_vm._e(),_c('div',{class:[_vm.$style.row, _vm.$style.rowGroup]},[(_vm.cart.fulfillmentSelection && _vm.cart.fulfillmentSelection.method)?_c('div',[_c('div',{class:[_vm.$style.rowGroup, ( _obj$1 = {}, _obj$1[_vm.$style.isClosed] = !_vm.isTipSummaryOpen, _obj$1[_vm.$style.subtotalToggle] = _vm.isLocalDelivery, _obj$1 )],on:{"click":function($event){return _vm.toggleTipSummary()}}},[_vm._v(" "+_vm._s(_vm.cart.fulfillmentSelection.method)+" "),(_vm.isLocalDelivery && _vm.hasFulfillmentPriceDiscount)?_c('up-caret-icon',{class:_vm.$style.icon}):_vm._e()],1)]):_c('div',[_vm._v("Shipping/Delivery")]),(_vm.isLocalDelivery && _vm.hasFulfillmentPriceDiscount)?_c('div',{class:_vm.$style.rowGroup},[_c('div',{class:_vm.$style.originalSubtotal},[_vm._v(_vm._s(_vm.formatCurrency(_vm.cart.originalFulfillmentPrice)))]),_c('div',[_vm._v("FREE")])]):(_vm.cart.fulfillmentPrice && !_vm.hasFulfillmentPriceDiscount)?_c('div',[_vm._v(_vm._s(_vm.formatCurrency(_vm.cart.fulfillmentPrice)))]):(!_vm.cart.isShippingAvailable)?_c('div',{class:_vm.$style.dashes},[_vm._v("- - -")]):_c('div',{class:_vm.$style.fulfillmentInfo},[_vm._v("calculated at next step")])]),(_vm.isLocalDelivery && _vm.hasFulfillmentPriceDiscount)?_c('div',[(_vm.isTipSummaryOpen && _vm.hasFulfillmentPriceDiscount)?_c('div',{class:_vm.$style.row},[_c('div',{class:[_vm.$style.row, _vm.$style.rowGroup, _vm.$style.discountAmount]},[_c('div',[_vm._v("Free local delivery (just pay tip)")]),_c('div',{class:_vm.$style.discountAmount},[_vm._v(_vm._s(_vm.formatCurrency(-Math.abs(_vm.cart.originalFulfillmentPrice - _vm.cart.fulfillmentPrice))))])])]):_vm._e()]):_vm._e(),(_vm.isLocalDelivery && _vm.hasFulfillmentPriceDiscount)?_c('div',{class:[_vm.$style.row, _vm.$style.rowGroup]},[_c('div',[_vm._v("Delivery Tip")]),_c('div',[_vm._v(_vm._s(_vm.formatCurrency(_vm.cart.fulfillmentPrice)))])]):_vm._e(),_c('div',{class:[_vm.$style.totalRow, _vm.$style.rowGroup]},[_c('div',{class:_vm.$style.totalLabel},[_vm._v("Estimated Total")]),_c('div',{class:_vm.$style.total},[_vm._v(_vm._s(_vm.formatCurrency(_vm.cart.total)))])])])}
+var cart_totalsvue_type_template_id_5fde8da4_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/cart-totals.vue?vue&type=template&id=16bfd853&
+// CONCATENATED MODULE: ./components/cart-totals.vue?vue&type=template&id=5fde8da4&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7be638da-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/icons/up-caret-icon.vue?vue&type=template&id=68464a8f&
 var up_caret_iconvue_type_template_id_68464a8f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"xmlns":"http://www.w3.org/2000/svg","width":"11","height":"7","viewBox":"0 0 11 7"}},[_c('g',{attrs:{"fill":"none","fill-rule":"evenodd","stroke":"#000","stroke-linecap":"round","stroke-linejoin":"round","stroke-width":"2"}},[_c('path',{attrs:{"d":"M0 4.44L4.44 0M.002 4.443L4.442 8.883","transform":"rotate(90 4.5 5.5)"}})])])}
@@ -32804,6 +32804,19 @@ var up_caret_icon_component = normalizeComponent(
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ var cart_totalsvue_type_script_lang_js_ = ({
@@ -32819,7 +32832,8 @@ var up_caret_icon_component = normalizeComponent(
 
   data() {
     return {
-      isOpen: false
+      isDiscountListOpen: false,
+      isTipSummaryOpen: false
     };
   },
 
@@ -32838,8 +32852,12 @@ var up_caret_icon_component = normalizeComponent(
       return formatCurrency(amount);
     },
 
-    toggle() {
-      this.isOpen = !this.isOpen;
+    toggleDiscountSummary() {
+      this.isDiscountListOpen = !this.isDiscountListOpen;
+    },
+
+    toggleTipSummary() {
+      this.isTipSummaryOpen = !this.isTipSummaryOpen;
     }
 
   }
@@ -32868,8 +32886,8 @@ function cart_totals_injectStyles (context) {
 
 var cart_totals_component = normalizeComponent(
   components_cart_totalsvue_type_script_lang_js_,
-  cart_totalsvue_type_template_id_16bfd853_render,
-  cart_totalsvue_type_template_id_16bfd853_staticRenderFns,
+  cart_totalsvue_type_template_id_5fde8da4_render,
+  cart_totalsvue_type_template_id_5fde8da4_staticRenderFns,
   false,
   cart_totals_injectStyles,
   null,
