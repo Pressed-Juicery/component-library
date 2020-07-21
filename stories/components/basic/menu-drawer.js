@@ -8,6 +8,7 @@ export default {
 	decorators: [withKnobs],
 };
 
+// eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
 		components: { MenuDrawer },
@@ -32,7 +33,7 @@ export function Overview() {
 		data() {
 			return {
 				menuItems: [
-					{ label: 'First Action' , action: this.makeOne },
+					{ label: 'First Action', action: this.makeOne },
 					{ label: 'Second Action', action: this.makeTwo },
 					{ label: 'Third Action', action: this.makeThree },
 				],
@@ -41,9 +42,9 @@ export function Overview() {
 		},
 
 		methods: {
-			makeOne() { this.action = 'one'; },
-			makeTwo() { this.action = 'two'; },
-			makeThree() { this.action = 'three'; },
+			makeOne() { this.action = 'one' },
+			makeTwo() { this.action = 'two' },
+			makeThree() { this.action = 'three' },
 			closeDrawer() {
 				addons.getChannel().emit(CHANGE, { name: 'Open', value: false });
 			},

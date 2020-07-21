@@ -18,7 +18,7 @@ export function Overview() {
 		data() {
 			return {
 				menuItems: [
-					{ label: 'First Action' , action: this.makeOne },
+					{ label: 'First Action', action: this.makeOne },
 					{ label: 'Second Action', action: this.makeTwo },
 					{ label: 'Third Action', action: this.makeThree },
 				],
@@ -30,7 +30,7 @@ export function Overview() {
 			makeOne() { this.action = 'one' },
 			makeTwo() { this.action = 'two' },
 			makeThree() { this.action = 'three' },
-			close() { this.action = 'closing...'},
+			close() { this.action = 'closing...' },
 		},
 	};
 }
@@ -48,7 +48,7 @@ export function NoHeading() {
 		data() {
 			return {
 				menuItems: [
-					{ label: 'First Action' , action: this.makeOne },
+					{ label: 'First Action', action: this.makeOne },
 					{ label: 'Second Action', action: this.makeTwo },
 					{ label: 'Third Action', action: this.makeThree },
 				],
@@ -60,7 +60,7 @@ export function NoHeading() {
 			makeOne() { this.action = 'one' },
 			makeTwo() { this.action = 'two' },
 			makeThree() { this.action = 'three' },
-			close() { this.action = 'closing...'},
+			close() { this.action = 'closing...' },
 		},
 	};
 }

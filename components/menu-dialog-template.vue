@@ -26,7 +26,7 @@ export default {
 			require: true,
 		},
 	},
-}
+};
 </script>
 
 <style module lang="scss">
