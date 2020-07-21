@@ -1,8 +1,11 @@
+import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
 import MenuDrawer from '../../../components/menu-drawer.vue';
+import { addons } from '@storybook/addons';
 
 export default {
 	title: 'Components / Basic / MenuDrawer',
 	component: MenuDrawer,
+	decorators: [withKnobs],
 };
 
 export function Overview() {
@@ -14,15 +17,20 @@ export function Overview() {
 					:is-open="isOpen"
 					heading="Menu Dialog Template"
 					:menu-items="menuItems"
-					@close="$emit('close')"
+					@close="closeDrawer"
 				/>
 				<div>Action: {{ action }}</div>
 			</div>
 		`,
 
+		props: {
+			isOpen: {
+				default: boolean('Open', true),
+			},
+		},
+
 		data() {
 			return {
-				isOpen: true,
 				menuItems: [
 					{ label: 'First Action' , action: this.makeOne },
 					{ label: 'Second Action', action: this.makeTwo },
@@ -33,10 +41,12 @@ export function Overview() {
 		},
 
 		methods: {
-			makeOne() { this.action = 'one' },
-			makeTwo() { this.action = 'two' },
-			makeThree() { this.action = 'three' },
-			close() { this.action = 'closing...'},
+			makeOne() { this.action = 'one'; },
+			makeTwo() { this.action = 'two'; },
+			makeThree() { this.action = 'three'; },
+			closeDrawer() {
+				addons.getChannel().emit(CHANGE, { name: 'Open', value: false });
+			},
 		},
 	};
 }
