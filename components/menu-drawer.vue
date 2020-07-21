@@ -1,9 +1,9 @@
 <template>
-	<drawer :is-open="isOpen" @close="close">
+	<drawer :is-open="isOpen" @close="$emit('close')">
 		<menu-dialog-template
 			heading="Menu Dialog Template"
 			:menuItems="menuItems"
-			@close="close"
+			@close="$emit('close')"
 		/>
 	</drawer>
 </template>
@@ -28,12 +28,6 @@ export default {
 		menuItems: {
 			type: Array,
 			require: true,
-		},
-	},
-
-	methods: {
-		close() {
-			this.isOpen = false;
 		},
 	},
 };
