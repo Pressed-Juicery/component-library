@@ -37,7 +37,7 @@ export default {
 	}
 
 	.learnMore {
-		border-bottom: 1px solid black;
+		text-decoration: underline;
 		@include text-body-small();
 	}
 </style>
