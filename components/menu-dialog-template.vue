@@ -35,7 +35,8 @@ export default {
 		text-align: center;
 	}
 
-	.heading, .item {
+	.heading,
+	.item {
 		padding: $spacing-06 0;
 		border-bottom: $border-light;
 	}
