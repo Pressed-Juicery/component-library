@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<div :class="$style.sectionTitle">This bundle includes ({{ cleanseBundle.length }})</div>
+		<div :class="$style.sectionTitle">This bundle includes ({{ bundleItems.length }})</div>
 		<div :class="$style.products">
-			<div :class="$style.product" v-for="(product, index) in cleanseBundle" :key="index">
+			<div :class="$style.product" v-for="(product, index) in bundleItems" :key="index">
 				<img :class="$style.productImage" :src="product.imageUrl" :alt="product.title">
 				<div :class="$style.productTitle">{{ product.title }}</div>
 			</div>
@@ -13,7 +13,7 @@
 <script>
 export default {
 	props: {
-		cleanseBundle: {
+		bundleItems: {
 			type: Array,
 			required: true,
 		},
