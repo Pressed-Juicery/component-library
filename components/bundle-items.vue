@@ -22,35 +22,35 @@ export default {
 </script>
 
 <style module lang="scss">
-@import "../styles/mixins.scss";
-@import "../styles/variables.scss";
+	@import "../styles/mixins.scss";
+	@import "../styles/variables.scss";
 
-.sectionTitle  {
-	@include text-cta-small();
-	margin-bottom: $spacing-07;
-}
-
-.products {
-	display: flex;
-	overflow-x: scroll;
-
-	&::-webkit-scrollbar {
-		display: none;
+	.sectionTitle  {
+		@include text-cta-small();
+		margin-bottom: $spacing-07;
 	}
-}
 
-.product {
-	text-align: center;
-	margin-right: $spacing-03;
-}
+	.products {
+		display: flex;
+		overflow-x: scroll;
 
-.productImage {
-	margin-bottom: $spacing-03;
-	height: 155px;
-	width: 155px;
-}
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
 
-.productName {
-	@include text-body-small();
-}
+	.product {
+		text-align: center;
+		margin-right: $spacing-03;
+	}
+
+	.productImage {
+		margin-bottom: $spacing-03;
+		height: 155px;
+		width: 155px;
+	}
+
+	.productName {
+		@include text-body-small();
+	}
 </style>
