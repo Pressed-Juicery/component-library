@@ -3,7 +3,6 @@
 		<div :class="$style.sectionTitle">Cleanse Guide</div>
 
 		<div :class="$style.guide" v-for="(cleanseItem, index) in cleanseGuide" :key="index">
-
 			<div :class="$style.title">{{ cleanseItem.timeOfDay }} | {{ cleanseItem.product.name }}</div>
 			<div :class="$style.content">{{ cleanseItem.product.description }}</div>
 			<a :class="$style.learnMore" :href="cleanseItem.product.url">Learn More</a>
