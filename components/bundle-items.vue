@@ -3,8 +3,8 @@
 		<div :class="$style.sectionTitle">This bundle includes ({{ bundleItems.length }})</div>
 		<div :class="$style.products">
 			<div :class="$style.product" v-for="(product, index) in bundleItems" :key="index">
-				<img :class="$style.productImage" :src="product.imageUrl" :alt="product.title">
-				<div :class="$style.productTitle">{{ product.title }}</div>
+				<img :class="$style.productImage" :src="product.imageUrl" :alt="product.name">
+				<div :class="$style.productName">{{ product.name }}</div>
 			</div>
 		</div>
 	</div>
@@ -50,7 +50,7 @@ export default {
 	width: 155px;
 }
 
-.productTitle {
+.productName {
 	@include text-body-small();
 }
 </style>
