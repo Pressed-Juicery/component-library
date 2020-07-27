@@ -1,8 +1,6 @@
 <template>
 	<div :class="$style.root">
-		<div v-if="heading" :class="$style.heading">
-			{{ heading }}
-		</div>
+		<div v-if="heading" :class="$style.heading">{{ heading }}</div>
 
 		<div :class="$style.item" v-for="item in menuItems" :key="item.label" @click="item.action()">
 			<span :class="$style.label">{{ item.label }}</span>
