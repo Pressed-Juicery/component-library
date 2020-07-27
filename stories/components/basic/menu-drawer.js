@@ -16,7 +16,7 @@ export function Overview() {
 			<div>
 				<menu-drawer
 					:is-open="isOpen"
-					heading="Menu Dialog Template"
+					heading="Menu Drawer Title"
 					:menu-items="menuItems"
 					@close="closeDrawer"
 				/>

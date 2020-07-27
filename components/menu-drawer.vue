@@ -1,7 +1,7 @@
 <template>
 	<drawer :is-open="isOpen" @close="$emit('close')">
 		<menu-dialog-template
-			heading="Menu Dialog Template"
+			:heading="heading"
 			:menuItems="menuItems"
 			@close="$emit('close')"
 		/>
