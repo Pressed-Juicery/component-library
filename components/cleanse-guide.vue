@@ -2,7 +2,7 @@
 	<div>
 		<div :class="$style.sectionTitle">Cleanse Guide</div>
 
-		<div :class="$style.cleanse" v-for="(cleanseItem, index) in cleanseGuide" :key="index">
+		<div :class="$style.guide" v-for="(cleanseItem, index) in cleanseGuide" :key="index">
 
 			<div :class="$style.title">{{ cleanseItem.timeOfDay }} | {{ cleanseItem.product.name }}</div>
 			<div :class="$style.content">{{ cleanseItem.product.description }}</div>
@@ -30,7 +30,7 @@ export default {
 	margin-bottom: $spacing-07;
 }
 
-.cleanse {
+.guide {
 	margin-bottom: $spacing-06;
 }
 
