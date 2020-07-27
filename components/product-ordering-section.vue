@@ -177,5 +177,4 @@ export default {
 		-webkit-appearance: none;
 		text-align: center;
 	}
-
 </style>
