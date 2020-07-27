@@ -2,11 +2,11 @@
 	<div>
 		<div :class="$style.sectionTitle">Cleanse Guide</div>
 
-		<div :class="$style.cleanse" v-for="(cleanse, index) in cleanseGuide" :key="index">
+		<div :class="$style.cleanse" v-for="(cleanseItem, index) in cleanseGuide" :key="index">
 
-			<div :class="$style.title">{{ cleanse.timeOfDay }} | {{ cleanse.juice }}</div>
-			<div :class="$style.content">{{ cleanse.description }}</div>
-			<a :class="$style.learnMore" :href="cleanse.learnMoreUrl">Learn More</a>
+			<div :class="$style.title">{{ cleanseItem.timeOfDay }} | {{ cleanseItem.juice }}</div>
+			<div :class="$style.content">{{ cleanseItem.description }}</div>
+			<a :class="$style.learnMore" :href="cleanseItem.learnMoreUrl">Learn More</a>
 		</div>
 	</div>
 </template>
