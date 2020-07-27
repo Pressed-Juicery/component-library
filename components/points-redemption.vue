@@ -3,13 +3,10 @@
 		<div :class="$style.wrapper">
 			<points-redemption-card
 				:class="$style.card"
-				v-for="(card, i) in cards"
-				:key="i"
-				:icon="card.icon"
-				:title="card.title"
-				:points="card.points"
-				:quantity-available="card.quantityAvailable"
+				v-for="redemptionSummaryItem in sortedRedemptionSummary"
+				:redemption-summary-item="redemptionSummaryItem"
 				@change="handleChange"
+				:key="redemptionSummaryItem.id"
 			/>
 		</div>
 	</div>
@@ -23,21 +20,35 @@ export default {
 	components: { PointsRedemptionCard },
 
 	props: {
-		cards: {
+		points: {
+			type: Number,
+			required: true,
+		},
+		redemptionSummary: {
 			type: Array,
 			required: true,
 		},
 	},
 
 	data() {
-		return { isMobileDevice: isMobileDevice() };
+		return {
+			isMobileDevice: isMobileDevice(),
+		};
 	},
 
 	methods: {
-		handleChange(obj) {
-			const { title, points, quantity } = obj;
+		handleChange(redemptionSummaryItem) {
+			this.$emit('change', redemptionSummaryItem);
+		},
+	},
 
-			this.$emit('change', { title, points, quantity });
+	computed: {
+		sortedRedemptionSummary() {
+			return [...this.redemptionSummary]
+				.sort((first, second) => first.points - second.points)
+				.sort((first, second) => { // eslint-disable-line arrow-body-style
+					return Boolean(second.eligibleCartItemQuantity) - Boolean(first.eligibleCartItemQuantity);
+				});
 		},
 	},
 };
@@ -52,6 +63,7 @@ export default {
 	.cardLine {
 		overflow-x: auto;
 		overflow-y: hidden;
+		margin-bottom: $spacing-05;
 
 		.wrapper {
 			display: flex;
@@ -67,5 +79,6 @@ export default {
 		display: grid;
 		grid-gap: $card-spacing;
 		grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
+		margin-bottom: $spacing-05;
 	}
 </style>

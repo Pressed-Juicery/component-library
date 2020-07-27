@@ -18,7 +18,7 @@
 			</select>
 
 			<div v-if="value" :class="$style.selectOverlay">
-				<div  @click="() => $refs.select.focus()">{{value}}</div>
+				<div @click="() => $refs.select.focus()">{{value}}</div>
 				<arrow-down-icon :class="$style.arrowIcon" />
 			</div>
 
@@ -70,6 +70,9 @@ export default {
 	watch: {
 		value() {
 			this.$emit('change', this.value);
+		},
+		quantity() {
+			this.value = this.quantity;
 		},
 	},
 };
@@ -129,6 +132,7 @@ export default {
 	.select {
 		opacity: 0;
 		position: absolute;
+		cursor: pointer;
 	}
 
 	.arrowIcon {
@@ -141,7 +145,12 @@ export default {
 	}
 
 	.defaultButton {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		width: $button-height;
 		height: $button-height;
+		pointer-events: none;
 	}
 </style>

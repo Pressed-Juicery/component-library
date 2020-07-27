@@ -1,12 +1,23 @@
 export function formatCurrency(amount) {
 	const value = Number(amount);
 
-	if (Number.isNaN(value)) throw Error('amount is not a number');
+	if (Number.isNaN(value)) return null;
 
 	const prefix = value < 0 ? '-$' : '$';
 	const fixedPointAmount = Math.abs(value).toFixed(2);
 
 	return prefix + fixedPointAmount;
+}
+
+export function formatMediumDate(date) {
+	const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+	const _date = new Date(date);
+	const month = months[_date.getMonth()];
+	const day = _date.getDate();
+	const year = _date.getFullYear();
+
+	return `${month} ${day}, ${year}`;
 }
 
 export function formatPhoneNumber(phone) {

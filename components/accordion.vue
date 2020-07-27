@@ -1,8 +1,10 @@
 <template>
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
-		<div :class="$style.title" @click="toggle">
+		<div :class="$style.titleWrapper" @click="toggle">
 			<div>{{ title }}</div>
-			<arrow-down-icon :class="$style.icon" />
+			<div :class="$style.accordionIcon">
+				{{ isOpen ? '-' : '+' }}
+			</div>
 		</div>
 		<div v-if="isOpen" :class="$style.slot">
 			<slot />
@@ -11,11 +13,9 @@
 </template>
 
 <script>
-import ArrowDownIcon from './icons/arrow-down-icon';
 
 export default {
 	name: 'accordion',
-	components: { ArrowDownIcon },
 	props: {
 		title: {
 			type: String,
@@ -37,21 +37,21 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/variables';
+	@import '../styles/mixins';
 
 	$accordion-padding: $spacing-06;
 
 	.root {
-		border: 1px solid $border-color;
-		border-radius: $border-radius;
-		margin-bottom: $spacing-06;
+		border-bottom: $border-light;
 	}
 
-	.title {
-		padding: $accordion-padding;
+	.titleWrapper {
+		padding: $accordion-padding 0;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		cursor: pointer;
+		@include text-cta-small();
 	}
 
 	.icon {
@@ -62,12 +62,12 @@ export default {
 	}
 
 	.slot {
-		padding: 0 $accordion-padding $accordion-padding;
+		margin-bottom: $accordion-padding;
 	}
 
-	.isOpen {
-		.icon {
-			transform: rotate(180deg);
-		}
+	.accordionIcon {
+		color: $gray-30;
+		font-size: 20px;
+		margin: 0 $spacing-05;
 	}
 </style>

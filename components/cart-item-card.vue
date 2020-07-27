@@ -1,6 +1,6 @@
 <template>
-	<card :class="$style.root">
-		<div :class="$style.mainContent">
+	<div :class="[$style.root, {[$style.hasCardExtension]: hasModifiers}]" >
+		<card :class="$style.card">
 			<div :class="$style.imageWrapper">
 				<img :class="$style.image" :src="item.variant.imageUrl" :alt="item.variant.name" />
 			</div>
@@ -8,47 +8,54 @@
 			<div :class="$style.descriptionWrapper">
 				<div :class="$style.description">
 					<div :class="$style.title">{{ item.variant.name }}</div>
-					<div :class="$style.quantity">Qty {{ item.quantity }}</div>
+					<div :class="$style.priceWrapper">
+						<div v-if="item.originalPrice !== item.price" :class="$style.originalPrice">
+							{{ formatCurrency(item.originalPrice) }}
+						</div>
+						<div :class="$style.price">{{ formatCurrency(item.price) }}</div>
+					</div>
 				</div>
 
-				<div>
-					<span :class="$style.originalPrice">{{ originalPrice }}</span>
-					<span :class="$style.price">{{ displayPrice }}</span>
-				</div>
+				<quantity-selector @change="handleQuantityChange" :quantity="item.quantity"/>
+			</div>
+		</card>
+		<div v-if="hasModifiers" :class="$style.detailsWrapper">
+			<div :class="$style.additionalInfo" v-for="(modifiers, groupName) in modifierSummary" :key="groupName">
+				{{ groupName }}: {{ modifiers }}
 			</div>
 		</div>
-
-		<div v-if="additionalContent" :class="$style.additionalContent">{{ additionalContent }}</div>
-	</card>
+	</div>
 </template>
 
 <script>
 import Card from './card.vue';
+import QuantitySelector from './quantity-selector';
 import { formatCurrency } from '../utilities/formatters';
+import { getCartItemModifierSummary } from '../utilities/get-cart-item-modifier-summary';
 
 export default {
-	components: { Card },
+	components: { Card, QuantitySelector },
 
 	props: {
 		item: Object,
 	},
 
 	computed: {
-		additionalContent() {
-			return this.item.additionalInformation
-				|| this.item.bundleItems
-				|| (this.item.modifiers && this.item.modifiers.toppings)
-				|| '';
+		hasModifiers() {
+			return this.item.modifiers && this.item.modifiers.length;
+		},
+		modifierSummary() {
+			return getCartItemModifierSummary(this.item.modifiers);
+		},
+	},
+
+	methods: {
+		handleQuantityChange(quantity) {
+			this.$emit('change', { id: this.item.id, name: this.item.variant.name, quantity });
 		},
 
-		originalPrice() {
-			return this.item.originalPrice && this.item.originalPrice !== this.item.price
-				? formatCurrency(this.item.originalPrice)
-				: null;
-		},
-
-		displayPrice() {
-			return formatCurrency(this.item.price);
+		formatCurrency(number) {
+			return formatCurrency(number);
 		},
 	},
 };
@@ -60,11 +67,20 @@ export default {
 
 	.root {
 		margin-bottom: $spacing-03;
-		padding: $spacing-03;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 
-	.mainContent {
+	.root.hasCardExtension .card {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	.card {
 		display: flex;
+		padding: $spacing-04;
 	}
 
 	.imageWrapper {
@@ -85,6 +101,10 @@ export default {
 		flex: 1;
 	}
 
+	.priceWrapper {
+		display: flex;
+	}
+
 	.title,
 	.price {
 		@include text-bold();
@@ -94,19 +114,23 @@ export default {
 		@include text-subtle();
 		@include text-strikethrough();
 
-		margin: 0 $spacing-02;
+		margin-right: $spacing-03;
 	}
 
-	.additionalContent,
+	.detailsWrapper {
+		border-top: 1px solid $gray-30;
+		background-color: $beige;
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+		padding: $spacing-03 $spacing-06;
+	}
+
+	.additionalInfo,
 	.quantity {
 		@include text-body-small();
 	}
 
-	.additionalContent {
-		@include text-subtle();
-
-		margin: 0 (-$spacing-03);
-		padding: $spacing-03 $spacing-05 0;
-		border-top: $border-light;
+	.additionalInfo {
+		color: $color-text-gray;
 	}
 </style>

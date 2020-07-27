@@ -1,6 +1,5 @@
 <template>
 	<validated-component
-		class="validated-input"
 		:id="id"
 		:label="label"
 		:label-helper="labelHelper"

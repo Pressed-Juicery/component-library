@@ -71,7 +71,7 @@ export default {
 	}
 
 	.label {
-		@include text-bolder();
+		@include label();
 	}
 
 	.error {

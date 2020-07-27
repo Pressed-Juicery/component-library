@@ -7,7 +7,7 @@
 		<div :class="$style.outerWrapper" :style="outerWrapperVars">
 			<div :class="$style.innerWrapper" :style="innerWrapperVars">
 				<div :class="$style.heading" v-html="heading"></div>
-				<a :class="[$style.link, 'button', linkClass]" :href="linkPath">{{ linkText }}</a>
+				<a :class="linkClass" :href="linkPath">{{ linkText }}</a>
 			</div>
 		</div>
 	</div>
@@ -57,9 +57,7 @@ export default {
 		},
 
 		linkClass() {
-			if (this.linkStyle !== 'button') return 'button--link';
-
-			return '';
+			return this.linkStyle === 'button' ? this.$style.button : this.$style.buttonLink;
 		},
 	},
 };
@@ -106,10 +104,15 @@ export default {
 
 	.heading {
 		@include text-heading-2;
+		margin-bottom: $spacing-06;
 	}
 
-	.link {
-		margin-top: $spacing-06;
+	.button {
+		@include button();
+	}
+
+	.buttonLink {
+		@include button-link();
 	}
 
 	// Medium Image

@@ -27,16 +27,16 @@ a {
 	cursor: pointer;
 }
 
-label {
-	display: block;
-}
-
 input, textarea {
 	display: block;
 	width: 100%;
 	padding: $spacing-03;
 	border: $border-width solid $border-color-light;
 	border-radius: $border-radius;
+
+	&::placeholder {
+		color: $gray-40;
+	}
 }
 
 select {
@@ -51,4 +51,10 @@ select {
 	background-repeat: no-repeat;
 	background-position: right 10px center;
 	background-color: #fff;
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+	@include button();
 }

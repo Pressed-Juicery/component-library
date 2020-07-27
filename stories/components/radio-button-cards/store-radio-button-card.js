@@ -104,6 +104,28 @@ export function VariedHours() {
 	};
 }
 
+export function AfterHours() {
+	return {
+		components: { StoreRadioButtonCard },
+		template: '<store-radio-button-card :store="storeWithHours" v-model="selectedStore" />',
+
+		data() {
+			return {
+				storeWithHours: {
+					...thirdStore,
+					storeHours: [
+						'Mon-Fri 8am-9pm',
+						'Sat-Sun 11am-8pm',
+					],
+					isAfterHours: true,
+					pickupEta: 'tomorrow at 10am',
+				},
+				selectedStore: null,
+			};
+		},
+	};
+}
+
 export function LongStoreName() {
 	return {
 		components: { StoreRadioButtonCard },

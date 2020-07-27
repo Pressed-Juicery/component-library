@@ -1,11 +1,11 @@
 <template>
-	<card :class="$style.card">
-		<img :class="$style.icon" :src="icon"/>
-		<div :class="$style.title">{{ title }}</div>
-		<div :class="$style.points">{{ points }} Pts</div>
+	<card :class="[$style.card, { [$style.disabled]: !redemptionSummaryItem.eligibleCartItemQuantity }]">
+		<img :class="$style.icon" :src="redemptionSummaryItem.icon"/>
+		<div :class="$style.title">{{ redemptionSummaryItem.title }}</div>
+		<div :class="$style.points">{{ redemptionSummaryItem.points }} Pts</div>
 		<quantity-selector
 			:options="options"
-			:quantity="quantity"
+			:quantity="redemptionSummaryItem.requestedRedemptionQuantity"
 			@change="handleChange"
 			:can-use-input="false"
 		/>
@@ -23,31 +23,26 @@ export default {
 	},
 
 	props: {
-		icon: String,
-		title: String,
-		points: String,
-		quantityAvailable: {
-			type: Number,
+		redemptionSummaryItem: {
+			type: Object,
 			required: true,
 		},
 	},
 
-	data() {
-		return {
-			quantity: 0,
-		};
-	},
-
 	methods: {
-		handleChange(quantity) {
-			this.quantity = quantity;
-			this.$emit('change', { title: this.title, points: this.points, quantity });
+		handleChange(requestedRedemptionQuantity) {
+			this.$emit('change', {
+				...this.redemptionSummaryItem,
+				requestedRedemptionQuantity,
+			});
 		},
 	},
 
 	computed: {
 		options() {
-			return [...Array(this.quantityAvailable + 1).keys()];
+			const quantity = (this.redemptionSummaryItem && this.redemptionSummaryItem.eligibleCartItemQuantity) || 0;
+
+			return [...Array(quantity + 1).keys()];
 		},
 	},
 };
@@ -62,6 +57,11 @@ export default {
 		flex-direction: column;
 		align-items: center;
 		padding: $spacing-06 $spacing-05;
+	}
+
+	.disabled {
+		opacity: .5;
+		pointer-events: none;
 	}
 
 	.icon {
