@@ -48,7 +48,6 @@ export default {
 
 	.item {
 		@include text-cta-small();
-
 		display: grid;
 		cursor: pointer;
 	}
@@ -65,7 +64,6 @@ export default {
 
 	.closeButton {
 		@include button();
-
 		width: 100%;
 	}
 </style>
