@@ -3,7 +3,7 @@
 		<div v-if="heading" :class="$style.heading">{{ heading }}</div>
 
 		<div :class="$style.item" v-for="item in menuItems" :key="item.label" @click="item.action()">
-			<span :class="$style.label">{{ item.label }}</span>
+			{{ item.label }}
 		</div>
 
 		<div :class="$style.buttonWrapper">
@@ -47,14 +47,7 @@ export default {
 
 	.item {
 		@include text-cta-small();
-		display: grid;
 		cursor: pointer;
-	}
-
-	.label {
-		display: inline-block;
-		height: 10px;
-		margin: auto;
 	}
 
 	.buttonWrapper {
