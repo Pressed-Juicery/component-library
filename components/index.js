@@ -9,6 +9,7 @@ export { default as Breadcrumbs } from './breadcrumbs';
 export { default as BundleCard } from './bundle-card';
 export { default as BundleCardGrid } from './bundle-card-grid';
 export { default as BundleCardSection } from './bundle-card-section';
+export { default as BundleItems } from './bundle-items';
 export { default as ButtonBar } from './button-bar';
 export { default as Card } from './card';
 export { default as CartCheckoutFooter } from './cart-checkout-footer';
