@@ -20,24 +20,24 @@ export default {
 </script>
 
 <style module lang="scss">
-@import "../styles/mixins.scss";
-@import "../styles/variables.scss";
+	@import "../styles/mixins.scss";
+	@import "../styles/variables.scss";
 
-.guide {
-	margin-bottom: $spacing-06;
-}
+	.guide {
+		margin-bottom: $spacing-06;
+	}
 
-.title {
-	@include text-cta-small();
-	margin-bottom: $spacing-03;
-}
+	.title {
+		@include text-cta-small();
+		margin-bottom: $spacing-03;
+	}
 
-.content {
-	margin-bottom: $spacing-02;
-}
+	.content {
+		margin-bottom: $spacing-02;
+	}
 
-.learnMore {
-	border-bottom: 1px solid black;
-	@include text-body-small();
-}
+	.learnMore {
+		border-bottom: 1px solid black;
+		@include text-body-small();
+	}
 </style>
