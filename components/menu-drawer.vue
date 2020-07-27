@@ -20,11 +20,9 @@ export default {
 			type: Boolean,
 			require: true,
 		},
-
 		heading: {
 			type: String,
 		},
-
 		menuItems: {
 			type: Array,
 			require: true,
