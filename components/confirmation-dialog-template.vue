@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div :class="$style.root">
 		<div :class="$style.title">{{ title }}</div>
 
 		<div :class="$style.body">
@@ -35,6 +35,10 @@ export default {
 <style lang="scss" module>
 	@import '../styles/mixins';
 	@import '../styles/variables';
+
+	.root {
+		padding: $spacing-08 $spacing-06;
+	}
 
 	.title {
 		@include text-heading-5();

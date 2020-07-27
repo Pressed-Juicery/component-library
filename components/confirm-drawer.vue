@@ -1,7 +1,6 @@
 <template>
 	<drawer :isOpen="isOpen" @close="$emit('cancel')">
 		<confirmation-dialog-template
-			:class="$style.content"
 			:title="title"
 			:cancel-button-text="cancelButtonText"
 			:confirm-button-text="confirmButtonText"
@@ -40,12 +39,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss" module>
-	@import '../styles/mixins';
-	@import '../styles/variables';
-
-	.content {
-		padding: $spacing-08 $spacing-06;
-	}
-</style>
