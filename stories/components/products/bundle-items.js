@@ -1,4 +1,4 @@
-import BundleItems from '../../../components/bundle-items.vue';
+import BundleItems from '../../../components/bundle-items';
 
 export default {
 	title: 'Components / Products / BundleItems',
