@@ -91,91 +91,91 @@ export default {
 </script>
 
 <style module lang="scss">
-@import "../styles/variables";
-@import "../styles/mixins";
+	@import "../styles/variables";
+	@import "../styles/mixins";
 
-.productName {
-	@include text-heading-4();
-}
+	.productName {
+		@include text-heading-4();
+	}
 
-.imageArea {
-	height: 344px;
-	margin-bottom: $spacing-05;
-}
+	.imageArea {
+		height: 344px;
+		margin-bottom: $spacing-05;
+	}
 
-.information,
-.informationCta {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
+	.information,
+	.informationCta {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-.cta,
-.information {
-	margin-bottom: $spacing-06;
-}
+	.cta,
+	.information {
+		margin-bottom: $spacing-06;
+	}
 
-.informationCta,
-.variant,
-.quantity {
-	margin-bottom: $spacing-03;
-}
+	.informationCta,
+	.variant,
+	.quantity {
+		margin-bottom: $spacing-03;
+	}
 
-.productName {
-	margin-bottom: $spacing-05;
-}
+	.productName {
+		margin-bottom: $spacing-05;
+	}
 
-.learnMore {
-	@include text-body-small();
-	border-bottom: 1px solid #000;
-}
+	.learnMore {
+		@include text-body-small();
+		border-bottom: 1px solid #000;
+	}
 
-.price {
-	@include text-heading-5();
-}
+	.price {
+		@include text-heading-5();
+	}
 
-.actionsGroup {
-	display: grid;
-	grid-template-columns: 88px 1fr;
-	grid-column-gap: $spacing-03;
-}
+	.actionsGroup {
+		display: grid;
+		grid-template-columns: 88px 1fr;
+		grid-column-gap: $spacing-03;
+	}
 
-.variant {
-	text-indent: $spacing-06;
-	background: none;
-	background-position-x: calc(100% - 24px);
-}
+	.variant {
+		text-indent: $spacing-06;
+		background: none;
+		background-position-x: calc(100% - 24px);
+	}
 
-.dropdown {
-	position: relative;
-}
+	.dropdown {
+		position: relative;
+	}
 
-.dropdown::before {
-	content: "\2303";
-	color: $gray-30;
-	position: absolute;
-	right: $spacing-07;
-	top: $spacing-05;
-}
+	.dropdown::before {
+		content: "\2303";
+		color: $gray-30;
+		position: absolute;
+		right: $spacing-07;
+		top: $spacing-05;
+	}
 
-.variant,
-.quantity,
-.addToCartButton {
-	height: $spacing-09;
-}
+	.variant,
+	.quantity,
+	.addToCartButton {
+		height: $spacing-09;
+	}
 
-.variant,
-.quantity {
-	background-color: #ffffff;
-	border-radius: $spacing-02;
-	border: none;
-}
+	.variant,
+	.quantity {
+		background-color: #ffffff;
+		border-radius: $spacing-02;
+		border: none;
+	}
 
-.quantity,
-.quantity::-webkit-inner-spin-button,
-.quantity::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	text-align: center;
-}
+	.quantity,
+	.quantity::-webkit-inner-spin-button,
+	.quantity::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		text-align: center;
+	}
 
 </style>
