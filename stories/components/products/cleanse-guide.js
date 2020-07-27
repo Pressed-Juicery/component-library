@@ -1,4 +1,4 @@
-import CleanseGuide from '../../../components/cleanse-guide.vue';
+import CleanseGuide from '../../../components/cleanse-guide';
 
 export default {
 	title: 'Components / Products / CleanseGuide',
