@@ -13,8 +13,8 @@ export function Overview() {
 				title="Confirmation Dialog Template"
 				cancel-button-text="Disagree"
 				confirm-button-text="Agree"
-				@cancel="cancel"
-				@confirm="confirm"
+				@cancel="() => {}"
+				@confirm="() => {}"
 			>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
 				et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
