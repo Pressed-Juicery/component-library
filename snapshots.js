@@ -19,6 +19,8 @@ const groups = [{
 		'ConfirmationDialogTemplate',
 		'ConfirmDrawer',
 		'Drawer',
+		'MenuDialogTemplate',
+		'MenuDrawer',
 		'Overlay',
 		'PaymentMethodFormatter',
 		'PaymentMethods',
