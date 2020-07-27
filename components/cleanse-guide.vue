@@ -1,7 +1,5 @@
 <template>
 	<div>
-		<div :class="$style.sectionTitle">Cleanse Guide</div>
-
 		<div :class="$style.guide" v-for="(cleanseItem, index) in cleanseGuide" :key="index">
 			<div :class="$style.title">{{ cleanseItem.timeOfDay }} | {{ cleanseItem.product.name }}</div>
 			<div :class="$style.content">{{ cleanseItem.product.description }}</div>
@@ -25,10 +23,6 @@ export default {
 @import "../styles/mixins.scss";
 @import "../styles/variables.scss";
 
-.sectionTitle {
-	margin-bottom: $spacing-07;
-}
-
 .guide {
 	margin-bottom: $spacing-06;
 }
@@ -44,10 +38,6 @@ export default {
 
 .learnMore {
 	border-bottom: 1px solid black;
-}
-
-.sectionTitle,
-.learnMore {
 	@include text-body-small();
 }
 </style>
