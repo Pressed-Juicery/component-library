@@ -1,4 +1,4 @@
-import MenuDialogTemplate from '../../../components/menu-dialog-template.vue';
+import MenuDialogTemplate from '../../../components/menu-dialog-template';
 
 export default {
 	title: 'Components / Basic / MenuDialogTemplate',

@@ -1,5 +1,5 @@
 import { CHANGE, boolean, withKnobs } from '@storybook/addon-knobs';
-import MenuDrawer from '../../../components/menu-drawer.vue';
+import MenuDrawer from '../../../components/menu-drawer';
 import { addons } from '@storybook/addons';
 
 export default {

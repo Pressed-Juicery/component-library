@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Drawer from './drawer.vue';
-import MenuDialogTemplate from './menu-dialog-template.vue';
+import Drawer from './drawer';
+import MenuDialogTemplate from './menu-dialog-template';
 
 export default {
 	components: { Drawer, MenuDialogTemplate },
