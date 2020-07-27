@@ -91,8 +91,8 @@ export default {
 </script>
 
 <style module lang="scss">
-@import "../styles/variables.scss";
-@import "../styles/mixins.scss";
+@import "../styles/variables";
+@import "../styles/mixins";
 
 .productName {
 	@include text-heading-4();

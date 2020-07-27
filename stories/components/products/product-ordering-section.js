@@ -1,4 +1,4 @@
-import ProductOrderingSection from '../../../components/product-ordering-section.vue';
+import ProductOrderingSection from '../../../components/product-ordering-section';
 
 export default {
 	title: 'Components / Products / ProductOrderingSection',
