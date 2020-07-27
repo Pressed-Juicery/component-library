@@ -1,14 +1,14 @@
-import CleanseBundleIncludes from '../../../components/cleanse-bundle-includes.vue';
+import BundleItems from '../../../components/bundle-items.vue';
 
 export default {
-	title: 'Components / Products / CleanseBundleIncludes',
-	component: CleanseBundleIncludes,
+	title: 'Components / Products / BundleItems',
+	component: BundleItems,
 };
 
 export function Overview() {
 	return {
-		components: { CleanseBundleIncludes },
-		template: '<cleanse-bundle-includes :cleanseBundle="cleanseBundle"/>',
+		components: { BundleItems },
+		template: '<bundle-items :cleanseBundle="cleanseBundle"/>',
 		data() {
 			return {
 				cleanseBundle: [

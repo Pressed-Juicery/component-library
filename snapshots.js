@@ -70,7 +70,7 @@ const groups = [{
 	groupName: 'Components / Products',
 	stories: [
 		'BundleCardGrid',
-		'CleanseBundleIncludes',
+		'BundleItems',
 		'CleanseGuide',
 		'NutritionFacts',
 		'ProductDetails',
