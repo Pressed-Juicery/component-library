@@ -5,7 +5,7 @@ export default {
 	component: CleanseGuide,
 };
 
-export function Overview() {
+export function Overview() { // eslint-disable-line max-lines-per-function
 	return {
 		components: { CleanseGuide },
 		template: '<cleanse-guide :cleanseGuide="cleanseGuide" />',
@@ -19,6 +19,7 @@ export function Overview() {
 				}, {
 					timeOfDay: 'mid morning',
 					juice: 'citrus 2',
+					// eslint-disable-next-line max-len
 					description: 'Great for digestion due to pineapple’s bromelain, Citrus 2 is also full of antioxidants & aids in detoxification.',
 					learnMoreUrl: 'https://pressedjuicery.com/products/kale-spinach-juice',
 				}, {
