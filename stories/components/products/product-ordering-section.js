@@ -8,7 +8,7 @@ export default {
 export function Overview() { // eslint-disable-line max-lines-per-function
 	return {
 		components: { ProductOrderingSection },
-		template: '<product-ordering-section :isVip="isVip" :product="product" @addedToCart="addToCart"/>',
+		template: '<product-ordering-section :isVip="isVip" :product="product" />',
 		data() {
 			return {
 				isVip: false,
