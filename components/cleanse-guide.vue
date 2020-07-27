@@ -20,8 +20,8 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import "../styles/mixins.scss";
-	@import "../styles/variables.scss";
+	@import "../styles/mixins";
+	@import "../styles/variables";
 
 	.guide {
 		margin-bottom: $spacing-06;
