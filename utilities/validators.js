@@ -63,3 +63,15 @@ export function isDayOfMonth(value) {
 export function isZipCode(value) {
 	return isEmpty(value) || (/^\d{5}(-\d{4})?$/).test(value);
 }
+
+export function isLessThanOrEqualTo(value, { maximum }) {
+	return isEmpty(value) || value <= maximum;
+}
+
+export function isGreaterThanOrEqualTo(value, { minimum }) {
+	return isEmpty(value) || value >= minimum;
+}
+
+export function isInteger(value) {
+	return isEmpty(value) || (isNumber(value) && Number(value) % 1 === 0);
+}
