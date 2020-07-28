@@ -67,3 +67,7 @@ export function isZipCode(value) {
 export function isLessThanOrEqualTo(value, { maximum }) {
 	return isEmpty(value) || value <= maximum;
 }
+
+export function isGreaterThanOrEqualTo(value, { minimum }) {
+	return isEmpty(value) || value >= minimum;
+}
