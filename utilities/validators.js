@@ -71,3 +71,7 @@ export function isLessThanOrEqualTo(value, { maximum }) {
 export function isGreaterThanOrEqualTo(value, { minimum }) {
 	return isEmpty(value) || value >= minimum;
 }
+
+export function isInteger(value) {
+	return isEmpty(value) || (isNumber(value) && Number(value) % 1 === 0);
+}
