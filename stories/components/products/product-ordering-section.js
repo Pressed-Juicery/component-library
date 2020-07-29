@@ -13,25 +13,21 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 			return {
 				isVip: false,
 				product: {
-					name: 'Vanilla Freeze',
+					name: 'Greens 1',
 					variants: [{
-						id: 1,
-						name: 'Size 1',
-						calories: '200',
-						nonMemberPrice: '5.00',
-						memberPrice: '6.50',
+						id: '15277171441699',
+						name: 'Greens 1',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5601/1299/products/GRN1.jpg?v=1563830728',
+						memberPrice: 5,
+						nonMemberPrice: 6.5,
+						nonMemberSalePrice: null,
 					}, {
-						id: 2,
-						name: 'Size 2',
-						calories: '400',
-						nonMemberPrice: '8.50',
-						memberPrice: '7.00',
-					}, {
-						id: 3,
-						name: 'Size 3',
-						calories: '100',
-						nonMemberPrice: '4.00',
-						memberPrice: '4.00',
+						id: '1814748889123',
+						name: 'Greens 1.5',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5601/1299/products/GRN1p5.jpg?v=1563830730',
+						memberPrice: 5,
+						nonMemberPrice: 6.5,
+						nonMemberSalePrice: null,
 					}],
 				},
 			};

@@ -1,61 +1,53 @@
 <template>
 	<div>
-		<div :class="$style.productName">{{ product.name }}</div>
-		<div :class="$style.imageArea">
-			<slot/>
-		</div>
+		<div :class="$style.productName">{{ currentVariant.name }}</div>
+		<img
+			:class="$style.image"
+			:src="currentVariant.imageUrl"
+			:alt="currentVariant.name"
+		>
 
-		<div :class="[{[$style.informationCta]: !isVip, [$style.information]: isVip}]">
+		<div :class="[{[$style.informationCta]: !isVip}, $style.information]">
 			<div :class="$style.price">
-				${{ isVip
-					? product.variants[currentVariant].memberPrice
-					: product.variants[currentVariant].nonMemberPrice
-				}}
+				${{price}}
 			</div>
-			<div :class="$style.calories">{{ product.variants[currentVariant].calories }} cal</div>
 		</div>
 
-		<div v-if="
-			!isVip
-				&& product.variants[currentVariant].memberPrice
-				!== product.variants[currentVariant].nonMemberPrice"
-				:class="$style.cta"
-			>
+		<div :class="$style.cta" v-if="showCta">
 			<div>
-				Just ${{ product.variants[currentVariant].memberPrice }} for our VIP Members
+				Just ${{ currentVariant.memberPrice }} for our VIP Members
 			</div>
-			<a :class="$style.learnMore" href="https://pressedjuicery.com/">Learn More</a>
-		</div>
-
-		<div v-if="product.variants.length > 1" :class="$style.dropdown">
-			<select :class="$style.variant" v-model="currentVariant">
-				<option
-					v-for="(variant, index) in product.variants"
-					:value="index"
-					:key="index"
-				>{{ variant.name }}</option>
-			</select>
+			<a :class="$style.learnMore" href="https://pressedjuicery.com/">
+				Learn More
+			</a>
 		</div>
 
 		<div :class="$style.actionsGroup">
-			<input
-			:class="$style.quantity"
+			<validated-select
+				:class="$style.variant"
+				v-if="product.variants.length > 1"
+				v-model="currentVariant"
+				:options="variants"
+			/>
+			<validated-input
+				:class="$style.quantity"
 				type="number"
 				v-model="quantity"
-				min="0"
-				oninput="validity.valid||(value='');"
+				min="1"
 			/>
-			<button
-				:class="$style.addToCartButton"
-				:disabled="isDisabled"
-				@click="addedToCart"
-			>add to cart</button>
+			<button :class="$style.addToCartButton" @click="addToCart">
+				Add to Cart
+			</button>
 		</div>
 	</div>
 </template>
 
 <script>
+import ValidatedInput from './validated-input.vue';
+import ValidatedSelect from './validated-select.vue';
+
 export default {
+	components: { ValidatedInput, ValidatedSelect },
 	props: {
 		isVip: {
 			type: Boolean,
@@ -68,24 +60,42 @@ export default {
 	},
 	data() {
 		return {
-			currentVariant: 0,
+			currentVariant: null,
 			quantity: 1,
 		};
 	},
 	computed: {
-		isDisabled() {
-			return this.quantity < 1;
+		variants() {
+			return this.product.variants.map(variant => {
+				return {
+					name: variant.name,
+					value: variant,
+				};
+			});
+		},
+		showCta() {
+			return !this.isVip
+				&& this.currentVariant.memberPrice
+				!== this.currentVariant.nonMemberPrice;
+		},
+		price() {
+			return this.isVip
+				? this.currentVariant.memberPrice
+				: this.currentVariant.nonMemberPrice;
 		},
 	},
 	methods: {
-		addedToCart() {
+		addToCart() {
 			const cartItem = {
-				variantId: this.product.variants[this.currentVariant].id,
+				variantId: this.currentVariant.id,
 				quantity: Number(this.quantity),
 			};
 
 			this.$emit('addedToCart', cartItem);
 		},
+	},
+	created() {
+		this.currentVariant = this.variants[0].value;
 	},
 };
 </script>
@@ -98,27 +108,13 @@ export default {
 		@include text-heading-4();
 	}
 
-	.imageArea {
-		height: 344px;
-		margin-bottom: $spacing-05;
-	}
-
-	.information,
-	.informationCta {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+	.image {
+		width: 100%;
 	}
 
 	.cta,
 	.information {
 		margin-bottom: $spacing-06;
-	}
-
-	.informationCta,
-	.variant,
-	.quantity {
-		margin-bottom: $spacing-03;
 	}
 
 	.productName {
@@ -127,54 +123,34 @@ export default {
 
 	.learnMore {
 		@include text-body-small();
-		border-bottom: 1px solid #000;
+		text-decoration: underline;
 	}
 
 	.price {
 		@include text-heading-5();
 	}
 
+	// Needed to reset the validated-input's margin-bottom of 24px
+	.variant,
+	.quantity {
+		margin-bottom: 0;
+	}
+
 	.actionsGroup {
 		display: grid;
-		grid-template-columns: 88px 1fr;
-		grid-column-gap: $spacing-03;
+		grid-template-columns: auto 1fr;
+		grid-gap: $spacing-03;
 	}
 
 	.variant {
-		text-indent: $spacing-06;
-		background: none;
-		background-position-x: calc(100% - 24px);
+		grid-column: span 2;
 	}
 
-	.dropdown {
-		position: relative;
-	}
-
-	.dropdown::before {
-		content: "\2303";
-		color: $gray-30;
-		position: absolute;
-		right: $spacing-07;
-		top: $spacing-05;
-	}
-
-	.variant,
-	.quantity,
-	.addToCartButton {
-		height: $spacing-09;
-	}
-
-	.variant,
 	.quantity {
-		background-color: #ffffff;
-		border-radius: $spacing-02;
-		border: none;
+		width: 88px;
 	}
 
-	.quantity,
-	.quantity::-webkit-inner-spin-button,
-	.quantity::-webkit-outer-spin-button {
-		-webkit-appearance: none;
-		text-align: center;
+	.addToCartButton {
+		height: $spacing-08;
 	}
 </style>
