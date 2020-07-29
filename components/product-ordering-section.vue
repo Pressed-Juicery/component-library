@@ -36,7 +36,7 @@
 				min="1"
 			/>
 			<button :class="$style.addToCartButton" @click="addToCart">
-				Add to Cart
+				Add to cart
 			</button>
 		</div>
 	</div>
