@@ -29,7 +29,7 @@
 				v-model="currentVariant"
 				:options="variants"
 			/>
-			<validated-input
+			<input
 				:class="$style.quantity"
 				type="number"
 				v-model="quantity"
@@ -43,11 +43,10 @@
 </template>
 
 <script>
-import ValidatedInput from './validated-input.vue';
 import ValidatedSelect from './validated-select.vue';
 
 export default {
-	components: { ValidatedInput, ValidatedSelect },
+	components: { ValidatedSelect },
 	props: {
 		isVip: {
 			type: Boolean,
@@ -130,12 +129,6 @@ export default {
 		@include text-heading-5();
 	}
 
-	// Needed to reset the validated-input's margin-bottom of 24px
-	.variant,
-	.quantity {
-		margin-bottom: 0;
-	}
-
 	.actionsGroup {
 		display: grid;
 		grid-template-columns: auto 1fr;
@@ -143,14 +136,18 @@ export default {
 	}
 
 	.variant {
+		// Needed to reset the validated-component margin-bottom of 24px
+		margin-bottom: 0;
 		grid-column: span 2;
 	}
 
 	.quantity {
 		width: 88px;
+		text-align: center;
 	}
 
-	.addToCartButton {
+	.addToCartButton,
+	.quantity {
 		height: $spacing-08;
 	}
 </style>
