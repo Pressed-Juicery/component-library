@@ -37,6 +37,7 @@ export { default as Ingredients } from './ingredients.vue';
 export { default as LandingPageTemplate } from './landing-page-template';
 export { default as MediaRow } from './media-row';
 export { default as NutritionFacts } from './nutrition-facts.vue';
+export { default as OrderDetails } from './order-details.vue';
 export { default as Overlay } from './overlay.vue';
 export { default as PaymentMethodFormatter } from './payment-methods.vue';
 export { default as PaymentMethods } from './payment-methods.vue';

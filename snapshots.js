@@ -18,6 +18,7 @@ const groups = [{
 		'CollapsibleDrawer',
 		'ConfirmDrawer',
 		'Drawer',
+		'OrderDetails',
 		'Overlay',
 		'PaymentMethodFormatter',
 		'PaymentMethods',
