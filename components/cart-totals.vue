@@ -68,6 +68,8 @@
 			<div>{{ formatCurrency(cart.fulfillmentPrice) }}</div>
 		</div>
 
+		<button @click="printCart">print cart</button>
+
 		<div :class="[$style.totalRow, $style.rowGroup]">
 			<div :class="$style.totalLabel">Estimated Total</div>
 			<div :class="$style.total">{{ formatCurrency(cart.total) }}</div>
@@ -118,6 +120,10 @@ export default {
 		toggleTipSummary() {
 			this.isTipSummaryOpen = !this.isTipSummaryOpen;
 		},
+
+		printCart() {
+			console.log(this.cart);
+		}
 	},
 };
 </script>
