@@ -8,7 +8,9 @@ export default {
 		isActive: Boolean,
 	},
 
-	created() {
+	// SL 2020.8.3  mounted() must be used instead of created
+	//   or else using the window object in the preventBodyScrolling method will fail in a nuxt app.
+	mounted() {
 		this.preventBodyScrolling(this.isActive);
 	},
 
