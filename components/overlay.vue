@@ -8,6 +8,7 @@ export default {
 		isActive: Boolean,
 	},
 
+	// SL 2020.8.3 mounted() must be used or else using the window object in preventBodyScrolling will fail.
 	mounted() {
 		this.preventBodyScrolling(this.isActive);
 	},
@@ -22,9 +23,7 @@ export default {
 		preventBodyScrolling(shouldPreventScrolling) {
 			const methodName = shouldPreventScrolling ? 'add' : 'remove';
 
-			if (process.browser) {
-				window.document.body.classList[methodName]('prevent-scrolling');
-			}
+			window.document.body.classList[methodName]('prevent-scrolling');
 		},
 	},
 
