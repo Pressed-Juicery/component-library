@@ -8,7 +8,7 @@ export default {
 		isActive: Boolean,
 	},
 
-	created() {
+	mounted() {
 		this.preventBodyScrolling(this.isActive);
 	},
 
@@ -22,7 +22,9 @@ export default {
 		preventBodyScrolling(shouldPreventScrolling) {
 			const methodName = shouldPreventScrolling ? 'add' : 'remove';
 
-			window.document.body.classList[methodName]('prevent-scrolling');
+			if (process.browser) {
+				window.document.body.classList[methodName]('prevent-scrolling');
+			}
 		},
 	},
 
