@@ -45,7 +45,7 @@
 				<div :class="$style.originalSubtotal">{{ formatCurrency(cart.originalFulfillmentPrice) }}</div>
 				<div>FREE</div>
 			</div>
-			<div v-else-if="cart.fulfillmentPrice">
+			<div v-else-if="cart.fulfillmentPrice && !deliveryTip">
 				{{ formatCurrency(cart.fulfillmentPrice) }}
 			</div>
 			<div v-else-if="!cart.isShippingAvailable" :class="$style.dashes">- - -</div>
@@ -65,7 +65,7 @@
 
 		<div v-if="isLocalDelivery && deliveryTip" :class="[$style.row, $style.rowGroup]">
 			<div>Delivery Tip</div>
-			<div>{{ formatCurrency(cart.fulfillmentPrice) }}</div>
+			<div>{{ formatCurrency(deliveryTip) }}</div>
 		</div>
 
 		<div :class="[$style.totalRow, $style.rowGroup]">
