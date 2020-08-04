@@ -102,7 +102,10 @@ export default {
 		},
 
 		deliveryTip() {
-			const hasDeliveryTip = this.cart.fulfillmentSelection && this.cart.fulfillmentSelection.fulfillmentQuote && this.cart.fulfillmentSelection.fulfillmentQuote.tip;
+			const hasDeliveryTip = this.cart.fulfillmentSelection
+				&& this.cart.fulfillmentSelection.fulfillmentQuote
+				&& this.cart.fulfillmentSelection.fulfillmentQuote.tip;
+
 			return hasDeliveryTip ? this.cart.fulfillmentSelection.fulfillmentQuote.tip : null;
 		},
 	},
