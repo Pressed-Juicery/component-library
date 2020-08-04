@@ -4,7 +4,7 @@
 		<div :class="$style.info">
 			<div>
 				<div :class="$style.label">Order #</div>
-				<div :class="$style.infoContent">{{orderHistory.orderNumber}}</div>
+				<div :class="$style.infoContent">{{orderDetails.orderNumber}}</div>
 			</div>
 			<div>
 				<div :class="$style.label">Order Date</div>
@@ -12,13 +12,13 @@
 			</div>
 			<div>
 				<div :class="$style.label">Status</div>
-				<div :class="$style.infoContent">{{orderHistory.fulfillmentStatus}}</div>
+				<div :class="$style.infoContent">{{orderDetails.fulfillmentStatus}}</div>
 			</div>
 		</div>
 
 		<div :class="$style.block">
 			<div :class="$style.label">Fulfillment Method</div>
-			<div>{{orderHistory.properties[0].value}}</div>
+			<div>{{orderDetails.properties[0].value}}</div>
 		</div>
 
 		<div :class="$style.block">
@@ -26,7 +26,7 @@
 			<address-formatter :class="$style.address" :address="address" />
 			<div :class="$style.label">Order Details</div>
 			<!-- <checkout-item-card
-				v-for="(item, index) in orderHistory.items"
+				v-for="(item, index) in orderDetails.items"
 				:key="index"
 				:item="item"
 			/> -->
@@ -35,7 +35,7 @@
 
 		<div :class="$style.block">
 			<div :class="$style.label">Payment</div>
-			<div>{{orderHistory.paymentMethod}}</div>
+			<div>{{orderDetails.paymentMethod}}</div>
 		</div>
 
 		<div :class="$style.block">
@@ -50,7 +50,7 @@
 				</span>
 				<span>
 					<span v-if="containsDiscounts" :class="$style.savings">${{totalDiscounts}}</span>
-					${{orderHistory.subtotal}}
+					${{orderDetails.subtotal}}
 				</span>
 			</div>
 
@@ -58,7 +58,7 @@
 				<div :class="$style.label">Coupons Applied</div>
 				<div
 					:class="$style.row"
-					v-for="(coupon, index) in orderHistory.discountCoupons"
+					v-for="(coupon, index) in orderDetails.discountCoupons"
 					:key="index"
 				>
 					<div>{{ coupon.code }}</div>
@@ -68,12 +68,12 @@
 
 			<div :class="$style.row">
 				<div>Shipping/Delivery</div>
-				<div>${{orderHistory.fulfillmentPrice}}</div>
+				<div>${{orderDetails.fulfillmentPrice}}</div>
 			</div>
 
 			<div :class="$style.row">
 				<div :class="$style.totalLabel">Total</div>
-				<div :class="$style.totalPrice">${{orderHistory.totalPrice}}</div>
+				<div :class="$style.totalPrice">${{orderDetails.totalPrice}}</div>
 			</div>
 		</div>
 
@@ -89,7 +89,7 @@ import { formatMediumDate } from '../utilities/formatters';
 export default {
 	components: { AddressFormatter, ArrowDownIcon, CheckoutItemCard },
 	props: {
-		orderHistory: {
+		orderDetails: {
 			type: Object,
 			required: true,
 		},
@@ -97,7 +97,7 @@ export default {
 	data() {
 		return {
 			showDiscounts: false,
-			containsDiscounts: this.orderHistory.discountCoupons.length,
+			containsDiscounts: this.orderDetails.discountCoupons.length,
 		};
 	},
 	methods: {
@@ -110,95 +110,92 @@ export default {
 	computed: {
 		address() {
 			return {
-				streetAddress: this.orderHistory.streetAddress,
-				extendedAddress: this.orderHistory.extendedAddress,
-				locality: this.orderHistory.locality,
-				region: this.orderHistory.region,
-				postal: this.orderHistory.postal,
-				country: this.orderHistory.country,
-				phone: this.orderHistory.phone,
+				streetAddress: this.orderDetails.streetAddress,
+				extendedAddress: this.orderDetails.extendedAddress,
+				locality: this.orderDetails.locality,
+				region: this.orderDetails.region,
+				postal: this.orderDetails.postal,
+				country: this.orderDetails.country,
+				phone: this.orderDetails.phone,
 			};
 		},
 		date() {
-			return formatMediumDate(this.orderHistory.createdAt);
+			return formatMediumDate(this.orderDetails.createdAt);
 		},
 		totalDiscounts() {
-			return this.orderHistory.discountCoupons.reduce((total, coupon) => (total + coupon.amount), 0);
+			return this.orderDetails.discountCoupons.reduce((total, coupon) => (total + coupon.amount), 0);
 		},
-	},
-	created() {
-		console.log(this.totalDiscounts);
 	},
 };
 </script>
 
 <style lang="scss" module>
-@import '../styles/mixins.scss';
-@import '../styles/variables.scss';
+	@import '../styles/mixins.scss';
+	@import '../styles/variables.scss';
 
-.info {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	padding: $spacing-07 $spacing-06 $spacing-06 $spacing-06;
-	border-bottom: $border-light;
-}
-
-.block {
-	padding: $spacing-06 0 $spacing-06 0;
-	border-bottom: $border-light;
-	margin: 0 $spacing-06;
-
-	&:last-of-type {
-		border-bottom: none;
+	.info {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		padding: $spacing-07 $spacing-06 $spacing-06 $spacing-06;
+		border-bottom: $border-light;
 	}
-}
 
-.row {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: $spacing-03;
-}
+	.block {
+		padding: $spacing-06 0 $spacing-06 0;
+		border-bottom: $border-light;
+		margin: 0 $spacing-06;
 
-.label {
-	@include text-body-small();
-	@include text-subtle();
-	margin-bottom: $spacing-03;
-}
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
 
-// Can this be removed in favor of a parent?
-.infoContent {
-	@include text-cta()
-}
+	.row {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: $spacing-03;
+	}
 
-.address {
-	@include text-body();
-	margin-bottom: $spacing-05;
-}
+	.label {
+		@include text-body-small();
+		@include text-subtle();
+		margin-bottom: $spacing-03;
+	}
 
-.downArrow {
-	display: inline;
-	width: $spacing-04;
-	margin-left: $spacing-03;
-}
+	// Can this be removed in favor of a parent?
+	.infoContent {
+		@include text-cta()
+	}
 
-.downArrowFlipped {
-	transform: rotate(180deg);
-}
+	.address {
+		@include text-body();
+		margin-bottom: $spacing-05;
+	}
 
-.discounts {
-	padding-left: $spacing-05;
-}
+	.downArrow {
+		display: inline;
+		width: $spacing-04;
+		margin-left: $spacing-03;
+	}
 
-.savings {
-	@include text-subtle();
-	@include text-strikethrough();
-}
+	.downArrowFlipped {
+		transform: rotate(180deg);
+	}
 
-.totalLabel {
-	@include text-bolder();
-}
+	.discounts {
+		padding-left: $spacing-05;
+	}
 
-.totalPrice {
-	@include text-heading-5();
-}
+	.savings {
+		@include text-subtle();
+		@include text-strikethrough();
+	}
+
+	.totalLabel {
+		@include text-bolder();
+	}
+
+	.totalPrice {
+		@include text-heading-5();
+	}
 </style>
