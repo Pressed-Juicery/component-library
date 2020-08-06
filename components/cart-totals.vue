@@ -97,6 +97,10 @@ export default {
 	},
 
 	computed: {
+		isFulfillmentMethodChosen() {
+			return this.cart.fulfillmentSelection && this.cart.fulfillmentSelection.method;
+		},
+
 		isLocalDelivery() {
 			return this.cart.fulfillmentSelection && this.cart.fulfillmentSelection.method === 'Local Delivery';
 		},
