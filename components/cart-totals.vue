@@ -29,15 +29,16 @@
 
 		<div :class="[$style.row, $style.rowGroup]">
 
-			<div v-if="cart.fulfillmentSelection && cart.fulfillmentSelection.method">
-				<div :class="[$style.rowGroup, {
-							[$style.isClosed]: !isTipSummaryOpen,
-							[$style.subtotalToggle]: isLocalDelivery,
-						}]"
-						@click="toggleTipSummary()">
-					{{ cart.fulfillmentSelection.method }}
-					<up-caret-icon v-if="isLocalDelivery && deliveryTip" :class="$style.icon" />
+			<div v-if="isFulfillmentMethodChosen">
+				<div v-if="deliveryTip"
+					:class="[$style.rowGroup, $style.subtotalToggle, {
+						[$style.isClosed]: !isTipSummaryOpen,
+					}]"
+					@click="toggleTipSummary()">
+					Local Delivery
+					<up-caret-icon :class="$style.icon" />
 				</div>
+				<div v-else>{{ cart.fulfillmentSelection.method }}</div>
 			</div>
 			<div v-else>Shipping/Delivery</div>
 
