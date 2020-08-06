@@ -55,6 +55,9 @@ export function FreeShipping() {
 					total: 150.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 0,
+					fulfillmentSelection: {
+						method: 'Local Delivery',
+					},
 				},
 			};
 		},
@@ -167,7 +170,7 @@ export function NationwideShipping() {
 	};
 }
 
-export function LocalShippingWithTip() {
+export function LocalDeliveryWithTip() {
 	return {
 		components: { CartTotals },
 		template: '<cart-totals :cart="cart" />',
@@ -179,15 +182,22 @@ export function LocalShippingWithTip() {
 					fulfillmentPrice: 3.13,
 					fulfillmentSelection: {
 						method: 'Local Delivery',
+						fulfillmentQuote: {
+							tip: 3,
+						},
 					},
 					id: 'asdf',
 					itemCount: 10,
 					originalFulfillmentPrice: 13.11,
 					originalSubtotal: 69.5,
 					redemptionSummary: [],
-					subtotal: 62.5,
-					total: 65.63,
+					subtotal: 60.5,
+					total: 63.50,
 					userId: null,
+					discountSummary: [
+						{ name: 'VIP Member Savings', totalDiscount: 2.5 },
+						{ name: 'Points Redemption', totalDiscount: 6.5 },
+					],
 				},
 			};
 		},
