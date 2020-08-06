@@ -28,7 +28,6 @@
 		</div>
 
 		<div :class="[$style.row, $style.rowGroup]">
-
 			<div v-if="isFulfillmentMethodChosen">
 				<div v-if="deliveryTip"
 					:class="[$style.rowGroup, $style.subtotalToggle, {
@@ -103,11 +102,9 @@ export default {
 		isFulfillmentMethodChosen() {
 			return this.cart.fulfillmentSelection && this.cart.fulfillmentSelection.method;
 		},
-
 		isLocalDelivery() {
 			return this.cart.fulfillmentSelection && this.cart.fulfillmentSelection.method === 'Local Delivery';
 		},
-
 		deliveryTip() {
 			const hasDeliveryTip = this.cart.fulfillmentSelection
 				&& this.cart.fulfillmentSelection.fulfillmentQuote
@@ -121,11 +118,9 @@ export default {
 		formatCurrency(amount) {
 			return formatCurrency(amount);
 		},
-
 		toggleDiscountSummary() {
 			this.isDiscountListOpen = !this.isDiscountListOpen;
 		},
-
 		toggleTipSummary() {
 			this.isTipSummaryOpen = !this.isTipSummaryOpen;
 		},
@@ -135,7 +130,6 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/mixins';
-	@import '../styles/variables';
 
 	.row {
 		justify-content: space-between;

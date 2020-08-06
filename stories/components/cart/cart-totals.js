@@ -169,7 +169,7 @@ export function NationwideShipping() {
 		},
 	};
 }
-
+// eslint-disable-next-line max-lines-per-function
 export function LocalDeliveryWithTip() {
 	return {
 		components: { CartTotals },
@@ -178,7 +178,6 @@ export function LocalDeliveryWithTip() {
 		data() {
 			return {
 				cart: {
-					coupons: [],
 					fulfillmentPrice: 3.13,
 					fulfillmentSelection: {
 						method: 'Local Delivery',
@@ -186,17 +185,12 @@ export function LocalDeliveryWithTip() {
 							tip: 3,
 						},
 					},
-					id: 'asdf',
-					itemCount: 10,
 					originalFulfillmentPrice: 13.11,
 					originalSubtotal: 69.5,
-					redemptionSummary: [],
-					subtotal: 60.5,
-					total: 63.50,
-					userId: null,
+					subtotal: 67,
+					total: 70,
 					discountSummary: [
 						{ name: 'VIP Member Savings', totalDiscount: 2.5 },
-						{ name: 'Points Redemption', totalDiscount: 6.5 },
 					],
 				},
 			};
