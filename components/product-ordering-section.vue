@@ -1,21 +1,24 @@
 <template>
-	<div>
-		<div :class="$style.productName">{{ currentVariant.name }}</div>
+	<div v-if="current">
+		<div :class="$style.productName">{{ current.name }}</div>
 		<img
 			:class="$style.image"
-			:src="currentVariant.imageUrl"
-			:alt="currentVariant.name"
+			:src="current.imageUrl"
+			:alt="current.name"
 		>
 
 		<div :class="[{[$style.informationCta]: !isVip}, $style.information]">
 			<div :class="$style.price">
-				${{price}}
+				{{price | currency}}
+			</div>
+			<div :class="$style.calories">
+				Awaiting calories on DB
 			</div>
 		</div>
 
 		<div :class="$style.cta" v-if="showCta">
 			<div>
-				Just ${{ currentVariant.memberPrice }} for our VIP Members
+				Just {{ current.memberPrice | currency }} for our VIP Members
 			</div>
 			<a :class="$style.learnMore" href="https://pressedjuicery.com/">
 				Learn More
@@ -24,10 +27,11 @@
 
 		<div :class="$style.actionsGroup">
 			<validated-select
+				v-if="options.length"
 				:class="$style.variant"
-				v-if="product.variants.length > 1"
-				v-model="currentVariant"
-				:options="variants"
+				:options="options"
+				:value="current"
+				@input="selected"
 			/>
 			<input
 				:class="$style.quantity"
@@ -44,6 +48,7 @@
 
 <script>
 import ValidatedSelect from './validated-select.vue';
+import { formatCurrency } from '../utilities/formatters.js';
 
 export default {
 	components: { ValidatedSelect },
@@ -52,49 +57,50 @@ export default {
 			type: Boolean,
 			required: true,
 		},
-		product: {
+		options: {
+			type: Array,
+			required: true,
+		},
+		current: {
 			type: Object,
 			required: true,
 		},
 	},
 	data() {
 		return {
-			currentVariant: null,
 			quantity: 1,
 		};
 	},
 	computed: {
-		variants() {
-			return this.product.variants.map(variant => {
-				return {
-					name: variant.name,
-					value: variant,
-				};
-			});
-		},
 		showCta() {
 			return !this.isVip
-				&& this.currentVariant.memberPrice
-				!== this.currentVariant.nonMemberPrice;
+				&& this.current.memberPrice
+				!== this.current.nonMemberPrice;
 		},
 		price() {
 			return this.isVip
-				? this.currentVariant.memberPrice
-				: this.currentVariant.nonMemberPrice;
+				? this.current.memberPrice
+				: this.current.nonMemberPrice;
 		},
 	},
 	methods: {
 		addToCart() {
 			const cartItem = {
-				variantId: this.currentVariant.id,
+				variantId: this.current.id,
 				quantity: Number(this.quantity),
 			};
 
 			this.$emit('addedToCart', cartItem);
 		},
+
+		selected(value) {
+			this.$emit('selected', value);
+		},
 	},
-	created() {
-		this.currentVariant = this.variants[0].value;
+	filters: {
+		currency(value) {
+			return formatCurrency(value);
+		},
 	},
 };
 </script>
@@ -114,6 +120,11 @@ export default {
 	.cta,
 	.information {
 		margin-bottom: $spacing-06;
+	}
+
+	.information {
+		display: flex;
+		justify-content: space-between;
 	}
 
 	.productName {
