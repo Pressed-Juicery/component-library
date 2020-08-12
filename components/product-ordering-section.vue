@@ -11,9 +11,7 @@
 			<div :class="$style.price">
 				{{price | currency}}
 			</div>
-			<div :class="$style.calories">
-				Awaiting calories on DB
-			</div>
+			{{current.nutritionSummary && current.nutritionSummary.calories}}
 		</div>
 
 		<div :class="$style.cta" v-if="showCta">
