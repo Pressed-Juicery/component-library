@@ -159,6 +159,6 @@ export default {
 
 	.addToCartButton,
 	.quantity {
-		height: $spacing-08;
+		height: $spacing-09;
 	}
 </style>
