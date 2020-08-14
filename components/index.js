@@ -48,7 +48,7 @@ export { default as PaymentMethodRadioButtonCard } from './payment-method-radio-
 export { default as PointsRedemption } from './points-redemption';
 export { default as ProductDetails } from './product-details.vue';
 export { default as ProductCard } from './product-card.vue';
-export { default as ProductReview } from './product-review.vue';
+export { default as ProductReviews } from './product-reviews.vue';
 export { default as ProductReviewForm } from './product-review-form.vue';
 export { default as QuantitySelector } from './quantity-selector';
 export { default as QrCode } from './qr-code';

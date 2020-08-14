@@ -78,7 +78,7 @@ const groups = [{
 		'NutritionFacts',
 		'ProductDetails',
 		'ProductCard',
-		'ProductReview',
+		'ProductReviews',
 		'Ingredients',
 	],
 }, {
