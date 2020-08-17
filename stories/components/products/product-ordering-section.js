@@ -64,3 +64,67 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 		},
 	};
 }
+
+export function SaleItems() { // eslint-disable-line max-lines-per-function
+	return {
+		components: { ProductOrderingSection },
+		template: `<product-ordering-section
+						:isVip="isVip"
+						:options="options"
+						:current="current"
+						@selected="doSomething"
+					><a href="/">Learn More</a></product-ordering-section>`,
+		data() { // eslint-disable-line max-lines-per-function
+			return {
+				isVip: true,
+				current: null,
+				options: [
+					{
+						name: 'Celery Juice - Single',
+						value: {
+							name: 'Celery Juice - Single',
+							nonMemberPrice: 6.5,
+							memberPrice: 5,
+							nonMemberSalePrice: 6.0,
+							memberSalePrice: 4.5,
+							shortDescription: `Try our natural
+								celery juice as an alternative to a
+								morning coffee. It packed with 15
+								vitamins & minerals and helps flush
+								out toxins, lower blood pressure.`,
+							imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5601/1299/products/Celery.png?v=1563907503',
+							ingredients: [],
+							nutritionSummary: null,
+						},
+					},
+					{
+						name: 'Celery Juice - 6 Pack',
+						value: {
+							name: 'Celery Juice - Single',
+							nonMemberPrice: 30,
+							memberPrice: 20,
+							nonMemberSalePrice: 25,
+							memberSalePrice: 15,
+							shortDescription: `Try our natural
+								celery juice as an alternative to a
+								morning coffee. It packed with 15
+								vitamins & minerals and helps flush
+								out toxins, lower blood pressure.`,
+							imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5601/1299/products/Celery.png?v=1563907503',
+							ingredients: [],
+							nutritionSummary: null,
+						},
+					},
+				],
+			};
+		},
+		methods: {
+			doSomething(value) {
+				this.current = value;
+			},
+		},
+		created() {
+			this.current = this.options[0].value;
+		},
+	};
+}

@@ -58,6 +58,7 @@ export default {
 	data() {
 		return {
 			quantity: 1,
+			hasSale: false,
 		};
 	},
 	computed: {
@@ -66,6 +67,11 @@ export default {
 		},
 		price() {
 			return this.isVip ? this.selectedVariant.memberPrice : this.selectedVariant.nonMemberPrice;
+		},
+		salePrice() {
+			return this.isVip
+				? this.selectedVariant.memberSalePrice
+				: this.selectedVariant.nonMemberSalePrice;
 		},
 	},
 	methods: {
@@ -80,6 +86,11 @@ export default {
 		currency(value) {
 			return formatCurrency(value);
 		},
+	},
+	created() {
+		if (this.selectedVariant.memberSalePrice && this.selectedVariant.nonMemberSalePrice) {
+			this.hasSale = true;
+		}
 	},
 };
 </script>
@@ -118,6 +129,11 @@ export default {
 
 	.variant {
 		margin-bottom: $spacing-03;
+	}
+
+	.slashedPrice {
+		@include text-strikethrough();
+		@include text-subtle();
 	}
 
 	.actionsGroup {
