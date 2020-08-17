@@ -15,14 +15,15 @@
 			<a :class="$style.learnMore" href="https://pressedjuicery.com/">Learn More</a>
 		</div>
 
+		<validated-select
+			v-if="options.length"
+			:class="$style.variant"
+			:options="options"
+			:value="selectedVariant"
+			@input="value => this.$emit('variant-change', value)"
+		/>
+
 		<div :class="$style.actionsGroup">
-			<validated-select
-				v-if="options.length"
-				:class="$style.variant"
-				:options="options"
-				:value="selectedVariant"
-				@input="value => this.$emit('variant-change', value)"
-			/>
 			<input
 				:class="$style.quantity"
 				type="number"
@@ -122,9 +123,7 @@ export default {
 	}
 
 	.variant {
-		// Needed to reset the validated-component margin-bottom of 24px
-		margin-bottom: 0;
-		grid-column: span 2;
+		margin-bottom: $spacing-03;
 	}
 
 	.quantity {
