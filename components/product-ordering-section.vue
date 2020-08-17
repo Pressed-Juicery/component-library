@@ -1,7 +1,7 @@
 <template>
 	<div v-if="selectedVariant">
 		<div :class="$style.productName">{{ selectedVariant.name }}</div>
-		<img :class="$style.image" :src="selectedVariant.imageUrl" :alt="selectedVariant.name">
+		<img :class="$style.image" :src="selectedVariant.imageUrl">
 
 		<div :class="[{[$style.informationCta]: !isVip}, $style.information]">
 			<div :class="$style.price">{{ price | currency }}</div>
