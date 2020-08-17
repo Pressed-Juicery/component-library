@@ -127,7 +127,7 @@ export default {
 	}
 
 	.quantity {
-		width: 88px;
+		width: $spacing-11;
 		text-align: center;
 	}
 
