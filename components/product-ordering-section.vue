@@ -10,7 +10,7 @@
 			</div>
 		</div>
 
-		<div :class="$style.cta" v-if="showCta">
+		<div v-if="showCta" :class="$style.cta">
 			<div>Just {{ selectedVariant.memberPrice | currency }} for our VIP Members</div>
 			<a :class="$style.learnMore" href="https://pressedjuicery.com/">Learn More</a>
 		</div>
