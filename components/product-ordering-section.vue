@@ -89,24 +89,21 @@ export default {
 
 	.productName {
 		@include text-heading-4();
+		margin-bottom: $spacing-05;
 	}
 
 	.image {
 		width: 100%;
 	}
 
-	.cta,
-	.information {
-		margin-bottom: $spacing-06;
-	}
-
 	.information {
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: $spacing-06;
 	}
 
-	.productName {
-		margin-bottom: $spacing-05;
+	.cta {
+		margin-bottom: $spacing-06;
 	}
 
 	.learnMore {
