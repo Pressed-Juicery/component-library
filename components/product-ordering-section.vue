@@ -118,7 +118,7 @@ export default {
 
 	.actionsGroup {
 		display: grid;
-		grid-template-columns: auto 1fr;
+		grid-template-columns: $spacing-11 1fr;
 		grid-gap: $spacing-03;
 	}
 
@@ -127,7 +127,6 @@ export default {
 	}
 
 	.quantity {
-		width: $spacing-11;
 		text-align: center;
 	}
 
