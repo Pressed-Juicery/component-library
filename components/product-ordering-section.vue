@@ -116,22 +116,22 @@ export default {
 		@include text-heading-5();
 	}
 
+	.variant {
+		margin-bottom: $spacing-03;
+	}
+
 	.actionsGroup {
 		display: grid;
 		grid-template-columns: $spacing-11 1fr;
 		grid-gap: $spacing-03;
 	}
 
-	.variant {
-		margin-bottom: $spacing-03;
-	}
-
 	.quantity {
 		text-align: center;
 	}
 
-	.addToCartButton,
-	.quantity {
+	.quantity,
+	.addToCartButton {
 		height: $spacing-09;
 	}
 </style>
