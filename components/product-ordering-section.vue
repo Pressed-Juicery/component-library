@@ -1,52 +1,43 @@
 <template>
-	<div v-if="current">
-		<div :class="$style.productName">{{ current.name }}</div>
-		<img
-			:class="$style.image"
-			:src="current.imageUrl"
-			:alt="current.name"
-		>
+	<div v-if="selectedVariant">
+		<div :class="$style.productName">{{ selectedVariant.name }}</div>
+		<img :class="$style.image" :src="selectedVariant.imageUrl">
 
-		<div :class="[{[$style.informationCta]: !isVip}, $style.information]">
-			<div :class="$style.price">
-				{{price | currency}}
+		<div :class="$style.information">
+			<div :class="$style.price">{{ price | currency }}</div>
+			<div v-if="selectedVariant.nutritionSummary.calories">
+				{{ selectedVariant.nutritionSummary.calories }} cal/serving
 			</div>
-			{{current.nutritionSummary && current.nutritionSummary.calories}}
 		</div>
 
-		<div :class="$style.cta" v-if="showCta">
-			<div>
-				Just {{ current.memberPrice | currency }} for our VIP Members
-			</div>
-			<div :class="$style.learnMore">
-				<slot />
-			</div>
+		<div v-if="shouldShowCta" :class="$style.cta">
+			<div>Just {{ selectedVariant.memberPrice | currency }} for our VIP Members</div>
+			<a :class="$style.learnMore" href="https://pressedjuicery.com/">Learn More</a>
 		</div>
+
+		<validated-select
+			v-if="options.length"
+			:class="$style.variant"
+			:options="options"
+			:value="selectedVariant"
+			@input="value => this.$emit('variant-change', value)"
+		/>
 
 		<div :class="$style.actionsGroup">
-			<validated-select
-				v-if="options.length > 1"
-				:class="$style.variant"
-				:options="options"
-				:value="current"
-				@input="selected"
-			/>
 			<input
 				:class="$style.quantity"
 				type="number"
 				v-model="quantity"
 				min="1"
 			/>
-			<button :class="$style.addToCartButton" @click="addToCart">
-				Add to cart
-			</button>
+			<button @click="addToCart">Add to cart</button>
 		</div>
 	</div>
 </template>
 
 <script>
-import ValidatedSelect from './validated-select.vue';
-import { formatCurrency } from '../utilities/formatters.js';
+import ValidatedSelect from './validated-select';
+import { formatCurrency } from '../utilities/formatters';
 
 export default {
 	components: { ValidatedSelect },
@@ -59,7 +50,7 @@ export default {
 			type: Array,
 			required: true,
 		},
-		current: {
+		selectedVariant: {
 			type: Object,
 			required: true,
 		},
@@ -70,29 +61,19 @@ export default {
 		};
 	},
 	computed: {
-		showCta() {
-			return !this.isVip
-				&& this.current.memberPrice
-				!== this.current.nonMemberPrice;
+		shouldShowCta() {
+			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
 		},
 		price() {
-			return this.isVip
-				? this.current.memberPrice
-				: this.current.nonMemberPrice;
+			return this.isVip ? this.selectedVariant.memberPrice : this.selectedVariant.nonMemberPrice;
 		},
 	},
 	methods: {
 		addToCart() {
-			const cartItem = {
-				variantId: this.current.id,
+			this.$emit('addToCart', {
+				variantId: this.selectedVariant.id,
 				quantity: Number(this.quantity),
-			};
-
-			this.$emit('addedToCart', cartItem);
-		},
-
-		selected(value) {
-			this.$emit('selected', value);
+			});
 		},
 	},
 	filters: {
@@ -109,24 +90,21 @@ export default {
 
 	.productName {
 		@include text-heading-4();
+		margin-bottom: $spacing-05;
 	}
 
 	.image {
 		width: 100%;
 	}
 
-	.cta,
-	.information {
-		margin-bottom: $spacing-06;
-	}
-
 	.information {
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: $spacing-06;
 	}
 
-	.productName {
-		margin-bottom: $spacing-05;
+	.cta {
+		margin-bottom: $spacing-06;
 	}
 
 	.learnMore {
@@ -138,25 +116,17 @@ export default {
 		@include text-heading-5();
 	}
 
+	.variant {
+		margin-bottom: $spacing-03;
+	}
+
 	.actionsGroup {
 		display: grid;
-		grid-template-columns: auto 1fr;
+		grid-template-columns: $spacing-11 1fr;
 		grid-gap: $spacing-03;
 	}
 
-	.variant {
-		// Needed to reset the validated-component margin-bottom of 24px
-		margin-bottom: 0;
-		grid-column: span 2;
-	}
-
 	.quantity {
-		width: 88px;
 		text-align: center;
-	}
-
-	.addToCartButton,
-	.quantity {
-		height: $spacing-09;
 	}
 </style>
