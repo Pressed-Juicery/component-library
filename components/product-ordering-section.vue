@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import ValidatedSelect from './validated-select.vue';
-import { formatCurrency } from '../utilities/formatters.js';
+import ValidatedSelect from './validated-select';
+import { formatCurrency } from '../utilities/formatters';
 
 export default {
 	components: { ValidatedSelect },
