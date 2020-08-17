@@ -3,7 +3,7 @@
 		<div :class="$style.productName">{{ selectedVariant.name }}</div>
 		<img :class="$style.image" :src="selectedVariant.imageUrl">
 
-		<div :class="[{[$style.informationCta]: !isVip}, $style.information]">
+		<div :class="$style.information">
 			<div :class="$style.price">{{ price | currency }}</div>
 			<div v-if="selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
