@@ -21,7 +21,7 @@
 				:class="$style.variant"
 				:options="options"
 				:value="selectedVariant"
-				@input="selected"
+				@input="value => this.$emit('variant-change', value)"
 			/>
 			<input
 				:class="$style.quantity"
@@ -73,10 +73,6 @@ export default {
 				variantId: this.selectedVariant.id,
 				quantity: Number(this.quantity),
 			});
-		},
-
-		selected(value) {
-			this.$emit('variant-change', value);
 		},
 	},
 	filters: {
