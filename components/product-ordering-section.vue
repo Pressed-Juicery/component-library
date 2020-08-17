@@ -61,14 +61,10 @@ export default {
 	},
 	computed: {
 		showCta() {
-			return !this.isVip
-				&& this.selectedVariant.memberPrice
-				!== this.selectedVariant.nonMemberPrice;
+			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
 		},
 		price() {
-			return this.isVip
-				? this.selectedVariant.memberPrice
-				: this.selectedVariant.nonMemberPrice;
+			return this.isVip ? this.selectedVariant.memberPrice : this.selectedVariant.nonMemberPrice;
 		},
 	},
 	methods: {
