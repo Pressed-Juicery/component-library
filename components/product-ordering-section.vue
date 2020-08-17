@@ -16,14 +16,10 @@
 		<div v-if="shouldShowCta" :class="$style.cta">
 			<div>
 				Just
-				<span
-					v-if="shouldShowMemberSale"
-				>
+				<span v-if="shouldShowMemberSale">
 					{{ selectedVariant.memberSalePrice | currency }}
 				</span>
-				<span
-					:class="{[$style.slashed]: shouldShowMemberSale}"
-				>
+				<span :class="{[$style.slashed]: shouldShowMemberSale}">
 					{{ selectedVariant.memberPrice | currency }}
 				</span>
 				for our VIP Members
