@@ -16,7 +16,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 				@variant-change="variant => this.selectedVariant = variant"
 			/>
 		`,
-		data() {
+		data() { // eslint-disable-line max-lines-per-function
 			return {
 				isVip: false,
 				selectedVariant: null,
