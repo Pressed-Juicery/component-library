@@ -18,14 +18,14 @@
 			<div>
 				Just {{ current.memberPrice | currency }} for our VIP Members
 			</div>
-			<a :class="$style.learnMore" href="https://pressedjuicery.com/">
-				Learn More
-			</a>
+			<div :class="$style.learnMore">
+				<slot />
+			</div>
 		</div>
 
 		<div :class="$style.actionsGroup">
 			<validated-select
-				v-if="options.length"
+				v-if="options.length > 1"
 				:class="$style.variant"
 				:options="options"
 				:value="current"
