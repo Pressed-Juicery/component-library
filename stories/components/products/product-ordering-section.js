@@ -28,11 +28,10 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 						memberPrice: 5,
 						nonMemberSalePrice: null,
 						memberSalePrice: null,
-						shortDescription: `Try our natural
-							celery juice as an alternative to a
-							morning coffee. It packed with 15
-							vitamins & minerals and helps flush
-							out toxins, lower blood pressure.`,
+						shortDescription: `
+							Try our natural celery juice as an alternative to a morning coffee. It packed with 15
+							vitamins & minerals and helps flush out toxins, lower blood pressure.
+						`,
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5601/1299/products/Celery.png?v=1563907503',
 						ingredients: [],
 						nutritionSummary: null,
@@ -45,11 +44,10 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 						memberPrice: 20,
 						nonMemberSalePrice: null,
 						memberSalePrice: null,
-						shortDescription: `Try our natural
-							celery juice as an alternative to a
-							morning coffee. It packed with 15
-							vitamins & minerals and helps flush
-							out toxins, lower blood pressure.`,
+						shortDescription: `
+							Try our natural celery juice as an alternative to a morning coffee. It packed with 15
+							vitamins & minerals and helps flush out toxins, lower blood pressure.
+						`,
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5601/1299/products/Celery.png?v=1563907503',
 						ingredients: [],
 						nutritionSummary: null,
