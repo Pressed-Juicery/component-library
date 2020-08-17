@@ -13,7 +13,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 				:isVip="isVip"
 				:options="options"
 				:selected-variant="selectedVariant"
-				@variant-change="doSomething"
+				@variant-change="variant => this.selectedVariant = variant"
 			/>
 		`,
 		data() {
@@ -58,11 +58,6 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 					},
 				}],
 			};
-		},
-		methods: {
-			doSomething(value) {
-				this.selectedVariant = value;
-			},
 		},
 		created() {
 			this.selectedVariant = this.options[0].value;
