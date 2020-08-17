@@ -4,15 +4,33 @@
 		<img :class="$style.image" :src="selectedVariant.imageUrl">
 
 		<div :class="$style.information">
-			<div :class="$style.price">{{ price | currency }}</div>
+			<div :class="$style.price">
+				<span v-if="shouldShowPriceSale">{{ salePrice | currency }}</span>
+				<span :class="{[$style.slashed]: shouldShowPriceSale}">{{ price | currency }}</span>
+			</div>
 			<div v-if="selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
 			</div>
 		</div>
 
 		<div v-if="shouldShowCta" :class="$style.cta">
-			<div>Just {{ selectedVariant.memberPrice | currency }} for our VIP Members</div>
-			<a :class="$style.learnMore" href="https://pressedjuicery.com/">Learn More</a>
+			<div>
+				Just
+				<span
+					v-if="shouldShowMemberSale"
+				>
+					{{ selectedVariant.memberSalePrice | currency }}
+				</span>
+				<span
+					:class="{[$style.slashed]: shouldShowMemberSale}"
+				>
+					{{ selectedVariant.memberPrice | currency }}
+				</span>
+				for our VIP Members
+			</div>
+			<div :class="$style.learnMore">
+				<slot />
+			</div>
 		</div>
 
 		<validated-select
@@ -58,20 +76,33 @@ export default {
 	data() {
 		return {
 			quantity: 1,
-			hasSale: false,
 		};
 	},
 	computed: {
 		shouldShowCta() {
 			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
 		},
+		shouldShowPriceSale() {
+			return Boolean(this.salePrice && (this.memberSale || this.nonMemberSale));
+		},
+		shouldShowMemberSale() {
+			return Boolean(this.selectedVariant.memberSalePrice && this.memberSale);
+		},
 		price() {
-			return this.isVip ? this.selectedVariant.memberPrice : this.selectedVariant.nonMemberPrice;
+			return this.isVip
+				? this.selectedVariant.memberPrice
+				: this.selectedVariant.nonMemberPrice;
 		},
 		salePrice() {
 			return this.isVip
 				? this.selectedVariant.memberSalePrice
 				: this.selectedVariant.nonMemberSalePrice;
+		},
+		memberSale() {
+			return Boolean(this.selectedVariant.memberSalePrice);
+		},
+		nonMemberSale() {
+			return Boolean(this.selectedVariant.nonMemberSalePrice);
 		},
 	},
 	methods: {
@@ -86,11 +117,6 @@ export default {
 		currency(value) {
 			return formatCurrency(value);
 		},
-	},
-	created() {
-		if (this.selectedVariant.memberSalePrice && this.selectedVariant.nonMemberSalePrice) {
-			this.hasSale = true;
-		}
 	},
 };
 </script>
@@ -131,7 +157,7 @@ export default {
 		margin-bottom: $spacing-03;
 	}
 
-	.slashedPrice {
+	.slashed {
 		@include text-strikethrough();
 		@include text-subtle();
 	}
