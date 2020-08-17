@@ -5,7 +5,9 @@
 
 		<div :class="[{[$style.informationCta]: !isVip}, $style.information]">
 			<div :class="$style.price">{{price | currency}}</div>
-			{{selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories}}
+			<div v-if="selectedVariant.nutritionSummary.calories">
+				{{ selectedVariant.nutritionSummary.calories }} cal/serving
+			</div>
 		</div>
 
 		<div :class="$style.cta" v-if="showCta">
