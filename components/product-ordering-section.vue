@@ -10,7 +10,7 @@
 			</div>
 		</div>
 
-		<div v-if="showCta" :class="$style.cta">
+		<div v-if="shouldShowCta" :class="$style.cta">
 			<div>Just {{ selectedVariant.memberPrice | currency }} for our VIP Members</div>
 			<a :class="$style.learnMore" href="https://pressedjuicery.com/">Learn More</a>
 		</div>
@@ -60,7 +60,7 @@ export default {
 		};
 	},
 	computed: {
-		showCta() {
+		shouldShowCta() {
 			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
 		},
 		price() {
