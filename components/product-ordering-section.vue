@@ -69,12 +69,10 @@ export default {
 	},
 	methods: {
 		addToCart() {
-			const cartItem = {
+			this.$emit('addToCart', {
 				variantId: this.selectedVariant.id,
 				quantity: Number(this.quantity),
-			};
-
-			this.$emit('addToCart', cartItem);
+			});
 		},
 
 		selected(value) {
