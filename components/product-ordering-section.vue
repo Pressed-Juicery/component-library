@@ -92,7 +92,7 @@ export default {
 		},
 
 		selected(value) {
-			this.$emit('selected', value);
+			this.$emit('variant-change', value);
 		},
 	},
 	filters: {

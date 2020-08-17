@@ -13,7 +13,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 				:isVip="isVip"
 				:options="options"
 				:current="current"
-				@selected="doSomething"
+				@variant-change="doSomething"
 			/>
 		`,
 		data() {
