@@ -16,7 +16,7 @@
 		</div>
 
 		<validated-select
-			v-if="options.length"
+			v-if="options.length > 1"
 			:class="$style.variant"
 			:options="options"
 			:value="selectedVariant"
