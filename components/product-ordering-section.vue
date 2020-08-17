@@ -1,22 +1,22 @@
 <template>
-	<div v-if="current">
-		<div :class="$style.productName">{{ current.name }}</div>
+	<div v-if="selectedVariant">
+		<div :class="$style.productName">{{ selectedVariant.name }}</div>
 		<img
 			:class="$style.image"
-			:src="current.imageUrl"
-			:alt="current.name"
+			:src="selectedVariant.imageUrl"
+			:alt="selectedVariant.name"
 		>
 
 		<div :class="[{[$style.informationCta]: !isVip}, $style.information]">
 			<div :class="$style.price">
 				{{price | currency}}
 			</div>
-			{{current.nutritionSummary && current.nutritionSummary.calories}}
+			{{selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories}}
 		</div>
 
 		<div :class="$style.cta" v-if="showCta">
 			<div>
-				Just {{ current.memberPrice | currency }} for our VIP Members
+				Just {{ selectedVariant.memberPrice | currency }} for our VIP Members
 			</div>
 			<a :class="$style.learnMore" href="https://pressedjuicery.com/">
 				Learn More
@@ -28,7 +28,7 @@
 				v-if="options.length"
 				:class="$style.variant"
 				:options="options"
-				:value="current"
+				:value="selectedVariant"
 				@input="selected"
 			/>
 			<input
@@ -59,7 +59,7 @@ export default {
 			type: Array,
 			required: true,
 		},
-		current: {
+		selectedVariant: {
 			type: Object,
 			required: true,
 		},
@@ -72,19 +72,19 @@ export default {
 	computed: {
 		showCta() {
 			return !this.isVip
-				&& this.current.memberPrice
-				!== this.current.nonMemberPrice;
+				&& this.selectedVariant.memberPrice
+				!== this.selectedVariant.nonMemberPrice;
 		},
 		price() {
 			return this.isVip
-				? this.current.memberPrice
-				: this.current.nonMemberPrice;
+				? this.selectedVariant.memberPrice
+				: this.selectedVariant.nonMemberPrice;
 		},
 	},
 	methods: {
 		addToCart() {
 			const cartItem = {
-				variantId: this.current.id,
+				variantId: this.selectedVariant.id,
 				quantity: Number(this.quantity),
 			};
 

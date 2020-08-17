@@ -12,14 +12,14 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 			<product-ordering-section
 				:isVip="isVip"
 				:options="options"
-				:current="current"
+				:selected-variant="selectedVariant"
 				@variant-change="doSomething"
 			/>
 		`,
 		data() {
 			return {
 				isVip: false,
-				current: null,
+				selectedVariant: null,
 				options: [{
 					name: 'Matcha Frozen Mini - Single',
 					value: {
@@ -61,11 +61,11 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 		},
 		methods: {
 			doSomething(value) {
-				this.current = value;
+				this.selectedVariant = value;
 			},
 		},
 		created() {
-			this.current = this.options[0].value;
+			this.selectedVariant = this.options[0].value;
 		},
 	};
 }
