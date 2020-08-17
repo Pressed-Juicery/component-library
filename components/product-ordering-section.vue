@@ -4,7 +4,7 @@
 		<img :class="$style.image" :src="selectedVariant.imageUrl" :alt="selectedVariant.name">
 
 		<div :class="[{[$style.informationCta]: !isVip}, $style.information]">
-			<div :class="$style.price">{{price | currency}}</div>
+			<div :class="$style.price">{{ price | currency }}</div>
 			<div v-if="selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
 			</div>
