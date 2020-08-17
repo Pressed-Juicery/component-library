@@ -1,26 +1,16 @@
 <template>
 	<div v-if="selectedVariant">
 		<div :class="$style.productName">{{ selectedVariant.name }}</div>
-		<img
-			:class="$style.image"
-			:src="selectedVariant.imageUrl"
-			:alt="selectedVariant.name"
-		>
+		<img :class="$style.image" :src="selectedVariant.imageUrl" :alt="selectedVariant.name">
 
 		<div :class="[{[$style.informationCta]: !isVip}, $style.information]">
-			<div :class="$style.price">
-				{{price | currency}}
-			</div>
+			<div :class="$style.price">{{price | currency}}</div>
 			{{selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories}}
 		</div>
 
 		<div :class="$style.cta" v-if="showCta">
-			<div>
-				Just {{ selectedVariant.memberPrice | currency }} for our VIP Members
-			</div>
-			<a :class="$style.learnMore" href="https://pressedjuicery.com/">
-				Learn More
-			</a>
+			<div>Just {{ selectedVariant.memberPrice | currency }} for our VIP Members</div>
+			<a :class="$style.learnMore" href="https://pressedjuicery.com/">Learn More</a>
 		</div>
 
 		<div :class="$style.actionsGroup">
@@ -37,9 +27,7 @@
 				v-model="quantity"
 				min="1"
 			/>
-			<button :class="$style.addToCartButton" @click="addToCart">
-				Add to cart
-			</button>
+			<button :class="$style.addToCartButton" @click="addToCart">Add to cart</button>
 		</div>
 	</div>
 </template>
