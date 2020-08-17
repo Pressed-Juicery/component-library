@@ -30,7 +30,7 @@
 				v-model="quantity"
 				min="1"
 			/>
-			<button :class="$style.addToCartButton" @click="addToCart">Add to cart</button>
+			<button @click="addToCart">Add to cart</button>
 		</div>
 	</div>
 </template>
@@ -128,10 +128,5 @@ export default {
 
 	.quantity {
 		text-align: center;
-	}
-
-	.quantity,
-	.addToCartButton {
-		height: $spacing-09;
 	}
 </style>
