@@ -88,7 +88,7 @@ export default {
 				quantity: Number(this.quantity),
 			};
 
-			this.$emit('addedToCart', cartItem);
+			this.$emit('addToCart', cartItem);
 		},
 
 		selected(value) {
