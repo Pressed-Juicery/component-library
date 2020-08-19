@@ -41,8 +41,11 @@
 			<div v-else>Shipping/Delivery</div>
 
 			<div v-if="deliveryTip" :class="$style.rowGroup">
-				<div :class="$style.originalSubtotal">{{ formatCurrency(cart.originalFulfillmentPrice) }}</div>
-				<div>FREE</div>
+				<div v-if="cart.originalFulfillmentPrice !== cart.fulfillmentPrice" :class="$style.originalSubtotal">
+					{{ formatCurrency(cart.originalFulfillmentPrice) }}
+				</div>
+				<div v-if="isFulfillmentMethodChosen && cart.fulfillmentPrice === 0">FREE</div>
+				<div v-else>{{ formatCurrency(cart.fulfillmentPrice) }}</div>
 			</div>
 			<div v-else-if="isFulfillmentMethodChosen && cart.fulfillmentPrice === 0">
 				<div>FREE</div>
