@@ -31,20 +31,19 @@ export default {
 	},
 
 	props: {
-		id: {
-			type: String,
-		},
+		id: String,
 		braintreeTokenizationKey: {
 			type: String,
 			required: true,
 		},
+		initialPaymentMethod: Object,
+		paymentMethods: Array,
 		reloadAmounts: {
 			type: Array,
 			required: true,
 		},
-		selectedAmount: {
-			type: Number,
-		},
+	},
+
 	},
 
 	data() {
