@@ -14,16 +14,20 @@
 </template>
 
 <script>
-import ValidatedForm from './validated-form';
-import ValidatedPaymentMethod from './validated-payment-method';
-import ValidatedSelect from './validated-select';
 import { isNotEmpty } from '../utilities/validators';
+import ValidatedForm from './validated-form';
+import ValidatedSelect from './validated-select';
+import Card from './card';
+import PaymentMethodFormatter from './payment-method-formatter';
+import AddItemButton from './add-item-button';
 
 export default {
 	components: {
+		AddItemButton,
+		Card,
+		PaymentMethodFormatter,
 		ValidatedForm,
 		ValidatedSelect,
-		ValidatedPaymentMethod,
 	},
 
 	props: {
