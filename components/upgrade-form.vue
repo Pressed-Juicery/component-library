@@ -1,15 +1,24 @@
 <template>
-	<validated-form :id="id" @submit="onSubmit">
+	<validated-form :id="id" @submit="$emit('submit', { selectedReloadAmount, selectedPaymentMethod })">
 		<validated-select
 			label="Monthly Membership Reload"
 			:options="reloadAmounts"
 			:rules="reloadAmountRules"
-			v-model="selectedAmount"
+			v-model="selectedReloadAmount"
 		/>
-		<validated-payment-method
-			:braintreeTokenizationKey="braintreeTokenizationKey"
-			@change="onPaymentMethodChange"
-		/>
+
+		<div v-if="paymentMethods">
+			<card v-for="(paymentMethod, index) in paymentMethods"
+				@click.native="handleCardSelect(paymentMethod)"
+				:class="[$style.paymentMethod, {[$style.selectedMethod]: paymentMethod.id === selectedPaymentMethod.id}]"
+				:key="index"
+			>
+				<div :class="$style.content">
+					<payment-method-formatter :payment-method="paymentMethod" @click="handlePaymentMethodSelect(paymentMethod)" />
+				</div>
+			</card>
+		</div>
+
 	</validated-form>
 </template>
 
@@ -19,11 +28,9 @@ import ValidatedForm from './validated-form';
 import ValidatedSelect from './validated-select';
 import Card from './card';
 import PaymentMethodFormatter from './payment-method-formatter';
-import AddItemButton from './add-item-button';
 
 export default {
 	components: {
-		AddItemButton,
 		Card,
 		PaymentMethodFormatter,
 		ValidatedForm,
@@ -69,3 +76,24 @@ export default {
 	},
 };
 </script>
+
+<style lang="scss" module>
+	@import '../styles/mixins';
+	@import '../styles/variables';
+
+	.paymentMethod {
+		margin-bottom: $spacing-03;
+	}
+
+	.selectedMethod {
+		background-color: #e4d8a6;
+		border: 1px solid black;
+	}
+
+	.content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+</style>
