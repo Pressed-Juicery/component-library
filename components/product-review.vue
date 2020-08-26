@@ -2,8 +2,8 @@
 	<div>
 		<star-rating :class="$style.stars" :rating="review.rating"></star-rating>
 		<div :class="$style.title">{{ review.title }}</div>
-		<div :class="$style.body">{{ review.body }}</div>
-		<div :class="$style.info">{{ review.name }} on {{ date }}</div>
+		<div :class="$style.description">{{ review.description }}</div>
+		<div :class="$style.info">{{ review.username }} on {{ date }}</div>
 	</div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
 		@include text-bolder();
 	}
 
-	.body {
+	.description {
 		margin-bottom: $spacing-07;
 	}
 
