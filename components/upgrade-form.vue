@@ -53,7 +53,8 @@ export default {
 
 	data() {
 		return {
-			paymentMethod: null,
+			selectedReloadAmount: this.reloadAmounts[0].value,
+			selectedPaymentMethod: null,
 			reloadAmountRules: [{
 				validator: isNotEmpty,
 				message: 'Please select a monthly reload amount.',
