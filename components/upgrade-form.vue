@@ -63,15 +63,8 @@ export default {
 	},
 
 	methods: {
-		onPaymentMethodChange(data) {
-			this.paymentMethod = data && data.paymentMethod;
-		},
-
-		onSubmit() {
-			this.$emit('submit', {
-				paymentMethod: this.paymentMethod,
-				selectedAmount: this.selectedAmount,
-			});
+		handleCardSelect(newPaymentMethod) {
+			this.selectedPaymentMethod = newPaymentMethod;
 		},
 	},
 };
