@@ -52,13 +52,6 @@ export default {
 		},
 	},
 
-	created() {
-		const defaultPaymentMethod = this.paymentMethods && this.paymentMethods.find(method => method.isPrimary);
-		if(!this.initialPaymentMethod) {
-			this.selectedPaymentMethod = defaultPaymentMethod || this.paymentMethods[0];
-		}
-	},
-
 	data() {
 		return {
 			selectedReloadAmount: this.reloadAmounts[0].value,
