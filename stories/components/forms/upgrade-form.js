@@ -14,26 +14,57 @@ export function Overview() {
 			<div>
 				<upgrade-form
 					id="upgrade-form"
+					:paymentMethods="paymentMethods"
+					:selectedPaymentMethod="selectedPaymentMethod"
 					:braintreeTokenizationKey="braintreeTokenizationKey"
-					:selectedAmount="selectedAmount"
 					:reloadAmounts="reloadAmounts"
-					@submit="handlePaymentMethodChange"
+					@update-reload-amount="handleUpdateReloadAmount"
+					@update-selected-payment-method="handlePaymentMethodSelect"
+					@add-new-payment="handleNewPayment"
+					@submit="handleSubmit"
 				/>
-				<button form="upgrade-form" type="submit">Submit</button>
 				<p v-if="data" style="margin-top:30px">data: <code>{{ data }}</code></p>
+				<button form="upgrade-form" type="submit">Submit</button>
 			</div>
-		`,
+				`,
 		data() {
 			return {
 				braintreeTokenizationKey: config.braintreeTokenizationKey,
-				selectedAmount: 10,
+				paymentMethods: [
+					{
+						vendor: 'visa',
+						id: 'ctqpvw2',
+						identifier: '····4242',
+						isPrimary: true,
+					},
+					{
+						vendor: 'visa',
+						id: 'nck9nc6',
+						identifier: '····4242',
+						isPrimary: false,
+					},
+				],
+				selectedPaymentMethod: {
+					vendor: 'visa',
+					id: 'ctqpvw2',
+					identifier: '····4242',
+					isPrimary: true,
+				},
 				data: null,
 			};
 		},
 		methods: {
-			handlePaymentMethodChange(data) {
+			handleNewPayment() {
+				return 'payment';
+			},
+			handleUpdateReloadAmount(data) {
+				return data;
+			},
+			handlePaymentMethodSelect(data) {
+				return data;
+			},
+			handleSubmit(data) {
 				this.data = data;
-				this.selectedAmount = data.selectedAmount;
 			},
 		},
 		computed: {
