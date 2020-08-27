@@ -4,7 +4,7 @@
 			label="Monthly Membership Reload"
 			:options="reloadAmounts"
 			:rules="reloadAmountRules"
-			v-model="selectedReloadAmount"
+			v-model="reloadAmount"
 		/>
 
 		<payment-method-radio-button-card
@@ -14,6 +14,10 @@
 			v-model="paymentMethod"
 		/>
 
+		<card :class="$style.card" @click.native="$emit('add-new-payment', selectedReloadAmount)">
+			<div>Add a New Payment Method</div>
+			<div :class="$style.icon">+</div>
+		</card>
 
 	</validated-form>
 </template>
@@ -40,6 +44,7 @@ export default {
 			required: true,
 		},
 		initialPaymentMethod: Object,
+		selectedReloadAmount: Object,
 		paymentMethods: Array,
 		reloadAmounts: {
 			type: Array,
@@ -58,6 +63,7 @@ export default {
 		return {
 			selectedReloadAmount: this.reloadAmounts[0].value,
 			selectedPaymentMethod: null,
+			reloadAmount: this.selectedReloadAmount && this.selectedReloadAmount.value,
 			reloadAmountRules: [{
 				validator: isNotEmpty,
 				message: 'Please select a monthly reload amount.',
@@ -68,6 +74,15 @@ export default {
 	methods: {
 		handleCardSelect(newPaymentMethod) {
 			this.selectedPaymentMethod = newPaymentMethod;
+	watch: {
+		reloadAmount(amount) {
+			const reloadAmountObject = this.reloadAmounts.find(obj => obj.value === amount);
+
+			this.$emit('update-reload-amount', reloadAmountObject);
+		},
+
+		selectedReloadAmount() {
+			this.reloadAmount = this.selectedReloadAmount && this.selectedReloadAmount.value;
 		},
 	},
 };
@@ -90,6 +105,17 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+	}
+
+	.card {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.icon {
+		color: $gray-30;
+		font-size: $spacing-07;
 	}
 
 </style>
