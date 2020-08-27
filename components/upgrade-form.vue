@@ -7,34 +7,30 @@
 			v-model="selectedReloadAmount"
 		/>
 
-		<div v-if="paymentMethods">
-			<card v-for="(paymentMethod, index) in paymentMethods"
-				@click.native="handleCardSelect(paymentMethod)"
-				:class="[$style.paymentMethod, {[$style.selectedMethod]: paymentMethod.id === selectedPaymentMethod.id}]"
-				:key="index"
-			>
-				<div :class="$style.content">
-					<payment-method-formatter :payment-method="paymentMethod" @click="handlePaymentMethodSelect(paymentMethod)" />
-				</div>
-			</card>
-		</div>
+		<payment-method-radio-button-card
+			v-for="method in paymentMethods"
+			:paymentMethod="method"
+			:key="method.id"
+			v-model="paymentMethod"
+		/>
+
 
 	</validated-form>
 </template>
 
 <script>
-import { isNotEmpty } from '../utilities/validators';
+import Card from './card';
+import PaymentMethodRadioButtonCard from './payment-method-radio-button-card';
 import ValidatedForm from './validated-form';
 import ValidatedSelect from './validated-select';
-import Card from './card';
-import PaymentMethodFormatter from './payment-method-formatter';
+import { isNotEmpty } from '../utilities/validators';
 
 export default {
 	components: {
 		Card,
-		PaymentMethodFormatter,
 		ValidatedForm,
 		ValidatedSelect,
+		PaymentMethodRadioButtonCard,
 	},
 
 	props: {
