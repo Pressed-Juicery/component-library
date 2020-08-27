@@ -43,7 +43,7 @@ export default {
 			type: String,
 			required: true,
 		},
-		initialPaymentMethod: Object,
+		selectedPaymentMethod: Object,
 		selectedReloadAmount: Object,
 		paymentMethods: Array,
 		reloadAmounts: {
@@ -54,8 +54,7 @@ export default {
 
 	data() {
 		return {
-			selectedReloadAmount: this.reloadAmounts[0].value,
-			selectedPaymentMethod: null,
+			paymentMethod: this.selectedPaymentMethod,
 			reloadAmount: this.selectedReloadAmount && this.selectedReloadAmount.value,
 			reloadAmountRules: [{
 				validator: isNotEmpty,
@@ -64,10 +63,15 @@ export default {
 		};
 	},
 
-	methods: {
-		handleCardSelect(newPaymentMethod) {
-			this.selectedPaymentMethod = newPaymentMethod;
 	watch: {
+		paymentMethod(method) {
+			this.$emit('update-selected-payment-method', method);
+		},
+
+		selectedPaymentMethod(paymentMethod) {
+			this.paymentMethod = paymentMethod;
+		},
+
 		reloadAmount(amount) {
 			const reloadAmountObject = this.reloadAmounts.find(obj => obj.value === amount);
 
