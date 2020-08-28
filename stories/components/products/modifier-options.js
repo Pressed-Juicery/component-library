@@ -102,6 +102,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 						}],
 					}],
 				},
+				selection: [],
 			};
 		},
 	};
