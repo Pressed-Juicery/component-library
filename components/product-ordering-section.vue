@@ -46,13 +46,11 @@
 </template>
 
 <script>
-import CollapsableDrawer from './collapsible-drawer.vue';
-import ValidatedCheckbox from './validated-checkbox.vue';
 import ValidatedSelect from './validated-select';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { CollapsableDrawer, ValidatedSelect, ValidatedCheckbox },
+	components: { ValidatedSelect },
 	props: {
 		isVip: {
 			type: Boolean,
