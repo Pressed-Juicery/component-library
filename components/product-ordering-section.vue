@@ -6,7 +6,7 @@
 		<div :class="$style.information">
 			<div :class="$style.price">
 				<span v-if="shouldShowSalePrice">{{ salePrice | currency }}</span>
-				<span :class="{[$style.slashed]: shouldShowSalePrice}">{{ price | currency }}</span>
+				<span :class="{[$style.strikethrough]: shouldShowSalePrice}">{{ price | currency }}</span>
 			</div>
 			<div v-if="selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
@@ -15,7 +15,7 @@
 
 		<div v-if="shouldShowCta" :class="$style.cta">
 			Just <span v-if="shouldShowMemberSale">{{ selectedVariant.memberSalePrice | currency }}</span>
-			<span :class="{[$style.slashed]: shouldShowMemberSale}">{{ selectedVariant.memberPrice | currency }}</span>
+			<span :class="{[$style.strikethrough]: shouldShowMemberSale}">{{ selectedVariant.memberPrice | currency }}</span>
 			for our VIP Members
 
 			<div :class="$style.learnMore">
@@ -155,7 +155,7 @@ export default {
 		margin-bottom: $spacing-03;
 	}
 
-	.slashed {
+	.strikethrough {
 		@include text-strikethrough();
 		@include text-subtle();
 	}
