@@ -81,10 +81,10 @@ export default {
 			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
 		},
 		shouldShowSalePrice() {
-			return Boolean(this.salePrice && (this.memberSale || this.nonMemberSale));
+			return Boolean(this.salePrice && (this.hasMemberSalePrice || this.nonMemberSale));
 		},
 		shouldShowMemberSale() {
-			return Boolean(this.selectedVariant.memberSalePrice && this.memberSale);
+			return Boolean(this.selectedVariant.memberSalePrice && this.hasMemberSalePrice);
 		},
 		price() {
 			return this.isVip
@@ -96,7 +96,7 @@ export default {
 				? this.selectedVariant.memberSalePrice
 				: this.selectedVariant.nonMemberSalePrice;
 		},
-		memberSale() {
+		hasMemberSalePrice() {
 			return Boolean(this.selectedVariant.memberSalePrice);
 		},
 		nonMemberSale() {
