@@ -105,5 +105,10 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 				selection: [],
 			};
 		},
+		methods: {
+			addSelected(selected) {
+				this.selection = selected;
+			},
+		},
 	};
 }
