@@ -6,7 +6,7 @@
 		<div :class="$style.information">
 			<div :class="$style.price">
 				<span v-if="salePrice">{{ salePrice | currency }}</span>
-				<span :class="{[$style.strikethrough]: salePrice}">{{ price | currency }}</span>
+				<span :class="{ [$style.strikethrough]: salePrice }">{{ price | currency }}</span>
 			</div>
 			<div v-if="selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
@@ -15,7 +15,7 @@
 
 		<div v-if="shouldShowCta" :class="$style.cta">
 			Just <span v-if="hasMemberSalePrice">{{ selectedVariant.memberSalePrice | currency }}</span>
-			<span :class="{[$style.strikethrough]: hasMemberSalePrice}">{{ selectedVariant.memberPrice | currency }}</span>
+			<span :class="{ [$style.strikethrough]: hasMemberSalePrice }">{{ selectedVariant.memberPrice | currency }}</span>
 			for our VIP Members
 
 			<div :class="$style.learnMore">
