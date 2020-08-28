@@ -62,7 +62,6 @@ export default {
 		},
 		selectedVariant: {
 			type: Object,
-			required: true,
 		},
 	},
 	data() {
