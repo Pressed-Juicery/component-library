@@ -16,14 +16,17 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 					addons: [{
 						name: 'Addon 1',
 						variantIds: ['1', '2', '3'],
+						price: 5.00,
 						displayPrice: '$5.00/day',
 					}, {
 						name: 'Addon 2',
 						variantIds: ['1', '2', '3'],
+						price: 5.00,
 						displayPrice: '$5.00/day',
 					}, {
 						name: 'Addon 3',
 						variantIds: ['1', '2', '3'],
+						price: 5.00,
 						displayPrice: '$5.00/day',
 					}],
 				},
