@@ -103,7 +103,8 @@ export default {
 		width: $spacing-04;
 	}
 
-	.submit {
-		@include button-large();
+	.groupName {
+		@include text-heading-5();
+		margin-bottom: $spacing-05;
 	}
 </style>
