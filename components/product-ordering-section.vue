@@ -8,7 +8,7 @@
 				<span v-if="shouldShowSalePrice">{{ salePrice | currency }}</span>
 				<span :class="{[$style.slashed]: shouldShowSalePrice}">{{ price | currency }}</span>
 			</div>
-			<div v-if="selectedVariant.nutritionSummary.calories">
+			<div v-if="selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
 			</div>
 		</div>
