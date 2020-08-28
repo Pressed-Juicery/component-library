@@ -16,7 +16,7 @@ export function Overview() {
 				:selected-variant="selectedVariant"
 				@variant-change="variant => this.selectedVariant = variant"
 			>
-				<a href="/">Learn More</a>
+				<a href="#">Learn More</a>
 			</product-ordering-section>
 		`,
 		data() {
@@ -42,7 +42,7 @@ export function WithSaleItems() { // eslint-disable-line max-lines-per-function
 				:selected-variant="selectedVariant"
 				@variant-change="variant => this.selectedVariant = variant"
 			>
-				<a href="/">Learn More</a>
+				<a href="#">Learn More</a>
 			</product-ordering-section>
 		`,
 		data() {
