@@ -6,7 +6,7 @@
 		</div>
 		<collapsable-drawer
 			:isOpen="isOpen"
-			:title="title"
+			:title="drawerTitle"
 			@close="toggleDrawer"
 		>
 			<div :class="$style.group" v-for="(group, index) in toppingModifiers.modifierGroups" :key="index">
@@ -50,6 +50,12 @@ export default {
 	computed: {
 		title() {
 			return `Select
+			${this.toppingModifiers.groupName}
+			(${this.selection.length}/
+				${this.toppingModifiers.maximumCount})`;
+		},
+		drawerTitle() {
+			return `Select up to 3
 			${this.toppingModifiers.groupName}
 			(${this.selection.length}/
 				${this.toppingModifiers.maximumCount})`;
