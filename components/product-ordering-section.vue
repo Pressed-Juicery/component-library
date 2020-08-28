@@ -14,8 +14,8 @@
 		</div>
 
 		<div v-if="shouldShowCta" :class="$style.cta">
-			Just <span v-if="shouldShowMemberSale">{{ selectedVariant.memberSalePrice | currency }}</span>
-			<span :class="{[$style.strikethrough]: shouldShowMemberSale}">{{ selectedVariant.memberPrice | currency }}</span>
+			Just <span v-if="hasMemberSalePrice">{{ selectedVariant.memberSalePrice | currency }}</span>
+			<span :class="{[$style.strikethrough]: hasMemberSalePrice}">{{ selectedVariant.memberPrice | currency }}</span>
 			for our VIP Members
 
 			<div :class="$style.learnMore">
@@ -79,9 +79,6 @@ export default {
 		},
 		shouldShowCta() {
 			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
-		},
-		shouldShowMemberSale() {
-			return Boolean(this.selectedVariant.memberSalePrice && this.hasMemberSalePrice);
 		},
 		price() {
 			return this.isVip
