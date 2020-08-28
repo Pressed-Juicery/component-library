@@ -5,8 +5,8 @@
 
 		<div :class="$style.information">
 			<div :class="$style.price">
-				<span v-if="shouldShowSalePrice">{{ salePrice | currency }}</span>
-				<span :class="{[$style.strikethrough]: shouldShowSalePrice}">{{ price | currency }}</span>
+				<span v-if="salePrice">{{ salePrice | currency }}</span>
+				<span :class="{[$style.strikethrough]: salePrice}">{{ price | currency }}</span>
 			</div>
 			<div v-if="selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
@@ -79,9 +79,6 @@ export default {
 		},
 		shouldShowCta() {
 			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
-		},
-		shouldShowSalePrice() {
-			return Boolean(this.salePrice && (this.hasMemberSalePrice || this.hasNonMemberSalePrice));
 		},
 		shouldShowMemberSale() {
 			return Boolean(this.selectedVariant.memberSalePrice && this.hasMemberSalePrice);
