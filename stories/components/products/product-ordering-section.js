@@ -67,3 +67,29 @@ export function WithSaleItems() { // eslint-disable-line max-lines-per-function
 		},
 	};
 }
+
+export function VipPricing() {
+	return {
+		components: { ProductOrderingSection },
+		template: `
+			<product-ordering-section
+				:isVip="isVip"
+				:product="product"
+				:selected-variant="selectedVariant"
+				@variant-change="variant => this.selectedVariant = variant"
+			>
+				<a href="#">Learn More</a>
+			</product-ordering-section>
+		`,
+		data() {
+			return {
+				isVip: true,
+				product: productData,
+				selectedVariant: null,
+			};
+		},
+		created() {
+			this.selectedVariant = this.product.variants[0];
+		},
+	};
+}
