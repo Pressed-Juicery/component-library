@@ -30,9 +30,9 @@
 		</div>
 
 		<validated-select
-			v-if="options.length > 1"
+			v-if="variantOptions.length > 1"
 			:class="$style.variant"
-			:options="options"
+			:options="variantOptions"
 			:value="selectedVariant"
 			@input="value => this.$emit('variant-change', value)"
 		/>
@@ -60,8 +60,8 @@ export default {
 			type: Boolean,
 			required: true,
 		},
-		options: {
-			type: Array,
+		product: {
+			type: Object,
 			required: true,
 		},
 		selectedVariant: {
@@ -75,6 +75,14 @@ export default {
 		};
 	},
 	computed: {
+		variantOptions() {
+			return (this.product || []).variants.map(variant => {
+				return {
+					name: variant.name,
+					value: variant,
+				};
+			});
+		},
 		shouldShowCta() {
 			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
 		},

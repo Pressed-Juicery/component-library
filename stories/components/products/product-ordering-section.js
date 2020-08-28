@@ -1,68 +1,33 @@
 import ProductOrderingSection from '../../../components/product-ordering-section';
+import { productData } from '../../../demo-data/product.data';
 
 export default {
 	title: 'Components / Products / ProductOrderingSection',
 	component: ProductOrderingSection,
 };
 
-export function Overview() { // eslint-disable-line max-lines-per-function
+export function Overview() {
 	return {
 		components: { ProductOrderingSection },
 		template: `
 			<product-ordering-section
 				:isVip="isVip"
-				:options="options"
+				:product="product"
 				:selected-variant="selectedVariant"
 				@variant-change="variant => this.selectedVariant = variant"
 			>
 				<a href="/">Learn More</a>
 			</product-ordering-section>
 		`,
-		data() { // eslint-disable-line max-lines-per-function
+		data() {
 			return {
 				isVip: false,
+				product: productData,
 				selectedVariant: null,
-				options: [{
-					name: 'Matcha Frozen Mini - Single',
-					value: {
-						name: 'Matcha Frozen Mini - Single',
-						nonMemberPrice: 5,
-						memberPrice: 4.5,
-						nonMemberSalePrice: null,
-						memberSalePrice: null,
-						shortDescription: `
-							At only 190 calories per cup, this frozen dessert is made from simple ingredients like
-							coconut cream, almonds, and matcha with no refined sugars, this decadent treat is a
-							plant-based delight and the perfect portion size for an after-dinner treat.
-							(Some say better than ice cream!)
-						`,
-						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Frozenmini_front_matcha_1440x1440_c08848fa-50f4-4d8d-9370-9c851c0100b2.png?v=1597174401',
-						ingredients: [],
-						nutritionSummary: { calories: 200 },
-					},
-				}, {
-					name: 'Matcha Frozen Mini - 6 Count',
-					value: {
-						name: 'Matcha Frozen Mini - 6 Count',
-						nonMemberPrice: 30,
-						memberPrice: 25,
-						nonMemberSalePrice: null,
-						memberSalePrice: null,
-						shortDescription: `
-							At only 190 calories per cup, this frozen dessert is made from simple ingredients like
-							coconut cream, almonds, and matcha with no refined sugars, this decadent treat is a
-							plant-based delight and the perfect portion size for an after-dinner treat.
-							(Some say better than ice cream!)
-						`,
-						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Frozenmini_6pack__front_matcha_1440x1440_3f4cb9ab-348e-4429-886c-0037ee29de53.png?v=1597168136',
-						ingredients: [],
-						nutritionSummary: { calories: 200 },
-					},
-				}],
 			};
 		},
 		created() {
-			this.selectedVariant = this.options[0].value;
+			this.selectedVariant = this.product.variants[0];
 		},
 	};
 }
@@ -73,58 +38,32 @@ export function WithSaleItems() { // eslint-disable-line max-lines-per-function
 		template: `
 			<product-ordering-section
 				:isVip="isVip"
-				:options="options"
+				:product="product"
 				:selected-variant="selectedVariant"
 				@variant-change="variant => this.selectedVariant = variant"
 			>
 				<a href="/">Learn More</a>
 			</product-ordering-section>
 		`,
-		data() { // eslint-disable-line max-lines-per-function
+		data() {
+			const discountRate = 0.5;
+			const product = JSON.parse(JSON.stringify(productData));
+
+			product.variants.forEach(variant => {
+				// eslint-disable-next-line no-param-reassign
+				variant.memberSalePrice = variant.memberPrice * discountRate;
+				// eslint-disable-next-line no-param-reassign
+				variant.nonMemberSalePrice = variant.nonMemberPrice * discountRate;
+			});
+
 			return {
 				isVip: false,
 				selectedVariant: null,
-				options: [{
-					name: 'Matcha Frozen Mini - Single',
-					value: {
-						name: 'Matcha Frozen Mini - Single',
-						nonMemberPrice: 5,
-						memberPrice: 4.5,
-						nonMemberSalePrice: 4,
-						memberSalePrice: 3.5,
-						shortDescription: `
-							At only 190 calories per cup, this frozen dessert is made from simple ingredients like
-							coconut cream, almonds, and matcha with no refined sugars, this decadent treat is a
-							plant-based delight and the perfect portion size for an after-dinner treat.
-							(Some say better than ice cream!)
-						`,
-						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Frozenmini_front_matcha_1440x1440_c08848fa-50f4-4d8d-9370-9c851c0100b2.png?v=1597174401',
-						ingredients: [],
-						nutritionSummary: { calories: 200 },
-					},
-				}, {
-					name: 'Matcha Frozen Mini - 6 Count',
-					value: {
-						name: 'Matcha Frozen Mini - 6 Count',
-						nonMemberPrice: 30,
-						memberPrice: 25,
-						nonMemberSalePrice: 25,
-						memberSalePrice: 20,
-						shortDescription: `
-							At only 190 calories per cup, this frozen dessert is made from simple ingredients like
-							coconut cream, almonds, and matcha with no refined sugars, this decadent treat is a
-							plant-based delight and the perfect portion size for an after-dinner treat.
-							(Some say better than ice cream!)
-						`,
-						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Frozenmini_6pack__front_matcha_1440x1440_3f4cb9ab-348e-4429-886c-0037ee29de53.png?v=1597168136',
-						ingredients: [],
-						nutritionSummary: { calories: 200 },
-					},
-				}],
+				product,
 			};
 		},
 		created() {
-			this.selectedVariant = this.options[0].value;
+			this.selectedVariant = this.product.variants[0];
 		},
 	};
 }
