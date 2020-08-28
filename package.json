@@ -1,6 +1,6 @@
 {
 	"name": "component-library",
-	"version": "0.27.0",
+	"version": "0.28.0",
 	"description": "Pressed Juicery Component Library",
 	"private": true,
 	"main": "dist/component-library.common.js",
