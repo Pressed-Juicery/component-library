@@ -77,6 +77,7 @@ const groups = [{
 		'BundleItems',
 		'CleanseGuide',
 		'Ingredients',
+		'ModifierOptions',
 		'NutritionFacts',
 		'ProductDetails',
 		'ProductCard',
