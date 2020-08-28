@@ -96,9 +96,6 @@ export default {
 		hasMemberSalePrice() {
 			return Boolean(this.selectedVariant.memberSalePrice);
 		},
-		hasNonMemberSalePrice() {
-			return Boolean(this.selectedVariant.nonMemberSalePrice);
-		},
 	},
 	methods: {
 		addToCart() {
