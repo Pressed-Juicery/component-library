@@ -9,16 +9,15 @@
 			:title="title"
 			@close="toggleDrawer"
 		>
-			<div v-for="(group, index) in toppingModifiers.modifierGroups" :key="index">
+			<div :class="$style.group" v-for="(group, index) in toppingModifiers.modifierGroups" :key="index">
 				<div :class="$style.groupName">{{ group.name }}</div>
-				<div :class="$style.checkbox">
+				<div :class="$style.modifier" v-for="(modifier, index) in group.modifiers" :key="index">
 					<validated-checkbox
-						v-for="(modifier, index) in group.modifiers"
-						:key="index"
 						:label="modifier.name"
 						:value="isSelected(modifier)"
 						@change="select(modifier)"
 					/>
+					<div :class="$style.description">{{ modifier.description }}</div>
 				</div>
 			</div>
 		</collapsable-drawer>
@@ -103,8 +102,24 @@ export default {
 		width: $spacing-04;
 	}
 
+	.group:not(:first-child) {
+		margin-top: $spacing-06;
+	}
+
 	.groupName {
 		@include text-heading-5();
 		margin-bottom: $spacing-05;
+	}
+
+	.description {
+		margin-top: -$spacing-06;
+		margin-left: $spacing-07;
+		@include text-body-small();
+		@include text-subtle();
+	}
+
+	.modifier {
+		position: relative;
+		margin: $spacing-05 0;
 	}
 </style>
