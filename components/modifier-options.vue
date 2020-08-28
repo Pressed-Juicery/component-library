@@ -6,22 +6,21 @@
 		</div>
 		<collapsable-drawer
 			:isOpen="isOpen"
-			:title="addonGroup.name"
-			@close="cancelDrawer"
+			:title="title"
+			@close="toggleDrawer"
 		>
-			<validated-checkbox
-				v-for="(addon, index) in addonGroup.addons"
-				:key="index"
-				:label="checkboxLabel(addon)"
-				:value="isSelected(addon)"
-				@change="select(addon)"
-			/>
-			<button
-				:class="$style.submit"
-				@click="submit"
-			>
-				Submit
-			</button>
+			<div v-for="(group, index) in toppingModifiers.modifierGroups" :key="index">
+				<div :class="$style.groupName">{{ group.name }}</div>
+				<div :class="$style.checkbox">
+					<validated-checkbox
+						v-for="(modifier, index) in group.modifiers"
+						:key="index"
+						:label="modifier.name"
+						:value="isSelected(modifier)"
+						@change="select(modifier)"
+					/>
+				</div>
+			</div>
 		</collapsable-drawer>
 	</div>
 </template>
@@ -34,7 +33,7 @@ import ValidatedCheckbox from './validated-checkbox';
 export default {
 	components: { CollapsableDrawer, UpCaratIcon, ValidatedCheckbox },
 	props: {
-		addonGroup: {
+		toppingModifiers: {
 			type: Object,
 			required: true,
 		},
@@ -51,7 +50,10 @@ export default {
 	},
 	computed: {
 		title() {
-			return `${this.addonGroup.name} (${this.selection.length}/${this.addonGroup.addons.length})`;
+			return `Select
+			${this.toppingModifiers.groupName}
+			(${this.selection.length}/
+				${this.toppingModifiers.maximumCount})`;
 		},
 	},
 	methods: {
@@ -59,27 +61,20 @@ export default {
 			const index = this.selected.indexOf(value);
 
 			if (index === -1) {
-				this.selected.push(value);
+				if (this.selection.length < this.toppingModifiers.maximumCount) {
+					this.selected.push(value);
+				}
 			} else {
 				this.selected.splice(index, 1);
 			}
+
+			this.$emit('change', this.selected);
 		},
 		toggleDrawer() {
 			this.isOpen = !this.isOpen;
 		},
-		cancelDrawer() {
-			this.selected = [...this.selection];
-			this.toggleDrawer();
-		},
-		submit() {
-			this.$emit('change', this.selected);
-			this.toggleDrawer();
-		},
-		isSelected(addon) {
-			return Boolean(this.selected.filter(selection => selection === addon).length);
-		},
-		checkboxLabel(addon) {
-			return `${addon.name} (${addon.displayPrice})`;
+		isSelected(modifier) {
+			return Boolean(this.selected.filter(selection => selection === modifier).length);
 		},
 	},
 	watch: {
