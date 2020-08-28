@@ -45,6 +45,7 @@ export default {
 		border-bottom: $border-light;
 		background: white;
 		cursor: pointer;
+		z-index: 1;
 	}
 
 	.icon {
