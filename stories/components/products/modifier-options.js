@@ -8,7 +8,13 @@ export default {
 export function Overview() { // eslint-disable-line max-lines-per-function
 	return {
 		components: { ModifierOptions },
-		template: '<modifier-options :toppingModifiers="toppingModifiers" />',
+		template: `
+			<modifier-options
+				@change="addSelected"
+				:selection="selection"
+				:toppingModifiers="toppingModifiers"
+			/>
+		`,
 		data() { // eslint-disable-line max-lines-per-function
 			return {
 				toppingModifiers: {
