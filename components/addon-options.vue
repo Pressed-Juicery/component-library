@@ -2,7 +2,7 @@
 	<div>
 		<div :class="$style.trigger" @click="toggleDrawer">
 			{{ title }}
-			<arrow-down-icon :class="$style.arrow" />
+			<up-carat-icon :class="$style.upArrow" />
 		</div>
 		<collapsable-drawer
 			:isOpen="isOpen"
@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import ArrowDownIcon from './icons/arrow-down-icon';
 import CollapsableDrawer from './collapsible-drawer';
+import UpCaratIcon from './icons/up-caret-icon';
 import ValidatedCheckbox from './validated-checkbox';
 
 export default {
-	components: { ArrowDownIcon, CollapsableDrawer, ValidatedCheckbox },
+	components: { CollapsableDrawer, UpCaratIcon, ValidatedCheckbox },
 	props: {
 		addonGroup: {
 			type: Object,
@@ -103,7 +103,7 @@ export default {
 		border-radius: $border-radius;
 	}
 
-	.arrow {
+	.upArrow {
 		height: $spacing-04;
 		width: $spacing-04;
 	}
