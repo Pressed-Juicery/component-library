@@ -138,6 +138,10 @@ export default {
 		margin-bottom: $spacing-06;
 	}
 
+	.price {
+		@include text-heading-5();
+	}
+
 	.cta {
 		margin-bottom: $spacing-06;
 	}
@@ -145,10 +149,6 @@ export default {
 	.learnMore {
 		@include text-body-small();
 		text-decoration: underline;
-	}
-
-	.price {
-		@include text-heading-5();
 	}
 
 	.variantSelector {
