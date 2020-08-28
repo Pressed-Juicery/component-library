@@ -25,7 +25,7 @@
 
 		<validated-select
 			v-if="variantOptions.length > 1"
-			:class="$style.variant"
+			:class="$style.variantSelector"
 			:options="variantOptions"
 			:value="selectedVariant"
 			@input="value => this.$emit('variant-change', value)"
@@ -151,7 +151,7 @@ export default {
 		@include text-heading-5();
 	}
 
-	.variant {
+	.variantSelector {
 		margin-bottom: $spacing-03;
 	}
 
