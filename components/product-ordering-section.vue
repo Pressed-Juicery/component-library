@@ -1,6 +1,6 @@
 <template>
 	<div v-if="selectedVariant">
-		<div :class="$style.productName">{{ selectedVariant.name }}</div>
+		<div :class="$style.variantName">{{ selectedVariant.name }}</div>
 		<img :class="$style.image" :src="selectedVariant.imageUrl">
 
 		<div :class="$style.information">
@@ -129,7 +129,7 @@ export default {
 	@import "../styles/variables";
 	@import "../styles/mixins";
 
-	.productName {
+	.variantName {
 		@include text-heading-4();
 		margin-bottom: $spacing-05;
 	}
