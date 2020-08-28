@@ -15,7 +15,9 @@
 
 		<div v-if="shouldShowCta" :class="$style.cta">
 			Just <span v-if="hasMemberSalePrice">{{ selectedVariant.memberSalePrice | currency }}</span>
-			<span :class="{ [$style.strikethrough]: hasMemberSalePrice }">{{ selectedVariant.memberPrice | currency }}</span>
+			<span :class="{ [$style.strikethrough]: hasMemberSalePrice }">
+				{{ selectedVariant.memberPrice | currency }}
+			</span>
 			for our VIP Members
 
 			<div :class="$style.learnMore">
