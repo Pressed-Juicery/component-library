@@ -81,7 +81,7 @@ export default {
 			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
 		},
 		shouldShowSalePrice() {
-			return Boolean(this.salePrice && (this.hasMemberSalePrice || this.nonMemberSale));
+			return Boolean(this.salePrice && (this.hasMemberSalePrice || this.hasNonMemberSalePrice));
 		},
 		shouldShowMemberSale() {
 			return Boolean(this.selectedVariant.memberSalePrice && this.hasMemberSalePrice);
@@ -99,7 +99,7 @@ export default {
 		hasMemberSalePrice() {
 			return Boolean(this.selectedVariant.memberSalePrice);
 		},
-		nonMemberSale() {
+		hasNonMemberSalePrice() {
 			return Boolean(this.selectedVariant.nonMemberSalePrice);
 		},
 	},
