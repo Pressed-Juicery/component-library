@@ -113,6 +113,12 @@ export default {
 		hasMemberSalePrice() {
 			return Boolean(this.selectedVariant.memberSalePrice);
 		},
+		hasModifiers() {
+			return Boolean(this.product.toppingModifiers && Object.keys(this.product.toppingModifiers).length > 0);
+		},
+		hasAddons() {
+			return Boolean(this.product.addonGroup && Object.keys(this.product.addonGroup).length > 0);
+		},
 	},
 	methods: {
 		addToCart() {
