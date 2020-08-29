@@ -33,6 +33,14 @@
 			@input="value => this.$emit('variant-change', value)"
 		/>
 
+		<addon-options
+			v-if="hasAddons"
+			:class="$style.addonOptions"
+			:addon-group="product.addonGroup"
+			:selection="selection"
+			@change="addSelected"
+		/>
+
 		<div :class="$style.actionsGroup">
 			<input
 				:class="$style.quantity"
@@ -46,11 +54,12 @@
 </template>
 
 <script>
+import AddonOptions from './addon-options';
 import ValidatedSelect from './validated-select';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { ValidatedSelect },
+	components: { AddonOptions, ValidatedSelect },
 	props: {
 		isVip: {
 			type: Boolean,
