@@ -174,7 +174,8 @@ export default {
 	}
 
 	.variantSelector,
-	.addonOptions {
+	.addonOptions,
+	.modifierOptions {
 		margin-bottom: $spacing-03;
 	}
 
