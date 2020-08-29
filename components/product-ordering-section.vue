@@ -118,6 +118,9 @@ export default {
 				quantity: Number(this.quantity),
 			});
 		},
+		addSelected(selected) {
+			this.selection = selected;
+		},
 	},
 	filters: {
 		currency(value) {
