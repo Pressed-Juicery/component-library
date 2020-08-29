@@ -72,12 +72,6 @@ export default {
 		selectedVariant: {
 			type: Object,
 		},
-		addonGroup: {
-			type: Object,
-		},
-		toppingModifiers: {
-			type: Object,
-		},
 	},
 	data() {
 		return {
