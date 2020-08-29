@@ -40,6 +40,14 @@
 			@submit="addons => selectedAddons = addons"
 		/>
 
+		<modifier-options
+			v-if="hasModifiers"
+			:class="$style.modifierOptions"
+			:toppingModifiers="product.toppingModifiers"
+			:selection="selection"
+			@change="addSelected"
+		/>
+
 		<div :class="$style.actionsGroup">
 			<input
 				:class="$style.quantity"
@@ -54,11 +62,12 @@
 
 <script>
 import AddonOptions from './addon-options';
+import ModifierOptions from './modifier-options';
 import ValidatedSelect from './validated-select';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { AddonOptions, ValidatedSelect },
+	components: { AddonOptions, ModifierOptions, ValidatedSelect },
 	props: {
 		isVip: {
 			type: Boolean,
