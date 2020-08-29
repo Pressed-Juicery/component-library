@@ -76,6 +76,7 @@ export default {
 	data() {
 		return {
 			quantity: 1,
+			selection: [],
 		};
 	},
 	computed: {
