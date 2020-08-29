@@ -126,6 +126,7 @@ export default {
 				variantId: this.selectedVariant.id,
 				quantity: Number(this.quantity),
 				addons: this.selectedAddons,
+				modifiers: this.selection,
 			});
 		},
 	},
