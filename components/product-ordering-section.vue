@@ -129,6 +129,9 @@ export default {
 				modifiers: this.selection,
 			});
 		},
+		addSelected(value) {
+			this.selection = value;
+		},
 	},
 	filters: {
 		currency(value) {
