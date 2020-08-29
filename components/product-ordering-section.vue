@@ -116,6 +116,7 @@ export default {
 			this.$emit('addToCart', {
 				variantId: this.selectedVariant.id,
 				quantity: Number(this.quantity),
+				addons: this.selection,
 			});
 		},
 		addSelected(selected) {
