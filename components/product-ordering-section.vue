@@ -85,6 +85,7 @@ export default {
 		return {
 			quantity: 1,
 			selectedAddons: [],
+			selection: [],
 		};
 	},
 	computed: {
