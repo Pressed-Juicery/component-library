@@ -105,10 +105,10 @@ export default {
 			return Boolean(this.selectedVariant.memberSalePrice);
 		},
 		hasModifiers() {
-			return Boolean(Object.keys(this.toppingModifiers).length === 0);
+			return Boolean(this.product.toppingModifiers && Object.keys(this.product.toppingModifiers).length > 0);
 		},
 		hasAddons() {
-			return Boolean(Object.keys(this.addonGroup).length === 0);
+			return Boolean(this.product.addonGroup && Object.keys(this.product.addonGroup).length > 0);
 		},
 	},
 	methods: {
