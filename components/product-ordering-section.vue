@@ -163,7 +163,8 @@ export default {
 		text-decoration: underline;
 	}
 
-	.variantSelector {
+	.variantSelector,
+	.addonOptions {
 		margin-bottom: $spacing-03;
 	}
 
