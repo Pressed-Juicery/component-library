@@ -73,12 +73,6 @@ export default {
 			type: Object,
 			required: true,
 		},
-		addonGroup: {
-			type: Object,
-		},
-		toppingModifiers: {
-			type: Object,
-		},
 	},
 	data() {
 		return {
