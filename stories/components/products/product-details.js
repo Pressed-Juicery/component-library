@@ -21,7 +21,7 @@ export function Overview() {
 						{
 							iconUrl: '//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/greens.svg',
 							title: 'Your Daily Greens: Leveled Up',
-							content: `
+							description: `
 								The combination of apple cider vinegar with fresh-pressed juices
 								from ginger, spinach & more add minerals and prebiotics.
 							`,
@@ -29,7 +29,7 @@ export function Overview() {
 						{
 							iconUrl: '//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/probiotics.svg',
 							title: 'With the Mother',
-							content: `
+							description: `
 								Bragg apple cider vinegar contains the amazing vinegar “Mother,” which
 								occurs naturally as it produces prebiotics.
 							`,
@@ -37,7 +37,7 @@ export function Overview() {
 						{
 							iconUrl: '//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/acv.svg',
 							title: 'Balancing Your Appetite',
-							content: `
+							description: `
 								Bragg apple cider vinegar is full of zesty natural goodness. Studies show when
 								incorporated as part of a healthy diet, it may help maintain a healthy weight -
 								it’s associated with increased feelings of fullness!

@@ -7,7 +7,7 @@
 			</div>
 			<div>
 				<div :class="$style.title">{{ detail.title }}</div>
-				<div>{{ detail.content }}</div>
+				<div>{{ detail.description }}</div>
 			</div>
 		</div>
 	</div>
