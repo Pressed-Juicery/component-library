@@ -60,7 +60,7 @@ export default {
 	},
 	methods: {
 		selectModifier(modifier, isChecked) {
-			let pendingModifiers = [...(this.selectedModifiers || [])];
+			let pendingModifiers = this.selectedModifiers ? [...this.selectedModifiers] : [];
 
 			if (isChecked) {
 				pendingModifiers.push({
