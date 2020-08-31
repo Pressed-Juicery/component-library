@@ -100,8 +100,8 @@ export default {
 		width: $spacing-04;
 	}
 
-	.group:not(:first-child) {
-		margin-top: $spacing-06;
+	.group:not(:last-child) {
+		margin-bottom: $spacing-06;
 	}
 
 	.groupName {
