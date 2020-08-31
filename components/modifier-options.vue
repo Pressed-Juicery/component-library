@@ -117,7 +117,6 @@ export default {
 	}
 
 	.modifier {
-		position: relative;
 		margin: $spacing-05 0;
 	}
 </style>
