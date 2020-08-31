@@ -72,6 +72,7 @@ const groups = [{
 }, {
 	groupName: 'Components / Products',
 	stories: [
+		'AddonOptions',
 		'BundleCardGrid',
 		'BundleItems',
 		'CleanseGuide',

@@ -1,6 +1,7 @@
 import '../styles/index.scss';
 
 export { default as Accordion } from './accordion';
+export { default as AddonOptions } from './addon-options';
 export { default as AddressForm } from './address-form';
 export { default as AddressFormatter } from './address-formatter';
 export { default as AddressRadioButtonCard } from './address-radio-button-card';
