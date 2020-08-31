@@ -78,8 +78,8 @@ export default {
 		},
 		isSelected(modifier) {
 			// eslint-disable-next-line arrow-body-style
-			return this.selectedModifiers.some(selection => {
-				return selection.groupName !== modifier.groupName && selection.name === modifier.name;
+			return this.selectedModifiers.some(selectedModifier => {
+				return selectedModifier.groupName !== modifier.groupName && selectedModifier.name === modifier.name;
 			});
 		},
 		isDisabled(modifier) {
