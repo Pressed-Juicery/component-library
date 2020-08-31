@@ -4,11 +4,7 @@
 			<div>{{ triggerTitle }}</div>
 			<arrow-down-icon :class="$style.arrow" />
 		</div>
-		<collapsable-drawer
-			:isOpen="isOpen"
-			:title="drawerTitle"
-			@close="toggleDrawer"
-		>
+		<collapsable-drawer :isOpen="isOpen" :title="drawerTitle" @close="toggleDrawer">
 			<div :class="$style.group" v-for="(group, index) in modifiers.modifierGroups" :key="index">
 				<div :class="$style.groupName">{{ group.name }}</div>
 				<div :class="$style.modifier" v-for="(modifier, index) in group.modifiers" :key="index">
