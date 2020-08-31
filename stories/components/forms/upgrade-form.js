@@ -53,7 +53,7 @@ export function Overview() {
 		},
 		methods: {
 			onAddPaymentMethod() {
-				return 'payment';
+				console.log('Add new payment method'); // eslint-disable-line no-console
 			},
 			handleSubmit(data) {
 				this.data = data;
