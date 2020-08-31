@@ -14,7 +14,7 @@
 			v-model="paymentMethod"
 		/>
 
-		<card :class="$style.card" @click.native="$emit('add-new-payment', selectedReloadAmount)">
+		<card :class="$style.card" @click.native="$emit('add-payment-method', selectedReloadAmount)">
 			<div>Add a New Payment Method</div>
 			<div :class="$style.icon">+</div>
 		</card>

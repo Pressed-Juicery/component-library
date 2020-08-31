@@ -18,7 +18,7 @@ export function Overview() {
 					:selectedPaymentMethod="selectedPaymentMethod"
 					:braintreeTokenizationKey="braintreeTokenizationKey"
 					:reloadAmounts="reloadAmounts"
-					@add-new-payment="handleNewPayment"
+					@add-payment-method="onAddPaymentMethod"
 					@submit="handleSubmit"
 				/>
 				<p v-if="data" style="margin-top:24px">data: <code>{{ data }}</code></p>
@@ -52,7 +52,7 @@ export function Overview() {
 			};
 		},
 		methods: {
-			handleNewPayment() {
+			onAddPaymentMethod() {
 				return 'payment';
 			},
 			handleSubmit(data) {
