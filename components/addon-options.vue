@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div :class="$style.trigger" @click="toggleDrawer">
+		<div :class="$style.trigger" @click="isOpen = true">
 			{{ title }}
 			<up-carat-icon :class="$style.upArrow" />
 		</div>
@@ -56,16 +56,13 @@ export default {
 				this.selected.splice(index, 1);
 			}
 		},
-		toggleDrawer() {
-			this.isOpen = !this.isOpen;
-		},
 		cancelDrawer() {
 			this.selected = [...this.selectedAddons];
-			this.toggleDrawer();
+			this.isOpen = false;
 		},
 		submit() {
 			this.$emit('change', this.selected);
-			this.toggleDrawer();
+			this.isOpen = false;
 		},
 		isSelected(addon) {
 			return Boolean(this.selected.filter(selection => selection === addon).length);
