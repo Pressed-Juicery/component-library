@@ -119,8 +119,8 @@ export default {
 			const totalPrice = this.selectedAddons.reduce((sum, addon) => sum + addon.price, 0) * this.quantity;
 
 			return this.selectedAddons.length > 1
-				? `(+$${totalPrice} Enhancements)`
-				: `(+$${totalPrice} ${this.selectedAddons[0].name})`;
+				? `(+${formatCurrency(totalPrice)} Enhancements)`
+				: `(+${formatCurrency(totalPrice)} ${this.selectedAddons[0].name})`;
 		},
 	},
 	methods: {
