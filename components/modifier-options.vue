@@ -11,7 +11,7 @@
 					<validated-checkbox
 						:label="modifier.name"
 						:value="isSelected(modifier)"
-						@change="select(modifier)"
+						@change="isChecked => select(modifier, isChecked)"
 					/>
 					<div :class="$style.description">{{ modifier.description }}</div>
 				</div>
@@ -39,7 +39,6 @@ export default {
 	data() {
 		return {
 			isOpen: false,
-			selected: [],
 		};
 	},
 	computed: {
@@ -59,26 +58,21 @@ export default {
 		},
 	},
 	methods: {
-		select(modifier) {
-			const index = this.selected.indexOf(modifier);
+		select(modifier, isChecked) {
+			if (isChecked && this.selectedModifiers.length >= this.modifiers.maximumCount) return;
 
-			if (index === -1) {
-				if (this.selectedModifiers.length < this.modifiers.maximumCount) {
-					this.selected.push(modifier);
-				}
+			let pendingModifiers = [...(this.selectedModifiers || [])];
+
+			if (isChecked) {
+				pendingModifiers.push(modifier);
 			} else {
-				this.selected.splice(index, 1);
+				pendingModifiers = pendingModifiers.filter(pendingModifier => pendingModifier !== modifier);
 			}
 
-			this.$emit('change', this.selected);
+			this.$emit('change', pendingModifiers);
 		},
 		isSelected(modifier) {
 			return this.selectedModifiers.some(selection => selection === modifier);
-		},
-	},
-	watch: {
-		selectedModifiers(value) {
-			this.selected = [...value];
 		},
 	},
 };
