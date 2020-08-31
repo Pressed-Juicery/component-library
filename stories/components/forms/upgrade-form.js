@@ -24,7 +24,7 @@ export function Overview() {
 				<p v-if="data" style="margin-top:24px">data: <code>{{ data }}</code></p>
 				<button form="upgrade-form" type="submit" style="margin-top:24px">Submit</button>
 			</div>
-				`,
+		`,
 		data() {
 			return {
 				braintreeTokenizationKey: config.braintreeTokenizationKey,
