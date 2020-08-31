@@ -1,7 +1,7 @@
 <template>
 	<div v-if="addonGroup">
 		<div :class="$style.trigger" @click="openDrawer">
-			{{ title }}
+			<div>{{ title }}</div>
 			<arrow-down-icon :class="$style.upArrow" />
 		</div>
 
