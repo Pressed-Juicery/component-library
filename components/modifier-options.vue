@@ -68,7 +68,14 @@ export default {
 				pendingModifiers = pendingModifiers.filter(pendingModifier => pendingModifier !== modifier);
 			}
 
-			this.$emit('change', pendingModifiers);
+			const pendingModifiersFormatted = pendingModifiers.map(modifier => {
+				return {
+					groupName: this.modifiers.groupName,
+					name: modifier.name,
+				};
+			});
+
+			this.$emit('change', pendingModifiersFormatted);
 		},
 		isSelected(modifier) {
 			return this.selectedModifiers.some(selection => selection === modifier);
