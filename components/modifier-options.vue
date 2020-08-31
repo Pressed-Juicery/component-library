@@ -55,10 +55,11 @@ export default {
 			return `Select ${groupName} (${selectedCount}/${maximumCount})`;
 		},
 		drawerTitle() {
-			return `Select up to 3
-			${this.modifiers.groupName}
-			(${this.selection.length}/
-				${this.modifiers.maximumCount})`;
+			const groupName = this.modifiers.groupName;
+			const selectedCount = this.selection.length;
+			const maximumCount = this.modifiers.maximumCount;
+
+			return `Select up to 3 ${groupName} (${selectedCount}/${maximumCount})`;
 		},
 	},
 	methods: {
