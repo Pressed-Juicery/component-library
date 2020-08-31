@@ -1,7 +1,7 @@
 <template>
 	<div v-if="modifiers">
 		<div :class="$style.trigger" @click="toggleDrawer">
-			<div>{{ title }}</div>
+			<div>{{ triggerTitle }}</div>
 			<arrow-down-icon :class="$style.arrow" />
 		</div>
 		<collapsable-drawer
@@ -47,7 +47,7 @@ export default {
 		};
 	},
 	computed: {
-		title() {
+		triggerTitle() {
 			const groupName = this.modifiers.groupName;
 			const selectedCount = this.selection.length;
 			const maximumCount = this.modifiers.maximumCount;
