@@ -59,12 +59,12 @@ export default {
 		},
 	},
 	methods: {
-		select(value) {
-			const index = this.selected.indexOf(value);
+		select(modifier) {
+			const index = this.selected.indexOf(modifier);
 
 			if (index === -1) {
 				if (this.selection.length < this.modifiers.maximumCount) {
-					this.selected.push(value);
+					this.selected.push(modifier);
 				}
 			} else {
 				this.selected.splice(index, 1);
