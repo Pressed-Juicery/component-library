@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-if="modifiers">
 		<div :class="$style.trigger" @click="toggleDrawer">
 			{{ title }}
 			<up-carat-icon :class="$style.upArrow" />
@@ -34,7 +34,6 @@ export default {
 	props: {
 		modifiers: {
 			type: Object,
-			required: true,
 		},
 		selection: {
 			type: Array,
