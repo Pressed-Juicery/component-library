@@ -12,7 +12,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 			<modifier-options
 				:modifiers="modifiers"
 				:selected-modifiers="selectedModifiers"
-				@change="addSelected"
+				@change="onChange"
 			/>
 		`,
 		data() { // eslint-disable-line max-lines-per-function
@@ -106,7 +106,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 			};
 		},
 		methods: {
-			addSelected(selected) {
+			onChange(selected) {
 				this.selectedModifiers = selected;
 			},
 		},
