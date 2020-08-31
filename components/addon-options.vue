@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-if="addonGroup">
 		<div :class="$style.trigger" @click="isOpen = true">
 			{{ title }}
 			<up-carat-icon :class="$style.upArrow" />
@@ -29,7 +29,6 @@ export default {
 	props: {
 		addonGroup: {
 			type: Object,
-			required: true,
 		},
 		selectedAddons: {
 			type: Array,
