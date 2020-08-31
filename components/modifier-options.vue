@@ -68,15 +68,19 @@ export default {
 					name: modifier.name,
 				});
 			} else {
-				// eslint-disable-next-line max-len
-				pendingModifiers = pendingModifiers.filter(pendingModifier => pendingModifier.name !== modifier.name && pendingModifier.groupName !== modifier.groupName);
+				// eslint-disable-next-line arrow-body-style
+				pendingModifiers = pendingModifiers.filter(pendingModifier => {
+					return pendingModifier.groupName !== modifier.groupName && pendingModifier.name !== modifier.name;
+				});
 			}
 
 			this.$emit('change', pendingModifiers);
 		},
 		isSelected(modifier) {
-			// eslint-disable-next-line max-len
-			return this.selectedModifiers.some(selection => selection.name === modifier.name && selection.groupName !== modifier.groupName);
+			// eslint-disable-next-line arrow-body-style
+			return this.selectedModifiers.some(selection => {
+				return selection.groupName !== modifier.groupName && selection.name === modifier.name;
+			});
 		},
 		isDisabled(modifier) {
 			const isLimitReached = this.selectedModifiers.length >= this.modifiers.maximumCount;
