@@ -45,7 +45,7 @@
 			:class="$style.modifierOptions"
 			:modifiers="product.toppingModifiers"
 			:selected-modifiers="selectedModifiers"
-			@change="addSelected"
+			@change="modifiers => selectedModifiers = modifiers"
 		/>
 
 		<div :class="$style.actionsGroup">
@@ -128,9 +128,6 @@ export default {
 				addons: this.selectedAddons,
 				modifiers: this.selectedModifiers,
 			});
-		},
-		addSelected(value) {
-			this.selectedModifiers = value;
 		},
 	},
 	filters: {
