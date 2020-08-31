@@ -4,7 +4,7 @@
 			<div>{{ triggerTitle }}</div>
 			<arrow-down-icon :class="$style.arrow" />
 		</div>
-		<collapsable-drawer :isOpen="isOpen" :title="drawerTitle" @close="isOpen = false">
+		<collapsible-drawer :isOpen="isOpen" :title="drawerTitle" @close="isOpen = false">
 			<div :class="$style.group" v-for="(group, index) in modifiers.modifierGroups" :key="index">
 				<div :class="$style.groupName">{{ group.name }}</div>
 				<div :class="$style.modifier" v-for="(modifier, index) in group.modifiers" :key="index">
@@ -17,17 +17,17 @@
 					<div :class="$style.description">{{ modifier.description }}</div>
 				</div>
 			</div>
-		</collapsable-drawer>
+		</collapsible-drawer>
 	</div>
 </template>
 
 <script>
 import ArrowDownIcon from './icons/arrow-down-icon';
-import CollapsableDrawer from './collapsible-drawer';
+import CollapsibleDrawer from './collapsible-drawer';
 import ValidatedCheckbox from './validated-checkbox';
 
 export default {
-	components: { ArrowDownIcon, CollapsableDrawer, ValidatedCheckbox },
+	components: { ArrowDownIcon, CollapsibleDrawer, ValidatedCheckbox },
 	props: {
 		modifiers: {
 			type: Object,
