@@ -34,7 +34,6 @@
 		/>
 
 		<addon-options
-			v-if="hasAddons"
 			:class="$style.addonOptions"
 			:addon-group="product.addonGroup"
 			:selected-addons="selection"
@@ -106,9 +105,6 @@ export default {
 		},
 		hasModifiers() {
 			return Boolean(this.product.toppingModifiers && Object.keys(this.product.toppingModifiers).length > 0);
-		},
-		hasAddons() {
-			return Boolean(this.product.addonGroup && Object.keys(this.product.addonGroup).length > 0);
 		},
 	},
 	methods: {
