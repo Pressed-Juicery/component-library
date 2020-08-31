@@ -38,7 +38,7 @@ export default {
 			type: Object,
 			required: true,
 		},
-		selection: {
+		selectedAddons: {
 			type: Array,
 			required: true,
 		},
@@ -51,7 +51,7 @@ export default {
 	},
 	computed: {
 		title() {
-			return `${this.addonGroup.name} (${this.selection.length}/${this.addonGroup.addons.length})`;
+			return `${this.addonGroup.name} (${this.selectedAddons.length}/${this.addonGroup.addons.length})`;
 		},
 	},
 	methods: {
@@ -68,7 +68,7 @@ export default {
 			this.isOpen = !this.isOpen;
 		},
 		cancelDrawer() {
-			this.selected = [...this.selection];
+			this.selected = [...this.selectedAddons];
 			this.toggleDrawer();
 		},
 		submit() {
@@ -83,7 +83,7 @@ export default {
 		},
 	},
 	watch: {
-		selection(value) {
+		selectedAddons(value) {
 			this.selected = [...value];
 		},
 	},

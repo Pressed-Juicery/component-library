@@ -8,7 +8,7 @@ export default {
 export function Overview() { // eslint-disable-line max-lines-per-function
 	return {
 		components: { AddonOptions },
-		template: '<addon-options :addon-group="addonGroup" :selection="selection" @change="addSelected" />',
+		template: '<addon-options :addonGroup="addonGroup" :selected-addons="selection" @change="addSelected" />',
 		data() {
 			return {
 				addonGroup: {
