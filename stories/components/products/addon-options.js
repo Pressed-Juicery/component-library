@@ -8,7 +8,7 @@ export default {
 export function Overview() { // eslint-disable-line max-lines-per-function
 	return {
 		components: { AddonOptions },
-		template: '<addon-options :addonGroup="addonGroup" :selected-addons="selection" @change="addSelected" />',
+		template: '<addon-options :addonGroup="addonGroup" :selected-addons="selectedAddons" @change="addSelected" />',
 		data() {
 			return {
 				addonGroup: {
@@ -30,12 +30,12 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 						displayPrice: '$5.00/day',
 					}],
 				},
-				selection: [],
+				selectedAddons: [],
 			};
 		},
 		methods: {
-			addSelected(selected) {
-				this.selection = selected;
+			addSelected(selectedAddons) {
+				this.selectedAddons = selectedAddons;
 			},
 		},
 	};
