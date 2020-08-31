@@ -63,15 +63,18 @@ export default {
 			let pendingModifiers = [...(this.selectedModifiers || [])];
 
 			if (isChecked) {
-				pendingModifiers.push(modifier);
+				pendingModifiers.push({
+					groupName: this.modifiers.groupName,
+					name: modifier.name,
+				});
 			} else {
-				pendingModifiers = pendingModifiers.filter(pendingModifier => pendingModifier !== modifier);
+				pendingModifiers = pendingModifiers.filter(pendingModifier => pendingModifier.name !== modifier.name);
 			}
 
 			this.$emit('change', pendingModifiers);
 		},
 		isSelected(modifier) {
-			return this.selectedModifiers.some(selection => selection === modifier);
+			return this.selectedModifiers.some(selection => selection.name === modifier.name);
 		},
 		isDisabled(modifier) {
 			const isLimitReached = this.selectedModifiers.length >= this.modifiers.maximumCount;
