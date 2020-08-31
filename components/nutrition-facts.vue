@@ -22,7 +22,7 @@
 
 		<div :class="$style.vitamins">
 			<span :class="$style.vitamin" v-for="(vitamin, index) in nutritionDetails.vitamins" :key="index">
-				{{ vitamin.value }} {{ vitamin.label }}
+				{{ vitamin.dailyValue }} {{ vitamin.name }}
 			</span>
 		</div>
 
