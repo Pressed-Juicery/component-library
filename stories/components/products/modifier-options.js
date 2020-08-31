@@ -10,9 +10,9 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 		components: { ModifierOptions },
 		template: `
 			<modifier-options
-				@change="addSelected"
 				:modifiers="modifiers"
 				:selected-modifiers="selectedModifiers"
+				@change="addSelected"
 			/>
 		`,
 		data() { // eslint-disable-line max-lines-per-function
