@@ -63,7 +63,7 @@ export default {
 			this.isOpen = false;
 		},
 		isSelected(addon) {
-			return Boolean(this.pendingAddons.filter(selection => selection === addon).length);
+			return this.pendingAddons.some(selection => selection === addon);
 		},
 		checkboxLabel(addon) {
 			return `${addon.name} (${addon.displayPrice})`;
