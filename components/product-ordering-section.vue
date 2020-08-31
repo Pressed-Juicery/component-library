@@ -33,6 +33,13 @@
 			@input="value => this.$emit('variant-change', value)"
 		/>
 
+		<addon-options
+			:class="$style.addonOptions"
+			:addon-group="product.addonGroup"
+			:selected-addons="selectedAddons"
+			@submit="selectAddons"
+		/>
+
 		<div :class="$style.actionsGroup">
 			<input
 				:class="$style.quantity"
@@ -46,11 +53,12 @@
 </template>
 
 <script>
+import AddonOptions from './addon-options';
 import ValidatedSelect from './validated-select';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { ValidatedSelect },
+	components: { AddonOptions, ValidatedSelect },
 	props: {
 		isVip: {
 			type: Boolean,
@@ -67,6 +75,7 @@ export default {
 	data() {
 		return {
 			quantity: 1,
+			selectedAddons: [],
 		};
 	},
 	computed: {
@@ -100,7 +109,11 @@ export default {
 			this.$emit('addToCart', {
 				variantId: this.selectedVariant.id,
 				quantity: Number(this.quantity),
+				addons: this.selectedAddons,
 			});
+		},
+		selectAddons(addons) {
+			this.selectedAddons = addons;
 		},
 	},
 	filters: {
@@ -143,7 +156,8 @@ export default {
 		text-decoration: underline;
 	}
 
-	.variantSelector {
+	.variantSelector,
+	.addonOptions {
 		margin-bottom: $spacing-03;
 	}
 

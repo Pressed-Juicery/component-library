@@ -68,6 +68,51 @@ export function WithSaleItems() { // eslint-disable-line max-lines-per-function
 	};
 }
 
+export function WithAddons() { // eslint-disable-line max-lines-per-function
+	return {
+		components: { ProductOrderingSection },
+		template: `
+			<product-ordering-section
+				:isVip="isVip"
+				:product="product"
+				:selected-variant="selectedVariant"
+				@variant-change="variant => this.selectedVariant = variant"
+			>
+				<a href="#">Learn More</a>
+			</product-ordering-section>
+		`,
+		data() {
+			return {
+				isVip: false,
+				selectedVariant: null,
+				product: JSON.parse(JSON.stringify(productData)),
+			};
+		},
+		created() {
+			this.selectedVariant = this.product.variants[0];
+			this.product.addonGroup = {
+				name: 'Enhance your cleanse',
+				addons: [{
+					name: 'Addon 1',
+					variantIds: ['1', '2', '3'],
+					price: 5.00,
+					displayPrice: '$5.00/day',
+				}, {
+					name: 'Addon 2',
+					variantIds: ['1', '2', '3'],
+					price: 5.00,
+					displayPrice: '$5.00/day',
+				}, {
+					name: 'Addon 3',
+					variantIds: ['1', '2', '3'],
+					price: 5.00,
+					displayPrice: '$5.00/day',
+				}],
+			};
+		},
+	};
+}
+
 export function VipPricing() {
 	return {
 		components: { ProductOrderingSection },
