@@ -44,7 +44,7 @@
 			v-if="hasModifiers"
 			:class="$style.modifierOptions"
 			:modifiers="product.toppingModifiers"
-			:selected-modifiers="selection"
+			:selected-modifiers="selectedModifiers"
 			@change="addSelected"
 		/>
 
@@ -85,7 +85,7 @@ export default {
 		return {
 			quantity: 1,
 			selectedAddons: [],
-			selection: [],
+			selectedModifiers: [],
 		};
 	},
 	computed: {
@@ -126,11 +126,11 @@ export default {
 				variantId: this.selectedVariant.id,
 				quantity: Number(this.quantity),
 				addons: this.selectedAddons,
-				modifiers: this.selection,
+				modifiers: this.selectedModifiers,
 			});
 		},
 		addSelected(value) {
-			this.selection = value;
+			this.selectedModifiers = value;
 		},
 	},
 	filters: {
