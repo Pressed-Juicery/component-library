@@ -2,7 +2,7 @@
 	<div v-if="modifiers">
 		<div :class="$style.trigger" @click="toggleDrawer">
 			<div>{{ title }}</div>
-			<up-carat-icon :class="$style.upArrow" />
+			<up-carat-icon :class="$style.arrow" />
 		</div>
 		<collapsable-drawer
 			:isOpen="isOpen"
@@ -102,7 +102,7 @@ export default {
 		border-radius: $border-radius;
 	}
 
-	.upArrow {
+	.arrow {
 		height: $spacing-04;
 		width: $spacing-04;
 	}
