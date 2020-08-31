@@ -32,7 +32,6 @@ export default {
 		},
 		selectedAddons: {
 			type: Array,
-			required: true,
 		},
 	},
 	data() {
@@ -43,12 +42,15 @@ export default {
 	},
 	computed: {
 		title() {
-			return `${this.addonGroup.name} (${this.selectedAddons.length}/${this.addonGroup.addons.length})`;
+			const selectedAddonCount = (this.selectedAddons || []).length;
+			const totalAvailableAddons = this.addonGroup && this.addonGroup.addons.length;
+
+			return `${this.addonGroup.name} (${selectedAddonCount}/${totalAvailableAddons})`;
 		},
 	},
 	methods: {
 		openDrawer() {
-			this.pendingAddons = [...this.selectedAddons];
+			this.pendingAddons = [...(this.selectedAddons || [])];
 			this.isOpen = true;
 		},
 		closeDrawer() {

@@ -17,7 +17,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 		`,
 		data() {
 			return {
-				selectedAddons: [],
+				selectedAddons: null,
 				addonGroup: {
 					name: 'Enhance your cleanse',
 					addons: [{
