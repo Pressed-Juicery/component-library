@@ -110,10 +110,10 @@ export default {
 	}
 
 	.description {
-		margin-top: -$spacing-06;
-		margin-left: $spacing-07;
 		@include text-body-small();
 		@include text-subtle();
+		margin-top: -$spacing-06;
+		margin-left: $spacing-07;
 	}
 
 	.modifier {
