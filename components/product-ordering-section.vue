@@ -4,9 +4,12 @@
 		<img :class="$style.image" :src="selectedVariant.imageUrl">
 
 		<div :class="$style.information">
-			<div :class="$style.price">
-				<span v-if="salePrice">{{ salePrice | currency }}</span>
-				<span :class="{ [$style.strikethrough]: salePrice }">{{ price | currency }}</span>
+			<div>
+				<span v-if="salePrice" :class="$style.price">{{ salePrice | currency }}</span>
+				<span :class="[{ [$style.strikethrough]: salePrice }, $style.price]">{{ price | currency }}</span>
+				<span :class="$style.addonSummary" v-if="selectedAddons.length">
+					{{ addonSummary }}
+				</span>
 			</div>
 			<div v-if="selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
