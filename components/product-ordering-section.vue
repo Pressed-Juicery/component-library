@@ -183,9 +183,13 @@ export default {
 		margin-bottom: $spacing-03;
 	}
 
+	.addonSummary,
+	.strikethrough {
+		@include text-subtle();
+	}
+
 	.strikethrough {
 		@include text-strikethrough();
-		@include text-subtle();
 	}
 
 	.actionsGroup {
