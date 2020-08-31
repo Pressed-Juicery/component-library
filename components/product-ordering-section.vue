@@ -37,7 +37,7 @@
 			:class="$style.addonOptions"
 			:addon-group="product.addonGroup"
 			:selected-addons="selectedAddons"
-			@submit="selectAddons"
+			@submit="addons => selectedAddons = addons"
 		/>
 
 		<div :class="$style.actionsGroup">
@@ -111,9 +111,6 @@ export default {
 				quantity: Number(this.quantity),
 				addons: this.selectedAddons,
 			});
-		},
-		selectAddons(addons) {
-			this.selectedAddons = addons;
 		},
 	},
 	filters: {
