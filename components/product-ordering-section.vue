@@ -36,7 +36,7 @@
 		<addon-options
 			:class="$style.addonOptions"
 			:addon-group="product.addonGroup"
-			:selected-addons="selection"
+			:selected-addons="selectedAddons"
 			@submit="addSelected"
 		/>
 
@@ -75,7 +75,7 @@ export default {
 	data() {
 		return {
 			quantity: 1,
-			selection: [],
+			selectedAddons: [],
 		};
 	},
 	computed: {
@@ -109,11 +109,11 @@ export default {
 			this.$emit('addToCart', {
 				variantId: this.selectedVariant.id,
 				quantity: Number(this.quantity),
-				addons: this.selection,
+				addons: this.selectedAddons,
 			});
 		},
 		addSelected(selected) {
-			this.selection = selected;
+			this.selectedAddons = selected;
 		},
 	},
 	filters: {
