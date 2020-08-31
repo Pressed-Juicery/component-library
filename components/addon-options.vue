@@ -9,7 +9,7 @@
 			<validated-checkbox
 				v-for="(addon, index) in addonGroup.addons"
 				:key="index"
-				:label="checkboxLabel(addon)"
+				:label="getCheckboxLabel(addon)"
 				:value="isSelected(addon)"
 				@change="isChecked => onChange(addon, isChecked)"
 			/>
@@ -56,7 +56,7 @@ export default {
 		closeDrawer() {
 			this.isOpen = false;
 		},
-		checkboxLabel(addon) {
+		getCheckboxLabel(addon) {
 			return `${addon.name} (${addon.displayPrice})`;
 		},
 		isSelected(addon) {
