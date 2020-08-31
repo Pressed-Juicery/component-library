@@ -112,8 +112,8 @@ export default {
 				addons: this.selectedAddons,
 			});
 		},
-		addSelected(selected) {
-			this.selectedAddons = selected;
+		addSelected(addons) {
+			this.selectedAddons = addons;
 		},
 	},
 	filters: {
