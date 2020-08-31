@@ -28,20 +28,17 @@ export function Overview() {
 		data() {
 			return {
 				braintreeTokenizationKey: config.braintreeTokenizationKey,
-				paymentMethods: [
-					{
-						vendor: 'visa',
-						id: 'ctqpvw2',
-						identifier: '····4242',
-						isPrimary: true,
-					},
-					{
-						vendor: 'visa',
-						id: 'nck9nc6',
-						identifier: '····4242',
-						isPrimary: false,
-					},
-				],
+				paymentMethods: [{
+					vendor: 'visa',
+					id: 'ctqpvw2',
+					identifier: '····4242',
+					isPrimary: true,
+				}, {
+					vendor: 'visa',
+					id: 'nck9nc6',
+					identifier: '····4242',
+					isPrimary: false,
+				}],
 				selectedPaymentMethod: {
 					vendor: 'visa',
 					id: 'ctqpvw2',
