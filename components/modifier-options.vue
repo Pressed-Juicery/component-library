@@ -73,7 +73,7 @@ export default {
 			this.$emit('change', this.selected);
 		},
 		isSelected(modifier) {
-			return Boolean(this.selected.filter(selection => selection === modifier).length);
+			return this.selected.some(selection => selection === modifier);
 		},
 	},
 	watch: {
