@@ -89,6 +89,7 @@ export function WithAddons() { // eslint-disable-line max-lines-per-function
 			};
 		},
 		created() {
+			this.selectedVariant = this.product.variants[0];
 			this.product.addonGroup = {
 				name: 'Enhance your cleanse',
 				addons: [{
@@ -108,8 +109,6 @@ export function WithAddons() { // eslint-disable-line max-lines-per-function
 					displayPrice: '$5.00/day',
 				}],
 			};
-
-			this.selectedVariant = this.product.variants[0];
 		},
 	};
 }
