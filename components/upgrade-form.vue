@@ -50,7 +50,6 @@ export default {
 	data() {
 		return {
 			paymentMethod: this.selectedPaymentMethod,
-			reloadAmount: this.selectedReloadAmount && this.selectedReloadAmount.value,
 			reloadAmountRules: [{
 				validator: isNotEmpty,
 				message: 'Please select a monthly reload amount.',
@@ -62,10 +61,12 @@ export default {
 		selectedPaymentMethod(paymentMethod) {
 			this.paymentMethod = paymentMethod;
 		},
+	},
 
-		selectedReloadAmount() {
-			this.reloadAmount = this.selectedReloadAmount && this.selectedReloadAmount.value;
-		},
+	computed: {
+		reloadAmount() {
+			return this.selectedReloadAmount && this.selectedReloadAmount.value;
+		}
 	},
 
 	methods: {
