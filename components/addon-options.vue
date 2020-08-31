@@ -101,6 +101,7 @@ export default {
 	}
 
 	.submit {
-		@include button-large();
+		@include button();
+		width: 100%;
 	}
 </style>
