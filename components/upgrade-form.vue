@@ -3,7 +3,6 @@
 		<validated-select
 			label="Monthly Membership Reload"
 			:options="reloadAmounts"
-			:rules="reloadAmountRules"
 			v-model="reloadAmount"
 		/>
 
@@ -26,7 +25,6 @@ import Card from './card';
 import PaymentMethodRadioButtonCard from './payment-method-radio-button-card';
 import ValidatedForm from './validated-form';
 import ValidatedSelect from './validated-select';
-import { isNotEmpty } from '../utilities/validators';
 
 export default {
 	components: {
@@ -50,10 +48,6 @@ export default {
 	data() {
 		return {
 			paymentMethod: this.selectedPaymentMethod,
-			reloadAmountRules: [{
-				validator: isNotEmpty,
-				message: 'Please select a monthly reload amount.',
-			}],
 		};
 	},
 
