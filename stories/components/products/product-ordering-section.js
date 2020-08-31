@@ -67,6 +67,7 @@ export function WithSaleItems() { // eslint-disable-line max-lines-per-function
 		},
 	};
 }
+
 export function WithAddons() { // eslint-disable-line max-lines-per-function
 	return {
 		components: { ProductOrderingSection },
