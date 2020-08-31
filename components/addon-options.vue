@@ -2,7 +2,7 @@
 	<div v-if="addonGroup">
 		<div :class="$style.trigger" @click="openDrawer">
 			<div>{{ title }}</div>
-			<arrow-down-icon :class="$style.upArrow" />
+			<arrow-down-icon :class="$style.arrowIcon" />
 		</div>
 
 		<collapsable-drawer :isOpen="isOpen" :title="addonGroup.name" @close="closeDrawer">
@@ -95,7 +95,7 @@ export default {
 		border-radius: $border-radius;
 	}
 
-	.upArrow {
+	.arrowIcon {
 		height: $spacing-04;
 		width: $spacing-04;
 	}
