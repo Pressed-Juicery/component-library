@@ -106,8 +106,8 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 			};
 		},
 		methods: {
-			onChange(selected) {
-				this.selectedModifiers = selected;
+			onChange(modifiers) {
+				this.selectedModifiers = modifiers;
 			},
 		},
 	};
