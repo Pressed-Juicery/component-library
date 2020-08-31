@@ -12,7 +12,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 			<addon-options
 				:addonGroup="addonGroup"
 				:selected-addons="selectedAddons"
-				@change="addons => selectedAddons = addons"
+				@submit="addons => selectedAddons = addons"
 			/>
 		`,
 		data() {

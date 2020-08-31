@@ -65,7 +65,7 @@ export default {
 			}
 		},
 		submit() {
-			this.$emit('change', this.pendingAddons);
+			this.$emit('submit', this.pendingAddons);
 			this.isOpen = false;
 		},
 	},
