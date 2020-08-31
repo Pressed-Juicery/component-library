@@ -18,7 +18,6 @@
 			<div>Add a New Payment Method</div>
 			<div :class="$style.icon">+</div>
 		</card>
-
 	</validated-form>
 </template>
 
@@ -104,5 +103,4 @@ export default {
 		color: $gray-30;
 		font-size: $spacing-07;
 	}
-
 </style>
