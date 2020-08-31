@@ -2,7 +2,7 @@
 	<div v-if="addonGroup">
 		<div :class="$style.trigger" @click="openDrawer">
 			{{ title }}
-			<up-carat-icon :class="$style.upArrow" />
+			<arrow-down-icon :class="$style.upArrow" />
 		</div>
 
 		<collapsable-drawer :isOpen="isOpen" :title="addonGroup.name" @close="closeDrawer">
@@ -20,12 +20,12 @@
 </template>
 
 <script>
+import ArrowDownIcon from './icons/arrow-down-icon';
 import CollapsableDrawer from './collapsible-drawer';
-import UpCaratIcon from './icons/up-caret-icon';
 import ValidatedCheckbox from './validated-checkbox';
 
 export default {
-	components: { CollapsableDrawer, UpCaratIcon, ValidatedCheckbox },
+	components: { ArrowDownIcon, CollapsableDrawer, ValidatedCheckbox },
 	props: {
 		addonGroup: {
 			type: Object,
