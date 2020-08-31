@@ -160,6 +160,7 @@ export function WithModifiers() { // eslint-disable-line max-lines-per-function
 			};
 		},
 		created() { // eslint-disable-line max-lines-per-function
+			this.selectedVariant = this.product.variants[0];
 			this.product.toppingModifiers = {
 				groupName: 'toppings',
 				maximumCount: 3,
@@ -245,8 +246,6 @@ export function WithModifiers() { // eslint-disable-line max-lines-per-function
 					}],
 				}],
 			};
-
-			this.selectedVariant = this.product.variants[0];
 		},
 	};
 }
