@@ -93,6 +93,7 @@ export default {
 		padding: $spacing-03 $spacing-07 $spacing-03 $spacing-06;
 		border: $border-width solid $border-color-light;
 		border-radius: $border-radius;
+		background: white;
 	}
 
 	.arrow {
