@@ -69,7 +69,7 @@ export default {
 		},
 		submit() {
 			this.$emit('submit', this.pendingAddons);
-			this.isOpen = false;
+			this.closeDrawer();
 		},
 	},
 	watch: {
