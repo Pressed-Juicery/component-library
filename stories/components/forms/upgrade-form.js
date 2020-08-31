@@ -21,8 +21,8 @@ export function Overview() {
 					@add-new-payment="handleNewPayment"
 					@submit="handleSubmit"
 				/>
-				<p v-if="data" style="margin-top:30px">data: <code>{{ data }}</code></p>
-				<button form="upgrade-form" type="submit">Submit</button>
+				<p v-if="data" style="margin-top:24px">data: <code>{{ data }}</code></p>
+				<button form="upgrade-form" type="submit" style="margin-top:24px">Submit</button>
 			</div>
 				`,
 		data() {
