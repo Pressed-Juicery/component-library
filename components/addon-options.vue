@@ -47,6 +47,16 @@ export default {
 		},
 	},
 	methods: {
+		cancelSelection() {
+			this.pendingAddons = [...this.selectedAddons];
+			this.isOpen = false;
+		},
+		checkboxLabel(addon) {
+			return `${addon.name} (${addon.displayPrice})`;
+		},
+		isSelected(addon) {
+			return this.pendingAddons.some(pendingAddon => pendingAddon === addon);
+		},
 		onChange(addon, isChecked) {
 			if (isChecked) {
 				this.pendingAddons.push(addon);
@@ -54,19 +64,9 @@ export default {
 				this.pendingAddons = this.pendingAddons.filter(pendingAddon => pendingAddon !== addon);
 			}
 		},
-		cancelSelection() {
-			this.pendingAddons = [...this.selectedAddons];
-			this.isOpen = false;
-		},
 		submit() {
 			this.$emit('change', this.pendingAddons);
 			this.isOpen = false;
-		},
-		isSelected(addon) {
-			return this.pendingAddons.some(pendingAddon => pendingAddon === addon);
-		},
-		checkboxLabel(addon) {
-			return `${addon.name} (${addon.displayPrice})`;
 		},
 	},
 	watch: {
