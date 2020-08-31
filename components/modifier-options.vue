@@ -11,7 +11,7 @@
 					<validated-checkbox
 						:label="modifier.name"
 						:value="isSelected(modifier)"
-						@change="isChecked => select(modifier, isChecked)"
+						@change="isChecked => selectModifier(modifier, isChecked)"
 						:disabled="isDisabled(modifier)"
 					/>
 					<div :class="$style.description">{{ modifier.description }}</div>
@@ -59,19 +59,28 @@ export default {
 		},
 	},
 	methods: {
-		select(modifier, isChecked) {
-			let pendingModifiers = [...(this.selectedModifiers || [])];
+		selectModifier(modifier, isChecked) {
+			let pendingModifiers = this.selectedModifiers ? [...this.selectedModifiers] : [];
 
 			if (isChecked) {
-				pendingModifiers.push(modifier);
+				pendingModifiers.push({
+					groupName: this.modifiers.groupName,
+					name: modifier.name,
+				});
 			} else {
-				pendingModifiers = pendingModifiers.filter(pendingModifier => pendingModifier !== modifier);
+				// eslint-disable-next-line arrow-body-style
+				pendingModifiers = pendingModifiers.filter(pendingModifier => {
+					return pendingModifier.groupName !== modifier.groupName && pendingModifier.name !== modifier.name;
+				});
 			}
 
 			this.$emit('change', pendingModifiers);
 		},
 		isSelected(modifier) {
-			return this.selectedModifiers.some(selection => selection === modifier);
+			// eslint-disable-next-line arrow-body-style
+			return this.selectedModifiers.some(selectedModifier => {
+				return selectedModifier.groupName !== modifier.groupName && selectedModifier.name === modifier.name;
+			});
 		},
 		isDisabled(modifier) {
 			const isLimitReached = this.selectedModifiers.length >= this.modifiers.maximumCount;
