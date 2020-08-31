@@ -1,6 +1,6 @@
 <template>
 	<div v-if="addonGroup">
-		<div :class="$style.trigger" @click="isOpen = true">
+		<div :class="$style.trigger" @click="openDrawer">
 			{{ title }}
 			<up-carat-icon :class="$style.upArrow" />
 		</div>
@@ -47,8 +47,11 @@ export default {
 		},
 	},
 	methods: {
-		cancelSelection() {
+		openDrawer() {
 			this.pendingAddons = [...this.selectedAddons];
+			this.isOpen = true;
+		},
+		cancelSelection() {
 			this.isOpen = false;
 		},
 		checkboxLabel(addon) {
