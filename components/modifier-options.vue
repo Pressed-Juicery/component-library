@@ -1,10 +1,10 @@
 <template>
 	<div v-if="modifiers">
-		<div :class="$style.trigger" @click="toggleDrawer">
+		<div :class="$style.trigger" @click="isOpen = true">
 			<div>{{ triggerTitle }}</div>
 			<arrow-down-icon :class="$style.arrow" />
 		</div>
-		<collapsable-drawer :isOpen="isOpen" :title="drawerTitle" @close="toggleDrawer">
+		<collapsable-drawer :isOpen="isOpen" :title="drawerTitle" @close="isOpen = false">
 			<div :class="$style.group" v-for="(group, index) in modifiers.modifierGroups" :key="index">
 				<div :class="$style.groupName">{{ group.name }}</div>
 				<div :class="$style.modifier" v-for="(modifier, index) in group.modifiers" :key="index">
@@ -71,9 +71,6 @@ export default {
 			}
 
 			this.$emit('change', this.selected);
-		},
-		toggleDrawer() {
-			this.isOpen = !this.isOpen;
 		},
 		isSelected(modifier) {
 			return Boolean(this.selected.filter(selection => selection === modifier).length);
