@@ -43,8 +43,8 @@
 		<modifier-options
 			v-if="hasModifiers"
 			:class="$style.modifierOptions"
-			:toppingModifiers="product.toppingModifiers"
-			:selection="selection"
+			:modifiers="product.toppingModifiers"
+			:selected-modifiers="selection"
 			@change="addSelected"
 		/>
 
