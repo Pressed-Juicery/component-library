@@ -2,7 +2,7 @@
 	<div v-if="modifiers">
 		<div :class="$style.trigger" @click="toggleDrawer">
 			<div>{{ title }}</div>
-			<up-carat-icon :class="$style.arrow" />
+			<arrow-down-icon :class="$style.arrow" />
 		</div>
 		<collapsable-drawer
 			:isOpen="isOpen"
@@ -25,12 +25,12 @@
 </template>
 
 <script>
+import ArrowDownIcon from './icons/arrow-down-icon';
 import CollapsableDrawer from './collapsible-drawer';
-import UpCaratIcon from './icons/up-caret-icon';
 import ValidatedCheckbox from './validated-checkbox';
 
 export default {
-	components: { CollapsableDrawer, UpCaratIcon, ValidatedCheckbox },
+	components: { ArrowDownIcon, CollapsableDrawer, ValidatedCheckbox },
 	props: {
 		modifiers: {
 			type: Object,
