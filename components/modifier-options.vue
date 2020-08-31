@@ -12,6 +12,7 @@
 						:label="modifier.name"
 						:value="isSelected(modifier)"
 						@change="isChecked => select(modifier, isChecked)"
+						:disabled="isDisabled(modifier)"
 					/>
 					<div :class="$style.description">{{ modifier.description }}</div>
 				</div>
@@ -59,8 +60,6 @@ export default {
 	},
 	methods: {
 		select(modifier, isChecked) {
-			if (isChecked && this.selectedModifiers.length >= this.modifiers.maximumCount) return;
-
 			let pendingModifiers = [...(this.selectedModifiers || [])];
 
 			if (isChecked) {
@@ -74,6 +73,11 @@ export default {
 		isSelected(modifier) {
 			return this.selectedModifiers.some(selection => selection === modifier);
 		},
+		isDisabled(modifier) {
+			const isLimitReached = this.selectedModifiers.length >= this.modifiers.maximumCount;
+
+			return !this.isSelected(modifier) && isLimitReached;
+		}
 	},
 };
 </script>
