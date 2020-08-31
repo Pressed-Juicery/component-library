@@ -31,7 +31,7 @@ export default {
 		modifiers: {
 			type: Object,
 		},
-		selection: {
+		selectedModifiers: {
 			type: Array,
 			required: true,
 		},
@@ -45,14 +45,14 @@ export default {
 	computed: {
 		triggerTitle() {
 			const groupName = this.modifiers.groupName;
-			const selectedCount = this.selection.length;
+			const selectedCount = this.selectedModifiers.length;
 			const maximumCount = this.modifiers.maximumCount;
 
 			return `Select ${groupName} (${selectedCount}/${maximumCount})`;
 		},
 		drawerTitle() {
 			const groupName = this.modifiers.groupName;
-			const selectedCount = this.selection.length;
+			const selectedCount = this.selectedModifiers.length;
 			const maximumCount = this.modifiers.maximumCount;
 
 			return `Select up to ${maximumCount} ${groupName} (${selectedCount}/${maximumCount})`;
@@ -63,7 +63,7 @@ export default {
 			const index = this.selected.indexOf(modifier);
 
 			if (index === -1) {
-				if (this.selection.length < this.modifiers.maximumCount) {
+				if (this.selectedModifiers.length < this.modifiers.maximumCount) {
 					this.selected.push(modifier);
 				}
 			} else {
@@ -77,7 +77,7 @@ export default {
 		},
 	},
 	watch: {
-		selection(value) {
+		selectedModifiers(value) {
 			this.selected = [...value];
 		},
 	},

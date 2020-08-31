@@ -11,12 +11,13 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 		template: `
 			<modifier-options
 				@change="addSelected"
-				:selection="selection"
 				:modifiers="modifiers"
+				:selected-modifiers="selectedModifiers"
 			/>
 		`,
 		data() { // eslint-disable-line max-lines-per-function
 			return {
+				selectedModifiers: [],
 				modifiers: {
 					groupName: 'toppings',
 					maximumCount: 3,
@@ -102,12 +103,11 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 						}],
 					}],
 				},
-				selection: [],
 			};
 		},
 		methods: {
 			addSelected(selected) {
-				this.selection = selected;
+				this.selectedModifiers = selected;
 			},
 		},
 	};
