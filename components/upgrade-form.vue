@@ -1,5 +1,5 @@
 <template>
-	<validated-form :id="id" @submit="$emit('submit', { selectedReloadAmount, selectedPaymentMethod })">
+	<validated-form :id="id" @submit="onSubmit">
 		<validated-select
 			label="Monthly Membership Reload"
 			:options="reloadAmounts"
@@ -71,6 +71,15 @@ export default {
 			this.reloadAmount = this.selectedReloadAmount && this.selectedReloadAmount.value;
 		},
 	},
+
+	methods: {
+		onSubmit() {
+			this.$emit('submit', {
+				reloadAmount: this.selectedReloadAmount,
+				paymentMethod: this.selectedPaymentMethod,
+			});
+		}
+	}
 };
 </script>
 
