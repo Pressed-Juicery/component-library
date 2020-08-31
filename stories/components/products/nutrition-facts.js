@@ -21,10 +21,10 @@ export function Overview() {
 					additionalInfo: ['Perishable.', 'Keep Refrigerated.', 'Shake away separation.'],
 					warnings: ['Manufactured in a facility that processes tree nuts.'],
 					vitamins: [
-						{ label: 'Vitamin A', value: '20%' },
-						{ label: 'Vitamin C', value: '20%' },
-						{ label: 'Calcium', value: '2%' },
-						{ label: 'Iron', value: '6%' },
+						{ name: 'Vitamin A', dailyValue: '20%' },
+						{ name: 'Vitamin C', dailyValue: '20%' },
+						{ name: 'Calcium', dailyValue: '2%' },
+						{ name: 'Iron', dailyValue: '6%' },
 					],
 					facts: [
 						{
