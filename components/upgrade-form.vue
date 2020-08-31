@@ -65,7 +65,10 @@ export default {
 
 	computed: {
 		reloadAmount() {
-			return this.selectedReloadAmount && this.selectedReloadAmount.value;
+			const selectedAmount = this.selectedReloadAmount && this.selectedReloadAmount.value;
+			const defaultAmount = this.reloadAmounts && this.reloadAmounts[0].value;
+
+			return selectedAmount || defaultAmount;
 		}
 	},
 
