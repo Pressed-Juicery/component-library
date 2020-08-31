@@ -48,10 +48,11 @@ export default {
 	},
 	computed: {
 		title() {
-			return `Select
-			${this.modifiers.groupName}
-			(${this.selection.length}/
-				${this.modifiers.maximumCount})`;
+			const groupName = this.modifiers.groupName;
+			const selectedCount = this.selection.length;
+			const maximumCount = this.modifiers.maximumCount;
+
+			return `Select ${groupName} (${selectedCount}/${maximumCount})`;
 		},
 		drawerTitle() {
 			return `Select up to 3
