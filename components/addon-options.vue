@@ -39,7 +39,7 @@ export default {
 	data() {
 		return {
 			isOpen: false,
-			selected: [],
+			pendingAddons: [],
 		};
 	},
 	computed: {
@@ -49,24 +49,24 @@ export default {
 	},
 	methods: {
 		select(value) {
-			const index = this.selected.indexOf(value);
+			const index = this.pendingAddons.indexOf(value);
 
 			if (index === -1) {
-				this.selected.push(value);
+				this.pendingAddons.push(value);
 			} else {
-				this.selected.splice(index, 1);
+				this.pendingAddons.splice(index, 1);
 			}
 		},
 		cancelDrawer() {
-			this.selected = [...this.selectedAddons];
+			this.pendingAddons = [...this.selectedAddons];
 			this.isOpen = false;
 		},
 		submit() {
-			this.$emit('change', this.selected);
+			this.$emit('change', this.pendingAddons);
 			this.isOpen = false;
 		},
 		isSelected(addon) {
-			return Boolean(this.selected.filter(selection => selection === addon).length);
+			return Boolean(this.pendingAddons.filter(selection => selection === addon).length);
 		},
 		checkboxLabel(addon) {
 			return `${addon.name} (${addon.displayPrice})`;
@@ -74,7 +74,7 @@ export default {
 	},
 	watch: {
 		selectedAddons(value) {
-			this.selected = [...value];
+			this.pendingAddons = [...value];
 		},
 	},
 };
