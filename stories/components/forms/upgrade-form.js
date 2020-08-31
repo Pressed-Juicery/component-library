@@ -19,7 +19,7 @@ export function Overview() {
 					:braintreeTokenizationKey="braintreeTokenizationKey"
 					:reloadAmounts="reloadAmounts"
 					@add-payment-method="onAddPaymentMethod"
-					@submit="handleSubmit"
+					@submit="formData => this.data = formData"
 				/>
 				<p v-if="data" style="margin-top:24px">data: <code>{{ data }}</code></p>
 				<button form="upgrade-form" type="submit" style="margin-top:24px">Submit</button>
@@ -54,9 +54,6 @@ export function Overview() {
 		methods: {
 			onAddPaymentMethod() {
 				console.log('Add new payment method'); // eslint-disable-line no-console
-			},
-			handleSubmit(data) {
-				this.data = data;
 			},
 		},
 		computed: {
