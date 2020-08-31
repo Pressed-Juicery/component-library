@@ -1,7 +1,7 @@
 <template>
 	<div v-if="modifiers">
 		<div :class="$style.trigger" @click="toggleDrawer">
-			{{ title }}
+			<div>{{ title }}</div>
 			<up-carat-icon :class="$style.upArrow" />
 		</div>
 		<collapsable-drawer
