@@ -12,12 +12,12 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 			<modifier-options
 				@change="addSelected"
 				:selection="selection"
-				:toppingModifiers="toppingModifiers"
+				:modifiers="modifiers"
 			/>
 		`,
 		data() { // eslint-disable-line max-lines-per-function
 			return {
-				toppingModifiers: {
+				modifiers: {
 					groupName: 'toppings',
 					maximumCount: 3,
 					modifierGroups: [{

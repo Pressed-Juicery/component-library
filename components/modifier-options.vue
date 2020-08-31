@@ -9,7 +9,7 @@
 			:title="drawerTitle"
 			@close="toggleDrawer"
 		>
-			<div :class="$style.group" v-for="(group, index) in toppingModifiers.modifierGroups" :key="index">
+			<div :class="$style.group" v-for="(group, index) in modifiers.modifierGroups" :key="index">
 				<div :class="$style.groupName">{{ group.name }}</div>
 				<div :class="$style.modifier" v-for="(modifier, index) in group.modifiers" :key="index">
 					<validated-checkbox
@@ -32,7 +32,7 @@ import ValidatedCheckbox from './validated-checkbox';
 export default {
 	components: { CollapsableDrawer, UpCaratIcon, ValidatedCheckbox },
 	props: {
-		toppingModifiers: {
+		modifiers: {
 			type: Object,
 			required: true,
 		},
@@ -50,15 +50,15 @@ export default {
 	computed: {
 		title() {
 			return `Select
-			${this.toppingModifiers.groupName}
+			${this.modifiers.groupName}
 			(${this.selection.length}/
-				${this.toppingModifiers.maximumCount})`;
+				${this.modifiers.maximumCount})`;
 		},
 		drawerTitle() {
 			return `Select up to 3
-			${this.toppingModifiers.groupName}
+			${this.modifiers.groupName}
 			(${this.selection.length}/
-				${this.toppingModifiers.maximumCount})`;
+				${this.modifiers.maximumCount})`;
 		},
 	},
 	methods: {
@@ -66,7 +66,7 @@ export default {
 			const index = this.selected.indexOf(value);
 
 			if (index === -1) {
-				if (this.selection.length < this.toppingModifiers.maximumCount) {
+				if (this.selection.length < this.modifiers.maximumCount) {
 					this.selected.push(value);
 				}
 			} else {
