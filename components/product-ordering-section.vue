@@ -41,7 +41,6 @@
 		/>
 
 		<modifier-options
-			v-if="hasModifiers"
 			:class="$style.modifierOptions"
 			:modifiers="product.toppingModifiers"
 			:selected-modifiers="selectedModifiers"
