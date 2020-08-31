@@ -46,19 +46,15 @@ export function Overview() {
 					identifier: '····4242',
 					isPrimary: true,
 				},
+				// eslint-disable-next-line no-magic-numbers
+				reloadAmounts: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(value => {
+					return { name: `$${value}`, value };
+				}),
 			};
 		},
 		methods: {
 			onAddPaymentMethod() {
 				console.log('Add new payment method'); // eslint-disable-line no-console
-			},
-		},
-		computed: {
-			reloadAmounts() {
-				// eslint-disable-next-line no-magic-numbers
-				return [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(value => {
-					return { name: `$${value}`, value };
-				});
 			},
 		},
 	};
