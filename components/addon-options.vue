@@ -91,7 +91,7 @@ export default {
 		justify-content: space-between;
 		align-items: center;
 		padding: $spacing-03 $spacing-07 $spacing-03 $spacing-06;
-		border: $border-width solid $border-color-light;
+		border: $border-light;
 		border-radius: $border-radius;
 	}
 
