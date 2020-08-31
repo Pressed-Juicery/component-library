@@ -68,10 +68,10 @@ export default {
 				pendingModifiers = pendingModifiers.filter(pendingModifier => pendingModifier !== modifier);
 			}
 
-			const pendingModifiersFormatted = pendingModifiers.map(modifier => {
+			const pendingModifiersFormatted = pendingModifiers.map(pendingModifier => {
 				return {
 					groupName: this.modifiers.groupName,
-					name: modifier.name,
+					name: pendingModifier.name,
 				};
 			});
 
