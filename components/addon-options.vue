@@ -11,7 +11,7 @@
 				:key="index"
 				:label="checkboxLabel(addon)"
 				:value="isSelected(addon)"
-				@change="select(addon)"
+				@change="onChange(addon)"
 			/>
 
 			<button :class="$style.submit" @click="submit">Submit</button>
@@ -48,7 +48,7 @@ export default {
 		},
 	},
 	methods: {
-		select(value) {
+		onChange(value) {
 			const index = this.pendingAddons.indexOf(value);
 
 			if (index === -1) {
