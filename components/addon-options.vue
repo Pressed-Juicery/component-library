@@ -4,6 +4,7 @@
 			{{ title }}
 			<up-carat-icon :class="$style.upArrow" />
 		</div>
+
 		<collapsable-drawer :isOpen="isOpen" :title="addonGroup.name" @close="cancelDrawer">
 			<validated-checkbox
 				v-for="(addon, index) in addonGroup.addons"
