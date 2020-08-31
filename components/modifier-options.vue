@@ -59,7 +59,7 @@ export default {
 			const selectedCount = this.selection.length;
 			const maximumCount = this.modifiers.maximumCount;
 
-			return `Select up to 3 ${groupName} (${selectedCount}/${maximumCount})`;
+			return `Select up to ${maximumCount} ${groupName} (${selectedCount}/${maximumCount})`;
 		},
 	},
 	methods: {
