@@ -17,6 +17,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 		`,
 		data() {
 			return {
+				selectedAddons: [],
 				addonGroup: {
 					name: 'Enhance your cleanse',
 					addons: [{
@@ -36,7 +37,6 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 						displayPrice: '$5.00/day',
 					}],
 				},
-				selectedAddons: [],
 			};
 		},
 	};
