@@ -5,7 +5,7 @@
 			<up-carat-icon :class="$style.upArrow" />
 		</div>
 
-		<collapsable-drawer :isOpen="isOpen" :title="addonGroup.name" @close="cancelSelection">
+		<collapsable-drawer :isOpen="isOpen" :title="addonGroup.name" @close="closeDrawer">
 			<validated-checkbox
 				v-for="(addon, index) in addonGroup.addons"
 				:key="index"
@@ -51,7 +51,7 @@ export default {
 			this.pendingAddons = [...this.selectedAddons];
 			this.isOpen = true;
 		},
-		cancelSelection() {
+		closeDrawer() {
 			this.isOpen = false;
 		},
 		checkboxLabel(addon) {
