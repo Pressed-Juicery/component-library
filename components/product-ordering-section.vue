@@ -37,8 +37,8 @@
 			v-if="hasAddons"
 			:class="$style.addonOptions"
 			:addon-group="product.addonGroup"
-			:selection="selection"
-			@change="addSelected"
+			:selected-addons="selection"
+			@submit="addSelected"
 		/>
 
 		<div :class="$style.actionsGroup">
