@@ -7,9 +7,7 @@
 			<div>
 				<span v-if="salePrice" :class="$style.price">{{ salePrice | currency }}</span>
 				<span :class="[{ [$style.strikethrough]: salePrice }, $style.price]">{{ price | currency }}</span>
-				<span :class="$style.addonSummary" v-if="selectedAddons.length">
-					{{ addonSummary }}
-				</span>
+				<span v-if="addonSummary" :class="$style.addonSummary">{{ addonSummary }}</span>
 			</div>
 			<div v-if="selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
@@ -116,15 +114,13 @@ export default {
 			return Boolean(this.selectedVariant.memberSalePrice);
 		},
 		addonSummary() {
-			if (this.selectedAddons.length === 1) {
-				const addonPrice = this.selectedAddons[0].price * this.quantity;
+			if (!this.selectedAddons.length) return;
 
-				return `(+$${addonPrice} ${this.selectedAddons[0].name})`;
-			}
+			const totalPrice = this.selectedAddons.reduce((sum, addon) => sum + addon.price, 0) * this.quantity;
 
-			const totalPrice = this.selectedAddons.reduce((acc, addon) => acc + addon.price, 0) * this.quantity;
-
-			return `(+$${totalPrice} Enhancements)`;
+			return this.selectedAddons.length > 1
+				? `(+$${totalPrice} Enhancements)`
+				: `(+$${totalPrice} ${this.selectedAddons[0].name})`;
 		},
 	},
 	methods: {
