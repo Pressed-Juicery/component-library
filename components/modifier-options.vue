@@ -11,7 +11,7 @@
 					<validated-checkbox
 						:label="modifier.name"
 						:value="isSelected(modifier)"
-						@change="isChecked => select(modifier, isChecked)"
+						@change="isChecked => selectModifier(modifier, isChecked)"
 						:disabled="isDisabled(modifier)"
 					/>
 					<div :class="$style.description">{{ modifier.description }}</div>
@@ -59,7 +59,7 @@ export default {
 		},
 	},
 	methods: {
-		select(modifier, isChecked) {
+		selectModifier(modifier, isChecked) {
 			let pendingModifiers = [...(this.selectedModifiers || [])];
 
 			if (isChecked) {
