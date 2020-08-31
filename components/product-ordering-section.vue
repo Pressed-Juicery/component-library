@@ -112,6 +112,17 @@ export default {
 		hasMemberSalePrice() {
 			return Boolean(this.selectedVariant.memberSalePrice);
 		},
+		addonSummary() {
+			if (this.selectedAddons.length === 1) {
+				const addonPrice = this.selectedAddons[0].price * this.quantity;
+
+				return `(+$${addonPrice} ${this.selectedAddons[0].name})`;
+			}
+
+			const totalPrice = this.selectedAddons.reduce((acc, addon) => acc + addon.price, 0) * this.quantity;
+
+			return `(+$${totalPrice} Enhancements)`;
+		},
 	},
 	methods: {
 		addToCart() {
