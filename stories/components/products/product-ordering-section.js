@@ -82,20 +82,10 @@ export function WithAddons() { // eslint-disable-line max-lines-per-function
 			</product-ordering-section>
 		`,
 		data() {
-			const discountRate = 0.5;
-			const product = JSON.parse(JSON.stringify(productData));
-
-			product.variants.forEach(variant => {
-				// eslint-disable-next-line no-param-reassign
-				variant.memberSalePrice = variant.memberPrice * discountRate;
-				// eslint-disable-next-line no-param-reassign
-				variant.nonMemberSalePrice = variant.nonMemberPrice * discountRate;
-			});
-
 			return {
 				isVip: false,
 				selectedVariant: null,
-				product,
+				product: JSON.parse(JSON.stringify(productData)),
 			};
 		},
 		created() {
