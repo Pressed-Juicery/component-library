@@ -154,7 +154,7 @@ export function WithModifiers() { // eslint-disable-line max-lines-per-function
 		data() {
 			return {
 				isVip: true,
-				product: productData,
+				product: JSON.parse(JSON.stringify(productData)),
 				selectedVariant: null,
 			};
 		},
