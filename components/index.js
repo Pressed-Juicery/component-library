@@ -40,6 +40,7 @@ export { default as LandingPageTemplate } from './landing-page-template';
 export { default as MenuDialogTemplate } from './menu-dialog-template';
 export { default as MenuDrawer } from './menu-drawer';
 export { default as MediaRow } from './media-row';
+export { default as ModifierOptions } from './modifier-options';
 export { default as NutritionFacts } from './nutrition-facts.vue';
 export { default as Overlay } from './overlay.vue';
 export { default as PaymentMethodFormatter } from './payment-methods.vue';

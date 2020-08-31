@@ -5,7 +5,7 @@
 			<arrow-down-icon :class="$style.arrowIcon" />
 		</div>
 
-		<collapsable-drawer :isOpen="isOpen" :title="addonGroup.name" @close="closeDrawer">
+		<collapsible-drawer :isOpen="isOpen" :title="addonGroup.name" @close="closeDrawer">
 			<validated-checkbox
 				v-for="(addon, index) in addonGroup.addons"
 				:key="index"
@@ -15,17 +15,17 @@
 			/>
 
 			<button :class="$style.submit" @click="submit">Submit</button>
-		</collapsable-drawer>
+		</collapsible-drawer>
 	</div>
 </template>
 
 <script>
 import ArrowDownIcon from './icons/arrow-down-icon';
-import CollapsableDrawer from './collapsible-drawer';
+import CollapsibleDrawer from './collapsible-drawer';
 import ValidatedCheckbox from './validated-checkbox';
 
 export default {
-	components: { ArrowDownIcon, CollapsableDrawer, ValidatedCheckbox },
+	components: { ArrowDownIcon, CollapsibleDrawer, ValidatedCheckbox },
 	props: {
 		addonGroup: {
 			type: Object,
