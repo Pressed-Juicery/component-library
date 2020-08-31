@@ -114,7 +114,7 @@ export default {
 			return Boolean(this.selectedVariant.memberSalePrice);
 		},
 		addonSummary() {
-			if (!this.selectedAddons.length) return;
+			if (!this.selectedAddons.length) return null;
 
 			const totalPrice = this.selectedAddons.reduce((sum, addon) => sum + addon.price, 0) * this.quantity;
 
