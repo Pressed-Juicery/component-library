@@ -8,7 +8,13 @@ export default {
 export function Overview() { // eslint-disable-line max-lines-per-function
 	return {
 		components: { AddonOptions },
-		template: '<addon-options :addonGroup="addonGroup" :selected-addons="selectedAddons" @change="addSelected" />',
+		template: `
+			<addon-options
+				:addonGroup="addonGroup"
+				:selected-addons="selectedAddons"
+				@change="addons => selectedAddons = addons"
+			/>
+		`,
 		data() {
 			return {
 				addonGroup: {
@@ -32,11 +38,6 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 				},
 				selectedAddons: [],
 			};
-		},
-		methods: {
-			addSelected(selectedAddons) {
-				this.selectedAddons = selectedAddons;
-			},
 		},
 	};
 }
