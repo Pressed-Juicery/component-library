@@ -48,11 +48,11 @@ export default {
 		},
 	},
 	methods: {
-		onChange(value) {
-			const index = this.pendingAddons.indexOf(value);
+		onChange(addon) {
+			const index = this.pendingAddons.indexOf(addon);
 
 			if (index === -1) {
-				this.pendingAddons.push(value);
+				this.pendingAddons.push(addon);
 			} else {
 				this.pendingAddons.splice(index, 1);
 			}
