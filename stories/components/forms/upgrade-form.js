@@ -19,9 +19,9 @@ export function Overview() {
 					:braintreeTokenizationKey="braintreeTokenizationKey"
 					:reloadAmounts="reloadAmounts"
 					@add-payment-method="onAddPaymentMethod"
-					@submit="formData => this.data = formData"
+					@submit="formData => this.formData = formData"
 				/>
-				<p v-if="data" style="margin-top:24px">data: <code>{{ data }}</code></p>
+				<p v-if="formData" style="margin-top:24px">data: <code>{{ formData }}</code></p>
 				<button form="upgrade-form" type="submit" style="margin-top:24px">Submit</button>
 			</div>
 		`,
@@ -48,7 +48,7 @@ export function Overview() {
 					identifier: '····4242',
 					isPrimary: true,
 				},
-				data: null,
+				formData: null,
 			};
 		},
 		methods: {
