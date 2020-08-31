@@ -64,18 +64,8 @@ export default {
 	},
 
 	watch: {
-		paymentMethod(method) {
-			this.$emit('update-selected-payment-method', method);
-		},
-
 		selectedPaymentMethod(paymentMethod) {
 			this.paymentMethod = paymentMethod;
-		},
-
-		reloadAmount(amount) {
-			const reloadAmountObject = this.reloadAmounts.find(obj => obj.value === amount);
-
-			this.$emit('update-reload-amount', reloadAmountObject);
 		},
 
 		selectedReloadAmount() {

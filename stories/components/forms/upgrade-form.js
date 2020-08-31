@@ -18,8 +18,6 @@ export function Overview() {
 					:selectedPaymentMethod="selectedPaymentMethod"
 					:braintreeTokenizationKey="braintreeTokenizationKey"
 					:reloadAmounts="reloadAmounts"
-					@update-reload-amount="handleUpdateReloadAmount"
-					@update-selected-payment-method="handlePaymentMethodSelect"
 					@add-new-payment="handleNewPayment"
 					@submit="handleSubmit"
 				/>
@@ -56,12 +54,6 @@ export function Overview() {
 		methods: {
 			handleNewPayment() {
 				return 'payment';
-			},
-			handleUpdateReloadAmount(data) {
-				return data;
-			},
-			handlePaymentMethodSelect(data) {
-				return data;
 			},
 			handleSubmit(data) {
 				this.data = data;
