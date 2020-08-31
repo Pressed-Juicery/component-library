@@ -28,6 +28,7 @@ export function Overview() {
 		data() {
 			return {
 				braintreeTokenizationKey: config.braintreeTokenizationKey,
+				formData: null,
 				paymentMethods: [{
 					vendor: 'visa',
 					id: 'ctqpvw2',
@@ -45,7 +46,6 @@ export function Overview() {
 					identifier: '····4242',
 					isPrimary: true,
 				},
-				formData: null,
 			};
 		},
 		methods: {
