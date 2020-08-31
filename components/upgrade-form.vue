@@ -38,10 +38,6 @@ export default {
 
 	props: {
 		id: String,
-		braintreeTokenizationKey: {
-			type: String,
-			required: true,
-		},
 		selectedPaymentMethod: Object,
 		selectedReloadAmount: Object,
 		paymentMethods: Array,
