@@ -4,11 +4,7 @@
 			{{ title }}
 			<up-carat-icon :class="$style.upArrow" />
 		</div>
-		<collapsable-drawer
-			:isOpen="isOpen"
-			:title="addonGroup.name"
-			@close="cancelDrawer"
-		>
+		<collapsable-drawer :isOpen="isOpen" :title="addonGroup.name" @close="cancelDrawer">
 			<validated-checkbox
 				v-for="(addon, index) in addonGroup.addons"
 				:key="index"
@@ -16,12 +12,8 @@
 				:value="isSelected(addon)"
 				@change="select(addon)"
 			/>
-			<button
-				:class="$style.submit"
-				@click="submit"
-			>
-				Submit
-			</button>
+
+			<button :class="$style.submit" @click="submit">Submit</button>
 		</collapsable-drawer>
 	</div>
 </template>
