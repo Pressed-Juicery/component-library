@@ -77,7 +77,7 @@ export default {
 			const isLimitReached = this.selectedModifiers.length >= this.modifiers.maximumCount;
 
 			return !this.isSelected(modifier) && isLimitReached;
-		}
+		},
 	},
 };
 </script>
