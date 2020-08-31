@@ -4,9 +4,10 @@
 		<img :class="$style.image" :src="selectedVariant.imageUrl">
 
 		<div :class="$style.information">
-			<div :class="$style.price">
-				<span v-if="salePrice">{{ salePrice | currency }}</span>
-				<span :class="{ [$style.strikethrough]: salePrice }">{{ price | currency }}</span>
+			<div>
+				<span v-if="salePrice" :class="$style.price">{{ salePrice | currency }}</span>
+				<span :class="[{ [$style.strikethrough]: salePrice }, $style.price]">{{ price | currency }}</span>
+				<span v-if="addonSummary" :class="$style.addonSummary">{{ addonSummary }}</span>
 			</div>
 			<div v-if="selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
@@ -112,6 +113,15 @@ export default {
 		hasMemberSalePrice() {
 			return Boolean(this.selectedVariant.memberSalePrice);
 		},
+		addonSummary() {
+			if (!this.selectedAddons.length) return null;
+
+			const totalPrice = this.selectedAddons.reduce((sum, addon) => sum + addon.price, 0) * this.quantity;
+
+			return this.selectedAddons.length > 1
+				? `(+${formatCurrency(totalPrice)} Enhancements)`
+				: `(+${formatCurrency(totalPrice)} ${this.selectedAddons[0].name})`;
+		},
 	},
 	methods: {
 		addToCart() {
@@ -169,9 +179,13 @@ export default {
 		margin-bottom: $spacing-03;
 	}
 
+	.addonSummary,
+	.strikethrough {
+		@include text-subtle();
+	}
+
 	.strikethrough {
 		@include text-strikethrough();
-		@include text-subtle();
 	}
 
 	.actionsGroup {
