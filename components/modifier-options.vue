@@ -68,13 +68,15 @@ export default {
 					name: modifier.name,
 				});
 			} else {
-				pendingModifiers = pendingModifiers.filter(pendingModifier => pendingModifier.name !== modifier.name);
+				// eslint-disable-next-line max-len
+				pendingModifiers = pendingModifiers.filter(pendingModifier => pendingModifier.name !== modifier.name && pendingModifier.groupName !== modifier.groupName);
 			}
 
 			this.$emit('change', pendingModifiers);
 		},
 		isSelected(modifier) {
-			return this.selectedModifiers.some(selection => selection.name === modifier.name);
+			// eslint-disable-next-line max-len
+			return this.selectedModifiers.some(selection => selection.name === modifier.name && selection.groupName !== modifier.groupName);
 		},
 		isDisabled(modifier) {
 			const isLimitReached = this.selectedModifiers.length >= this.modifiers.maximumCount;
