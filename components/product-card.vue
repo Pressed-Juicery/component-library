@@ -1,5 +1,5 @@
 <template>
-	<card>
+	<card @click.native="$emit('click', product)">
 		<div :class="$style.wrapper">
 			<img :class="$style.image" :src="product.imageUrl" />
 			<div :class="$style.name">{{ product.name }}</div>
@@ -14,7 +14,11 @@
 				{{ formatPrice(product.memberSalePrice) }}
 			</div>
 
-			<quantity-selector :quantity="quantity" @change="quantity => $emit('change', { product, quantity })"/>
+			<quantity-selector
+				:quantity="quantity"
+				@change="quantity => $emit('change', { product, quantity })"
+				@click.native.stop
+			/>
 		</div>
 	</card>
 </template>

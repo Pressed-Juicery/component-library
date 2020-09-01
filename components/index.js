@@ -1,6 +1,7 @@
 import '../styles/index.scss';
 
 export { default as Accordion } from './accordion';
+export { default as AddonOptions } from './addon-options';
 export { default as AddressForm } from './address-form';
 export { default as AddressFormatter } from './address-formatter';
 export { default as AddressRadioButtonCard } from './address-radio-button-card';
@@ -39,6 +40,7 @@ export { default as LandingPageTemplate } from './landing-page-template';
 export { default as MenuDialogTemplate } from './menu-dialog-template';
 export { default as MenuDrawer } from './menu-drawer';
 export { default as MediaRow } from './media-row';
+export { default as ModifierOptions } from './modifier-options';
 export { default as NutritionFacts } from './nutrition-facts.vue';
 export { default as Overlay } from './overlay.vue';
 export { default as PaymentMethodFormatter } from './payment-methods.vue';
@@ -48,6 +50,7 @@ export { default as PaymentMethodRadioButtonCard } from './payment-method-radio-
 export { default as PointsRedemption } from './points-redemption';
 export { default as ProductDetails } from './product-details.vue';
 export { default as ProductCard } from './product-card.vue';
+export { default as ProductOrderingSection } from './product-ordering-section';
 export { default as ProductReview } from './product-review.vue';
 export { default as ProductReviewForm } from './product-review-form.vue';
 export { default as QuantitySelector } from './quantity-selector';

@@ -72,14 +72,17 @@ const groups = [{
 }, {
 	groupName: 'Components / Products',
 	stories: [
+		'AddonOptions',
 		'BundleCardGrid',
 		'BundleItems',
 		'CleanseGuide',
+		'Ingredients',
+		'ModifierOptions',
 		'NutritionFacts',
 		'ProductDetails',
 		'ProductCard',
+		'ProductOrderingSection',
 		'ProductReview',
-		'Ingredients',
 	],
 }, {
 	groupName: 'Sections',

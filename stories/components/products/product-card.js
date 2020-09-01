@@ -12,11 +12,17 @@ const methods = {
 	},
 };
 
-export function Overview() {
+export function Overview() { // eslint-disable-line max-lines-per-function
 	return {
 		components: { ProductCard },
-		methods,
-		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
+		template: `
+			<product-card
+				:product="sampleProduct"
+				:quantity="quantity"
+				@change="change"
+				@click="onClick"
+			/>
+		`,
 		data() {
 			return {
 				sampleProduct: {
@@ -29,6 +35,12 @@ export function Overview() {
 				},
 				quantity: 0,
 			};
+		},
+		methods: {
+			...methods,
+			onClick(product) {
+				console.log(`Clicked "${product.name}" product-card`); // eslint-disable-line no-console
+			},
 		},
 	};
 }

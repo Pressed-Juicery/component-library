@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div :class="{ [$style.disabled]: disabled }">
 		<div :class="$style.wrapper">
 			<span :class="[$style.checkbox, { [$style.isChecked]: isChecked }]" @click="onClick()">
 				<check-mark-white-icon :class="$style.icon" />
@@ -18,6 +18,7 @@
 			v-model="isChecked"
 			ref="input"
 			@blur="validate()"
+			:disabled="disabled"
 		/>
 	</div>
 </template>
@@ -49,6 +50,9 @@ export default {
 			type: Array,
 			default: () => [],
 		},
+		disabled: {
+			type: Boolean,
+		},
 	},
 
 	data() {
@@ -73,6 +77,8 @@ export default {
 
 	methods: {
 		onClick() {
+			if (this.disabled) return;
+
 			this.isChecked = !this.isChecked;
 		},
 
@@ -101,6 +107,21 @@ export default {
 <style module lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
+
+	.disabled {
+		.label {
+			@include text-subtle();
+		}
+
+		.checkbox {
+			border-color: $border-color-light;
+			cursor: not-allowed;
+		}
+
+		.isChecked {
+			background: $gray-40;
+		}
+	}
 
 	.wrapper {
 		display: flex;
