@@ -3,7 +3,7 @@
 		<div :class="$style.title">Sign In</div>
 
 		<validated-input :class="$style.row"
-		                 type="text"
+		                 type="email"
 		                 label="Email"
 		                 v-model="email"
 		                 :rules="emailRules" />
