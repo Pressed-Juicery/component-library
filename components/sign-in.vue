@@ -87,7 +87,6 @@ export default {
 		@include button();
 		display: block;
 		width: 100%;
-		max-width: 384px;
 		margin: 0 auto;
 
 		&:focus {
