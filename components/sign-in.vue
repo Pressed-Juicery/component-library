@@ -1,7 +1,5 @@
 <template>
-	<validated-form @submit="$emit('submit', { email, password })"
-	                :show-error="showError"
-	                :error-message="errorMessage">
+	<validated-form @submit="$emit('submit', { email, password })" :error-message="errorMessage" >
 		<div :class="$style.title">Sign In</div>
 
 		<validated-input :class="$style.row"
@@ -64,12 +62,6 @@ export default {
 				options: { length: 6 },
 			}],
 		};
-	},
-
-	computed: {
-		showError() {
-			return Boolean(this.errorMessage);
-		},
 	},
 };
 </script>
