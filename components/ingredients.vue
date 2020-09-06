@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-if="ingredients && ingredients.length">
 		<div :class="$style.heading">Ingredients</div>
 
 		<div :class="$style.ingredients">
@@ -16,7 +16,6 @@ export default {
 	props: {
 		ingredients: {
 			type: Array,
-			required: true,
 		},
 	},
 };
