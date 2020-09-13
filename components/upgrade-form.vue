@@ -1,16 +1,12 @@
 <template>
 	<validated-form :id="id" @submit="onSubmit">
-		<validated-select
-			label="Monthly Membership Reload"
-			:options="reloadAmounts"
-			v-model="reloadAmount"
-		/>
+		<validated-select label="Monthly Membership Reload" :options="reloadAmounts" v-model="selectedReloadAmount" />
 
 		<payment-method-radio-button-card
 			v-for="method in paymentMethods"
 			:paymentMethod="method"
 			:key="method.id"
-			v-model="paymentMethod"
+			v-model="selectedPaymentMethod"
 		/>
 
 		<card :class="$style.card" @click.native="$emit('add-payment-method')">
@@ -36,8 +32,6 @@ export default {
 
 	props: {
 		id: String,
-		selectedPaymentMethod: Object,
-		selectedReloadAmount: Object,
 		paymentMethods: Array,
 		reloadAmounts: {
 			type: Array,
@@ -47,26 +41,27 @@ export default {
 
 	data() {
 		return {
-			paymentMethod: this.selectedPaymentMethod,
+			selectedReloadAmount: this.getDefaultReloadAmount(),
+			selectedPaymentMethod: this.getDefaultPaymentMethod(),
 		};
 	},
 
 	watch: {
-		selectedPaymentMethod(paymentMethod) {
-			this.paymentMethod = paymentMethod;
+		reloadAmounts() {
+			this.selectedReloadAmount = this.getDefaultReloadAmount();
 		},
-	},
-
-	computed: {
-		reloadAmount() {
-			const selectedAmount = this.selectedReloadAmount && this.selectedReloadAmount.value;
-			const defaultAmount = this.reloadAmounts && this.reloadAmounts[0].value;
-
-			return selectedAmount || defaultAmount;
+		paymentMethods() {
+			this.selectedPaymentMethod = this.getDefaultPaymentMethod();
 		}
 	},
 
 	methods: {
+		getDefaultReloadAmount() {
+			return this.reloadAmounts && this.reloadAmounts[0].value;
+		},
+		getDefaultPaymentMethod() {
+			return this.paymentMethods && this.paymentMethods[0];
+		},
 		onSubmit() {
 			this.$emit('submit', {
 				reloadAmount: this.selectedReloadAmount,
