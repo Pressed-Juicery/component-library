@@ -60,7 +60,10 @@ export default {
 			return this.reloadAmounts && this.reloadAmounts[0].value;
 		},
 		getDefaultPaymentMethod() {
-			return this.paymentMethods && this.paymentMethods[0];
+			const fallbackMethod = this.paymentMethods && this.paymentMethods[0];
+			const primaryMethod = this.paymentMethods.find(paymentMethod => paymentMethod.isPrimary);
+
+			return primaryMethod || fallbackMethod;
 		},
 		onSubmit() {
 			this.$emit('submit', {
