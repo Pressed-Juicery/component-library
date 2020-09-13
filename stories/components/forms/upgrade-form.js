@@ -15,8 +15,6 @@ export function Overview() {
 				<upgrade-form
 					id="upgrade-form"
 					:paymentMethods="paymentMethods"
-					:selectedPaymentMethod="selectedPaymentMethod"
-					:braintreeTokenizationKey="braintreeTokenizationKey"
 					:reloadAmounts="reloadAmounts"
 					@add-payment-method="onAddPaymentMethod"
 					@submit="formData => this.formData = formData"
@@ -27,7 +25,6 @@ export function Overview() {
 		`,
 		data() {
 			return {
-				braintreeTokenizationKey: config.braintreeTokenizationKey,
 				formData: null,
 				paymentMethods: [{
 					vendor: 'visa',
@@ -40,12 +37,6 @@ export function Overview() {
 					identifier: '····4242',
 					isPrimary: false,
 				}],
-				selectedPaymentMethod: {
-					vendor: 'visa',
-					id: 'ctqpvw2',
-					identifier: '····4242',
-					isPrimary: true,
-				},
 				// eslint-disable-next-line no-magic-numbers
 				reloadAmounts: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(price => {
 					return {
