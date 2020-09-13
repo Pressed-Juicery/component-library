@@ -79,21 +79,6 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
-	.paymentMethod {
-		margin-bottom: $spacing-03;
-	}
-
-	.selectedMethod {
-		background-color: #e4d8a6;
-		border: 1px solid black;
-	}
-
-	.content {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-
 	.card {
 		display: flex;
 		justify-content: space-between;
