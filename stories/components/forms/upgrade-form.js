@@ -14,34 +14,44 @@ export function Overview() {
 			<div>
 				<upgrade-form
 					id="upgrade-form"
-					:braintreeTokenizationKey="braintreeTokenizationKey"
-					:selectedAmount="selectedAmount"
+					:paymentMethods="paymentMethods"
 					:reloadAmounts="reloadAmounts"
-					@submit="handlePaymentMethodChange"
+					@add-payment-method="onAddPaymentMethod"
+					@submit="formData => this.formData = formData"
 				/>
-				<button form="upgrade-form" type="submit">Submit</button>
-				<p v-if="data" style="margin-top:30px">data: <code>{{ data }}</code></p>
+				<p v-if="formData" style="margin-top:24px">data: <code>{{ formData }}</code></p>
+				<button form="upgrade-form" type="submit" style="margin-top:24px">Submit</button>
 			</div>
 		`,
 		data() {
 			return {
-				braintreeTokenizationKey: config.braintreeTokenizationKey,
-				selectedAmount: 10,
-				data: null,
+				formData: null,
+				paymentMethods: [{
+					vendor: 'visa',
+					id: 'ctqpvw2',
+					identifier: '····4242',
+					isPrimary: true,
+				}, {
+					vendor: 'visa',
+					id: 'nck9nc6',
+					identifier: '····4242',
+					isPrimary: false,
+				}],
+				// eslint-disable-next-line no-magic-numbers
+				reloadAmounts: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(price => {
+					return {
+						name: `$${price}`,
+						value: {
+							id: `membership_${price}`,
+							price
+						},
+					};
+				}),
 			};
 		},
 		methods: {
-			handlePaymentMethodChange(data) {
-				this.data = data;
-				this.selectedAmount = data.selectedAmount;
-			},
-		},
-		computed: {
-			reloadAmounts() {
-				// eslint-disable-next-line no-magic-numbers
-				return [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(value => {
-					return { name: `$${value}`, value };
-				});
+			onAddPaymentMethod() {
+				console.log('Add new payment method'); // eslint-disable-line no-console
 			},
 		},
 	};

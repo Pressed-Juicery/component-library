@@ -1,69 +1,93 @@
 <template>
 	<validated-form :id="id" @submit="onSubmit">
-		<validated-select
-			label="Monthly Membership Reload"
-			:options="reloadAmounts"
-			:rules="reloadAmountRules"
-			v-model="selectedAmount"
+		<validated-select label="Monthly Membership Reload" :options="reloadAmounts" v-model="selectedReloadAmount" />
+
+		<payment-method-radio-button-card
+			v-for="method in paymentMethods"
+			:paymentMethod="method"
+			:key="method.id"
+			v-model="selectedPaymentMethod"
 		/>
-		<validated-payment-method
-			:braintreeTokenizationKey="braintreeTokenizationKey"
-			@change="onPaymentMethodChange"
-		/>
+
+		<card :class="$style.card" @click.native="$emit('add-payment-method')">
+			<div>Add a New Payment Method</div>
+			<div :class="$style.icon">+</div>
+		</card>
 	</validated-form>
 </template>
 
 <script>
+import Card from './card';
+import PaymentMethodRadioButtonCard from './payment-method-radio-button-card';
 import ValidatedForm from './validated-form';
-import ValidatedPaymentMethod from './validated-payment-method';
 import ValidatedSelect from './validated-select';
-import { isNotEmpty } from '../utilities/validators';
 
 export default {
 	components: {
+		Card,
 		ValidatedForm,
 		ValidatedSelect,
-		ValidatedPaymentMethod,
+		PaymentMethodRadioButtonCard,
 	},
 
 	props: {
-		id: {
-			type: String,
-		},
-		braintreeTokenizationKey: {
-			type: String,
-			required: true,
-		},
+		id: String,
+		paymentMethods: Array,
 		reloadAmounts: {
 			type: Array,
 			required: true,
-		},
-		selectedAmount: {
-			type: Number,
 		},
 	},
 
 	data() {
 		return {
-			paymentMethod: null,
-			reloadAmountRules: [{
-				validator: isNotEmpty,
-				message: 'Please select a monthly reload amount.',
-			}],
+			selectedReloadAmount: this.getDefaultReloadAmount(),
+			selectedPaymentMethod: this.getDefaultPaymentMethod(),
 		};
 	},
 
-	methods: {
-		onPaymentMethodChange(data) {
-			this.paymentMethod = data && data.paymentMethod;
+	watch: {
+		reloadAmounts() {
+			this.selectedReloadAmount = this.getDefaultReloadAmount();
 		},
+		paymentMethods() {
+			this.selectedPaymentMethod = this.getDefaultPaymentMethod();
+		}
+	},
 
+	methods: {
+		getDefaultReloadAmount() {
+			return this.reloadAmounts && this.reloadAmounts[0].value;
+		},
+		getDefaultPaymentMethod() {
+			const fallbackMethod = this.paymentMethods && this.paymentMethods[0];
+			const primaryMethod = this.paymentMethods.find(paymentMethod => paymentMethod.isPrimary);
+
+			return primaryMethod || fallbackMethod;
+		},
 		onSubmit() {
 			this.$emit('submit', {
-				paymentMethod: this.paymentMethod,
-				selectedAmount: this.selectedAmount,
+				reloadAmount: this.selectedReloadAmount,
+				paymentMethod: this.selectedPaymentMethod,
 			});
-		},
-	},
+		}
+	}
 };
 </script>
+
+<style lang="scss" module>
+	@import '../styles/mixins';
+	@import '../styles/variables';
+
+	.card {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.icon {
+		color: $gray-30;
+		font-size: $spacing-07;
+	}
+</style>
