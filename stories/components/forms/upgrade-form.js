@@ -47,8 +47,14 @@ export function Overview() {
 					isPrimary: true,
 				},
 				// eslint-disable-next-line no-magic-numbers
-				reloadAmounts: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(value => {
-					return { name: `$${value}`, value };
+				reloadAmounts: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(price => {
+					return {
+						name: `$${price}`,
+						value: {
+							id: `membership_${price}`,
+							price
+						},
+					};
 				}),
 			};
 		},
