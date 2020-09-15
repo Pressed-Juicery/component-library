@@ -27,11 +27,10 @@
 import ArrowDownIcon from './icons/arrow-down-icon';
 import Overlay from './overlay';
 import PressedPointsCircle from './icons/pressed-points-circle';
-import QrCode from './qr-code';
 import WalletContent from './wallet-content';
 
 export default {
-	components: { ArrowDownIcon, Overlay, PressedPointsCircle, QrCode, WalletContent },
+	components: { ArrowDownIcon, Overlay, PressedPointsCircle, WalletContent },
 
 	props: {
 		wallet: {
