@@ -52,7 +52,7 @@ export default {
 		},
 		paymentMethods() {
 			this.selectedPaymentMethod = this.getDefaultPaymentMethod();
-		}
+		},
 	},
 
 	methods: {
@@ -70,8 +70,8 @@ export default {
 				reloadAmount: this.selectedReloadAmount,
 				paymentMethod: this.selectedPaymentMethod,
 			});
-		}
-	}
+		},
+	},
 };
 </script>
 

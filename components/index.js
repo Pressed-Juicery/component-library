@@ -74,3 +74,4 @@ export { default as ValidatedSelect } from './validated-select';
 export { default as ValidatedStarRating } from './validated-star-rating.vue';
 export { default as ValidatedTextarea } from './validated-textarea.vue';
 export { default as WalletDrawer } from './wallet-drawer';
+export { default as WalletDrawerContent } from './wallet-drawer-content';
