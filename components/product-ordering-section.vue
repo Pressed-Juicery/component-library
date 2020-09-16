@@ -1,7 +1,7 @@
 <template>
 	<div v-if="selectedVariant">
 		<div :class="$style.variantName">{{ selectedVariant.name }}</div>
-		<div :class="$style.imageContainer">
+		<div :class="$style.imageWrapper">
 			<img :class="$style.image" :src="selectedVariant.imageUrl">
 		</div>
 
@@ -151,7 +151,7 @@ export default {
 		margin-bottom: $spacing-05;
 	}
 
-	.imageContainer {
+	.imageWrapper {
 		display: flex;
 		justify-content: center;
 	}
