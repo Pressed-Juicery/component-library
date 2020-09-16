@@ -158,7 +158,7 @@ export default {
 
 	.image {
 		width: 100%;
-		max-width: 752px;
+		max-width: $spacing-10 * 10;
 	}
 
 	.information {
