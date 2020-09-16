@@ -12,7 +12,7 @@
 
 			<transition name="slider" @enter="enter" @leave="leave">
 				<div v-show="isOpen" :class="$style.contentWrapper">
-					<wallet-content :wallet="wallet" @reload="$emit('reload')"/>
+					<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')"/>
 				</div>
 			</transition>
 
@@ -27,10 +27,10 @@
 import ArrowDownIcon from './icons/arrow-down-icon';
 import Overlay from './overlay';
 import PressedPointsCircle from './icons/pressed-points-circle';
-import WalletContent from './wallet-content';
+import WalletDrawerContent from './wallet-drawer-content';
 
 export default {
-	components: { ArrowDownIcon, Overlay, PressedPointsCircle, WalletContent },
+	components: { ArrowDownIcon, Overlay, PressedPointsCircle, WalletDrawerContent },
 
 	props: {
 		wallet: {
