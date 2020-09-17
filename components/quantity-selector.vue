@@ -1,11 +1,13 @@
 <template>
-	<div :class="[$style.root, { [$style.isActive]: value }]">
+	<div :class="[$style.root, { [$style.isActive]: value, [$style.isFocused]: hasFocus }]">
 		<div v-if="shouldShowInput" :class="$style.inputWrapper">
 			<input
 				:class="$style.input"
 				type="number"
 				:value="value"
+				ref="input"
 				@keydown.enter="submitInput($event)"
+				@focus="hasFocus = true"
 				@blur="submitInput($event)"
 			/>
 		</div>
@@ -24,7 +26,6 @@
 
 			<div v-else :class="$style.defaultButton"><plus-icon /></div>
 		</div>
-
 	</div>
 </template>
 
@@ -48,6 +49,7 @@ export default {
 
 	data() {
 		return {
+			hasFocus: false,
 			value: this.quantity,
 		};
 	},
@@ -65,14 +67,21 @@ export default {
 	methods: {
 		submitInput(event) {
 			this.value = Number(event.target.value);
+			this.hasFocus = false;
+
 			event.target.blur();
 		},
 	},
 
 	watch: {
 		value() {
+			if (Number(this.value) >= this.lastOption) {
+				this.$nextTick(() => this.$refs.input.focus());
+			}
+
 			this.$emit('change', this.value);
 		},
+
 		quantity() {
 			this.value = this.quantity;
 		},
@@ -85,6 +94,7 @@ export default {
 	@import '../styles/variables';
 
 	$button-height: $spacing-08;
+	$defaultFocusColor: #5E9ED6;
 
 	.root {
 		display: flex;
@@ -97,6 +107,10 @@ export default {
 
 	.isActive {
 		min-width: 88px;
+	}
+
+	.isFocused {
+		border: 2px solid $defaultFocusColor;
 	}
 
 	.inputWrapper {
