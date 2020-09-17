@@ -53,10 +53,12 @@ export default {
 	},
 
 	computed: {
-		shouldShowInput() {
-			const lastOption = this.options[this.options.length - 1];
+		lastOption() {
+			return this.options[this.options.length - 1];
+		},
 
-			return this.canUseInput && this.value >= lastOption;
+		shouldShowInput() {
+			return this.canUseInput && this.value >= this.lastOption;
 		},
 	},
 
