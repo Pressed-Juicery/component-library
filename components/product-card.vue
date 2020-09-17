@@ -15,6 +15,7 @@
 			</div>
 
 			<quantity-selector
+				v-if="showQuantity"
 				:quantity="quantity"
 				@change="quantity => $emit('change', { product, quantity })"
 				@click.native.stop
@@ -38,6 +39,11 @@ export default {
 		},
 		quantity: {
 			type: Number,
+			required: false,
+		},
+		showQuantity: {
+			type: Boolean,
+			default: true,
 			required: false,
 		},
 	},
