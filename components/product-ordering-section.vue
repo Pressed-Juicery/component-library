@@ -192,7 +192,7 @@ export default {
 		display: grid;
 		grid-template-columns: $spacing-11 1fr;
 		grid-gap: $spacing-03;
-		margin-bottom: $spacing-06;
+		padding-bottom: $spacing-06;
 	}
 
 	.quantity {
