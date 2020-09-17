@@ -152,13 +152,12 @@ export default {
 	}
 
 	.imageWrapper {
-		display: flex;
-		justify-content: center;
+		max-width: $spacing-10 * 10;
+		margin: 0 auto;
 	}
 
 	.image {
 		width: 100%;
-		max-width: $spacing-10 * 10;
 	}
 
 	.information {
