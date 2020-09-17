@@ -191,3 +191,24 @@ export function MemberDiscount() {
 		},
 	};
 }
+
+export function NoQuantitySelector() {
+	return {
+		components: { ProductCard },
+		methods,
+		template: '<product-card :product="sampleProduct" :showQuantity="showQuantity"/>',
+		data() {
+			return {
+				sampleProduct: {
+					name: 'Sample Juice Product',
+					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
+					nonMemberPrice: 6.75,
+					nonMemberSalePrice: null,
+					memberPrice: 5.00,
+					memberSalePrice: 4.00,
+				},
+				showQuantity: false,
+			};
+		},
+	};
+}
