@@ -9,20 +9,31 @@
 			<div :class="$style.message">Show our associate your code!</div>
 		</template>
 
+		<div>
+			<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')" />
+		</div>
 	</collapsible-drawer>
 </template>
 
 <script>
 import CollapsibleDrawer from './collapsible-drawer';
 import PressedPointsCircle from './icons/pressed-points-circle';
+import WalletDrawerContent from './wallet-drawer-content';
 
 export default {
 	components: {
 		CollapsibleDrawer,
 		PressedPointsCircle,
+		WalletDrawerContent
 	},
 
 }
+	props: {
+		wallet: {
+			type: Object,
+			required: true,
+		},
+	},
 </script>
 
 <style>
