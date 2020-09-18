@@ -11,17 +11,22 @@
 
 		<div>
 			<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')" />
+			<div :class="$style.toggleWrapper" @click="close">
+				<arrow-down-icon :class="$style.toggleIcon" color="#262626" />
+			</div>
 		</div>
 	</collapsible-drawer>
 </template>
 
 <script>
+import ArrowDownIcon from './icons/arrow-down-icon';
 import CollapsibleDrawer from './collapsible-drawer';
 import PressedPointsCircle from './icons/pressed-points-circle';
 import WalletDrawerContent from './wallet-drawer-content';
 
 export default {
 	components: {
+		ArrowDownIcon,
 		CollapsibleDrawer,
 		PressedPointsCircle,
 		WalletDrawerContent
@@ -58,6 +63,19 @@ export default {
 
 	.message {
 		text-align: center;
+	}
+
+	.toggleWrapper {
+		display: block;
+		text-align: center;
+		line-height: 0;
+		cursor: pointer;
+		pointer-events: auto;
+		padding: $spacing-05 0 $spacing-07;
+	}
+
+	.toggleIcon {
+		width: $spacing-04;
 	}
 
 </style>
