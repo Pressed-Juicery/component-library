@@ -1,6 +1,9 @@
 <template>
-	<drawer :isOpen="isOpen" @close="$emit('close')">
-		<div :class="$style.header" @click="$emit('close')">
+	<drawer
+		:class="{[$style.hasCustomHeader]: hasCustomHeader}"
+		:isOpen="isOpen"
+		@close="$emit('close')"
+	>
 		<div v-if="hasCustomHeader" :class="$style.customHeader" @click="$emit('close')">
 			<slot name="custom-header"/>
 		</div>
