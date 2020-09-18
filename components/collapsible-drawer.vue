@@ -26,6 +26,12 @@ export default {
 			type: String,
 		},
 	},
+
+	computed: {
+		hasCustomHeader() {
+			return Boolean(this.$slots['custom-header']);
+		},
+	},
 };
 </script>
 
