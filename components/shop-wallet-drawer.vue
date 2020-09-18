@@ -1,5 +1,6 @@
 <template>
 	<collapsible-drawer
+		:class="[$style.root, {[$style.isOpen]: isOpen}]"
 		:isOpen="isOpen"
 		@close="close"
 	>
@@ -37,6 +38,12 @@ export default {
 			type: Object,
 			required: true,
 		},
+
+		isOpen: {
+			type: Boolean,
+			default: true,
+		},
+	},
 
 	methods: {
 		close() {
@@ -82,4 +89,9 @@ export default {
 		width: $spacing-04;
 	}
 
+	.isOpen {
+		.logo {
+			opacity: 1;
+		}
+	}
 </style>
