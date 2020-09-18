@@ -30,7 +30,7 @@ export default {
 		ArrowDownIcon,
 		CollapsibleDrawer,
 		PressedPointsCircle,
-		WalletDrawerContent
+		WalletDrawerContent,
 	},
 
 	props: {
