@@ -32,7 +32,6 @@ export default {
 		WalletDrawerContent
 	},
 
-}
 	props: {
 		wallet: {
 			type: Object,
@@ -44,9 +43,9 @@ export default {
 			this.$emit('close');
 		},
 	},
+};
 </script>
 
-<style>
 <style module lang="scss">
 	@import "../styles/mixins";
 	.logo {
