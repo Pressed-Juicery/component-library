@@ -25,11 +25,13 @@ import Drawer from './drawer';
 
 export default {
 	components: { ArrowDown, Drawer },
+
 	props: {
 		isOpen: {
 			type: Boolean,
 			require: true,
 		},
+
 		title: {
 			type: String,
 		},
