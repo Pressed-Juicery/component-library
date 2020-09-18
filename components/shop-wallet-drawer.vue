@@ -38,6 +38,11 @@ export default {
 			type: Object,
 			required: true,
 		},
+
+	methods: {
+		close() {
+			this.$emit('close');
+		},
 	},
 </script>
 
