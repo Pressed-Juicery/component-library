@@ -5,6 +5,8 @@
 	>
 		<template #custom-header>
 			<pressed-points-circle :class="$style.logo"/>
+			<div :class="$style.title">In the Store?</div>
+			<div :class="$style.message">Show our associate your code!</div>
 		</template>
 
 	</collapsible-drawer>
@@ -35,6 +37,16 @@ export default {
 		margin: 0 auto (-$logoOffset + $spacing-05);
 		opacity: 0;
 		transition: opacity .5s ease;
+	}
+
+	.title {
+		@include text-heading-5();
+		margin-bottom: $spacing-02;
+		text-align: center;
+	}
+
+	.message {
+		text-align: center;
 	}
 
 </style>
