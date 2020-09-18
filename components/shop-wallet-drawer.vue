@@ -55,6 +55,9 @@ export default {
 
 <style module lang="scss">
 	@import "../styles/mixins";
+
+	$logoOffset: 22px;
+
 	.logo {
 		position: relative;
 		display: block;
