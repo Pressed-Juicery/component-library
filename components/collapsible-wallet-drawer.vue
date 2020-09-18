@@ -5,7 +5,7 @@
 		@close="close"
 	>
 		<template #custom-header>
-			<pressed-points-circle :class="$style.logo"/>
+			<pressed-points-circle :class="$style.logo" />
 			<div :class="$style.title">In the Store?</div>
 			<div :class="$style.message">Show our associate your code!</div>
 		</template>
