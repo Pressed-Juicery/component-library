@@ -68,4 +68,11 @@ export default {
 	.content {
 		padding: $spacing-06 $spacing-07;
 	}
+
+	.hasCustomHeader {
+		.customHeader,
+		.content {
+			background-color: $beige;
+		}
+	}
 </style>
