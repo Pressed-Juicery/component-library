@@ -1,5 +1,5 @@
 <template>
-	<validated-form :id="id" @submit="$emit('submit', user)">
+	<validated-form :id="id" @submit="$emit('submit', user)" :error-message="errorMessage">
 		<div :class="$style.row">
 			<validated-input
 				label="First Name"
