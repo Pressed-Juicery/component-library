@@ -39,6 +39,10 @@ export default {
 		id: {
 			type: String,
 		},
+		errorMessage: {
+			type: String,
+			default: null,
+		},
 	},
 	// eslint-disable-next-line max-lines-per-function
 	data() {
