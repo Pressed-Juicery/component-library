@@ -70,6 +70,8 @@ $color-info: $blue-60;
 $color-info-background: $blue-10;
 $color_info-border: $blue-20;
 
+$color-focus: #5E9ED6;
+
 
 // Spacing
 // -------
@@ -112,3 +114,4 @@ $border-color: $gray-40;
 $border-color-light: $gray-20;
 $border: $border-width solid $border-color;
 $border-light: $border-width solid $border-color-light;
+$border-focused: 2px solid $color-focus;

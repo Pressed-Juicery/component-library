@@ -94,7 +94,6 @@ export default {
 	@import '../styles/variables';
 
 	$button-height: $spacing-08;
-	$defaultFocusColor: #5E9ED6;
 
 	.root {
 		display: flex;
@@ -110,7 +109,7 @@ export default {
 	}
 
 	.isFocused {
-		border: 2px solid $defaultFocusColor;
+		border: $border-focused;
 	}
 
 	.inputWrapper {
