@@ -68,8 +68,6 @@ export default {
 		submitInput(event) {
 			this.value = Number(event.target.value);
 			this.hasFocus = false;
-
-			event.target.blur();
 		},
 	},
 
