@@ -36,9 +36,7 @@ export default {
 		ValidatedBirthday,
 	},
 	props: {
-		id: {
-			type: String,
-		},
+		id: String,
 		errorMessage: {
 			type: String,
 			default: null,
