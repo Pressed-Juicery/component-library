@@ -1,22 +1,22 @@
 <template>
 	<validated-form :id="id" @submit="$emit('submit', address)">
 		<div :class="$style.grid">
-			<validated-input label="First Name" v-model="address.firstName" :rules="firstNameRules" />
-			<validated-input label="Last Name" v-model="address.lastName" :rules="lastNameRules" />
+			<validated-input type="text" label="First Name" v-model="address.firstName" :rules="firstNameRules" />
+			<validated-input type="text" label="Last Name"  v-model="address.lastName" :rules="lastNameRules" />
 		</div>
 
-		<validated-input label="Street Address" v-model="address.streetAddress" :rules="addressRules" />
-		<validated-input label="Suite/Apt" v-model="address.extendedAddress" />
+		<validated-input label="Street Address" type="text" v-model="address.streetAddress" :rules="addressRules" />
+		<validated-input type="text" label="Suite/Apt"  v-model="address.extendedAddress" />
 
-		<validated-input label="City" v-model="address.locality" :rules="localityRules" />
+		<validated-input type="text" label="City" v-model="address.locality" :rules="localityRules" />
 
 		<div :class="$style.grid">
 			<validated-select label="State" v-model="address.region" :options="regions" :rules="regionRules" />
-			<validated-input label="ZIP Code" v-model="address.postal" :rules="postalRules" />
+			<validated-input type="number" label="ZIP Code" v-model="address.postal" :rules="postalRules" />
 		</div>
 
 		<validated-input
-			type="phone"
+			type="tel"
 			label="Phone Number"
 			v-model="address.phone"
 			:rules="phoneRules"
