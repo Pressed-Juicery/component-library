@@ -55,7 +55,6 @@ export default {
 <style module lang="scss">
 	@import '../styles/variables';
 	@import '../styles/mixins';
-	@import '../styles/variables';
 
 	.row {
 		display: grid;
