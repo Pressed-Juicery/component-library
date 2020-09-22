@@ -2,11 +2,13 @@
 	<validated-form :id="id" @submit="$emit('submit', user)">
 		<div :class="$style.row">
 			<validated-input
+				type="text"
 				label="First Name"
 				:rules="rules.firstName"
 				v-model="user.firstName"
 			/>
 			<validated-input
+				type="text"
 				label="Last Name"
 				:rules="rules.lastName"
 				v-model="user.lastName"
