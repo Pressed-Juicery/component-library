@@ -1,7 +1,13 @@
 <template>
 	<div :class="$style.root">
 		<div :class="$style.inputWrapper">
-			<input type="text" placeholder="Discount Code" :class="$style.input" @keydown.enter="submit" v-model="couponCode"/>
+			<input
+				type="text"
+				placeholder="Discount Code"
+				:class="$style.input"
+				@keydown.enter="submit"
+				v-model="couponCode"
+			/>
 			<button
 				:class="$style.button"
 				:disabled="!couponCode"
