@@ -1,5 +1,5 @@
 <template>
-	<validated-form :id="id" @submit="$emit('submit', user)">
+	<validated-form :id="id" @submit="$emit('submit', user)" :error-message="errorMessage">
 		<div :class="$style.row">
 			<validated-input
 				label="First Name"
@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import { hasMinimumLength, isEmail, isNotEmpty, isValidPhoneNumber } from '../utilities/validators';
 import ValidatedBirthday from './validated-birthday';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
@@ -36,46 +35,17 @@ export default {
 		ValidatedBirthday,
 	},
 	props: {
-		id: {
+		id: String,
+		rules: Object,
+		errorMessage: {
 			type: String,
+			default: null,
 		},
 	},
 	// eslint-disable-next-line max-lines-per-function
 	data() {
 		return {
 			user: {},
-			rules: {
-				firstName: [{
-					validator: isNotEmpty,
-					message: 'Please enter your first name.',
-				}],
-				lastName: [{
-					validator: isNotEmpty,
-					message: 'Please enter your last name.',
-				}],
-				email: [{
-					validator: isNotEmpty,
-					message: 'Please enter a valid email address.',
-				}, {
-					validator: isEmail,
-					message: 'Please enter a valid email address.',
-				}],
-				password: [{
-					validator: isNotEmpty,
-					message: 'Please enter a password.',
-				}, {
-					validator: hasMinimumLength,
-					options: { length: 6 },
-					message: 'Passwords must be at least 6 characters long.',
-				}],
-				phone: [{
-					validator: isNotEmpty,
-					message: 'Please enter a valid phone number.',
-				}, {
-					validator: isValidPhoneNumber,
-					message: 'Please enter a valid phone number.',
-				}],
-			},
 		};
 	},
 };
