@@ -58,6 +58,7 @@
 		<validated-input
 			type="tel"
 			label="Phone Number"
+			autocomplete="tel"
 			v-model="address.phone"
 			:rules="phoneRules"
 		/>
