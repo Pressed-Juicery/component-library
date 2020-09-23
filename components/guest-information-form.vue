@@ -4,6 +4,7 @@
 
 		<validated-input
 			type="text"
+			autocomplete="name"
 			:class="$style.row"
 			label="Name"
 			v-model="guest.name"
@@ -11,6 +12,7 @@
 		/>
 		<validated-input
 			type="tel"
+			autocomplete="tel"
 			:class="$style.row"
 			label="Phone Number"
 			v-model="guest.phone"
@@ -18,6 +20,7 @@
 		/>
 		<validated-input
 			type="email"
+			autocomplete="email"
 			:class="$style.lastRow"
 			label="Email"
 			v-model="guest.email"
