@@ -64,6 +64,7 @@ export default {
 		submitInput(event) {
 			this.value = Number(event.target.value);
 			event.target.blur();
+			this.$emit('change', newValue);
 		},
 	},
 
