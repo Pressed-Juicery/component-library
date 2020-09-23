@@ -20,7 +20,7 @@
 		<validated-input
 			label="Street Address"
 			type="text"
-			autocomplete="street-address"
+			autocomplete="address-line1"
 			v-model="address.streetAddress"
 			:rules="addressRules"
 		/>
