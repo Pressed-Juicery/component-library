@@ -68,9 +68,6 @@ export default {
 	},
 
 	watch: {
-		value() {
-			this.$emit('change', this.value);
-		},
 		quantity() {
 			this.value = this.quantity;
 		},
