@@ -62,8 +62,10 @@ export default {
 
 	methods: {
 		submitInput(event) {
-			this.value = Number(event.target.value);
+			const newValue = Number(event.target.value);
 			event.target.blur();
+
+			if (this.value === newValue) return;
 			this.$emit('change', newValue);
 		},
 	},
