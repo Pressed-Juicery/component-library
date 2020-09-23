@@ -66,6 +66,8 @@ export default {
 			event.target.blur();
 
 			if (this.value === newValue) return;
+
+			this.value = newValue;
 			this.$emit('change', newValue);
 		},
 	},
