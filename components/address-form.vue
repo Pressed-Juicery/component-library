@@ -27,6 +27,7 @@
 		<validated-input
 			type="text"
 			label="Suite/Apt"
+			autocomplete="address-line2"
 			v-model="address.extendedAddress"
 		/>
 
