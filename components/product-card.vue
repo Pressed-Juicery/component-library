@@ -20,7 +20,7 @@
 				@click.native.stop
 			/>
 
-			<div :class="$style.learnMore" @click="$emit('learn-more')">Learn More</div>
+			<circle-arrow-right :class="$style.learnMore" @click="$emit('learn-more')" />
 		</div>
 	</card>
 </template>
