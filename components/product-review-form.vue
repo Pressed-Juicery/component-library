@@ -1,7 +1,12 @@
 <template>
 	<validated-form :id="id" @submit="$emit('submit', review)">
 		<validated-star-rating v-model="review.rating" :rules="starRules" />
-		<validated-input label="Title" v-model="review.title" :rules="titleRules" />
+		<validated-input
+			type="text"
+			label="Title"
+			v-model="review.title"
+			:rules="titleRules"
+		/>
 		<validated-textarea label="Description" v-model="review.description" :rules="descriptionRules" rows="4" />
 	</validated-form>
 </template>

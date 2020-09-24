@@ -1,23 +1,65 @@
 <template>
 	<validated-form :id="id" @submit="$emit('submit', address)">
 		<div :class="$style.grid">
-			<validated-input label="First Name" v-model="address.firstName" :rules="firstNameRules" />
-			<validated-input label="Last Name" v-model="address.lastName" :rules="lastNameRules" />
-		</div>
-
-		<validated-input label="Street Address" v-model="address.streetAddress" :rules="addressRules" />
-		<validated-input label="Suite/Apt" v-model="address.extendedAddress" />
-
-		<validated-input label="City" v-model="address.locality" :rules="localityRules" />
-
-		<div :class="$style.grid">
-			<validated-select label="State" v-model="address.region" :options="regions" :rules="regionRules" />
-			<validated-input label="ZIP Code" v-model="address.postal" :rules="postalRules" />
+			<validated-input
+				type="text"
+				label="First Name"
+				autocomplete="given-name"
+				v-model="address.firstName"
+				:rules="firstNameRules"
+			/>
+			<validated-input
+				type="text"
+				label="Last Name"
+				autocomplete="family-name"
+				v-model="address.lastName"
+				:rules="lastNameRules"
+			/>
 		</div>
 
 		<validated-input
-			type="phone"
+			label="Street Address"
+			type="text"
+			autocomplete="address-line1"
+			v-model="address.streetAddress"
+			:rules="addressRules"
+		/>
+		<validated-input
+			type="text"
+			label="Suite/Apt"
+			autocomplete="address-line2"
+			v-model="address.extendedAddress"
+		/>
+
+		<validated-input
+			type="text"
+			label="City"
+			autocomplete="address-level2"
+			v-model="address.locality"
+			:rules="localityRules"
+		/>
+
+		<div :class="$style.grid">
+			<validated-select
+				label="State"
+				autocomplete="address-level1"
+				v-model="address.region"
+				:options="regions"
+				:rules="regionRules"
+			/>
+			<validated-input
+				type="number"
+				label="ZIP Code"
+				autocomplete="postal-code"
+				v-model="address.postal"
+				:rules="postalRules"
+			/>
+		</div>
+
+		<validated-input
+			type="tel"
 			label="Phone Number"
+			autocomplete="tel"
 			v-model="address.phone"
 			:rules="phoneRules"
 		/>
