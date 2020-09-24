@@ -21,15 +21,14 @@
 				@change="quantity => $emit('change', { product, quantity })"
 				@click.native.stop
 			/>
-
 		</div>
 	</card>
 </template>
 
 <script>
 import Card from './card';
-import QuantitySelector from './quantity-selector';
 import CircleArrowRight from './icons/circle-arrow-right';
+import QuantitySelector from './quantity-selector';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
