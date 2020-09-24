@@ -1,5 +1,4 @@
 import UpgradeForm from '../../../components/upgrade-form';
-import { config } from '../../../config';
 
 export default {
 	title: 'Components / Forms / UpgradeForm',
@@ -43,7 +42,7 @@ export function Overview() {
 						name: `$${price}`,
 						value: {
 							id: `membership_${price}`,
-							price
+							price,
 						},
 					};
 				}),

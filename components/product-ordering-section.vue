@@ -1,7 +1,9 @@
 <template>
 	<div v-if="selectedVariant">
 		<div :class="$style.variantName">{{ selectedVariant.name }}</div>
-		<img :class="$style.image" :src="selectedVariant.imageUrl">
+		<div :class="$style.imageWrapper">
+			<img :class="$style.image" :src="selectedVariant.imageUrl">
+		</div>
 
 		<div :class="$style.information">
 			<div>
@@ -142,12 +144,16 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import "../styles/variables";
 	@import "../styles/mixins";
 
 	.variantName {
 		@include text-heading-4();
 		margin-bottom: $spacing-05;
+	}
+
+	.imageWrapper {
+		max-width: $spacing-10 * 10;
+		margin: 0 auto;
 	}
 
 	.image {

@@ -62,15 +62,18 @@ export default {
 
 	methods: {
 		submitInput(event) {
-			this.value = Number(event.target.value);
+			const newValue = Number(event.target.value);
+
 			event.target.blur();
+
+			if (this.value === newValue) return;
+
+			this.value = newValue;
+			this.$emit('change', newValue);
 		},
 	},
 
 	watch: {
-		value() {
-			this.$emit('change', this.value);
-		},
 		quantity() {
 			this.value = this.quantity;
 		},

@@ -12,24 +12,7 @@
 
 			<transition name="slider" @enter="enter" @leave="leave">
 				<div v-show="isOpen" :class="$style.contentWrapper">
-					<div :class="$style.mainContent">
-						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" />
-
-						<div :class="$style.walletData">
-							<div :class="$style.label">Balance</div>
-							<div :class="$style.value">{{ balance }}</div>
-
-							<div :class="$style.label">Points</div>
-							<div :class="$style.value">{{ wallet.points }}</div>
-
-							<div :class="$style.label">Account #</div>
-							<div :class="$style.value">{{ wallet.cardNumber }}</div>
-						</div>
-					</div>
-
-					<button :class="$style.reloadButton" @click="$emit('reload')" >
-						Reload Balance
-					</button>
+					<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')"/>
 				</div>
 			</transition>
 
@@ -44,11 +27,10 @@
 import ArrowDownIcon from './icons/arrow-down-icon';
 import Overlay from './overlay';
 import PressedPointsCircle from './icons/pressed-points-circle';
-import QrCode from './qr-code';
-import { formatCurrency } from '../utilities/formatters';
+import WalletDrawerContent from './wallet-drawer-content';
 
 export default {
-	components: { ArrowDownIcon, Overlay, PressedPointsCircle, QrCode },
+	components: { ArrowDownIcon, Overlay, PressedPointsCircle, WalletDrawerContent },
 
 	props: {
 		wallet: {
@@ -61,12 +43,6 @@ export default {
 		return {
 			isOpen: false,
 		};
-	},
-
-	computed: {
-		balance() {
-			return formatCurrency(this.wallet.funds || 0);
-		},
 	},
 
 	methods: {
@@ -127,47 +103,6 @@ export default {
 		height: 0;
 	}
 
-	.mainContent {
-		display: flex;
-		justify-content: center;
-		max-width: 340px;
-		margin: $spacing-07 auto $spacing-08;
-	}
-
-	.qrCode {
-		width: 50%;
-	}
-
-	.walletData {
-		width: 50%;
-		margin-left: $spacing-06;
-	}
-
-	.label {
-		@include text-cta-small();
-		margin-bottom: $spacing-02;
-	}
-
-	.value {
-		@include text-heading-5();
-		&:not(:last-child) {
-			margin-bottom: $spacing-05;
-		}
-	}
-
-	.reloadButton {
-		@include button-pill-secondary();
-
-		display: block;
-		margin: 0 auto $spacing-06;
-		padding: 0 $spacing-10;
-		font-size: 14px;
-
-		&:focus {
-			outline: none;
-		}
-	}
-
 	.toggleWrapper {
 		display: block;
 		text-align: center;
@@ -184,12 +119,6 @@ export default {
 	.isOpen {
 		.toggleIcon {
 			transform: rotate(180deg);
-		}
-	}
-
-	@media (max-width: 350px) {
-		.reloadButton {
-			padding: 0 $spacing-06;
 		}
 	}
 </style>
