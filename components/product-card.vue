@@ -28,10 +28,11 @@
 <script>
 import Card from './card';
 import QuantitySelector from './quantity-selector';
+import CircleArrowRight from './icons/circle-arrow-right';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { Card, QuantitySelector },
+	components: { Card, QuantitySelector, CircleArrowRight },
 
 	props: {
 		product: {
