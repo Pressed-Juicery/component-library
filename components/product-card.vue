@@ -14,13 +14,14 @@
 				{{ formatPrice(product.memberSalePrice) }}
 			</div>
 
-			<quantity-selector
+			<circle-arrow-right v-if="showLearnMoreButton" :class="$style.learnMore" @click="$emit('learn-more')" />
+
+			<quantity-selector v-else
 				:quantity="quantity"
 				@change="quantity => $emit('change', { product, quantity })"
 				@click.native.stop
 			/>
 
-			<circle-arrow-right :class="$style.learnMore" @click="$emit('learn-more')" />
 		</div>
 	</card>
 </template>
