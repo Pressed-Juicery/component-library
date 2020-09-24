@@ -100,7 +100,7 @@ export default {
 			});
 		},
 		shouldShowCta() {
-			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
+			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice && this.selectedVariant.memberPrice > 0; // eslint-disable-line max-len
 		},
 		price() {
 			return this.isVip

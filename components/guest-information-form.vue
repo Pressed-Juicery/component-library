@@ -2,9 +2,30 @@
 	<validated-form @submit="$emit('submit', guest)">
 		<div :class="$style.title">Checkout as Guest</div>
 
-		<validated-input :class="$style.row" label="Name" v-model="guest.name" :rules="nameRules" />
-		<validated-input :class="$style.row" label="Phone Number" v-model="guest.phone" :rules="phoneRules" />
-		<validated-input :class="$style.lastRow" label="Email" v-model="guest.email" :rules="emailRules" />
+		<validated-input
+			type="text"
+			autocomplete="name"
+			:class="$style.row"
+			label="Name"
+			v-model="guest.name"
+			:rules="nameRules"
+		/>
+		<validated-input
+			type="tel"
+			autocomplete="tel"
+			:class="$style.row"
+			label="Phone Number"
+			v-model="guest.phone"
+			:rules="phoneRules"
+		/>
+		<validated-input
+			type="email"
+			autocomplete="email"
+			:class="$style.lastRow"
+			label="Email"
+			v-model="guest.email"
+			:rules="emailRules"
+		/>
 
 		<button :class="$style.submitButton" type="submit">{{ buttonText }}</button>
 	</validated-form>
