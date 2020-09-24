@@ -19,6 +19,8 @@
 				@change="quantity => $emit('change', { product, quantity })"
 				@click.native.stop
 			/>
+
+			<div :class="$style.learnMore" @click="$emit('learn-more')">Learn More</div>
 		</div>
 	</card>
 </template>
@@ -91,5 +93,17 @@ export default {
 
 	.strikethrough {
 		text-decoration: line-through;
+	}
+
+	.learnMore {
+		@include _button--pill;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 140px;
+		height: 40px;
+		border: 1px solid $gray-30;;
+		cursor: pointer;
 	}
 </style>
