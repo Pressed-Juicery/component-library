@@ -97,14 +97,6 @@ export default {
 	}
 
 	.learnMore {
-		@include _button--pill;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 140px;
-		height: 40px;
-		border: 1px solid $gray-30;;
 		cursor: pointer;
 	}
 </style>
