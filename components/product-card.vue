@@ -43,6 +43,10 @@ export default {
 			type: Number,
 			required: false,
 		},
+		showLearnMoreButton: {
+			type: Boolean,
+			default: false,
+		},
 	},
 
 	computed: {
