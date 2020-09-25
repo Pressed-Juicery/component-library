@@ -35,7 +35,6 @@ export default {
 			type: Object,
 			required: true,
 		},
-
 		isOpen: {
 			type: Boolean,
 			default: true,
