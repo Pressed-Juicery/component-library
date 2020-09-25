@@ -1,7 +1,7 @@
 <template>
 	<card @click.native="$emit('click', product)">
 		<div :class="$style.wrapper">
-			<div :class="$style.imageContainer">
+			<div :class="$style.imageWrapper">
 				<img :class="$style.image" :src="product.imageUrl" />
 			</div>
 
@@ -80,7 +80,7 @@ export default {
 		align-items: center;
 	}
 
-	.imageContainer {
+	.imageWrapper {
 		position: relative;
 		width: 100%;
 		height: 0;
