@@ -2,7 +2,7 @@
 	<div :class="[$style.root, { [$style.isOpen]: isOpen }]">
 		<overlay :is-active="isOpen" @close="$emit('close')" />
 
-		<div :class="$style.drawer">
+		<div :class="$style.drawer" :style="drawerStyle">
 			<slot />
 		</div>
 	</div>
@@ -18,6 +18,7 @@ export default {
 			type: Boolean,
 			require: true,
 		},
+		drawerStyle: String,
 	},
 };
 </script>
