@@ -80,20 +80,24 @@ export default {
 		align-items: center;
 	}
 
-	.imageWrapper {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding-top: 100%;
-		overflow: hidden;
+	@mixin predefineImageSize {
+		.imageWrapper {
+			position: relative;
+			width: 100%;
+			height: 0;
+			padding-top: 100%;
+			overflow: hidden;
+		}
+
+		.image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
 	}
 
-	.image {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-	}
+	@include predefineImageSize();
 
 	.name,
 	.price {
