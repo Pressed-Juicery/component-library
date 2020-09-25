@@ -15,6 +15,13 @@
 				<div :class="$style.icon">+</div>
 			</card>
 		</div>
+
+		<div v-else>
+			<validated-payment-method
+				:braintree-tokenization-key="braintreeTokenizationKey"
+				@change="paymentMethod => selectedPaymentMethod = paymentMethod"
+			/>
+		</div>
 	</validated-form>
 </template>
 
