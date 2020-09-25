@@ -1,7 +1,10 @@
 <template>
 	<card @click.native="$emit('click', product)">
 		<div :class="$style.wrapper">
-			<img :class="$style.image" :src="product.imageUrl" />
+			<div :class="$style.imageWrapper">
+				<img :class="$style.image" :src="product.imageUrl" />
+			</div>
+
 			<div :class="$style.name">{{ product.name }}</div>
 
 			<div v-if="hasSamePrice" :class="$style.price">{{ formatPrice(product.nonMemberPrice) }}</div>
@@ -77,9 +80,24 @@ export default {
 		align-items: center;
 	}
 
-	.image {
-		max-width: 100%;
+	@mixin predefineImageSize {
+		.imageWrapper {
+			position: relative;
+			width: 100%;
+			height: 0;
+			padding-top: 100%;
+			overflow: hidden;
+		}
+
+		.image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
 	}
+
+	@include predefineImageSize();
 
 	.name,
 	.price {
