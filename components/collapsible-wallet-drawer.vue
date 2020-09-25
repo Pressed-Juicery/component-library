@@ -1,34 +1,31 @@
 <template>
-	<collapsible-drawer
-		:class="[$style.root, {[$style.isOpen]: isOpen}]"
+	<drawer
+		:class="{ [$style.isOpen]: isOpen }"
 		:isOpen="isOpen"
+		drawer-style="background:var(--beige);overflow:visible"
 		@close="close"
 	>
-		<template #custom-header>
-			<pressed-points-circle :class="$style.logo" />
-			<div :class="$style.title">In the Store?</div>
-			<div :class="$style.message">Show our associate your code!</div>
-		</template>
+		<pressed-points-circle :class="$style.logo" />
+		<div :class="$style.title">In the Store?</div>
+		<div :class="$style.message">Show our associate your code!</div>
 
-		<div>
-			<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')" />
-			<div :class="$style.toggleWrapper" @click="close">
-				<arrow-down-icon :class="$style.toggleIcon" color="#262626" />
-			</div>
+		<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')" />
+		<div :class="$style.toggleWrapper" @click="close">
+			<arrow-down-icon :class="$style.toggleIcon" color="#262626" />
 		</div>
-	</collapsible-drawer>
+	</drawer>
 </template>
 
 <script>
 import ArrowDownIcon from './icons/arrow-down-icon';
-import CollapsibleDrawer from './collapsible-drawer';
+import Drawer from './drawer';
 import PressedPointsCircle from './icons/pressed-points-circle';
 import WalletDrawerContent from './wallet-drawer-content';
 
 export default {
 	components: {
 		ArrowDownIcon,
-		CollapsibleDrawer,
+		Drawer,
 		PressedPointsCircle,
 		WalletDrawerContent,
 	},
@@ -55,8 +52,13 @@ export default {
 
 <style module lang="scss">
 	@import "../styles/mixins";
+	@import "../styles/variables";
 
 	$logoOffset: 22px;
+
+	:root {
+		--beige: #{$beige};
+	}
 
 	.logo {
 		position: relative;
