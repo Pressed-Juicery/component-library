@@ -14,7 +14,9 @@
 				{{ formatPrice(product.memberSalePrice) }}
 			</div>
 
-			<quantity-selector
+			<circle-arrow-right v-if="showLearnMoreButton" :class="$style.learnMore" @click="$emit('learn-more')" />
+
+			<quantity-selector v-else
 				:quantity="quantity"
 				@change="quantity => $emit('change', { product, quantity })"
 				@click.native.stop
@@ -25,11 +27,12 @@
 
 <script>
 import Card from './card';
+import CircleArrowRight from './icons/circle-arrow-right';
 import QuantitySelector from './quantity-selector';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { Card, QuantitySelector },
+	components: { Card, QuantitySelector, CircleArrowRight },
 
 	props: {
 		product: {
@@ -39,6 +42,10 @@ export default {
 		quantity: {
 			type: Number,
 			required: false,
+		},
+		showLearnMoreButton: {
+			type: Boolean,
+			default: false,
 		},
 	},
 
@@ -91,5 +98,9 @@ export default {
 
 	.strikethrough {
 		text-decoration: line-through;
+	}
+
+	.learnMore {
+		cursor: pointer;
 	}
 </style>
