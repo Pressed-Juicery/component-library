@@ -2,17 +2,19 @@
 	<validated-form :id="id" @submit="onSubmit">
 		<validated-select label="Monthly Membership Reload" :options="reloadAmounts" v-model="selectedReloadAmount" />
 
-		<payment-method-radio-button-card
-			v-for="method in paymentMethods"
-			:paymentMethod="method"
-			:key="method.id"
-			v-model="selectedPaymentMethod"
-		/>
+		<div v-if="paymentMethods && paymentMethods.length">
+			<payment-method-radio-button-card
+				v-for="method in paymentMethods"
+				:paymentMethod="method"
+				:key="method.id"
+				v-model="selectedPaymentMethod"
+			/>
 
-		<card :class="$style.card" @click.native="$emit('add-payment-method')">
-			<div>Add a New Payment Method</div>
-			<div :class="$style.icon">+</div>
-		</card>
+			<card :class="$style.card" @click.native="$emit('add-payment-method')">
+				<div>Add a New Payment Method</div>
+				<div :class="$style.icon">+</div>
+			</card>
+		</div>
 	</validated-form>
 </template>
 
