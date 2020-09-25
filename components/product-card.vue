@@ -85,6 +85,7 @@ export default {
 		width: 100%;
 		height: 0;
 		padding-top: 100%;
+		overflow: hidden;
 	}
 
 	.image {
