@@ -20,12 +20,14 @@
 import Card from './card';
 import PaymentMethodRadioButtonCard from './payment-method-radio-button-card';
 import ValidatedForm from './validated-form';
+import ValidatedPaymentMethod from './validated-payment-method';
 import ValidatedSelect from './validated-select';
 
 export default {
 	components: {
 		Card,
 		ValidatedForm,
+		ValidatedPaymentMethod,
 		ValidatedSelect,
 		PaymentMethodRadioButtonCard,
 	},
