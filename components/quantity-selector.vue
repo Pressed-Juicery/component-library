@@ -11,7 +11,7 @@
 		</div>
 
 		<div v-else :class="$style.inputWrapper">
-			<select :class="$style.select" v-model="value" ref="select">
+			<select :class="$style.select" v-model="value" ref="select" @input="submitInput">
 				<option v-for="(option, index) in options" :value="option" :key="index">
 					{{ canUseInput && index === options.length - 1 ? `${option}+` : option }}
 				</option>
