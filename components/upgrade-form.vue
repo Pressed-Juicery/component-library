@@ -39,6 +39,10 @@ export default {
 			type: Array,
 			required: true,
 		},
+		braintreeTokenizationKey: {
+			type: String,
+			required: true,
+		},
 	},
 
 	data() {
