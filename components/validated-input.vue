@@ -9,7 +9,9 @@
 		:isEager="isEager"
 		ref="validatedComponent"
 	>
-		<input :id="id" v-bind="$attrs" v-model="model" @blur="isEager = true">
+
+		<input v-if="!isPasswordInput" :id="id" v-bind="$attrs" v-model="model" @blur="isEager = true">
+
 	</validated-component>
 </template>
 
