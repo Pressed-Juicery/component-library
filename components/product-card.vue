@@ -1,5 +1,5 @@
 <template>
-	<card @click.native="$emit('click', product)">
+	<card :class="$style.root" @click.native="$emit('click', product)">
 		<div :class="$style.wrapper">
 			<div :class="$style.imageWrapper">
 				<img :class="$style.image" :src="product.imageUrl" />
@@ -73,6 +73,10 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/mixins';
+
+	.root {
+		cursor: pointer;
+	}
 
 	.wrapper {
 		display: flex;

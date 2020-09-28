@@ -1,5 +1,5 @@
 <template>
-	<div :class="[$style.root, {[$style.hasCardExtension]: hasModifiers}]" >
+	<div :class="[$style.root, {[$style.hasCardExtension]: hasModifiers}]" @click="$emit('click', item)">
 		<card :class="$style.card">
 			<div :class="$style.imageWrapper">
 				<img :class="$style.image" :src="item.variant.imageUrl" :alt="item.variant.name" />
@@ -16,7 +16,7 @@
 					</div>
 				</div>
 
-				<quantity-selector @change="handleQuantityChange" :quantity="item.quantity"/>
+				<quantity-selector @change="handleQuantityChange" :quantity="item.quantity" @click.native.stop />
 			</div>
 		</card>
 		<div v-if="hasModifiers" :class="$style.detailsWrapper">
@@ -67,6 +67,7 @@ export default {
 
 	.root {
 		margin-bottom: $spacing-03;
+		cursor: pointer;
 
 		&:last-of-type {
 			margin-bottom: 0;

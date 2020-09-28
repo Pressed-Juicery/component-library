@@ -68,7 +68,7 @@ export function Overview() {
 export function AllowCartUpdates() {
 	return {
 		components: { CartSummary },
-		template: '<cart-summary :cart="cart" :can-update-quantity="true" @change="onChange"/>',
+		template: '<cart-summary :cart="cart" :can-update-quantity="true" @change="onChange" @click="handleClick" />',
 		data() {
 			return { cart };
 		},
@@ -76,6 +76,11 @@ export function AllowCartUpdates() {
 			onChange(item) {
 				// eslint-disable-next-line no-console
 				console.log(`Changed item quantity for "${item.name}" to ${item.quantity}`);
+			},
+
+			handleClick(product) {
+				// eslint-disable-next-line no-console
+				console.log('clicked product:', product);
 			},
 		},
 	};

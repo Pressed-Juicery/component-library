@@ -93,7 +93,6 @@ export default {
 		width: $button-height;
 		border: 1px solid $gray-30;
 		border-radius: 999em;
-		cursor: pointer;
 	}
 
 	.isActive {
@@ -124,7 +123,6 @@ export default {
 
 	.input {
 		text-align: center;
-		cursor: default;
 	}
 
 	.selectOverlay {
@@ -135,7 +133,6 @@ export default {
 	.select {
 		opacity: 0;
 		position: absolute;
-		cursor: pointer;
 	}
 
 	.arrowIcon {
