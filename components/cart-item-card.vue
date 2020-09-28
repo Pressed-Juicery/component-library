@@ -16,7 +16,7 @@
 					</div>
 				</div>
 
-				<quantity-selector @change="handleQuantityChange" :quantity="item.quantity"/>
+				<quantity-selector @change="handleQuantityChange" :quantity="item.quantity" @click.native.stop />
 			</div>
 		</card>
 		<div v-if="hasModifiers" :class="$style.detailsWrapper">
