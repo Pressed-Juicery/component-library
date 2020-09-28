@@ -10,6 +10,7 @@
 			v-for="item in cart.items"
 			:key="item.id"
 			:item="item"
+			@click.native.stop="$emit('click', item)"
 			@change="value => $emit('change', value)"/>
 	</div>
 </template>
