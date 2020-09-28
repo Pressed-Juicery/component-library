@@ -75,4 +75,16 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/variables';
+
+	.inputWrapper {
+		position: relative;
+	}
+
+	.eye {
+		position: absolute;
+		width: $spacing-06;
+		top: 10px;
+		right: $spacing-04;
+		cursor: pointer;
+	}
 </style>
