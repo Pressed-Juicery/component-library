@@ -79,8 +79,9 @@ export function AllowCartUpdates() {
 			},
 
 			handleClick(product) {
-				console.log('product:', product); // TODO: REMOVE THIS
-			}
+				// eslint-disable-next-line no-console
+				console.log('clicked product:', product);
+			},
 		},
 	};
 }
