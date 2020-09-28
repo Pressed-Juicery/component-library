@@ -43,6 +43,10 @@ export default {
 			set(value) { this.$emit('input', value) },
 		},
 
+		isPasswordInput() {
+			return this.$attrs.type.toLowerCase() === 'password';
+		},
+
 		passwordInputType() {
 			return this.shouldShowPassword ? 'text' : 'password';
 		},
