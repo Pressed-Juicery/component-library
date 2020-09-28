@@ -19,10 +19,8 @@
 				v-model="model"
 				@blur="isEager = true"
 			>
-			<eye-active v-if="shouldShowPassword"
-				:class="$style.eye"
-				@click.native="shouldShowPassword = !shouldShowPassword" />
-			<eye-inactive v-else :class="$style.eye" @click.native="shouldShowPassword = !shouldShowPassword" />
+			<eye-active v-if="shouldShowPassword" :class="$style.eye" @click.native="shouldShowPassword = true" />
+			<eye-inactive v-else :class="$style.eye" @click.native="shouldShowPassword = false" />
 		</div>
 	</validated-component>
 </template>
