@@ -67,6 +67,7 @@ export default {
 
 	.root {
 		margin-bottom: $spacing-03;
+		cursor: pointer;
 
 		&:last-of-type {
 			margin-bottom: 0;
