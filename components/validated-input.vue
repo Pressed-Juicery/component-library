@@ -12,6 +12,17 @@
 
 		<input v-if="!isPasswordInput" :id="id" v-bind="$attrs" v-model="model" @blur="isEager = true">
 
+		<div v-else :class="$style.inputWrapper">
+			<input :id="id"
+				:type="passwordInputType"
+				v-bind="$attrs"
+				v-model="model"
+				@blur="isEager = true"
+				placeholder="••••••"
+			>
+			<eye-active v-if="shouldShowPassword":class="$style.eye" @click.native="shouldShowPassword = !shouldShowPassword"/>
+			<eye-inactive v-else :class="$style.eye" @click.native="shouldShowPassword = !shouldShowPassword"/>
+		</div>
 	</validated-component>
 </template>
 
