@@ -15,10 +15,12 @@
 
 <script>
 import ValidatedComponent from './validated-component';
+import EyeActive from './icons/eye-active';
+import EyeInactive from './icons/eye-inactive';
 import { getRandom } from '../utilities/get-random';
 
 export default {
-	components: { ValidatedComponent },
+	components: { EyeActive, EyeInactive, ValidatedComponent },
 	props: {
 		label: String,
 		labelHelper: String,
