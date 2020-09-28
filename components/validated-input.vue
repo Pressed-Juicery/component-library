@@ -19,16 +19,18 @@
 				v-model="model"
 				@blur="isEager = true"
 			>
-			<eye-active v-if="shouldShowPassword" :class="$style.eye" @click.native="shouldShowPassword = !shouldShowPassword" />
+			<eye-active v-if="shouldShowPassword"
+				:class="$style.eye"
+				@click.native="shouldShowPassword = !shouldShowPassword" />
 			<eye-inactive v-else :class="$style.eye" @click.native="shouldShowPassword = !shouldShowPassword" />
 		</div>
 	</validated-component>
 </template>
 
 <script>
-import ValidatedComponent from './validated-component';
 import EyeActive from './icons/eye-active';
 import EyeInactive from './icons/eye-inactive';
+import ValidatedComponent from './validated-component';
 import { getRandom } from '../utilities/get-random';
 
 export default {
