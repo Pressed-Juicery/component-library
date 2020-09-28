@@ -33,6 +33,7 @@ export default {
 		return {
 			id: getRandom(),
 			isEager: false,
+			shouldShowPassword: false,
 		};
 	},
 
@@ -40,6 +41,10 @@ export default {
 		model: {
 			get() { return this.value },
 			set(value) { this.$emit('input', value) },
+		},
+
+		passwordInputType() {
+			return this.shouldShowPassword ? 'text' : 'password';
 		},
 	},
 
