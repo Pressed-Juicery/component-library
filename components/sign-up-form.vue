@@ -25,6 +25,7 @@
 		/>
 		<validated-input
 			type="password"
+			autocomplete="new-password"
 			label="Password"
 			:rules="rules.password"
 			v-model="user.password"
