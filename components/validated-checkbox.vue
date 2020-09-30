@@ -140,7 +140,7 @@ export default {
 	.checkbox {
 		display: block;
 		height: $spacing-06;
-		width: $spacing-06;
+		min-width: $spacing-06;
 		border: $border-light;
 		border-radius: $border-radius;
 		cursor: pointer;
