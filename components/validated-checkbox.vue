@@ -125,7 +125,7 @@ export default {
 
 	.wrapper {
 		display: flex;
-		align-items: center;
+		align-items: start;
 	}
 
 	.label {
@@ -138,6 +138,7 @@ export default {
 	}
 
 	.checkbox {
+		flex-shrink: 0;
 		display: block;
 		height: $spacing-06;
 		width: $spacing-06;
