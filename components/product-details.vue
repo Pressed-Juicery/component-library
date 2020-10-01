@@ -1,13 +1,15 @@
 <template>
 	<div>
-			<div :class="$style.iconWrapper">
-				<img :class="$style.icon" :src="detail.iconUrl" alt />
-			</div>
-			<div>
-				<div :class="$style.title">{{ detail.title }}</div>
-				<div>{{ detail.description }}</div>
 		<div v-if="productDescription.overview" :class="$style.overview">{{ productDescription.overview }}</div>
+		<div v-if="showDetails">
 			<div :class="$style.row" v-for="(detail, index) in productDescription.details" :key="index">
+				<div :class="$style.iconWrapper">
+					<img :class="$style.icon" :src="detail.iconUrl" alt />
+				</div>
+				<div>
+					<div :class="$style.title">{{ detail.title }}</div>
+					<div>{{ detail.description }}</div>
+				</div>
 			</div>
 		</div>
 	</div>
