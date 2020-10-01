@@ -21,6 +21,11 @@ export default {
 			required: true,
 		},
 	},
+	computed: {
+		showDetails() {
+			return this.productDescription.details.length === 3; // eslint-disable-line no-magic-numbers
+		},
+	},
 };
 </script>
 
