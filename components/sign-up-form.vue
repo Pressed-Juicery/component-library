@@ -43,14 +43,11 @@
 		/>
 
 		<validated-checkbox :class="$style.legalText" v-model="user.acceptsSmsMarketing">
-			Text messaging is a great way to get order notifications
-			and learn about our special deals and promotions.
-			By submitting this form, you agree to receive recurring automated
-			marketing text messages from Pressed Juicery at the cell number used when signing up.
-			Consent is not a condition of any purchase.
-			Message &amp; data rates may apply. Message frequency is recurring.
-			Messages may be auto-dialed from Pressed Juicery.
-			A maximum of ten (10) promotional messages will be sent per month. Reply STOP to quit.
+			Text messaging is a great way to get order notifications and learn about our special deals and promotions.
+			By submitting this form, you agree to receive recurring automated marketing text messages from
+			Pressed Juicery at the cell number used when signing up. Consent is not a condition of any purchase.
+			Message &amp; data rates may apply. Message frequency is recurring. Messages may be auto-dialed from
+			Pressed Juicery. A maximum of ten (10) promotional messages will be sent per month. Reply STOP to quit.
 		</validated-checkbox>
 
 		<validated-checkbox
