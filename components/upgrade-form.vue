@@ -13,18 +13,28 @@
 			<div>Add a New Payment Method</div>
 			<div :class="$style.icon">+</div>
 		</card>
+
+		<validated-checkbox
+			:class="$style.legalText"
+			:label="legalText"
+			:rules="rules"
+			v-model="hasAgreed"
+		/>
 	</validated-form>
 </template>
 
 <script>
+import { isTruthy } from '../utilities/validators';
 import Card from './card';
 import PaymentMethodRadioButtonCard from './payment-method-radio-button-card';
+import ValidatedCheckbox from './validated-checkbox';
 import ValidatedForm from './validated-form';
 import ValidatedSelect from './validated-select';
 
 export default {
 	components: {
 		Card,
+		ValidatedCheckbox,
 		ValidatedForm,
 		ValidatedSelect,
 		PaymentMethodRadioButtonCard,
@@ -43,6 +53,21 @@ export default {
 		return {
 			selectedReloadAmount: this.getDefaultReloadAmount(),
 			selectedPaymentMethod: this.getDefaultPaymentMethod(),
+			hasAgreed: false,
+			rules: [{
+				validator: isTruthy,
+				message: 'You must agree to the terms to continue.',
+			}],
+			legalText: `
+				You acknowledge and agree that your membership will renew automatically
+				each month beginning on the date you register. You will be charged automatically
+				every month for your membership. The monthly charge of ten dollars (US $10.00) or greater
+				if chosen will be automatically charged to the debit or credit card provided
+				on the same date every month until you cancel your membership.
+				To cancel your membership, go to the MY ACCOUNT section of our website
+				or you can also email us at info@pressedjuicery.com or call us toll-free
+				at 888.44.JUICE (888.445.8423).
+			`,
 		};
 	},
 
@@ -89,5 +114,10 @@ export default {
 	.icon {
 		color: $gray-30;
 		font-size: $spacing-07;
+	}
+
+	.legalText {
+		margin-top: $spacing-07;
+		color: $color-text-legal;
 	}
 </style>
