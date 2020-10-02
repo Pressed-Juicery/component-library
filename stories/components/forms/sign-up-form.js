@@ -14,8 +14,8 @@ export function Overview() {
 					id="sign-up-form"
 					:is-phone-available-validator="isPhoneAvailableValidator"
 					:is-email-available-validator="isEmailAvailableValidator"
-					@submit="handleSubmit"
 					@viewTerms="onViewTerms"
+					@submit="handleSubmit"
 				/>
 				<button form="sign-up-form" type="submit">Submit</button>
 				<p v-if="data" style="margin-top:30px">data: <code>{{ data }}</code></p>
@@ -29,12 +29,12 @@ export function Overview() {
 			};
 		},
 		methods: {
+			onViewTerms() {
+				console.log('User requested to view the Terms and Conditions');
+			},
 			handleSubmit(data) {
 				this.data = data;
 			},
-			onViewTerms() {
-				console.log('User requested to view the Terms and Conditions');
-			}
 		},
 	};
 }
