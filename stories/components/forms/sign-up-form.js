@@ -10,7 +10,7 @@ export function Overview() {
 		components: { SignUpForm },
 		template: `
 			<div>
-				<sign-up-form id="sign-up-form" @submit="handleSubmit" />
+				<sign-up-form id="sign-up-form" @submit="handleSubmit" @viewTerms="onViewTerms" />
 				<button form="sign-up-form" type="submit">Submit</button>
 				<p v-if="data" style="margin-top:30px">data: <code>{{ data }}</code></p>
 			</div>
@@ -24,6 +24,9 @@ export function Overview() {
 			handleSubmit(data) {
 				this.data = data;
 			},
+			onViewTerms() {
+				console.log('User requested to view the Terms and Conditions');
+			}
 		},
 	};
 }
