@@ -41,6 +41,13 @@
 			:rules="rules.phone"
 			v-model="user.phone"
 		/>
+
+		<validated-checkbox
+			:class="$style.legalText"
+			:rules="rules.acceptsTermsAndConditions"
+			v-model="acceptsTermsAndConditions"
+			label="By joining you agree to our Terms &amp; Conditions and you'll automatically receive Pressed Points offers via email."
+		/>
 	</validated-form>
 </template>
 
@@ -53,6 +60,7 @@ import {
 	isZipCode,
 } from '../utilities/validators';
 import ValidatedBirthday from './validated-birthday';
+import ValidatedCheckbox from './validated-checkbox';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
 
@@ -61,6 +69,7 @@ export default {
 		ValidatedForm,
 		ValidatedInput,
 		ValidatedBirthday,
+		ValidatedCheckbox,
 	},
 	props: {
 		id: String,
@@ -73,6 +82,8 @@ export default {
 	data() {
 		return {
 			user: {},
+			acceptsSmsMarketing: false,
+			acceptsTermsAndConditions: false,
 			rules: {
 				firstName: [{
 					validator: isNotEmpty,
@@ -111,6 +122,10 @@ export default {
 					validator: isValidPhoneNumber,
 					message: 'Please enter a valid ten-digit phone number.',
 				}],
+				acceptsTermsAndConditions: [{
+					validator: isNotEmpty,
+					message: 'You must agree to the terms to complete your registration.',
+				}],
 			},
 		};
 	},
@@ -138,5 +153,9 @@ export default {
 	.birthdayMessage {
 		@include text-body-small();
 		margin-bottom: $spacing-03;
+	}
+
+	.legalText {
+		color: $color-text-legal;
 	}
 </style>
