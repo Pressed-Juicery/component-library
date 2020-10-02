@@ -5,7 +5,9 @@
 				<check-mark-white-icon :class="$style.icon" />
 			</span>
 
-			<label :class="$style.label" :for="id">{{ label }}</label>
+			<label :class="$style.label" :for="id">
+				<slot>{{ label }}</slot>
+			</label>
 		</div>
 
 		<div :class="$style.error">{{ error }}</div>
@@ -40,7 +42,6 @@ export default {
 	props: {
 		label: {
 			type: String,
-			required: true,
 		},
 		value: {
 			type: Boolean,
