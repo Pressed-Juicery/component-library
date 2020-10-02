@@ -48,9 +48,9 @@
 			By submitting this form, you agree to receive recurring automated
 			marketing text messages from Pressed Juicery at the cell number used when signing up.
 			Consent is not a condition of any purchase.
-			Msg &amp; data rates may apply. Msg frequency is recurring.
-			Msgs may be auto-dialed from Pressed Juicery.
-			Max ten (10) promotional msgs/month. Reply STOP to quit.
+			Message &amp; data rates may apply. Message frequency is recurring.
+			Messages may be auto-dialed from Pressed Juicery.
+			A maximum of ten (10) promotional messages will be sent per month. Reply STOP to quit.
 		</validated-checkbox>
 
 		<validated-checkbox
