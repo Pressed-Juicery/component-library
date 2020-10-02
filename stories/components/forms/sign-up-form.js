@@ -30,7 +30,7 @@ export function Overview() {
 		},
 		methods: {
 			onViewTerms() {
-				console.log('User requested to view the Terms and Conditions');
+				console.log('User requested to view the Terms and Conditions'); // eslint-disable-line no-console
 			},
 			handleSubmit(data) {
 				this.data = data;
