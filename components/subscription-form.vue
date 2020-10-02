@@ -1,4 +1,7 @@
 <template>
+	<validated-form :id="id" @submit="onSubmit">
+
+	</validated-form>
 </template>
 
 <script>
