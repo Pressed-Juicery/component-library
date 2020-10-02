@@ -57,8 +57,11 @@
 			:class="$style.legalText"
 			:rules="rules.acceptsTermsAndConditions"
 			v-model="acceptsTermsAndConditions"
-			label="By joining you agree to our Terms &amp; Conditions and you'll automatically receive Pressed Points offers via email."
-		/>
+		>
+			By joining you agree to our
+			<a :class="$style.underline" @click.prevent="$emit('viewTerms')">Terms &amp; Conditions</a>
+			and you'll automatically receive Pressed Points offers via email.
+		</validated-checkbox>
 	</validated-form>
 </template>
 
@@ -168,5 +171,10 @@ export default {
 
 	.legalText {
 		color: $color-text-legal;
+	}
+
+	.underline {
+		text-decoration: underline;
+		cursor: pointer;
 	}
 </style>
