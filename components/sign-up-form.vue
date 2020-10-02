@@ -45,6 +45,13 @@
 </template>
 
 <script>
+import {
+	hasMinimumLength,
+	isEmail,
+	isNotEmpty,
+	isValidPhoneNumber,
+	isZipCode,
+} from '../utilities/validators';
 import ValidatedBirthday from './validated-birthday';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
@@ -57,7 +64,6 @@ export default {
 	},
 	props: {
 		id: String,
-		rules: Object,
 		errorMessage: {
 			type: String,
 			default: null,
@@ -67,6 +73,45 @@ export default {
 	data() {
 		return {
 			user: {},
+			rules: {
+				firstName: [{
+					validator: isNotEmpty,
+					message: 'Please enter your first name.',
+				}],
+				lastName: [{
+					validator: isNotEmpty,
+					message: 'Please enter your last name.',
+				}],
+				email: [{
+					validator: isNotEmpty,
+					message: 'Please enter a valid email address.',
+				}, {
+					validator: isEmail,
+					message: 'Please enter a valid email address.',
+				}],
+				password: [{
+					validator: isNotEmpty,
+					message: 'Please enter a password.',
+				}, {
+					validator: hasMinimumLength,
+					message: 'Passwords must be at least 6 characters long.',
+					options: { length: 6 },
+				}],
+				postal: [{
+					validator: isNotEmpty,
+					message: 'Please enter your ZIP code.',
+				}, {
+					validator: isZipCode,
+					message: 'Please enter a valid ZIP code.',
+				}],
+				phone: [{
+					validator: isNotEmpty,
+					message: 'Please enter a phone number.',
+				}, {
+					validator: isValidPhoneNumber,
+					message: 'Please enter a valid ten-digit phone number.',
+				}],
+			},
 		};
 	},
 };
