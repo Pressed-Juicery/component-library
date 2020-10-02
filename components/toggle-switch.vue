@@ -58,6 +58,7 @@ export default {
 		border-radius: 50%;
 		height: $dot-size;
 		width:$dot-size;
+		background-color: $white;
 	}
 
 	.innerDot {
@@ -66,6 +67,5 @@ export default {
 
 	.innerDotOn {
 		right: $dot-absolute-positioning;
-		background-color: $white;
 	}
 </style>
