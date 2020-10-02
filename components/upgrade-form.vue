@@ -24,12 +24,12 @@
 </template>
 
 <script>
-import { isTruthy } from '../utilities/validators';
 import Card from './card';
 import PaymentMethodRadioButtonCard from './payment-method-radio-button-card';
 import ValidatedCheckbox from './validated-checkbox';
 import ValidatedForm from './validated-form';
 import ValidatedSelect from './validated-select';
+import { isTruthy } from '../utilities/validators';
 
 export default {
 	components: {
