@@ -34,7 +34,7 @@ export default {
 		width: 58px;
 		height: $switch-size;
 		border-radius: $switch-size;
-		border: 1px solid $color-primary;
+		background-color: $gray-20;
 		cursor: pointer;
 	}
 
