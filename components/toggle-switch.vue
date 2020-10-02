@@ -48,7 +48,7 @@ export default {
 		background-color: $color-primary;
 	}
 
-	$dot-absolute-positioning: 2px;
+	$dot-absolute-positioning: 3px;
 	$dot-size: 26px;
 
 	.innerDot,
