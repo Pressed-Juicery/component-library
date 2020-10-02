@@ -91,6 +91,10 @@ export default {
 			type: String,
 			default: null,
 		},
+		isEmailAvailableValidator: {
+			type: Function,
+			required: true,
+		},
 		isPhoneAvailableValidator: {
 			type: Function,
 			required: true,
@@ -117,6 +121,12 @@ export default {
 				}, {
 					validator: isEmail,
 					message: 'Please enter a valid email address.',
+				}, {
+					validator: this.isEmailAvailableValidator,
+					message: `
+						You've previously created an online account with us.
+						Log in to complete your Pressed Points registration.
+					`,
 				}],
 				password: [{
 					validator: isNotEmpty,

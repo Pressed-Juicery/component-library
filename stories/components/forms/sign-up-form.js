@@ -13,6 +13,7 @@ export function Overview() {
 				<sign-up-form
 					id="sign-up-form"
 					:is-phone-available-validator="isPhoneAvailableValidator"
+					:is-email-available-validator="isEmailAvailableValidator"
 					@submit="handleSubmit"
 					@viewTerms="onViewTerms"
 				/>
@@ -24,6 +25,7 @@ export function Overview() {
 			return {
 				data: null,
 				isPhoneAvailableValidator: () => Promise.resolve(true),
+				isEmailAvailableValidator: () => Promise.resolve(true),
 			};
 		},
 		methods: {
