@@ -91,6 +91,10 @@ export default {
 			type: String,
 			default: null,
 		},
+		isPhoneAvailableValidator: {
+			type: Function,
+			required: true,
+		},
 	},
 	// eslint-disable-next-line max-lines-per-function
 	data() {
@@ -135,6 +139,9 @@ export default {
 				}, {
 					validator: isValidPhoneNumber,
 					message: 'Please enter a valid ten-digit phone number.',
+				}, {
+					validator: this.isPhoneAvailableValidator,
+					message: 'Phone Number has already been claimed.',
 				}],
 				acceptsTermsAndConditions: [{
 					validator: isNotEmpty,
