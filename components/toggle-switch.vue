@@ -39,7 +39,7 @@ export default {
 	}
 
 	.disabled {
-		filter: opacity(50%);
+		filter: brightness(110%);
 		cursor: not-allowed;
 	}
 
