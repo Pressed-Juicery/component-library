@@ -9,17 +9,17 @@ export default {
 export function Overview() {
 	return {
 		components: { ProductDetails },
-		template: '<product-details :productInfo="productInfo" />',
+		template: '<product-details :productDescription="productDescription" />',
 		data() { // eslint-disable-line max-lines-per-function
 			return {
-				productInfo: {
+				productDescription: {
 					overview: `
 						With 190% of your daily vitamin C, this blood orange juice is the perfect
 						elevated OJ to take you from winter to spring!
 					`,
 					details: [
 						{
-							iconUrl: '//pressed-product-images.s3-us-west-1.amazonaws.com/shopify/icons/greens.svg',
+							iconUrl: '//d3e4ixgvd0ibii.cloudfront.net/ingredients/coconutcream.svg',
 							title: 'Your Daily Greens: Leveled Up',
 							description: `
 								The combination of apple cider vinegar with fresh-pressed juices
