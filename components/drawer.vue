@@ -32,7 +32,7 @@ export default {
 		left: 0;
 		bottom: 0;
 		width: 100%;
-		max-height: 80%;
+		max-height: 85%;
 		border-radius: $spacing-05 $spacing-05 0 0;
 		background-color: $white;
 		z-index: 2;
