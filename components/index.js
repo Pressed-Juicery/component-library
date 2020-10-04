@@ -65,6 +65,7 @@ export { default as StarRating } from './star-rating';
 export { default as StepProgressBar } from './step-progress-bar';
 export { default as StoreAddress } from './store-address';
 export { default as StoreRadioButtonCard } from './store-radio-button-card';
+export { default as SubscriptionForm } from './subscription-form';
 export { default as UpgradeForm } from './upgrade-form';
 export { default as ValidatedBirthday } from './validated-birthday';
 export { default as ValidatedCheckbox } from './validated-checkbox';
