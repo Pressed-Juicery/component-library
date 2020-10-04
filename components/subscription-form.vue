@@ -94,6 +94,11 @@ export default {
 <style module lang="scss">
 	@import '../styles/typography';
 
+	.label {
+		@include text-cta-small;
+		margin-bottom: $spacing-05;
+	}
+
 	.selectWrapper {
 		position: relative;
 	}
