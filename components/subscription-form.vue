@@ -82,6 +82,12 @@ export default {
 			return primaryMethod || fallbackMethod;
 		},
 
+		onSubmit() {
+			this.$emit('submit', {
+				reloadAmount: this.selectedReloadAmount,
+				paymentMethod: this.selectedPaymentMethod,
+			});
+		},
 	},
 </script>
 
