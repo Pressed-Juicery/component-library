@@ -61,10 +61,23 @@ export default {
 			this.selectedReloadAmount = this.getDefaultReloadAmount();
 		},
 
+		paymentMethods() {
+			this.selectedPaymentMethod = this.getDefaultPaymentMethod();
+		},
+	},
+
 	methods: {
 		getDefaultReloadAmount() {
 			return this.reloadAmounts && this.reloadAmounts[0].value;
 		},
+
+		getDefaultPaymentMethod() {
+			const fallbackMethod = this.paymentMethods && this.paymentMethods[0];
+			const primaryMethod = this.paymentMethods && this.paymentMethods.find(paymentMethod => paymentMethod.isPrimary);
+
+			return primaryMethod || fallbackMethod;
+		},
+
 	},
 </script>
 
