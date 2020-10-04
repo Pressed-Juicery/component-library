@@ -21,7 +21,7 @@
 			:key="method.id"
 		/>
 
-		<card :class="$style.card" @click.native="$router.push({ name: 'add-payment-method' })">
+		<card :class="$style.card" @click.native="$emit('add-payment-method')">
 			<div>Add a New Payment Method</div>
 			<div :class="$style.icon">+</div>
 		</card>
