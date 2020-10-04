@@ -56,6 +56,16 @@ export default {
 		};
 	},
 
+	watch: {
+		reloadAmounts() {
+			this.selectedReloadAmount = this.getDefaultReloadAmount();
+		},
+
+	methods: {
+		getDefaultReloadAmount() {
+			return this.reloadAmounts && this.reloadAmounts[0].value;
+		},
+	},
 </script>
 
 <style module lang="scss">
