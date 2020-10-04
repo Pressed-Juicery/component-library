@@ -1,6 +1,14 @@
 <template>
 	<validated-form :id="id" @submit="onSubmit">
 		<div :class="$style.label">Monthly Membership Reload</div>
+			<validated-select
+				v-model="selectedReloadAmount"
+				:class="$style.amountInput"
+				:options="reloadAmounts"
+				:rules="validationRules"
+				type="number"
+				inputmode="decimal"
+			/>
 
     <p>Select the amount you’d like to add each month to your Member balance.</p>
 
