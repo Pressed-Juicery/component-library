@@ -1,5 +1,6 @@
 <template>
 	<validated-form :id="id" @submit="onSubmit">
+		<div :class="$style.label">Monthly Membership Reload</div>
 
     <p>Select the amount you’d like to add each month to your Member balance.</p>
 
