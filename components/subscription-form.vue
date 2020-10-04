@@ -40,6 +40,15 @@ export default {
 		ValidatedSelect
 	},
 
+	props: {
+		id: String,
+		paymentMethods: Array,
+		reloadAmounts: {
+			type: Array,
+			required: true,
+		}
+	},
+
 </script>
 
 <style module lang="scss">
