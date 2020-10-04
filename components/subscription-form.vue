@@ -89,6 +89,7 @@ export default {
 			});
 		},
 	},
+};
 </script>
 
 <style module lang="scss">
@@ -132,5 +133,4 @@ export default {
 		color: $gray-30;
 		font-size: $spacing-07;
 	}
-
 </style>
