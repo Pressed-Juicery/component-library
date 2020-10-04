@@ -92,6 +92,8 @@ export default {
 </script>
 
 <style module lang="scss">
+	@import '../styles/typography';
+
 	.selectWrapper {
 		position: relative;
 	}
