@@ -14,6 +14,12 @@
 		</div>
 
 		<div :class="$style.label">Payment Method</div>
+		<payment-method-radio-button-card
+			v-for="method in paymentMethods"
+			v-model="selectedPaymentMethod"
+			:paymentMethod="method"
+			:key="method.id"
+		/>
 
 	</validated-form>
 </template>
