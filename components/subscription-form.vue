@@ -41,7 +41,7 @@ export default {
 		Card,
 		PaymentMethodRadioButtonCard,
 		ValidatedForm,
-		ValidatedSelect
+		ValidatedSelect,
 	},
 
 	props: {
@@ -50,7 +50,7 @@ export default {
 		reloadAmounts: {
 			type: Array,
 			required: true,
-		}
+		},
 	},
 
 	data() {
@@ -77,7 +77,8 @@ export default {
 
 		getDefaultPaymentMethod() {
 			const fallbackMethod = this.paymentMethods && this.paymentMethods[0];
-			const primaryMethod = this.paymentMethods && this.paymentMethods.find(paymentMethod => paymentMethod.isPrimary);
+			const primaryMethod = this.paymentMethods
+				&& this.paymentMethods.find(paymentMethod => paymentMethod.isPrimary);
 
 			return primaryMethod || fallbackMethod;
 		},
