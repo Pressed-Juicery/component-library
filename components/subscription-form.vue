@@ -10,19 +10,18 @@
 import ArrowDownIcon from './icons/arrow-down-icon';
 import Card from './card';
 import PaymentMethodRadioButtonCard from './payment-method-radio-button-card';
-import ValidatedCheckbox from './validated-checkbox';
 import ValidatedForm from './validated-form';
+import ValidatedSelect from './validated-select';
 
 export default {
-  components: {
-    ArrowDownIcon,
-    Card,
-    PaymentMethodRadioButtonCard,
-    ValidatedCheckbox,
-    ValidatedForm,
-  },
+	components: {
+		ArrowDownIcon,
+		Card,
+		PaymentMethodRadioButtonCard,
+		ValidatedForm,
+		ValidatedSelect
+	},
 
-}
 </script>
 
 <style module lang="scss">
