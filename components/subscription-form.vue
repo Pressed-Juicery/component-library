@@ -21,6 +21,10 @@
 			:key="method.id"
 		/>
 
+		<card :class="$style.card" @click.native="$router.push({ name: 'add-payment-method' })">
+			<div>Add a New Payment Method</div>
+			<div :class="$style.icon">+</div>
+		</card>
 	</validated-form>
 </template>
 
@@ -92,6 +96,18 @@ export default {
 		transform: translate(0, 50%);
 		right: $spacing-05;
 		width: $spacing-04;
+	}
+
+	.card {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.icon {
+		color: $gray-30;
+		font-size: $spacing-07;
 	}
 
 </style>
