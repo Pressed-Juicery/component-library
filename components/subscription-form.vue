@@ -49,6 +49,13 @@ export default {
 		}
 	},
 
+	data() {
+		return {
+			selectedReloadAmount: this.getDefaultReloadAmount(),
+			selectedPaymentMethod: this.getDefaultPaymentMethod(),
+		};
+	},
+
 </script>
 
 <style module lang="scss">
