@@ -111,6 +111,16 @@ export default {
 		width: $spacing-04;
 	}
 
+	.amountInput select {
+		@include text-heading-3;
+		border: unset;
+		border-radius: unset;
+		border-bottom: solid 1px $gray-20;
+		outline: none;
+		background-position: right -100%;
+		overflow: hidden;
+	}
+
 	.card {
 		display: flex;
 		justify-content: space-between;
