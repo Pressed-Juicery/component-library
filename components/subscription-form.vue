@@ -1,6 +1,7 @@
 <template>
 	<validated-form :id="id" @submit="onSubmit">
 		<div :class="$style.label">Monthly Membership Reload</div>
+		<div :class="$style.selectWrapper">
 			<validated-select
 				v-model="selectedReloadAmount"
 				:class="$style.amountInput"
@@ -9,6 +10,8 @@
 				type="number"
 				inputmode="decimal"
 			/>
+			<arrow-down-icon :class="$style.arrow"/>
+		</div>
 
     <p>Select the amount you’d like to add each month to your Member balance.</p>
 
@@ -34,5 +37,16 @@ export default {
 </script>
 
 <style module lang="scss">
+	.selectWrapper {
+		position: relative;
+	}
+
+	.arrow {
+		position: absolute;
+		bottom: 50%;
+		transform: translate(0, 50%);
+		right: $spacing-05;
+		width: $spacing-04;
+	}
 
 </style>
