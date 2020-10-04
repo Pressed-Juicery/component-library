@@ -6,7 +6,7 @@
 				v-model="selectedReloadAmount"
 				:class="$style.amountInput"
 				:options="reloadAmounts"
-				:rules="validationRules"
+				:rules="rules"
 				type="number"
 				inputmode="decimal"
 			/>
@@ -34,6 +34,7 @@ import Card from './card';
 import PaymentMethodRadioButtonCard from './payment-method-radio-button-card';
 import ValidatedForm from './validated-form';
 import ValidatedSelect from './validated-select';
+import { isNotEmpty } from '../utilities/validators';
 
 export default {
 	components: {
@@ -57,6 +58,10 @@ export default {
 		return {
 			selectedReloadAmount: this.getDefaultReloadAmount(),
 			selectedPaymentMethod: this.getDefaultPaymentMethod(),
+			rules: [{
+				validator: isNotEmpty,
+				message: 'You must select an amount to continue',
+			}],
 		};
 	},
 
