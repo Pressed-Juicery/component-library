@@ -1,13 +1,15 @@
 <template>
 	<div>
-		<div :class="$style.overview">{{ productInfo.overview }}</div>
-		<div :class="$style.row" v-for="(detail, index) in productInfo.details" :key="index">
-			<div :class="$style.iconWrapper">
-				<img :class="$style.icon" :src="detail.iconUrl" alt />
-			</div>
-			<div>
-				<div :class="$style.title">{{ detail.title }}</div>
-				<div>{{ detail.description }}</div>
+		<div v-if="productDescription.overview" :class="$style.overview">{{ productDescription.overview }}</div>
+		<div v-if="showDetails">
+			<div :class="$style.row" v-for="(detail, index) in productDescription.details" :key="index">
+				<div :class="$style.iconWrapper">
+					<img :class="$style.icon" :src="detail.iconUrl" alt />
+				</div>
+				<div>
+					<div :class="$style.title">{{ detail.title }}</div>
+					<div>{{ detail.description }}</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -16,9 +18,14 @@
 <script>
 export default {
 	props: {
-		productInfo: {
+		productDescription: {
 			type: Object,
 			required: true,
+		},
+	},
+	computed: {
+		showDetails() {
+			return this.productDescription.details && this.productDescription.details.length === 3; // eslint-disable-line no-magic-numbers
 		},
 	},
 };
@@ -46,6 +53,7 @@ export default {
 
 	.icon {
 		height: $spacing-08;
+		max-width: $spacing-08;
 	}
 
 	.title {
