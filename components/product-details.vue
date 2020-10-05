@@ -25,8 +25,7 @@ export default {
 	},
 	computed: {
 		showDetails() {
-			return this.productDescription.details
-				&& this.productDescription.details.length === 3; // eslint-disable-line no-magic-numbers
+			return this.productDescription.details && this.productDescription.details.length === 3; // eslint-disable-line no-magic-numbers
 		},
 	},
 };
