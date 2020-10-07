@@ -41,6 +41,12 @@ export default {
 		},
 	},
 
+	computed: {
+		isVip() {
+			return this.wallet.tier && this.wallet.tier.toLowerCase() === 'vip';
+		},
+	},
+
 	methods: {
 		close() {
 			this.$emit('close');
