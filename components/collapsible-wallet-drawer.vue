@@ -9,6 +9,7 @@
 		<div :class="$style.title">In the Store?</div>
 		<div :class="$style.messageWrapper">
 			<span :class="$style.message">Show our associate your code!</span>
+			<button v-if="isVip" :class="$style.vipBadge">VIP</button>
 		</div>
 
 		<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')" />
@@ -90,6 +91,15 @@ export default {
 
 	.message {
 		display: block;
+	}
+
+	.vipBadge {
+		@include button;
+		@include _button--pill;
+		margin-top: $spacing-05;
+		width: $spacing-12;
+		cursor: default;
+		outline: none;
 	}
 
 	.toggleWrapper {
