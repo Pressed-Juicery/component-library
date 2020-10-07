@@ -2,7 +2,6 @@
 	<div>
 		<div :class="[$style.row, $style.rowGroup]">
 			<div :class="[$style.rowGroup, {
-			         [$style.isClosed]: !isOpen,
 			         [$style.subtotalToggle]: cart.discountSummary && cart.discountSummary.length
 			     }]"
 			     @click="toggle()">
@@ -98,12 +97,6 @@ export default {
 
 	.icon {
 		margin-left: $spacing-03;
-	}
-
-	.isClosed {
-		.icon {
-			transform: rotate(180deg);
-		}
 	}
 
 	.originalSubtotal {
