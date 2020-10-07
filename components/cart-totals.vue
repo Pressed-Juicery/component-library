@@ -97,8 +97,10 @@ export default {
 		cursor: pointer;
 	}
 
-	.icon {
+	.discountToggle {
+		@include text-body-small;
 		margin-left: $spacing-03;
+		color: $color-text-gray;
 	}
 
 	.originalSubtotal {
