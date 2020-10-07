@@ -6,7 +6,9 @@
 			     }]"
 			     @click="toggle()">
 				<div>Subtotal</div>
-				<up-caret-icon v-if="cart.discountSummary && cart.discountSummary.length" :class="$style.icon" />
+				<div v-if="cart.discountSummary && cart.discountSummary.length" :class="$style.discountToggle">
+					{{ isOpen ? 'Hide Discounts' : 'Show Discounts'}}
+				</div>
 			</div>
 
 			<div :class="$style.rowGroup">
