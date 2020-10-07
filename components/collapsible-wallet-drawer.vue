@@ -7,7 +7,9 @@
 	>
 		<pressed-points-circle :class="$style.logo" />
 		<div :class="$style.title">In the Store?</div>
-		<div :class="$style.message">Show our associate your code!</div>
+		<div :class="$style.messageWrapper">
+			<span :class="$style.message">Show our associate your code!</span>
+		</div>
 
 		<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')" />
 		<div :class="$style.toggleWrapper" @click="close">
@@ -82,8 +84,12 @@ export default {
 		text-align: center;
 	}
 
-	.message {
+	.messageWrapper {
 		text-align: center;
+	}
+
+	.message {
+		display: block;
 	}
 
 	.toggleWrapper {
