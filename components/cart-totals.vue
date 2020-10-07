@@ -48,12 +48,9 @@
 </template>
 
 <script>
-import UpCaretIcon from './icons/up-caret-icon';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { UpCaretIcon },
-
 	props: {
 		cart: {
 			type: Object,
