@@ -92,8 +92,6 @@ export default {
 		@include button-pill();
 		margin-top: $spacing-05;
 		width: $spacing-12;
-		cursor: default;
-		outline: none;
 	}
 
 	.toggleWrapper {
