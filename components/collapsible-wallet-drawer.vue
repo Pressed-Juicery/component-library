@@ -9,7 +9,7 @@
 		<div :class="$style.title">In the Store?</div>
 		<div :class="$style.messageWrapper">
 			<span :class="$style.message">Show our associate your code!</span>
-			<button v-if="isVip" :class="$style.vipBadge">VIP</button>
+			<div v-if="isVip" :class="$style.vipBadge">VIP</div>
 		</div>
 
 		<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')" />
