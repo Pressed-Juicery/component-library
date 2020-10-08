@@ -87,14 +87,15 @@ export default {
 		padding: 0 $spacing-08;
 	}
 
-	.title {
-		@include text-heading-5();
-		margin-bottom: $spacing-02;
+	.header {
 		text-align: center;
 	}
 
-	.message {
-		text-align: center;
+	.title {
+		@include text-heading-5();
+		margin-bottom: $spacing-02;
+	}
+
 	}
 
 	.contentWrapper {
