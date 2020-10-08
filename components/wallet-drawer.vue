@@ -50,6 +50,12 @@ export default {
 		};
 	},
 
+	computed: {
+		isVip() {
+			return this.wallet.tier && this.wallet.tier.toLowerCase() === 'vip';
+		},
+	},
+
 	methods: {
 		open() { this.isOpen = true },
 		close() { this.isOpen = false },
