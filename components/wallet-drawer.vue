@@ -7,8 +7,8 @@
 			<pressed-points-circle :class="$style.logo"/>
 
 			<div :class="$style.title">In the Store?</div>
-			<div :class="$style.message" v-if="!isOpen">Tap here for your QR Code</div>
 			<div :class="$style.message" v-else>Show our associate your code!</div>
+				<div v-if="!isOpen" :class="$style.message">Tap here for your QR Code</div>
 
 			<transition name="slider" @enter="enter" @leave="leave">
 				<div v-show="isOpen" :class="$style.contentWrapper">
