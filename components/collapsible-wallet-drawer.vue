@@ -8,7 +8,7 @@
 		<pressed-points-circle :class="$style.logo" />
 		<div :class="$style.title">In the Store?</div>
 		<div :class="$style.messageWrapper">
-			<span :class="$style.message">Show our associate your code!</span>
+			<div>Show our associate your code!</div>
 			<div v-if="isVip" :class="$style.vipBadge">VIP</div>
 		</div>
 
@@ -87,10 +87,6 @@ export default {
 
 	.messageWrapper {
 		text-align: center;
-	}
-
-	.message {
-		display: block;
 	}
 
 	.vipBadge {
