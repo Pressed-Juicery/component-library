@@ -89,8 +89,7 @@ export default {
 	}
 
 	.vipBadge {
-		@include button;
-		@include _button--pill;
+		@include button-pill();
 		margin-top: $spacing-05;
 		width: $spacing-12;
 		cursor: default;
