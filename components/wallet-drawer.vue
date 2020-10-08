@@ -9,6 +9,10 @@
 			<div :class="$style.header">
 				<div :class="$style.title">In the Store?</div>
 				<div v-if="!isOpen" :class="$style.message">Tap here for your QR Code</div>
+				<div v-else>
+					<div :class="$style.message">Show our associate your code!</div>
+					<div v-if="isVip" :class="$style.vipBadge">VIP</div>
+				</div>
 			</div>
 
 			<transition name="slider" @enter="enter" @leave="leave">
@@ -97,6 +101,10 @@ export default {
 		margin-bottom: $spacing-02;
 	}
 
+	.vipBadge {
+		@include button-pill();
+		margin-top: $spacing-05;
+		width: $spacing-12;
 	}
 
 	.contentWrapper {
