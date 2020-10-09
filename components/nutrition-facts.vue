@@ -8,13 +8,13 @@
 			<div>%DV</div>
 		</div>
 
-		<div v-for="(fact, index) in nutritionDetails.facts" :key="index">
+		<div v-for="(fact, parentIndex) in nutritionDetails.facts" :key="parentIndex">
 			<div :class="$style.row">
 				<div><span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}</div>
 				<div>{{ fact.dailyValue }}</div>
 			</div>
 
-			<div :class="$style.row" v-for="(child, index) in (fact.children || [])" :key="index">
+			<div :class="$style.row" v-for="(child, childIndex) in (fact.children || [])" :key="childIndex">
 				<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
 				<div>{{ child.dailyValue }}</div>
 			</div>
