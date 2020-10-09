@@ -16,8 +16,8 @@
 			</div>
 		</div>
 
-		<div v-if="hasLimitedAvailability">
 			Limited Availability: {{ product.limitedAvailability }}
+		<div v-if="hasLimitedAvailability" :class="$style.availability">
 		</div>
 
 		<div v-if="shouldShowCta" :class="$style.cta">
@@ -170,6 +170,10 @@ export default {
 	.information {
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: $spacing-06;
+	}
+
+	.availability {
 		margin-bottom: $spacing-06;
 	}
 
