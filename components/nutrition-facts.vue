@@ -14,14 +14,16 @@
 				<div>{{ fact.dailyValue }}</div>
 			</div>
 
-			<div :class="$style.row" v-for="(child, childIndex) in (fact.children || [])" :key="childIndex">
-				<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
-				<div>{{ child.dailyValue }}</div>
-			</div>
+			<div v-for="(child, childIndex) in (fact.children || [])" :key="childIndex">
+				<div :class="$style.row">
+					<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
+					<div>{{ child.dailyValue }}</div>
+				</div>
 
-			<div :class="$style.row" v-for="(grandchild, grandchildIndex) in (child.children || [])" :key="grandchildIndex">
-				<div :class="$style.subheading">{{ grandchild.label }} {{ grandchild.amountPerServing }}</div>
-				<div>{{ grandchild.dailyValue }}</div>
+				<div :class="$style.row" v-for="(grandchild, grandchildIndex) in (child.children || [])" :key="grandchildIndex">
+					<div :class="$style.tertiaryHeading">{{ grandchild.label }} {{ grandchild.amountPerServing }}</div>
+					<div>{{ grandchild.dailyValue }}</div>
+				</div>
 			</div>
 		</div>
 
@@ -85,6 +87,10 @@ export default {
 
 .subheading {
 	text-indent: $spacing-06;
+}
+
+.tertiaryHeading {
+	text-indent: $spacing-09;
 }
 
 .vitamins,
