@@ -16,8 +16,8 @@
 			</div>
 		</div>
 
-			Limited Availability: {{ product.limitedAvailability }}
 		<div v-if="hasLimitedAvailability" :class="$style.availability">
+			<span :class="availabilityLabel">Product Limited To These Locations:</span> {{ product.limitedAvailability }}
 		</div>
 
 		<div v-if="shouldShowCta" :class="$style.cta">
@@ -175,6 +175,10 @@ export default {
 
 	.availability {
 		margin-bottom: $spacing-06;
+	}
+
+	.availabilityLabel {
+		color: $color-text-legal;
 	}
 
 	.price {
