@@ -87,7 +87,7 @@ export function NutritionFactsWithThirdLevel() {
 									amountPerServing: '5g',
 									dailyValue: '10%',
 									children: [
-										{ label: 'Sugar Alcohol', amountPerServing: '5g' },
+										{ label: 'Sugar Alcohol', amountPerServing: '5g', dailyValue: '1%' },
 									],
 								},
 							],
