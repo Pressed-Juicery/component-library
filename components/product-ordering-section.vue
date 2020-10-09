@@ -124,6 +124,9 @@ export default {
 				? `(+${formatCurrency(totalPrice)} Enhancements)`
 				: `(+${formatCurrency(totalPrice)} ${this.selectedAddons[0].name})`;
 		},
+		hasLimitedAvailability() {
+			return Boolean(this.product.limitedAvailability);
+		},
 	},
 	methods: {
 		addToCart() {
