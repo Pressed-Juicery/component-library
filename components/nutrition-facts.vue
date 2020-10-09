@@ -18,6 +18,11 @@
 				<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
 				<div>{{ child.dailyValue }}</div>
 			</div>
+
+			<div :class="$style.row" v-for="(grandchild, grandchildIndex) in (child.children || [])" :key="grandchildIndex">
+				<div :class="$style.subheading">{{ grandchild.label }} {{ grandchild.amountPerServing }}</div>
+				<div>{{ grandchild.dailyValue }}</div>
+			</div>
 		</div>
 
 		<div :class="$style.vitamins">
