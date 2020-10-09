@@ -16,6 +16,10 @@
 			</div>
 		</div>
 
+		<div v-if="hasLimitedAvailability">
+			Limited Availability: {{ product.limitedAvailability }}
+		</div>
+
 		<div v-if="shouldShowCta" :class="$style.cta">
 			Just <span v-if="hasMemberSalePrice">{{ selectedVariant.memberSalePrice | currency }}</span>
 			<span :class="{ [$style.strikethrough]: hasMemberSalePrice }">
