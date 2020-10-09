@@ -20,7 +20,9 @@
 					<div>{{ child.dailyValue }}</div>
 				</div>
 
-				<div :class="$style.row" v-for="(grandchild, grandchildIndex) in (child.children || [])" :key="grandchildIndex">
+				<div :class="$style.row"
+					v-for="(grandchild, grandchildIndex) in (child.children || [])"
+					:key="grandchildIndex">
 					<div :class="$style.tertiaryHeading">{{ grandchild.label }} {{ grandchild.amountPerServing }}</div>
 					<div>{{ grandchild.dailyValue }}</div>
 				</div>
