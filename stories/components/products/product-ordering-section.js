@@ -162,12 +162,12 @@ export function WithLimitedAvailability() { // eslint-disable-line max-lines-per
 		created() { // eslint-disable-line max-lines-per-function
 			this.selectedVariant = this.product.variants[0];
 
-			this.product.limitedAvailability = `Abbot Kinney, Americana at Brand,
-			Belmont Shore, Cooper, Del Amo Fashion Center, Fashion Island, Fashion Valley,
-			Larchmont, Manhattan Beach, Montecito, Pasadena, Paseo Nuevo, Plaza de la Paz,
-			Santa Monica, Scripps Ranch, Studio City, The Forum Carlsbad, Tivoli, Tustin,
-			Uptown Plaza, Van Nuys, West Hollywood, Westfield Topanga, Westlake Village,
-			Westwood Village and Westcliff`;
+			this.product.limitedAvailability = `
+				Abbot Kinney, Americana at Brand, Belmont Shore, Cooper, Del Amo Fashion Center, Fashion Island,
+				Fashion Valley, Larchmont, Manhattan Beach, Montecito, Pasadena, Paseo Nuevo, Plaza de la Paz,
+				Santa Monica, Scripps Ranch, Studio City, The Forum Carlsbad, Tivoli, Tustin, Uptown Plaza, Van Nuys,
+				West Hollywood, Westfield Topanga, Westlake Village, Westwood Village and Westcliff
+			`;
 
 			this.product.toppingModifiers = {
 				groupName: 'toppings',
