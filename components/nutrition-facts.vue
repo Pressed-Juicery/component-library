@@ -40,6 +40,10 @@
 			2,000 calories a day is used for general nutritional advice.
 		</div>
 
+		<div :class="$style.ingredients">
+			<span>Ingredients:</span> {{ nutritionDetails.ingredients }}
+		</div>
+
 		<div :class="$style.claims">
 			<span
 				:class="$style.claim"
@@ -96,7 +100,8 @@ export default {
 }
 
 .vitamins,
-.claims {
+.claims,
+.ingredients {
 	margin-top: $spacing-05;
 }
 
@@ -107,7 +112,8 @@ export default {
 
 .vitamins,
 .dailyValue,
-.warnings {
+.warnings,
+.ingredients {
 	@include text-body-small();
 }
 
