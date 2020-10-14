@@ -27,7 +27,7 @@ export default {
 
 	$switch-size: $spacing-07;
 	$dot-margin: 3px;
-	$dot-size: 26px;
+	$dot-size: $switch-size - (2 * $dot-margin);
 
 	.switch {
 		position: relative;
