@@ -20,12 +20,11 @@ export function Overview() {
 export function Disabled() {
 	return {
 		components: { ToggleSwitch },
-		template: '<toggle-switch :isOn="isOn" @toggle="isOn = !isOn" :isDisabled="isDisabled" />',
-		data() {
-			return {
-				isOn: false,
-				isDisabled: true,
-			};
-		},
+		template: `
+			<div>
+				<toggle-switch style="margin-bottom: 16px" :isOn="true" :isDisabled="true" />
+				<toggle-switch :isOn="false" :isDisabled="true" />
+			</div>
+		`,
 	};
 }
