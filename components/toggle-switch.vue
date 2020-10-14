@@ -36,8 +36,7 @@ export default {
 		cursor: pointer;
 	}
 
-	.switchOn,
-	.innerDot {
+	.switchOn {
 		background-color: $color-primary;
 	}
 
