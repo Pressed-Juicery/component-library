@@ -1,6 +1,6 @@
 <template>
 	<div
-		:class="[isOn ? $style.switchOn : $style.switch, { [$style.disabled]: isDisabled }]"
+		:class="[$style.switch, { [$style.switchOn]: isOn, [$style.disabled]: isDisabled }]"
 		@click="!isDisabled && $emit('change')"
 	>
 		<div :class="isOn ? $style.innerDotOn : $style.innerDot" />
@@ -28,8 +28,7 @@ export default {
 
 	$switch-size: $spacing-07;
 
-	.switch,
-	.switchOn {
+	.switch {
 		position: relative;
 		width: 58px;
 		height: $switch-size;
