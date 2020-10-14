@@ -1,6 +1,6 @@
 <template>
 	<div
-		:class="[[isOn ? $style.switchOn : $style.switch], {[$style.disabled]: isDisabled}]"
+		:class="[isOn ? $style.switchOn : $style.switch, {[$style.disabled]: isDisabled}]"
 		@click="!isDisabled && $emit('change')"
 	>
 		<div :class="isOn ? $style.innerDotOn : $style.innerDot" />
