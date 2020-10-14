@@ -37,7 +37,7 @@ export default {
 	}
 
 	.switchOn {
-		background-color: $color-primary;
+		background: $color-primary;
 	}
 
 	.disabled {
@@ -55,7 +55,7 @@ export default {
 		border-radius: 50%;
 		height: $dot-size;
 		width:$dot-size;
-		background-color: $white;
+		background: $white;
 	}
 
 	.innerDot {
