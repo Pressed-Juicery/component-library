@@ -42,7 +42,7 @@ export default {
 	}
 
 	.disabled {
-		filter: brightness(110%);
+		background: $gray-20;
 		cursor: not-allowed;
 	}
 
