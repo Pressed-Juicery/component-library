@@ -49,11 +49,11 @@ export default {
 
 	.innerDot,
 	.innerDotOn {
-		top: $dot-margin;
 		position: absolute;
-		border-radius: 50%;
+		top: $dot-margin;
 		height: $dot-size;
 		width:$dot-size;
+		border-radius: 50%;
 		background: $white;
 	}
 
