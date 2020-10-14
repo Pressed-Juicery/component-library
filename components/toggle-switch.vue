@@ -45,12 +45,12 @@ export default {
 		cursor: not-allowed;
 	}
 
-	$dot-absolute-positioning: 3px;
+	$dot-margin: 3px;
 	$dot-size: 26px;
 
 	.innerDot,
 	.innerDotOn {
-		top: $dot-absolute-positioning;
+		top: $dot-margin;
 		position: absolute;
 		border-radius: 50%;
 		height: $dot-size;
@@ -59,10 +59,10 @@ export default {
 	}
 
 	.innerDot {
-		left: $dot-absolute-positioning;
+		left: $dot-margin;
 	}
 
 	.innerDotOn {
-		right: $dot-absolute-positioning;
+		right: $dot-margin;
 	}
 </style>
