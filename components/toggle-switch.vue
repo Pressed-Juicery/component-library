@@ -36,14 +36,14 @@ export default {
 		cursor: pointer;
 	}
 
-	.disabled {
-		filter: brightness(110%);
-		cursor: not-allowed;
-	}
-
 	.switchOn,
 	.innerDot {
 		background-color: $color-primary;
+	}
+
+	.disabled {
+		filter: brightness(110%);
+		cursor: not-allowed;
 	}
 
 	$dot-absolute-positioning: 3px;
