@@ -32,7 +32,7 @@ export default {
 		width: 58px;
 		height: $switch-size;
 		border-radius: $switch-size;
-		background-color: $gray-20;
+		background: $gray-40;
 		cursor: pointer;
 	}
 
