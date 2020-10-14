@@ -26,6 +26,8 @@ export default {
 	@import '../styles/variables';
 
 	$switch-size: $spacing-07;
+	$dot-margin: 3px;
+	$dot-size: 26px;
 
 	.switch {
 		position: relative;
@@ -44,9 +46,6 @@ export default {
 		background: $gray-20;
 		cursor: not-allowed;
 	}
-
-	$dot-margin: 3px;
-	$dot-size: 26px;
 
 	.innerDot,
 	.innerDotOn {
