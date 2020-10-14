@@ -26,7 +26,7 @@ export function Overview() {
 export function Disabled() {
 	return {
 		components: { ToggleSwitch },
-		template: '<toggle-switch :isOn="isOn" @on="handleToggle" :isDisabled="isDisabled"/>',
+		template: '<toggle-switch :isOn="isOn" @change="handleToggle" :isDisabled="isDisabled"/>',
 		data() {
 			return {
 				isOn: false,
