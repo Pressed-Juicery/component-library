@@ -1,7 +1,7 @@
 <template>
 	<div
 		:class="[$style.switch, { [$style.switchOn]: isOn, [$style.disabled]: isDisabled }]"
-		@click="!isDisabled && $emit('change')"
+		@click="!isDisabled && $emit('toggle')"
 	>
 		<div :class="isOn ? $style.innerDotOn : $style.innerDot" />
 	</div>

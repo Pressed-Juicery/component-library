@@ -8,7 +8,7 @@ export default {
 export function Overview() {
 	return {
 		components: { ToggleSwitch },
-		template: '<toggle-switch :isOn="isOn" @change="isOn = !isOn"/>',
+		template: '<toggle-switch :isOn="isOn" @toggle="isOn = !isOn"/>',
 		data() {
 			return {
 				isOn: false,
@@ -20,7 +20,7 @@ export function Overview() {
 export function Disabled() {
 	return {
 		components: { ToggleSwitch },
-		template: '<toggle-switch :isOn="isOn" @change="isOn = !isOn" :isDisabled="isDisabled"/>',
+		template: '<toggle-switch :isOn="isOn" @toggle="isOn = !isOn" :isDisabled="isDisabled"/>',
 		data() {
 			return {
 				isOn: false,
