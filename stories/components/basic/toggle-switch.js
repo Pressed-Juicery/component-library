@@ -8,17 +8,11 @@ export default {
 export function Overview() {
 	return {
 		components: { ToggleSwitch },
-		template: '<toggle-switch :isOn="isOn" @change="handleToggle"/>',
+		template: '<toggle-switch :isOn="isOn" @change="isOn = !isOn"/>',
 		data() {
 			return {
 				isOn: false,
 			};
-		},
-		methods: {
-			handleToggle() {
-				this.isOn = !this.isOn;
-				console.log('Toggled'); // eslint-disable-line no-console
-			},
 		},
 	};
 }
@@ -26,18 +20,12 @@ export function Overview() {
 export function Disabled() {
 	return {
 		components: { ToggleSwitch },
-		template: '<toggle-switch :isOn="isOn" @change="handleToggle" :isDisabled="isDisabled"/>',
+		template: '<toggle-switch :isOn="isOn" @change="isOn = !isOn" :isDisabled="isDisabled"/>',
 		data() {
 			return {
 				isOn: false,
 				isDisabled: true,
 			};
-		},
-		methods: {
-			handleToggle() {
-				this.isOn = !this.isOn;
-				console.log('Toggled'); // eslint-disable-line no-console
-			},
 		},
 	};
 }
