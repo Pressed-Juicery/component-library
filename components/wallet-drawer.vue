@@ -9,14 +9,12 @@
 			<div :class="$style.header">
 				<div :class="$style.title">In the Store?</div>
 				<div v-if="!isOpen" :class="$style.message">Tap here for your QR Code</div>
-				<div v-else>
-					<div :class="$style.message">Show our associate your code!</div>
-					<div v-if="isVip" :class="$style.vipBadge">VIP</div>
-				</div>
+				<div :class="$style.message">Show our associate your code!</div>
 			</div>
 
 			<transition name="slider" @enter="enter" @leave="leave">
 				<div v-show="isOpen" :class="$style.contentWrapper">
+					<div v-if="isVip" :class="$style.vipBadge">VIP</div>
 					<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')"/>
 				</div>
 			</transition>
@@ -109,7 +107,8 @@ export default {
 
 	.vipBadge {
 		@include button-pill();
-		margin-top: $spacing-05;
+		display: block;
+		margin: $spacing-05 auto 0;
 		width: $spacing-12;
 	}
 
