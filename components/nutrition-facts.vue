@@ -112,8 +112,7 @@ export default {
 
 .vitamins,
 .dailyValue,
-.warnings,
-.ingredients {
+.warnings {
 	@include text-body-small();
 }
 
