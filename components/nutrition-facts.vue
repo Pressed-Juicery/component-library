@@ -76,6 +76,8 @@ export default {
 @import '../styles/variables.scss';
 @import '../styles/mixins.scss';
 
+$indentation-spacing: $spacing-06;
+
 .calories {
 	margin: $spacing-02 0 $spacing-05;
 }
@@ -92,11 +94,11 @@ export default {
 }
 
 .subheading {
-	text-indent: $spacing-06;
+	text-indent: $indentation-spacing;
 }
 
 .tertiaryHeading {
-	text-indent: $spacing-09;
+	text-indent: $indentation-spacing * 2;
 }
 
 .vitamins,
