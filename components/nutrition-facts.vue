@@ -40,7 +40,7 @@
 			2,000 calories a day is used for general nutritional advice.
 		</div>
 
-		<div :class="$style.ingredients">
+		<div v-if="nutritionDetails.ingredients" :class="$style.ingredients">
 			<span>Ingredients:</span> {{ nutritionDetails.ingredients }}
 		</div>
 
