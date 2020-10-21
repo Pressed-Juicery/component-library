@@ -6,8 +6,11 @@
 		@close="close"
 	>
 		<pressed-points-circle :class="$style.logo" />
-		<div :class="$style.title">In the Store?</div>
-		<div :class="$style.message">Show our associate your code!</div>
+		<div :class="$style.header">
+			<div :class="$style.title">In the Store?</div>
+			<div>Show our associate your code!</div>
+			<div v-if="isVip" :class="$style.vipBadge">VIP</div>
+		</div>
 
 		<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')" />
 		<div :class="$style.toggleWrapper" @click="close">
@@ -41,6 +44,12 @@ export default {
 		},
 	},
 
+	computed: {
+		isVip() {
+			return this.wallet.tier && this.wallet.tier.toLowerCase() === 'vip';
+		},
+	},
+
 	methods: {
 		close() {
 			this.$emit('close');
@@ -70,14 +79,19 @@ export default {
 		transition: opacity .5s ease;
 	}
 
-	.title {
-		@include text-heading-5();
-		margin-bottom: $spacing-02;
+	.header {
 		text-align: center;
 	}
 
-	.message {
-		text-align: center;
+	.title {
+		@include text-heading-5();
+		margin-bottom: $spacing-02;
+	}
+
+	.vipBadge {
+		@include button-pill();
+		margin-top: $spacing-05;
+		width: $spacing-12;
 	}
 
 	.toggleWrapper {

@@ -5,7 +5,9 @@
 				<check-mark-white-icon :class="$style.icon" />
 			</span>
 
-			<label :class="$style.label" :for="id">{{ label }}</label>
+			<label :class="$style.label" :for="id">
+				<slot>{{ label }}</slot>
+			</label>
 		</div>
 
 		<div :class="$style.error">{{ error }}</div>
@@ -40,7 +42,6 @@ export default {
 	props: {
 		label: {
 			type: String,
-			required: true,
 		},
 		value: {
 			type: Boolean,
@@ -125,7 +126,7 @@ export default {
 
 	.wrapper {
 		display: flex;
-		align-items: center;
+		align-items: start;
 	}
 
 	.label {
@@ -138,6 +139,7 @@ export default {
 	}
 
 	.checkbox {
+		flex-shrink: 0;
 		display: block;
 		height: $spacing-06;
 		width: $spacing-06;

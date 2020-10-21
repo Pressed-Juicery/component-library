@@ -21,10 +21,14 @@ export default {
 			type: String,
 			required: true,
 		},
+		startOpen: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
-			isOpen: false,
+			isOpen: this.startOpen,
 		};
 	},
 	methods: {

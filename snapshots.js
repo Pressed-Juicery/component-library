@@ -29,6 +29,7 @@ const groups = [{
 		'StoreAddress',
 		'StepProgressBar',
 		'Sidebar',
+		'ToggleSwitch',
 		'WalletDrawer',
 	],
 }, {
