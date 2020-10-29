@@ -18,6 +18,8 @@
 				v-bind="$attrs"
 				v-model="model"
 				@blur="isEager = true"
+				autocorrect="off"
+				autocapitalize="none"
 			>
 			<eye-active v-if="shouldShowPassword" :class="$style.eye" @click.native="shouldShowPassword = false" />
 			<eye-inactive v-else :class="$style.eye" @click.native="shouldShowPassword = true" />
