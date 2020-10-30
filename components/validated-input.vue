@@ -59,6 +59,7 @@ export default {
 
 		isPasswordInput() {
 			const type = this.$attrs.type;
+
 			return type && type.toLowerCase() === 'password';
 		},
 
