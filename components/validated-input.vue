@@ -58,7 +58,8 @@ export default {
 		},
 
 		isPasswordInput() {
-			return this.$attrs.type.toLowerCase() === 'password';
+			const type = this.$attrs.type;
+			return type && type.toLowerCase() === 'password';
 		},
 
 		passwordInputType() {
