@@ -193,6 +193,7 @@ export default {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: $spacing-05;
+		align-items: flex-end;
 	}
 
 	.label {
