@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div v-if="productDescription.overview" :class="$style.overview">{{ productDescription.overview }}</div>
+		<div v-if="productDescription && productDescription.overview" :class="$style.overview">{{ productDescription.overview }}</div>
 		<div v-if="showDetails">
 			<div :class="$style.row" v-for="(detail, index) in productDescription.details" :key="index">
 				<div :class="$style.iconWrapper">
