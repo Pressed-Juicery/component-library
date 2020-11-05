@@ -26,7 +26,7 @@ export default {
 	computed: {
 		showDetails() {
 			// eslint-disable-next-line no-magic-numbers
-			return this.productDescription.details && this.productDescription.details.length === 3;
+			return this.productDescription && this.productDescription.details && this.productDescription.details.length === 3;
 		},
 	},
 };
