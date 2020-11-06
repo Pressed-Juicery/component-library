@@ -1,7 +1,10 @@
 <template>
-	<card @click.native="$emit('click', product)">
+	<card :class="$style.root" @click.native="$emit('click', product)">
 		<div :class="$style.wrapper">
-			<img :class="$style.image" :src="product.imageUrl" />
+			<div :class="$style.imageWrapper">
+				<img :class="$style.image" :src="product.imageUrl" />
+			</div>
+
 			<div :class="$style.name">{{ product.name }}</div>
 
 			<div v-if="hasSamePrice" :class="$style.price">{{ formatPrice(product.nonMemberPrice) }}</div>
@@ -14,7 +17,9 @@
 				{{ formatPrice(product.memberSalePrice) }}
 			</div>
 
-			<quantity-selector
+			<circle-arrow-right v-if="showLearnMoreButton" :class="$style.learnMore" @click="$emit('learn-more')" />
+
+			<quantity-selector v-else
 				:quantity="quantity"
 				@change="quantity => $emit('change', { product, quantity })"
 				@click.native.stop
@@ -25,11 +30,12 @@
 
 <script>
 import Card from './card';
+import CircleArrowRight from './icons/circle-arrow-right';
 import QuantitySelector from './quantity-selector';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { Card, QuantitySelector },
+	components: { Card, QuantitySelector, CircleArrowRight },
 
 	props: {
 		product: {
@@ -39,6 +45,10 @@ export default {
 		quantity: {
 			type: Number,
 			required: false,
+		},
+		showLearnMoreButton: {
+			type: Boolean,
+			default: false,
 		},
 	},
 
@@ -64,15 +74,34 @@ export default {
 <style module lang="scss">
 	@import '../styles/mixins';
 
+	.root {
+		cursor: pointer;
+	}
+
 	.wrapper {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	.image {
-		max-width: 100%;
+	@mixin predefineImageSize {
+		.imageWrapper {
+			position: relative;
+			width: 100%;
+			height: 0;
+			padding-top: 100%;
+			overflow: hidden;
+		}
+
+		.image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
 	}
+
+	@include predefineImageSize();
 
 	.name,
 	.price {
@@ -91,5 +120,9 @@ export default {
 
 	.strikethrough {
 		text-decoration: line-through;
+	}
+
+	.learnMore {
+		cursor: pointer;
 	}
 </style>

@@ -1,7 +1,9 @@
 <template>
 	<div v-if="selectedVariant">
 		<div :class="$style.variantName">{{ selectedVariant.name }}</div>
-		<img :class="$style.image" :src="selectedVariant.imageUrl">
+		<div :class="$style.imageWrapper">
+			<img :class="$style.image" :src="selectedVariant.imageUrl">
+		</div>
 
 		<div :class="$style.information">
 			<div>
@@ -12,6 +14,12 @@
 			<div v-if="selectedVariant.nutritionSummary && selectedVariant.nutritionSummary.calories">
 				{{ selectedVariant.nutritionSummary.calories }} cal/serving
 			</div>
+		</div>
+
+		<div v-if="hasLimitedAvailability" :class="$style.availability">
+			<span :class="$style.availabilityLabel">
+				Product Limited To These Locations:</span>
+				{{ product.limitedAvailability }}
 		</div>
 
 		<div v-if="shouldShowCta" :class="$style.cta">
@@ -98,7 +106,7 @@ export default {
 			});
 		},
 		shouldShowCta() {
-			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice;
+			return !this.isVip && this.selectedVariant.memberPrice !== this.selectedVariant.nonMemberPrice && this.selectedVariant.memberPrice > 0; // eslint-disable-line max-len
 		},
 		price() {
 			return this.isVip
@@ -122,6 +130,9 @@ export default {
 				? `(+${formatCurrency(totalPrice)} Enhancements)`
 				: `(+${formatCurrency(totalPrice)} ${this.selectedAddons[0].name})`;
 		},
+		hasLimitedAvailability() {
+			return Boolean(this.product.limitedAvailability);
+		},
 	},
 	methods: {
 		addToCart() {
@@ -142,12 +153,16 @@ export default {
 </script>
 
 <style module lang="scss">
-	@import "../styles/variables";
 	@import "../styles/mixins";
 
 	.variantName {
 		@include text-heading-4();
 		margin-bottom: $spacing-05;
+	}
+
+	.imageWrapper {
+		max-width: $spacing-10 * 10;
+		margin: 0 auto;
 	}
 
 	.image {
@@ -158,6 +173,14 @@ export default {
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: $spacing-06;
+	}
+
+	.availability {
+		margin-bottom: $spacing-06;
+	}
+
+	.availabilityLabel {
+		color: $color-text-legal;
 	}
 
 	.price {

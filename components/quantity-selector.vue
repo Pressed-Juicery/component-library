@@ -11,7 +11,7 @@
 		</div>
 
 		<div v-else :class="$style.inputWrapper">
-			<select :class="$style.select" v-model="value" ref="select">
+			<select :class="$style.select" v-model="value" ref="select" @input="submitInput">
 				<option v-for="(option, index) in options" :value="option" :key="index">
 					{{ canUseInput && index === options.length - 1 ? `${option}+` : option }}
 				</option>
@@ -62,15 +62,18 @@ export default {
 
 	methods: {
 		submitInput(event) {
-			this.value = Number(event.target.value);
+			const newValue = Number(event.target.value);
+
 			event.target.blur();
+
+			if (this.value === newValue) return;
+
+			this.value = newValue;
+			this.$emit('change', newValue);
 		},
 	},
 
 	watch: {
-		value() {
-			this.$emit('change', this.value);
-		},
 		quantity() {
 			this.value = this.quantity;
 		},
@@ -90,7 +93,6 @@ export default {
 		width: $button-height;
 		border: 1px solid $gray-30;
 		border-radius: 999em;
-		cursor: pointer;
 	}
 
 	.isActive {
@@ -121,7 +123,6 @@ export default {
 
 	.input {
 		text-align: center;
-		cursor: default;
 	}
 
 	.selectOverlay {
@@ -132,7 +133,6 @@ export default {
 	.select {
 		opacity: 0;
 		position: absolute;
-		cursor: pointer;
 	}
 
 	.arrowIcon {

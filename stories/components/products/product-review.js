@@ -19,7 +19,7 @@ export function Overview() {
 						laboris nisi ut aliquip ex ea commodo consequat.
 					`,
 					rating: 4,
-					name: 'Jane Doe',
+					username: 'Jane Doe',
 					createdAt: '2020-07-19T19:28:51.008Z',
 				},
 			};

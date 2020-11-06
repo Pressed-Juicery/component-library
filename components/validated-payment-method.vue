@@ -110,6 +110,7 @@ export default {
 					isValid: false,
 					minlength: 5,
 					maxlength: 5,
+					type: 'number',
 				},
 			},
 		};
@@ -192,6 +193,7 @@ export default {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: $spacing-05;
+		align-items: flex-end;
 	}
 
 	.label {

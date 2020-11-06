@@ -9,16 +9,32 @@
 		:isEager="isEager"
 		ref="validatedComponent"
 	>
-		<input :id="id" v-bind="$attrs" v-model="model" @blur="isEager = true">
+
+		<input v-if="!isPasswordInput" :id="id" v-bind="$attrs" v-model="model" @blur="isEager = true">
+
+		<div v-else :class="$style.inputWrapper">
+			<input :id="id"
+				:type="passwordInputType"
+				v-bind="$attrs"
+				v-model="model"
+				@blur="isEager = true"
+				autocorrect="off"
+				autocapitalize="none"
+			>
+			<eye-active v-if="shouldShowPassword" :class="$style.eye" @click.native="shouldShowPassword = false" />
+			<eye-inactive v-else :class="$style.eye" @click.native="shouldShowPassword = true" />
+		</div>
 	</validated-component>
 </template>
 
 <script>
+import EyeActive from './icons/eye-active';
+import EyeInactive from './icons/eye-inactive';
 import ValidatedComponent from './validated-component';
 import { getRandom } from '../utilities/get-random';
 
 export default {
-	components: { ValidatedComponent },
+	components: { EyeActive, EyeInactive, ValidatedComponent },
 	props: {
 		label: String,
 		labelHelper: String,
@@ -31,6 +47,7 @@ export default {
 		return {
 			id: getRandom(),
 			isEager: false,
+			shouldShowPassword: false,
 		};
 	},
 
@@ -38,6 +55,16 @@ export default {
 		model: {
 			get() { return this.value },
 			set(value) { this.$emit('input', value) },
+		},
+
+		isPasswordInput() {
+			const type = this.$attrs.type;
+
+			return type && type.toLowerCase() === 'password';
+		},
+
+		passwordInputType() {
+			return this.shouldShowPassword ? 'text' : 'password';
 		},
 	},
 
@@ -48,3 +75,19 @@ export default {
 	},
 };
 </script>
+
+<style module lang="scss">
+	@import '../styles/variables';
+
+	.inputWrapper {
+		position: relative;
+	}
+
+	.eye {
+		position: absolute;
+		width: $spacing-06;
+		top: 10px;
+		right: $spacing-04;
+		cursor: pointer;
+	}
+</style>

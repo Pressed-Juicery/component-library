@@ -6,30 +6,16 @@
 		<div :class="$style.drawer" @click="open">
 			<pressed-points-circle :class="$style.logo"/>
 
-			<div :class="$style.title">In the Store?</div>
-			<div :class="$style.message" v-if="!isOpen">Tap here for your QR Code</div>
-			<div :class="$style.message" v-else>Show our associate your code!</div>
+			<div :class="$style.header">
+				<div :class="$style.title">In the Store?</div>
+				<div v-if="!isOpen" :class="$style.message">Tap here for your QR Code</div>
+				<div :class="$style.message">Show our associate your code!</div>
+			</div>
 
 			<transition name="slider" @enter="enter" @leave="leave">
 				<div v-show="isOpen" :class="$style.contentWrapper">
-					<div :class="$style.mainContent">
-						<qr-code :class="$style.qrCode" :code="wallet.cardNumber" />
-
-						<div :class="$style.walletData">
-							<div :class="$style.label">Balance</div>
-							<div :class="$style.value">{{ balance }}</div>
-
-							<div :class="$style.label">Points</div>
-							<div :class="$style.value">{{ wallet.points }}</div>
-
-							<div :class="$style.label">Account #</div>
-							<div :class="$style.value">{{ wallet.cardNumber }}</div>
-						</div>
-					</div>
-
-					<button :class="$style.reloadButton" @click="$emit('reload')" >
-						Reload Balance
-					</button>
+					<div v-if="isVip" :class="$style.vipBadge">VIP</div>
+					<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')"/>
 				</div>
 			</transition>
 
@@ -44,11 +30,10 @@
 import ArrowDownIcon from './icons/arrow-down-icon';
 import Overlay from './overlay';
 import PressedPointsCircle from './icons/pressed-points-circle';
-import QrCode from './qr-code';
-import { formatCurrency } from '../utilities/formatters';
+import WalletDrawerContent from './wallet-drawer-content';
 
 export default {
-	components: { ArrowDownIcon, Overlay, PressedPointsCircle, QrCode },
+	components: { ArrowDownIcon, Overlay, PressedPointsCircle, WalletDrawerContent },
 
 	props: {
 		wallet: {
@@ -64,8 +49,8 @@ export default {
 	},
 
 	computed: {
-		balance() {
-			return formatCurrency(this.wallet.funds || 0);
+		isVip() {
+			return this.wallet.tier && this.wallet.tier.toLowerCase() === 'vip';
 		},
 	},
 
@@ -111,61 +96,26 @@ export default {
 		padding: 0 $spacing-08;
 	}
 
-	.title {
-		@include text-heading-5();
-		margin-bottom: $spacing-02;
+	.header {
 		text-align: center;
 	}
 
-	.message {
-		text-align: center;
+	.title {
+		@include text-heading-5();
+		margin-bottom: $spacing-02;
+	}
+
+	.vipBadge {
+		@include button-pill();
+		display: block;
+		margin: $spacing-05 auto 0;
+		width: $spacing-12;
 	}
 
 	.contentWrapper {
 		overflow: hidden;
 		transition: 0.5s ease-out;
 		height: 0;
-	}
-
-	.mainContent {
-		display: flex;
-		justify-content: center;
-		max-width: 340px;
-		margin: $spacing-07 auto $spacing-08;
-	}
-
-	.qrCode {
-		width: 50%;
-	}
-
-	.walletData {
-		width: 50%;
-		margin-left: $spacing-06;
-	}
-
-	.label {
-		@include text-cta-small();
-		margin-bottom: $spacing-02;
-	}
-
-	.value {
-		@include text-heading-5();
-		&:not(:last-child) {
-			margin-bottom: $spacing-05;
-		}
-	}
-
-	.reloadButton {
-		@include button-pill-secondary();
-
-		display: block;
-		margin: 0 auto $spacing-06;
-		padding: 0 $spacing-10;
-		font-size: 14px;
-
-		&:focus {
-			outline: none;
-		}
 	}
 
 	.toggleWrapper {
@@ -184,12 +134,6 @@ export default {
 	.isOpen {
 		.toggleIcon {
 			transform: rotate(180deg);
-		}
-	}
-
-	@media (max-width: 350px) {
-		.reloadButton {
-			padding: 0 $spacing-06;
 		}
 	}
 </style>

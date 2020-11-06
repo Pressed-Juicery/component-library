@@ -53,3 +53,26 @@ export function Validation() {
 		},
 	};
 }
+
+export function LongLabel() {
+	return {
+		components: { ValidatedCheckbox, ValidatedForm },
+		template: '<validated-checkbox :label="label" v-model="isSelected" />',
+
+		data() {
+			return {
+				isSelected: false,
+				label: `
+					You acknowledge and agree that your membership will renew automatically
+					each month beginning on the date you register. You will be charged automatically
+					every month for your membership. The monthly charge of ten dollars (US $10.00) or greater
+					if chosen will be automatically charged to the debit or credit card provided
+					on the same date every month until you cancel your membership.
+					To cancel your membership. go to the MY ACCOUNT section of our website
+					or you can also email us at info@pressedjuicery.com or call us toll-free
+					at 888.44.JUICE (888.445.8423).
+				`,
+			};
+		},
+	};
+}
