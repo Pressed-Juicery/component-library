@@ -1,6 +1,9 @@
 <template>
 	<div>
-		<div v-if="productDescription.overview" :class="$style.overview">{{ productDescription.overview }}</div>
+		<div v-if="productDescription && productDescription.overview"
+			:class="$style.overview">
+			{{ productDescription.overview }}
+		</div>
 		<div v-if="showDetails">
 			<div :class="$style.row" v-for="(detail, index) in productDescription.details" :key="index">
 				<div :class="$style.iconWrapper">
@@ -25,8 +28,9 @@ export default {
 	},
 	computed: {
 		showDetails() {
-			// eslint-disable-next-line no-magic-numbers
-			return this.productDescription.details && this.productDescription.details.length === 3;
+			return this.productDescription
+				&& this.productDescription.details
+				&& this.productDescription.details.length === 3; // eslint-disable-line no-magic-numbers
 		},
 	},
 };
