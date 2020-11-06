@@ -110,6 +110,7 @@ export default {
 					isValid: false,
 					minlength: 5,
 					maxlength: 5,
+					type: 'number',
 				},
 			},
 		};
