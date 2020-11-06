@@ -46,7 +46,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 	};
 }
 
-export function Vip() { // eslint-disable-line max-lines-per-function
+export function VIP() { // eslint-disable-line max-lines-per-function
 	return {
 		components: { CollapsibleWalletDrawer },
 		template: `
