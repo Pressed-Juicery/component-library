@@ -139,6 +139,38 @@ export function WithAddons() { // eslint-disable-line max-lines-per-function
 	};
 }
 
+export function WithLimitedAvailability() { // eslint-disable-line max-lines-per-function
+	return {
+		components: { ProductOrderingSection },
+		template: `
+			<product-ordering-section
+				:isVip="isVip"
+				:product="product"
+				:selected-variant="selectedVariant"
+				@variant-change="variant => this.selectedVariant = variant"
+			>
+				<a href="#">Learn More</a>
+			</product-ordering-section>
+		`,
+		data() {
+			return {
+				isVip: true,
+				product: JSON.parse(JSON.stringify(productData)),
+				selectedVariant: null,
+			};
+		},
+		created() { // eslint-disable-line max-lines-per-function
+			this.selectedVariant = this.product.variants[0];
+
+			this.product.limitedAvailability = `
+				Abbot Kinney, Americana at Brand, Belmont Shore, Cooper, Del Amo Fashion Center, Fashion Island,
+				Fashion Valley, Larchmont, Manhattan Beach, Montecito, Pasadena, Paseo Nuevo, Plaza de la Paz,
+				Santa Monica, Scripps Ranch, Studio City, The Forum Carlsbad, Tivoli, Tustin, Uptown Plaza, Van Nuys,
+				West Hollywood, Westfield Topanga, Westlake Village, Westwood Village and Westcliff
+			`;
+		},
+	};
+}
 export function WithModifiers() { // eslint-disable-line max-lines-per-function
 	return {
 		components: { ProductOrderingSection },

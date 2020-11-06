@@ -4,11 +4,13 @@
 
 		<validated-input :class="$style.row"
 		                 type="email"
+		                 autocomplete="email"
 		                 label="Email"
 		                 v-model="email" />
 
 		<validated-input :class="$style.lastRow"
 		                 type="password"
+		                 autocomplete="current-password"
 		                 label="Password"
 		                 v-model="password" />
 

@@ -8,15 +8,24 @@
 			<div>%DV</div>
 		</div>
 
-		<div v-for="(fact, index) in nutritionDetails.facts" :key="index">
+		<div v-for="(fact, parentIndex) in nutritionDetails.facts" :key="parentIndex">
 			<div :class="$style.row">
 				<div><span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}</div>
 				<div>{{ fact.dailyValue }}</div>
 			</div>
 
-			<div :class="$style.row" v-for="(child, index) in (fact.children || [])" :key="index">
-				<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
-				<div>{{ child.dailyValue }}</div>
+			<div v-for="(child, childIndex) in (fact.children || [])" :key="childIndex">
+				<div :class="$style.row">
+					<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
+					<div>{{ child.dailyValue }}</div>
+				</div>
+
+				<div :class="$style.row"
+					v-for="(grandchild, grandchildIndex) in (child.children || [])"
+					:key="grandchildIndex">
+					<div :class="$style.tertiaryHeading">{{ grandchild.label }} {{ grandchild.amountPerServing }}</div>
+					<div>{{ grandchild.dailyValue }}</div>
+				</div>
 			</div>
 		</div>
 
@@ -29,6 +38,10 @@
 		<div :class="$style.dailyValue">
 			The % Daily Value tells you how much a nutrient in a serving of food contributes to a daily diet.
 			2,000 calories a day is used for general nutritional advice.
+		</div>
+
+		<div v-if="nutritionDetails.ingredients" :class="$style.ingredients">
+			<span>Ingredients:</span> {{ nutritionDetails.ingredients }}
 		</div>
 
 		<div :class="$style.claims">
@@ -63,6 +76,8 @@ export default {
 @import '../styles/variables.scss';
 @import '../styles/mixins.scss';
 
+$indentation-spacing: $spacing-06;
+
 .calories {
 	margin: $spacing-02 0 $spacing-05;
 }
@@ -79,11 +94,16 @@ export default {
 }
 
 .subheading {
-	text-indent: $spacing-06;
+	text-indent: $indentation-spacing;
+}
+
+.tertiaryHeading {
+	text-indent: $indentation-spacing * 2;
 }
 
 .vitamins,
-.claims {
+.claims,
+.ingredients {
 	margin-top: $spacing-05;
 }
 

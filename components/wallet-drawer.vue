@@ -6,12 +6,15 @@
 		<div :class="$style.drawer" @click="open">
 			<pressed-points-circle :class="$style.logo"/>
 
-			<div :class="$style.title">In the Store?</div>
-			<div :class="$style.message" v-if="!isOpen">Tap here for your QR Code</div>
-			<div :class="$style.message" v-else>Show our associate your code!</div>
+			<div :class="$style.header">
+				<div :class="$style.title">In the Store?</div>
+				<div v-if="!isOpen" :class="$style.message">Tap here for your QR Code</div>
+				<div :class="$style.message">Show our associate your code!</div>
+			</div>
 
 			<transition name="slider" @enter="enter" @leave="leave">
 				<div v-show="isOpen" :class="$style.contentWrapper">
+					<div v-if="isVip" :class="$style.vipBadge">VIP</div>
 					<wallet-drawer-content :wallet="wallet" @reload="$emit('reload')"/>
 				</div>
 			</transition>
@@ -43,6 +46,12 @@ export default {
 		return {
 			isOpen: false,
 		};
+	},
+
+	computed: {
+		isVip() {
+			return this.wallet.tier && this.wallet.tier.toLowerCase() === 'vip';
+		},
 	},
 
 	methods: {
@@ -87,14 +96,20 @@ export default {
 		padding: 0 $spacing-08;
 	}
 
-	.title {
-		@include text-heading-5();
-		margin-bottom: $spacing-02;
+	.header {
 		text-align: center;
 	}
 
-	.message {
-		text-align: center;
+	.title {
+		@include text-heading-5();
+		margin-bottom: $spacing-02;
+	}
+
+	.vipBadge {
+		@include button-pill();
+		display: block;
+		margin: $spacing-05 auto 0;
+		width: $spacing-12;
 	}
 
 	.contentWrapper {

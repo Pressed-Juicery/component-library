@@ -17,6 +17,18 @@ export function Overview() {
 	};
 }
 
+export function StartOpen() {
+	return {
+		components: { Accordion },
+		template: `
+			<accordion title="What is Pressed Juice?" :start-open="true">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+			</accordion>
+		`,
+	};
+}
+
 export function AccordionGroup() {
 	return {
 		components: { Accordion },
