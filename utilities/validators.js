@@ -75,3 +75,19 @@ export function isGreaterThanOrEqualTo(value, { minimum }) {
 export function isInteger(value) {
 	return isEmpty(value) || (isNumber(value) && Number(value) % 1 === 0);
 }
+
+export function hasNumber(value) {
+	return /[0-9]/.test(value);
+}
+
+export function hasUppercase(value) {
+	return /[A-Z]/.test(value);
+}
+
+export function hasLowercase(value) {
+	return /[a-z]/.test(value);
+}
+
+export function hasSpecialCharacter(value) {
+	return /.*\W/.test(value);
+}
