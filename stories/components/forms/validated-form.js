@@ -1,4 +1,11 @@
-import { hasMinimumLength, isNotEmpty } from '../../../utilities/validators';
+import {
+	hasLowercase,
+	hasMinimumLength,
+	hasNumber,
+	hasSpecialCharacter,
+	hasUppercase,
+	isNotEmpty
+} from '../../../utilities/validators';
 
 import ValidatedForm from '../../../components/validated-form';
 import ValidatedInput from '../../../components/validated-input';
@@ -83,11 +90,23 @@ export function MultipleValidatedInputs() {
 				}],
 				passwordRules: [{
 					validator: isNotEmpty,
-					message: 'This field is required.',
+					message: 'Please enter a password.',
 				}, {
 					validator: hasMinimumLength,
-					message: 'Must be at least 6 characters long.',
-					options: { length: 6 },
+					message: 'Passwords must be at least 8 characters long.',
+					options: { length: 8 },
+				}, {
+					validator: hasNumber,
+					message: 'Passwords must contain at least one number.',
+				}, {
+					validator: hasUppercase,
+					message: 'Passwords must contain at least one uppercase letter.',
+				}, {
+					validator: hasLowercase,
+					message: 'Passwords must contain at least one lowercase letter.',
+				}, {
+					validator: hasSpecialCharacter,
+					message: 'Passwords must contain at least one special character, such as ! or *.',
 				}],
 			};
 		},
@@ -116,11 +135,23 @@ export function CustomValidatedInputErrorMessage() {
 				}],
 				passwordRules: [{
 					validator: isNotEmpty,
-					message: 'This field is required.',
+					message: 'Please enter a password.',
 				}, {
 					validator: hasMinimumLength,
-					message: 'Must be at least 6 characters long.',
-					options: { length: 6 },
+					message: 'Passwords must be at least 8 characters long.',
+					options: { length: 8 },
+				}, {
+					validator: hasNumber,
+					message: 'Passwords must contain at least one number.',
+				}, {
+					validator: hasUppercase,
+					message: 'Passwords must contain at least one uppercase letter.',
+				}, {
+					validator: hasLowercase,
+					message: 'Passwords must contain at least one lowercase letter.',
+				}, {
+					validator: hasSpecialCharacter,
+					message: 'Passwords must contain at least one special character, such as ! or *.',
 				}],
 			};
 		},
