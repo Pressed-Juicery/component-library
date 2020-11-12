@@ -89,5 +89,5 @@ export function hasLowercase(value) {
 }
 
 export function hasSpecialCharacter(value) {
-	return /.*\W/.test(value);
+	return /[~!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g.test(value);
 }
