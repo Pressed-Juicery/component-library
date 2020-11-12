@@ -91,7 +91,6 @@ export function MultipleValidatedInputs() {
 						Passwords have at least 8 characters, one uppercase letter,
 						one lowercase letter, and one special character (e.g. !@#$%^&*()).
 					`,
-					options: { length: 8 },
 				}],
 			};
 		},
@@ -124,7 +123,6 @@ export function CustomValidatedInputErrorMessage() {
 						Passwords have at least 8 characters, one uppercase letter,
 						one lowercase letter, and one special character (e.g. !@#$%^&*()).
 					`,
-					options: { length: 8 },
 				}],
 			};
 		},
