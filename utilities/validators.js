@@ -91,3 +91,11 @@ export function hasLowercase(value) {
 export function hasSpecialCharacter(value) {
 	return /[~!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g.test(value);
 }
+
+export function isPassword(value) {
+	return hasMinimumLength(value, { length: 8})
+		&& hasNumber(value)
+		&& hasUppercase(value)
+		&& hasLowercase(value)
+		&& hasSpecialCharacter(value);
+}
