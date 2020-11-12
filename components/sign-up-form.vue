@@ -129,7 +129,7 @@ export default {
 				password: [{
 					validator: isPassword,
 					message: `
-						Passwords have at least 8 characters, one uppercase letter,
+						Passwords must have at least 8 characters, one uppercase letter,
 						one lowercase letter, and one special character (e.g. !@#$%^&*()).
 					`,
 				}],
