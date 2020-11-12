@@ -90,7 +90,7 @@ export function MultipleValidatedInputs() {
 				}],
 				passwordRules: [{
 					validator: isNotEmpty,
-					message: 'Please enter a password.',
+					message: 'This field is required.',
 				}, {
 					validator: hasMinimumLength,
 					message: 'Passwords must be at least 8 characters long.',
@@ -135,7 +135,7 @@ export function CustomValidatedInputErrorMessage() {
 				}],
 				passwordRules: [{
 					validator: isNotEmpty,
-					message: 'Please enter a password.',
+					message: 'This field is required.',
 				}, {
 					validator: hasMinimumLength,
 					message: 'Passwords must be at least 8 characters long.',
