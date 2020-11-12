@@ -70,6 +70,10 @@ import {
 	isNotEmpty,
 	isValidPhoneNumber,
 	isZipCode,
+	hasNumber,
+	hasUppercase,
+	hasLowercase,
+	hasSpecialCharacter,
 } from '../utilities/validators';
 import ValidatedBirthday from './validated-birthday';
 import ValidatedCheckbox from './validated-checkbox';
@@ -131,8 +135,20 @@ export default {
 					message: 'Please enter a password.',
 				}, {
 					validator: hasMinimumLength,
-					message: 'Passwords must be at least 6 characters long.',
-					options: { length: 6 },
+					message: 'Passwords must be at least 8 characters long.',
+					options: { length: 8 },
+				}, {
+					validator: hasNumber,
+					message: 'Passwords must contain at least one number.',
+				}, {
+					validator: hasUppercase,
+					message: 'Passwords must contain at least one uppercase letter.',
+				}, {
+					validator: hasLowercase,
+						message: 'Passwords must contain at least one lowercase letter.',
+				}, {
+					validator: hasSpecialCharacter,
+					message: 'Passwords must contain at least one special character, such as ! or *.',
 				}],
 				postal: [{
 					validator: isNotEmpty,
