@@ -2,7 +2,7 @@ import {
 	isEmail,
 	isNotEmpty,
 	isPassword,
-	isValidPhoneNumber
+	isValidPhoneNumber,
 } from '../../../utilities/validators';
 import ValidatedInput from '../../../components/validated-input';
 

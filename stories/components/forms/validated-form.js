@@ -1,7 +1,7 @@
 import {
 	hasMinimumLength,
 	isNotEmpty,
-	isPassword
+	isPassword,
 } from '../../../utilities/validators';
 
 import ValidatedForm from '../../../components/validated-form';

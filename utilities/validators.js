@@ -89,11 +89,11 @@ export function hasLowercase(value) {
 }
 
 export function hasSpecialCharacter(value) {
-	return /[~!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g.test(value);
+	return /[~!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g.test(value); // eslint-disable-line no-useless-escape
 }
 
 export function isPassword(value) {
-	return hasMinimumLength(value, { length: 8})
+	return hasMinimumLength(value, { length: 8 })
 		&& hasNumber(value)
 		&& hasUppercase(value)
 		&& hasLowercase(value)
