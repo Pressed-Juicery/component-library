@@ -82,10 +82,16 @@ export function Password() {
 	return {
 		components: { ValidatedInput },
 		template: `
-			<validated-input type="password"
-			                 label="Password"
-			                 v-model="password"
-			                 :rules="passwordRules" />
+			<validated-form>
+				<validated-input
+					type="password"
+					label="Password"
+					v-model="password"
+					:help-text="helpText"
+					:rules="passwordRules"
+				/>
+				<button>Submit</button>
+			</validated-form>
 		`,
 		data() {
 			return {
@@ -97,6 +103,10 @@ export function Password() {
 						one lowercase letter, and one special character (e.g. !@#$%^&*()).
 					`,
 				}],
+				helpText: `
+					Passwords must have at least 8 characters, one uppercase letter,
+					one lowercase letter, and one special character (e.g. !@#$%^&*()).
+				`,
 			};
 		},
 	};
