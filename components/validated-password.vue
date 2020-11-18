@@ -22,7 +22,7 @@
 			<checkmark v-if="requirement.isValid(model)" />
 			<red-x v-else />
 
-			<div :class="$style.requirementText">{{ requirement.text }}</div>
+			<div>{{ requirement.text }}</div>
 		</div>
 	</div>
 </template>
@@ -124,13 +124,10 @@ export default {
 	}
 
 	.requirement {
-		display: flex;
+		display: grid;
+		grid-template-columns: $spacing-07 auto;
 		align-items: center;
 		margin-bottom: $spacing-02;
-	}
-
-	.requirementText {
-		margin-left: $spacing-05;
 	}
 
 	.error {
@@ -138,5 +135,11 @@ export default {
 
 		display: block;
 		margin-bottom: $spacing-03;
+	}
+
+	@media (max-width: $max-width-extra-small) {
+		.requirement {
+			line-height: 1;
+		}
 	}
 </style>
