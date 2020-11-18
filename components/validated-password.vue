@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<label v-if="label" :for="id">{{ label }}</label>
+		<label v-if="label" :class="$style.label" :for="id">{{ label }}</label>
 
 		<div :class="$style.inputWrapper">
 			<input
@@ -96,6 +96,11 @@ export default {
 <style module lang="scss">
 	@import '../styles/mixins';
 	@import '../styles/variables';
+
+
+	.label {
+		@include label();
+	}
 
 	.inputWrapper {
 		position: relative;
