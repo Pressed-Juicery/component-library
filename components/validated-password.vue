@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div :class="$style.root">
 		<label v-if="label" :class="$style.label" :for="id">{{ label }}</label>
 
 		<div :class="$style.inputWrapper">
@@ -97,6 +97,9 @@ export default {
 	@import '../styles/mixins';
 	@import '../styles/variables';
 
+	.root {
+		margin-bottom: $spacing-06;
+	}
 
 	.label {
 		@include label();
