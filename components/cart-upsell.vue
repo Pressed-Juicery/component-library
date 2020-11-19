@@ -4,6 +4,8 @@
 			<div>{{ upsell && upsell.title }}</div>
 			<arrow-icon :class="$style.arrow" />
 		</div>
+		<div v-if="isOpen" :class="$style.body">
+		</div>
 	</card>
 </template>
 
