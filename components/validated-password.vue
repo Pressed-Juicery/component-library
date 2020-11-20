@@ -54,16 +54,16 @@ export default {
 					text: 'At least 8 characters',
 				},
 				{
-					isValid: hasNumber,
-					text: 'At least one number',
+					isValid: hasLowercase,
+					text: 'At least one lowercase letter',
 				},
 				{
 					isValid: hasUppercase,
 					text: 'At least one capital letter',
 				},
 				{
-					isValid: hasLowercase,
-					text: 'At least one lowercase letter',
+					isValid: hasNumber,
+					text: 'At least one number',
 				},
 				{
 					isValid: hasSpecialCharacter,
