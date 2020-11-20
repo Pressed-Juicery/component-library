@@ -23,13 +23,13 @@
 			:rules="rules.email"
 			v-model="user.email"
 		/>
-		<validated-input
-			type="password"
-			autocomplete="new-password"
+
+		<validated-password
 			label="Password"
-			:rules="rules.password"
+			autocomplete="new-password"
 			v-model="user.password"
 		/>
+
 		<div :class="$style.birthdayWrapper">
 			<div :class="$style.birthdayLabel">Birthday (optional)</div>
 			<div :class="$style.birthdayMessage">So we can send you something sweet!</div>
@@ -67,7 +67,6 @@
 import {
 	isEmail,
 	isNotEmpty,
-	isPassword,
 	isValidPhoneNumber,
 	isZipCode,
 } from '../utilities/validators';
@@ -75,6 +74,7 @@ import ValidatedBirthday from './validated-birthday';
 import ValidatedCheckbox from './validated-checkbox';
 import ValidatedForm from './validated-form';
 import ValidatedInput from './validated-input';
+import ValidatedPassword from './validated-password';
 
 export default {
 	components: {
@@ -82,6 +82,7 @@ export default {
 		ValidatedInput,
 		ValidatedBirthday,
 		ValidatedCheckbox,
+		ValidatedPassword,
 	},
 	props: {
 		id: String,
@@ -124,13 +125,6 @@ export default {
 					message: `
 						You've previously created an online account with us.
 						Log in to complete your Pressed Points registration.
-					`,
-				}],
-				password: [{
-					validator: isPassword,
-					message: `
-						Passwords must have at least 8 characters, one uppercase letter,
-						one lowercase letter, and one special character (e.g. !@#$%^&*()).
 					`,
 				}],
 				postal: [{

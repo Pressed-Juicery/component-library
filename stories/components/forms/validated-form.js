@@ -1,7 +1,6 @@
 import {
 	hasMinimumLength,
 	isNotEmpty,
-	isPassword,
 } from '../../../utilities/validators';
 
 import ValidatedForm from '../../../components/validated-form';
@@ -86,11 +85,8 @@ export function MultipleValidatedInputs() {
 					message: 'This field is required.',
 				}],
 				passwordRules: [{
-					validator: isPassword,
-					message: `
-						Passwords must have at least 8 characters, one uppercase letter,
-						one lowercase letter, and one special character (e.g. !@#$%^&*()).
-					`,
+					validator: isNotEmpty,
+					message: 'This field is required.',
 				}],
 			};
 		},
@@ -118,11 +114,8 @@ export function CustomValidatedInputErrorMessage() {
 					message: 'This field is required.',
 				}],
 				passwordRules: [{
-					validator: isPassword,
-					message: `
-						Passwords must have at least 8 characters, one uppercase letter,
-						one lowercase letter, and one special character (e.g. !@#$%^&*()).
-					`,
+					validator: isNotEmpty,
+					message: 'This field is required.',
 				}],
 			};
 		},
