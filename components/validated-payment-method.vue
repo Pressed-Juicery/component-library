@@ -140,18 +140,7 @@ export default {
 						this.fields[event.emittedBy].isValid = event.fields[event.emittedBy].isValid;
 					});
 				})
-
-				.catch(error => {
-					if (localStorage.getItem('reloaded')) {
-						localStorage.removeItem('reloaded');
-					} else if (error.code === 'CLIENT_SCRIPT_FAILED_TO_LOAD') {
-						localStorage.setItem('reloaded', '1');
-
-						return location.reload();
-					}
-
-					return void (this.cannotLoadForm = true);
-				});
+				.catch(() => void (this.cannotLoadForm = true));
 		},
 
 		isValid() {
