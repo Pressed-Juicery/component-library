@@ -132,7 +132,6 @@ export default {
 
 	.error {
 		@include text-error();
-
 		display: block;
 		margin-bottom: $spacing-03;
 	}
