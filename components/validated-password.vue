@@ -134,10 +134,4 @@ export default {
 		display: block;
 		margin-bottom: $spacing-03;
 	}
-
-	@media (max-width: $max-width-extra-small) {
-		.requirement {
-			line-height: 1;
-		}
-	}
 </style>
