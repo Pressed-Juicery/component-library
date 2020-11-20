@@ -11,7 +11,7 @@ export function hasExactLength(value, { length }) {
 }
 
 export function hasMinimumLength(value, { length }) {
-	return value.length >= length;
+	return isEmpty(value) || value.length >= length;
 }
 
 export function isEmail(value) {

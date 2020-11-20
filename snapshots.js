@@ -56,7 +56,6 @@ const groups = [{
 		'ValidatedCheckbox',
 		'ValidatedForm',
 		'ValidatedInput',
-		'ValidatedPassword',
 		'ValidatedPaymentMethod',
 		'ValidatedSelect',
 		'ValidatedStarRating',
