@@ -23,6 +23,7 @@ export default {
   @import '../styles/variables';
 
   $barBackground: #e9e0c3;
+  $barColor: #bf9033;
 
   .root {
     position: relative;
@@ -35,6 +36,7 @@ export default {
     position: absolute;
     border-radius: $spacing-02;
     left: 0;
-    height: 100%
+    height: 100%;
+    background-color: $barColor;
   }
 </style>
