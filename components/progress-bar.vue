@@ -1,16 +1,12 @@
 <template>
   <div :class="$style.root">
-    <div :class="$style.progressBar" :style="{ width: fill, backgroundColor: barColor }"></div>
+    <div :class="$style.progressBar" :style="{ width: fill }"></div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    barColor: {
-      type: String,
-      default: '#bf9033',
-    },
     goal: Number,
     progress: Number,
   },
