@@ -15,7 +15,7 @@ export function Overview() {
 		data() {
 			return {
 				goal: 100,
-				progress: 50
+				progress: 50,
 			};
 		},
 	};
