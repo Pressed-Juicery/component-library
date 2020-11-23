@@ -8,12 +8,12 @@
 export default {
   props: {
     goal: Number,
-    progress: Number,
+    current: Number,
   },
 
   computed: {
     fill() {
-      return `${(this.progress / this.goal) * 100}%`;
+      return `${(this.current / this.goal) * 100}%`;
     },
   },
 }
