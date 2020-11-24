@@ -10,8 +10,8 @@
 		<div :class="$style.descriptionWrapper">
 			<div :class="$style.description">
 				<div :class="$style.title">{{ product.variants[0].name }}</div>
-				<div :class="$style.priceWrapper">
-					<div :class="$style.price">{{ formatCurrency(product.price) }}</div>
+				<div v-if="hasUpsellPrice" :class="$style.priceWrapper">
+					<div :class="$style.price">{{ formatCurrency(upsellPrice) }}</div>
 				</div>
 			</div>
 
@@ -23,12 +23,20 @@
 <script>
 import Card from './card.vue';
 import { formatCurrency } from '../utilities/formatters';
+import { isNotEmpty } from '../utilities/validators';
 
 export default {
 	components: { Card },
 
 	props: {
 		product: Object,
+		upsellPrice: Number,
+	},
+
+	computed: {
+		hasUpsellPrice() {
+			return isNotEmpty(this.upsellPrice);
+		},
 	},
 
 	methods: {

@@ -44,6 +44,7 @@
 
 			<upsell-product-card v-if="doesQualifyForSingleProductUpsell"
 				:product="firstUpsellItem"
+				:upsell-price="upsell.upsellPrice"
 				@add-product="item => $emit('add-product', item)"
 			/>
 		</div>
