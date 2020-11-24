@@ -16,7 +16,7 @@
 			Apply
 			</button>
 		</div>
-		<div :class="$style.error">{{ error }}</div>
+		<div v-if="error" :class="$style.error">{{ error }}</div>
 		<div v-if="coupons" :class="$style.couponWrapper">
 			<div v-for="coupon in coupons" :class="$style.coupon" :key="coupon.id">
 				<coupon-tag :class="$style.couponTag" />
