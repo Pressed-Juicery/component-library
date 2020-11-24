@@ -152,6 +152,7 @@ export default {
 	.bodyText {
 		@include text-subtle;
 		display: flex;
+		justify-content: space-between;
 		margin-bottom: $spacing-05;
 	}
 
