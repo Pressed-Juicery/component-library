@@ -8,9 +8,9 @@
 		<div v-if="isOpen" :class="$style.body">
 			<div :class="$style.bodyText">
 				{{ upsell && upsell.description }}
-				<img :class="$style.productImage"
-					:src="firstUpsellItem && firstUpsellItem.variants[0].imageUrl"
-					:alt="firstUpsellItem && firstUpsellItem.variants[0].name"
+				<img v-if="firstUpsellItem && firstUpsellItem.variants" :class="$style.productImage"
+					:src="firstUpsellItem.variants[0].imageUrl"
+					:alt="firstUpsellItem.variants[0].name"
 				/>
 			</div>
 
