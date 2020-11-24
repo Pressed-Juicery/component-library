@@ -8,7 +8,10 @@
 		<div v-if="isOpen" :class="$style.body">
 			<div :class="$style.bodyText">
 				{{ upsell && upsell.description }}
-				<img v-if="firstUpsellItem && firstUpsellItem.variants" :class="$style.productImage"
+				<img v-if="firstUpsellItem
+					&& firstUpsellItem.variants
+					&& !doesQualifyForSingleProductUpsell"
+					:class="$style.productImage"
 					:src="firstUpsellItem.variants[0].imageUrl"
 					:alt="firstUpsellItem.variants[0].name"
 				/>
