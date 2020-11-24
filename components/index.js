@@ -68,6 +68,7 @@ export { default as StoreAddress } from './store-address';
 export { default as StoreRadioButtonCard } from './store-radio-button-card';
 export { default as ToggleSwitch } from './toggle-switch';
 export { default as UpgradeForm } from './upgrade-form';
+export { default as UpsellProductCard } from './upsell-product-card';
 export { default as ValidatedBirthday } from './validated-birthday';
 export { default as ValidatedCheckbox } from './validated-checkbox';
 export { default as ValidatedForm } from './validated-form';
