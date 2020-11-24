@@ -30,7 +30,7 @@
 				<div :class="$style.bodyText">{{ progressText }}</div>
 			</div>
 
-			<div v-if="!isPromotionApplied && isMultipleItemUpsell && !amountNeededToQualifyForOffer"
+			<div v-if="!isPromotionApplied && !amountNeededToQualifyForOffer && isMultipleItemUpsell"
 				:class="$style.actionLabel"
 				@click="$emit('choose-product')">
 				{{ actionLabel }}
