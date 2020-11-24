@@ -61,12 +61,11 @@ export default {
 	$coupon-spacing: $spacing-03;
 
 	.root {
-		margin-bottom: $spacing-07;
+		margin-bottom: $spacing-05;
 	}
 
 	.inputWrapper {
 		display: flex;
-		margin-bottom: $spacing-03;
 	}
 
 	.input {
