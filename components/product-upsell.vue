@@ -27,13 +27,13 @@
 				<div :class="$style.bodyText">{{ progressText }}</div>
 			</div>
 
-			<div v-if="!isPromotionApplied && isMultipleItemUpsell"
+			<div v-if="!isPromotionApplied && isMultipleItemUpsell && !amountNeededToQualifyForOffer"
 				:class="$style.actionLabel"
 				@click="$emit('choose-product')">
 				{{ actionLabel }}
 			</div>
 
-			<div v-if="!isPromotionApplied && amountNeededToQualifyForOffer"
+			<div v-else-if="!isPromotionApplied && amountNeededToQualifyForOffer"
 				:class="$style.actionLabel"
 				@click="$emit('continue-shopping')">
 				Keep Shopping
