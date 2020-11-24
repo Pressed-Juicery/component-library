@@ -9,8 +9,8 @@
 			<div :class="$style.bodyText">
 				{{ upsell && upsell.description }}
 				<img :class="$style.productImage"
-					:src="firstUpsellItem.variants[0].imageUrl"
-					:alt="firstUpsellItem.variants[0].name"
+					:src="firstUpsellItem && firstUpsellItem.variants[0].imageUrl"
+					:alt="firstUpsellItem && firstUpsellItem.variants[0].name"
 				/>
 			</div>
 
