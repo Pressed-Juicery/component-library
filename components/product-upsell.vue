@@ -95,6 +95,7 @@ export default {
 			const upsellIds = this.upsell
 				&& this.upsell.products.map(item => item.variants && item.variants[0].id);
 			const hasPromotionItemInCart = this.cart
+				&& this.cart.items
 				&& this.cart.items.some(item => upsellIds.includes(item.variantId));
 			const doesCartQualifyForPromotion = !this.amountNeededToQualifyForOffer;
 
