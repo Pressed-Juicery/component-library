@@ -22,6 +22,7 @@ export { default as CartPointsRedemption } from './cart-points-redemption';
 export { default as CartSidebar } from './cart-sidebar';
 export { default as CartSummary } from './cart-summary';
 export { default as CartTotals } from './cart-totals';
+export { default as CartUpsellMenu } from './cart-upsell-menu';
 export { default as CheckoutAuthentication } from './checkout-authentication';
 export { default as CheckoutItemCard } from './checkout-item-card';
 export { default as CleanseGuide } from './cleanse-guide';
