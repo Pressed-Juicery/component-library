@@ -1,5 +1,5 @@
 <template>
-	<card v-if="upsell" :class="{[$style.isOpen]: isOpen}">
+	<card v-if="upsell && upsell.products && upsell.products.length" :class="{[$style.isOpen]: isOpen}">
 		<div :class="$style.header" @click="$emit('toggle-accordion')">
 			<div>{{ upsell && upsell.title }}</div>
 			<arrow-icon :class="$style.arrow" />
