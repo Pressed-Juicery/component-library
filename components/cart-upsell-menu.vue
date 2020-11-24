@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { UpsellProductCard } from './upsell-product-card';
+import UpsellProductCard from './upsell-product-card';
 
 export default {
 	components: { UpsellProductCard },
