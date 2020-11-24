@@ -32,6 +32,7 @@
 				@click="$emit('choose-product')">
 				{{ actionLabel }}
 			</div>
+
 			<div v-if="!isPromotionApplied && amountNeededToQualifyForOffer"
 				:class="$style.actionLabel"
 				@click="$emit('continue-shopping')">
