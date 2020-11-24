@@ -52,6 +52,7 @@ export { default as PointsRedemption } from './points-redemption';
 export { default as ProductDetails } from './product-details.vue';
 export { default as ProductCard } from './product-card.vue';
 export { default as ProductOrderingSection } from './product-ordering-section';
+export { default as ProductUpsell } from './product-upsell';
 export { default as ProductReview } from './product-review.vue';
 export { default as ProductReviewForm } from './product-review-form.vue';
 export { default as QuantitySelector } from './quantity-selector';
