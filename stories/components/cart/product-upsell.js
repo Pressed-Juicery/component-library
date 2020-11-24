@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import ProductUpsell from '../../../components/product-upsell';
 
 export default {
@@ -13,19 +14,21 @@ const mixins = [{
 	},
 	methods: {
 		handleAddItem(item) {
-			console.log('item:', item); // TODO: REMOVE THIS
+			// eslint-disable-next-line no-console
+			console.log('item:', item);
 		},
 
 		handleChooseProduct() {
-			console.log('choose-product event'); // TODO: REMOVE THIS
+			// eslint-disable-next-line no-console
+			console.log('choose-product event');
 		},
 
 		handleContinueShopping() {
-			console.log('continue shopping event'); // TODO: REMOVE THIS
+			// eslint-disable-next-line no-console
+			console.log('continue shopping event');
 		},
 	},
 }];
-
 
 export function Overview() {
 	return {
@@ -51,7 +54,9 @@ export function Overview() {
 				},
 				upsell: {
 					title: 'Get a Fanny Pack for $2',
-					description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+					description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
 					productType: '',
 					products: [{
@@ -94,7 +99,10 @@ export function SingleItem() {
 				},
 				upsell: {
 					title: 'Get a Fanny Pack for $2',
-					description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+					description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
 					productType: '',
 					products: [{
@@ -138,7 +146,10 @@ export function MultipleItems() {
 				},
 				upsell: {
 					title: 'Get a Fanny Pack for $2',
-					description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+					description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
 					productType: 'Widget',
 					products: [{
@@ -188,7 +199,10 @@ export function AppliedOffer() {
 				},
 				upsell: {
 					title: 'Get a Fanny Pack for $2',
-					description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+					description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
 					productType: '',
 					products: [{
