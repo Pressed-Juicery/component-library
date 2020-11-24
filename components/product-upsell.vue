@@ -42,7 +42,7 @@
 				Keep Shopping
 			</div>
 
-			<upsell-product-card v-if="!isMultipleItemUpsell && !amountNeededToQualifyForOffer && !isPromotionApplied"
+			<upsell-product-card v-if="doesQualifyForSingleProductUpsell"
 				:product="firstUpsellItem"
 				@add-product="item => $emit('add-product', item)"
 			/>
@@ -92,6 +92,10 @@ export default {
 
 		isMultipleItemUpsell() {
 			return this.upsell && this.upsell.products.length > 1;
+		},
+
+		doesQualifyForSingleProductUpsell() {
+			return !this.isMultipleItemUpsell && !this.amountNeededToQualifyForOffer && !this.isPromotionApplied;
 		},
 
 		isPromotionApplied() {
