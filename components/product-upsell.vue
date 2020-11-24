@@ -9,8 +9,8 @@
 			<div :class="$style.bodyText">
 				{{ upsell && upsell.description }}
 				<img :class="$style.productImage"
-					:src="firstUpsellItem.variant.imageUrl"
-					:alt="firstUpsellItem.variant.name"
+					:src="firstUpsellItem.variants[0].imageUrl"
+					:alt="firstUpsellItem.variants[0].name"
 				/>
 			</div>
 
@@ -92,7 +92,8 @@ export default {
 		},
 
 		isPromotionApplied() {
-			const upsellIds = this.upsell && this.upsell.products.map(item => item.variant.id);
+			const upsellIds = this.upsell
+				&& this.upsell.products.map(item => item.variants && item.variants[0].id);
 			const hasPromotionItemInCart = this.cart
 				&& this.cart.items.some(item => upsellIds.includes(item.variantId));
 			const doesCartQualifyForPromotion = !this.amountNeededToQualifyForOffer;

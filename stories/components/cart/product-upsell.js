@@ -60,10 +60,10 @@ export function Overview() {
 					minimumSubtotalRequirement: 100,
 					productType: '',
 					products: [{
-						variant: {
+						variants: [{
 							name: 'Strawberry Basil Lemonade',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						},
+						}],
 					}],
 				},
 			};
@@ -106,11 +106,11 @@ export function SingleItem() {
 					minimumSubtotalRequirement: 100,
 					productType: '',
 					products: [{
-						variant: {
+						variants: [{
 							id: 123,
 							name: 'Strawberry Basil Lemonade',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						},
+						}],
 					}],
 				},
 			};
@@ -153,17 +153,17 @@ export function MultipleItems() {
 					minimumSubtotalRequirement: 100,
 					productType: 'Widget',
 					products: [{
-						variant: {
+						variants: [{
 							id: 123,
 							name: 'Strawberry Basil Lemonade',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						},
+						}],
 					}, {
-						variant: {
+						variants: [{
 							id: 456,
 							name: 'Strawberry Basil Lemonade',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						},
+						}],
 					}],
 				},
 			};
@@ -206,17 +206,17 @@ export function AppliedOffer() {
 					minimumSubtotalRequirement: 100,
 					productType: '',
 					products: [{
-						variant: {
+						variants: [{
 							id: 123,
 							name: 'Strawberry Basil Lemonade',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						},
+						}],
 					}, {
-						variant: {
+						variants: [{
 							id: 456,
 							name: 'Strawberry Basil Lemonade',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						},
+						}],
 					}],
 				},
 			};
