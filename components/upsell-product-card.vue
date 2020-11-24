@@ -1,12 +1,15 @@
 <template>
-	<card :class="$style.card">
+	<card v-if="product && product.variants" :class="$style.card">
 		<div :class="$style.imageWrapper">
-			<img :class="$style.image" :src="product.variant.imageUrl" :alt="product.variant.name" />
+			<img :class="$style.image"
+				:src="product.variants[0].imageUrl"
+				:alt="product.variants[0].name"
+			/>
 		</div>
 
 		<div :class="$style.descriptionWrapper">
 			<div :class="$style.description">
-				<div :class="$style.title">{{ product.variant.name }}</div>
+				<div :class="$style.title">{{ product.variants[0].name }}</div>
 				<div :class="$style.priceWrapper">
 					<div :class="$style.price">{{ formatCurrency(product.price) }}</div>
 				</div>
