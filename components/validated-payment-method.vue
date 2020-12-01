@@ -13,7 +13,7 @@
 			</label>
 		</div>
 
-		<div :class="[$style.row, $style.grid]">
+		<div :class="[$style.row, $style.grid, { [$style.alignBottom]: !hasError }]">
 			<div>
 				<label :class="$style.label" for="expiration-date">Expiration Date</label>
 				<div id="expiration-date" :class="$style.input"></div>
@@ -116,6 +116,14 @@ export default {
 		};
 	},
 
+	computed: {
+		hasError() {
+			return (this.fields.number.isTouched && !this.fields.number.isValid)
+				|| (this.fields.cvv.isTouched && !this.fields.cvv.isValid)
+				|| (this.fields.postalCode.isTouched && !this.fields.postalCode.isValid);
+		},
+	},
+
 	created() {
 		this.initializeHostedFields();
 	},
@@ -193,6 +201,9 @@ export default {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: $spacing-05;
+	}
+
+	.alignBottom {
 		align-items: flex-end;
 	}
 
