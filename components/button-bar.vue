@@ -83,4 +83,13 @@ export default {
 	.isActive {
 		background-color: $beige;
 	}
+
+	.twoColLabel {
+		flex-flow: column;
+	}
+
+	.sublabel {
+		@include text-body-small();
+		@include text-subtle();
+	}
 </style>
