@@ -9,7 +9,12 @@
 			@click="$emit('change', isObject(buttonLabel) ? buttonLabel['heading'] : buttonLabel)"
 			:key="index"
 		>
-			{{ buttonLabel }}
+			<div v-if="isObject(buttonLabel)" :class="$style.twoColLabel">
+				{{ buttonLabel['heading'] }}
+				<div :class="$style.sublabel">{{ buttonLabel['subheading'] }}</div>
+			</div>
+
+			<div v-else>{{ buttonLabel }}</div>
 		</div>
 	</div>
 </template>
