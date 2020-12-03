@@ -27,3 +27,25 @@ export function Overview() {
 		},
 	};
 }
+export function DoubleColumnAsArray() {
+	return {
+		components: { ButtonBar },
+		template: `
+			<button-bar
+				:button-labels="['TestOne', ['TestTwo', 'TestTwoSubheading'], 'TestThree']"
+				:selected-label="selectedLabel"
+				@change="onChange"
+			/>
+		`,
+		data() {
+			return {
+				selectedLabel: 'TestTwo',
+			};
+		},
+		methods: {
+			onChange(value) {
+				this.selectedLabel = value;
+			},
+		},
+	};
+}
