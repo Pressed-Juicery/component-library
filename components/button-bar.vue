@@ -27,6 +27,21 @@ export default {
 			return Object.prototype.toString.call(object) === '[object Object]';
 		},
 	},
+	computed: {
+		convertedButtonLabels() {
+			return this.buttonLabels.map(label => {
+				if (Array.isArray(label)) {
+					return {
+						heading: label[0],
+						subheading: label[1],
+					};
+				}
+
+				return label;
+			});
+		},
+	},
+};
 };
 </script>
 
