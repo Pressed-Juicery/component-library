@@ -1,5 +1,5 @@
 <template>
-	<div :class="$style.root">
+	<div :class="$style.root" v-if="convertedButtonLabels">
 		<div
 			v-for="(buttonLabel, index) in buttonLabels"
 			:class="[$style.button, { [$style.isActive]: buttonLabel === selectedLabel }]"
