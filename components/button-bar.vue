@@ -22,6 +22,11 @@ export default {
 			type: String,
 		},
 	},
+	methods: {
+		isObject(object) {
+			return Object.prototype.toString.call(object) === '[object Object]';
+		},
+	},
 };
 </script>
 
