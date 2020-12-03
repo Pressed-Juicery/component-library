@@ -1,9 +1,12 @@
 <template>
 	<div :class="$style.root" v-if="convertedButtonLabels">
 		<div
-			v-for="(buttonLabel, index) in buttonLabels"
-			:class="[$style.button, { [$style.isActive]: buttonLabel === selectedLabel }]"
-			@click="$emit('change', buttonLabel)"
+			v-for="(buttonLabel, index) in convertedButtonLabels"
+			:class="[
+				$style.button,
+				{ [$style.isActive]: buttonLabel === selectedLabel || buttonLabel['heading'] === selectedLabel }
+			]"
+			@click="$emit('change', isObject(buttonLabel) ? buttonLabel['heading'] : buttonLabel)"
 			:key="index"
 		>
 			{{ buttonLabel }}
