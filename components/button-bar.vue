@@ -9,9 +9,9 @@
 			@click="$emit('change', isObject(buttonLabel) ? buttonLabel['heading'] : buttonLabel)"
 			:key="index"
 		>
-			<div v-if="isObject(buttonLabel)" :class="$style.twoColLabel">
+			<div v-if="isObject(buttonLabel)">
 				{{ buttonLabel['heading'] }}
-				<div :class="$style.sublabel">{{ buttonLabel['subheading'] }}</div>
+				<div :class="$style.subheading">{{ buttonLabel['subheading'] }}</div>
 			</div>
 
 			<div v-else>{{ buttonLabel }}</div>
@@ -85,11 +85,7 @@ export default {
 		background-color: $beige;
 	}
 
-	.twoColLabel {
-		flex-flow: column;
-	}
-
-	.sublabel {
+	.subheading {
 		@include text-body-small();
 		@include text-subtle();
 	}
