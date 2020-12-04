@@ -64,6 +64,8 @@ export default {
 	.button {
 		flex: 1;
 		text-align: center;
+		display: grid;
+		place-items: center;
 		padding: $spacing-05;
 		border: $border-light;
 		border-right: 0;
