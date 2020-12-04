@@ -27,7 +27,7 @@ export function Overview() {
 		},
 	};
 }
-export function DoubleColumnAsArray() {
+export function SecondRowAsArray() {
 	return {
 		components: { ButtonBar },
 		template: `
@@ -50,7 +50,7 @@ export function DoubleColumnAsArray() {
 	};
 }
 
-export function DoubleColumnAsObject() {
+export function SecondRowAsObject() {
 	return {
 		components: { ButtonBar },
 		template: `
