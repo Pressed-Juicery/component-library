@@ -55,6 +55,7 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/variables';
+	@import '../styles/mixins';
 
 	.root {
 		display: flex;
