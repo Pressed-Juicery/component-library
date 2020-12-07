@@ -13,9 +13,11 @@
 			</label>
 		</div>
 
-		<div :class="[$style.row, $style.grid, { [$style.alignBottom]: !hasError }]">
+		<div :class="[$style.row, $style.grid]">
 			<div>
-				<label :class="$style.label" for="expiration-date">Expiration Date</label>
+				<label :class="$style.label" for="expiration-date">
+					Exp<span :class="[$style.unabbreviated]">iration</span><span :class="[$style.abbreviated]">.</span> Date
+				</label>
 				<div id="expiration-date" :class="$style.input"></div>
 
 				<label for="expiration-date"
@@ -26,7 +28,7 @@
 			</div>
 
 			<div>
-				<label :class="$style.label" for="cvv">Security Code</label>
+				<label :class="$style.label" for="cvv">CVV</label>
 				<div id="cvv" :class="$style.input"></div>
 
 				<label v-if="fields.cvv.isTouched && !fields.cvv.isValid"
@@ -116,14 +118,6 @@ export default {
 		};
 	},
 
-	computed: {
-		hasError() {
-			return (this.fields.number.isTouched && !this.fields.number.isValid)
-				|| (this.fields.cvv.isTouched && !this.fields.cvv.isValid)
-				|| (this.fields.postalCode.isTouched && !this.fields.postalCode.isValid);
-		},
-	},
-
 	created() {
 		this.initializeHostedFields();
 	},
@@ -203,10 +197,6 @@ export default {
 		grid-gap: $spacing-05;
 	}
 
-	.alignBottom {
-		align-items: flex-end;
-	}
-
 	.label {
 		@include label();
 	}
@@ -215,9 +205,23 @@ export default {
 		@include text-error();
 	}
 
+	.abbreviated {
+		display: none;
+	}
+
 	@media (max-width: $max-width-small) {
 		.grid {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: $max-width-extra-small) {
+		.abbreviated {
+			display: inline;
+		}
+
+		.unabbreviated {
+			display: none;
 		}
 	}
 </style>
