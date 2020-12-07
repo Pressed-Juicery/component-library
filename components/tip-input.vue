@@ -52,7 +52,7 @@ export default {
 	data() {
 		return {
 			selectedLabel: '15%',
-			selectedValue: '%',
+			selectedValue: '$',
 			customInputValue: 0,
 			labels: ['15%', '20%', '25%', 'Other', 'No Tip'],
 		};
