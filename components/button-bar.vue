@@ -4,6 +4,7 @@
 			v-for="(buttonLabel, index) in convertedButtonLabels"
 			:class="[
 				$style.button,
+				{[$style.isSmall]: small},
 				{ [$style.isActive]: buttonLabel === selectedLabel || buttonLabel['heading'] === selectedLabel }
 			]"
 			@click="$emit('change', isObject(buttonLabel) ? buttonLabel['heading'] : buttonLabel)"
@@ -28,6 +29,9 @@ export default {
 		},
 		selectedLabel: {
 			type: String,
+		},
+		small: {
+			type: Boolean,
 		},
 	},
 	methods: {
@@ -81,6 +85,10 @@ export default {
 			border-top-right-radius: $border-radius;
 			border-bottom-right-radius: $border-radius;
 		}
+	}
+
+	.isSmall {
+		padding: $spacing-03;
 	}
 
 	.isActive {
