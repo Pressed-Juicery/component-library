@@ -126,7 +126,8 @@ export default {
 		text-align: right;
 	}
 
-	.dashes {
+	.dashes,
+	.tipAmount {
 		@include text-bold();
 	}
 
