@@ -54,7 +54,7 @@ export default {
 			selectedLabel: '15%',
 			selectedValue: '$',
 			customInputValue: 0,
-			labels: ['15%', '20%', '25%', 'Other', 'No Tip'],
+			labels: ['15%', '20%', '25%', 'Other'],
 		};
 	},
 	computed: {
