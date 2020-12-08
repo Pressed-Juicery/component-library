@@ -39,6 +39,11 @@
 			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
 		</div>
 
+		<div :class="[$style.row, $style.rowGroup]">
+			<div>Tip</div>
+			<div :class="$style.tipAmount">{{ formatCurrency(cart.tip) }}</div>
+		</div>
+
 		<div :class="[$style.totalRow, $style.rowGroup]">
 			<div :class="$style.totalLabel">Estimated Total</div>
 			<div :class="$style.total">{{ formatCurrency(cart.total) }}</div>
