@@ -17,6 +17,7 @@ export function Overview() {
 					subtotal: 100,
 					total: 150.5,
 					isShippingAvailable: true,
+					tip: 1.35,
 				},
 			};
 		},
@@ -36,6 +37,7 @@ export function ShippingDeliveryPrice() {
 					total: 150.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 40,
+					tip: 3,
 				},
 			};
 		},
@@ -55,6 +57,7 @@ export function FreeShipping() {
 					total: 150.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 0,
+					tip: 2.75,
 				},
 			};
 		},
@@ -73,6 +76,7 @@ export function UnavailableShipping() {
 					subtotal: 100,
 					total: 150.5,
 					isShippingAvailable: false,
+					tip: 0,
 				},
 			};
 		},
@@ -95,6 +99,7 @@ export function Discounts() {
 						{ name: 'VIP Member Savings', totalDiscount: 2.5 },
 						{ name: 'Points Redemption', totalDiscount: 6.5 },
 					],
+					tip: 0,
 				},
 			};
 		},
@@ -117,6 +122,7 @@ export function Pickup() {
 					fulfillmentSelection: {
 						method: 'Pickup',
 					},
+					tip: 2,
 				},
 			};
 		},
@@ -139,6 +145,7 @@ export function LocalDelivery() {
 					fulfillmentSelection: {
 						method: 'Local Delivery',
 					},
+					tip: 4.05,
 				},
 			};
 		},
@@ -161,6 +168,7 @@ export function NationwideShipping() {
 					fulfillmentSelection: {
 						method: 'Nationwide Shipping',
 					},
+					tip: 3.25,
 				},
 			};
 		},
