@@ -8,17 +8,11 @@ export default {
 export function Overview() {
 	return {
 		components: { ButtonBar },
-		template: `
-			<button-bar
-				:button-labels="buttonLabels"
-				:selected-label="selectedLabel"
-				@change="onChange"
-			/>
-		`,
+		template: '<button-bar :buttons="buttons" :selected="selected" @change="onChange" />',
 		data() {
 			return {
-				selectedLabel: 'Pick Up',
-				buttonLabels: [
+				selected: null,
+				buttons: [
 					{ heading: 'Pick Up' },
 					{ heading: 'Delivery' },
 					{ heading: 'Shipping' },
@@ -27,7 +21,7 @@ export function Overview() {
 		},
 		methods: {
 			onChange(value) {
-				this.selectedLabel = value;
+				this.selected = value;
 			},
 		},
 	};
@@ -35,17 +29,11 @@ export function Overview() {
 export function SecondRow() {
 	return {
 		components: { ButtonBar },
-		template: `
-			<button-bar
-				:button-labels="buttonLabels"
-				:selected-label="selectedLabel"
-				@change="onChange"
-			/>
-		`,
+		template: '<button-bar :buttons="buttons" :selected="selected" @change="onChange" />',
 		data() {
 			return {
-				selectedLabel: 'Test 2',
-				buttonLabels: [
+				selected: null,
+				buttons: [
 					{ heading: 'Test 1', subheading: 'Test 1 Sub' },
 					{ heading: 'Test 2', subheading: 'Test 2 Sub' },
 					{ heading: 'Test 3', subheading: 'Test 3 Sub' },
@@ -55,7 +43,7 @@ export function SecondRow() {
 		},
 		methods: {
 			onChange(value) {
-				this.selectedLabel = value;
+				this.selected = value;
 			},
 		},
 	};
