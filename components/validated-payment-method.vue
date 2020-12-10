@@ -15,9 +15,7 @@
 
 		<div :class="[$style.row, $style.grid]">
 			<div>
-				<label :class="$style.label" for="expiration-date">
-					Exp<span :class="[$style.unabbreviated]">iration</span><span :class="[$style.abbreviated]">.</span> Date
-				</label>
+				<label :class="$style.label" for="expiration-date">Exp. Date</label>
 				<div id="expiration-date" :class="$style.input"></div>
 
 				<label for="expiration-date"
@@ -205,23 +203,9 @@ export default {
 		@include text-error();
 	}
 
-	.abbreviated {
-		display: none;
-	}
-
 	@media (max-width: $max-width-small) {
 		.grid {
 			grid-template-columns: 1fr;
-		}
-	}
-
-	@media (max-width: $max-width-extra-small) {
-		.abbreviated {
-			display: inline;
-		}
-
-		.unabbreviated {
-			display: none;
 		}
 	}
 </style>
