@@ -61,9 +61,7 @@ export default {
 	computed: {
 		buttons() {
 			return this.labels.map(label => {
-				if (isNaN(parseInt(label, 10))) { // eslint-disable-line no-restricted-globals
-					return label;
-				}
+				if (label === 'Other') return { heading: label };
 
 				return {
 					heading: label,
