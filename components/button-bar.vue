@@ -4,17 +4,15 @@
 			v-for="(buttonLabel, index) in buttonLabels"
 			:class="[
 				$style.button,
-				{ [$style.isActive]: buttonLabel === selectedLabel || buttonLabel['heading'] === selectedLabel }
+				{ [$style.isActive]: buttonLabel.heading === selectedLabel }
 			]"
-			@click="$emit('change', isObject(buttonLabel) ? buttonLabel['heading'] : buttonLabel)"
+			@click="$emit('change', buttonLabel.heading)"
 			:key="index"
 		>
-			<div v-if="isObject(buttonLabel)">
-				{{ buttonLabel['heading'] }}
-				<div :class="$style.subheading">{{ buttonLabel['subheading'] }}</div>
+			<div>
+				<div>{{ buttonLabel.heading }}</div>
+				<div :class="$style.subheading">{{ buttonLabel.subheading }}</div>
 			</div>
-
-			<div v-else>{{ buttonLabel }}</div>
 		</div>
 	</div>
 </template>
