@@ -1,17 +1,17 @@
 <template>
 	<div :class="$style.root">
 		<div
-			v-for="(buttonLabel, index) in buttonLabels"
+			v-for="(button, index) in buttons"
 			:class="[
 				$style.button,
-				{ [$style.isActive]: buttonLabel.heading === selectedLabel }
+				{ [$style.isActive]: button === selected }
 			]"
-			@click="$emit('change', buttonLabel.heading)"
+			@click="$emit('change', button)"
 			:key="index"
 		>
 			<div>
-				<div>{{ buttonLabel.heading }}</div>
-				<div :class="$style.subheading">{{ buttonLabel.subheading }}</div>
+				<div>{{ button.heading }}</div>
+				<div :class="$style.subheading">{{ button.subheading }}</div>
 			</div>
 		</div>
 	</div>
@@ -20,12 +20,12 @@
 <script>
 export default {
 	props: {
-		buttonLabels: {
+		buttons: {
 			type: Array,
 			required: true,
 		},
-		selectedLabel: {
-			type: String,
+		selected: {
+			type: Object,
 		},
 	},
 };
