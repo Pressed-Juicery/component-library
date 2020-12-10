@@ -8,90 +8,75 @@ export default {
 export function Overview() {
 	return {
 		components: { ButtonBar },
-		template: `
-			<button-bar
-				:button-labels="['Pick Up', 'Delivery', 'Shipping']"
-				:selected-label="selectedLabel"
-				@change="onChange"
-			/>
-		`,
+		template: '<button-bar :buttons="buttons" :selected="selected" @change="onChange" />',
 		data() {
 			return {
-				selectedLabel: 'Pick Up',
+				selected: null,
+				buttons: [
+					{ heading: 'Pick Up' },
+					{ heading: 'Delivery' },
+					{ heading: 'Shipping' },
+				],
 			};
+		},
+		created() {
+			this.selected = this.buttons[0];
 		},
 		methods: {
 			onChange(value) {
-				this.selectedLabel = value;
+				this.selected = value;
 			},
 		},
 	};
 }
-export function SecondRowAsArray() {
+export function SecondRow() {
 	return {
 		components: { ButtonBar },
-		template: `
-			<button-bar
-				:button-labels="['TestOne', ['TestTwo', 'TestTwoSubheading'], 'TestThree']"
-				:selected-label="selectedLabel"
-				@change="onChange"
-			/>
-		`,
+		template: '<button-bar :buttons="buttons" :selected="selected" @change="onChange" />',
 		data() {
 			return {
-				selectedLabel: 'TestTwo',
+				selected: null,
+				buttons: [
+					{ heading: 'Test 1', subheading: 'Test 1 Sub' },
+					{ heading: 'Test 2', subheading: 'Test 2 Sub' },
+					{ heading: 'Test 3', subheading: 'Test 3 Sub' },
+					{ heading: 'Test 4' },
+				],
 			};
+		},
+		created() {
+			this.selected = this.buttons[0];
 		},
 		methods: {
 			onChange(value) {
-				this.selectedLabel = value;
+				this.selected = value;
 			},
 		},
 	};
 }
 
-export function SecondRowAsObject() {
-	return {
-		components: { ButtonBar },
-		template: `
-			<button-bar
-				:button-labels="['TestOne', { heading: 'TestTwo', subheading: 'TestSubheading' }, 'TestThree']"
-				:selected-label="selectedLabel"
-				@change="onChange"
-			/>
-		`,
-		data() {
-			return {
-				selectedLabel: 'TestTwo',
-			};
-		},
-		methods: {
-			onChange(value) {
-				this.selectedLabel = value;
-			},
-		},
-	};
-}
 
 export function Small() {
 	return {
 		components: { ButtonBar },
-		template: `
-			<button-bar
-				:small="true"
-				:button-labels="['TestOne', 'TestTwo', 'TestThree']"
-				:selected-label="selectedLabel"
-				@change="onChange"
-			/>
-		`,
+		template: '<button-bar :buttons="buttons" :selected="selected" @change="onChange" :small="true" />',
 		data() {
 			return {
-				selectedLabel: 'TestTwo',
+				selected: null,
+				buttons: [
+					{ heading: 'Test 1' },
+					{ heading: 'Test 2' },
+					{ heading: 'Test 3' },
+					{ heading: 'Test 4' },
+				],
 			};
+		},
+		created() {
+			this.selected = this.buttons[0];
 		},
 		methods: {
 			onChange(value) {
-				this.selectedLabel = value;
+				this.selected = value;
 			},
 		},
 	};
