@@ -28,12 +28,12 @@
 </template>
 
 <script>
+import { hasLowercase, hasMinimumLength, hasNumber, hasSpecialCharacter, hasUppercase } from '../utilities/validators';
 import Checkmark from './icons/checkmark';
 import EyeActive from './icons/eye-active';
 import EyeInactive from './icons/eye-inactive';
 import RedX from './icons/red-x';
 import { getRandom } from '../utilities/get-random';
-import { hasMinimumLength, hasNumber, hasUppercase, hasLowercase, hasSpecialCharacter } from '../utilities/validators';
 
 export default {
 	components: { Checkmark, EyeActive, EyeInactive, RedX },
@@ -89,7 +89,7 @@ export default {
 			return this.requirements.every(requirement => requirement.isValid(this.model));
 		},
 	},
-}
+};
 </script>
 
 <style module lang="scss">
