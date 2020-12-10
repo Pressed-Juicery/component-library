@@ -10,7 +10,7 @@ export function Overview() {
 		components: { ButtonBar },
 		template: `
 			<button-bar
-				:button-labels="['Pick Up', 'Delivery', 'Shipping']"
+				:button-labels="buttonLabels"
 				:selected-label="selectedLabel"
 				@change="onChange"
 			/>
@@ -18,6 +18,11 @@ export function Overview() {
 		data() {
 			return {
 				selectedLabel: 'Pick Up',
+				buttonLabels: [
+					{ heading: 'Pick Up' },
+					{ heading: 'Delivery' },
+					{ heading: 'Shipping' },
+				],
 			};
 		},
 		methods: {
@@ -32,14 +37,20 @@ export function SecondRowAsArray() {
 		components: { ButtonBar },
 		template: `
 			<button-bar
-				:button-labels="['TestOne', ['TestTwo', 'TestTwoSubheading'], 'TestThree']"
+				:button-labels="buttonLabels"
 				:selected-label="selectedLabel"
 				@change="onChange"
 			/>
 		`,
 		data() {
 			return {
-				selectedLabel: 'TestTwo',
+				selectedLabel: 'Test 2',
+				buttonLabels: [
+					{ heading: 'Test 1', subheading: 'Test 1 Sub' },
+					{ heading: 'Test 2', subheading: 'Test 2 Sub' },
+					{ heading: 'Test 3', subheading: 'Test 3 Sub' },
+					{ heading: 'Test 4' },
+				],
 			};
 		},
 		methods: {
