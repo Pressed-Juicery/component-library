@@ -10,10 +10,8 @@
 			@click="$emit('change', button)"
 			:key="index"
 		>
-			<div>
-				<div>{{ button.heading }}</div>
-				<div :class="$style.subheading">{{ button.subheading }}</div>
-			</div>
+			<div>{{ button.heading }}</div>
+			<div :class="$style.subheading">{{ button.subheading }}</div>
 		</div>
 	</div>
 </template>
@@ -44,6 +42,7 @@ export default {
 
 	.button {
 		flex: 1;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
