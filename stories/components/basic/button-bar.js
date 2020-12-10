@@ -32,7 +32,7 @@ export function Overview() {
 		},
 	};
 }
-export function SecondRowAsArray() {
+export function SecondRow() {
 	return {
 		components: { ButtonBar },
 		template: `
