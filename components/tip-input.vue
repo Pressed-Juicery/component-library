@@ -83,8 +83,7 @@ export default {
 			this.selectedButton = value;
 			this.customInputValue = 0;
 
-			// eslint-disable-next-line no-restricted-globals
-			if (isNaN(parseInt(this.selectedLabel, 10))) this.$emit('change', 0);
+			if (this.selectedButton.heading === 'Other') this.$emit('change', 0);
 			else this.emitSelectedTip();
 		},
 		handleValueChange(value) {
