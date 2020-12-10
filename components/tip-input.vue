@@ -9,8 +9,8 @@
 		</div>
 		<button-bar
 			:class="$style.mainButtons"
-			:buttonLabels="buttonLabels"
-			:selectedLabel="selectedLabel"
+			:buttons="buttons"
+			:selected="selectedButton"
 			@change="handleButtonChange"
 		></button-bar>
 
@@ -19,8 +19,8 @@
 			<div :class="$style.tipWrapper">
 				<button-bar
 					:small="true"
-					:buttonLabels="['$', '%']"
-					:selectedLabel="selectedValue"
+					:buttons="customInputOptions"
+					:selected="customInputSelected"
 					@change="handleValueChange"
 				></button-bar>
 				<validated-input
@@ -45,20 +45,21 @@ export default {
 	components: { ButtonBar, ValidatedInput },
 	props: {
 		subtotal: {
-			required: true,
 			type: Number,
+			required: true,
 		},
 	},
 	data() {
 		return {
-			selectedLabel: '15%',
-			selectedValue: '$',
+			selectedButton: null,
+			customInputSelected: null,
+			customInputOptions: [{ heading: '$' }, { heading: '%' }],
 			customInputValue: 0,
 			labels: ['15%', '20%', '25%', 'Other'],
 		};
 	},
 	computed: {
-		buttonLabels() {
+		buttons() {
 			return this.labels.map(label => {
 				if (isNaN(parseInt(label, 10))) { // eslint-disable-line no-restricted-globals
 					return label;
@@ -71,17 +72,17 @@ export default {
 			});
 		},
 		isOtherSelected() {
-			return this.selectedLabel === 'Other';
+			return this.selectedButton.heading === 'Other';
 		},
 		tipValue() {
-			if (this.selectedValue === '%') return this.subtotal * (this.customInputValue / 100);
+			if (this.customInputSelected.heading === '%') return this.subtotal * (this.customInputValue / 100);
 
 			return this.customInputValue;
 		},
 	},
 	methods: {
 		handleButtonChange(value) {
-			this.selectedLabel = value;
+			this.selectedButton = value;
 			this.customInputValue = 0;
 
 			// eslint-disable-next-line no-restricted-globals
@@ -89,14 +90,14 @@ export default {
 			else this.emitSelectedTip();
 		},
 		handleValueChange(value) {
-			this.selectedValue = value;
+			this.customInputSelected = value;
 			this.emitCustomTip();
 		},
 		emitCustomTip() {
 			this.$emit('change', this.tipValue);
 		},
 		emitSelectedTip() {
-			this.$emit('change', this.subtotal * (parseInt(this.selectedLabel, 10) / 100));
+			this.$emit('change', this.subtotal * (parseInt(this.selectedButton.heading, 10) / 100));
 		},
 	},
 	filters: {
