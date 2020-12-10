@@ -61,25 +61,3 @@ export function SecondRowAsArray() {
 	};
 }
 
-export function SecondRowAsObject() {
-	return {
-		components: { ButtonBar },
-		template: `
-			<button-bar
-				:button-labels="['TestOne', { heading: 'TestTwo', subheading: 'TestSubheading' }, 'TestThree']"
-				:selected-label="selectedLabel"
-				@change="onChange"
-			/>
-		`,
-		data() {
-			return {
-				selectedLabel: 'TestTwo',
-			};
-		},
-		methods: {
-			onChange(value) {
-				this.selectedLabel = value;
-			},
-		},
-	};
-}
