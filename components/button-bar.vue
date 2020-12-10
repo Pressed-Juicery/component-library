@@ -27,6 +27,9 @@ export default {
 			type: Object,
 			required: true,
 		},
+		small: {
+			type: Boolean,
+		},
 	},
 };
 </script>
