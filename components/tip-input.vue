@@ -103,6 +103,10 @@ export default {
 		},
 	},
 	created() {
+		this.selectedButton = this.buttons[0];
+		this.customInputSelected = this.customInputOptions[0];
+	},
+	mounted() {
 		this.emitSelectedTip();
 	},
 };
