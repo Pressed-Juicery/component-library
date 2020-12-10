@@ -1,21 +1,19 @@
 <template>
-	<div :class="$style.root" v-if="convertedButtonLabels">
+	<div :class="$style.root">
 		<div
-			v-for="(buttonLabel, index) in convertedButtonLabels"
+			v-for="(buttonLabel, index) in buttonLabels"
 			:class="[
 				$style.button,
-				{[$style.isSmall]: small},
-				{ [$style.isActive]: buttonLabel === selectedLabel || buttonLabel['heading'] === selectedLabel }
+				{ [$style.isSmall]: small },
+				{ [$style.isActive]: buttonLabel.heading === selectedLabel }
 			]"
-			@click="$emit('change', isObject(buttonLabel) ? buttonLabel['heading'] : buttonLabel)"
+			@click="$emit('change', buttonLabel.heading)"
 			:key="index"
 		>
-			<div v-if="isObject(buttonLabel)">
-				{{ buttonLabel['heading'] }}
-				<div :class="$style.subheading">{{ buttonLabel['subheading'] }}</div>
+			<div>
+				<div>{{ buttonLabel.heading }}</div>
+				<div :class="$style.subheading">{{ buttonLabel.subheading }}</div>
 			</div>
-
-			<div v-else>{{ buttonLabel }}</div>
 		</div>
 	</div>
 </template>
@@ -34,25 +32,6 @@ export default {
 			type: Boolean,
 		},
 	},
-	methods: {
-		isObject(object) {
-			return Object.prototype.toString.call(object) === '[object Object]';
-		},
-	},
-	computed: {
-		convertedButtonLabels() {
-			return this.buttonLabels.map(label => {
-				if (Array.isArray(label)) {
-					return {
-						heading: label[0],
-						subheading: label[1],
-					};
-				}
-
-				return label;
-			});
-		},
-	},
 };
 
 </script>
@@ -61,15 +40,16 @@ export default {
 	@import '../styles/variables';
 	@import '../styles/mixins';
 
-	.root {
+	.root,
+	.button {
 		display: flex;
 	}
 
 	.button {
 		flex: 1;
+		justify-content: center;
+		align-items: center;
 		text-align: center;
-		display: grid;
-		place-items: center;
 		padding: $spacing-05;
 		border: $border-light;
 		border-right: 0;
