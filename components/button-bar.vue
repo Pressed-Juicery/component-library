@@ -35,15 +35,16 @@ export default {
 	@import '../styles/variables';
 	@import '../styles/mixins';
 
-	.root {
+	.root,
+	.button {
 		display: flex;
 	}
 
 	.button {
 		flex: 1;
+		justify-content: center;
+		align-items: center;
 		text-align: center;
-		display: grid;
-		place-items: center;
 		padding: $spacing-05;
 		border: $border-light;
 		border-right: 0;
