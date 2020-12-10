@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.root">
 		<div
-			v-for="(buttonLabel, index) in convertedButtonLabels"
+			v-for="(buttonLabel, index) in buttonLabels"
 			:class="[
 				$style.button,
 				{ [$style.isActive]: buttonLabel === selectedLabel || buttonLabel['heading'] === selectedLabel }
