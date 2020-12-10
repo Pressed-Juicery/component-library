@@ -7,6 +7,7 @@
 			Tipping is optional but appreciated.
 			Tips cannot be added after placing an order.
 		</div>
+
 		<button-bar
 			:class="$style.mainButtons"
 			:buttons="buttons"
