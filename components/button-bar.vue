@@ -26,6 +26,7 @@ export default {
 		},
 		selected: {
 			type: Object,
+			required: true,
 		},
 	},
 };
