@@ -28,7 +28,7 @@ export default {
 			type: String,
 		},
 	},
-					};
+};
 </script>
 
 <style module lang="scss">
