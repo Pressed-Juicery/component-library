@@ -19,6 +19,9 @@ export function Overview() {
 				],
 			};
 		},
+		created() {
+			this.selected = this.buttons[0];
+		},
 		methods: {
 			onChange(value) {
 				this.selected = value;
@@ -40,6 +43,9 @@ export function SecondRow() {
 					{ heading: 'Test 4' },
 				],
 			};
+		},
+		created() {
+			this.selected = this.buttons[0];
 		},
 		methods: {
 			onChange(value) {
