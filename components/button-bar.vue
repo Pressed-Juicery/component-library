@@ -1,5 +1,5 @@
 <template>
-	<div :class="$style.root" v-if="convertedButtonLabels">
+	<div :class="$style.root">
 		<div
 			v-for="(buttonLabel, index) in convertedButtonLabels"
 			:class="[
