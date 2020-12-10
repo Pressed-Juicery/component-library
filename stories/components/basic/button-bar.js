@@ -55,7 +55,6 @@ export function SecondRow() {
 	};
 }
 
-
 export function Small() {
 	return {
 		components: { ButtonBar },
@@ -64,9 +63,9 @@ export function Small() {
 			return {
 				selected: null,
 				buttons: [
-					{ heading: 'Test 1' },
-					{ heading: 'Test 2' },
-					{ heading: 'Test 3' },
+					{ heading: 'Test 1', subheading: 'Test 1 Sub' },
+					{ heading: 'Test 2', subheading: 'Test 2 Sub' },
+					{ heading: 'Test 3', subheading: 'Test 3 Sub' },
 					{ heading: 'Test 4' },
 				],
 			};
@@ -81,3 +80,4 @@ export function Small() {
 		},
 	};
 }
+
