@@ -53,22 +53,26 @@ export default {
 			selectedInputMethod: null,
 			customInputMethod: [{ heading: '$' }, { heading: '%' }],
 			customInputValue: 0,
-			labels: ['15%', '20%', '25%', 'Other'],
+			tipPercentages: [15, 20, 25], // eslint-disable-line no-magic-numbers
+			otherButton: { heading: 'Other' },
 		};
 	},
 	computed: {
 		buttons() {
-			return this.labels.map(label => {
-				if (label === 'Other') return { heading: label };
-
+			const buttons = this.tipPercentages.map(percent => {
 				return {
-					heading: label,
-					subheading: `(${formatCurrency(this.subtotal * (parseInt(label, 10) / 100))})`,
+					heading: `${percent}%`,
+					subheading: `(${formatCurrency(this.getTipAmount(percent))})`,
+					tipAmount: this.getTipAmount(percent),
 				};
 			});
+
+			buttons.push(this.otherButton);
+
+			return buttons;
 		},
 		isOtherSelected() {
-			return this.selectedButton.heading === 'Other';
+			return this.selectedButton === this.otherButton;
 		},
 		tipValue() {
 			if (this.selectedInputMethod.heading === '%') {
@@ -77,21 +81,21 @@ export default {
 
 			return this.roundCurrency(this.customInputValue);
 		},
-		selectedPercentage() {
-			return parseInt(this.selectedButton.heading, 10) / 100;
-		},
 	},
 	methods: {
 		changeButton(value) {
 			this.selectedButton = value;
 			this.customInputValue = 0;
 
-			if (this.selectedButton.heading === 'Other') this.emitValue(0);
-			else this.emitValue(this.subtotal * this.selectedPercentage);
+			if (this.selectedButton === this.extraButton) this.emitValue(0);
+			else this.emitValue(this.selectedButton.tipAmount);
 		},
 		changeInputMethod(value) {
 			this.selectedInputMethod = value;
 			this.emitValue(this.tipValue);
+		},
+		getTipAmount(percentage) {
+			return this.subtotal * (percentage / 100);
 		},
 		emitValue(value) {
 			this.$emit('change', value);
@@ -110,7 +114,7 @@ export default {
 		this.selectedInputMethod = this.customInputMethod[0];
 	},
 	mounted() {
-		this.emitValue(this.subtotal * this.selectedPercentage);
+		this.emitValue(this.selectedButton.tipAmount);
 	},
 };
 </script>
