@@ -89,18 +89,15 @@ export default {
 			this.selectedButton = selectedButton;
 			this.customInputValue = 0;
 
-			if (this.selectedButton === this.otherButton) this.emitValue(0);
-			else this.emitValue(this.selectedButton.tipAmount);
+			if (this.selectedButton === this.otherButton) this.$emit('change', 0);
+			else this.$emit('change', this.selectedButton.tipAmount);
 		},
 		changeInputMethod(selectedInputMethod) {
 			this.selectedInputMethod = selectedInputMethod;
-			this.emitValue(this.tipValue);
+			this.$emit('change', this.tipValue);
 		},
 		getTipAmount(percentage) {
 			return this.subtotal * (percentage / 100);
-		},
-		emitValue(value) {
-			this.$emit('change', value);
 		},
 		roundCurrency(value) {
 			return Math.round(value * 100) / 100;
