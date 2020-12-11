@@ -17,7 +17,7 @@
 			<div :class="$style.tipWrapper">
 				<button-bar
 					:small="true"
-					:buttons="customInputMethod"
+					:buttons="customInputMethods"
 					:selected="selectedInputMethod"
 					@change="changeInputMethod"
 				/>
@@ -51,7 +51,7 @@ export default {
 		return {
 			selectedButton: null,
 			selectedInputMethod: null,
-			customInputMethod: [{ heading: '$' }, { heading: '%' }],
+			customInputMethods: [{ heading: '$' }, { heading: '%' }],
 			customInputValue: 0,
 			tipPercentages: [15, 20, 25], // eslint-disable-line no-magic-numbers
 			otherButton: { heading: 'Other' },
@@ -111,7 +111,7 @@ export default {
 	},
 	created() {
 		this.selectedButton = this.buttons[0];
-		this.selectedInputMethod = this.customInputMethod[0];
+		this.selectedInputMethod = this.customInputMethods[0];
 	},
 	mounted() {
 		this.emitValue(this.selectedButton.tipAmount);
