@@ -111,8 +111,6 @@ export default {
 	created() {
 		this.selectedButton = this.buttons[0];
 		this.selectedInputMethod = this.customInputMethods[0];
-	},
-	mounted() {
 		this.emitValue(this.selectedButton.tipAmount);
 	},
 };
