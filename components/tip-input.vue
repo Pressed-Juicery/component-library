@@ -22,9 +22,9 @@
 					@change="changeInputMethod"
 				/>
 				<validated-input
+					:class="$style.input"
 					type="number"
 					inputmode="decimal"
-					:class="$style.input"
 					v-model="customInputValue"
 					@input="emitValue(tipValue)"
 				/>
