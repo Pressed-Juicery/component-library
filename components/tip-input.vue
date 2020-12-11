@@ -9,7 +9,7 @@
 			:class="$style.mainButtons"
 			:buttons="buttons"
 			:selected="selectedButton"
-			@change="buttonChange"
+			@change="changeButton"
 		/>
 
 		<div v-if="isOtherSelected">
@@ -82,7 +82,7 @@ export default {
 		},
 	},
 	methods: {
-		buttonChange(value) {
+		changeButton(value) {
 			this.selectedButton = value;
 			this.customInputValue = 0;
 
