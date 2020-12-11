@@ -8,16 +8,16 @@ export default {
 export function Overview() {
 	return {
 		components: { CartTotals },
-		template: '<cart-totals :cart="cart" />',
+		template: '<cart-totals :proposed-tip="tip" :cart="cart" />',
 
 		data() {
 			return {
+				tip: 30,
 				cart: {
 					originalSubtotal: 150,
 					subtotal: 100,
 					total: 150.5,
 					isShippingAvailable: true,
-					tip: 1.35,
 				},
 			};
 		},
@@ -37,7 +37,6 @@ export function ShippingDeliveryPrice() {
 					total: 150.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 40,
-					tip: 3,
 				},
 			};
 		},
@@ -57,7 +56,7 @@ export function FreeShipping() {
 					total: 150.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 0,
-					tip: 2.75,
+					tip: 0,
 				},
 			};
 		},
