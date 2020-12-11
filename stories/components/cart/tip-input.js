@@ -9,12 +9,12 @@ export function Overview() {
 	return {
 		components: { TipInput },
 		template: `
-		<div>
-			<tip-input :subtotal="subtotal" @change="handleChange">
-				<div>Tip Your Associate</div>
-			</tip-input>
-			Sample showing the current tip value: {{ tip }}
-		</div>
+			<div>
+				<tip-input :subtotal="subtotal" @change="handleChange">
+					<div>Tip Your Associate</div>
+				</tip-input>
+				Sample showing the current tip value: {{ tip }}
+			</div>
 		`,
 		data() {
 			return {
