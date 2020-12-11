@@ -77,6 +77,9 @@ export default {
 
 			return this.roundCurrency(this.customInputValue);
 		},
+		selectedPercentage() {
+			return parseInt(this.selectedButton.heading, 10) / 100;
+		},
 	},
 	methods: {
 		buttonChange(value) {
@@ -84,11 +87,11 @@ export default {
 			this.customInputValue = 0;
 
 			if (this.selectedButton.heading === 'Other') this.emitValue(0);
-			else this.emitValue(this.subtotal * (parseInt(this.selectedButton.heading, 10) / 100));
+			else this.emitValue(this.subtotal * this.selectedPercentage);
 		},
 		changeInputMethod(value) {
 			this.selectedInputMethod = value;
-			this.emitCustomTip();
+			this.emitValue(this.tipValue);
 		},
 		emitValue(value) {
 			this.$emit('change', value);
@@ -107,7 +110,7 @@ export default {
 		this.selectedInputMethod = this.customInputMethod[0];
 	},
 	mounted() {
-		this.emitValue(this.subtotal * (parseInt(this.selectedButton.heading, 10) / 100));
+		this.emitValue(this.subtotal * this.selectedPercentage);
 	},
 };
 </script>
