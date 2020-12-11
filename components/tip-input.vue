@@ -4,8 +4,7 @@
 			<slot />
 		</div>
 		<div :class="$style.message">
-			Tipping is optional but appreciated.
-			Tips cannot be added after placing an order.
+			Tips are nonrefundable and cannot be added after placing an order.
 		</div>
 
 		<button-bar
