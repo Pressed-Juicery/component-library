@@ -39,7 +39,7 @@
 			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
 		</div>
 
-		<div :class="[$style.row, $style.rowGroup]">
+		<div v-if="tip || tip === 0" :class="[$style.row, $style.rowGroup]">
 			<div>Tip</div>
 			<div :class="$style.tipAmount">{{ formatCurrency(tip) }}</div>
 		</div>
