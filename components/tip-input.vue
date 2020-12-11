@@ -26,6 +26,7 @@
 					inputmode="decimal"
 					:class="$style.input"
 					v-model="customInputValue"
+					@input="emitValue(tipValue)"
 				/>
 				<div>{{ tipValue | currency }}</div>
 			</div>
@@ -82,18 +83,15 @@ export default {
 			this.selectedButton = value;
 			this.customInputValue = 0;
 
-			if (this.selectedButton.heading === 'Other') this.$emit('change', 0);
-			else this.emitSelectedTip();
+			if (this.selectedButton.heading === 'Other') this.emitValue(0);
+			else this.emitValue(this.subtotal * (parseInt(this.selectedButton.heading, 10) / 100));
 		},
 		changeInputMethod(value) {
 			this.selectedInputMethod = value;
 			this.emitCustomTip();
 		},
-		emitCustomTip() {
-			this.$emit('change', this.tipValue);
-		},
-		emitSelectedTip() {
-			this.$emit('change', this.subtotal * (parseInt(this.selectedButton.heading, 10) / 100));
+		emitValue(value) {
+			this.$emit('change', value);
 		},
 		roundCurrency(value) {
 			return Math.round(value * 100) / 100;
@@ -109,7 +107,7 @@ export default {
 		this.selectedInputMethod = this.customInputMethod[0];
 	},
 	mounted() {
-		this.emitSelectedTip();
+		this.emitValue(this.subtotal * (parseInt(this.selectedButton.heading, 10) / 100));
 	},
 };
 </script>
