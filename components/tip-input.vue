@@ -92,8 +92,8 @@ export default {
 			if (this.selectedButton === this.otherButton) this.emitValue(0);
 			else this.emitValue(this.selectedButton.tipAmount);
 		},
-		changeInputMethod(value) {
-			this.selectedInputMethod = value;
+		changeInputMethod(selectedInputMethod) {
+			this.selectedInputMethod = selectedInputMethod;
 			this.emitValue(this.tipValue);
 		},
 		getTipAmount(percentage) {
