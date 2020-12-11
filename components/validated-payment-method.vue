@@ -163,8 +163,6 @@ export default {
 						this.fields[field].isTouched = true;
 					});
 
-					this.$emit('change', null);
-
 					return Promise.reject(error);
 				});
 		},
