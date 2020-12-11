@@ -11,7 +11,7 @@ export function Overview() {
 		template: `
 			<div>
 				<tip-input :subtotal="subtotal" @change="handleChange">
-					<div>Tip Your Associate</div>
+					<div style="font-weight: bolder">Tip Your Associate</div>
 				</tip-input>
 				Sample showing the current tip value: {{ tip }}
 			</div>
