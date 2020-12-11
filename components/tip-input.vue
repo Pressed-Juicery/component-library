@@ -25,6 +25,7 @@
 					:class="$style.input"
 					type="number"
 					inputmode="decimal"
+					min="0"
 					v-model="customInputValue"
 					@input="changeCustomInput"
 				/>
@@ -95,6 +96,10 @@ export default {
 		changeInputMethod(selectedInputMethod) {
 			this.selectedInputMethod = selectedInputMethod;
 			this.$emit('change', this.tipValue);
+		},
+		changeCustomInput(customInputValue) {
+			if (customInputValue < 0) this.customInputValue = 0;
+			else this.$emit('change', this.tipValue);
 		},
 		getTipAmount(percentage) {
 			return this.subtotal * (percentage / 100);
