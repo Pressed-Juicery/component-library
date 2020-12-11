@@ -4,6 +4,7 @@
 			v-for="(button, index) in buttons"
 			:class="[
 				$style.button,
+				{ [$style.isSmall]: small },
 				{ [$style.isActive]: button === selected }
 			]"
 			@click="$emit('change', button)"
@@ -25,6 +26,9 @@ export default {
 		selected: {
 			type: Object,
 			required: true,
+		},
+		small: {
+			type: Boolean,
 		},
 	},
 };
@@ -60,6 +64,10 @@ export default {
 			border-top-right-radius: $border-radius;
 			border-bottom-right-radius: $border-radius;
 		}
+	}
+
+	.isSmall {
+		padding: $spacing-03;
 	}
 
 	.isActive {
