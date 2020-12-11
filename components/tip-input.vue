@@ -17,9 +17,9 @@
 			<div :class="$style.tipWrapper">
 				<button-bar
 					:small="true"
-					:buttons="customInputOptions"
-					:selected="customInputSelected"
-					@change="handleValueChange"
+					:buttons="customInputMethod"
+					:selected="selectedInputMethod"
+					@change="changeInputMethod"
 				></button-bar>
 				<validated-input
 					type="number"
@@ -50,8 +50,8 @@ export default {
 	data() {
 		return {
 			selectedButton: null,
-			customInputSelected: null,
-			customInputOptions: [{ heading: '$' }, { heading: '%' }],
+			selectedInputMethod: null,
+			customInputMethod: [{ heading: '$' }, { heading: '%' }],
 			customInputValue: 0,
 			labels: ['15%', '20%', '25%', 'Other'],
 		};
@@ -71,7 +71,7 @@ export default {
 			return this.selectedButton.heading === 'Other';
 		},
 		tipValue() {
-			if (this.customInputSelected.heading === '%') {
+			if (this.selectedInputMethod.heading === '%') {
 				return this.roundCurrency(this.subtotal * (this.customInputValue / 100));
 			}
 
@@ -86,8 +86,8 @@ export default {
 			if (this.selectedButton.heading === 'Other') this.$emit('change', 0);
 			else this.emitSelectedTip();
 		},
-		handleValueChange(value) {
-			this.customInputSelected = value;
+		changeInputMethod(value) {
+			this.selectedInputMethod = value;
 			this.emitCustomTip();
 		},
 		emitCustomTip() {
@@ -107,7 +107,7 @@ export default {
 	},
 	created() {
 		this.selectedButton = this.buttons[0];
-		this.customInputSelected = this.customInputOptions[0];
+		this.selectedInputMethod = this.customInputMethod[0];
 	},
 	mounted() {
 		this.emitSelectedTip();
