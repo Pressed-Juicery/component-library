@@ -13,7 +13,7 @@
 			:buttons="buttons"
 			:selected="selectedButton"
 			@change="handleButtonChange"
-		></button-bar>
+		/>
 
 		<div v-if="isOtherSelected">
 			<div :class="$style.tipTitle">Enter Custom Tip</div>
