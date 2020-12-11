@@ -87,7 +87,7 @@ export default {
 			this.selectedButton = value;
 			this.customInputValue = 0;
 
-			if (this.selectedButton === this.extraButton) this.emitValue(0);
+			if (this.selectedButton === this.otherButton) this.emitValue(0);
 			else this.emitValue(this.selectedButton.tipAmount);
 		},
 		changeInputMethod(value) {
