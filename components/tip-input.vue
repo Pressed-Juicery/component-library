@@ -121,7 +121,7 @@ export default {
 
 	.message {
 		@include text-body-small();
-		color: $color-text-message;
+		color: $yellow;
 		margin-bottom: $spacing-05;
 	}
 
