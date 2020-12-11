@@ -20,14 +20,13 @@
 					:buttons="customInputMethod"
 					:selected="selectedInputMethod"
 					@change="changeInputMethod"
-				></button-bar>
+				/>
 				<validated-input
 					type="number"
 					inputmode="decimal"
 					:class="$style.input"
 					v-model="customInputValue"
-					@input="emitCustomTip"
-				></validated-input>
+				/>
 				<div>{{ tipValue | currency }}</div>
 			</div>
 		</div>
