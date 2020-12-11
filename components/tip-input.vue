@@ -26,7 +26,7 @@
 					type="number"
 					inputmode="decimal"
 					v-model="customInputValue"
-					@input="emitValue(tipValue)"
+					@input="changeCustomInput"
 				/>
 				<div>{{ tipValue | currency }}</div>
 			</div>
@@ -111,7 +111,7 @@ export default {
 	created() {
 		this.selectedButton = this.buttons[0];
 		this.selectedInputMethod = this.customInputMethods[0];
-		this.emitValue(this.selectedButton.tipAmount);
+		this.$emit('change', this.selectedButton.tipAmount);
 	},
 };
 </script>
