@@ -41,12 +41,12 @@
 
 		<div :class="[$style.row, $style.rowGroup]">
 			<div>Tip</div>
-			<div :class="$style.tipAmount">{{ formatCurrency(cart.tip) }}</div>
+			<div :class="$style.tipAmount">{{ formatCurrency(tip) }}</div>
 		</div>
 
 		<div :class="[$style.totalRow, $style.rowGroup]">
 			<div :class="$style.totalLabel">Estimated Total</div>
-			<div :class="$style.total">{{ formatCurrency(cart.total) }}</div>
+			<div :class="$style.total">{{ formatCurrency(proposedTip ? proposedTip + cart.total : cart.total) }}</div>
 		</div>
 	</div>
 </template>
@@ -59,6 +59,7 @@ export default {
 	components: { UpCaretIcon },
 
 	props: {
+		proposedTip: Number,
 		cart: {
 			type: Object,
 			required: true,
@@ -69,6 +70,12 @@ export default {
 		return {
 			isOpen: false,
 		};
+	},
+
+	computed: {
+		tip() {
+			return this.proposedTip || this.cart.tip;
+		},
 	},
 
 	methods: {
