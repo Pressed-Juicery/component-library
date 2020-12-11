@@ -85,8 +85,8 @@ export default {
 		},
 	},
 	methods: {
-		changeButton(value) {
-			this.selectedButton = value;
+		changeButton(selectedButton) {
+			this.selectedButton = selectedButton;
 			this.customInputValue = 0;
 
 			if (this.selectedButton === this.otherButton) this.emitValue(0);
