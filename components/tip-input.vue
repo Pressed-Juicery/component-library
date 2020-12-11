@@ -74,9 +74,11 @@ export default {
 			return this.selectedButton.heading === 'Other';
 		},
 		tipValue() {
-			if (this.customInputSelected.heading === '%') return this.subtotal * (this.customInputValue / 100);
+			if (this.customInputSelected.heading === '%') {
+				return this.roundCurrency(this.subtotal * (this.customInputValue / 100));
+			}
 
-			return this.customInputValue;
+			return this.roundCurrency(this.customInputValue);
 		},
 	},
 	methods: {
@@ -96,6 +98,9 @@ export default {
 		},
 		emitSelectedTip() {
 			this.$emit('change', this.subtotal * (parseInt(this.selectedButton.heading, 10) / 100));
+		},
+		roundCurrency(value) {
+			return Math.round(value * 100) / 100;
 		},
 	},
 	filters: {
