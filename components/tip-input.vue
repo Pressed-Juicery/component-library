@@ -60,10 +60,12 @@ export default {
 	computed: {
 		buttons() {
 			const buttons = this.tipPercentages.map(percent => {
+				const tipAmount = this.getTipAmount(percent);
+
 				return {
 					heading: `${percent}%`,
-					subheading: `(${formatCurrency(this.getTipAmount(percent))})`,
-					tipAmount: this.getTipAmount(percent),
+					subheading: `(${formatCurrency(tipAmount)})`,
+					tipAmount,
 				};
 			});
 
