@@ -142,7 +142,7 @@ export default {
 	.tipWrapper {
 		display: grid;
 		align-items: center;
-		grid-template-columns: 112px 133px auto;
+		grid-template-columns: 112px 128px auto;
 		grid-column-gap: $spacing-05;
 	}
 
