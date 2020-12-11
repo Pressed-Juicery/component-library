@@ -1,8 +1,6 @@
 <template>
 	<div>
-		<div :class="$style.title">
-			<slot />
-		</div>
+		<slot />
 		<div :class="$style.message">
 			Tipping is optional but appreciated. Tips are nonrefundable and cannot be added after placing an order.
 		</div>
@@ -120,10 +118,6 @@ export default {
 <style lang="scss" module>
 	@import '../styles/variables';
 	@import '../styles/mixins';
-
-	.title {
-		@include text-bolder();
-	}
 
 	.message {
 		@include text-body-small();
