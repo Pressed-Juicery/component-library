@@ -1,12 +1,17 @@
 <template>
 	<div :class="$style.root">
 		<div
-			v-for="(buttonLabel, index) in buttonLabels"
-			:class="[$style.button, { [$style.isActive]: buttonLabel === selectedLabel }]"
-			@click="$emit('change', buttonLabel)"
+			v-for="(button, index) in buttons"
+			:class="[
+				$style.button,
+				{ [$style.isSmall]: small },
+				{ [$style.isActive]: button === selected }
+			]"
+			@click="$emit('change', button)"
 			:key="index"
 		>
-			{{ buttonLabel }}
+			<div>{{ button.heading }}</div>
+			<div :class="$style.subheading">{{ button.subheading }}</div>
 		</div>
 	</div>
 </template>
@@ -14,12 +19,16 @@
 <script>
 export default {
 	props: {
-		buttonLabels: {
+		buttons: {
 			type: Array,
 			required: true,
 		},
-		selectedLabel: {
-			type: String,
+		selected: {
+			type: Object,
+			required: true,
+		},
+		small: {
+			type: Boolean,
 		},
 	},
 };
@@ -27,13 +36,18 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/variables';
+	@import '../styles/mixins';
 
-	.root {
+	.root,
+	.button {
 		display: flex;
 	}
 
 	.button {
 		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		text-align: center;
 		padding: $spacing-05;
 		border: $border-light;
@@ -52,7 +66,16 @@ export default {
 		}
 	}
 
+	.isSmall {
+		padding: $spacing-03;
+	}
+
 	.isActive {
 		background-color: $beige;
+	}
+
+	.subheading {
+		@include text-body-small();
+		@include text-subtle();
 	}
 </style>
