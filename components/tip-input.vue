@@ -91,7 +91,7 @@ export default {
 			this.customInputValue = 0;
 
 			if (this.selectedButton === this.otherButton) this.$emit('change', 0);
-			else this.$emit('change', this.selectedButton.tipAmount);
+			else this.$emit('change', this.roundCurrency(this.selectedButton.tipAmount));
 		},
 		changeInputMethod(selectedInputMethod) {
 			this.selectedInputMethod = selectedInputMethod;
@@ -116,7 +116,7 @@ export default {
 	created() {
 		this.selectedButton = this.buttons[0];
 		this.selectedInputMethod = this.customInputMethods[0];
-		this.$emit('change', this.selectedButton.tipAmount);
+		this.$emit('change', this.roundCurrency(this.selectedButton.tipAmount));
 	},
 };
 </script>
