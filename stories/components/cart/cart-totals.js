@@ -8,11 +8,10 @@ export default {
 export function Overview() {
 	return {
 		components: { CartTotals },
-		template: '<cart-totals :proposed-tip="tip" :cart="cart" />',
+		template: '<cart-totals :cart="cart" />',
 
 		data() {
 			return {
-				tip: 30,
 				cart: {
 					originalSubtotal: 150,
 					subtotal: 100,
@@ -56,7 +55,6 @@ export function FreeShipping() {
 					total: 150.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 0,
-					tip: 0,
 				},
 			};
 		},
@@ -75,7 +73,6 @@ export function UnavailableShipping() {
 					subtotal: 100,
 					total: 150.5,
 					isShippingAvailable: false,
-					tip: 0,
 				},
 			};
 		},
@@ -98,7 +95,6 @@ export function Discounts() {
 						{ name: 'VIP Member Savings', totalDiscount: 2.5 },
 						{ name: 'Points Redemption', totalDiscount: 6.5 },
 					],
-					tip: 0,
 				},
 			};
 		},
@@ -121,7 +117,6 @@ export function Pickup() {
 					fulfillmentSelection: {
 						method: 'Pickup',
 					},
-					tip: 2,
 				},
 			};
 		},
@@ -144,7 +139,6 @@ export function LocalDelivery() {
 					fulfillmentSelection: {
 						method: 'Local Delivery',
 					},
-					tip: 4.05,
 				},
 			};
 		},
@@ -167,7 +161,24 @@ export function NationwideShipping() {
 					fulfillmentSelection: {
 						method: 'Nationwide Shipping',
 					},
-					tip: 3.25,
+				},
+			};
+		},
+	};
+}
+
+export function Tip() {
+	return {
+		components: { CartTotals },
+		template: '<cart-totals :tip="tip" :cart="cart" />',
+
+		data() {
+			return {
+				tip: 5,
+				cart: {
+					originalSubtotal: 10,
+					subtotal: 10,
+					total: 10,
 				},
 			};
 		},
