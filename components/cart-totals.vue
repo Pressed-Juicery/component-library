@@ -39,9 +39,14 @@
 			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
 		</div>
 
+		<div v-if="tip || tip === 0" :class="[$style.row, $style.rowGroup]">
+			<div>Tip</div>
+			<div>{{ formatCurrency(tip) }}</div>
+		</div>
+
 		<div :class="[$style.totalRow, $style.rowGroup]">
 			<div :class="$style.totalLabel">Estimated Total</div>
-			<div :class="$style.total">{{ formatCurrency(cart.total) }}</div>
+			<div :class="$style.total">{{ formatCurrency(cart.total + (tip || 0)) }}</div>
 		</div>
 	</div>
 </template>
@@ -54,6 +59,7 @@ export default {
 	components: { UpCaretIcon },
 
 	props: {
+		tip: Number,
 		cart: {
 			type: Object,
 			required: true,

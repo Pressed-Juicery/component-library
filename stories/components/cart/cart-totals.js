@@ -166,3 +166,21 @@ export function NationwideShipping() {
 		},
 	};
 }
+
+export function Tip() {
+	return {
+		components: { CartTotals },
+		template: '<cart-totals :tip="tip" :cart="cart" />',
+
+		data() {
+			return {
+				tip: 5,
+				cart: {
+					originalSubtotal: 10,
+					subtotal: 10,
+					total: 10,
+				},
+			};
+		},
+	};
+}
