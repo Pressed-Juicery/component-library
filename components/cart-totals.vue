@@ -41,7 +41,7 @@
 
 		<div v-if="tip || tip === 0" :class="[$style.row, $style.rowGroup]">
 			<div>Tip</div>
-			<div :class="$style.tipAmount">{{ formatCurrency(tip) }}</div>
+			<div>{{ formatCurrency(tip) }}</div>
 		</div>
 
 		<div :class="[$style.totalRow, $style.rowGroup]">
@@ -127,8 +127,7 @@ export default {
 		text-align: right;
 	}
 
-	.dashes,
-	.tipAmount {
+	.dashes {
 		@include text-bold();
 	}
 
