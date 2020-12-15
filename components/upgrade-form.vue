@@ -103,6 +103,7 @@ export default {
 			this.$emit('submit', {
 				reloadAmount: this.selectedReloadAmount,
 				paymentMethod: this.selectedPaymentMethod,
+				acceptsSmsMarketing: this.acceptsSmsMarketing
 			});
 		},
 	},
