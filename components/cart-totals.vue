@@ -44,6 +44,11 @@
 			<div>{{ formatCurrency(tip) }}</div>
 		</div>
 
+		<div :class="[$style.row, $style.rowGroup]">
+			<div>Taxes</div>
+			<div>{{ formatCurrency(cart.taxes) }}</div>
+		</div>
+
 		<div :class="[$style.totalRow, $style.rowGroup]">
 			<div :class="$style.totalLabel">Estimated Total</div>
 			<div :class="$style.total">{{ formatCurrency(cart.total + (tip || 0)) }}</div>
