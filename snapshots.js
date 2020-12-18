@@ -41,6 +41,7 @@ const groups = [{
 		'CartTotals',
 		'CheckoutItemCard',
 		'PointsRedemption',
+		'TipInput',
 	],
 }, {
 	groupName: 'Components / Forms',
