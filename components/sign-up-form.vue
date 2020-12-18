@@ -44,6 +44,7 @@
 			<div :class="$style.birthdayMessage">So we can send you something sweet!</div>
 			<validated-birthday v-model="user.birthday" />
 		</div>
+
 		<validated-input
 			type="tel"
 			autocomplete="tel"
