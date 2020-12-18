@@ -173,7 +173,6 @@ export default {
 	}
 
 	.birthdayMessage {
-		@include text-body-small();
 		margin-bottom: $spacing-03;
 	}
 
