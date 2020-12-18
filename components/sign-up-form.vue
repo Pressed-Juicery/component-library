@@ -128,9 +128,6 @@ export default {
 					`,
 				}],
 				postal: [{
-					validator: isNotEmpty,
-					message: 'Please enter your ZIP code.',
-				}, {
 					validator: isZipCode,
 					message: 'Please enter a valid ZIP code.',
 				}],
