@@ -14,18 +14,15 @@ const mixins = [{
 	},
 	methods: {
 		handleAddItem(item) {
-			// eslint-disable-next-line no-console
-			console.log('add-item event:', item);
+			console.log('add-item event:', item); // eslint-disable-line no-console
 		},
 
 		handleChooseProduct() {
-			// eslint-disable-next-line no-console
-			console.log('choose-product event');
+			console.log('choose-product event'); // eslint-disable-line no-console
 		},
 
 		handleContinueShopping() {
-			// eslint-disable-next-line no-console
-			console.log('continue-shopping event');
+			console.log('continue-shopping event'); // eslint-disable-line no-console
 		},
 	},
 }];
