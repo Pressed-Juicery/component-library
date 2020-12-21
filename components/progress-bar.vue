@@ -28,8 +28,8 @@ export default {
 <style module lang="scss">
 	@import '../styles/variables';
 
-	$barBackground: #e9e0c3;
-	$barColor: #bf9033;
+	$barBackground: $goldenrod-light;
+	$barColor: $goldenrod;
 
 	.root {
 		position: relative;
