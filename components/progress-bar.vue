@@ -28,14 +28,11 @@ export default {
 <style module lang="scss">
 	@import '../styles/variables';
 
-	$barBackground: $goldenrod-light;
-	$barColor: $goldenrod;
-
 	.root {
 		position: relative;
 		height: $spacing-02;
 		border-radius: $spacing-02;
-		background-color: $barBackground;
+		background-color: $goldenrod-light;
 	}
 
 	.progressBar {
@@ -43,6 +40,6 @@ export default {
 		border-radius: $spacing-02;
 		left: 0;
 		height: 100%;
-		background-color: $barColor;
+		background-color: $goldenrod;
 	}
 </style>
