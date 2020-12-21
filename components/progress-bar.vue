@@ -38,6 +38,7 @@ export default {
 	.progressBar {
 		position: absolute;
 		border-radius: $spacing-02;
+		top: 0;
 		left: 0;
 		height: 100%;
 		background-color: $goldenrod;
