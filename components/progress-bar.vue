@@ -11,7 +11,10 @@ export default {
 			type: Number,
 			required: true,
 		},
-		current: Number,
+		current: {
+			type: Number,
+			default: 0,
+		},
 	},
 
 	computed: {
