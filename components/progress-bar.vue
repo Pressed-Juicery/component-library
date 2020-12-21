@@ -28,16 +28,19 @@ export default {
 <style module lang="scss">
 	@import '../styles/variables';
 
+	$height: $spacing-02;
+	$border-radius: $height / 2;
+
 	.root {
 		position: relative;
-		height: $spacing-02;
-		border-radius: $spacing-02 / 2;
+		height: $height;
+		border-radius: $border-radius;
 		background-color: $goldenrod-light;
 	}
 
 	.progressBar {
 		position: absolute;
-		border-radius: $spacing-02 / 2;
+		border-radius: $border-radius;
 		top: 0;
 		left: 0;
 		height: 100%;
