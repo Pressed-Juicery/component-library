@@ -3,6 +3,7 @@
 		:id="id"
 		:label="label"
 		:label-helper="labelHelper"
+		:help-text="helpText"
 		:error-message="errorMessage"
 		:value="model"
 		:rules="rules"
@@ -38,6 +39,7 @@ export default {
 	props: {
 		label: String,
 		labelHelper: String,
+		helpText: String,
 		errorMessage: String,
 		rules: Array,
 		value: null,
