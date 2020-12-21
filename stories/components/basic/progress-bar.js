@@ -9,13 +9,13 @@ export function Overview() {
 	return {
 		components: { ProgressBar },
 		template: `
-			<progress-bar :goal="goal" :progress="progress"/>
+			<progress-bar :goal="goal" :current="current"/>
 		`,
 
 		data() {
 			return {
 				goal: 100,
-				progress: 50,
+				current: 50,
 			};
 		},
 	};
