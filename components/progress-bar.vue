@@ -7,7 +7,10 @@
 <script>
 export default {
 	props: {
-		goal: Number,
+		goal: {
+			type: Number,
+			required: true,
+		},
 		current: Number,
 	},
 
