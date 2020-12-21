@@ -56,6 +56,7 @@ export { default as ProductOrderingSection } from './product-ordering-section';
 export { default as ProductUpsell } from './product-upsell';
 export { default as ProductReview } from './product-review.vue';
 export { default as ProductReviewForm } from './product-review-form.vue';
+export { default as ProgressBar } from './progress-bar';
 export { default as QuantitySelector } from './quantity-selector';
 export { default as QrCode } from './qr-code';
 export { default as RadioButton } from './radio-button';
