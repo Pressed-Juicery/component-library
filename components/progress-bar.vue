@@ -31,13 +31,13 @@ export default {
 	.root {
 		position: relative;
 		height: $spacing-02;
-		border-radius: $spacing-02;
+		border-radius: $spacing-02 / 2;
 		background-color: $goldenrod-light;
 	}
 
 	.progressBar {
 		position: absolute;
-		border-radius: $spacing-02;
+		border-radius: $spacing-02 / 2;
 		top: 0;
 		left: 0;
 		height: 100%;
