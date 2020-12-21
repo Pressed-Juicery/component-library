@@ -16,6 +16,12 @@
 			</div>
 		</div>
 
+		<div v-if="hasLimitedAvailability" :class="$style.availability">
+			<span :class="$style.availabilityLabel">
+				Product Limited To These Locations:</span>
+				{{ product.limitedAvailability }}
+		</div>
+
 		<div v-if="shouldShowCta" :class="$style.cta">
 			Just <span v-if="hasMemberSalePrice">{{ selectedVariant.memberSalePrice | currency }}</span>
 			<span :class="{ [$style.strikethrough]: hasMemberSalePrice }">
@@ -124,6 +130,9 @@ export default {
 				? `(+${formatCurrency(totalPrice)} Enhancements)`
 				: `(+${formatCurrency(totalPrice)} ${this.selectedAddons[0].name})`;
 		},
+		hasLimitedAvailability() {
+			return Boolean(this.product.limitedAvailability);
+		},
 	},
 	methods: {
 		addToCart() {
@@ -164,6 +173,14 @@ export default {
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: $spacing-06;
+	}
+
+	.availability {
+		margin-bottom: $spacing-06;
+	}
+
+	.availabilityLabel {
+		color: $color-text-legal;
 	}
 
 	.price {

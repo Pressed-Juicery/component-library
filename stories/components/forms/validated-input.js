@@ -1,4 +1,9 @@
-import { hasMinimumLength, isEmail, isNotEmpty, isValidPhoneNumber } from '../../../utilities/validators';
+import {
+	isEmail,
+	isNotEmpty,
+	isPassword,
+	isValidPhoneNumber,
+} from '../../../utilities/validators';
 import ValidatedInput from '../../../components/validated-input';
 
 export default {
@@ -77,22 +82,31 @@ export function Password() {
 	return {
 		components: { ValidatedInput },
 		template: `
-			<validated-input type="password"
-			                 label="Password"
-			                 v-model="password"
-			                 :rules="passwordRules" />
+			<validated-form>
+				<validated-input
+					type="password"
+					label="Password"
+					v-model="password"
+					:help-text="helpText"
+					:rules="passwordRules"
+				/>
+				<button>Submit</button>
+			</validated-form>
 		`,
 		data() {
 			return {
 				password: null,
 				passwordRules: [{
-					validator: isNotEmpty,
-					message: 'Please enter a password.',
-				}, {
-					validator: hasMinimumLength,
-					message: 'Passwords must be at least 6 characters long.',
-					options: { length: 6 },
+					validator: isPassword,
+					message: `
+						Passwords must have at least 8 characters, one uppercase letter,
+						one lowercase letter, and one special character (e.g. !@#$%^&*()).
+					`,
 				}],
+				helpText: `
+					Passwords must have at least 8 characters, one uppercase letter,
+					one lowercase letter, and one special character (e.g. !@#$%^&*()).
+				`,
 			};
 		},
 	};

@@ -4,6 +4,7 @@
 		<label v-if="labelHelper" :for="id">{{ labelHelper }}</label>
 		<slot />
 
+		<label v-if="!error && helpText" :for="id">{{ helpText }}</label>
 		<label v-if="error" :class="$style.error" :for="id">{{ error }}</label>
 	</div>
 </template>
@@ -16,6 +17,7 @@ export default {
 		id: String,
 		label: String,
 		labelHelper: String,
+		helpText: String,
 		errorMessage: String,
 		rules: Array,
 		value: null,

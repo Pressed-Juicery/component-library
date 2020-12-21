@@ -3,6 +3,7 @@
 		:id="id"
 		:label="label"
 		:label-helper="labelHelper"
+		:help-text="helpText"
 		:error-message="errorMessage"
 		:value="model"
 		:rules="rules"
@@ -18,6 +19,8 @@
 				v-bind="$attrs"
 				v-model="model"
 				@blur="isEager = true"
+				autocorrect="off"
+				autocapitalize="none"
 			>
 			<eye-active v-if="shouldShowPassword" :class="$style.eye" @click.native="shouldShowPassword = false" />
 			<eye-inactive v-else :class="$style.eye" @click.native="shouldShowPassword = true" />
@@ -36,6 +39,7 @@ export default {
 	props: {
 		label: String,
 		labelHelper: String,
+		helpText: String,
 		errorMessage: String,
 		rules: Array,
 		value: null,
@@ -56,7 +60,9 @@ export default {
 		},
 
 		isPasswordInput() {
-			return this.$attrs.type.toLowerCase() === 'password';
+			const type = this.$attrs.type;
+
+			return type && type.toLowerCase() === 'password';
 		},
 
 		passwordInputType() {

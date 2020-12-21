@@ -11,7 +11,7 @@ export function hasExactLength(value, { length }) {
 }
 
 export function hasMinimumLength(value, { length }) {
-	return isEmpty(value) || value.length >= length;
+	return value.length >= length;
 }
 
 export function isEmail(value) {
@@ -74,4 +74,28 @@ export function isGreaterThanOrEqualTo(value, { minimum }) {
 
 export function isInteger(value) {
 	return isEmpty(value) || (isNumber(value) && Number(value) % 1 === 0);
+}
+
+export function hasNumber(value) {
+	return /[0-9]/.test(value);
+}
+
+export function hasUppercase(value) {
+	return /[A-Z]/.test(value);
+}
+
+export function hasLowercase(value) {
+	return /[a-z]/.test(value);
+}
+
+export function hasSpecialCharacter(value) {
+	return /[~!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g.test(value); // eslint-disable-line no-useless-escape
+}
+
+export function isPassword(value) {
+	return hasMinimumLength(value, { length: 8 })
+		&& hasNumber(value)
+		&& hasUppercase(value)
+		&& hasLowercase(value)
+		&& hasSpecialCharacter(value);
 }

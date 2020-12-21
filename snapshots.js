@@ -29,6 +29,7 @@ const groups = [{
 		'StoreAddress',
 		'StepProgressBar',
 		'Sidebar',
+		'ToggleSwitch',
 		'WalletDrawer',
 	],
 }, {
@@ -40,6 +41,7 @@ const groups = [{
 		'CartTotals',
 		'CheckoutItemCard',
 		'PointsRedemption',
+		'TipInput',
 	],
 }, {
 	groupName: 'Components / Forms',
@@ -55,6 +57,7 @@ const groups = [{
 		'ValidatedCheckbox',
 		'ValidatedForm',
 		'ValidatedInput',
+		'ValidatedPassword',
 		'ValidatedPaymentMethod',
 		'ValidatedSelect',
 		'ValidatedStarRating',

@@ -15,7 +15,7 @@
 
 		<div :class="[$style.row, $style.grid]">
 			<div>
-				<label :class="$style.label" for="expiration-date">Expiration Date</label>
+				<label :class="$style.label" for="expiration-date">Exp. Date</label>
 				<div id="expiration-date" :class="$style.input"></div>
 
 				<label for="expiration-date"
@@ -26,7 +26,7 @@
 			</div>
 
 			<div>
-				<label :class="$style.label" for="cvv">Security Code</label>
+				<label :class="$style.label" for="cvv">CVV</label>
 				<div id="cvv" :class="$style.input"></div>
 
 				<label v-if="fields.cvv.isTouched && !fields.cvv.isValid"
@@ -110,6 +110,7 @@ export default {
 					isValid: false,
 					minlength: 5,
 					maxlength: 5,
+					type: 'number',
 				},
 			},
 		};
@@ -161,8 +162,6 @@ export default {
 					Object.keys(this.fields).forEach(field => {
 						this.fields[field].isTouched = true;
 					});
-
-					this.$emit('change', null);
 
 					return Promise.reject(error);
 				});
