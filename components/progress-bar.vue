@@ -1,6 +1,6 @@
 <template>
 	<div :class="$style.root">
-		<div :class="$style.progressBar" :style="{ width: fill }"></div>
+		<div :class="$style.progressBar" :style="{ width: progressPercentage }"></div>
 	</div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
 	},
 
 	computed: {
-		fill() {
+		progressPercentage() {
 			return `${(this.current / this.goal) * 100}%`;
 		},
 	},
