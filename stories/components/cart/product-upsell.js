@@ -15,7 +15,7 @@ const mixins = [{
 	methods: {
 		handleAddItem(item) {
 			// eslint-disable-next-line no-console
-			console.log('item:', item);
+			console.log('add-item event:', item);
 		},
 
 		handleChooseProduct() {
@@ -25,7 +25,7 @@ const mixins = [{
 
 		handleContinueShopping() {
 			// eslint-disable-next-line no-console
-			console.log('continue shopping event');
+			console.log('continue-shopping event');
 		},
 	},
 }];
