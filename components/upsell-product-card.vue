@@ -47,15 +47,6 @@ export default {
 <style module lang="scss">
 	@import '../styles/mixins';
 
-	.root {
-		margin-bottom: $spacing-03;
-		cursor: pointer;
-
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-	}
-
 	.card {
 		display: flex;
 		padding: $spacing-04;
