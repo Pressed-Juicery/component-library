@@ -31,13 +31,13 @@ export function Overview() {
 						}],
 					}, {
 						variants: [{
-							id: 123,
+							id: 124,
 							name: 'Cleanse 2',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
 					}, {
 						variants: [{
-							id: 123,
+							id: 125,
 							name: 'Cleanse 3',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
