@@ -1,13 +1,13 @@
 <template>
 	<card v-if="upsell && upsell.products && upsell.products.length" :class="{[$style.isOpen]: isOpen}">
 		<div :class="$style.header" @click="$emit('toggle-accordion')">
-			<div>{{ upsell && upsell.title }}</div>
+			<div>{{ upsell.title }}</div>
 			<arrow-icon :class="$style.arrow" />
 		</div>
 
 		<div v-if="isOpen" :class="$style.body">
 			<div :class="$style.bodyText">
-				{{ upsell && upsell.description }}
+				{{upsell.description }}
 				<img v-if="firstUpsellItem
 					&& firstUpsellItem.variants
 					&& !doesQualifyForSingleProductUpsell"
