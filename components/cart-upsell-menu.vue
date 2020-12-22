@@ -32,7 +32,7 @@ export default {
 	}
 
 	.description {
-		@include text-subtle;
+		@include text-subtle();
 	}
 
 	.title,
