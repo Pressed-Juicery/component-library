@@ -20,25 +20,25 @@ export function Overview() {
 		data() {
 			return {
 				upsell: {
-					title: 'Free Juice when you buy Juice',
-					description: 'If you buy juice, we\'ll give you more juice.',
+					title: 'Free Bundle with a purchase of $40+',
+					description: 'Buy $40 worth of juice and we\'ll throw in a free bundle!',
 					upsellPrice: 0,
 					products: [{
 						variants: [{
 							id: 123,
-							name: 'Juice Bundle',
+							name: 'Cleanse 1',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
 					}, {
 						variants: [{
 							id: 123,
-							name: 'Another Juice Bundle',
+							name: 'Cleanse 2',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
 					}, {
 						variants: [{
 							id: 123,
-							name: 'Yet Another Juice Bundle',
+							name: 'Cleanse 3',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
 					}],
