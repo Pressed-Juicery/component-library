@@ -58,7 +58,7 @@ export function Overview() {
 					productType: '',
 					products: [{
 						variants: [{
-							name: 'Strawberry Basil Lemonade',
+							name: 'Fanny Pack',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
 					}],
@@ -105,7 +105,7 @@ export function SingleItem() {
 					products: [{
 						variants: [{
 							id: 123,
-							name: 'Strawberry Basil Lemonade',
+							name: 'Fanny Pack',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
 					}],
@@ -148,17 +148,17 @@ export function MultipleItems() {
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
-					productType: 'Widget',
+					productType: 'Fanny pack',
 					products: [{
 						variants: [{
 							id: 123,
-							name: 'Strawberry Basil Lemonade',
+							name: 'Fanny Pack - Red',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
 					}, {
 						variants: [{
 							id: 456,
-							name: 'Strawberry Basil Lemonade',
+							name: 'Fanny Pack - Blue',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
 					}],
@@ -190,7 +190,7 @@ export function AppliedOffer() {
 					total: 100,
 					items: [{
 						variantId: 123,
-						name: 'Strawberry Basil Lemonade',
+						name: 'Fanny Pack - Red',
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}],
 				},
@@ -205,13 +205,13 @@ export function AppliedOffer() {
 					products: [{
 						variants: [{
 							id: 123,
-							name: 'Strawberry Basil Lemonade',
+							name: 'Fanny Pack - Red',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
 					}, {
 						variants: [{
 							id: 456,
-							name: 'Strawberry Basil Lemonade',
+							name: 'Fanny Pack - Blue',
 							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 						}],
 					}],
