@@ -7,9 +7,7 @@
 		<div :class="$style.descriptionWrapper">
 			<div :class="$style.description">
 				<div :class="$style.title">{{ product.variants[0].name }}</div>
-				<div v-if="hasUpsellPrice" :class="$style.priceWrapper">
-					<div :class="$style.price">{{ formatCurrency(upsellPrice) }}</div>
-				</div>
+				<div v-if="hasUpsellPrice" :class="$style.price">{{ formatCurrency(upsellPrice) }}</div>
 			</div>
 
 			<div :class="$style.button" @click="$emit('add-product', product)">Add</div>
@@ -76,10 +74,6 @@ export default {
 
 	.description {
 		flex: 1;
-	}
-
-	.priceWrapper {
-		display: flex;
 	}
 
 	.title,
