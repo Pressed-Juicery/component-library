@@ -26,8 +26,14 @@ export default {
 	components: { Card },
 
 	props: {
-		product: Object,
-		upsellPrice: Number,
+		product: {
+			type: Object,
+			required: true,
+		},
+		upsellPrice: {
+			type: Number,
+			required: false,
+		},
 	},
 
 	computed: {
