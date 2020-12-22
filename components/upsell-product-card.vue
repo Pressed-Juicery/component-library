@@ -1,10 +1,7 @@
 <template>
 	<card v-if="product && product.variants" :class="$style.card">
 		<div :class="$style.imageWrapper">
-			<img :class="$style.image"
-				:src="product.variants[0].imageUrl"
-				:alt="product.variants[0].name"
-			/>
+			<img :class="$style.image" :src="product.variants[0].imageUrl" alt="" />
 		</div>
 
 		<div :class="$style.descriptionWrapper">
