@@ -26,6 +26,7 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/mixins';
+	@import '../styles/variables';
 
 	.title {
 		@include text-heading-5();
