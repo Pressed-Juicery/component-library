@@ -19,7 +19,7 @@
 				</div>
 			</div>
 
-			<div v-if="isPromotionApplied" :class="$style.successMessage">
+			<div v-if="upsell.isApplied" :class="$style.successMessage">
 				<circle-check :class="$style.circleCheck" />
 				This promo has been applied to your cart.
 			</div>
@@ -107,11 +107,7 @@ export default {
 		},
 
 		doesQualifyForSingleProductUpsell() {
-			return !this.isMultipleItemUpsell && !this.amountNeededToQualifyForOffer && !this.isPromotionApplied;
-		},
-
-		isPromotionApplied() {
-			return this.upsell && this.upsell.isApplied;
+			return !this.isMultipleItemUpsell && !this.amountNeededToQualifyForOffer && !this.upsell.isApplied;
 		},
 
 		amountNeededToQualifyForOffer() {
