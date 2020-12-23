@@ -196,5 +196,4 @@ export default {
 	.actionLabel {
 		@include button-link;
 	}
-
 </style>
