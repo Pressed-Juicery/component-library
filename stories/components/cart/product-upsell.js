@@ -156,7 +156,7 @@ export function MultipleItems() {
 					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
-					additionalSubtotalRequirement: 1,
+					additionalSubtotalRequirement: 0,
 					productType: 'Fanny pack',
 					isApplied: false,
 					variants: [{
