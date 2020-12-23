@@ -107,14 +107,7 @@ export default {
 		},
 
 		isPromotionApplied() {
-			const upsellIds = this.upsell
-				&& this.upsell.variants.map(item => item.id);
-			const hasPromotionItemInCart = this.cart
-				&& this.cart.items
-				&& this.cart.items.some(item => upsellIds.includes(item.variantId));
-			const doesCartQualifyForPromotion = !this.amountNeededToQualifyForOffer;
-
-			return doesCartQualifyForPromotion && hasPromotionItemInCart;
+			return this.upsell && this.upsell.isApplied;
 		},
 
 		amountNeededToQualifyForOffer() {
