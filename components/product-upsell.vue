@@ -31,8 +31,7 @@
 
 					<div :class="$style.bodyText">{{ progressText }}</div>
 
-					<div :class="$style.actionLabel"
-						@click="$emit('continue-shopping')">
+					<div :class="$style.actionLabel" @click="$emit('continue-shopping')">
 						Keep Shopping
 					</div>
 				</div>
