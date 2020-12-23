@@ -114,10 +114,11 @@ export default {
 			return this.upsell && this.upsell.variants.length > 1;
 		},
 
-		/* eslint-disable-line multiline-comment-style
+		// eslint-disable-next-line multiline-comment-style
+		/**************************************************************
 			OFFER TITLE NEEDS TO START WITH A VERB
 			e.g. "Get a bundle for $20", "Receive a free hat", etc.
-		*/
+		**************************************************************/
 		progressText() {
 			const offerTitle = this.upsell && this.upsell.title.toLowerCase();
 			const formattedAmount = this.formatCurrency(this.upsell.additionalSubtotalRequirement);
