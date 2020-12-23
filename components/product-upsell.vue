@@ -9,9 +9,7 @@
 			<div :class="$style.bodyText">
 				{{upsell.description }}
 				<div :class="$style.imageWrap">
-					<img v-if="firstUpsellItem
-						&& firstUpsellItem
-						&& !doesQualifyForSingleProductUpsell"
+					<img v-if="firstUpsellItem && !doesQualifyForSingleProductUpsell"
 						:class="$style.productImage"
 						:src="firstUpsellItem.imageUrl"
 						:alt="firstUpsellItem.name"
