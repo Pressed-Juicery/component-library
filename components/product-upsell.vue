@@ -42,13 +42,13 @@
 						@click="$emit('choose-product')">
 						{{ actionLabel }}
 					</div>
-				</div>
 
-				<upsell-product-card v-if="doesQualifyForSingleProductUpsell"
-					:variant="firstUpsellItem"
-					:tier="wallet.tier"
-					@add-product="item => $emit('add-product', item)"
-				/>
+					<upsell-product-card v-else
+						:variant="firstUpsellItem"
+						:tier="wallet.tier"
+						@add-product="item => $emit('add-product', item)"
+					/>
+				</div>
 			</div>
 		</div>
 	</card>
@@ -108,10 +108,6 @@ export default {
 
 		isMultipleItemUpsell() {
 			return this.upsell && this.upsell.variants.length > 1;
-		},
-
-		doesQualifyForSingleProductUpsell() {
-			return !this.isMultipleItemUpsell && !this.upsell.additionalSubtotalRequirement && !this.upsell.isApplied;
 		},
 
 		/* eslint-disable-line multiline-comment-style
