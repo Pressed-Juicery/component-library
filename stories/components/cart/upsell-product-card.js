@@ -14,7 +14,6 @@ export function Overview() {
 			<upsell-product-card
 				:tier="tier"
 				:variant="variant"
-				:upsellPrice="1000"
 				@add-product="handleAddProduct"
 			/>
 		`,
