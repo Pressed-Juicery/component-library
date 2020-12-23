@@ -1,5 +1,5 @@
 <template>
-	<card v-if="upsell && upsell.products && upsell.products.length" :class="{[$style.isOpen]: isOpen}">
+	<card v-if="upsell && upsell.variants && upsell.variants.length" :class="{[$style.isOpen]: isOpen}">
 		<div :class="$style.header" @click="$emit('toggle-accordion')">
 			<div>{{ upsell.title }}</div>
 			<arrow-icon :class="$style.arrow" />
@@ -9,11 +9,11 @@
 			<div :class="$style.bodyText">
 				{{upsell.description }}
 				<img v-if="firstUpsellItem
-					&& firstUpsellItem.variants
+					&& firstUpsellItem
 					&& !doesQualifyForSingleProductUpsell"
 					:class="$style.productImage"
-					:src="firstUpsellItem.variants[0].imageUrl"
-					:alt="firstUpsellItem.variants[0].name"
+					:src="firstUpsellItem.imageUrl"
+					:alt="firstUpsellItem.name"
 				/>
 			</div>
 
@@ -88,11 +88,11 @@ export default {
 		},
 
 		firstUpsellItem() {
-			return this.upsell && this.upsell.products[0];
+			return this.upsell && this.upsell.variants[0];
 		},
 
 		isMultipleItemUpsell() {
-			return this.upsell && this.upsell.products.length > 1;
+			return this.upsell && this.upsell.variants.length > 1;
 		},
 
 		doesQualifyForSingleProductUpsell() {
@@ -101,7 +101,7 @@ export default {
 
 		isPromotionApplied() {
 			const upsellIds = this.upsell
-				&& this.upsell.products.map(item => item.variants && item.variants[0].id);
+				&& this.upsell.variants.map(item => item.id);
 			const hasPromotionItemInCart = this.cart
 				&& this.cart.items
 				&& this.cart.items.some(item => upsellIds.includes(item.variantId));
