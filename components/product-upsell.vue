@@ -153,7 +153,7 @@ export default {
 		width: $spacing-05;
 	}
 
-	.isOpen .arrow{
+	.isOpen .arrow {
 		transform: rotate(180deg);
 	}
 
