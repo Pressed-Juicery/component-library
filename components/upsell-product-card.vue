@@ -1,16 +1,16 @@
 <template>
-	<card v-if="product && product.variants" :class="$style.card">
+	<card v-if="variant" :class="$style.card">
 		<div :class="$style.imageWrapper">
-			<img :class="$style.image" :src="product.variants[0].imageUrl" alt="" />
+			<img :class="$style.image" :src="variant.imageUrl" alt="" />
 		</div>
 
 		<div :class="$style.descriptionWrapper">
 			<div :class="$style.description">
-				<div :class="$style.title">{{ product.variants[0].name }}</div>
 				<div v-if="hasUpsellPrice" :class="$style.price">{{ formatCurrency(upsellPrice) }}</div>
+				<div :class="$style.title">{{ variant.name }}</div>
 			</div>
 
-			<div :class="$style.button" @click="$emit('add-product', product)">Add</div>
+			<div :class="$style.button" @click="$emit('add-product', variant)">Add</div>
 		</div>
 	</card>
 </template>
@@ -24,7 +24,7 @@ export default {
 	components: { Card },
 
 	props: {
-		product: {
+		variant: {
 			type: Object,
 			required: true,
 		},
