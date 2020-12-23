@@ -86,7 +86,7 @@ export default {
 		wallet: {
 			type: Object,
 			required: true,
-			validator: value => value.hasOwnProperty('tier'),
+			validator: value => value.tier,
 		},
 		isOpen: Boolean,
 	},
@@ -123,7 +123,7 @@ export default {
 			return additionalSubtotalRequirement - subtotal;
 		},
 
-		/*
+		/* eslint-disble-line multiline-comment-style
 			OFFER TITLE NEEDS TO START WITH A VERB
 			e.g. "Get a bundle for $20", "Recieve a free hat", etc.
 		*/

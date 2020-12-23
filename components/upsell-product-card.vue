@@ -18,7 +18,6 @@
 <script>
 import Card from './card.vue';
 import { formatCurrency } from '../utilities/formatters';
-import { isNotEmpty } from '../utilities/validators';
 
 export default {
 	components: { Card },
