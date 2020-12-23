@@ -23,7 +23,6 @@ export function Overview() {
 				upsell: {
 					title: 'Free Bundle with a purchase of $40+',
 					description: 'Buy $40 worth of juice and we\'ll throw in a free bundle!',
-					upsellPrice: 0,
 					variants: [{
 						nonMemberSalePrice: 0,
 						id: 123,
