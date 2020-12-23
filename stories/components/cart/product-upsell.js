@@ -58,7 +58,6 @@ export function Overview() {
 					description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-					minimumSubtotalRequirement: 100,
 					additionalSubtotalRequirement: 108,
 					productType: '',
 					isApplied: false,
@@ -109,7 +108,6 @@ export function SingleItem() {
 					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
-					minimumSubtotalRequirement: 100,
 					additionalSubtotalRequirement: 108,
 					productType: '',
 					isApplied: false,
@@ -161,7 +159,6 @@ export function MultipleItems() {
 					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
-					minimumSubtotalRequirement: 100,
 					additionalSubtotalRequirement: 108,
 					productType: 'Fanny pack',
 					isApplied: false,
@@ -218,7 +215,6 @@ export function AppliedOffer() {
 					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
-					minimumSubtotalRequirement: 100,
 					additionalSubtotalRequirement: 108,
 					productType: '',
 					isApplied: true,
