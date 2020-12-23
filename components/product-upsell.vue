@@ -43,7 +43,7 @@
 			</div>
 
 			<upsell-product-card v-if="doesQualifyForSingleProductUpsell"
-				:product="firstUpsellItem"
+				:variant="firstUpsellItem"
 				:tier="wallet.tier"
 				@add-product="item => $emit('add-product', item)"
 			/>
