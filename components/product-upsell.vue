@@ -23,10 +23,10 @@
 			</div>
 
 			<div v-else>
-				<div v-if="amountNeededToQualifyForOffer">
+				<div v-if="upsell.additionalSubtotalRequirement">
 					<progress-bar :class="$style.progressBar"
 						:current="cart.subtotal"
-						:goal="upsell.additionalSubtotalRequirement"
+						:goal="cart.subtotal + upsell.additionalSubtotalRequirement"
 					/>
 
 					<div :class="$style.bodyText">{{ progressText }}</div>
@@ -105,16 +105,7 @@ export default {
 		},
 
 		doesQualifyForSingleProductUpsell() {
-			return !this.isMultipleItemUpsell && !this.amountNeededToQualifyForOffer && !this.upsell.isApplied;
-		},
-
-		amountNeededToQualifyForOffer() {
-			const subtotal = this.cart && this.cart.subtotal;
-			const additionalSubtotalRequirement = this.upsell && this.upsell.additionalSubtotalRequirement;
-
-			if (subtotal >= additionalSubtotalRequirement) return 0;
-
-			return additionalSubtotalRequirement - subtotal;
+			return !this.isMultipleItemUpsell && !this.upsell.additionalSubtotalRequirement && !this.upsell.isApplied;
 		},
 
 		/* eslint-disable-line multiline-comment-style
@@ -123,7 +114,7 @@ export default {
 		*/
 		progressText() {
 			const offerTitle = this.upsell && this.upsell.title.toLowerCase();
-			const formattedAmount = this.formatCurrency(this.amountNeededToQualifyForOffer);
+			const formattedAmount = this.formatCurrency(this.upsell.additionalSubtotalRequirement);
 
 			return `Spend ${formattedAmount} more and ${offerTitle}`;
 		},

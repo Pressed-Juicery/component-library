@@ -57,7 +57,7 @@ export function Overview() {
 					description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-					additionalSubtotalRequirement: 108,
+					additionalSubtotalRequirement: 6,
 					isApplied: false,
 					variants: [{
 						nonMemberSalePrice: 2,
@@ -106,7 +106,7 @@ export function SingleItem() {
 					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
-					additionalSubtotalRequirement: 108,
+					additionalSubtotalRequirement: 0,
 					isApplied: false,
 					variants: [{
 						nonMemberSalePrice: 2,
@@ -156,7 +156,7 @@ export function MultipleItems() {
 					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
-					additionalSubtotalRequirement: 108,
+					additionalSubtotalRequirement: 1,
 					productType: 'Fanny pack',
 					isApplied: false,
 					variants: [{
@@ -212,7 +212,7 @@ export function AppliedOffer() {
 					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
-					additionalSubtotalRequirement: 108,
+					additionalSubtotalRequirement: 0,
 					isApplied: true,
 					variants: [{
 						nonMemberSalePrice: 2,
