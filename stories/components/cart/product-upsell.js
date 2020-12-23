@@ -35,6 +35,7 @@ export function Overview() {
 			<product-upsell
 				:upsell="upsell"
 				:cart="cart"
+				:wallet="wallet"
 				:isOpen="isOpen"
 				@continue-shopping="handleContinueShopping"
 				@add-product="handleAddItem"
@@ -48,6 +49,9 @@ export function Overview() {
 				cart: {
 					total: 50,
 					items: [],
+				},
+				wallet: {
+					tier: 'INSIDER',
 				},
 				upsell: {
 					title: 'Get a Fanny Pack for $2',
@@ -74,6 +78,7 @@ export function SingleItem() {
 			<product-upsell
 				:upsell="upsell"
 				:cart="cart"
+				:wallet="wallet"
 				:isOpen="isOpen"
 				@continue-shopping="handleContinueShopping"
 				@add-product="handleAddItem"
@@ -91,6 +96,9 @@ export function SingleItem() {
 						name: 'Strawberry Basil Lemonade',
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}],
+				},
+				wallet: {
+					tier: 'INSIDER',
 				},
 				upsell: {
 					title: 'Get a Fanny Pack for $2',
@@ -119,6 +127,7 @@ export function MultipleItems() {
 			<product-upsell
 				:upsell="upsell"
 				:cart="cart"
+				:wallet="wallet"
 				:isOpen="isOpen"
 				@continue-shopping="handleContinueShopping"
 				@add-product="handleAddItem"
@@ -136,6 +145,9 @@ export function MultipleItems() {
 						name: 'Strawberry Basil Lemonade',
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}],
+				},
+				wallet: {
+					tier: 'INSIDER',
 				},
 				upsell: {
 					title: 'Get a Fanny Pack for $2',
@@ -168,6 +180,7 @@ export function AppliedOffer() {
 			<product-upsell
 				:upsell="upsell"
 				:cart="cart"
+				:wallet="wallet"
 				:isOpen="isOpen"
 				@continue-shopping="handleContinueShopping"
 				@add-product="handleAddItem"
@@ -185,6 +198,9 @@ export function AppliedOffer() {
 						name: 'Fanny Pack - Red',
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}],
+				},
+				wallet: {
+					tier: 'INSIDER',
 				},
 				upsell: {
 					title: 'Get a Fanny Pack for $2',
