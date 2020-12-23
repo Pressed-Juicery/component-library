@@ -6,8 +6,8 @@
 
 		<div :class="$style.descriptionWrapper">
 			<div :class="$style.description">
-				<div v-if="hasUpsellPrice" :class="$style.price">{{ formatCurrency(upsellPrice) }}</div>
 				<div :class="$style.title">{{ variant.name }}</div>
+				<div v-if="upsellPrice" :class="$style.price">{{ formatCurrency(upsellPrice) }}</div>
 			</div>
 
 			<div :class="$style.button" @click="$emit('add-product', variant)">Add</div>
@@ -28,15 +28,17 @@ export default {
 			type: Object,
 			required: true,
 		},
-		upsellPrice: {
-			type: Number,
-			required: false,
+		tier: {
+			type: String,
+			required: true,
 		},
 	},
 
 	computed: {
-		hasUpsellPrice() {
-			return isNotEmpty(this.upsellPrice);
+		upsellPrice() {
+			return this.tier && this.tier.toLowerCase() === 'vip'
+				? this.variant.memberSalePrice
+				: this.variant.nonMemberSalePrice;
 		},
 	},
 
