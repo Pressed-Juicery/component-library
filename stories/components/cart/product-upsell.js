@@ -47,7 +47,7 @@ export function Overview() {
 		data() {
 			return {
 				cart: {
-					total: 50,
+					subtotal: 50,
 					items: [],
 				},
 				wallet: {
@@ -91,7 +91,7 @@ export function SingleItem() {
 		data() {
 			return {
 				cart: {
-					total: 99,
+					subtotal: 99,
 					items: [{
 						variantId: 124,
 						name: 'Strawberry Basil Lemonade',
@@ -141,7 +141,7 @@ export function MultipleItems() {
 		data() {
 			return {
 				cart: {
-					total: 100,
+					subtotal: 100,
 					items: [{
 						variantId: 1,
 						name: 'Strawberry Basil Lemonade',
@@ -196,7 +196,7 @@ export function AppliedOffer() {
 		data() {
 			return {
 				cart: {
-					total: 100,
+					subtotal: 100,
 					items: [{
 						variantId: 123,
 						name: 'Fanny Pack - Red',
