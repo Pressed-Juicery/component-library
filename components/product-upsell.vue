@@ -28,7 +28,7 @@
 				<div v-if="amountNeededToQualifyForOffer">
 					<progress-bar :class="$style.progressBar"
 						:current="cart.subtotal"
-						:goal="upsell.minimumSubtotalRequirement"
+						:goal="upsell.additionalSubtotalRequirement"
 					/>
 
 					<div :class="$style.bodyText">{{ progressText }}</div>
@@ -116,11 +116,11 @@ export default {
 
 		amountNeededToQualifyForOffer() {
 			const subtotal = this.cart && this.cart.subtotal;
-			const minimumSubtotalRequirement = this.upsell && this.upsell.minimumSubtotalRequirement;
+			const additionalSubtotalRequirement = this.upsell && this.upsell.additionalSubtotalRequirement;
 
-			if (total >= minimumSubtotalRequirement) return 0;
+			if (subtotal >= additionalSubtotalRequirement) return 0;
 
-			return minimumSubtotalRequirement - subtotal;
+			return additionalSubtotalRequirement - subtotal;
 		},
 
 		/*

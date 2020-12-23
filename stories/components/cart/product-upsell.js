@@ -47,7 +47,7 @@ export function Overview() {
 		data() {
 			return {
 				cart: {
-					subtotal: 50,
+					subtotal: 102,
 					items: [],
 				},
 				wallet: {
@@ -59,7 +59,9 @@ export function Overview() {
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
+					additionalSubtotalRequirement: 108,
 					productType: '',
+					isApplied: false,
 					variants: [{
 						nonMemberSalePrice: 2,
 						name: 'Fanny Pack',
@@ -91,7 +93,7 @@ export function SingleItem() {
 		data() {
 			return {
 				cart: {
-					subtotal: 99,
+					subtotal: 108,
 					items: [{
 						variantId: 124,
 						name: 'Strawberry Basil Lemonade',
@@ -108,7 +110,9 @@ export function SingleItem() {
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
+					additionalSubtotalRequirement: 108,
 					productType: '',
+					isApplied: false,
 					variants: [{
 						nonMemberSalePrice: 2,
 						id: 124,
@@ -141,7 +145,7 @@ export function MultipleItems() {
 		data() {
 			return {
 				cart: {
-					subtotal: 100,
+					subtotal: 109,
 					items: [{
 						variantId: 1,
 						name: 'Strawberry Basil Lemonade',
@@ -158,7 +162,9 @@ export function MultipleItems() {
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
+					additionalSubtotalRequirement: 108,
 					productType: 'Fanny pack',
+					isApplied: false,
 					variants: [{
 						nonMemberSalePrice: 2,
 						id: 123,
@@ -213,7 +219,9 @@ export function AppliedOffer() {
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
+					additionalSubtotalRequirement: 108,
 					productType: '',
+					isApplied: true,
 					variants: [{
 						nonMemberSalePrice: 2,
 						id: 123,
