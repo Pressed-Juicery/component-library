@@ -56,11 +56,9 @@ export function Overview() {
 					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
 					productType: '',
-					products: [{
-						variants: [{
-							name: 'Fanny Pack',
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						}],
+					variants: [{
+						name: 'Fanny Pack',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}],
 				},
 			};
@@ -87,7 +85,7 @@ export function SingleItem() {
 		data() {
 			return {
 				cart: {
-					total: 100,
+					total: 99,
 					items: [{
 						variantId: 124,
 						name: 'Strawberry Basil Lemonade',
@@ -102,12 +100,10 @@ export function SingleItem() {
 					aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
 					productType: '',
-					products: [{
-						variants: [{
-							id: 123,
-							name: 'Fanny Pack',
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						}],
+					variants: [{
+						id: 124,
+						name: 'Fanny Pack',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}],
 				},
 			};
@@ -149,18 +145,14 @@ export function MultipleItems() {
 					aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
 					productType: 'Fanny pack',
-					products: [{
-						variants: [{
-							id: 123,
-							name: 'Fanny Pack - Red',
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						}],
+					variants: [{
+						id: 123,
+						name: 'Fanny Pack - Red',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}, {
-						variants: [{
-							id: 456,
-							name: 'Fanny Pack - Blue',
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						}],
+						id: 456,
+						name: 'Fanny Pack - Blue',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}],
 				},
 			};
@@ -202,18 +194,14 @@ export function AppliedOffer() {
 					aliquip ex ea commodo consequat.`,
 					minimumSubtotalRequirement: 100,
 					productType: '',
-					products: [{
-						variants: [{
-							id: 123,
-							name: 'Fanny Pack - Red',
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						}],
+					variants: [{
+						id: 123,
+						name: 'Fanny Pack - Red',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}, {
-						variants: [{
-							id: 456,
-							name: 'Fanny Pack - Blue',
-							imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
-						}],
+						id: 456,
+						name: 'Fanny Pack - Blue',
+						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}],
 				},
 			};
