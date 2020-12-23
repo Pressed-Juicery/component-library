@@ -59,7 +59,6 @@ export function Overview() {
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
 					additionalSubtotalRequirement: 108,
-					productType: '',
 					isApplied: false,
 					variants: [{
 						nonMemberSalePrice: 2,
@@ -109,7 +108,6 @@ export function SingleItem() {
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
 					additionalSubtotalRequirement: 108,
-					productType: '',
 					isApplied: false,
 					variants: [{
 						nonMemberSalePrice: 2,
@@ -216,7 +214,6 @@ export function AppliedOffer() {
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 					aliquip ex ea commodo consequat.`,
 					additionalSubtotalRequirement: 108,
-					productType: '',
 					isApplied: true,
 					variants: [{
 						nonMemberSalePrice: 2,
