@@ -90,9 +90,16 @@ export default {
 
 	computed: {
 		actionLabel() {
-			return this.upsell && this.upsell.productType
-				? `Choose a ${this.upsell.productType}`
-				: 'Choose a Product';
+			const { productType } = (this.upsell || {});
+
+			if (!productType) return 'Choose a Product';
+
+			const vowels = ['a', 'e', 'i', 'o', 'u'];
+			const firstLetter = productType[0].toLowerCase();
+			const startsWithVowel = vowels.includes(firstLetter);
+			const article = startsWithVowel ? 'an' : 'a';
+
+			return `Choose ${article} ${productType}`;
 		},
 
 		firstUpsellItem() {
