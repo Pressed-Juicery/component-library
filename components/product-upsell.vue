@@ -8,13 +8,15 @@
 		<div v-if="isOpen" :class="$style.body">
 			<div :class="$style.bodyText">
 				{{upsell.description }}
-				<img v-if="firstUpsellItem
-					&& firstUpsellItem
-					&& !doesQualifyForSingleProductUpsell"
-					:class="$style.productImage"
-					:src="firstUpsellItem.imageUrl"
-					:alt="firstUpsellItem.name"
-				/>
+				<div :class="$style.imageWrap">
+					<img v-if="firstUpsellItem
+						&& firstUpsellItem
+						&& !doesQualifyForSingleProductUpsell"
+						:class="$style.productImage"
+						:src="firstUpsellItem.imageUrl"
+						:alt="firstUpsellItem.name"
+					/>
+				</div>
 			</div>
 
 			<div v-if="isPromotionApplied" :class="$style.successMessage">
@@ -170,8 +172,16 @@ export default {
 		margin-bottom: $spacing-05;
 	}
 
+	.imageWrap {
+		width: 100%;
+		height: auto;
+	}
+
 	.productImage {
+		display: block;
+		width: 100%;
 		max-width: 100px;
+		margin-left: auto;
 	}
 
 	.progressBar {
