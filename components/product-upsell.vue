@@ -24,31 +24,35 @@
 				This promo has been applied to your cart.
 			</div>
 
-			<div v-else-if="amountNeededToQualifyForOffer">
-				<progress-bar :class="$style.progressBar"
-					:current="cart.subtotal"
-					:goal="upsell.minimumSubtotalRequirement"
+			<div v-else>
+				<div v-if="amountNeededToQualifyForOffer">
+					<progress-bar :class="$style.progressBar"
+						:current="cart.subtotal"
+						:goal="upsell.minimumSubtotalRequirement"
+					/>
+
+					<div :class="$style.bodyText">{{ progressText }}</div>
+
+					<div :class="$style.actionLabel"
+						@click="$emit('continue-shopping')">
+						Keep Shopping
+					</div>
+				</div>
+
+				<div v-else>
+					<div v-if="isMultipleItemUpsell"
+						:class="$style.actionLabel"
+						@click="$emit('choose-product')">
+						{{ actionLabel }}
+					</div>
+				</div>
+
+				<upsell-product-card v-if="doesQualifyForSingleProductUpsell"
+					:variant="firstUpsellItem"
+					:tier="wallet.tier"
+					@add-product="item => $emit('add-product', item)"
 				/>
-				<div :class="$style.bodyText">{{ progressText }}</div>
 			</div>
-
-			<div v-if="!isPromotionApplied && !amountNeededToQualifyForOffer && isMultipleItemUpsell"
-				:class="$style.actionLabel"
-				@click="$emit('choose-product')">
-				{{ actionLabel }}
-			</div>
-
-			<div v-else-if="!isPromotionApplied && amountNeededToQualifyForOffer"
-				:class="$style.actionLabel"
-				@click="$emit('continue-shopping')">
-				Keep Shopping
-			</div>
-
-			<upsell-product-card v-if="doesQualifyForSingleProductUpsell"
-				:variant="firstUpsellItem"
-				:tier="wallet.tier"
-				@add-product="item => $emit('add-product', item)"
-			/>
 		</div>
 	</card>
 </template>
