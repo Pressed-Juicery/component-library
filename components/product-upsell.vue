@@ -9,7 +9,8 @@
 			<div :class="$style.bodyText">
 				{{upsell.description }}
 				<div :class="$style.imageWrap">
-					<img v-if="firstUpsellItem && !doesQualifyForSingleProductUpsell"
+					<img
+						v-if="firstUpsellItem && !doesQualifyForSingleProductUpsell"
 						:class="$style.productImage"
 						:src="firstUpsellItem.imageUrl"
 						:alt="firstUpsellItem.name"
@@ -24,7 +25,8 @@
 
 			<div v-else>
 				<div v-if="upsell.additionalSubtotalRequirement">
-					<progress-bar :class="$style.progressBar"
+					<progress-bar
+						:class="$style.progressBar"
 						:current="cart.subtotal"
 						:goal="cart.subtotal + upsell.additionalSubtotalRequirement"
 					/>
@@ -37,13 +39,15 @@
 				</div>
 
 				<div v-else>
-					<div v-if="isMultipleItemUpsell"
+					<div
+						v-if="isMultipleItemUpsell"
 						:class="$style.actionLabel"
 						@click="$emit('choose-product')">
 						{{ actionLabel }}
 					</div>
 
-					<upsell-product-card v-else
+					<upsell-product-card
+						v-else
 						:variant="firstUpsellItem"
 						:tier="wallet.tier"
 						@add-product="item => $emit('add-product', item)"
