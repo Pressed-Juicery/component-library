@@ -5,6 +5,7 @@
 		<upsell-product-card
 			v-for="variant in upsell.variants"
 			:variant="variant"
+			:tier="wallet.tier"
 			:key="variant.id"
 			:class="$style.item"
 			@add-product="variant => $emit('add-product', variant)"
@@ -19,6 +20,10 @@ export default {
 	components: { UpsellProductCard },
 	props: {
 		upsell: {
+			type: Object,
+			required: true,
+		},
+		wallet: {
 			type: Object,
 			required: true,
 		},
