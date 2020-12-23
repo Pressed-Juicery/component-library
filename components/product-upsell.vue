@@ -119,6 +119,10 @@ export default {
 			return minimumSubtotalRequirement - total;
 		},
 
+		/*
+			OFFER TITLE NEEDS TO START WITH A VERB
+			e.g. "Get a bundle for $20", "Recieve a free hat", etc.
+		*/
 		progressText() {
 			const offerTitle = this.upsell && this.upsell.title.toLowerCase();
 			const formattedAmount = this.formatCurrency(this.amountNeededToQualifyForOffer);
