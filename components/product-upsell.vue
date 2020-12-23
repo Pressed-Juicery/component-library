@@ -172,7 +172,6 @@ export default {
 
 	.productImage {
 		display: block;
-		width: 100%;
 		max-width: 100px;
 		margin-left: auto;
 	}
