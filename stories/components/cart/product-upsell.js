@@ -48,7 +48,6 @@ export function Overview() {
 			return {
 				cart: {
 					subtotal: 102,
-					items: [],
 				},
 				wallet: {
 					tier: 'INSIDER',
