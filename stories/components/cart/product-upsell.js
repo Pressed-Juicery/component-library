@@ -61,6 +61,7 @@ export function Overview() {
 					minimumSubtotalRequirement: 100,
 					productType: '',
 					variants: [{
+						nonMemberSalePrice: 2,
 						name: 'Fanny Pack',
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}],
@@ -109,6 +110,7 @@ export function SingleItem() {
 					minimumSubtotalRequirement: 100,
 					productType: '',
 					variants: [{
+						nonMemberSalePrice: 2,
 						id: 124,
 						name: 'Fanny Pack',
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
@@ -158,10 +160,12 @@ export function MultipleItems() {
 					minimumSubtotalRequirement: 100,
 					productType: 'Fanny pack',
 					variants: [{
+						nonMemberSalePrice: 2,
 						id: 123,
 						name: 'Fanny Pack - Red',
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}, {
+						nonMemberSalePrice: 2,
 						id: 456,
 						name: 'Fanny Pack - Blue',
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
@@ -211,10 +215,12 @@ export function AppliedOffer() {
 					minimumSubtotalRequirement: 100,
 					productType: '',
 					variants: [{
+						nonMemberSalePrice: 2,
 						id: 123,
 						name: 'Fanny Pack - Red',
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
 					}, {
+						nonMemberSalePrice: 2,
 						id: 456,
 						name: 'Fanny Pack - Blue',
 						imageUrl: 'https://cdn.shopify.com/s/files/1/0252/3833/9670/products/Combo-thedailystart_1440x1440_97ce3c8e-8fc9-404b-9c7a-9a3e852babfb.png?v=1594826551',
