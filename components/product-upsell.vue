@@ -119,7 +119,7 @@ export default {
 			return additionalSubtotalRequirement - subtotal;
 		},
 
-		/* eslint-disble-line multiline-comment-style
+		/* eslint-disable-line multiline-comment-style
 			OFFER TITLE NEEDS TO START WITH A VERB
 			e.g. "Get a bundle for $20", "Receive a free hat", etc.
 		*/
