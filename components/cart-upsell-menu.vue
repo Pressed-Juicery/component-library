@@ -3,12 +3,11 @@
 		<div :class="$style.title">{{ upsell.title }}</div>
 		<div :class="$style.description">{{ upsell.description }}</div>
 		<upsell-product-card
-			v-for="product in upsell.products"
-			:product="product"
-			:upsell-price="upsell.upsellPrice"
-			:key="product.id"
+			v-for="variant in upsell.variants"
+			:variant="variant"
+			:key="variant.id"
 			:class="$style.item"
-			@add-product="product => $emit('add-product', product)"
+			@add-product="variant => $emit('add-product', variant)"
 		/>
 	</div>
 </template>
@@ -19,7 +18,10 @@ import UpsellProductCard from './upsell-product-card';
 export default {
 	components: { UpsellProductCard },
 	props: {
-		upsell: Object,
+		upsell: {
+			type: Object,
+			required: true,
+		},
 	},
 };
 </script>
