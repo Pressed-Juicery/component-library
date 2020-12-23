@@ -44,7 +44,7 @@
 
 			<upsell-product-card v-if="doesQualifyForSingleProductUpsell"
 				:product="firstUpsellItem"
-				:upsell-price="upsell.upsellPrice"
+				:tier="wallet.tier"
 				@add-product="item => $emit('add-product', item)"
 			/>
 		</div>
@@ -76,6 +76,11 @@ export default {
 		upsell: {
 			type: Object,
 			required: true,
+		},
+		wallet: {
+			type: Object,
+			required: true,
+			validator: value => value.hasOwnProperty('tier'),
 		},
 		isOpen: Boolean,
 	},
