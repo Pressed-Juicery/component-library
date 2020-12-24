@@ -49,7 +49,7 @@
 					<upsell-product-card
 						v-else
 						:variant="firstUpsellItem"
-						:tier="wallet.tier"
+						:tier="userTier"
 						@add-product="item => $emit('add-product', item)"
 					/>
 				</div>
@@ -87,7 +87,7 @@ export default {
 		wallet: {
 			type: Object,
 			required: true,
-			validator: value => value.tier,
+			validator: value => value && value.tier,
 		},
 		isOpen: Boolean,
 	},
@@ -112,6 +112,10 @@ export default {
 
 		isMultipleItemUpsell() {
 			return this.upsell && this.upsell.variants.length > 1;
+		},
+
+		userTier() {
+			return this.wallet && this.wallet.tier;
 		},
 
 		// eslint-disable-next-line multiline-comment-style
