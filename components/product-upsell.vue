@@ -8,7 +8,7 @@
 		<div v-if="isOpen" :class="$style.body">
 			<div :class="$style.bodyText">
 				{{upsell.description }}
-				<div :class="$style.imageWrap">
+				<div v-if="upsell.isApplied || isMultipleItemUpsell" :class="$style.imageWrap">
 					<img
 						v-if="firstUpsellItem && !doesQualifyForSingleProductUpsell"
 						:class="$style.productImage"
