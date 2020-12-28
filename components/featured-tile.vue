@@ -42,6 +42,6 @@ export default {
 	.description {
 		@include text-body-small();
 		@include text-subtle();
-		padding: 0 $spacing-03 $spacing-05 $spacing-03
+		padding: 0 $spacing-03 $spacing-05 $spacing-03;
 	}
 </style>
