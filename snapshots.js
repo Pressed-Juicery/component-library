@@ -15,6 +15,7 @@ const groups = [{
 		'ButtonBar',
 		'Buttons',
 		'Card',
+		'CategorySelector',
 		'CollapsibleDrawer',
 		'ConfirmationDialogTemplate',
 		'ConfirmDrawer',
