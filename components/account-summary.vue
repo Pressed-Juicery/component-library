@@ -53,16 +53,16 @@ export default {
 	}
 
 	.infoGroup {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr $spacing-11;
 		border-top: $border-light;
 		border-bottom: $border-light;
+		margin-top: $spacing-05;
 	}
 
 	.infoLeft,
 	.infoCenter,
 	.infoRight {
-		padding: $spacing-06;
+		padding: $spacing-05;
 	}
 
 	.infoLeft,
@@ -74,14 +74,26 @@ export default {
 		place-items: center;
 	}
 
-	.infoValue,
-	.welcomeMessage {
+	.infoValue {
 		@include text-heading-5();
 		margin-bottom: $spacing-02;
 	}
 
+	.welcomeMessage {
+		@include text-heading-4();
+	}
+
+	.message,
 	.title {
 		@include text-body-small();
+	}
+
+	.message {
+		margin-top: $spacing-03;
+		color: $goldenrod;
+	}
+
+	.title {
 		@include text-subtle();
 	}
 
