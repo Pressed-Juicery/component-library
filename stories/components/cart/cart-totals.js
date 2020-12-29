@@ -23,6 +23,25 @@ export function Overview() {
 	};
 }
 
+export function BottleDeposit() {
+	return {
+		components: { CartTotals },
+		template: '<cart-totals :cart="cart" />',
+
+		data() {
+			return {
+				cart: {
+					originalSubtotal: 150,
+					subtotal: 100,
+					total: 150.5,
+					bottleDeposit: 3.5,
+					isShippingAvailable: true,
+				},
+			};
+		},
+	};
+}
+
 export function ShippingDeliveryPrice() {
 	return {
 		components: { CartTotals },
