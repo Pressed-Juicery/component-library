@@ -34,8 +34,27 @@ export function VIP() {
 					firstName: 'Jerry',
 					wallet: {
 						tier: 'VIP',
-						points: 160,
-						funds: 25.00,
+						points: 80,
+						funds: 0,
+					},
+				},
+			};
+		},
+	};
+}
+
+export function Elite() {
+	return {
+		components: { AccountSummary },
+		template: '<account-summary :user="user" />',
+		data() {
+			return {
+				user: {
+					firstName: 'Sasha',
+					wallet: {
+						tier: 'ELITE',
+						points: 100,
+						funds: 12.00,
 					},
 				},
 			};
