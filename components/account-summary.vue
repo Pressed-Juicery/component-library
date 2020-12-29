@@ -59,7 +59,9 @@ export default {
 	@import "../styles/mixins.scss";
 
 	.infoGroup,
-	.infoRight {
+	.infoRight,
+	.infoCenter,
+	.infoLeft {
 		display: grid;
 	}
 
@@ -67,13 +69,12 @@ export default {
 		grid-template-columns: 1fr 1fr $spacing-11;
 		border-top: $border-light;
 		border-bottom: $border-light;
-		margin-top: $spacing-05;
 	}
 
-	.infoLeft,
 	.infoCenter,
-	.infoRight {
-		padding: $spacing-05;
+	.infoRight,
+	.infoLeft {
+		padding: $spacing-05 0;
 	}
 
 	.infoLeft,
@@ -81,17 +82,26 @@ export default {
 		border-right: $border-light;
 	}
 
+	.infoCenter {
+		justify-content: center;
+	}
+
 	.infoRight {
 		place-items: center;
 	}
 
+	.infoValue,
+	.icon {
+		margin-bottom: $spacing-02;
+	}
+
 	.infoValue {
 		@include text-heading-5();
-		margin-bottom: $spacing-02;
 	}
 
 	.welcomeMessage {
 		@include text-heading-4();
+		margin-bottom: $spacing-05;
 	}
 
 	.title {
