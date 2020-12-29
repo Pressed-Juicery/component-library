@@ -1,7 +1,6 @@
 <template>
-	<div :class="$style.root">
+	<div>
 		<div :class="$style.welcomeMessage">Welcome, {{ user.firstName }}</div>
-		<div v-if="message" :class="$style.message">{{ message }}</div>
 		<div :class="$style.infoGroup">
 			<div :class="$style.infoLeft">
 				<div :class="$style.infoValue">{{ user.wallet.points }}</div>
@@ -34,7 +33,6 @@ export default {
 				VIP: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/vip-member.svg',
 				INSIDER: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/insider-member.svg',
 			},
-			message: "This message needs to be retrieved from GraphQL."
 		};
 	},
 };
@@ -43,10 +41,6 @@ export default {
 <style lang='scss' module>
 	@import "../styles/variables.scss";
 	@import "../styles/mixins.scss";
-
-	.root {
-
-	}
 
 	.infoGroup,
 	.infoRight {
@@ -84,29 +78,8 @@ export default {
 		@include text-heading-4();
 	}
 
-	.message,
 	.title {
 		@include text-body-small();
-	}
-
-	.message {
-		margin-top: $spacing-03;
-		color: $goldenrod;
-	}
-
-	.title {
 		@include text-subtle();
-	}
-
-	.icon {
-		margin-bottom: $spacing-02;
-	}
-
-	.tier {
-		text-transform: lowercase;
-
-		&::first-letter {
-			text-transform: capitalize;
-		}
 	}
 </style>
