@@ -12,7 +12,7 @@ export function Overview() {
 		data() {
 			return {
 				category: {
-					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/categories/homepage/shots.svg',
+					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/categories/shots-bottom-aligned.svg',
 					name: 'Shots',
 				},
 			};
