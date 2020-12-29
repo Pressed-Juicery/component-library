@@ -30,7 +30,7 @@ export default {
 	}
 
 	.icon {
-		width: $icon-bounding-box;
+		max-width: $icon-bounding-box;
 		height: $icon-bounding-box;
 		margin: $spacing-03;
 	}
