@@ -12,8 +12,8 @@ export function Overview() {
 		data() {
 			return {
 				category: {
-					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/half-day-1_black.svg',
-					name: 'Cleanses',
+					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/categories/homepage/shots.svg',
+					name: 'Shots',
 				},
 			};
 		},
