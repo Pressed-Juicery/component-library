@@ -93,8 +93,8 @@ export function UnavailableShipping() {
 				cart: {
 					originalSubtotal: 150,
 					subtotal: 100,
-					total: 102.5,
-					taxes: 2.5,
+					total: 100,
+					taxes: 0,
 					isShippingAvailable: false,
 				},
 			};
