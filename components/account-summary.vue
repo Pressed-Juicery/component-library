@@ -7,18 +7,20 @@
 				<div :class="$style.title">Pressed Points</div>
 			</div>
 			<div :class="$style.infoCenter">
-				<div :class="$style.infoValue">{{ user.wallet.funds }}</div>
+				<div :class="$style.infoValue">{{ user.wallet.funds | currency }}</div>
 				<div :class="$style.title">Pressed Cash</div>
 			</div>
 			<div :class="$style.infoRight">
 				<img :class="$style.icon" :src="tierIcon[user.wallet.tier]" alt="">
-				<div :class="$style.tier">{{ user.wallet.tier }}</div>
+				<div :class="$style.tier">{{ user.wallet.tier | tier }}</div>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import { formatCurrency } from '../utilities/formatters.js';
+
 export default {
 	props: {
 		user: {
@@ -35,6 +37,20 @@ export default {
 			},
 		};
 	},
+	filters: {
+		currency(funds) {
+			return formatCurrency(funds);
+		},
+		tier(userTier) {
+			const tiers = {
+				VIP: "VIP",
+				ELITE: "Elite",
+				INSIDER: "Insider",
+			}
+
+			return tiers[userTier]
+		}
+	}
 };
 </script>
 
