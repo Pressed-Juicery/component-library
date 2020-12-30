@@ -44,6 +44,11 @@
 			<div>{{ formatCurrency(cart.bottleDeposit)}}</div>
 		</div>
 
+		<div v-if="cart.taxes" :class="[$style.row, $style.rowGroup]">
+			<div>Taxes</div>
+			<div>{{ formatCurrency(cart.taxes) }}</div>
+		</div>
+
 		<div v-if="tip || tip === 0" :class="[$style.row, $style.rowGroup]">
 			<div>Tip</div>
 			<div>{{ formatCurrency(tip) }}</div>
