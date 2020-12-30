@@ -108,4 +108,8 @@ export default {
 		@include text-body-small();
 		@include text-subtle();
 	}
+
+	.tier {
+		@include text-bold();
+	}
 </style>
