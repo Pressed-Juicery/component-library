@@ -2,8 +2,8 @@
 	<div :class="$style.root">
 		<div
 			:class="$style.buttonWrapperLeft"
-			@click="decrementIndex"
-			@keydown="decrementIndex"
+			@click="decrementIndex(true)"
+			@keydown="decrementIndex(true)"
 			tabindex="0"
 		>
 			<left-carat />
@@ -21,8 +21,8 @@
 
 		<div
 			:class="$style.buttonWrapperRight"
-			@click="incrementIndex"
-			@keydown="decrementIndex"
+			@click="incrementIndex(true)"
+			@keydown="decrementIndex(true)"
 			tabindex="0"
 		>
 			<right-carat />
@@ -50,15 +50,13 @@ export default {
 		};
 	},
 	methods: {
-		incrementIndex() {
-			this.resetTimer();
-			if (this.currentIndex + 1 > this.currentPromotions.length - 1) this.currentIndex = 0;
-			else this.currentIndex++;
+		incrementIndex(shouldReset = false) {
+			if (shouldReset) this.resetTimer();
+			this.currentIndex === (this.currentPromotions.length - 1) ? this.currentIndex = 0 : this.currentIndex++;
 		},
-		decrementIndex() {
-			this.resetTimer();
-			if (this.currentIndex - 1 < 0) this.currentIndex = this.currentPromotions.length - 1;
-			else this.currentIndex--;
+		decrementIndex(shouldReset = false) {
+			if (shouldReset) this.resetTimer();
+			this.currentIndex === 0 ? this.currentIndex = (this.currentPromotions.length - 1) : this.currentIndex--;
 		},
 		resetTimer() {
 			clearInterval(this.timer);
