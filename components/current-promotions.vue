@@ -52,10 +52,12 @@ export default {
 	methods: {
 		incrementIndex(shouldReset = false) {
 			if (shouldReset) this.resetTimer();
+			// eslint-disable-next-line no-unused-expressions
 			this.currentIndex === (this.currentPromotions.length - 1) ? this.currentIndex = 0 : this.currentIndex++;
 		},
 		decrementIndex(shouldReset = false) {
 			if (shouldReset) this.resetTimer();
+			// eslint-disable-next-line no-unused-expressions
 			this.currentIndex === 0 ? this.currentIndex = (this.currentPromotions.length - 1) : this.currentIndex--;
 		},
 		resetTimer() {
