@@ -11,13 +11,13 @@
 
 		<div
 			:class="$style.title"
-			@click="$emit('change', currentOffers[currentIndex])"
-			@keydown="$emit('change', currentOffers[currentIndex])"
+			@click="$emit('change', currentPromotions[currentIndex])"
+			@keydown="$emit('change', currentPromotions[currentIndex])"
 			tabindex="0"
 		>
-			{{ currentOffers[currentIndex].title }}
+			{{ currentPromotions[currentIndex].title }}
 		</div>
-		<div :class="$style.message">{{ currentOffers[currentIndex].subtitle }}</div>
+		<div :class="$style.message">{{ currentPromotions[currentIndex].subtitle }}</div>
 
 		<div
 			:class="$style.buttonWrapperRight"
@@ -36,7 +36,7 @@ import RightCarat from './icons/right-caret-white';
 
 export default {
 	props: {
-		currentOffers: {
+		currentPromotions: {
 			type: Array,
 			required: true,
 		},
@@ -52,12 +52,12 @@ export default {
 	methods: {
 		incrementIndex() {
 			this.resetTimer();
-			if (this.currentIndex + 1 > this.currentOffers.length - 1) this.currentIndex = 0;
+			if (this.currentIndex + 1 > this.currentPromotions.length - 1) this.currentIndex = 0;
 			else this.currentIndex++;
 		},
 		decrementIndex() {
 			this.resetTimer();
-			if (this.currentIndex - 1 < 0) this.currentIndex = this.currentOffers.length - 1;
+			if (this.currentIndex - 1 < 0) this.currentIndex = this.currentPromotions.length - 1;
 			else this.currentIndex--;
 		},
 		resetTimer() {
