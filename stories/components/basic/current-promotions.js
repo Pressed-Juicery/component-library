@@ -1,17 +1,17 @@
-import CurrentOffers from '../../../components/current-offers.vue';
+import currentPromotions from '../../../components/current-promotions.vue';
 
 export default {
-	title: 'Components / Basic / CurrentOffers',
-	component: CurrentOffers,
+	title: 'Components / Basic / currentPromotions',
+	component: currentPromotions,
 };
 
 export function Overview() {
 	return {
-		components: { CurrentOffers },
-		template: '<current-offers :currentOffers="currentOffers" />',
+		components: { currentPromotions },
+		template: '<current-promotions :currentPromotions="currentPromotions" />',
 		data() {
 			return {
-				currentOffers: [
+				currentPromotions: [
 					{
 					  offerHandle: '6-for-29',
 					  title: 'ANY 6 ITEMS FOR $29',
