@@ -82,6 +82,7 @@ export default {
 		ValidatedCheckbox,
 		ValidatedPassword,
 	},
+	// eslint-disable-next-line max-lines-per-function
 	data() {
 		return {
 			user: { acceptsEmailMarketing: true },
