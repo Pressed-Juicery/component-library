@@ -123,10 +123,6 @@ export default {
 					validator: this.isPhoneAvailableValidator,
 					message: 'Phone Number has already been claimed.',
 				}],
-				acceptsTermsAndConditions: [{
-					validator: isNotEmpty,
-					message: 'You must agree to the terms to complete your registration.',
-				}],
 			},
 		};
 	},
