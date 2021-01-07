@@ -66,7 +66,6 @@ import ValidatedPassword from './validated-password';
 
 export default {
 	props: {
-		id: String,
 		isEmailAvailableValidator: {
 			type: Function,
 			required: true,
