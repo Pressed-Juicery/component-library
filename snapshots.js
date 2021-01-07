@@ -30,7 +30,6 @@ const groups = [{
 		'StepProgressBar',
 		'Sidebar',
 		'ToggleSwitch',
-		'VipPerksCard',
 		'WalletDrawer',
 	],
 }, {
