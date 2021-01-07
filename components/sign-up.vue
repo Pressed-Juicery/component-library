@@ -105,9 +105,9 @@ export default {
 				}, {
 					validator: this.isEmailAvailableValidator,
 					message: `
-						You've previously created an online account with us.
-						Log in to complete your Pressed Points registration.
-					`,
+							You've previously created an online account with us.
+							Log in to complete your Pressed Points registration.
+						`,
 				}],
 				postal: [{
 					validator: isZipCode,
