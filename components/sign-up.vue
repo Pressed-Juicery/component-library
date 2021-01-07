@@ -65,6 +65,17 @@ import ValidatedInput from './validated-input';
 import ValidatedPassword from './validated-password';
 
 export default {
+	props: {
+		id: String,
+		isEmailAvailableValidator: {
+			type: Function,
+			required: true,
+		},
+		isPhoneAvailableValidator: {
+			type: Function,
+			required: true,
+		},
+	},
 	components: {
 		ValidatedInput,
 		ValidatedBirthday,
