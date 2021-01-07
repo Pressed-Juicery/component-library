@@ -86,7 +86,6 @@ export default {
 		return {
 			user: { acceptsEmailMarketing: true },
 			acceptsSmsMarketing: false,
-			acceptsTermsAndConditions: false,
 			hasError: null,
 			rules: {
 				firstName: [{
