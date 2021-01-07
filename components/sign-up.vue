@@ -142,7 +142,10 @@ export default {
 				.then(results => {
 					this.hasError = results.some(isValid => !isValid);
 					if (!this.hasError) {
-						this.$emit('add-user', { user: this.user, acceptsTermAndConditions: this.acceptsTermsAndConditions });
+						this.$emit('add-user', {
+							user: this.user,
+							acceptsTermAndConditions: this.acceptsTermsAndConditions,
+						});
 					}
 				});
 		},
