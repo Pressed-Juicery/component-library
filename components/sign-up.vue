@@ -49,17 +49,6 @@
 			promotional messages a month. Reply STOP to quit. View the Messaging Terms &
 			Conditions.
 		</validated-checkbox>
-
-		<validated-checkbox
-			:class="$style.legalText"
-			:rules="rules.acceptsTermsAndConditions"
-			v-model="acceptsTermsAndConditions"
-		>
-			I’ve read and accept the
-			<a :class="$style.underline" @click.prevent="$emit('viewPrivacyPolicy')">Privacy Policy</a> and the
-			<a :class="$style.underline" @click.prevent="$emit('viewTerms')">Membership Terms &amp; Conditions.</a>
-		</validated-checkbox>
-		</div>
 	</div>
 </template>
 
