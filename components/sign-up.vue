@@ -131,6 +131,22 @@ export default {
 			},
 		};
 	},
+	methods: {
+		isValid() {
+			this.hasError = false;
+			const promises = this.$children
+				.filter(child => typeof child.isValid === 'function')
+				.map(child => child.isValid());
+
+			Promise.all(promises)
+				.then(results => {
+					this.hasError = results.some(isValid => !isValid);
+					if (!this.hasError) {
+						this.$emit('add-user', { user: this.user, acceptsTermAndConditions: this.acceptsTermsAndConditions });
+					}
+				});
+		},
+	},
 };
 </script>
 
