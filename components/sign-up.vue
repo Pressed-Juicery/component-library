@@ -139,7 +139,6 @@ export default {
 					if (!this.hasError) {
 						this.$emit('add-user', {
 							user: this.user,
-							acceptsTermAndConditions: this.acceptsTermsAndConditions,
 						});
 					}
 				});
