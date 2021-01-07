@@ -8,6 +8,15 @@ export default {
 export function Overview() {
 	return {
 		components: { SignUp },
-		template: '<sign-up />',
+		template: `
+			<sign-up
+				id="sign-up"
+				:isPhoneAvailableValidator="isPhoneAvailableValidator"
+				:isEmailAvailableValidator="isEmailAvailableValidator"
+			/>`,
+		methods: {
+			isPhoneAvailableValidator: () => Promise.resolve(true),
+			isEmailAvailableValidator: () => Promise.resolve(true),
+		},
 	};
 }
