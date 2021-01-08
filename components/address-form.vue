@@ -17,13 +17,16 @@
 			/>
 		</div>
 
-		<validated-input
+		<slot name="address" />
+
+		<!-- <validated-input
 			label="Street Address"
 			type="text"
 			autocomplete="address-line1"
 			v-model="address.streetAddress"
 			:rules="addressRules"
-		/>
+		/> -->
+
 		<validated-input
 			type="text"
 			label="Suite/Apt"
