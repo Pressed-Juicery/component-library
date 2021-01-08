@@ -8,7 +8,7 @@ export default {
 export function Overview() {
 	return {
 		components: { AddressForm },
-		template: '<address-form :show-save-checkbox="true"/>',
+		// template: '<address-form :show-save-checkbox="true"></address-form>',
 	};
 }
 
@@ -18,7 +18,12 @@ export function NewAddress() {
 
 		template: `
 			<div>
-				<address-form :id="formName" :show-save-checkbox="true" @submit="newAddress => address = newAddress" />
+				<address-form :id="formName" :show-save-checkbox="true" @submit="newAddress => address = newAddress">
+					<div>
+						<label>HELLO</label>
+						<input slot="address" placeholder="yolo" />
+					</div>
+				</address-form>
 				<button type="submit" :form="formName">Save</button>
 
 				<div v-if="address">

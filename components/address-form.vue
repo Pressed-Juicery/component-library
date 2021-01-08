@@ -17,7 +17,9 @@
 			/>
 		</div>
 
-		<slot name="address" />
+		<div class="this-is-the-address">
+			<slot name="address"/>
+		</div>
 
 		<!-- <validated-input
 			label="Street Address"
