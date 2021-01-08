@@ -141,6 +141,8 @@ export default {
 							user: this.user,
 						});
 					}
+
+					return !this.hasError;
 				});
 		},
 	},
