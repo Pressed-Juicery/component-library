@@ -133,7 +133,7 @@ export default {
 				.filter(child => typeof child.isValid === 'function')
 				.map(child => child.isValid());
 
-			Promise.all(promises)
+			return Promise.all(promises)
 				.then(results => {
 					this.hasError = results.some(isValid => !isValid);
 					if (!this.hasError) {
