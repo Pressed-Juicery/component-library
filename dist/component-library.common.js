@@ -1317,6 +1317,28 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 /***/ }),
 
+/***/ "2532":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__("23e7");
+var notARegExp = __webpack_require__("5a34");
+var requireObjectCoercible = __webpack_require__("1d80");
+var correctIsRegExpLogic = __webpack_require__("ab13");
+
+// `String.prototype.includes` method
+// https://tc39.github.io/ecma262/#sec-string.prototype.includes
+$({ target: 'String', proto: true, forced: !correctIsRegExpLogic('includes') }, {
+  includes: function includes(searchString /* , position = 0 */) {
+    return !!~String(requireObjectCoercible(this))
+      .indexOf(notARegExp(searchString), arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+
+/***/ }),
+
 /***/ "259d":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3043,6 +3065,20 @@ module.exports = BitMatrix
 /* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_0_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_0_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_0_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_0_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_cleanse_guide_vue_vue_type_style_index_0_module_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("d849");
 /* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_0_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_0_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_0_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_0_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_cleanse_guide_vue_vue_type_style_index_0_module_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_0_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_0_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_0_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_0_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_cleanse_guide_vue_vue_type_style_index_0_module_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
  /* harmony default export */ __webpack_exports__["default"] = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_0_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_0_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_0_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_0_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_cleanse_guide_vue_vue_type_style_index_0_module_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "5a34":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isRegExp = __webpack_require__("44e7");
+
+module.exports = function (it) {
+  if (isRegExp(it)) {
+    throw TypeError("The method doesn't accept regular expressions");
+  } return it;
+};
+
 
 /***/ }),
 
@@ -26148,6 +26184,28 @@ exports.create = function create (data, options) {
 
 /***/ }),
 
+/***/ "ab13":
+/***/ (function(module, exports, __webpack_require__) {
+
+var wellKnownSymbol = __webpack_require__("b622");
+
+var MATCH = wellKnownSymbol('match');
+
+module.exports = function (METHOD_NAME) {
+  var regexp = /./;
+  try {
+    '/./'[METHOD_NAME](regexp);
+  } catch (e) {
+    try {
+      regexp[MATCH] = false;
+      return '/./'[METHOD_NAME](regexp);
+    } catch (f) { /* empty */ }
+  } return false;
+};
+
+
+/***/ }),
+
 /***/ "ac1f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32037,12 +32095,12 @@ var addon_options_component = normalizeComponent(
 )
 
 /* harmony default export */ var addon_options = (addon_options_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"010eaf3d-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/address-form.vue?vue&type=template&id=886d5a28&
-var address_formvue_type_template_id_886d5a28_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('validated-form',{attrs:{"id":_vm.id},on:{"submit":function($event){return _vm.$emit('submit', _vm.address)}}},[_c('div',{class:_vm.$style.grid},[_c('validated-input',{attrs:{"type":"text","label":"First Name","autocomplete":"given-name","rules":_vm.firstNameRules},model:{value:(_vm.address.firstName),callback:function ($$v) {_vm.$set(_vm.address, "firstName", $$v)},expression:"address.firstName"}}),_c('validated-input',{attrs:{"type":"text","label":"Last Name","autocomplete":"family-name","rules":_vm.lastNameRules},model:{value:(_vm.address.lastName),callback:function ($$v) {_vm.$set(_vm.address, "lastName", $$v)},expression:"address.lastName"}})],1),_c('div',{staticClass:"this-is-the-address"},[_vm._t("address")],2),_c('validated-input',{attrs:{"type":"text","label":"Suite/Apt","autocomplete":"address-line2"},model:{value:(_vm.address.extendedAddress),callback:function ($$v) {_vm.$set(_vm.address, "extendedAddress", $$v)},expression:"address.extendedAddress"}}),_c('validated-input',{attrs:{"type":"text","label":"City","autocomplete":"address-level2","rules":_vm.localityRules},model:{value:(_vm.address.locality),callback:function ($$v) {_vm.$set(_vm.address, "locality", $$v)},expression:"address.locality"}}),_c('div',{class:_vm.$style.grid},[_c('validated-select',{attrs:{"label":"State","autocomplete":"address-level1","options":_vm.regions,"rules":_vm.regionRules},model:{value:(_vm.address.region),callback:function ($$v) {_vm.$set(_vm.address, "region", $$v)},expression:"address.region"}}),_c('validated-input',{attrs:{"type":"number","label":"ZIP Code","autocomplete":"postal-code","rules":_vm.postalRules},model:{value:(_vm.address.postal),callback:function ($$v) {_vm.$set(_vm.address, "postal", $$v)},expression:"address.postal"}})],1),_c('validated-input',{attrs:{"type":"tel","label":"Phone Number","autocomplete":"tel","rules":_vm.phoneRules},model:{value:(_vm.address.phone),callback:function ($$v) {_vm.$set(_vm.address, "phone", $$v)},expression:"address.phone"}}),(_vm.showSaveCheckbox)?_c('div',[_c('validated-checkbox',{attrs:{"value":_vm.address.shouldSaveAddress,"label":"Save address for future orders"},model:{value:(_vm.address.shouldSaveAddress),callback:function ($$v) {_vm.$set(_vm.address, "shouldSaveAddress", $$v)},expression:"address.shouldSaveAddress"}})],1):_vm._e(),(_vm.showDeliveryInstructions)?_c('div',{class:_vm.$style.deliveryInstructions},[_c('label',{class:_vm.$style.deliveryInstructionsLabel,attrs:{"for":_vm.textareaId}},[_vm._v("Delivery Instructions")]),_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.address.deliveryInstructions),expression:"address.deliveryInstructions"}],attrs:{"id":_vm.textareaId,"rows":"4","placeholder":"e.g. \"ring bell and leave at door\", gate code, etc."},domProps:{"value":(_vm.address.deliveryInstructions)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.address, "deliveryInstructions", $event.target.value)}}})]):_vm._e()],1)}
-var address_formvue_type_template_id_886d5a28_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"010eaf3d-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/address-form.vue?vue&type=template&id=254a16dc&
+var address_formvue_type_template_id_254a16dc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('validated-form',{attrs:{"id":_vm.id},on:{"submit":function($event){return _vm.$emit('submit', _vm.address)}}},[_c('div',{class:_vm.$style.grid},[_c('validated-input',{attrs:{"type":"text","label":"First Name","autocomplete":"given-name","rules":_vm.firstNameRules},model:{value:(_vm.address.firstName),callback:function ($$v) {_vm.$set(_vm.address, "firstName", $$v)},expression:"address.firstName"}}),_c('validated-input',{attrs:{"type":"text","label":"Last Name","autocomplete":"family-name","rules":_vm.lastNameRules},model:{value:(_vm.address.lastName),callback:function ($$v) {_vm.$set(_vm.address, "lastName", $$v)},expression:"address.lastName"}})],1),_c('div',{staticClass:"this-is-the-address"},[_vm._t("address")],2),_c('validated-input',{attrs:{"type":"text","label":"Suite/Apt","autocomplete":"address-line2"},model:{value:(_vm.address.extendedAddress),callback:function ($$v) {_vm.$set(_vm.address, "extendedAddress", $$v)},expression:"address.extendedAddress"}}),_c('validated-input',{attrs:{"type":"text","label":"City","autocomplete":"address-level2","rules":_vm.localityRules},model:{value:(_vm.address.locality),callback:function ($$v) {_vm.$set(_vm.address, "locality", $$v)},expression:"address.locality"}}),_c('div',{class:_vm.$style.grid},[_c('validated-select',{attrs:{"label":"State","autocomplete":"address-level1","options":_vm.regions,"rules":_vm.regionRules},model:{value:(_vm.address.region),callback:function ($$v) {_vm.$set(_vm.address, "region", $$v)},expression:"address.region"}}),_c('validated-input',{attrs:{"type":"string","label":"ZIP Code","autocomplete":"postal-code","rules":_vm.postalRules},model:{value:(_vm.address.postal),callback:function ($$v) {_vm.$set(_vm.address, "postal", $$v)},expression:"address.postal"}})],1),_c('validated-input',{attrs:{"type":"tel","label":"Phone Number","autocomplete":"tel","rules":_vm.phoneRules},model:{value:(_vm.address.phone),callback:function ($$v) {_vm.$set(_vm.address, "phone", $$v)},expression:"address.phone"}}),(_vm.showSaveCheckbox)?_c('div',[_c('validated-checkbox',{attrs:{"value":_vm.address.shouldSaveAddress,"label":"Save address for future orders"},model:{value:(_vm.address.shouldSaveAddress),callback:function ($$v) {_vm.$set(_vm.address, "shouldSaveAddress", $$v)},expression:"address.shouldSaveAddress"}})],1):_vm._e(),(_vm.showDeliveryInstructions)?_c('div',{class:_vm.$style.deliveryInstructions},[_c('label',{class:_vm.$style.deliveryInstructionsLabel,attrs:{"for":_vm.textareaId}},[_vm._v("Delivery Instructions")]),_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.address.deliveryInstructions),expression:"address.deliveryInstructions"}],attrs:{"id":_vm.textareaId,"rows":"4","placeholder":"e.g. \"ring bell and leave at door\", gate code, etc."},domProps:{"value":(_vm.address.deliveryInstructions)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.address, "deliveryInstructions", $event.target.value)}}})]):_vm._e()],1)}
+var address_formvue_type_template_id_254a16dc_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/address-form.vue?vue&type=template&id=886d5a28&
+// CONCATENATED MODULE: ./components/address-form.vue?vue&type=template&id=254a16dc&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.includes.js
 var es_array_includes = __webpack_require__("caad");
@@ -32958,16 +33016,10 @@ var regions = [{
       }],
       postalRules: [{
         validator: isNotEmpty,
-        message: 'Please enter a valid 5 digit zip code.'
+        message: 'Please enter a valid zip code.'
       }, {
-        validator: isNumber,
-        message: 'Please enter a valid 5 digit zip code.'
-      }, {
-        validator: hasExactLength,
-        message: 'Please enter a valid 5 digit zip code.',
-        options: {
-          length: 5
-        }
+        validator: isZipCode,
+        message: 'Please enter a valid zip code.'
       }],
       phoneRules: [{
         validator: isNotEmpty,
@@ -33004,8 +33056,8 @@ function address_form_injectStyles (context) {
 
 var address_form_component = normalizeComponent(
   components_address_formvue_type_script_lang_js_,
-  address_formvue_type_template_id_886d5a28_render,
-  address_formvue_type_template_id_886d5a28_staticRenderFns,
+  address_formvue_type_template_id_254a16dc_render,
+  address_formvue_type_template_id_254a16dc_staticRenderFns,
   false,
   address_form_injectStyles,
   null,
@@ -33024,6 +33076,9 @@ var address_formattervue_type_template_id_0e6df87e_staticRenderFns = []
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.number.to-fixed.js
 var es_number_to_fixed = __webpack_require__("b680");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.includes.js
+var es_string_includes = __webpack_require__("2532");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.match.js
 var es_string_match = __webpack_require__("466d");
 
@@ -33031,6 +33086,8 @@ var es_string_match = __webpack_require__("466d");
 var es_string_replace = __webpack_require__("5319");
 
 // CONCATENATED MODULE: ./utilities/formatters.js
+
+
 
 
 
@@ -33060,6 +33117,30 @@ function formatPhoneNumber(phone) {
   var sections = numbersOnly.match(/^(\d{3})(\d{3})(\d{4})$/); // eslint-disable-next-line no-magic-numbers
 
   return sections ? `(${sections[1]}) ${sections[2]}-${sections[3]}` : numbersOnly;
+}
+function formatGoogleAddress(addressComponents) {
+  var getPropertyByType = function getPropertyByType(type) {
+    var addressProperty = (addressComponents || []).find(function (property) {
+      return property.types.includes(type);
+    });
+    return addressProperty && addressProperty.short_name || null;
+  };
+
+  var number = getPropertyByType('street_number');
+  var street = getPropertyByType('route');
+  var locality = getPropertyByType('locality');
+  var region = getPropertyByType('administrative_area_level_1');
+  ;
+  var country = getPropertyByType('country');
+  var postal = getPropertyByType('postal_code');
+  var postalSuffix = getPropertyByType('postal_code_suffix');
+  return {
+    streetAddress: number && street ? `${number} ${street}` : null,
+    locality,
+    region,
+    postal: postalSuffix ? `${postal}-${postalSuffix}` : postal,
+    country
+  };
 }
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/address-formatter.vue?vue&type=script&lang=js&
 //
