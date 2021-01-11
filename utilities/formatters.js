@@ -27,3 +27,27 @@ export function formatPhoneNumber(phone) {
 	// eslint-disable-next-line no-magic-numbers
 	return sections ? `(${sections[1]}) ${sections[2]}-${sections[3]}` : numbersOnly;
 }
+
+export function formatGoogleAddress(addressComponents) {
+	const getPropertyByType = type => {
+		const addressProperty = (addressComponents || []).find(property => property.types.includes(type));
+
+		return addressProperty && addressProperty.short_name || null;
+	}
+
+	const number = getPropertyByType('street_number');
+	const street = getPropertyByType('route');
+	const locality = getPropertyByType('locality');
+	const region = getPropertyByType('administrative_area_level_1');;
+	const country = getPropertyByType('country');
+	const postal = getPropertyByType('postal_code');
+	const postalSuffix = getPropertyByType('postal_code_suffix');
+
+	return {
+		streetAddress: number && street ? `${number} ${street}` : null,
+		locality,
+		region,
+		postal: postalSuffix ? `${postal}-${postalSuffix}` : postal,
+		country,
+	};
+}
