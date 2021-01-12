@@ -33134,8 +33134,9 @@ function formatGoogleAddress(addressComponents) {
   var country = getPropertyByType('country');
   var postal = getPropertyByType('postal_code');
   var postalSuffix = getPropertyByType('postal_code_suffix');
+  var streetAddress = number && street ? `${number} ${street}` : street || null;
   return {
-    streetAddress: number && street ? `${number} ${street}` : null,
+    streetAddress,
     locality,
     region,
     postal: postalSuffix ? `${postal}-${postalSuffix}` : postal,
