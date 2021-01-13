@@ -3,7 +3,7 @@
 		<div
 			:class="$style.buttonWrapperLeft"
 			@click="decrementIndex(true)"
-			@keydown="decrementIndex(true)"
+			@keyup.enter="decrementIndex(true)"
 			tabindex="0"
 		>
 			<left-carat />
@@ -12,7 +12,7 @@
 		<div
 			:class="$style.name"
 			@click="$emit('change', currentPromotions[currentIndex])"
-			@keydown="$emit('change', currentPromotions[currentIndex])"
+			@keyup.enter="$emit('change', currentPromotions[currentIndex])"
 			tabindex="0"
 		>
 			{{ currentPromotions[currentIndex].name }}
@@ -22,7 +22,7 @@
 		<div
 			:class="$style.buttonWrapperRight"
 			@click="incrementIndex(true)"
-			@keydown="decrementIndex(true)"
+			@keyup.enter="decrementIndex(true)"
 			tabindex="0"
 		>
 			<right-carat />
