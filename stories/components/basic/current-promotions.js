@@ -1,7 +1,7 @@
 import currentPromotions from '../../../components/current-promotions.vue';
 
 export default {
-	title: 'Components / Basic / currentPromotions',
+	title: 'Components / Basic / CurrentPromotions',
 	component: currentPromotions,
 };
 
