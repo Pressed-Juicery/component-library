@@ -22,7 +22,7 @@
 		<div
 			:class="$style.buttonWrapperRight"
 			@click="incrementIndex(true)"
-			@keyup.enter="decrementIndex(true)"
+			@keyup.enter="incrementIndex(true)"
 			tabindex="0"
 		>
 			<right-carat />
