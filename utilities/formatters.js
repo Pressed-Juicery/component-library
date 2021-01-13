@@ -43,7 +43,7 @@ export function formatGoogleAddress(addressComponents) {
 	const postal = getPropertyByType('postal_code');
 	const postalSuffix = getPropertyByType('postal_code_suffix');
 
-	let streetAddress = number && street
+	const streetAddress = number && street
 		? `${number} ${street}`
 		: street || null;
 
