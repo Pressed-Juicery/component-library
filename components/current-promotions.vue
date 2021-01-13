@@ -85,6 +85,7 @@ export default {
 	}
 
 	.root {
+		position: relative;
 		background-color: $brownish-purple;
 		color: $white;
 		padding: $spacing-05;
