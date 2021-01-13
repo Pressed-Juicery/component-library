@@ -18,11 +18,11 @@
 		</div>
 
 		<validated-input
-			id="autocomplete"
 			label="Street Address"
 			type="text"
 			autocomplete="address-line1"
 			v-model="address.streetAddress"
+			:isAutocompleteInput="true"
 			:rules="addressRules"
 		/>
 
