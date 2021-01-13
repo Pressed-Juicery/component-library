@@ -22,8 +22,10 @@
 			type="text"
 			autocomplete="address-line1"
 			v-model="address.streetAddress"
+			:isAutocompleteInput="true"
 			:rules="addressRules"
 		/>
+
 		<validated-input
 			type="text"
 			label="Suite/Apt"
