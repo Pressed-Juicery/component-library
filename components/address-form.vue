@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import { hasExactLength, isNotEmpty, isNumber, isValidPhoneNumber, isZipCode } from '../utilities/validators';
+import { isNotEmpty, isValidPhoneNumber, isZipCode } from '../utilities/validators';
 
 import ValidatedCheckbox from './validated-checkbox';
 import ValidatedForm from './validated-form';
