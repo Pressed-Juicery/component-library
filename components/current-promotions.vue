@@ -22,7 +22,7 @@
 		<div
 			:class="$style.buttonWrapperRight"
 			@click="incrementIndex(true)"
-			@keyup.enter="decrementIndex(true)"
+			@keyup.enter="incrementIndex(true)"
 			tabindex="0"
 		>
 			<right-carat />
@@ -40,12 +40,15 @@ export default {
 			type: Array,
 			required: true,
 		},
+		timerDelay: {
+			type: Number,
+			default: () => 3000, // eslint-disable-line no-magic-numbers
+		},
 	},
 	components: { LeftCarat, RightCarat },
 	data() {
 		return {
 			currentIndex: 0,
-			timerDelay: 3000,
 			timer: null,
 		};
 	},
