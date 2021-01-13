@@ -3,26 +3,26 @@
 		<div
 			:class="$style.buttonWrapperLeft"
 			@click="decrementIndex(true)"
-			@keydown="decrementIndex(true)"
+			@keyup.enter="decrementIndex(true)"
 			tabindex="0"
 		>
 			<left-carat />
 		</div>
 
 		<div
-			:class="$style.title"
+			:class="$style.name"
 			@click="$emit('change', currentPromotions[currentIndex])"
-			@keydown="$emit('change', currentPromotions[currentIndex])"
+			@keyup.enter="$emit('change', currentPromotions[currentIndex])"
 			tabindex="0"
 		>
-			{{ currentPromotions[currentIndex].title }}
+			{{ currentPromotions[currentIndex].name }}
 		</div>
-		<div :class="$style.message">{{ currentPromotions[currentIndex].subtitle }}</div>
+		<div :class="$style.helpText">{{ currentPromotions[currentIndex].helpText }}</div>
 
 		<div
 			:class="$style.buttonWrapperRight"
 			@click="incrementIndex(true)"
-			@keydown="decrementIndex(true)"
+			@keyup.enter="decrementIndex(true)"
 			tabindex="0"
 		>
 			<right-carat />
@@ -75,7 +75,7 @@ export default {
 	@import '../styles/variables.scss';
 	@import '../styles/mixins.scss';
 
-	.title,
+	.name,
 	.buttonWrapperLeft,
 	.buttonWrapperRight {
 		cursor: pointer;
@@ -90,7 +90,7 @@ export default {
 		border-radius: $border-radius;
 	}
 
-	.message {
+	.helpText {
 		@include text-body-small();
 	}
 
