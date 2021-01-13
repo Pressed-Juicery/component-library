@@ -31,6 +31,7 @@ export { default as CollapsibleWalletDrawer } from './collapsible-wallet-drawer'
 export { default as ConfirmationDialogTemplate } from './confirmation-dialog-template';
 export { default as ConfirmDrawer } from './confirm-drawer';
 export { default as ContentWrapper } from './content-wrapper';
+export { default as CurrentPromotions } from './current-promotions';
 export { default as Drawer } from './drawer';
 export { default as FeaturedTile } from './featured-tile.vue';
 export { default as FeatureHighlight } from './feature-highlight';

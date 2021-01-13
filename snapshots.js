@@ -18,6 +18,7 @@ const groups = [{
 		'CollapsibleDrawer',
 		'ConfirmationDialogTemplate',
 		'ConfirmDrawer',
+		'CurrentPromotions',
 		'Drawer',
 		'FeaturedTile',
 		'MenuDialogTemplate',
