@@ -98,7 +98,7 @@ export default {
 		text-align: center;
 	}
 
-	@media screen and (max-width: 450) {
+	@media screen and (min-width: 450px) {
 		.name {
 			max-width: 25ch;
 		}
