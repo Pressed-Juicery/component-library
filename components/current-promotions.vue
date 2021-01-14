@@ -94,6 +94,16 @@ export default {
 		border-radius: $border-radius;
 	}
 
+	.name {
+		text-align: center;
+	}
+
+	@media screen and (max-width: 450) {
+		.name {
+			max-width: 25ch;
+		}
+	}
+
 	.helpText {
 		@include text-body-small();
 	}
