@@ -1,19 +1,29 @@
 <template>
 	<div>
-		<div :class="$style.welcomeMessage">Welcome, {{ user.firstName }}</div>
-		<div :class="$style.infoGroup">
-			<div :class="$style.infoLeft">
-				<div :class="$style.infoValue">{{ user.wallet.points }}</div>
-				<div :class="$style.title">Pressed Points</div>
+		<div v-if="user">
+			<div :class="$style.cta">Welcome, {{ user.firstName }}</div>
+			<div :class="$style.infoGroup">
+				<div :class="$style.infoLeft">
+					<div :class="$style.infoValue">{{ user.wallet.points }}</div>
+					<div :class="$style.title">Pressed Points</div>
+				</div>
+				<div :class="$style.infoCenter">
+					<div :class="$style.infoValue">{{ user.wallet.funds | currency }}</div>
+					<div :class="$style.title">Pressed Cash</div>
+				</div>
+				<div :class="$style.infoRight">
+					<img :class="$style.icon" :src="tierIcon[user.wallet.tier]" alt="">
+					<div :class="$style.tier">{{ user.wallet.tier | tier }}</div>
+				</div>
 			</div>
-			<div :class="$style.infoCenter">
-				<div :class="$style.infoValue">{{ user.wallet.funds | currency }}</div>
-				<div :class="$style.title">Pressed Cash</div>
+		</div>
+		<div v-else>
+			<div :class="$style.cta">Live the #PressedLife</div>
+			<div :class="$style.message">
+				Sign in to your Pressed Juicery account to see pressed points, pressed cash, orders, and more!
 			</div>
-			<div :class="$style.infoRight">
-				<img :class="$style.icon" :src="tierIcon[user.wallet.tier]" alt="">
-				<div :class="$style.tier">{{ user.wallet.tier | tier }}</div>
-			</div>
+			<a :class="$style.ctaLink" @click="$emit('sign-in')" tabindex="0">Sign In</a>
+			<a :class="$style.ctaLink" @click="$emit('create-account')" tabindex="0">Create Account</a>
 		</div>
 	</div>
 </template>
