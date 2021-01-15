@@ -61,3 +61,15 @@ export function Elite() {
 		},
 	};
 }
+
+export function NoUser() {
+	return {
+		components: { AccountSummary },
+		template: '<account-summary :user="user" />',
+		data() {
+			return {
+				user: null,
+			};
+		},
+	};
+}
