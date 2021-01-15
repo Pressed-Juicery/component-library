@@ -42,14 +42,14 @@ export default {
 		},
 		tier(userTier) {
 			const tiers = {
-				VIP: "VIP",
-				ELITE: "Elite",
-				INSIDER: "Insider",
-			}
+				VIP: 'VIP',
+				ELITE: 'Elite',
+				INSIDER: 'Insider',
+			};
 
-			return tiers[userTier]
-		}
-	}
+			return tiers[userTier];
+		},
+	},
 };
 </script>
 
