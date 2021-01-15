@@ -90,15 +90,16 @@ export default {
 	}
 
 	.infoValue,
-	.icon {
-		margin-bottom: $spacing-02;
+	.icon,
+	.message {
+		margin-bottom: $spacing-03;
 	}
 
 	.infoValue {
 		@include text-heading-5();
 	}
 
-	.welcomeMessage {
+	.cta {
 		@include text-heading-4();
 		margin-bottom: $spacing-05;
 	}
@@ -110,5 +111,12 @@ export default {
 
 	.tier {
 		@include text-bold();
+	}
+
+	.ctaLink {
+		@include text-uppercase();
+		@include text-bolder();
+		text-decoration: underline;
+		margin-right: $spacing-05;
 	}
 </style>
