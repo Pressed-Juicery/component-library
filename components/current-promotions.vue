@@ -11,8 +11,8 @@
 
 		<div
 			:class="$style.name"
-			@click="$emit('selected', currentPromotions[currentIndex])"
-			@keyup.enter="$emit('selected', currentPromotions[currentIndex])"
+			@click="$emit('selected-promotion', currentPromotions[currentIndex])"
+			@keyup.enter="$emit('selected-promotion', currentPromotions[currentIndex])"
 			tabindex="0"
 		>
 			{{ currentPromotions[currentIndex].name }}
