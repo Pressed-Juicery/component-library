@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.root">
 		<div
-			:class="$style.buttonWrapper"
+			:class="$style.caratWrapper"
 			@click="decrement()"
 			@keyup.enter="decrement()"
 			tabindex="0"
@@ -20,7 +20,7 @@
 		</div>
 
 		<div
-			:class="$style.buttonWrapper"
+			:class="$style.caratWrapper"
 			@click="increment()"
 			@keyup.enter="increment()"
 			tabindex="0"
@@ -109,7 +109,7 @@ export default {
 		text-align: center;
 	}
 
-	.buttonWrapper {
+	.caratWrapper {
 		padding: $content-padding;
 	}
 </style>
