@@ -48,6 +48,10 @@ export default {
 	methods: {
 		},
 		},
+
+		shouldShowCarats() {
+			this.showLeftCarat = this.currentIndex !== 0;
+			this.showRightCarat = this.currentIndex < this.currentPromotions.length - 1;
 		},
 	},
 	created() {
