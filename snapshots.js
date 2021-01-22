@@ -19,6 +19,7 @@ const groups = [{
 		'ConfirmationDialogTemplate',
 		'ConfirmDrawer',
 		'Drawer',
+		'FeaturedItem',
 		'MenuDialogTemplate',
 		'MenuDrawer',
 		'Overlay',
