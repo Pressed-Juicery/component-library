@@ -1,6 +1,6 @@
 <template>
 	<div :class="$style.root" @click="$emit('selected', tile)">
-		<img :class="$style.image" :src="tile.imageUrl" :alt="tile.title">
+		<img :class="$style.image" :src="tile.imageUrl" alt="">
 		<div :class="$style.title">{{ tile.title }}</div>
 		<div :class="$style.description">{{ tile.description }}</div>
 	</div>
