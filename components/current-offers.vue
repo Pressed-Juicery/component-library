@@ -100,10 +100,7 @@ export default {
 		border-radius: $border-radius;
 	}
 
-	.caratWrapper {
-		padding: $content-padding;
-	}
-
+	.caratWrapper,
 	.promotionContentWrapper {
 		padding: $content-padding;
 	}
