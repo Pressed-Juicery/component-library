@@ -88,14 +88,14 @@ export default {
 	@import '../styles/variables.scss';
 	@import '../styles/mixins.scss';
 
+	$content-padding: $spacing-05;
 
 	.root {
-		position: relative;
 		background-color: $brownish-purple;
 		color: $white;
-		padding: $spacing-05;
 		display: grid;
-		place-items: center;
+		grid-template-columns: auto 1fr auto;
+		align-items: center;
 		border-radius: $border-radius;
 	}
 
