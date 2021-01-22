@@ -1,5 +1,5 @@
 <template>
-	<div :class="$style.root">
+	<div v-if="currentOffers && currentOffers.length" :class="$style.root">
 		<div :class="$style.caratWrapper" @click="decrement()">
 			<left-carat v-show="shouldShowLeftCarat" />
 		</div>
