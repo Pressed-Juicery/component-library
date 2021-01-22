@@ -81,6 +81,25 @@ export function GenericMember() {
 	};
 }
 
+export function NoFirstName() {
+	return {
+		components: { AccountSummary },
+		template: '<account-summary :user="user" />',
+		data() {
+			return {
+				user: {
+					firstName: '',
+					wallet: {
+						tier: 'unknown-tier',
+						points: 80,
+						funds: 15.35,
+					},
+				},
+			};
+		},
+	};
+}
+
 export function NoUser() {
 	return {
 		components: { AccountSummary },
