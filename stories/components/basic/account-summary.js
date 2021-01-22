@@ -24,25 +24,6 @@ export function Insider() {
 	};
 }
 
-export function VIP() {
-	return {
-		components: { AccountSummary },
-		template: '<account-summary :user="user" />',
-		data() {
-			return {
-				user: {
-					firstName: 'Jerry',
-					wallet: {
-						tier: 'VIP',
-						points: 80,
-						funds: 15.35,
-					},
-				},
-			};
-		},
-	};
-}
-
 export function Elite() {
 	return {
 		components: { AccountSummary },
@@ -55,6 +36,25 @@ export function Elite() {
 						tier: 'ELITE',
 						points: 100,
 						funds: 12.00,
+					},
+				},
+			};
+		},
+	};
+}
+
+export function VIP() {
+	return {
+		components: { AccountSummary },
+		template: '<account-summary :user="user" />',
+		data() {
+			return {
+				user: {
+					firstName: 'Jerry',
+					wallet: {
+						tier: 'VIP',
+						points: 80,
+						funds: 15.35,
 					},
 				},
 			};
