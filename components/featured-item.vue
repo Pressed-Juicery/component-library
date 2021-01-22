@@ -1,15 +1,15 @@
 <template>
-	<div :class="$style.root" @click="$emit('selected', tile)">
-		<img :class="$style.image" :src="tile.imageUrl" alt="">
-		<div :class="$style.title">{{ tile.title }}</div>
-		<div :class="$style.description">{{ tile.description }}</div>
+	<div :class="$style.root" @click="$emit('selected', item)">
+		<img :class="$style.image" :src="item.imageUrl" alt="">
+		<div :class="$style.title">{{ item.title }}</div>
+		<div :class="$style.description">{{ item.description }}</div>
 	</div>
 </template>
 
 <script>
 export default {
 	props: {
-		tile: {
+		item: {
 			type: Object,
 			required: true,
 		},

@@ -19,7 +19,7 @@ const groups = [{
 		'ConfirmationDialogTemplate',
 		'ConfirmDrawer',
 		'Drawer',
-		'FeaturedTile',
+		'FeaturedItem',
 		'MenuDialogTemplate',
 		'MenuDrawer',
 		'Overlay',
