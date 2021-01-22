@@ -21,15 +21,18 @@ import RightCarat from './icons/right-caret-white';
 
 export default {
 	components: { LeftCarat, RightCarat },
+
 	props: {
 		currentOffers: {
 			type: Array,
 			required: true,
 		},
 	},
+
 	created() {
 		this.currentlyShowingPromotion = this.currentOffers[0];
 	},
+
 	data() {
 		return {
 			currentlyShowingPromotion: null,
