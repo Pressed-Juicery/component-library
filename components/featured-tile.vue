@@ -1,5 +1,5 @@
 <template>
-	<div :class="$style.root">
+	<div :class="$style.root" @click="$emit('selected', tile.categoryId)">
 		<img :class="$style.image" :src="tile.imageUrl" :alt="tile.title">
 		<div :class="$style.title">{{ tile.title }}</div>
 		<div :class="$style.description">{{ tile.description }}</div>
