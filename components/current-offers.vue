@@ -27,6 +27,9 @@ export default {
 			required: true,
 		},
 	},
+	created() {
+		this.currentlyShowingPromotion = this.currentOffers[0];
+	},
 	data() {
 		return {
 			currentlyShowingPromotion: null,
@@ -62,10 +65,6 @@ export default {
 			this.showLeftCarat = this.currentIndex !== 0;
 			this.showRightCarat = this.currentIndex < this.currentOffers.length - 1;
 		},
-	},
-
-	created() {
-		this.currentlyShowingPromotion = this.currentOffers[0];
 	},
 };
 </script>
