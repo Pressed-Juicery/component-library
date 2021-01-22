@@ -100,6 +100,10 @@ export default {
 		border-radius: $border-radius;
 	}
 
+	.caratWrapper {
+		padding: $content-padding;
+	}
+
 	.promotionContentWrapper {
 		padding: $content-padding;
 	}
@@ -111,9 +115,5 @@ export default {
 
 	.name {
 		@include line-clamp(1);
-	}
-
-	.caratWrapper {
-		padding: $content-padding;
 	}
 </style>
