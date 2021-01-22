@@ -10,7 +10,7 @@
 		</div>
 
 		<div
-			:class="$style.clickArea"
+			:class="$style.promotionContentWrapper"
 			@click="$emit('selected', currentlyShowingPromotion)"
 			@keyup.enter="$emit('selected', currentlyShowingPromotion)"
 			tabindex="0"
@@ -100,7 +100,7 @@ export default {
 		border-radius: $border-radius;
 	}
 
-	.clickArea {
+	.promotionContentWrapper {
 		padding: $content-padding;
 	}
 
