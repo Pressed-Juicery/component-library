@@ -1,6 +1,9 @@
 <template>
 	<div :class="$style.root">
 		<div
+			:class="$style.buttonWrapper"
+			@click="decrement()"
+			@keyup.enter="decrement()"
 			tabindex="0"
 		>
 			<left-carat v-show="showLeftCarat" />
@@ -107,18 +110,9 @@ export default {
 		@include text-body-small();
 	}
 
-	.buttonWrapperLeft,
-	.buttonWrapperRight {
-		position: absolute;
-		top: 0;
-		padding: $spacing-06 $spacing-05;
 	}
 
-	.buttonWrapperLeft {
-		left: 0;
-	}
-
-	.buttonWrapperRight {
-		right: 0;
+	.buttonWrapper {
+		padding: $content-padding;
 	}
 </style>
