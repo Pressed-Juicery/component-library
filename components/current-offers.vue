@@ -37,7 +37,7 @@ export default {
 
 	computed: {
 		shouldShowLeftCarat() {
-			return this.currentIndex < 0;
+			return this.currentIndex > 0;
 		},
 
 		shouldShowRightCarat() {
