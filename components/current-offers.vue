@@ -4,9 +4,9 @@
 			<left-carat v-show="shouldShowLeftCarat" />
 		</div>
 
-		<div :class="$style.promotionContentWrapper" @click="$emit('selected', currentlyShowingPromotion)">
-			<div :class="$style.name">{{ currentlyShowingPromotion.name }}</div>
-			<div :class="$style.helpText">{{ currentlyShowingPromotion.helpText }}</div>
+		<div :class="$style.promotionContentWrapper" @click="$emit('selected', selectedOffer)">
+			<div :class="$style.name">{{ selectedOffer.name }}</div>
+			<div :class="$style.helpText">{{ selectedOffer.helpText }}</div>
 		</div>
 
 		<div :class="$style.caratWrapper" @click="increment()">
@@ -29,21 +29,13 @@ export default {
 		},
 	},
 
-	created() {
-		this.currentlyShowingPromotion = this.currentOffers[0];
-	},
-
 	data() {
 		return {
-			currentlyShowingPromotion: null,
+			currentIndex: 0,
 		};
 	},
 
 	computed: {
-		currentIndex() {
-			return this.currentOffers.indexOf(this.currentlyShowingPromotion);
-		},
-
 		shouldShowLeftCarat() {
 			return this.currentIndex < 0;
 		},
@@ -51,19 +43,19 @@ export default {
 		shouldShowRightCarat() {
 			return this.currentIndex < this.currentOffers.length - 1;
 		},
+
+		selectedOffer() {
+			return this.currentOffers[this.currentIndex];
+		},
 	},
 
 	methods: {
 		increment() {
-			if (this.currentIndex < this.currentOffers.length - 1) {
-				this.currentlyShowingPromotion = this.currentOffers[this.currentIndex + 1];
-			}
+			if (this.currentIndex < this.currentOffers.length - 1) this.currentIndex++;
 		},
 
 		decrement() {
-			if (this.currentIndex > 0) {
-				this.currentlyShowingPromotion = this.currentOffers[this.currentIndex - 1];
-			}
+			if (this.currentIndex > 0) this.currentIndex--;
 		},
 	},
 };
