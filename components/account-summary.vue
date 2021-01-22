@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div v-if="user">
-			<div :class="$style.cta">Welcome, {{ user.firstName }}</div>
+			<div :class="$style.cta">Welcome<span v-if="user.firstName">, {{ user.firstName }}</span></div>
 			<div :class="$style.infoGroup">
 				<div :class="$style.infoLeft">
 					<div :class="$style.infoValue">{{ user.wallet.points }}</div>
