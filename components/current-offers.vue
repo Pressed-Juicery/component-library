@@ -1,30 +1,15 @@
 <template>
 	<div :class="$style.root">
-		<div
-			:class="$style.caratWrapper"
-			@click="decrement()"
-			@keyup.enter="decrement()"
-			tabindex="0"
-		>
+		<div :class="$style.caratWrapper" @click="decrement()">
 			<left-carat v-show="showLeftCarat" />
 		</div>
 
-		<div
-			:class="$style.promotionContentWrapper"
-			@click="$emit('selected', currentlyShowingPromotion)"
-			@keyup.enter="$emit('selected', currentlyShowingPromotion)"
-			tabindex="0"
-		>
+		<div :class="$style.promotionContentWrapper" @click="$emit('selected', currentlyShowingPromotion)">
 			<div :class="$style.name">{{ currentlyShowingPromotion.name }}</div>
 			<div :class="$style.helpText">{{ currentlyShowingPromotion.helpText }}</div>
 		</div>
 
-		<div
-			:class="$style.caratWrapper"
-			@click="increment()"
-			@keyup.enter="increment()"
-			tabindex="0"
-		>
+		<div :class="$style.caratWrapper" @click="increment()">
 			<right-carat v-show="showRightCarat" />
 		</div>
 	</div>
