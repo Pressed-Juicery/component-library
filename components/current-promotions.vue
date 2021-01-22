@@ -83,11 +83,6 @@ export default {
 	@import '../styles/variables.scss';
 	@import '../styles/mixins.scss';
 
-	.name,
-	.buttonWrapperLeft,
-	.buttonWrapperRight {
-		cursor: pointer;
-	}
 
 	.root {
 		position: relative;
