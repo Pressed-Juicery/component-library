@@ -78,6 +78,7 @@ export default {
 			this.showRightCarat = this.currentIndex < this.currentPromotions.length - 1;
 		},
 	},
+
 	created() {
 		this.currentlyShowingPromotion = this.currentPromotions[0];
 	},
