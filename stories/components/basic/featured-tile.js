@@ -21,7 +21,7 @@ export function Overview() {
 		},
 		methods: {
 			handleSelected(selectedCategoryId) {
-				console.log(selectedCategoryId);
+				console.log(selectedCategoryId); // eslint-disable-line no-console
 			},
 		},
 	};
