@@ -93,6 +93,7 @@ export default {
 	.name,
 	.helpText {
 		text-align: center;
+		user-select: none;
 	}
 
 	.name {
