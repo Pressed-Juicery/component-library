@@ -12,7 +12,7 @@
 					<div :class="$style.title">Pressed Cash</div>
 				</div>
 				<div :class="$style.infoRight">
-					<img :class="$style.icon" :src="tierIcon[user.wallet.tier]" alt="">
+					<img :class="$style.icon" :src="iconSrc" alt="">
 					<div :class="$style.tier">{{ user.wallet.tier | tier }}</div>
 				</div>
 			</div>
@@ -37,14 +37,18 @@ export default {
 			type: Object,
 		},
 	},
-	data() {
-		return {
-			tierIcon: {
+	computed: {
+		iconSrc() {
+			const tier = this.user && this.user.wallet && this.user.wallet.tier && this.user.wallet.tier.toUpperCase();
+			const iconUrlsByTier = {
+				MEMBER: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/insider-member.svg',
+				INSIDER: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/insider-member.svg',
 				ELITE: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/elite-member.svg',
 				VIP: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/vip-member.svg',
-				INSIDER: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/insider-member.svg',
-			},
-		};
+			};
+
+			return iconUrlsByTier[tier] || iconUrlsByTier.MEMBER;
+		},
 	},
 	filters: {
 		currency(funds) {
@@ -57,7 +61,7 @@ export default {
 				INSIDER: 'Insider',
 			};
 
-			return tiers[userTier];
+			return tiers[userTier] || 'Member';
 		},
 	},
 };
