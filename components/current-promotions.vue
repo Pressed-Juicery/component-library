@@ -15,6 +15,9 @@
 		</div>
 
 		<div
+			:class="$style.buttonWrapper"
+			@click="increment()"
+			@keyup.enter="increment()"
 			tabindex="0"
 		>
 			<right-carat v-show="showRightCarat" />
