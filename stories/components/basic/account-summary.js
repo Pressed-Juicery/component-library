@@ -100,6 +100,20 @@ export function NoFirstName() {
 	};
 }
 
+export function NoWallet() {
+	return {
+		components: { AccountSummary },
+		template: '<account-summary :user="user" />',
+		data() {
+			return {
+				user: {
+					firstName: 'Jacob',
+				},
+			};
+		},
+	};
+}
+
 export function NoUser() {
 	return {
 		components: { AccountSummary },
