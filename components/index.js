@@ -33,7 +33,7 @@ export { default as CollectionButton } from './collection-button.vue';
 export { default as ConfirmationDialogTemplate } from './confirmation-dialog-template';
 export { default as ConfirmDrawer } from './confirm-drawer';
 export { default as ContentWrapper } from './content-wrapper';
-export { default as CurrentPromotions } from './current-promotions';
+export { default as CurrentOffers } from './current-offers';
 export { default as Drawer } from './drawer';
 export { default as FeatureHighlight } from './feature-highlight';
 export { default as FeatureHighlightRow } from './feature-highlight-row';

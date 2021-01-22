@@ -36,7 +36,7 @@ import RightCarat from './icons/right-caret-white';
 
 export default {
 	props: {
-		currentPromotions: {
+		currentOffers: {
 			type: Array,
 			required: true,
 		},
@@ -52,14 +52,14 @@ export default {
 
 	computed: {
 		currentIndex() {
-			return this.currentPromotions.indexOf(this.currentlyShowingPromotion);
+			return this.currentOffers.indexOf(this.currentlyShowingPromotion);
 		},
 	},
 
 	methods: {
 		increment() {
-			if (this.currentIndex < this.currentPromotions.length - 1) {
-				this.currentlyShowingPromotion = this.currentPromotions[this.currentIndex + 1];
+			if (this.currentIndex < this.currentOffers.length - 1) {
+				this.currentlyShowingPromotion = this.currentOffers[this.currentIndex + 1];
 			}
 
 			this.shouldShowCarats();
@@ -67,7 +67,7 @@ export default {
 
 		decrement() {
 			if (this.currentIndex > 0) {
-				this.currentlyShowingPromotion = this.currentPromotions[this.currentIndex - 1];
+				this.currentlyShowingPromotion = this.currentOffers[this.currentIndex - 1];
 			}
 
 			this.shouldShowCarats();
@@ -75,12 +75,12 @@ export default {
 
 		shouldShowCarats() {
 			this.showLeftCarat = this.currentIndex !== 0;
-			this.showRightCarat = this.currentIndex < this.currentPromotions.length - 1;
+			this.showRightCarat = this.currentIndex < this.currentOffers.length - 1;
 		},
 	},
 
 	created() {
-		this.currentlyShowingPromotion = this.currentPromotions[0];
+		this.currentlyShowingPromotion = this.currentOffers[0];
 	},
 };
 </script>

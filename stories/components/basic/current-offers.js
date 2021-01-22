@@ -1,17 +1,17 @@
-import currentPromotions from '../../../components/current-promotions.vue';
+import CurrentOffers from '../../../components/current-offers.vue';
 
 export default {
-	title: 'Components / Basic / CurrentPromotions',
-	component: currentPromotions,
+	title: 'Components / Basic / CurrentOffers',
+	component: CurrentOffers,
 };
 
 export function Overview() {
 	return {
-		components: { currentPromotions },
-		template: '<current-promotions :currentPromotions="currentPromotions" @selected="handleSelected" />',
+		components: { CurrentOffers },
+		template: '<current-offers :currentOffers="currentOffers" @selected="handleSelected" />',
 		data() {
 			return {
-				currentPromotions: [
+				currentOffers: [
 					{
 						handle: '6-for-29',
 						name: 'ANY 6 ITEMS FOR $29',
@@ -36,8 +36,8 @@ export function Overview() {
 			};
 		},
 		methods: {
-			handleSelected(currentlySelectedPromotion) {
-				console.log({ currentlySelectedPromotion });
+			handleSelected(selectedOffer) {
+				console.log({ selectedOffer });
 			},
 		},
 	};
