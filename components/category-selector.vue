@@ -27,6 +27,7 @@ export default {
 		flex-direction: column;
 		align-items: center;
 		width: $spacing-10;
+		cursor: pointer;
 	}
 
 	.icon {
