@@ -33,6 +33,9 @@ export default {
 	components: { LeftCarat, RightCarat },
 	data() {
 		return {
+			currentlyShowingPromotion: null,
+			showLeftCarat: false,
+			showRightCarat: true,
 		};
 	},
 	methods: {
