@@ -12,9 +12,9 @@ export function Overview() {
 		data() {
 			return {
 				category: {
+					id: '1234567890',
 					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/categories/shots-bottom-aligned.svg',
 					name: 'Shots',
-					categoryId: '1234567890',
 				},
 			};
 		},
