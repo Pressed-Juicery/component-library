@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.root">
 		<div :class="$style.caratWrapper" @click="decrement()">
-			<left-carat v-show="showLeftCarat" />
+			<left-carat v-show="shouldShowLeftCarat" />
 		</div>
 
 		<div :class="$style.promotionContentWrapper" @click="$emit('selected', currentlyShowingPromotion)">
@@ -10,7 +10,7 @@
 		</div>
 
 		<div :class="$style.caratWrapper" @click="increment()">
-			<right-carat v-show="showRightCarat" />
+			<right-carat v-show="shouldShowRightCarat" />
 		</div>
 	</div>
 </template>
@@ -33,14 +33,20 @@ export default {
 	data() {
 		return {
 			currentlyShowingPromotion: null,
-			showLeftCarat: false,
-			showRightCarat: true,
 		};
 	},
 
 	computed: {
 		currentIndex() {
 			return this.currentOffers.indexOf(this.currentlyShowingPromotion);
+		},
+
+		shouldShowLeftCarat() {
+			return this.currentIndex < 0;
+		},
+
+		shouldShowRightCarat() {
+			return this.currentIndex < this.currentOffers.length - 1;
 		},
 	},
 
@@ -49,21 +55,12 @@ export default {
 			if (this.currentIndex < this.currentOffers.length - 1) {
 				this.currentlyShowingPromotion = this.currentOffers[this.currentIndex + 1];
 			}
-
-			this.shouldShowCarats();
 		},
 
 		decrement() {
 			if (this.currentIndex > 0) {
 				this.currentlyShowingPromotion = this.currentOffers[this.currentIndex - 1];
 			}
-
-			this.shouldShowCarats();
-		},
-
-		shouldShowCarats() {
-			this.showLeftCarat = this.currentIndex !== 0;
-			this.showRightCarat = this.currentIndex < this.currentOffers.length - 1;
 		},
 	},
 };
