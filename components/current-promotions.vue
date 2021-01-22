@@ -38,6 +38,13 @@ export default {
 			showRightCarat: true,
 		};
 	},
+
+	computed: {
+		currentIndex() {
+			return this.currentPromotions.indexOf(this.currentlyShowingPromotion);
+		},
+	},
+
 	methods: {
 		},
 		},
