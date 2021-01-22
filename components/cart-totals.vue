@@ -39,6 +39,16 @@
 			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
 		</div>
 
+		<div v-if="cart.bottleDeposit" :class="[$style.row, $style.rowGroup]">
+			<div>Bottle Deposit Charge</div>
+			<div>{{ formatCurrency(cart.bottleDeposit)}}</div>
+		</div>
+
+		<div v-if="cart.taxes" :class="[$style.row, $style.rowGroup]">
+			<div>Taxes</div>
+			<div>{{ formatCurrency(cart.taxes) }}</div>
+		</div>
+
 		<div v-if="tip || tip === 0" :class="[$style.row, $style.rowGroup]">
 			<div>Tip</div>
 			<div>{{ formatCurrency(tip) }}</div>
