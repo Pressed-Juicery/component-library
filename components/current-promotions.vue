@@ -10,6 +10,9 @@
 		</div>
 
 		<div
+			:class="$style.clickArea"
+			@click="$emit('selected', currentlyShowingPromotion)"
+			@keyup.enter="$emit('selected', currentlyShowingPromotion)"
 			tabindex="0"
 		>
 		</div>
@@ -102,6 +105,8 @@ export default {
 		.name {
 			max-width: 25ch;
 		}
+	.clickArea {
+		padding: $content-padding;
 	}
 
 	.helpText {
