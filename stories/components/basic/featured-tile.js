@@ -20,8 +20,8 @@ export function Overview() {
 			};
 		},
 		methods: {
-			handleSelected(selectedCategoryId) {
-				console.log(selectedCategoryId); // eslint-disable-line no-console
+			handleSelected(selectedItem) {
+				console.log(selectedItem); // eslint-disable-line no-console
 			},
 		},
 	};
