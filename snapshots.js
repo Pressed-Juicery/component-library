@@ -20,6 +20,7 @@ const groups = [{
 		'ConfirmationDialogTemplate',
 		'ConfirmDrawer',
 		'Drawer',
+		'FeaturedItem',
 		'MenuDialogTemplate',
 		'MenuDrawer',
 		'Overlay',
@@ -31,6 +32,7 @@ const groups = [{
 		'StepProgressBar',
 		'Sidebar',
 		'ToggleSwitch',
+		'VipPerksCard',
 		'WalletDrawer',
 	],
 }, {
