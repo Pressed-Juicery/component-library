@@ -109,6 +109,10 @@ export default {
 		text-align: center;
 	}
 
+	.name {
+		@include line-clamp(1);
+	}
+
 	.caratWrapper {
 		padding: $content-padding;
 	}
