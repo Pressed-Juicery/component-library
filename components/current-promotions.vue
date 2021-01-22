@@ -15,6 +15,8 @@
 			@keyup.enter="$emit('selected', currentlyShowingPromotion)"
 			tabindex="0"
 		>
+			<div :class="$style.name">{{ currentlyShowingPromotion.name }}</div>
+			<div :class="$style.helpText">{{ currentlyShowingPromotion.helpText }}</div>
 		</div>
 
 		<div
@@ -97,22 +99,13 @@ export default {
 		border-radius: $border-radius;
 	}
 
-	.name {
-		text-align: center;
-	}
-
-	@media screen and (max-width: $max-width-extra-small) {
-		.name {
-			max-width: 25ch;
-		}
 	.clickArea {
 		padding: $content-padding;
 	}
 
+	.name,
 	.helpText {
-		@include text-body-small();
-	}
-
+		text-align: center;
 	}
 
 	.buttonWrapper {
