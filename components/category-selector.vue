@@ -1,6 +1,6 @@
 <template>
 	<div :class="$style.root" @click="$emit('selected', category.id)">
-		<img :class="$style.icon" :src="category.iconUrl" :alt="category.name">
+		<img :class="$style.icon" :src="category.iconUrl" alt="">
 		<div :class="$style.name">{{ category.name }}</div>
 	</div>
 </template>
