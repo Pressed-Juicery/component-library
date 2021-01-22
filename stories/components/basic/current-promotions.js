@@ -24,12 +24,12 @@ export function Overview() {
 					},
 					{
 						handle: '10-for-60',
-						name: 'ANY 10 ITEMS & 1 SHOT FOR $0',
-						helpText: 'Applied never',
+						name: 'ANY 10 ITEMS & 1 SHOT FOR $60',
+						helpText: 'Applied at cart',
 					},
 					{
-						handle: '10-for-60',
-						name: 'EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA LONG BOY',
+						handle: 'extra-long-example',
+						name: 'EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA LONG',
 						helpText: 'Applied never',
 					},
 				],
