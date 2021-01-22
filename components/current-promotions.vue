@@ -51,6 +51,7 @@ export default {
 		},
 	},
 	created() {
+		this.currentlyShowingPromotion = this.currentPromotions[0];
 	},
 };
 </script>
