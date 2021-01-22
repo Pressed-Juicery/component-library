@@ -35,7 +35,7 @@ export function VIP() {
 					wallet: {
 						tier: 'VIP',
 						points: 80,
-						funds: 0,
+						funds: 15.35,
 					},
 				},
 			};
