@@ -32,7 +32,6 @@ export default {
 
 	.image {
 		width: 100%;
-		border-radius: $border-radius $border-radius 0 0;
 	}
 
 	.title {
