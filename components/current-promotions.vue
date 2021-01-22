@@ -3,7 +3,7 @@
 		<div
 			tabindex="0"
 		>
-			<left-carat />
+			<left-carat v-show="showLeftCarat" />
 		</div>
 
 		<div
