@@ -14,7 +14,7 @@ export function Overview() {
 				category: {
 					iconUrl: 'https://d3e4ixgvd0ibii.cloudfront.net/shopify/icons/categories/shots-bottom-aligned.svg',
 					name: 'Shots',
-					categoryId: '/something/somethingelse',
+					categoryId: '1234567890',
 				},
 			};
 		},
