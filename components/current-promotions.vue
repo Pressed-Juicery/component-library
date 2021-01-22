@@ -14,7 +14,7 @@
 		<div
 			tabindex="0"
 		>
-			<right-carat />
+			<right-carat v-show="showRightCarat" />
 		</div>
 	</div>
 </template>
