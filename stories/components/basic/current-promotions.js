@@ -8,7 +8,7 @@ export default {
 export function Overview() {
 	return {
 		components: { currentPromotions },
-		template: '<current-promotions :currentPromotions="currentPromotions" />',
+		template: '<current-promotions :currentPromotions="currentPromotions" @selected="handleSelected" />',
 		data() {
 			return {
 				currentPromotions: [
@@ -34,6 +34,11 @@ export function Overview() {
 					},
 				],
 			};
+		},
+		methods: {
+			handleSelected(currentlySelectedPromotion) {
+				console.log({ currentlySelectedPromotion });
+			},
 		},
 	};
 }
