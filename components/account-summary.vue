@@ -2,7 +2,7 @@
 	<div>
 		<div v-if="user">
 			<div :class="$style.cta">Welcome<span v-if="user.firstName">, {{ user.firstName }}</span></div>
-			<div :class="$style.infoGroup">
+			<div :class="$style.infoGroup" v-if="user.wallet">
 				<div :class="$style.infoLeft">
 					<div :class="$style.infoValue">{{ user.wallet.points }}</div>
 					<div :class="$style.title">Pressed Points</div>
