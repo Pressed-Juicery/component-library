@@ -53,6 +53,13 @@ export default {
 
 			this.shouldShowCarats();
 		},
+
+		decrement() {
+			if (this.currentIndex > 0) {
+				this.currentlyShowingPromotion = this.currentPromotions[this.currentIndex - 1];
+			}
+
+			this.shouldShowCarats();
 		},
 
 		shouldShowCarats() {
