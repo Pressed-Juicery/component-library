@@ -1,5 +1,5 @@
 <template>
-	<div :class="$style.root">
+	<div :class="$style.root" @click="$emit('selected', category.categoryId)">
 		<img :class="$style.icon" :src="category.iconUrl" :alt="category.name">
 		<div :class="$style.name">{{ category.name }}</div>
 	</div>
