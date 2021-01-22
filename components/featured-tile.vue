@@ -27,6 +27,7 @@ export default {
 		width: 300px;
 		border-radius: 0 0 $border-radius $border-radius;
 		box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+		cursor: pointer;
 	}
 
 	.image {
