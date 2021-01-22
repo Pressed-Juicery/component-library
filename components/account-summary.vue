@@ -54,14 +54,14 @@ export default {
 		currency(funds) {
 			return formatCurrency(funds);
 		},
-		tier(userTier) {
+		tier(userTier = '') {
 			const tiers = {
 				VIP: 'VIP',
 				ELITE: 'Elite',
 				INSIDER: 'Insider',
 			};
 
-			return tiers[userTier] || 'Member';
+			return tiers[userTier.toUpperCase()] || 'Member';
 		},
 	},
 };
