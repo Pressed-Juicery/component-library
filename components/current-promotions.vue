@@ -46,6 +46,12 @@ export default {
 	},
 
 	methods: {
+		increment() {
+			if (this.currentIndex < this.currentPromotions.length - 1) {
+				this.currentlyShowingPromotion = this.currentPromotions[this.currentIndex + 1];
+			}
+
+			this.shouldShowCarats();
 		},
 		},
 
