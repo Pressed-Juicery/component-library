@@ -20,13 +20,13 @@ import LeftCarat from './icons/left-caret-white';
 import RightCarat from './icons/right-caret-white';
 
 export default {
+	components: { LeftCarat, RightCarat },
 	props: {
 		currentOffers: {
 			type: Array,
 			required: true,
 		},
 	},
-	components: { LeftCarat, RightCarat },
 	data() {
 		return {
 			currentlyShowingPromotion: null,
