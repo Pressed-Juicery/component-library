@@ -1,14 +1,14 @@
 <template>
-	<div :class="$style.root">
-		<img :class="$style.icon" :src="category.iconUrl" :alt="category.name">
-		<div :class="$style.name">{{ category.name }}</div>
+	<div :class="$style.root" @click="$emit('selected', collection.id)">
+		<img :class="$style.icon" :src="collection.iconUrl" alt="">
+		<div :class="$style.name">{{ collection.name }}</div>
 	</div>
 </template>
 
 <script>
 export default {
 	props: {
-		category: {
+		collection: {
 			type: Object,
 			required: true,
 		},
@@ -27,6 +27,7 @@ export default {
 		flex-direction: column;
 		align-items: center;
 		width: $spacing-10;
+		cursor: pointer;
 	}
 
 	.icon {

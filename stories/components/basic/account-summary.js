@@ -24,25 +24,6 @@ export function Insider() {
 	};
 }
 
-export function VIP() {
-	return {
-		components: { AccountSummary },
-		template: '<account-summary :user="user" />',
-		data() {
-			return {
-				user: {
-					firstName: 'Jerry',
-					wallet: {
-						tier: 'VIP',
-						points: 80,
-						funds: 0,
-					},
-				},
-			};
-		},
-	};
-}
-
 export function Elite() {
 	return {
 		components: { AccountSummary },
@@ -57,6 +38,89 @@ export function Elite() {
 						funds: 12.00,
 					},
 				},
+			};
+		},
+	};
+}
+
+export function VIP() {
+	return {
+		components: { AccountSummary },
+		template: '<account-summary :user="user" />',
+		data() {
+			return {
+				user: {
+					firstName: 'Jerry',
+					wallet: {
+						tier: 'VIP',
+						points: 80,
+						funds: 15.35,
+					},
+				},
+			};
+		},
+	};
+}
+
+export function GenericMember() {
+	return {
+		components: { AccountSummary },
+		template: '<account-summary :user="user" />',
+		data() {
+			return {
+				user: {
+					firstName: 'Raphael',
+					wallet: {
+						tier: 'unknown-tier',
+						points: 80,
+						funds: 15.35,
+					},
+				},
+			};
+		},
+	};
+}
+
+export function NoFirstName() {
+	return {
+		components: { AccountSummary },
+		template: '<account-summary :user="user" />',
+		data() {
+			return {
+				user: {
+					firstName: '',
+					wallet: {
+						tier: 'unknown-tier',
+						points: 80,
+						funds: 15.35,
+					},
+				},
+			};
+		},
+	};
+}
+
+export function NoWallet() {
+	return {
+		components: { AccountSummary },
+		template: '<account-summary :user="user" />',
+		data() {
+			return {
+				user: {
+					firstName: 'Jacob',
+				},
+			};
+		},
+	};
+}
+
+export function NoUser() {
+	return {
+		components: { AccountSummary },
+		template: '<account-summary :user="user" />',
+		data() {
+			return {
+				user: null,
 			};
 		},
 	};
