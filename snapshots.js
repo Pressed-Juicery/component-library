@@ -20,6 +20,7 @@ const groups = [{
 		'CollectionButton',
 		'ConfirmationDialogTemplate',
 		'ConfirmDrawer',
+		'CurrentOffers',
 		'Drawer',
 		'FeaturedItem',
 		'MenuDialogTemplate',
