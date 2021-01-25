@@ -5,6 +5,7 @@ export default {
 	component: CurrentOffers,
 };
 
+// eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
 		components: { CurrentOffers },
@@ -37,6 +38,7 @@ export function Overview() {
 		},
 		methods: {
 			handleSelected(selectedOffer) {
+				// eslint-disable-next-line no-console
 				console.log({ selectedOffer });
 			},
 		},

@@ -27,6 +27,7 @@ const mixins = [{
 	},
 }];
 
+// eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
 		mixins,
@@ -44,6 +45,7 @@ export function Overview() {
 			/>
 		`,
 
+		// eslint-disable-next-line max-lines-per-function
 		data() {
 			return {
 				cart: {
@@ -70,6 +72,7 @@ export function Overview() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function SingleItem() {
 	return {
 		mixins,
@@ -120,6 +123,7 @@ export function SingleItem() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function MultipleItems() {
 	return {
 		mixins,
@@ -137,6 +141,7 @@ export function MultipleItems() {
 			/>
 		`,
 
+		// eslint-disable-next-line max-lines-per-function
 		data() {
 			return {
 				cart: {
@@ -176,6 +181,7 @@ export function MultipleItems() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function AppliedOffer() {
 	return {
 		mixins,
@@ -193,6 +199,7 @@ export function AppliedOffer() {
 			/>
 		`,
 
+		// eslint-disable-next-line max-lines-per-function
 		data() {
 			return {
 				cart: {

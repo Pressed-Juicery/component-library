@@ -20,6 +20,7 @@ export function Overview() {
 		},
 		methods: {
 			handleSelected(selectedCollectionId) {
+				// eslint-disable-next-line no-console
 				console.log(selectedCollectionId);
 			},
 		},
