@@ -112,8 +112,10 @@ export default {
 	// eslint-disable-next-line max-lines-per-function
 	data() {
 		return {
-			user: { acceptsEmailMarketing: true },
-			acceptsSmsMarketing: false,
+			user: {
+				acceptsEmailMarketing: true,
+				acceptsSmsMarketing: false,
+			},
 			acceptsTermsAndConditions: false,
 			rules: {
 				firstName: [{
