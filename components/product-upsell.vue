@@ -118,7 +118,7 @@ export default {
 			return this.wallet && this.wallet.tier;
 		},
 
-		// eslint-disable-next-line multiline-comment-style
+		// eslint-disable-next-line multiline-comment-style,spaced-comment
 		/**************************************************************
 			OFFER TITLE NEEDS TO START WITH A VERB
 			e.g. "Get a bundle for $20", "Receive a free hat", etc.
