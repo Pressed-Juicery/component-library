@@ -1,6 +1,7 @@
 import '../styles/index.scss';
 
 export { default as Accordion } from './accordion';
+export { default as AccountSummary } from './account-summary.vue';
 export { default as AddonOptions } from './addon-options';
 export { default as AddressForm } from './address-form';
 export { default as AddressFormatter } from './address-formatter';
@@ -28,12 +29,15 @@ export { default as CheckoutItemCard } from './checkout-item-card';
 export { default as CleanseGuide } from './cleanse-guide';
 export { default as CollapsibleDrawer } from './collapsible-drawer';
 export { default as CollapsibleWalletDrawer } from './collapsible-wallet-drawer';
+export { default as CollectionButton } from './collection-button.vue';
 export { default as ConfirmationDialogTemplate } from './confirmation-dialog-template';
 export { default as ConfirmDrawer } from './confirm-drawer';
 export { default as ContentWrapper } from './content-wrapper';
+export { default as CurrentOffers } from './current-offers';
 export { default as Drawer } from './drawer';
 export { default as FeatureHighlight } from './feature-highlight';
 export { default as FeatureHighlightRow } from './feature-highlight-row';
+export { default as FeaturedItem } from './featured-item.vue';
 export { default as GuestInformationForm } from './guest-information-form';
 export { default as HighlightSection } from './highlight-section';
 export { default as ImageBanner } from './image-banner';

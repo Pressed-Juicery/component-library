@@ -1,3 +1,4 @@
+<!-- eslint-disable max-lines -->
 <template>
 	<div v-if="selectedVariant">
 		<div :class="$style.variantName">{{ selectedVariant.name }}</div>

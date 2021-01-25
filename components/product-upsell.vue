@@ -1,3 +1,4 @@
+<!-- eslint-disable max-lines -->
 <template>
 	<card v-if="upsell && upsell.variants && upsell.variants.length" :class="{[$style.isOpen]: isOpen}">
 		<div :class="$style.header" @click="$emit('toggle-accordion')">
@@ -8,6 +9,7 @@
 		<div v-if="isOpen" :class="$style.body">
 			<div :class="$style.bodyText">
 				{{upsell.description }}
+				<!-- eslint-disable-next-line max-len -->
 				<div v-if="upsell.isApplied || isMultipleItemUpsell || upsell.additionalSubtotalRequirement" :class="$style.imageWrap">
 					<img
 						v-if="firstUpsellItem && !doesQualifyForSingleProductUpsell"
@@ -118,7 +120,7 @@ export default {
 			return this.wallet && this.wallet.tier;
 		},
 
-		// eslint-disable-next-line multiline-comment-style
+		// eslint-disable-next-line multiline-comment-style,spaced-comment
 		/**************************************************************
 			OFFER TITLE NEEDS TO START WITH A VERB
 			e.g. "Get a bundle for $20", "Receive a free hat", etc.
