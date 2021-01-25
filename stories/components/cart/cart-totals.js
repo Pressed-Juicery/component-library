@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import CartTotals from '../../../components/cart-totals';
 
 export default {

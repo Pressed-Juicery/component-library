@@ -1,3 +1,4 @@
+<!-- eslint-disable max-lines -->
 <template>
 	<card v-if="upsell && upsell.variants && upsell.variants.length" :class="{[$style.isOpen]: isOpen}">
 		<div :class="$style.header" @click="$emit('toggle-accordion')">
@@ -8,6 +9,7 @@
 		<div v-if="isOpen" :class="$style.body">
 			<div :class="$style.bodyText">
 				{{upsell.description }}
+				<!-- eslint-disable-next-line max-len -->
 				<div v-if="upsell.isApplied || isMultipleItemUpsell || upsell.additionalSubtotalRequirement" :class="$style.imageWrap">
 					<img
 						v-if="firstUpsellItem && !doesQualifyForSingleProductUpsell"

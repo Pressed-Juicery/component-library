@@ -5,6 +5,7 @@ export default {
 	component: SignUpForm,
 };
 
+// eslint-disable-next-line max-lines-per-function
 export function Overview() {
 	return {
 		components: { SignUpForm },
