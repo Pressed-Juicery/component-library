@@ -22,7 +22,7 @@
 			type="text"
 			autocomplete="address-line1"
 			v-model="address.streetAddress"
-			:isAutocompleteInput="true"
+			:isAddressAutocompleteInput="true"
 			:rules="addressRules"
 		/>
 
