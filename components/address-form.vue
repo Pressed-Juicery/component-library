@@ -114,6 +114,10 @@ export default {
 		showDeliveryInstructions: Boolean,
 	},
 
+	created() {
+		this.$emit('init-autocomplete');
+	},
+
 	// eslint-disable-next-line max-lines-per-function
 	data() {
 		return {
