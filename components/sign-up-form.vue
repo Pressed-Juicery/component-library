@@ -30,11 +30,21 @@
 			v-model="user.password"
 		/>
 
+		<validated-input
+			type="text"
+			autocomplete="postal-code"
+			label="ZIP Code"
+			labelHelper="So we can share special local offers!"
+			:rules="rules.postal"
+			v-model="user.postal"
+		/>
+
 		<div :class="$style.birthdayWrapper">
 			<div :class="$style.birthdayLabel">Birthday (optional)</div>
 			<div :class="$style.birthdayMessage">So we can send you something sweet!</div>
 			<validated-birthday v-model="user.birthday" />
 		</div>
+
 		<validated-input
 			type="tel"
 			autocomplete="tel"
@@ -102,8 +112,10 @@ export default {
 	// eslint-disable-next-line max-lines-per-function
 	data() {
 		return {
-			user: { acceptsEmailMarketing: true },
-			acceptsSmsMarketing: false,
+			user: {
+				acceptsEmailMarketing: true,
+				acceptsSmsMarketing: false,
+			},
 			acceptsTermsAndConditions: false,
 			rules: {
 				firstName: [{
@@ -128,9 +140,6 @@ export default {
 					`,
 				}],
 				postal: [{
-					validator: isNotEmpty,
-					message: 'Please enter your ZIP code.',
-				}, {
 					validator: isZipCode,
 					message: 'Please enter a valid ZIP code.',
 				}],
@@ -173,7 +182,6 @@ export default {
 	}
 
 	.birthdayMessage {
-		@include text-body-small();
 		margin-bottom: $spacing-03;
 	}
 

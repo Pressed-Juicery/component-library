@@ -45,6 +45,7 @@ export function Overview() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function NutritionFactsWithThirdLevel() {
 	return {
 		components: { NutritionFacts },
@@ -99,6 +100,7 @@ export function NutritionFactsWithThirdLevel() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function NutritionFactsWithIngredients() {
 	return {
 		components: { NutritionFacts },

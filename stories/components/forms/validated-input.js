@@ -78,6 +78,7 @@ export function Email() {
 	};
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function Password() {
 	return {
 		components: { ValidatedInput },

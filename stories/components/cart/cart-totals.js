@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import CartTotals from '../../../components/cart-totals';
 
 export default {
@@ -15,7 +16,27 @@ export function Overview() {
 				cart: {
 					originalSubtotal: 150,
 					subtotal: 100,
+					total: 102.5,
+					taxes: 2.5,
+					isShippingAvailable: true,
+				},
+			};
+		},
+	};
+}
+
+export function BottleDeposit() {
+	return {
+		components: { CartTotals },
+		template: '<cart-totals :cart="cart" />',
+
+		data() {
+			return {
+				cart: {
+					originalSubtotal: 150,
+					subtotal: 100,
 					total: 150.5,
+					bottleDeposit: 3.5,
 					isShippingAvailable: true,
 				},
 			};
@@ -33,7 +54,8 @@ export function ShippingDeliveryPrice() {
 				cart: {
 					originalSubtotal: 150,
 					subtotal: 100,
-					total: 150.5,
+					total: 142.5,
+					taxes: 2.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 40,
 				},
@@ -52,7 +74,8 @@ export function FreeShipping() {
 				cart: {
 					originalSubtotal: 150,
 					subtotal: 100,
-					total: 150.5,
+					total: 102.5,
+					taxes: 2.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 0,
 				},
@@ -71,7 +94,8 @@ export function UnavailableShipping() {
 				cart: {
 					originalSubtotal: 150,
 					subtotal: 100,
-					total: 150.5,
+					total: 100,
+					taxes: 0,
 					isShippingAvailable: false,
 				},
 			};
@@ -89,7 +113,8 @@ export function Discounts() {
 				cart: {
 					originalSubtotal: 220.4,
 					subtotal: 100,
-					total: 150.5,
+					total: 102.5,
+					taxes: 2.5,
 					isShippingAvailable: true,
 					discountSummary: [
 						{ name: 'VIP Member Savings', totalDiscount: 2.5 },
@@ -111,7 +136,8 @@ export function Pickup() {
 				cart: {
 					originalSubtotal: 150,
 					subtotal: 100,
-					total: 100,
+					total: 102.5,
+					taxes: 2.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 0,
 					fulfillmentSelection: {
@@ -133,7 +159,8 @@ export function LocalDelivery() {
 				cart: {
 					originalSubtotal: 150,
 					subtotal: 100,
-					total: 110,
+					total: 112.5,
+					taxes: 2.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 10,
 					fulfillmentSelection: {
@@ -155,7 +182,8 @@ export function NationwideShipping() {
 				cart: {
 					originalSubtotal: 150,
 					subtotal: 100,
-					total: 115,
+					total: 117.5,
+					taxes: 2.5,
 					isShippingAvailable: true,
 					fulfillmentPrice: 15,
 					fulfillmentSelection: {
@@ -178,7 +206,8 @@ export function Tip() {
 				cart: {
 					originalSubtotal: 10,
 					subtotal: 10,
-					total: 10,
+					taxes: 2.5,
+					total: 12.5,
 				},
 			};
 		},
