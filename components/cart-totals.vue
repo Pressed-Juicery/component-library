@@ -111,7 +111,9 @@ export default {
 	}
 
 	.discountToggle {
-		@include text-body-small;
+		@include text-subtle();
+
+		font-size: 13px;
 		margin-left: $spacing-03;
 		color: $color-text-gray;
 	}
