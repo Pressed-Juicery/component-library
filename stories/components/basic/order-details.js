@@ -5,7 +5,7 @@ export default {
 	title: 'Components / Basic / OrderDetails',
 };
 
-const orderHistory = {
+const orderDetails = {
 	id: '2055993131051',
 	orderNumber: '#2530',
 	totalPrice: 39.23,
@@ -56,16 +56,16 @@ export function Overview() {
 	return {
 		components: { OrderDetails },
 		template: `
-			<order-details :orderHistory="orderHistory" />
+			<order-details :orderDetails="orderDetails" />
 		`,
 		data() {
 			return {
-				orderHistory,
+				orderDetails,
 			};
 		},
 		created() {
-			if (orderHistory.discountCoupons.length) {
-				orderHistory.discountCoupons = [];
+			if (orderDetails.discountCoupons.length) {
+				orderDetails.discountCoupons = [];
 			}
 		},
 	};
@@ -75,11 +75,11 @@ export function WithDiscounts() {
 	return {
 		components: { OrderDetails },
 		template: `
-			<order-details :orderHistory="orderHistory" />
+			<order-details :orderDetails="orderDetails" />
 		`,
 		data() {
 			return {
-				orderHistory,
+				orderDetails,
 			};
 		},
 		created() {
@@ -93,7 +93,7 @@ export function WithDiscounts() {
 				code: 'BA100-F5NPRJ',
 			}];
 
-			orderHistory.discountCoupons = discounts;
+			orderDetails.discountCoupons = discounts;
 		},
 	};
 }
