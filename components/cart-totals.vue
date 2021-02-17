@@ -2,12 +2,13 @@
 	<div>
 		<div :class="[$style.row, $style.rowGroup]">
 			<div :class="[$style.rowGroup, {
-			         [$style.isClosed]: !isOpen,
 			         [$style.subtotalToggle]: cart.discountSummary && cart.discountSummary.length
 			     }]"
 			     @click="toggle()">
 				<div>Subtotal</div>
-				<up-caret-icon v-if="cart.discountSummary && cart.discountSummary.length" :class="$style.icon" />
+				<div v-if="cart.discountSummary && cart.discountSummary.length" :class="$style.discountToggle">
+					{{ isOpen ? 'Hide Discounts' : 'Show Discounts'}}
+				</div>
 			</div>
 
 			<div :class="$style.rowGroup">
@@ -39,6 +40,16 @@
 			<div v-else :class="$style.fulfillmentInfo">calculated at next step</div>
 		</div>
 
+		<div v-if="cart.bottleDeposit" :class="[$style.row, $style.rowGroup]">
+			<div>Bottle Deposit Charge</div>
+			<div>{{ formatCurrency(cart.bottleDeposit)}}</div>
+		</div>
+
+		<div v-if="cart.taxes" :class="[$style.row, $style.rowGroup]">
+			<div>Taxes</div>
+			<div>{{ formatCurrency(cart.taxes) }}</div>
+		</div>
+
 		<div v-if="tip || tip === 0" :class="[$style.row, $style.rowGroup]">
 			<div>Tip</div>
 			<div>{{ formatCurrency(tip) }}</div>
@@ -52,12 +63,9 @@
 </template>
 
 <script>
-import UpCaretIcon from './icons/up-caret-icon';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { UpCaretIcon },
-
 	props: {
 		tip: Number,
 		cart: {
@@ -102,14 +110,12 @@ export default {
 		cursor: pointer;
 	}
 
-	.icon {
-		margin-left: $spacing-03;
-	}
+	.discountToggle {
+		@include text-subtle();
 
-	.isClosed {
-		.icon {
-			transform: rotate(180deg);
-		}
+		font-size: 13px;
+		margin-left: $spacing-03;
+		color: $color-text-gray;
 	}
 
 	.originalSubtotal {

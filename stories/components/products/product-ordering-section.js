@@ -1,3 +1,4 @@
+/*  eslint-disable max-lines-per-function, max-lines */
 import ProductOrderingSection from '../../../components/product-ordering-section';
 import { productData } from '../../../demo-data/product.data';
 
