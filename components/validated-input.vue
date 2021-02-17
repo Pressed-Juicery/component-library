@@ -10,8 +10,14 @@
 		:isEager="isEager"
 		ref="validatedComponent"
 	>
+		<input v-if="isAddressAutocompleteInput"
+			id="address-autocomplete"
+			v-bind="$attrs"
+			v-model="model"
+			@blur="isEager = true"
+		>
 
-		<input v-if="!isPasswordInput" :id="id" v-bind="$attrs" v-model="model" @blur="isEager = true">
+		<input v-else-if="!isPasswordInput" :id="id" v-bind="$attrs" v-model="model" @blur="isEager = true">
 
 		<div v-else :class="$style.inputWrapper">
 			<input :id="id"
@@ -43,6 +49,10 @@ export default {
 		errorMessage: String,
 		rules: Array,
 		value: null,
+		isAddressAutocompleteInput: {
+			type: Boolean,
+			default: false,
+		},
 	},
 
 	data() {

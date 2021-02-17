@@ -22,8 +22,10 @@
 			type="text"
 			autocomplete="address-line1"
 			v-model="address.streetAddress"
+			:isAddressAutocompleteInput="true"
 			:rules="addressRules"
 		/>
+
 		<validated-input
 			type="text"
 			label="Suite/Apt"
@@ -48,7 +50,7 @@
 				:rules="regionRules"
 			/>
 			<validated-input
-				type="number"
+				type="string"
 				label="ZIP Code"
 				autocomplete="postal-code"
 				v-model="address.postal"
@@ -85,7 +87,7 @@
 </template>
 
 <script>
-import { hasExactLength, isNotEmpty, isNumber, isValidPhoneNumber } from '../utilities/validators';
+import { isNotEmpty, isValidPhoneNumber, isZipCode } from '../utilities/validators';
 
 import ValidatedCheckbox from './validated-checkbox';
 import ValidatedForm from './validated-form';
@@ -110,6 +112,10 @@ export default {
 			},
 		},
 		showDeliveryInstructions: Boolean,
+	},
+
+	created() {
+		this.$emit('init-autocomplete');
 	},
 
 	// eslint-disable-next-line max-lines-per-function
@@ -140,16 +146,10 @@ export default {
 			}],
 			postalRules: [{
 				validator: isNotEmpty,
-				message: 'Please enter a valid 5 digit zip code.',
-			},
-			{
-				validator: isNumber,
-				message: 'Please enter a valid 5 digit zip code.',
-			},
-			{
-				validator: hasExactLength,
-				message: 'Please enter a valid 5 digit zip code.',
-				options: { length: 5 },
+				message: 'Please enter a valid zip code.',
+			}, {
+				validator: isZipCode,
+				message: 'Please enter a valid zip code.',
 			}],
 			phoneRules: [{
 				validator: isNotEmpty,
