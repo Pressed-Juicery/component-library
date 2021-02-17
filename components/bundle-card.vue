@@ -36,7 +36,7 @@ export default {
 					'price',
 				];
 
-				return object
+				return object instanceof Object
 					&& requiredKeys.every(key => Object.prototype.hasOwnProperty.call(object, key) && object[key]);
 			},
 		},
@@ -48,7 +48,7 @@ export default {
 					'color',
 				];
 
-				return object
+				return object instanceof Object
 					&& requiredKeys.every(key => Object.prototype.hasOwnProperty.call(object, key) && object[key]);
 			},
 		},
