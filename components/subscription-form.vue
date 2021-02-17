@@ -1,6 +1,6 @@
 <template>
 	<validated-form :id="id" @submit="onSubmit">
-		<div :class="$style.label">Monthly Membership Reload</div>
+		<div :class="$style.label">Monthly Reload Amount</div>
 		<div :class="$style.selectWrapper">
 			<validated-select
 				v-model="selectedReloadAmount"
