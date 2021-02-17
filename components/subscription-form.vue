@@ -7,8 +7,6 @@
 				:class="$style.amountInput"
 				:options="reloadAmounts"
 				:rules="rules"
-				type="number"
-				inputmode="decimal"
 			/>
 			<arrow-down-icon :class="$style.arrow"/>
 		</div>
