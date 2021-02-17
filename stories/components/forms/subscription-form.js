@@ -14,7 +14,7 @@ export function Overview() {
 					id="subscription-form"
 					:paymentMethods="paymentMethods"
 					:reloadAmounts="reloadAmounts"
-					@submit="formData => this.formData = formData"
+					@submit="handleSubmit"
 				/>
 				<p v-if="formData" style="margin-top:24px">data: <code>{{ formData }}</code></p>
 				<button form="subscription-form" type="submit" style="margin-top:24px">Submit</button>
@@ -42,7 +42,7 @@ export function Overview() {
 		},
 		methods: {
 			handleSubmit(data) {
-				this.data = data;
+				this.formData = data;
 			},
 		},
 	};
