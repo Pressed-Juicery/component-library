@@ -64,6 +64,7 @@ export default {
 			required: true,
 		},
 	},
+
 	computed: {
 		warning() {
 			return (this.nutritionDetails.warnings || []).join(' ');
