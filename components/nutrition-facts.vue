@@ -8,23 +8,25 @@
 			<div>%DV</div>
 		</div>
 
-		<div v-for="(fact, parentIndex) in nutritionDetails.facts" :key="parentIndex">
-			<div :class="$style.row">
-				<div><span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}</div>
-				<div>{{ fact.dailyValue }}</div>
-			</div>
-
-			<div v-for="(child, childIndex) in (fact.children || [])" :key="childIndex">
+		<div>
+			<div v-for="(fact, parentIndex) in nutritionDetails.facts" :key="parentIndex">
 				<div :class="$style.row">
-					<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
-					<div>{{ child.dailyValue }}</div>
+					<div><span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}</div>
+					<div>{{ fact.dailyValue }}</div>
 				</div>
 
-				<div :class="$style.row"
-					v-for="(grandchild, grandchildIndex) in (child.children || [])"
-					:key="grandchildIndex">
-					<div :class="$style.tertiaryHeading">{{ grandchild.label }} {{ grandchild.amountPerServing }}</div>
-					<div>{{ grandchild.dailyValue }}</div>
+				<div v-for="(child, childIndex) in (fact.children || [])" :key="childIndex">
+					<div :class="$style.row">
+						<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
+						<div>{{ child.dailyValue }}</div>
+					</div>
+
+					<div :class="$style.row"
+						v-for="(grandchild, grandchildIndex) in (child.children || [])"
+						:key="grandchildIndex">
+						<div :class="$style.tertiaryHeading">{{ grandchild.label }} {{ grandchild.amountPerServing }}</div>
+						<div>{{ grandchild.dailyValue }}</div>
+					</div>
 				</div>
 			</div>
 		</div>
