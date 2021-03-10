@@ -89,7 +89,8 @@ $indentation-spacing: $spacing-06;
 	padding: $spacing-03 0;
 }
 
-.heading {
+.heading,
+.vitamin {
 	@include text-bolder();
 }
 
@@ -101,7 +102,6 @@ $indentation-spacing: $spacing-06;
 	text-indent: $indentation-spacing * 2;
 }
 
-.vitamins,
 .claims,
 .ingredients {
 	margin-top: $spacing-05;
@@ -126,6 +126,12 @@ $indentation-spacing: $spacing-06;
 		content: ' | ';
 		white-space: pre;
 	}
+}
+
+.vitamins {
+	padding-top: $spacing-06;
+	margin-top: $spacing-05;
+	border-top: $border-light
 }
 
 .dailyValue {
