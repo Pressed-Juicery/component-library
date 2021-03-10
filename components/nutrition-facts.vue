@@ -87,7 +87,6 @@ $indentation-spacing: $spacing-06;
 	display: flex;
 	justify-content: space-between;
 	padding: $spacing-03 0;
-	border-bottom: $border-light;
 }
 
 .heading {
