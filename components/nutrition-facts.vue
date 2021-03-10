@@ -113,8 +113,7 @@ $indentation-spacing: $spacing-06;
 }
 
 .vitamins,
-.dailyValue,
-.warnings {
+.dailyValue {
 	@include text-body-small();
 }
 
@@ -136,5 +135,13 @@ $indentation-spacing: $spacing-06;
 
 .dailyValue {
 	@include text-subtle();
+}
+
+.warnings {
+	@include text-body-small;
+	@include text-bolder;
+	padding-top: $spacing-06;
+	margin-top: $spacing-06;
+	border-top: $border-light
 }
 </style>
