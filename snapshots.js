@@ -24,6 +24,7 @@ const groups = [{
 		'CurrentOffers',
 		'Drawer',
 		'FeaturedItem',
+		'IncrementalQuantitySelector',
 		'MenuDialogTemplate',
 		'MenuDrawer',
 		'Overlay',

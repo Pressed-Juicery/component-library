@@ -42,6 +42,7 @@ export { default as FeaturedItem } from './featured-item.vue';
 export { default as GuestInformationForm } from './guest-information-form';
 export { default as HighlightSection } from './highlight-section';
 export { default as ImageBanner } from './image-banner';
+export { default as IncrementalQuantitySelector } from './incremental-quantity-selector';
 export { default as Ingredients } from './ingredients.vue';
 export { default as LandingPageTemplate } from './landing-page-template';
 export { default as MenuDialogTemplate } from './menu-dialog-template';
