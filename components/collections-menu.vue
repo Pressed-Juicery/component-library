@@ -52,11 +52,6 @@ export default {
 			type: String,
 		},
 
-		baseRoute: {
-			type: String,
-			default: 'shop',
-		},
-
 		showHeader: {
 			type: Boolean,
 			default: true,
