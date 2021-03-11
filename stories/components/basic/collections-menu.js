@@ -53,6 +53,7 @@ export function Overview() {
 				this.selectedCollectionHandle = collectionHandle;
 			},
 			onClose() {
+				// eslint-disable-next-line no-console
 				console.log('Closed');
 			},
 		},
