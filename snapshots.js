@@ -18,6 +18,7 @@ const groups = [{
 		'Card',
 		'CollapsibleDrawer',
 		'CollectionButton',
+		'CollectionsMenu',
 		'ConfirmationDialogTemplate',
 		'ConfirmDrawer',
 		'CurrentOffers',

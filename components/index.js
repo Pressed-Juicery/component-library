@@ -30,6 +30,7 @@ export { default as CleanseGuide } from './cleanse-guide';
 export { default as CollapsibleDrawer } from './collapsible-drawer';
 export { default as CollapsibleWalletDrawer } from './collapsible-wallet-drawer';
 export { default as CollectionButton } from './collection-button.vue';
+export { default as CollectionsMenu } from './collections-menu';
 export { default as ConfirmationDialogTemplate } from './confirmation-dialog-template';
 export { default as ConfirmDrawer } from './confirm-drawer';
 export { default as ContentWrapper } from './content-wrapper';
