@@ -1,6 +1,6 @@
 <template>
 	<validated-form :id="id" @submit="$emit('submit', review)">
-		<validated-star-rating v-model="review.rating" :rules="starRules" />
+		<validated-star-rating label="Rating" v-model="review.rating" :rules="starRules" />
 		<validated-input
 			type="text"
 			label="Title"
