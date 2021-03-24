@@ -29,7 +29,7 @@
 					]"
 				@click="$emit('change', childCollection.handle)"
 			>
-					{{ childCollection.name }}
+				{{ childCollection.name }}
 			</div>
 		</div>
 	</div>
