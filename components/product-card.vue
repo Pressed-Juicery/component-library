@@ -15,7 +15,7 @@
 			</div>
 		</div>
 
-		<button v-if="showLearnMoreButton" :class="$style.learnMoreButton" @click="$emit('learn-more')">
+		<button v-if="showLearnMoreButton" :class="$style.learnMoreButton" @click.stop="$emit('learn-more', product)">
 			Learn More
 		</button>
 
