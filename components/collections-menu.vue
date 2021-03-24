@@ -93,11 +93,14 @@ export default {
 	}
 
 	.collectionItem {
-		margin-bottom: $spacing-03;
 		margin-left:  -$collection-margin-offset-value;
 		padding-left: $spacing-03;
 		border-left: $border-left-value solid transparent;
 		cursor: pointer;
+	}
+
+	.collectionItem:not(:last-child) {
+		margin-bottom: $spacing-03;
 	}
 
 	.parentCollectionName {
