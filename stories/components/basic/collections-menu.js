@@ -5,35 +5,39 @@ export default {
 	component: CollectionsMenu,
 };
 
-const collectionsMenuData = {
-	collections: [{
-		name: 'Cleanses & Bundles',
-		handle: 'cleanses-and-bundles',
-		children: [{
-			name: 'Half Day Fasts',
-			handle: 'half-day-fasts',
-		}, {
-			name: 'Full Day Fasts',
-			handle: 'full-day-fasts',
-		}],
+const collections = [{
+	id: '04b430d2-7183-4142-8622-dd6948604b22',
+	name: 'Cleanses & Bundles',
+	handle: 'cleanses-and-bundles',
+	children: [{
+		id: 'ae24b4df-2d4e-4d95-8b4a-a93a88993fe2',
+		name: 'Half Day Fasts',
+		handle: 'half-day-fasts',
 	}, {
-		name: 'Cold Pressed Juices',
-		handle: 'cold-pressed-juices',
-		children: [{
-			name: 'Greens',
-			handle: 'greens',
-		}, {
-			name: 'Roots',
-			handle: 'roots',
-		}, {
-			name: 'Lemonades',
-			handle: 'lemonades',
-		}],
+		id: '5e579779-338f-476b-9bb9-288d26d1930c',
+		name: 'Full Day Fasts',
+		handle: 'full-day-fasts',
 	}],
-	selectedCollectionHandle: 'roots',
-};
+}, {
+	id: '57e6ca4a-59dd-43dc-a313-2b394bf958c7',
+	name: 'Cold Pressed Juices',
+	handle: 'cold-pressed-juices',
+	children: [{
+		id: 'd293d33c-bcaf-4107-9b68-e5c0c2b7ee94',
+		name: 'Greens',
+		handle: 'greens',
+	}, {
+		id: '736881b5-fdb0-4ed4-a279-a1e850e2cde5',
+		name: 'Roots',
+		handle: 'roots',
+	}, {
+		id: '9780737d-bcf6-4e84-b431-0bc7d888d08e',
+		name: 'Lemonades',
+		handle: 'lemonades',
+	}],
+}];
 
-export function Overview() {
+export function OverviewWithoutSelectedCollectionHandle() {
 	return {
 		components: { CollectionsMenu },
 		template: `
@@ -46,7 +50,10 @@ export function Overview() {
 				/>
 			`,
 		data() {
-			return collectionsMenuData;
+			return {
+				collections,
+				selectedCollectionHandle: null,
+			};
 		},
 		methods: {
 			onChange(collectionHandle) {
@@ -60,7 +67,7 @@ export function Overview() {
 	};
 }
 
-export function HiddenHeader() {
+export function HiddenHeaderWithSelectedCollectionHandle() {
 	return {
 		components: { CollectionsMenu },
 		template: `
@@ -73,7 +80,10 @@ export function HiddenHeader() {
 				/>
 			`,
 		data() {
-			return collectionsMenuData;
+			return {
+				collections,
+				selectedCollectionHandle: 'roots',
+			};
 		},
 		methods: {
 			onChange(collectionHandle) {
