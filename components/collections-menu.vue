@@ -2,12 +2,12 @@
 	<div :class="$style.root">
 		<div v-if="showHeader" :class="$style.row">
 			<div :class="$style.name">Categories</div>
-			<div @click="$emit('close')">
+			<div :class="$style.closeIcon" @click="$emit('close')">
 				<circle-close-icon />
 			</div>
 		</div>
 
-		<div v-for="collection in collections" :key="collection.id">
+		<div :class="$style.collectionGroup" v-for="collection in collections" :key="collection.id">
 			<div
 				:class="[
 					$style.parentCollectionName,
@@ -19,15 +19,16 @@
 				{{ collection.name }}
 			</div>
 
-			<div v-for="childCollection in collection.children" :key="childCollection.id">
-				<div
-					:class="[
+			<div
+				v-for="childCollection in collection.children"
+				:key="childCollection.id"
+				:class="[
 						$style.childCollectionName,
 						$style.collectionItem,
 						{ [$style.isActive]: isActive(childCollection.handle) }
 					]"
-					@click="$emit('change', childCollection.handle)"
-				>
+				@click="$emit('change', childCollection.handle)"
+			>
 					{{ childCollection.name }}
 				</div>
 			</div>
@@ -71,6 +72,9 @@ export default {
 	@import '../styles/variables';
 	@import '../styles/mixins';
 
+	$border-left-value: 3px;
+	$collection-margin-offset-value: $spacing-03 + $border-left-value;
+
 	.row {
 		display: flex;
 		justify-content: space-between;
@@ -79,13 +83,22 @@ export default {
 
 	.name {
 		@include text-heading-5();
+		@include text-bolder();
+	}
+
+	.closeIcon {
+		cursor: pointer;
+	}
+
+	.collectionGroup:not(:last-child) {
+		margin-bottom: $spacing-07;
 	}
 
 	.collectionItem {
-		margin-left: -$spacing-03;
 		margin-bottom: $spacing-03;
+		margin-left:  -$collection-margin-offset-value;
 		padding-left: $spacing-03;
-		border-left: 3px solid transparent;
+		border-left: $border-left-value solid transparent;
 		cursor: pointer;
 	}
 
@@ -94,7 +107,7 @@ export default {
 	}
 
 	.childCollectionName {
-		margin-left: $spacing-06;
+		margin-left: $spacing-06 - $collection-margin-offset-value;
 	}
 
 	.isActive {
