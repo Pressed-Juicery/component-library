@@ -30,10 +30,8 @@
 				@click="$emit('change', childCollection.handle)"
 			>
 					{{ childCollection.name }}
-				</div>
 			</div>
 		</div>
-
 	</div>
 </template>
 
