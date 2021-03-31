@@ -19,7 +19,7 @@
 
 			<div v-if="value" :class="$style.selectOverlay">
 				<div @click="() => $refs.select.focus()">{{value}}</div>
-				<arrow-down-icon :class="$style.arrowIcon" />
+				<arrow-down-icon :class="$style.arrowIcon" color="#000" />
 			</div>
 
 			<div v-else :class="$style.defaultButton"><plus-icon /></div>
@@ -91,7 +91,7 @@ export default {
 		display: flex;
 		height: $button-height;
 		width: $button-height;
-		border: 1px solid $gray-30;
+		border: 1px solid $gray-70;
 		border-radius: 999em;
 	}
 
