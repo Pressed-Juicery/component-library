@@ -25,7 +25,7 @@ import MinusIcon from './icons/minus-icon';
 import PlusIconBlack from './icons/plus-icon-black';
 import { debounce } from '../utilities/debounce';
 
-const DEBOUNCE_TIMEOUT = 300;
+const DEBOUNCE_TIMEOUT = 500;
 
 export default {
 	components: { MinusIcon, PlusIconBlack },
@@ -52,7 +52,7 @@ export default {
 			set(value) {
 				const isBlank = !value && value !== 0;
 				const sanitizedValue = Math.abs(Math.floor(value));
-				const newValue = isBlank ? null : sanitizedValue;
+				const newValue = isBlank ? 0 : sanitizedValue;
 
 				// Prevent the display value from differing from the model value.
 				// This happens when the model value before and after the input change are the same
