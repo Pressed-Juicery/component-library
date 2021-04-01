@@ -9,7 +9,7 @@
 				<div :class="$style.price">{{ formatPrice(product.regularPrice || product.nonMemberPrice) }}</div>
 				<div :class="$style.priceLabel">Regular</div>
 			</div>
-			<div v-if="!areSamePrice" :class="$style.priceWrapper">
+			<div v-if="(product.exclusivePrice || product.memberPrice) && !areSamePrice" :class="$style.priceWrapper">
 				<div :class="$style.price">{{ formatPrice(product.exclusivePrice || product.memberPrice) }}</div>
 				<div :class="$style.priceLabel">VIP</div>
 			</div>
