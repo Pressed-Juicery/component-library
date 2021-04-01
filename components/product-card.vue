@@ -136,4 +136,10 @@ export default {
 		background-color: $white;
 		border-color: $goldenrod-light;
 	}
+
+	// This keeps the button or IQS at the bottom of the flexbox
+	.learnMoreButton,
+	.incrementalQuantitySelector {
+		margin-top: auto;
+	}
 </style>
