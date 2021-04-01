@@ -116,6 +116,7 @@ export default {
 
 	created() {
 		this.$emit('init-autocomplete');
+		console.log('hello:'); // TODO: REMOVE THIS
 	},
 
 	// eslint-disable-next-line max-lines-per-function
