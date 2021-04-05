@@ -1,6 +1,6 @@
 <template>
 	<card :class="[$style.card, { [$style.disabled]: !redemptionSummaryItem.eligibleCartItemQuantity }]">
-		<img :class="$style.icon" :src="redemptionSummaryItem.icon"/>
+		<img :class="[$style.icon, { [$style.iconSmall]: isShot }]" :src="redemptionSummaryItem.icon" ref="icon" />
 		<div :class="$style.title">{{ redemptionSummaryItem.title }}</div>
 		<div :class="$style.points">{{ redemptionSummaryItem.points }} Pts</div>
 		<quantity-selector
@@ -44,6 +44,10 @@ export default {
 
 			return [...Array(quantity + 1).keys()];
 		},
+
+		isShot() {
+			return this.redemptionSummaryItem.id === 'SHOT_OR_WATER';
+		},
 	},
 };
 </script>
@@ -65,8 +69,11 @@ export default {
 	}
 
 	.icon {
-		height: $spacing-08;
 		margin-bottom: $spacing-03;
+	}
+
+	.iconSmall {
+		margin-top: $spacing-04;
 	}
 
 	.title {
