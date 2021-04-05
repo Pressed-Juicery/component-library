@@ -1,41 +1,40 @@
 <template>
 	<card :class="$style.root" @click.native="$emit('click', product)">
-		<div :class="$style.wrapper">
-			<div :class="$style.imageWrapper">
-				<img :class="$style.image" :src="product.imageUrl" />
+		<img :class="$style.image" :src="product.imageUrl" />
+
+		<div :class="$style.name">{{ product.name }}</div>
+
+		<div :class="$style.prices">
+			<div :class="$style.priceWrapper">
+				<div :class="$style.price">{{ formatPrice(product.regularPrice || product.nonMemberPrice) }}</div>
+				<div :class="$style.priceLabel">Regular</div>
 			</div>
-
-			<div :class="$style.name">{{ product.name }}</div>
-
-			<div v-if="hasSamePrice" :class="$style.price">{{ formatPrice(product.nonMemberPrice) }}</div>
-
-			<div v-else :class="$style.price">
-				<span :class="nonMemberPriceClass">{{ formatPrice(product.nonMemberPrice) }}</span>
-				{{ formatPrice(product.nonMemberSalePrice) }}
-				|
-				<span :class="memberPriceClass">{{ formatPrice(product.memberPrice) }}</span>
-				{{ formatPrice(product.memberSalePrice) }}
+			<div v-if="(product.exclusivePrice || product.memberPrice) && !areSamePrice" :class="$style.priceWrapper">
+				<div :class="$style.price">{{ formatPrice(product.exclusivePrice || product.memberPrice) }}</div>
+				<div :class="$style.priceLabel">VIP</div>
 			</div>
-
-			<circle-arrow-right v-if="showLearnMoreButton" :class="$style.learnMore" @click="$emit('learn-more')" />
-
-			<quantity-selector v-else
-				:quantity="quantity"
-				@change="quantity => $emit('change', { product, quantity })"
-				@click.native.stop
-			/>
 		</div>
+
+		<button v-if="showLearnMoreButton" :class="$style.learnMoreButton" @click.stop="$emit('learn-more', product)">
+			Learn More
+		</button>
+
+		<incremental-quantity-selector
+			v-else
+			:class="$style.incrementalQuantitySelector"
+			v-model="incrementalQuantitySelectorValue"
+			@click.native.stop
+		/>
 	</card>
 </template>
 
 <script>
 import Card from './card';
-import CircleArrowRight from './icons/circle-arrow-right';
-import QuantitySelector from './quantity-selector';
+import IncrementalQuantitySelector from './incremental-quantity-selector';
 import { formatCurrency } from '../utilities/formatters';
 
 export default {
-	components: { Card, QuantitySelector, CircleArrowRight },
+	components: { Card, IncrementalQuantitySelector },
 
 	props: {
 		product: {
@@ -53,13 +52,24 @@ export default {
 	},
 
 	computed: {
-		nonMemberPriceClass() { return this.product.nonMemberSalePrice && this.$style.strikethrough },
-		memberPriceClass() { return this.product.memberSalePrice && this.$style.strikethrough },
-		hasSamePrice() {
-			const hasSameRegularPrice = this.product.nonMemberPrice === this.product.memberPrice;
-			const hasNoSalePrice = !this.product.nonMemberSalePrice && !this.product.memberSalePrice;
+		areSamePrice() {
+			return (this.product.regularPrice || this.product.nonMemberPrice)
+				=== (this.product.exclusivePrice || this.product.memberPrice);
+		},
 
-			return hasSameRegularPrice && hasNoSalePrice;
+		incrementalQuantitySelectorValue: {
+			get() {
+				return this.quantity;
+			},
+
+			set(newQuantity) {
+				const changeEventObject = {
+					product: this.product,
+					quantity: newQuantity,
+				};
+
+				this.$emit('change', changeEventObject);
+			},
 		},
 	},
 
@@ -73,56 +83,63 @@ export default {
 
 <style module lang="scss">
 	@import '../styles/mixins';
+	@import '../styles/variables';
 
 	.root {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: $spacing-05 $spacing-03 $spacing-06;
 		cursor: pointer;
 	}
 
-	.wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	@mixin predefineImageSize {
-		.imageWrapper {
-			position: relative;
-			width: 100%;
-			height: 0;
-			padding-top: 100%;
-			overflow: hidden;
-		}
-
-		.image {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-		}
-	}
-
-	@include predefineImageSize();
-
-	.name,
-	.price {
-		@include text-body-small();
-		@include text-bold();
-	}
-
-	.name {
-		@include line-clamp(1);
-		text-transform: capitalize;
-	}
-
-	.price {
+	.image {
+		width: $spacing-12;
+		height: $spacing-12;
 		margin-bottom: $spacing-03;
 	}
 
-	.strikethrough {
-		text-decoration: line-through;
+	.name,
+	.prices {
+		margin-bottom: $spacing-05;
 	}
 
-	.learnMore {
-		cursor: pointer;
+	.name,
+	.priceWrapper {
+		text-align: center;
+	}
+
+	.name {
+		@include line-clamp(2);
+		@include text-bold();
+		text-transform: capitalize;
+	}
+
+	// Using last-child doesn't work here because if only one element exists it is simultaneously the first and last
+	// child and applies the margin-left incorrectly. nth-of-type works because it'll only be applied if there is a
+	// second item that matches.
+	.priceWrapper:nth-of-type(2) {
+		margin-left: $spacing-06;
+	}
+
+	.prices {
+		display: flex;
+	}
+
+	.priceLabel {
+		@include text-body-small();
+		@include text-subtle();
+	}
+
+	.learnMoreButton {
+		@include button-pill-secondary();
+		background-color: $white;
+		border-color: $goldenrod-light;
+	}
+
+	// This keeps the button or IQS at the bottom of the flexbox
+	.learnMoreButton,
+	.incrementalQuantitySelector {
+		margin-top: auto;
 	}
 </style>

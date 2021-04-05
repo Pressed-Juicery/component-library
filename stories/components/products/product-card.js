@@ -6,9 +6,9 @@ export default {
 };
 
 const methods = {
-	change(productQuantity) {
-		// eslint-disable-next-line no-console
-		console.log(`captured "change" event: ${productQuantity.quantity} x ${productQuantity.product.name}`);
+	onChange({ product, quantity }) {
+		this.quantity = quantity;
+		console.log(product); // eslint-disable-line no-console
 	},
 };
 
@@ -19,7 +19,7 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 			<product-card
 				:product="sampleProduct"
 				:quantity="quantity"
-				@change="change"
+				@change="onChange"
 				@click="onClick"
 			/>
 		`,
@@ -28,10 +28,8 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 				sampleProduct: {
 					name: 'Sample Juice Product',
 					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-					nonMemberPrice: 6.75,
-					nonMemberSalePrice: null,
-					memberPrice: 5.00,
-					memberSalePrice: null,
+					regularPrice: 6.75,
+					exclusivePrice: 5.00,
 				},
 				quantity: 0,
 			};
@@ -48,146 +46,69 @@ export function Overview() { // eslint-disable-line max-lines-per-function
 export function PredefinedQuantityWithLongProductName() {
 	return {
 		components: { ProductCard },
-		methods,
-		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
+		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="onChange"/>',
 		data() {
 			return {
 				sampleProduct: {
 					name: 'This is a very very very very very very very long product name',
 					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-					nonMemberPrice: 6.75,
-					nonMemberSalePrice: null,
-					memberPrice: 5.00,
-					memberSalePrice: null,
+					regularPrice: 6.75,
+					exclusivePrice: 5.00,
 				},
 				quantity: 5,
 			};
 		},
+		methods,
 	};
 }
 
-export function NoDiscountsSamePrice() {
+export function SamePriceWithLearnMore() {
 	return {
 		components: { ProductCard },
-		methods,
-		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
+		template: `
+			<product-card
+				:product="sampleProduct"
+				:quantity="quantity"
+				:showLearnMoreButton="true"
+				@change="onChange"
+			/>
+		`,
 		data() {
 			return {
 				sampleProduct: {
 					name: 'Sample Juice Product',
 					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-					nonMemberPrice: 20.00,
-					nonMemberSalePrice: null,
-					memberPrice: 20.00,
-					memberSalePrice: null,
+					regularPrice: 20.00,
+					exclusivePrice: 20.00,
 				},
 				quantity: 0,
 			};
 		},
+		methods,
 	};
 }
 
-export function NonMemberDiscount() {
+export function NullVIPPrice() {
 	return {
 		components: { ProductCard },
-		methods,
-		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
+		template: `
+			<product-card
+				:product="sampleProduct"
+				:quantity="quantity"
+				@change="onChange"
+			/>
+		`,
 		data() {
 			return {
 				sampleProduct: {
 					name: 'Sample Juice Product',
 					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-					nonMemberPrice: 6.75,
-					nonMemberSalePrice: 6.00,
-					memberPrice: 5.00,
-					memberSalePrice: null,
+					regularPrice: 20.00,
+					exclusivePrice: null,
 				},
 				quantity: 0,
 			};
 		},
-	};
-}
-
-export function NonMemberDiscountSamePrice() {
-	return {
-		components: { ProductCard },
 		methods,
-		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
-		data() {
-			return {
-				sampleProduct: {
-					name: 'Sample Juice Product',
-					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-					nonMemberPrice: 6.75,
-					nonMemberSalePrice: 5.00,
-					memberPrice: 5.00,
-					memberSalePrice: null,
-				},
-				quantity: 0,
-			};
-		},
-	};
-}
-
-export function NonMemberDiscountAndMemberDiscount() {
-	return {
-		components: { ProductCard },
-		methods,
-		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
-		data() {
-			return {
-				sampleProduct: {
-					name: 'Sample Juice Product',
-					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-					nonMemberPrice: 6.75,
-					nonMemberSalePrice: 5.00,
-					memberPrice: 5.00,
-					memberSalePrice: 4.00,
-				},
-				quantity: 0,
-			};
-		},
-	};
-}
-
-export function NonMemberDiscountAndMemberDiscountSamePrice() {
-	return {
-		components: { ProductCard },
-		methods,
-		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
-		data() {
-			return {
-				sampleProduct: {
-					name: 'Sample Juice Product',
-					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-					nonMemberPrice: 6.75,
-					nonMemberSalePrice: 4.00,
-					memberPrice: 5.00,
-					memberSalePrice: 4.00,
-				},
-				quantity: 0,
-			};
-		},
-	};
-}
-
-export function MemberDiscount() {
-	return {
-		components: { ProductCard },
-		methods,
-		template: '<product-card :product="sampleProduct" :quantity="quantity" @change="change"/>',
-		data() {
-			return {
-				sampleProduct: {
-					name: 'Sample Juice Product',
-					imageUrl: 'https://pressed-product-images.s3-us-west-1.amazonaws.com/test/bragg-greens.png',
-					nonMemberPrice: 6.75,
-					nonMemberSalePrice: null,
-					memberPrice: 5.00,
-					memberSalePrice: 4.00,
-				},
-				quantity: 0,
-			};
-		},
 	};
 }
