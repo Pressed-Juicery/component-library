@@ -46,7 +46,8 @@
 			the cell number used when signing up. Consent is not a condition of any
 			purchase. Message &amp; data rates may apply. Message frequency is recurring.
 			Messages may be auto-dialed from Pressed Juicery. Maximum ten (10)
-			promotional messages a month. Reply STOP to quit. View the
+			promotional messages a month. Reply STOP to quit. I’ve read and accept the
+			<a :class="$style.underline" @click.prevent="$emit('privacyPolicy')">Privacy Policy</a> and the
 			<a :class="$style.underline" @click.prevent="$emit('messagingTerms')">Messaging Terms &amp; Conditions.</a>
 		</validated-checkbox>
 	</div>
