@@ -8,23 +8,27 @@
 			<div>%DV</div>
 		</div>
 
-		<div v-for="(fact, parentIndex) in nutritionDetails.facts" :key="parentIndex">
-			<div :class="$style.row">
-				<div><span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}</div>
-				<div>{{ fact.dailyValue }}</div>
-			</div>
-
-			<div v-for="(child, childIndex) in (fact.children || [])" :key="childIndex">
+		<div>
+			<div v-for="(fact, parentIndex) in nutritionDetails.facts" :key="parentIndex">
 				<div :class="$style.row">
-					<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
-					<div>{{ child.dailyValue }}</div>
+					<div><span :class="$style.heading">{{ fact.label }}</span> {{ fact.amountPerServing }}</div>
+					<div>{{ fact.dailyValue }}</div>
 				</div>
 
-				<div :class="$style.row"
-					v-for="(grandchild, grandchildIndex) in (child.children || [])"
-					:key="grandchildIndex">
-					<div :class="$style.tertiaryHeading">{{ grandchild.label }} {{ grandchild.amountPerServing }}</div>
-					<div>{{ grandchild.dailyValue }}</div>
+				<div v-for="(child, childIndex) in (fact.children || [])" :key="childIndex">
+					<div :class="$style.row">
+						<div :class="$style.subheading">{{ child.label }} {{ child.amountPerServing }}</div>
+						<div>{{ child.dailyValue }}</div>
+					</div>
+
+					<div :class="$style.row"
+						v-for="(grandchild, grandchildIndex) in (child.children || [])"
+						:key="grandchildIndex">
+						<div :class="$style.tertiaryHeading">
+							{{ grandchild.label }} {{ grandchild.amountPerServing }}
+						</div>
+						<div>{{ grandchild.dailyValue }}</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -64,6 +68,7 @@ export default {
 			required: true,
 		},
 	},
+
 	computed: {
 		warning() {
 			return (this.nutritionDetails.warnings || []).join(' ');
@@ -86,10 +91,10 @@ $indentation-spacing: $spacing-06;
 	display: flex;
 	justify-content: space-between;
 	padding: $spacing-03 0;
-	border-bottom: $border-light;
 }
 
-.heading {
+.heading,
+.vitamin {
 	@include text-bolder();
 }
 
@@ -101,7 +106,6 @@ $indentation-spacing: $spacing-06;
 	text-indent: $indentation-spacing * 2;
 }
 
-.vitamins,
 .claims,
 .ingredients {
 	margin-top: $spacing-05;
@@ -113,8 +117,7 @@ $indentation-spacing: $spacing-06;
 }
 
 .vitamins,
-.dailyValue,
-.warnings {
+.dailyValue {
 	@include text-body-small();
 }
 
@@ -128,7 +131,21 @@ $indentation-spacing: $spacing-06;
 	}
 }
 
+.vitamins {
+	padding-top: $spacing-06;
+	margin-top: $spacing-05;
+	border-top: $border-light
+}
+
 .dailyValue {
 	@include text-subtle();
+}
+
+.warnings {
+	@include text-body-small;
+	@include text-bolder;
+	padding-top: $spacing-06;
+	margin-top: $spacing-06;
+	border-top: $border-light
 }
 </style>
